@@ -1,0 +1,97 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f7663,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f285,f4067])).
+fof(f4067,plain,(
+  ( ! [X0,X1] : (s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0))),s('type.rat.rat',X1))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X1))),s('type.rat.rat',X0)))) )),
+  inference(superposition,[],[f368,f293])).
+fof(f293,plain,(
+  ( ! [X0] : (s('type.rat.rat',X0) = s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0)))))) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0] : s('type.rat.rat',X0) = s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0)))))),
+  inference(rectify,[],[f42])).
+fof(f42,axiom,(
+  ! [X6] : s('type.rat.rat',X6) = s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X6)))))),
+  file('thm.rat.RAT_AINV_LES','thm.rat.RAT_AINV_AINV')).
+fof(f368,plain,(
+  ( ! [X0,X1] : (s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X1),s('type.rat.rat',X0))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X1)))))) )),
+  inference(cnf_transformation,[],[f108])).
+fof(f108,plain,(
+  ! [X0,X1] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X1),s('type.rat.rat',X0))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X1)))))),
+  inference(rectify,[],[f43])).
+fof(f43,axiom,(
+  ! [X6,X7] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X7),s('type.rat.rat',X6))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X6))),s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X7)))))),
+  file('thm.rat.RAT_AINV_LES','thm.rat.RAT_LES_AINV')).
+fof(f285,plain,(
+  s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',sK12))),s('type.rat.rat',sK13))) != s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',sK13))),s('type.rat.rat',sK12)))),
+  inference(cnf_transformation,[],[f190])).
+fof(f190,plain,(
+  s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',sK12))),s('type.rat.rat',sK13))) != s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',sK13))),s('type.rat.rat',sK12)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f139])).
+fof(f139,plain,(
+  ? [X0,X1] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0))),s('type.rat.rat',X1))) != s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X1))),s('type.rat.rat',X0)))),
+  inference(ennf_transformation,[],[f59])).
+fof(f59,plain,(
+  ~! [X0,X1] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X0))),s('type.rat.rat',X1))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X1))),s('type.rat.rat',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X6))),s('type.rat.rat',X7))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X7))),s('type.rat.rat',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X6))),s('type.rat.rat',X7))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_ainv_1'(s('type.rat.rat',X7))),s('type.rat.rat',X6)))),
+  file('thm.rat.RAT_AINV_LES','thm.rat.RAT_AINV_LES')).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 426
+% Passive clauses: 2540
+% Generated clauses: 7377
+% Final active clauses: 375
+% Final passive clauses: 1820
+% Input formulas: 57
+% Initial clauses: 210
+% 
+% Duplicate literals: 220
+% Trivial inequalities: 70
+% Fw subsumption resolutions: 721
+% Fw demodulations: 77
+% Bw demodulations: 36
+% 
+% Simple tautologies: 210
+% Equational tautologies: 48
+% Forward subsumptions: 3382
+% Fw demodulations to eq. taut.: 16
+% 
+% Binary resolution: 3137
+% Factoring: 788
+% Forward superposition: 518
+% Backward superposition: 1423
+% Self superposition: 25
+% Equality factoring: 26
+% Equality resolution: 29
+% 
+% Split clauses: 176
+% Split components: 353
+% SAT solver clauses: 317
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 87
+% 
+% Sat splits: 176
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 315
+% TWLsolver calls for satisfiability: 195
+% 
+% Memory used [KB]: 3198
+% Time elapsed: 0.186 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.19 s

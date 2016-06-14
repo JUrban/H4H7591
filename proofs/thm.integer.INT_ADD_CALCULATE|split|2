@@ -1,0 +1,88 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f25045,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f25025])).
+fof(f25025,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK10),s('type.num.num',sK11))))) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK10),s('type.num.num',sK11)))))),
+  inference(superposition,[],[f435,f566])).
+fof(f566,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f235])).
+fof(f235,plain,(
+  ! [X0,X1] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f68])).
+fof(f68,axiom,(
+  ! [X7,X6] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X7))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X6)))))),
+  file('thm.integer.INT_ADD_CALCULATE|split|2','thm.integer.INT_ADD')).
+fof(f435,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK10),s('type.num.num',sK11))))) != s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK10))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK11)))))),
+  inference(cnf_transformation,[],[f332])).
+fof(f332,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK10),s('type.num.num',sK11))))) != s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK10))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK11)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11])],[f297])).
+fof(f297,plain,(
+  ? [X0,X1] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) != s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))),
+  inference(ennf_transformation,[],[f141])).
+fof(f141,plain,(
+  ~! [X0,X1] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X6))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7))))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X6))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X7)))))),
+  file('thm.integer.INT_ADD_CALCULATE|split|2','thm.integer.INT_ADD_CALCULATE|split|2')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 859
+% Passive clauses: 4350
+% Generated clauses: 24536
+% Final active clauses: 838
+% Final passive clauses: 3230
+% Input formulas: 139
+% Initial clauses: 298
+% 
+% Duplicate literals: 225
+% Trivial inequalities: 33
+% Fw subsumption resolutions: 1582
+% Fw demodulations: 1756
+% Bw demodulations: 7
+% 
+% Simple tautologies: 180
+% Equational tautologies: 26
+% Forward subsumptions: 16178
+% Fw demodulations to eq. taut.: 16
+% 
+% Binary resolution: 5374
+% Factoring: 1368
+% Forward superposition: 7643
+% Backward superposition: 6133
+% Self superposition: 45
+% Equality factoring: 2
+% Equality resolution: 14
+% 
+% Split clauses: 206
+% Split components: 412
+% SAT solver clauses: 389
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 49
+% 
+% Sat splits: 206
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 389
+% TWLsolver calls for satisfiability: 361
+% 
+% Memory used [KB]: 11897
+% Time elapsed: 0.470 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.49 s

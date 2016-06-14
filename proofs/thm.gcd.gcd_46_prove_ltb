@@ -1,0 +1,146 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.gcd
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.gcd
+% SZS output start Proof for thm.gcd
+fof(f5066,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f5065,f204,f363,f361,f3712,f203,f362,f360])).
+fof(f360,plain,(
+  s('type.num.num',sK12) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | $spl0),
+  inference(cnf_transformation,[],[f360_D])).
+fof(f360_D,plain,(
+  s('type.num.num',sK12) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f362,plain,(
+  p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) | $spl2),
+  inference(cnf_transformation,[],[f362_D])).
+fof(f362_D,plain,(
+  p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f203,plain,(
+  p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) | s('type.num.num',sK12) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14)))),
+  inference(cnf_transformation,[],[f138])).
+fof(f138,plain,(
+  (s('type.num.num',sK12) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12))))) & (s('type.num.num',sK12) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f137])).
+fof(f137,plain,(
+  ? [X0,X1,X2] : ((s('type.num.num',X0) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X2))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X2),s('type.num.num',X0))))) & (s('type.num.num',X0) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X2))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X2),s('type.num.num',X0))))))),
+  inference(nnf_transformation,[],[f90])).
+fof(f90,plain,(
+  ? [X0,X1,X2] : (s('type.num.num',X0) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X2))) <~> p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X2),s('type.num.num',X0)))))),
+  inference(ennf_transformation,[],[f38])).
+fof(f38,plain,(
+  ~! [X0,X1,X2] : (s('type.num.num',X0) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X2))) <=> p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X2),s('type.num.num',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : (s('type.num.num',X6) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X7),s('type.num.num',X8))) <=> p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X7),s('type.num.num',X8),s('type.num.num',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : (s('type.num.num',X6) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X7),s('type.num.num',X8))) <=> p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X7),s('type.num.num',X8),s('type.num.num',X6)))))),
+  file('thm.gcd.gcd_46_prove_ltb','thm.gcd.gcd_46_prove_ltb')).
+fof(f3712,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f3710,f363])).
+fof(f3710,plain,(
+  p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) | $spl0),
+  inference(superposition,[],[f246,f360])).
+fof(f246,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))) )),
+  inference(cnf_transformation,[],[f64])).
+fof(f64,plain,(
+  ! [X0,X1] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X12,X13] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X12),s('type.num.num',X13),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X12),s('type.num.num',X13))))))),
+  file('thm.gcd.gcd_46_prove_ltb','thm.gcd.GCD_IS_GCD')).
+fof(f361,plain,(
+  s('type.num.num',sK12) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | $spl1),
+  inference(cnf_transformation,[],[f361_D])).
+fof(f361_D,plain,(
+  s('type.num.num',sK12) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f363,plain,(
+  ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) | $spl3),
+  inference(cnf_transformation,[],[f363_D])).
+fof(f363_D,plain,(
+  ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f204,plain,(
+  ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',sK12)))) | s('type.num.num',sK12) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14)))),
+  inference(cnf_transformation,[],[f138])).
+fof(f5065,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f5034,f361])).
+fof(f5034,plain,(
+  s('type.num.num',sK12) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | $spl2),
+  inference(resolution,[],[f4077,f246])).
+fof(f4077,plain,(
+  ( ! [X3] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',sK13),s('type.num.num',sK14),s('type.num.num',X3)))) | s('type.num.num',sK12) = s('type.num.num',X3)) ) | $spl2),
+  inference(resolution,[],[f355,f362])).
+fof(f355,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3)))) | s('type.num.num',X2) = s('type.num.num',X3)) )),
+  inference(cnf_transformation,[],[f118])).
+fof(f118,plain,(
+  ! [X0,X1,X2,X3] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3)))) | s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(flattening,[],[f117])).
+fof(f117,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3))))) | s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(ennf_transformation,[],[f89])).
+fof(f89,plain,(
+  ! [X0,X1,X2,X3] : ((p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) & p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3))))) => s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X12,X13,X14,X15] : ((p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X12),s('type.num.num',X13),s('type.num.num',X14)))) & p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X12),s('type.num.num',X13),s('type.num.num',X15))))) => s('type.num.num',X14) = s('type.num.num',X15))),
+  file('thm.gcd.gcd_46_prove_ltb','thm.gcd.IS_GCD_UNIQUE')).
+% SZS output end Proof for thm.gcd
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 396
+% Passive clauses: 1698
+% Generated clauses: 4856
+% Final active clauses: 387
+% Final passive clauses: 1087
+% Input formulas: 36
+% Initial clauses: 153
+% 
+% Duplicate literals: 158
+% Trivial inequalities: 32
+% Fw subsumption resolutions: 334
+% Fw demodulations: 12
+% Bw demodulations: 1
+% 
+% Simple tautologies: 144
+% Equational tautologies: 30
+% Forward subsumptions: 2452
+% 
+% Binary resolution: 3008
+% Factoring: 777
+% Forward superposition: 181
+% Backward superposition: 135
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 17
+% 
+% Split clauses: 107
+% Split components: 215
+% SAT solver clauses: 205
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 50
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 107
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 203
+% TWLsolver calls for satisfiability: 173
+% 
+% Memory used [KB]: 2302
+% Time elapsed: 0.103 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.105 s

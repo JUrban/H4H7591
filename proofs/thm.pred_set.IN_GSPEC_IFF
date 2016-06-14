@@ -1,0 +1,102 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f277,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f276,f38])).
+fof(f38,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))),
+  inference(flattening,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X8,X9] : s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X8))) = s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))),
+  file('thm.pred_set.IN_GSPEC_IFF','thm.pred_set.SPECIFICATION')).
+fof(f276,plain,(
+  s(bool,'const.bool.IN_2'(s(sK0,sK1),s(fun(sK0,bool),sK2))) != s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(forward_demodulation,[],[f30,f35])).
+fof(f35,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ! [X0] : ! [X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : ! [X8] : s(fun(X6,bool),X8) = s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X8)))))),
+  file('thm.pred_set.IN_GSPEC_IFF','thm.pred_set.GSPEC_ETA')).
+fof(f30,plain,(
+  s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))) != s(bool,'const.bool.IN_2'(s(sK0,sK1),s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK2)))))))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))) != s(bool,'const.bool.IN_2'(s(sK0,sK1),s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK2)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f25])).
+fof(f25,plain,(
+  ? [X0,X1,X2] : s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) != s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1,X2] : s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : ! [X1,X2] : s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))) = s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X8)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))) = s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X8)))))))),
+  file('thm.pred_set.IN_GSPEC_IFF','thm.pred_set.IN_GSPEC_IFF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 13
+% Passive clauses: 53
+% Generated clauses: 235
+% Final active clauses: 11
+% Final passive clauses: 32
+% Input formulas: 10
+% Initial clauses: 11
+% 
+% Duplicate literals: 41
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 1
+% Fw demodulations: 10
+% 
+% Simple tautologies: 16
+% Equational tautologies: 15
+% Forward subsumptions: 98
+% 
+% Binary resolution: 4
+% Forward superposition: 57
+% Backward superposition: 53
+% Self superposition: 27
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.018 s

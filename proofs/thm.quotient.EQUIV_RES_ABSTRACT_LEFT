@@ -1,0 +1,225 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.quotient
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quotient
+% SZS output start Proof for thm.quotient
+fof(f5356,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f5261,f78,f115])).
+fof(f115,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f115_D])).
+fof(f115_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f78,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT',aHL_FALSITY)).
+fof(f5261,plain,(
+  $false | $spl5),
+  inference(subsumption_resolution,[],[f5260,f117])).
+fof(f117,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl5),
+  inference(resolution,[],[f80,f115])).
+fof(f80,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X14] : (s(bool,'T_0') = s(bool,X14) <=> p(s(bool,X14)))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.bool.EQ_CLAUSES|split|1')).
+fof(f5260,plain,(
+  s(bool,'T_0') = s(bool,'F_0')),
+  inference(subsumption_resolution,[],[f5183,f880])).
+fof(f880,plain,(
+  ( ! [X0] : (s(bool,X0) != s(bool,'const.quotient.respects_2'(s(fun(sK1,fun(sK1,bool)),sK2),s(sK1,sK6))) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f149,f104])).
+fof(f104,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.quotient.respects_2'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1,X2] : s(bool,'const.quotient.respects_2'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X2)))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.quotient.respects_2'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X2)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X7] : ! [X17,X16] : s(bool,'const.quotient.respects_2'(s(fun(X7,fun(X7,bool)),X17),s(X7,X16))) = s(bool,happ(s(fun(X7,bool),happ(s(fun(X7,fun(X7,bool)),X17),s(X7,X16))),s(X7,X16)))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.quotient.RESPECTS')).
+fof(f149,plain,(
+  ( ! [X0] : (s(bool,X0) != s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK1,fun(sK1,bool)),sK2),s(sK1,sK6))),s(sK1,sK6))) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(resolution,[],[f74,f125])).
+fof(f125,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | s(bool,X0) != s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f84,f79])).
+fof(f79,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT',aHL_BOOL_CASES)).
+fof(f84,plain,(
+  ( ! [X0] : (s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X14] : (s(bool,'F_0') = s(bool,X14) <=> ~p(s(bool,X14)))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.bool.EQ_CLAUSES|split|2')).
+fof(f74,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK1,fun(sK1,bool)),sK2),s(sK1,sK6))),s(sK1,sK6))))),
+  inference(cnf_transformation,[],[f57])).
+fof(f57,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),sK3),s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK6))))),s(sK0,happ(s(fun(sK1,sK0),sK5),s(sK1,sK7)))))) & p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK1,fun(sK1,bool)),sK2),s(sK1,sK6))),s(sK1,sK6)))) & ~p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),sK3),s(sK0,'const.bool.RES_ABSTRACT_3'(s(fun(sK1,bool),'const.quotient.respects_1'(s(fun(sK1,fun(sK1,bool)),sK2))),s(fun(sK1,sK0),sK4),s(sK1,sK6))))),s(sK0,happ(s(fun(sK1,sK0),sK5),s(sK1,sK7))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4,sK5,sK6,sK7])],[f52])).
+fof(f52,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6,X7] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),'const.quotient.respects_1'(s(fun(X1,fun(X1,bool)),X2))),s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))))),
+  inference(flattening,[],[f51])).
+fof(f51,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6,X7] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6))))) & ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),'const.quotient.respects_1'(s(fun(X1,fun(X1,bool)),X2))),s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,plain,(
+  ~! [X0,X1,X2,X3,X4,X5,X6,X7] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6))))) => p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),'const.quotient.respects_1'(s(fun(X1,fun(X1,bool)),X2))),s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))))),
+  inference(flattening,[],[f23])).
+fof(f23,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4,X5,X6,X7] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6))))) => p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X3),s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),'const.quotient.respects_1'(s(fun(X1,fun(X1,bool)),X2))),s(fun(X1,X0),X4),s(X1,X6))))),s(X0,happ(s(fun(X1,X0),X5),s(X1,X7)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10,X11,X12,X13] : ((p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X9),s(X6,happ(s(fun(X7,X6),X10),s(X7,X12))))),s(X6,happ(s(fun(X7,X6),X11),s(X7,X13)))))) & p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X7,fun(X7,bool)),X8),s(X7,X12))),s(X7,X12))))) => p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X9),s(X6,'const.bool.RES_ABSTRACT_3'(s(fun(X7,bool),'const.quotient.respects_1'(s(fun(X7,fun(X7,bool)),X8))),s(fun(X7,X6),X10),s(X7,X12))))),s(X6,happ(s(fun(X7,X6),X11),s(X7,X13)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10,X11,X12,X13] : ((p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X9),s(X6,happ(s(fun(X7,X6),X10),s(X7,X12))))),s(X6,happ(s(fun(X7,X6),X11),s(X7,X13)))))) & p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X7,fun(X7,bool)),X8),s(X7,X12))),s(X7,X12))))) => p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X9),s(X6,'const.bool.RES_ABSTRACT_3'(s(fun(X7,bool),'const.quotient.respects_1'(s(fun(X7,fun(X7,bool)),X8))),s(fun(X7,X6),X10),s(X7,X12))))),s(X6,happ(s(fun(X7,X6),X11),s(X7,X13)))))))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.quotient.EQUIV_RES_ABSTRACT_LEFT')).
+fof(f5183,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | s(bool,'F_0') = s(bool,'const.quotient.respects_2'(s(fun(sK1,fun(sK1,bool)),sK2),s(sK1,sK6)))),
+  inference(superposition,[],[f5182,f650])).
+fof(f650,plain,(
+  ( ! [X17,X18,X16] : (s(bool,'T_0') = s(bool,happ(s(fun(X16,bool),'const.quotient.respects_1'(s(fun(X16,fun(X16,bool)),X17))),s(X16,X18))) | s(bool,'F_0') = s(bool,'const.quotient.respects_2'(s(fun(X16,fun(X16,bool)),X17),s(X16,X18)))) )),
+  inference(superposition,[],[f105,f79])).
+fof(f105,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,'const.quotient.respects_2'(s(fun(X1,fun(X1,X0)),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),'const.quotient.respects_1'(s(fun(X1,fun(X1,X0)),X2))),s(X1,X3)))) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1,X2,X3] : s(X0,'const.quotient.respects_2'(s(fun(X1,fun(X1,X0)),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),'const.quotient.respects_1'(s(fun(X1,fun(X1,X0)),X2))),s(X1,X3)))),
+  inference(flattening,[],[f41])).
+fof(f41,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X0,'const.quotient.respects_2'(s(fun(X1,fun(X1,X0)),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),'const.quotient.respects_1'(s(fun(X1,fun(X1,X0)),X2))),s(X1,X3)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6,X7] : ! [X20,X21] : s(X6,'const.quotient.respects_2'(s(fun(X7,fun(X7,X6)),X20),s(X7,X21))) = s(X6,happ(s(fun(X7,X6),'const.quotient.respects_1'(s(fun(X7,fun(X7,X6)),X20))),s(X7,X21)))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','ARITY_1_2_const.quotient.respects')).
+fof(f5182,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun(sK1,bool),'const.quotient.respects_1'(s(fun(sK1,fun(sK1,bool)),sK2))),s(sK1,sK6)))),
+  inference(subsumption_resolution,[],[f5155,f73])).
+fof(f73,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),sK3),s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK6))))),s(sK0,happ(s(fun(sK1,sK0),sK5),s(sK1,sK7))))))),
+  inference(cnf_transformation,[],[f57])).
+fof(f5155,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),sK3),s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK6))))),s(sK0,happ(s(fun(sK1,sK0),sK5),s(sK1,sK7)))))) | s(bool,'F_0') = s(bool,happ(s(fun(sK1,bool),'const.quotient.respects_1'(s(fun(sK1,fun(sK1,bool)),sK2))),s(sK1,sK6)))),
+  inference(superposition,[],[f75,f1793])).
+fof(f1793,plain,(
+  ( ! [X14,X12,X15,X13,X16] : (s(X12,happ(s(fun(X13,X12),X14),s(X13,X15))) = s(X12,'const.bool.RES_ABSTRACT_3'(s(fun(X13,bool),X16),s(fun(X13,X12),X14),s(X13,X15))) | s(bool,'F_0') = s(bool,happ(s(fun(X13,bool),X16),s(X13,X15)))) )),
+  inference(resolution,[],[f1577,f85])).
+fof(f85,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f60])).
+fof(f1577,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,happ(s(fun(X1,bool),X2),s(X1,X4)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))) = s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),X2),s(fun(X1,X0),X3),s(X1,X4)))) )),
+  inference(forward_demodulation,[],[f108,f103])).
+fof(f103,plain,(
+  ( ! [X2,X0,X1] : (s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0,X1,X2] : s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X7] : ! [X15,X16] : s(bool,happ(s(fun(X7,bool),X15),s(X7,X16))) = s(bool,'const.bool.IN_2'(s(X7,X16),s(fun(X7,bool),X15)))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.pred_set.SPECIFICATION')).
+fof(f108,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))) = s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),X2),s(fun(X1,X0),X3),s(X1,X4))) | ~p(s(bool,'const.bool.IN_2'(s(X1,X4),s(fun(X1,bool),X2))))) )),
+  inference(cnf_transformation,[],[f54])).
+fof(f54,plain,(
+  ! [X0,X1,X2,X3,X4] : (~p(s(bool,'const.bool.IN_2'(s(X1,X4),s(fun(X1,bool),X2)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))) = s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),X2),s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(ennf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1,X2,X3,X4] : (p(s(bool,'const.bool.IN_2'(s(X1,X4),s(fun(X1,bool),X2)))) => s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))) = s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),X2),s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : (p(s(bool,'const.bool.IN_2'(s(X1,X4),s(fun(X1,bool),X2)))) => s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))) = s(X0,'const.bool.RES_ABSTRACT_3'(s(fun(X1,bool),X2),s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6,X7] : ! [X18,X19,X16] : (p(s(bool,'const.bool.IN_2'(s(X7,X16),s(fun(X7,bool),X18)))) => s(X6,happ(s(fun(X7,X6),X19),s(X7,X16))) = s(X6,'const.bool.RES_ABSTRACT_3'(s(fun(X7,bool),X18),s(fun(X7,X6),X19),s(X7,X16))))),
+  file('thm.quotient.EQUIV_RES_ABSTRACT_LEFT','thm.bool.RES_ABSTRACT_DEF|split|0')).
+fof(f75,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),sK3),s(sK0,'const.bool.RES_ABSTRACT_3'(s(fun(sK1,bool),'const.quotient.respects_1'(s(fun(sK1,fun(sK1,bool)),sK2))),s(fun(sK1,sK0),sK4),s(sK1,sK6))))),s(sK0,happ(s(fun(sK1,sK0),sK5),s(sK1,sK7))))))),
+  inference(cnf_transformation,[],[f57])).
+% SZS output end Proof for thm.quotient
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 85
+% Passive clauses: 788
+% Generated clauses: 5172
+% Final active clauses: 77
+% Final passive clauses: 624
+% Input formulas: 21
+% Initial clauses: 37
+% 
+% Duplicate literals: 330
+% Trivial inequalities: 60
+% Fw subsumption resolutions: 543
+% Fw demodulations: 793
+% Bw demodulations: 7
+% 
+% Simple tautologies: 152
+% Equational tautologies: 17
+% Forward subsumptions: 2360
+% 
+% Binary resolution: 111
+% Forward superposition: 1982
+% Backward superposition: 1182
+% Self superposition: 54
+% Equality factoring: 28
+% Equality resolution: 11
+% 
+% Split clauses: 97
+% Split components: 200
+% SAT solver clauses: 209
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 27
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 97
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 202
+% TWLsolver calls for satisfiability: 72
+% 
+% Memory used [KB]: 3454
+% Time elapsed: 0.136 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.138 s

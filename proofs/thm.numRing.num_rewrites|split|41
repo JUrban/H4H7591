@@ -1,0 +1,124 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.numRing
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numRing
+% SZS output start Proof for thm.numRing
+fof(f553,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f552,f176,f272,f185,f275,f260,f274,f281])).
+fof(f281,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0)))) ) | $spl14),
+  inference(cnf_transformation,[],[f281_D])).
+fof(f281_D,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0)))) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f274,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f274_D])).
+fof(f274_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f260,plain,(
+  ( ! [X0,X1] : (p(s(bool,'F_0')) | s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f170])).
+fof(f170,plain,(
+  ! [X0,X1] : ((s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0))) | p(s(bool,'F_0'))) & (~p(s(bool,'F_0')) | s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0)))))),
+  inference(nnf_transformation,[],[f151])).
+fof(f151,plain,(
+  ! [X0,X1] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X0))) <=> p(s(bool,'F_0')))),
+  inference(rectify,[],[f72])).
+fof(f72,axiom,(
+  ! [X10,X7] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X10))) <=> p(s(bool,'F_0')))),
+  file('thm.numRing.num_rewrites|split|41','thm.numeral.numeral_eq|split|4')).
+fof(f275,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f275_D])).
+fof(f275_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f185,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f84])).
+fof(f84,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.numRing.num_rewrites|split|41',aHL_FALSITY)).
+fof(f272,plain,(
+  s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',sK1))) | $spl0),
+  inference(cnf_transformation,[],[f272_D])).
+fof(f272_D,plain,(
+  s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f176,plain,(
+  p(s(bool,'F_0')) | s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',sK1)))),
+  inference(cnf_transformation,[],[f161])).
+fof(f161,plain,(
+  (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',sK1))) | p(s(bool,'F_0'))) & (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',sK1))) | ~p(s(bool,'F_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f160])).
+fof(f160,plain,(
+  ? [X0,X1] : ((s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X1))) | p(s(bool,'F_0'))) & (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0))) != s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X1))) | ~p(s(bool,'F_0'))))),
+  inference(nnf_transformation,[],[f158])).
+fof(f158,plain,(
+  ? [X0,X1] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X1))) <~> p(s(bool,'F_0')))),
+  inference(ennf_transformation,[],[f83])).
+fof(f83,plain,(
+  ~! [X0,X1] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X1))) <=> p(s(bool,'F_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X6))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X7))) <=> p(s(bool,'F_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X6))) = s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X7))) <=> p(s(bool,'F_0')))),
+  file('thm.numRing.num_rewrites|split|41','thm.numRing.num_rewrites|split|41')).
+fof(f552,plain,(
+  $false | ($spl0 | $spl14)),
+  inference(equality_resolution,[],[f420])).
+fof(f420,plain,(
+  ( ! [X0] : (s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK0))) != s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0)))) ) | ($spl0 | $spl14)),
+  inference(superposition,[],[f281,f272])).
+% SZS output end Proof for thm.numRing
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 98
+% Generated clauses: 372
+% Final active clauses: 24
+% Final passive clauses: 59
+% Input formulas: 81
+% Initial clauses: 95
+% 
+% Trivial inequalities: 1
+% Fw demodulations: 5
+% Bw demodulations: 8
+% 
+% Equational tautologies: 1
+% Forward subsumptions: 258
+% 
+% Forward superposition: 168
+% Backward superposition: 79
+% Self superposition: 10
+% Equality resolution: 1
+% 
+% Split clauses: 14
+% Split components: 28
+% SAT solver clauses: 17
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 15
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 14
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 16
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.017 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

@@ -1,0 +1,88 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f317,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f28,f37])).
+fof(f37,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6] : ! [X5,X9] : s(bool,'const.bool.IN_2'(s(X6,X5),s(fun(X6,bool),X9))) = s(bool,happ(s(fun(X6,bool),X9),s(X6,X5)))),
+  file('thm.pred_set.IN_ABS','thm.bool.IN_DEF')).
+fof(f28,plain,(
+  s(bool,'const.bool.IN_2'(s(sK0,sK1),s(fun(sK0,bool),sK2))) != s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  s(bool,'const.bool.IN_2'(s(sK0,sK1),s(fun(sK0,bool),sK2))) != s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) != s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : ! [X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X8))) = s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X8))) = s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))),
+  file('thm.pred_set.IN_ABS','thm.pred_set.IN_ABS')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 15
+% Passive clauses: 43
+% Generated clauses: 279
+% Final active clauses: 9
+% Final passive clauses: 18
+% Input formulas: 9
+% Initial clauses: 11
+% 
+% Duplicate literals: 52
+% Trivial inequalities: 5
+% Fw subsumption resolutions: 5
+% Fw demodulations: 2
+% Bw demodulations: 1
+% 
+% Simple tautologies: 22
+% Equational tautologies: 16
+% Forward subsumptions: 126
+% 
+% Binary resolution: 5
+% Forward superposition: 68
+% Backward superposition: 64
+% Self superposition: 27
+% Equality factoring: 28
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 8
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 2
+% 
+% Sat splits: 5
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 8
+% TWLsolver calls for satisfiability: 5
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.017 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.019 s

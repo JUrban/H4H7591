@@ -1,0 +1,124 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.prelim
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prelim
+% SZS output start Proof for thm.prelim
+fof(f49,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f48,f26,f41,f39,f45,f25,f40,f38])).
+fof(f38,plain,(
+  s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) | $spl0),
+  inference(cnf_transformation,[],[f38_D])).
+fof(f38_D,plain,(
+  s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f40,plain,(
+  s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK1) | $spl2),
+  inference(cnf_transformation,[],[f40_D])).
+fof(f40_D,plain,(
+  s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK1) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f25,plain,(
+  s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK1) | s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) | s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK1)) & (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) | s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK1))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : ((s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X1))) | s('type.prelim.ordering',X0) = s('type.prelim.ordering',X1)) & (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X1))) | s('type.prelim.ordering',X0) != s('type.prelim.ordering',X1)))),
+  inference(nnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ? [X0,X1] : (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X1))) <~> s('type.prelim.ordering',X0) = s('type.prelim.ordering',X1))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1] : (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X1))) <=> s('type.prelim.ordering',X0) = s('type.prelim.ordering',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X6))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X7))) <=> s('type.prelim.ordering',X6) = s('type.prelim.ordering',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X6))) = s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X7))) <=> s('type.prelim.ordering',X6) = s('type.prelim.ordering',X7))),
+  file('thm.prelim.ordering2num_|49||49|','thm.prelim.ordering2num_|49||49|')).
+fof(f45,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f44,f41])).
+fof(f44,plain,(
+  s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK1) | $spl0),
+  inference(forward_demodulation,[],[f43,f29])).
+fof(f29,plain,(
+  ( ! [X0] : (s('type.prelim.ordering',X0) = s('type.prelim.ordering','const.prelim.num2ordering_1'(s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0)))))) )),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0] : s('type.prelim.ordering',X0) = s('type.prelim.ordering','const.prelim.num2ordering_1'(s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X0)))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : s('type.prelim.ordering',X6) = s('type.prelim.ordering','const.prelim.num2ordering_1'(s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',X6)))))),
+  file('thm.prelim.ordering2num_|49||49|','thm.prelim.ordering_BIJ|split|0')).
+fof(f43,plain,(
+  s('type.prelim.ordering',sK1) = s('type.prelim.ordering','const.prelim.num2ordering_1'(s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))))) | $spl0),
+  inference(superposition,[],[f29,f38])).
+fof(f39,plain,(
+  s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) | $spl1),
+  inference(cnf_transformation,[],[f39_D])).
+fof(f39_D,plain,(
+  s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f41,plain,(
+  s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK1) | $spl3),
+  inference(cnf_transformation,[],[f41_D])).
+fof(f41_D,plain,(
+  s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK1) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f26,plain,(
+  s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK1) | s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK1)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f48,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f47])).
+fof(f47,plain,(
+  s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) != s('type.num.num','const.prelim.ordering2num_1'(s('type.prelim.ordering',sK0))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f39,f40])).
+% SZS output end Proof for thm.prelim
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 6
+% Passive clauses: 13
+% Generated clauses: 24
+% Final active clauses: 4
+% Final passive clauses: 6
+% Input formulas: 8
+% Initial clauses: 13
+% 
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% Fw demodulations: 2
+% 
+% Simple tautologies: 2
+% Forward subsumptions: 2
+% 
+% Forward superposition: 1
+% Backward superposition: 1
+% Self superposition: 1
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 6
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 4
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 2
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 4
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

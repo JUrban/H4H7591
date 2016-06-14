@@ -1,0 +1,128 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.measure
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.measure
+% SZS output start Proof for thm.measure
+fof(f6130,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f6078,f80])).
+fof(f80,plain,(
+  ( ! [X2,X0,X1] : (s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,sK2(X2,X1,X0)),s(X1,sK3(X2,X1,X0))))) )),
+  inference(cnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ! [X0,X1,X2] : s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,sK2(X2,X1,X0)),s(X1,sK3(X2,X1,X0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2,sK3])],[f33])).
+fof(f33,plain,(
+  ! [X0,X1,X2] : ? [X3,X4] : s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,X3),s(X1,X4)))),
+  inference(flattening,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1] : ! [X2] : ? [X3,X4] : s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,X3),s(X1,X4)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X6,X11] : ! [X9] : ? [X13,X14] : s('type.pair.prod'(X6,X11),X9) = s('type.pair.prod'(X6,X11),'const.pair.,_2'(s(X6,X13),s(X11,X14)))),
+  file('thm.measure.SPACE','thm.pair.ABS_PAIR_THM')).
+fof(f6078,plain,(
+  s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1) != s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),sK2(sK1,fun(fun(sK0,bool),bool),fun(sK0,bool))),s(fun(fun(sK0,bool),bool),sK3(sK1,fun(fun(sK0,bool),bool),fun(sK0,bool)))))),
+  inference(backward_demodulation,[],[f2075,f4009])).
+fof(f4009,plain,(
+  s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1) != s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),sK2(sK1,fun(fun(sK0,bool),bool),fun(sK0,bool))),s(fun(fun(sK0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1)))))),
+  inference(backward_demodulation,[],[f1138,f56])).
+fof(f56,plain,(
+  s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1) != s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1))),s(fun(fun(sK0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1)))))),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1) != s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1))),s(fun(fun(sK0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f38])).
+fof(f38,plain,(
+  ? [X0,X1] : s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1) != s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1))),s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1)))))),
+  inference(ennf_transformation,[],[f19])).
+fof(f19,plain,(
+  ~! [X0,X1] : s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1) = s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1))),s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1)))))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ~! [X0] : ! [X1] : s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1) = s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1))),s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7) = s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7))),s(fun(fun(X6,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7) = s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7))),s(fun(fun(X6,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),X7)))))),
+  file('thm.measure.SPACE','thm.measure.SPACE')).
+fof(f1138,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),sK2(X1,fun(fun(X0,bool),bool),fun(X0,bool))) = s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1)))) )),
+  inference(superposition,[],[f78,f80])).
+fof(f78,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1,X2] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : ! [X1,X2] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6] : ! [X9,X10] : s(fun(X6,bool),X9) = s(fun(X6,bool),'const.measure.space_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),X9),s(fun(fun(X6,bool),bool),X10)))))),
+  file('thm.measure.SPACE','thm.measure.space_def')).
+fof(f2075,plain,(
+  ( ! [X0,X1] : (s(fun(fun(X0,bool),bool),sK3(X1,fun(fun(X0,bool),bool),fun(X0,bool))) = s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),X1)))) )),
+  inference(superposition,[],[f79,f80])).
+fof(f79,plain,(
+  ( ! [X2,X0,X1] : (s(fun(fun(X0,bool),bool),X2) = s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))) )),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0,X1,X2] : s(fun(fun(X0,bool),bool),X2) = s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))),
+  inference(flattening,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : ! [X1,X2] : s(fun(fun(X0,bool),bool),X2) = s(fun(fun(X0,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : ! [X9,X10] : s(fun(fun(X6,bool),bool),X10) = s(fun(fun(X6,bool),bool),'const.measure.subsets_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),X9),s(fun(fun(X6,bool),bool),X10)))))),
+  file('thm.measure.SPACE','thm.measure.subsets_def')).
+% SZS output end Proof for thm.measure
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 61
+% Passive clauses: 1105
+% Generated clauses: 5937
+% Final active clauses: 56
+% Final passive clauses: 1012
+% Input formulas: 16
+% Initial clauses: 29
+% 
+% Duplicate literals: 437
+% Trivial inequalities: 68
+% Fw subsumption resolutions: 321
+% Fw demodulations: 343
+% Bw demodulations: 4
+% 
+% Simple tautologies: 116
+% Equational tautologies: 29
+% Forward subsumptions: 3229
+% Fw demodulations to eq. taut.: 5
+% 
+% Binary resolution: 5
+% Forward superposition: 2319
+% Backward superposition: 2124
+% Self superposition: 134
+% Equality factoring: 64
+% Equality resolution: 14
+% 
+% Split clauses: 166
+% Split components: 343
+% SAT solver clauses: 261
+% SAT solver unit clauses: 26
+% SAT solver binary clauses: 106
+% 
+% Sat splits: 166
+% 
+% TWLsolver clauses: 261
+% TWLsolver calls for satisfiability: 31
+% 
+% Memory used [KB]: 5245
+% Time elapsed: 0.206 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.208 s

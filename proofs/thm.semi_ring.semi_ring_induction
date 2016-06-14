@@ -1,0 +1,142 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.semi_ring
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.semi_ring
+% SZS output start Proof for thm.semi_ring
+fof(f7967,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f7953,f235,f334])).
+fof(f334,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f334_D])).
+fof(f334_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f235,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.semi_ring.semi_ring_induction',aHL_FALSITY)).
+fof(f7953,plain,(
+  $false | $spl5),
+  inference(subsumption_resolution,[],[f7936,f334])).
+fof(f7936,plain,(
+  p(s(bool,'F_0'))),
+  inference(superposition,[],[f7450,f342])).
+fof(f342,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),sK2)))),
+  inference(resolution,[],[f232,f242])).
+fof(f242,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f76])).
+fof(f76,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f75])).
+fof(f75,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X15] : (s(bool,'F_0') = s(bool,X15) <=> ~p(s(bool,X15)))),
+  file('thm.semi_ring.semi_ring_induction','thm.bool.EQ_CLAUSES|split|2')).
+fof(f232,plain,(
+  ~p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),sK2))))),
+  inference(cnf_transformation,[],[f196])).
+fof(f196,plain,(
+  ! [X3,X4,X5,X6] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),'const.semi_ring.recordtype|46|semi_ring_4'(s(sK0,X3),s(sK0,X4),s(fun(sK0,fun(sK0,sK0)),X5),s(fun(sK0,fun(sK0,sK0)),X6)))))) & ~p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f195])).
+fof(f195,plain,(
+  ? [X0,X1] : (! [X3,X4,X5,X6] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X3),s(X0,X4),s(fun(X0,fun(X0,X0)),X5),s(fun(X0,fun(X0,X0)),X6)))))) & ? [X2] : ~p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),X2)))))),
+  inference(rectify,[],[f188])).
+fof(f188,plain,(
+  ? [X0,X1] : (! [X2,X3,X4,X5] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X2),s(X0,X3),s(fun(X0,fun(X0,X0)),X4),s(fun(X0,fun(X0,X0)),X5)))))) & ? [X6] : ~p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),X6)))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1] : (! [X2,X3,X4,X5] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X2),s(X0,X3),s(fun(X0,fun(X0,X0)),X4),s(fun(X0,fun(X0,X0)),X5)))))) => ! [X6] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),X6)))))),
+  inference(flattening,[],[f70])).
+fof(f70,plain,(
+  ~! [X0] : ! [X1] : (! [X2,X3,X4,X5] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X2),s(X0,X3),s(fun(X0,fun(X0,X0)),X4),s(fun(X0,fun(X0,X0)),X5)))))) => ! [X6] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X0),bool),X1),s('type.semi_ring.semi_ring'(X0),X6)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (! [X8,X9,X10,X11] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X6),bool),X7),s('type.semi_ring.semi_ring'(X6),'const.semi_ring.recordtype|46|semi_ring_4'(s(X6,X8),s(X6,X9),s(fun(X6,fun(X6,X6)),X10),s(fun(X6,fun(X6,X6)),X11)))))) => ! [X12] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X6),bool),X7),s('type.semi_ring.semi_ring'(X6),X12)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (! [X8,X9,X10,X11] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X6),bool),X7),s('type.semi_ring.semi_ring'(X6),'const.semi_ring.recordtype|46|semi_ring_4'(s(X6,X8),s(X6,X9),s(fun(X6,fun(X6,X6)),X10),s(fun(X6,fun(X6,X6)),X11)))))) => ! [X12] : p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(X6),bool),X7),s('type.semi_ring.semi_ring'(X6),X12)))))),
+  file('thm.semi_ring.semi_ring_induction','thm.semi_ring.semi_ring_induction')).
+fof(f7450,plain,(
+  ( ! [X4] : (p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),X4))))) )),
+  inference(superposition,[],[f231,f268])).
+fof(f268,plain,(
+  ( ! [X0,X1] : (s('type.semi_ring.semi_ring'(X0),X1) = s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,sK13(X1,X0)),s(X0,sK14(X1,X0)),s(fun(X0,fun(X0,X0)),sK15(X1,X0)),s(fun(X0,fun(X0,X0)),sK16(X1,X0))))) )),
+  inference(cnf_transformation,[],[f220])).
+fof(f220,plain,(
+  ! [X0,X1] : s('type.semi_ring.semi_ring'(X0),X1) = s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,sK13(X1,X0)),s(X0,sK14(X1,X0)),s(fun(X0,fun(X0,X0)),sK15(X1,X0)),s(fun(X0,fun(X0,X0)),sK16(X1,X0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13,sK14,sK15,sK16])],[f92])).
+fof(f92,plain,(
+  ! [X0,X1] : ? [X2,X3,X4,X5] : s('type.semi_ring.semi_ring'(X0),X1) = s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X2),s(X0,X3),s(fun(X0,fun(X0,X0)),X4),s(fun(X0,fun(X0,X0)),X5)))),
+  inference(flattening,[],[f91])).
+fof(f91,plain,(
+  ! [X0] : ! [X1] : ? [X2,X3,X4,X5] : s('type.semi_ring.semi_ring'(X0),X1) = s('type.semi_ring.semi_ring'(X0),'const.semi_ring.recordtype|46|semi_ring_4'(s(X0,X2),s(X0,X3),s(fun(X0,fun(X0,X0)),X4),s(fun(X0,fun(X0,X0)),X5)))),
+  inference(rectify,[],[f34])).
+fof(f34,axiom,(
+  ! [X6] : ! [X41] : ? [X8,X9,X10,X11] : s('type.semi_ring.semi_ring'(X6),X41) = s('type.semi_ring.semi_ring'(X6),'const.semi_ring.recordtype|46|semi_ring_4'(s(X6,X8),s(X6,X9),s(fun(X6,fun(X6,X6)),X10),s(fun(X6,fun(X6,X6)),X11)))),
+  file('thm.semi_ring.semi_ring_induction','thm.semi_ring.semi_ring_nchotomy')).
+fof(f231,plain,(
+  ( ! [X6,X4,X5,X3] : (p(s(bool,happ(s(fun('type.semi_ring.semi_ring'(sK0),bool),sK1),s('type.semi_ring.semi_ring'(sK0),'const.semi_ring.recordtype|46|semi_ring_4'(s(sK0,X3),s(sK0,X4),s(fun(sK0,fun(sK0,sK0)),X5),s(fun(sK0,fun(sK0,sK0)),X6))))))) )),
+  inference(cnf_transformation,[],[f196])).
+% SZS output end Proof for thm.semi_ring
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 87
+% Passive clauses: 1515
+% Generated clauses: 7608
+% Final active clauses: 79
+% Final passive clauses: 1344
+% Input formulas: 68
+% Initial clauses: 97
+% 
+% Duplicate literals: 315
+% Trivial inequalities: 122
+% Fw subsumption resolutions: 605
+% Fw demodulations: 873
+% Bw demodulations: 7
+% 
+% Simple tautologies: 181
+% Equational tautologies: 34
+% Forward subsumptions: 3859
+% 
+% Binary resolution: 208
+% Factoring: 1
+% Forward superposition: 2972
+% Backward superposition: 2201
+% Self superposition: 98
+% Equality factoring: 60
+% Equality resolution: 16
+% 
+% Split clauses: 84
+% Split components: 174
+% SAT solver clauses: 176
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 71
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 84
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 169
+% TWLsolver calls for satisfiability: 58
+% 
+% Memory used [KB]: 5756
+% Time elapsed: 0.147 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.149 s

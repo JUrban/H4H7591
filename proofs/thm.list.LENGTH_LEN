@@ -1,0 +1,100 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f210,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f207])).
+fof(f207,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1)))),
+  inference(superposition,[],[f26,f204])).
+fof(f204,plain,(
+  ( ! [X4,X3] : (s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X3),X4))) = s('type.num.num','const.list.LEN_2'(s('type.list.list'(X3),X4),s('type.num.num','const.num.|48|_0')))) )),
+  inference(superposition,[],[f34,f30])).
+fof(f30,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8] : s('type.num.num',X8) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X8),s('type.num.num','const.num.|48|_0')))),
+  file('thm.list.LENGTH_LEN','thm.arithmetic.ADD_|48|')).
+fof(f34,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num',X2))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.num.num',X2)))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1,X2] : s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num',X2))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.num.num',X2)))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ! [X0] : ! [X1,X2] : s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num',X2))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.num.num',X2)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : ! [X7,X10] : s('type.num.num','const.list.LEN_2'(s('type.list.list'(X6),X7),s('type.num.num',X10))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))),s('type.num.num',X10)))),
+  file('thm.list.LENGTH_LEN','thm.list.LEN_LENGTH_LEM')).
+fof(f26,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))) != s('type.num.num','const.list.LEN_2'(s('type.list.list'(sK0),sK1),s('type.num.num','const.num.|48|_0')))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))) != s('type.num.num','const.list.LEN_2'(s('type.list.list'(sK0),sK1),s('type.num.num','const.num.|48|_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) != s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num','const.num.|48|_0')))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) = s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num','const.num.|48|_0')))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : ! [X1] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) = s('type.num.num','const.list.LEN_2'(s('type.list.list'(X0),X1),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))) = s('type.num.num','const.list.LEN_2'(s('type.list.list'(X6),X7),s('type.num.num','const.num.|48|_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))) = s('type.num.num','const.list.LEN_2'(s('type.list.list'(X6),X7),s('type.num.num','const.num.|48|_0')))),
+  file('thm.list.LENGTH_LEN','thm.list.LENGTH_LEN')).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 13
+% Passive clauses: 25
+% Generated clauses: 172
+% Final active clauses: 11
+% Final passive clauses: 6
+% Input formulas: 9
+% Initial clauses: 10
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 4
+% 
+% Simple tautologies: 16
+% Equational tautologies: 15
+% Forward subsumptions: 73
+% 
+% Binary resolution: 4
+% Forward superposition: 28
+% Backward superposition: 35
+% Self superposition: 26
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.016 s

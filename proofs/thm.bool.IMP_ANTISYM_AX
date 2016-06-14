@@ -1,0 +1,197 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f132,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f131,f32,f53,f51,f81,f31,f50,f52,f120,f116,f65,f73,f71,f38,f56,f111,f70])).
+fof(f70,plain,(
+  s(bool,'T_0') != s(bool,sK1) | $spl13),
+  inference(cnf_transformation,[],[f70_D])).
+fof(f70_D,plain,(
+  s(bool,'T_0') != s(bool,sK1) <=> ~$spl13),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl13])])).
+fof(f111,plain,(
+  s(bool,'T_0') != s(bool,sK1) | $spl15),
+  inference(backward_demodulation,[],[f87,f33])).
+fof(f33,plain,(
+  s(bool,sK0) != s(bool,sK1)),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  (~p(s(bool,sK0)) | p(s(bool,sK1))) & (~p(s(bool,sK1)) | p(s(bool,sK0))) & s(bool,sK0) != s(bool,sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1] : ((~p(s(bool,X0)) | p(s(bool,X1))) & (~p(s(bool,X1)) | p(s(bool,X0))) & s(bool,X0) != s(bool,X1))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ? [X0,X1] : ((~p(s(bool,X0)) | p(s(bool,X1))) & ((~p(s(bool,X1)) | p(s(bool,X0))) & s(bool,X0) != s(bool,X1)))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ((p(s(bool,X6)) => p(s(bool,X7))) => ((p(s(bool,X7)) => p(s(bool,X6))) => s(bool,X6) = s(bool,X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ((p(s(bool,X6)) => p(s(bool,X7))) => ((p(s(bool,X7)) => p(s(bool,X6))) => s(bool,X6) = s(bool,X7)))),
+  file('thm.bool.IMP_ANTISYM_AX','thm.bool.IMP_ANTISYM_AX')).
+fof(f87,plain,(
+  s(bool,'T_0') = s(bool,sK0) | $spl15),
+  inference(trivial_inequality_removal,[],[f86])).
+fof(f86,plain,(
+  s(bool,'F_0') != s(bool,'F_0') | s(bool,'T_0') = s(bool,sK0) | $spl15),
+  inference(superposition,[],[f73,f39])).
+fof(f39,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.bool.IMP_ANTISYM_AX',aHL_BOOL_CASES)).
+fof(f56,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f56_D])).
+fof(f56_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f38,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.IMP_ANTISYM_AX',aHL_FALSITY)).
+fof(f71,plain,(
+  s(bool,'T_0') = s(bool,sK1) | $spl12),
+  inference(cnf_transformation,[],[f71_D])).
+fof(f71_D,plain,(
+  s(bool,'T_0') = s(bool,sK1) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f73,plain,(
+  s(bool,'F_0') != s(bool,sK0) | $spl15),
+  inference(cnf_transformation,[],[f73_D])).
+fof(f73_D,plain,(
+  s(bool,'F_0') != s(bool,sK0) <=> ~$spl15),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl15])])).
+fof(f65,plain,(
+  s(bool,'F_0') != s(bool,sK0) | s(bool,'T_0') = s(bool,sK1)),
+  inference(superposition,[],[f33,f39])).
+fof(f116,plain,(
+  $false | ($spl3 | $spl15)),
+  inference(subsumption_resolution,[],[f112,f34])).
+fof(f34,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f10])).
+fof(f10,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.IMP_ANTISYM_AX','thm.bool.TRUTH')).
+fof(f112,plain,(
+  ~p(s(bool,'T_0')) | ($spl3 | $spl15)),
+  inference(backward_demodulation,[],[f87,f52])).
+fof(f120,plain,(
+  $false | ($spl0 | $spl7 | $spl13)),
+  inference(subsumption_resolution,[],[f119,f70])).
+fof(f119,plain,(
+  s(bool,'T_0') = s(bool,sK1) | ($spl0 | $spl7)),
+  inference(subsumption_resolution,[],[f118,f56])).
+fof(f118,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,sK1) | $spl0),
+  inference(superposition,[],[f50,f39])).
+fof(f52,plain,(
+  ~p(s(bool,sK0)) | $spl3),
+  inference(cnf_transformation,[],[f52_D])).
+fof(f52_D,plain,(
+  ~p(s(bool,sK0)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f50,plain,(
+  p(s(bool,sK1)) | $spl0),
+  inference(cnf_transformation,[],[f50_D])).
+fof(f50_D,plain,(
+  p(s(bool,sK1)) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f31,plain,(
+  p(s(bool,sK1)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f23])).
+fof(f81,plain,(
+  $false | ($spl1 | $spl12)),
+  inference(subsumption_resolution,[],[f78,f34])).
+fof(f78,plain,(
+  ~p(s(bool,'T_0')) | ($spl1 | $spl12)),
+  inference(backward_demodulation,[],[f71,f51])).
+fof(f51,plain,(
+  ~p(s(bool,sK1)) | $spl1),
+  inference(cnf_transformation,[],[f51_D])).
+fof(f51_D,plain,(
+  ~p(s(bool,sK1)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f53,plain,(
+  p(s(bool,sK0)) | $spl2),
+  inference(cnf_transformation,[],[f53_D])).
+fof(f53_D,plain,(
+  p(s(bool,sK0)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f32,plain,(
+  p(s(bool,sK0)) | ~p(s(bool,sK1))),
+  inference(cnf_transformation,[],[f23])).
+fof(f131,plain,(
+  $false | ($spl2 | $spl7 | $spl14)),
+  inference(subsumption_resolution,[],[f129,f56])).
+fof(f129,plain,(
+  p(s(bool,'F_0')) | ($spl2 | $spl14)),
+  inference(backward_demodulation,[],[f72,f53])).
+fof(f72,plain,(
+  s(bool,'F_0') = s(bool,sK0) | $spl14),
+  inference(cnf_transformation,[],[f72_D])).
+fof(f72_D,plain,(
+  s(bool,'F_0') = s(bool,sK0) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 40
+% Generated clauses: 109
+% Final active clauses: 8
+% Final passive clauses: 8
+% Input formulas: 9
+% Initial clauses: 18
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 9
+% Fw demodulations: 1
+% Bw demodulations: 12
+% 
+% Simple tautologies: 5
+% Equational tautologies: 1
+% Forward subsumptions: 31
+% 
+% Forward superposition: 19
+% Backward superposition: 16
+% Self superposition: 4
+% Equality factoring: 2
+% 
+% Split clauses: 10
+% Split components: 20
+% SAT solver clauses: 23
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 16
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 10
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 21
+% TWLsolver calls for satisfiability: 11
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.014 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.016 s

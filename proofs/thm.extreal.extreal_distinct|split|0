@@ -1,0 +1,205 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.extreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.extreal
+% SZS output start Proof for thm.extreal
+fof(f2470,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2442,f381,f385,f2403,f389,f387,f380,f388,f390,f391,f261,f384,f410])).
+fof(f410,plain,(
+  $false | ($spl1 | $spl8)),
+  inference(equality_resolution,[],[f406])).
+fof(f406,plain,(
+  ( ! [X0] : (s(bool,'F_0') != s(bool,X0)) ) | ($spl1 | $spl8)),
+  inference(resolution,[],[f389,f384])).
+fof(f384,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f384_D])).
+fof(f384_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f261,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.extreal.extreal_distinct|split|0',aHL_FALSITY)).
+fof(f391,plain,(
+  $false | ($spl1 | $spl6)),
+  inference(resolution,[],[f388,f384])).
+fof(f390,plain,(
+  ( ! [X2,X3] : (~p(s(bool,X3)) | s(bool,X2) != s(bool,X3) | p(s(bool,X2))) ) | $spl10),
+  inference(cnf_transformation,[],[f390_D])).
+fof(f390_D,plain,(
+  ( ! [X2,X3] : (~p(s(bool,X3)) | s(bool,X2) != s(bool,X3) | p(s(bool,X2))) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f388,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl6),
+  inference(cnf_transformation,[],[f388_D])).
+fof(f388_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f380,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,X2)) | p(s(bool,X0)) | ~p(s(bool,X1)) | s(bool,X0) != s(bool,X1)) )),
+  inference(duplicate_literal_removal,[],[f371])).
+fof(f371,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,X2)) | p(s(bool,X0)) | ~p(s(bool,X1)) | ~p(s(bool,X1)) | s(bool,X0) != s(bool,X1)) )),
+  inference(cnf_transformation,[],[f250])).
+fof(f250,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (~p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | (((~p(s(bool,X0)) & ~p(s(bool,X2))) | p(s(bool,X1)) | p(s(bool,X3))) & ((~p(s(bool,X1)) & ~p(s(bool,X3))) | p(s(bool,X0)) | p(s(bool,X2)))))),
+  inference(flattening,[],[f249])).
+fof(f249,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (~p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | (((~p(s(bool,X0)) & ~p(s(bool,X2))) | (p(s(bool,X1)) | p(s(bool,X3)))) & ((~p(s(bool,X1)) & ~p(s(bool,X3))) | (p(s(bool,X0)) | p(s(bool,X2))))))),
+  inference(nnf_transformation,[],[f190])).
+fof(f190,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (~p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | ((p(s(bool,X0)) | p(s(bool,X2))) <=> (p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(flattening,[],[f189])).
+fof(f189,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) != s(bool,X1) | (~p(s(bool,X1)) & s(bool,X2) != s(bool,X3))) | ((p(s(bool,X0)) | p(s(bool,X2))) <=> (p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(ennf_transformation,[],[f166])).
+fof(f166,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) = s(bool,X1) & (~p(s(bool,X1)) => s(bool,X2) = s(bool,X3))) => ((p(s(bool,X0)) | p(s(bool,X2))) <=> (p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(flattening,[],[f165])).
+fof(f165,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) = s(bool,X1) & (~p(s(bool,X1)) => s(bool,X2) = s(bool,X3))) => ((p(s(bool,X0)) | p(s(bool,X2))) <=> (p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(rectify,[],[f53])).
+fof(f53,axiom,(
+  ! [X26,X41,X42,X43] : ((s(bool,X26) = s(bool,X41) & (~p(s(bool,X41)) => s(bool,X42) = s(bool,X43))) => ((p(s(bool,X26)) | p(s(bool,X42))) <=> (p(s(bool,X41)) | p(s(bool,X43)))))),
+  file('thm.extreal.extreal_distinct|split|0','thm.bool.LEFT_OR_CONG')).
+fof(f387,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) | $spl4),
+  inference(cnf_transformation,[],[f387_D])).
+fof(f387_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f389,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | s(bool,X0) != s(bool,X1)) ) | $spl8),
+  inference(cnf_transformation,[],[f389_D])).
+fof(f389_D,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | s(bool,X0) != s(bool,X1)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f2403,plain,(
+  ( ! [X78,X81,X79] : (s(bool,X79) != s(bool,X81) | ~p(s(bool,X78)) | p(s(bool,X81))) ) | $spl10),
+  inference(forward_demodulation,[],[f2354,f1414])).
+fof(f1414,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X2) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))) )),
+  inference(forward_demodulation,[],[f324,f252])).
+fof(f252,plain,(
+  s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.PosInf_0')),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.PosInf_0')),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.PosInf_0')),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.PosInf_0')),
+  file('thm.extreal.extreal_distinct|split|0','thm.extreal.extreal_distinct|split|0')).
+fof(f324,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X2) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.PosInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))) )),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1,X2,X3] : s(X0,X2) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.PosInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))),
+  inference(flattening,[],[f128])).
+fof(f128,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,X2) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.PosInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X16] : ! [X30,X31,X18] : s(X16,X31) = s(X16,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.PosInf_0'),s(X16,X30),s(X16,X31),s(fun('type.realax.real',X16),X18)))),
+  file('thm.extreal.extreal_distinct|split|0','thm.extreal.extreal_case_def|split|1')).
+fof(f2354,plain,(
+  ( ! [X80,X78,X81,X79] : (~p(s(bool,X78)) | s(bool,X81) != s(bool,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(bool,X78),s(bool,X79),s(fun('type.realax.real',bool),X80))) | p(s(bool,X81))) ) | $spl10),
+  inference(superposition,[],[f390,f325])).
+fof(f325,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X1) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))) )),
+  inference(cnf_transformation,[],[f131])).
+fof(f131,plain,(
+  ! [X0,X1,X2,X3] : s(X0,X1) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))),
+  inference(flattening,[],[f130])).
+fof(f130,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,X1) = s(X0,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(X0,X1),s(X0,X2),s(fun('type.realax.real',X0),X3)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X16] : ! [X30,X31,X18] : s(X16,X30) = s(X16,'const.extreal.extreal_CASE_4'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(X16,X30),s(X16,X31),s(fun('type.realax.real',X16),X18)))),
+  file('thm.extreal.extreal_distinct|split|0','thm.extreal.extreal_case_def|split|0')).
+fof(f385,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f385_D])).
+fof(f385_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f381,plain,(
+  p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f298])).
+fof(f298,plain,(
+  ( ! [X0,X1] : (p(s(bool,'T_0')) | s(X0,X1) != s(X0,X1)) )),
+  inference(cnf_transformation,[],[f209])).
+fof(f209,plain,(
+  ! [X0,X1] : ((s(X0,X1) != s(X0,X1) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | s(X0,X1) = s(X0,X1)))),
+  inference(nnf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f103])).
+fof(f103,plain,(
+  ! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f41])).
+fof(f41,axiom,(
+  ! [X16] : ! [X28] : (s(X16,X28) = s(X16,X28) <=> p(s(bool,'T_0')))),
+  file('thm.extreal.extreal_distinct|split|0','thm.bool.REFL_CLAUSE')).
+fof(f2442,plain,(
+  $false | ($spl2 | $spl4)),
+  inference(resolution,[],[f387,f385])).
+% SZS output end Proof for thm.extreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 61
+% Passive clauses: 393
+% Generated clauses: 2182
+% Final active clauses: 54
+% Final passive clauses: 293
+% Input formulas: 69
+% Initial clauses: 128
+% 
+% Duplicate literals: 45
+% Trivial inequalities: 26
+% Fw subsumption resolutions: 151
+% Fw demodulations: 378
+% Bw demodulations: 4
+% 
+% Simple tautologies: 69
+% Equational tautologies: 9
+% Forward subsumptions: 1089
+% 
+% Binary resolution: 136
+% Factoring: 1
+% Forward superposition: 592
+% Backward superposition: 648
+% Self superposition: 33
+% Equality factoring: 10
+% Equality resolution: 9
+% 
+% Split clauses: 41
+% Split components: 83
+% SAT solver clauses: 61
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 32
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 41
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 52
+% TWLsolver calls for satisfiability: 13
+% 
+% Memory used [KB]: 1791
+% Time elapsed: 0.049 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.053 s

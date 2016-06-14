@@ -1,0 +1,253 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f14410,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f14372,f209,f365,f887,f889,f366,f14182,f201,f361,f359,f14202,f13909,f13908])).
+fof(f13908,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13))) | $spl596),
+  inference(cnf_transformation,[],[f13908_D])).
+fof(f13908_D,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13))) <=> ~$spl596),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl596])])).
+fof(f13909,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13))) | $spl7),
+  inference(subsumption_resolution,[],[f13898,f365])).
+fof(f13898,plain,(
+  p(s(bool,'F_0')) | s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13)))),
+  inference(superposition,[],[f6237,f3287])).
+fof(f3287,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),'const.pred_set.INTER_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),sK14)))))),
+  inference(resolution,[],[f202,f221])).
+fof(f221,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f136])).
+fof(f136,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X8] : (s(bool,'F_0') = s(bool,X8) <=> ~p(s(bool,X8)))),
+  file('thm.pred_set.inter_countable','thm.bool.EQ_CLAUSES|split|3')).
+fof(f202,plain,(
+  ~p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),'const.pred_set.INTER_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),sK14))))))),
+  inference(cnf_transformation,[],[f131])).
+fof(f131,plain,(
+  (p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14))))) & ~p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),'const.pred_set.INTER_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),sK14))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f91])).
+fof(f91,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2))))) & ~p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))))),
+  inference(ennf_transformation,[],[f38])).
+fof(f38,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ~! [X0] : ! [X1,X2] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X7)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X8))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X7)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X8))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))))))),
+  file('thm.pred_set.inter_countable','thm.pred_set.inter_countable')).
+fof(f6237,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))) | s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) )),
+  inference(resolution,[],[f4224,f243])).
+fof(f243,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1,X2] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : ! [X1,X2] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X6] : ! [X7,X8] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8))),s(fun(X6,bool),X7))))),
+  file('thm.pred_set.inter_countable','thm.pred_set.INTER_SUBSET|split|0')).
+fof(f4224,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2)))) )),
+  inference(resolution,[],[f245,f221])).
+fof(f245,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f102])).
+fof(f102,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2)))))),
+  inference(flattening,[],[f101])).
+fof(f101,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) | ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))) | p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2)))))),
+  inference(ennf_transformation,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) & p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2)))))),
+  inference(flattening,[],[f66])).
+fof(f66,plain,(
+  ! [X0] : ! [X1,X2] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X1)))) & p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X0,bool),X2)))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : ! [X7,X8] : ((p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X7)))) & p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X7))))) => p(s(bool,'const.pred_set.countable_1'(s(fun(X6,bool),X8)))))),
+  file('thm.pred_set.inter_countable','thm.pred_set.subset_countable')).
+fof(f14202,plain,(
+  $false | ($spl0 | $spl7 | $spl596)),
+  inference(subsumption_resolution,[],[f14201,f365])).
+fof(f14201,plain,(
+  p(s(bool,'F_0')) | ($spl0 | $spl596)),
+  inference(forward_demodulation,[],[f359,f13908])).
+fof(f359,plain,(
+  p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13)))) | $spl0),
+  inference(cnf_transformation,[],[f359_D])).
+fof(f359_D,plain,(
+  p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13)))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f361,plain,(
+  p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14)))) | $spl2),
+  inference(cnf_transformation,[],[f361_D])).
+fof(f361_D,plain,(
+  p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f201,plain,(
+  p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14)))) | p(s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK13))))),
+  inference(cnf_transformation,[],[f131])).
+fof(f14182,plain,(
+  $false | ($spl2 | $spl7 | $spl25)),
+  inference(subsumption_resolution,[],[f14181,f889])).
+fof(f14181,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl2 | $spl7)),
+  inference(forward_demodulation,[],[f14180,f377])).
+fof(f377,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14))) | $spl2),
+  inference(resolution,[],[f217,f361])).
+fof(f217,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f134])).
+fof(f134,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X8] : (s(bool,'T_0') = s(bool,X8) <=> p(s(bool,X8)))),
+  file('thm.pred_set.inter_countable','thm.bool.EQ_CLAUSES|split|1')).
+fof(f14180,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14))) | $spl7),
+  inference(subsumption_resolution,[],[f14169,f365])).
+fof(f14169,plain,(
+  p(s(bool,'F_0')) | s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(sK12,bool),sK14)))),
+  inference(superposition,[],[f6238,f3287])).
+fof(f6238,plain,(
+  ( ! [X4,X5,X3] : (p(s(bool,'const.pred_set.countable_1'(s(fun(X3,bool),'const.pred_set.INTER_2'(s(fun(X3,bool),X4),s(fun(X3,bool),X5)))))) | s(bool,'F_0') = s(bool,'const.pred_set.countable_1'(s(fun(X3,bool),X5)))) )),
+  inference(resolution,[],[f4224,f244])).
+fof(f244,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))),s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f65])).
+fof(f65,plain,(
+  ! [X0,X1,X2] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f64])).
+fof(f64,plain,(
+  ! [X0] : ! [X1,X2] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X7,X8] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X7))),s(fun(X6,bool),X7))))),
+  file('thm.pred_set.inter_countable','thm.pred_set.INTER_SUBSET|split|1')).
+fof(f366,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl8),
+  inference(cnf_transformation,[],[f366_D])).
+fof(f366_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f889,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl25),
+  inference(cnf_transformation,[],[f889_D])).
+fof(f889_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl25),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl25])])).
+fof(f887,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0))) )),
+  inference(subsumption_resolution,[],[f847,f216])).
+fof(f216,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f134])).
+fof(f847,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f216,f210])).
+fof(f210,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.pred_set.inter_countable',aHL_BOOL_CASES)).
+fof(f365,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f365_D])).
+fof(f365_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f209,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.inter_countable',aHL_FALSITY)).
+fof(f14372,plain,(
+  $false | ($spl7 | $spl8)),
+  inference(resolution,[],[f366,f365])).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 675
+% Passive clauses: 4059
+% Generated clauses: 14131
+% Final active clauses: 632
+% Final passive clauses: 2831
+% Input formulas: 35
+% Initial clauses: 153
+% 
+% Duplicate literals: 566
+% Trivial inequalities: 22
+% Fw subsumption resolutions: 1656
+% Fw demodulations: 518
+% Bw demodulations: 8
+% 
+% Simple tautologies: 199
+% Equational tautologies: 52
+% Forward subsumptions: 6197
+% 
+% Binary resolution: 5629
+% Factoring: 1290
+% Forward superposition: 1980
+% Backward superposition: 1701
+% Self superposition: 26
+% Equality factoring: 30
+% Equality resolution: 6
+% 
+% Split clauses: 779
+% Split components: 1572
+% SAT solver clauses: 1165
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 110
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 779
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 1153
+% TWLsolver calls for satisfiability: 425
+% 
+% Memory used [KB]: 6140
+% Time elapsed: 0.353 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.368 s

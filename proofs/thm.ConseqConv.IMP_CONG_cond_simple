@@ -1,0 +1,239 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ConseqConv
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ConseqConv
+% SZS output start Proof for thm.ConseqConv
+fof(f359,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f75,f127,f125,f358,f146,f160,f295,f122,f76,f123,f121,f147,f162,f158,f343,f167,f164,f341,f79,f130,f81,f132])).
+fof(f132,plain,(
+  ~p(s(bool,'F_0')) | $spl13),
+  inference(cnf_transformation,[],[f132_D])).
+fof(f132_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl13),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl13])])).
+fof(f81,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple',aHL_FALSITY)).
+fof(f130,plain,(
+  p(s(bool,'T_0')) | $spl10),
+  inference(cnf_transformation,[],[f130_D])).
+fof(f130_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f79,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple',aHL_TRUTH)).
+fof(f341,plain,(
+  $false | ($spl10 | $spl16 | $spl22)),
+  inference(subsumption_resolution,[],[f340,f130])).
+fof(f340,plain,(
+  ~p(s(bool,'T_0')) | ($spl16 | $spl22)),
+  inference(forward_demodulation,[],[f339,f116])).
+fof(f116,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X12] : ! [X13,X14] : s(X12,X13) = s(X12,'const.bool.COND_3'(s(bool,'T_0'),s(X12,X13),s(X12,X14)))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple','thm.bool.COND_CLAUSES|split|0')).
+fof(f339,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,'T_0'),s(bool,'T_0'),s(bool,sK3)))) | ($spl16 | $spl22)),
+  inference(forward_demodulation,[],[f338,f158])).
+fof(f338,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,sK0),s(bool,'T_0'),s(bool,sK3)))) | $spl22),
+  inference(forward_demodulation,[],[f78,f164])).
+fof(f78,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,sK0),s(bool,sK1),s(bool,sK3))))),
+  inference(cnf_transformation,[],[f49])).
+fof(f49,plain,(
+  (~p(s(bool,sK2)) | p(s(bool,sK1))) & (~p(s(bool,sK4)) | p(s(bool,sK3))) & p(s(bool,'const.bool.COND_3'(s(bool,sK0),s(bool,sK2),s(bool,sK4)))) & ~p(s(bool,'const.bool.COND_3'(s(bool,sK0),s(bool,sK1),s(bool,sK3))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f42])).
+fof(f42,plain,(
+  ? [X0,X1,X2,X3,X4] : ((~p(s(bool,X2)) | p(s(bool,X1))) & (~p(s(bool,X4)) | p(s(bool,X3))) & p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X2),s(bool,X4)))) & ~p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X1),s(bool,X3)))))),
+  inference(flattening,[],[f41])).
+fof(f41,plain,(
+  ? [X0,X1,X2,X3,X4] : (((~p(s(bool,X2)) | p(s(bool,X1))) & (~p(s(bool,X4)) | p(s(bool,X3)))) & (p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X2),s(bool,X4)))) & ~p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X1),s(bool,X3))))))),
+  inference(ennf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~! [X0,X1,X2,X3,X4] : (((p(s(bool,X2)) => p(s(bool,X1))) & (p(s(bool,X4)) => p(s(bool,X3)))) => (p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X2),s(bool,X4)))) => p(s(bool,'const.bool.COND_3'(s(bool,X0),s(bool,X1),s(bool,X3))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8,X9,X10] : (((p(s(bool,X8)) => p(s(bool,X7))) & (p(s(bool,X10)) => p(s(bool,X9)))) => (p(s(bool,'const.bool.COND_3'(s(bool,X6),s(bool,X8),s(bool,X10)))) => p(s(bool,'const.bool.COND_3'(s(bool,X6),s(bool,X7),s(bool,X9))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8,X9,X10] : (((p(s(bool,X8)) => p(s(bool,X7))) & (p(s(bool,X10)) => p(s(bool,X9)))) => (p(s(bool,'const.bool.COND_3'(s(bool,X6),s(bool,X8),s(bool,X10)))) => p(s(bool,'const.bool.COND_3'(s(bool,X6),s(bool,X7),s(bool,X9))))))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple','thm.ConseqConv.IMP_CONG_cond_simple')).
+fof(f164,plain,(
+  s(bool,'T_0') = s(bool,sK1) | $spl22),
+  inference(cnf_transformation,[],[f164_D])).
+fof(f164_D,plain,(
+  s(bool,'T_0') = s(bool,sK1) <=> ~$spl22),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl22])])).
+fof(f167,plain,(
+  s(bool,'T_0') = s(bool,sK1) | ($spl6 | $spl13)),
+  inference(subsumption_resolution,[],[f149,f132])).
+fof(f149,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,sK1) | $spl6),
+  inference(superposition,[],[f127,f82])).
+fof(f82,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple',aHL_BOOL_CASES)).
+fof(f343,plain,(
+  $false | ($spl1 | $spl20)),
+  inference(subsumption_resolution,[],[f342,f121])).
+fof(f342,plain,(
+  p(s(bool,sK4)) | $spl20),
+  inference(forward_demodulation,[],[f162,f117])).
+fof(f117,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X12] : ! [X13,X14] : s(X12,X14) = s(X12,'const.bool.COND_3'(s(bool,'F_0'),s(X12,X13),s(X12,X14)))),
+  file('thm.ConseqConv.IMP_CONG_cond_simple','thm.bool.COND_CLAUSES|split|1')).
+fof(f158,plain,(
+  s(bool,'T_0') = s(bool,sK0) | $spl16),
+  inference(cnf_transformation,[],[f158_D])).
+fof(f158_D,plain,(
+  s(bool,'T_0') = s(bool,sK0) <=> ~$spl16),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl16])])).
+fof(f162,plain,(
+  p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK2),s(bool,sK4)))) | $spl20),
+  inference(cnf_transformation,[],[f162_D])).
+fof(f162_D,plain,(
+  p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK2),s(bool,sK4)))) <=> ~$spl20),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl20])])).
+fof(f147,plain,(
+  p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK2),s(bool,sK4)))) | s(bool,'T_0') = s(bool,sK0)),
+  inference(superposition,[],[f77,f82])).
+fof(f77,plain,(
+  p(s(bool,'const.bool.COND_3'(s(bool,sK0),s(bool,sK2),s(bool,sK4))))),
+  inference(cnf_transformation,[],[f49])).
+fof(f121,plain,(
+  ~p(s(bool,sK4)) | $spl1),
+  inference(cnf_transformation,[],[f121_D])).
+fof(f121_D,plain,(
+  ~p(s(bool,sK4)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f123,plain,(
+  p(s(bool,sK3)) | $spl2),
+  inference(cnf_transformation,[],[f123_D])).
+fof(f123_D,plain,(
+  p(s(bool,sK3)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f76,plain,(
+  p(s(bool,sK3)) | ~p(s(bool,sK4))),
+  inference(cnf_transformation,[],[f49])).
+fof(f122,plain,(
+  ~p(s(bool,sK3)) | $spl3),
+  inference(cnf_transformation,[],[f122_D])).
+fof(f122_D,plain,(
+  ~p(s(bool,sK3)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f295,plain,(
+  ~p(s(bool,sK3)) | $spl19),
+  inference(forward_demodulation,[],[f160,f117])).
+fof(f160,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK1),s(bool,sK3)))) | $spl19),
+  inference(cnf_transformation,[],[f160_D])).
+fof(f160_D,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK1),s(bool,sK3)))) <=> ~$spl19),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl19])])).
+fof(f146,plain,(
+  ~p(s(bool,'const.bool.COND_3'(s(bool,'F_0'),s(bool,sK1),s(bool,sK3)))) | s(bool,'T_0') = s(bool,sK0)),
+  inference(superposition,[],[f78,f82])).
+fof(f358,plain,(
+  $false | ($spl5 | $spl16)),
+  inference(subsumption_resolution,[],[f357,f125])).
+fof(f357,plain,(
+  p(s(bool,sK2)) | $spl16),
+  inference(forward_demodulation,[],[f356,f116])).
+fof(f356,plain,(
+  p(s(bool,'const.bool.COND_3'(s(bool,'T_0'),s(bool,sK2),s(bool,sK4)))) | $spl16),
+  inference(forward_demodulation,[],[f77,f158])).
+fof(f125,plain,(
+  ~p(s(bool,sK2)) | $spl5),
+  inference(cnf_transformation,[],[f125_D])).
+fof(f125_D,plain,(
+  ~p(s(bool,sK2)) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f127,plain,(
+  p(s(bool,sK1)) | $spl6),
+  inference(cnf_transformation,[],[f127_D])).
+fof(f127_D,plain,(
+  p(s(bool,sK1)) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f75,plain,(
+  p(s(bool,sK1)) | ~p(s(bool,sK2))),
+  inference(cnf_transformation,[],[f49])).
+% SZS output end Proof for thm.ConseqConv
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 40
+% Passive clauses: 91
+% Generated clauses: 306
+% Final active clauses: 16
+% Final passive clauses: 19
+% Input formulas: 19
+% Initial clauses: 44
+% 
+% Duplicate literals: 2
+% Fw subsumption resolutions: 17
+% Fw demodulations: 31
+% Bw demodulations: 10
+% 
+% Simple tautologies: 20
+% Equational tautologies: 2
+% Forward subsumptions: 98
+% 
+% Binary resolution: 11
+% Forward superposition: 64
+% Backward superposition: 50
+% Self superposition: 6
+% Equality factoring: 2
+% 
+% Split clauses: 26
+% Split components: 53
+% SAT solver clauses: 58
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 35
+% SAT solver learnt clauses: 3
+% SAT solver learnt literals: 3
+% 
+% Sat splits: 26
+% Sat splitting refutations: 14
+% 
+% TWLsolver clauses: 55
+% TWLsolver calls for satisfiability: 23
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.018 s

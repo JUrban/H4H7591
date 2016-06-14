@@ -1,0 +1,161 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f441,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f438,f51,f77,f50,f81])).
+fof(f81,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f81_D])).
+fof(f81_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f50,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.RES_EXISTS_FALSE',aHL_TRUTH)).
+fof(f77,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f77_D])).
+fof(f77_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f51,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.RES_EXISTS_FALSE',aHL_FALSITY)).
+fof(f438,plain,(
+  $false | ($spl1 | $spl6)),
+  inference(subsumption_resolution,[],[f437,f77])).
+fof(f437,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(forward_demodulation,[],[f436,f73])).
+fof(f73,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1,X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X11,X12] : ! [X13,X14] : s(X12,X13) = s(X12,happ(s(fun(X11,X12),'_dst_x0_1'(s(X12,X13))),s(X11,X14)))),
+  file('thm.bool.RES_EXISTS_FALSE','_dst_x0_ax')).
+fof(f436,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0'))),s(sK0,sK2('_dst_x0_1'(s(bool,'F_0')),sK1,sK0))))) | $spl6),
+  inference(subsumption_resolution,[],[f429,f81])).
+fof(f429,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,happ(s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0'))),s(sK0,sK2('_dst_x0_1'(s(bool,'F_0')),sK1,sK0)))))),
+  inference(superposition,[],[f71,f120])).
+fof(f120,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(trivial_inequality_removal,[],[f119])).
+fof(f119,plain,(
+  s(bool,'F_0') != s(bool,'F_0') | s(bool,'T_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(superposition,[],[f49,f52])).
+fof(f52,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.bool.RES_EXISTS_FALSE',aHL_BOOL_CASES)).
+fof(f49,plain,(
+  s(bool,'F_0') != s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(cnf_transformation,[],[f32])).
+fof(f32,plain,(
+  s(bool,'F_0') != s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f30])).
+fof(f30,plain,(
+  ? [X0,X1] : s(bool,'F_0') != s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(ennf_transformation,[],[f16])).
+fof(f16,plain,(
+  ~! [X0,X1] : s(bool,'F_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ~! [X0] : ! [X1] : s(bool,'F_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s(bool,'F_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s(bool,'F_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'_dst_x0_1'(s(bool,'F_0')))))),
+  file('thm.bool.RES_EXISTS_FALSE','thm.bool.RES_EXISTS_FALSE')).
+fof(f71,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,sK2(X2,X1,X0)))))) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | (p(s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X1)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,sK2(X2,X1,X0))))))) & (! [X3] : (~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) | p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2])],[f46])).
+fof(f46,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ? [X4] : (p(s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X1)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))))) & (! [X3] : (~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) | p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(rectify,[],[f45])).
+fof(f45,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ? [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))))) & (! [X3] : (~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) | p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(nnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> ? [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> ? [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X7,X10] : (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X10)))) <=> ? [X9] : (p(s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X7)))) & p(s(bool,happ(s(fun(X6,bool),X10),s(X6,X9))))))),
+  file('thm.bool.RES_EXISTS_FALSE','thm.bool.RES_EXISTS_THM')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 19
+% Passive clauses: 66
+% Generated clauses: 373
+% Final active clauses: 14
+% Final passive clauses: 37
+% Input formulas: 13
+% Initial clauses: 26
+% 
+% Duplicate literals: 53
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 20
+% Fw demodulations: 7
+% Bw demodulations: 2
+% 
+% Simple tautologies: 29
+% Equational tautologies: 14
+% Forward subsumptions: 170
+% 
+% Binary resolution: 8
+% Forward superposition: 119
+% Backward superposition: 72
+% Self superposition: 28
+% Equality factoring: 26
+% 
+% Split clauses: 9
+% Split components: 18
+% SAT solver clauses: 19
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 8
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 9
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.018 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.013 s

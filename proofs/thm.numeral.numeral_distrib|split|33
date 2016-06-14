@@ -1,0 +1,86 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.numeral
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numeral
+% SZS output start Proof for thm.numeral
+fof(f3075,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f3074])).
+fof(f3074,plain,(
+  s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK13))) != s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK13)))),
+  inference(forward_demodulation,[],[f368,f381])).
+fof(f381,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f94])).
+fof(f94,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7] : s('type.num.num',X7) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))),
+  file('thm.numeral.numeral_distrib|split|33','thm.arithmetic.NUMERAL_DEF')).
+fof(f368,plain,(
+  s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK13))) != s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK13)))))),
+  inference(cnf_transformation,[],[f247])).
+fof(f247,plain,(
+  s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK13))) != s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK13)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13])],[f196])).
+fof(f196,plain,(
+  ? [X0] : s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0))) != s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))))),
+  inference(ennf_transformation,[],[f89])).
+fof(f89,plain,(
+  ~! [X0] : s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0))) = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6))) = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6))) = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6)))))),
+  file('thm.numeral.numeral_distrib|split|33','thm.numeral.numeral_distrib|split|33')).
+% SZS output end Proof for thm.numeral
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 256
+% Passive clauses: 798
+% Generated clauses: 2700
+% Final active clauses: 254
+% Final passive clauses: 468
+% Input formulas: 87
+% Initial clauses: 277
+% 
+% Duplicate literals: 56
+% Trivial inequalities: 20
+% Fw subsumption resolutions: 242
+% Fw demodulations: 66
+% Bw demodulations: 1
+% 
+% Simple tautologies: 134
+% Equational tautologies: 13
+% Forward subsumptions: 1339
+% 
+% Binary resolution: 1287
+% Factoring: 244
+% Forward superposition: 301
+% Backward superposition: 165
+% Self superposition: 11
+% Equality factoring: 2
+% Equality resolution: 6
+% 
+% Split clauses: 63
+% Split components: 128
+% SAT solver clauses: 105
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 39
+% 
+% Sat splits: 63
+% 
+% TWLsolver clauses: 105
+% TWLsolver calls for satisfiability: 71
+% 
+% Memory used [KB]: 1663
+% Time elapsed: 0.057 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.064 s

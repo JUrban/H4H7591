@@ -1,0 +1,82 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.prim_rec
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prim_rec
+% SZS output start Proof for thm.prim_rec
+fof(f34,plain,(
+  $false),
+  inference(resolution,[],[f28,f33])).
+fof(f33,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK0))))),
+  inference(forward_demodulation,[],[f22,f23])).
+fof(f23,plain,(
+  s('type.num.num',sK0) = s('type.num.num',sK1)),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))) & s('type.num.num',sK0) = s('type.num.num',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f17])).
+fof(f17,plain,(
+  ? [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) & s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) => s('type.num.num',X0) != s('type.num.num',X1))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) => ~s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => ~s('type.num.num',X6) = s('type.num.num',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => ~s('type.num.num',X6) = s('type.num.num',X7))),
+  file('thm.prim_rec.LESS_NOT_EQ','thm.prim_rec.LESS_NOT_EQ')).
+fof(f22,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f28,plain,(
+  ( ! [X0] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0))))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0))))),
+  inference(flattening,[],[f13])).
+fof(f13,plain,(
+  ! [X0] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X7] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X7),s('type.num.num',X7))))),
+  file('thm.prim_rec.LESS_NOT_EQ','thm.prim_rec.LESS_REFL')).
+% SZS output end Proof for thm.prim_rec
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 5
+% Passive clauses: 9
+% Generated clauses: 12
+% Final active clauses: 5
+% Final passive clauses: 2
+% Input formulas: 7
+% Initial clauses: 8
+% 
+% Fw demodulations: 1
+% 
+% Binary resolution: 1
+% Forward superposition: 1
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

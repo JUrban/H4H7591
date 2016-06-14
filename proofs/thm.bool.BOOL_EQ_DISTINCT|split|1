@@ -1,0 +1,62 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f21,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f20,f15])).
+fof(f15,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.BOOL_EQ_DISTINCT|split|1','thm.bool.TRUTH')).
+fof(f20,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(backward_demodulation,[],[f14,f17])).
+fof(f17,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.BOOL_EQ_DISTINCT|split|1',aHL_FALSITY)).
+fof(f14,plain,(
+  s(bool,'T_0') = s(bool,'F_0')),
+  inference(cnf_transformation,[],[f8])).
+fof(f8,plain,(
+  s(bool,'T_0') = s(bool,'F_0')),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~~s(bool,'T_0') = s(bool,'F_0')),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ~s(bool,'T_0') = s(bool,'F_0')),
+  file('thm.bool.BOOL_EQ_DISTINCT|split|1','thm.bool.BOOL_EQ_DISTINCT|split|1')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 3
+% Passive clauses: 6
+% Generated clauses: 8
+% Final active clauses: 2
+% Final passive clauses: 2
+% Input formulas: 6
+% Initial clauses: 6
+% 
+% Fw subsumption resolutions: 1
+% Bw demodulations: 1
+% 
+% Forward subsumptions: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.016 s

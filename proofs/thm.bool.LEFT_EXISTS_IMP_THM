@@ -1,0 +1,126 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f60,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f59,f30,f46,f44,f47,f52,f50,f45,f48,f58])).
+fof(f58,plain,(
+  $false | ($spl0 | $spl5)),
+  inference(subsumption_resolution,[],[f50,f46])).
+fof(f48,plain,(
+  ~p(s(bool,sK2)) | $spl3),
+  inference(cnf_transformation,[],[f48_D])).
+fof(f48_D,plain,(
+  ~p(s(bool,sK2)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f45,plain,(
+  ~p(s(bool,sK2))),
+  inference(duplicate_literal_removal,[],[f33])).
+fof(f33,plain,(
+  ~p(s(bool,sK2)) | ~p(s(bool,sK2))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ((~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK3)))) | p(s(bool,sK2))) | ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK4)))) | p(s(bool,sK2))) & (! [X4] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4)))) & ~p(s(bool,sK2))) | (! [X3] : p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X3)))) & ~p(s(bool,sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f26])).
+fof(f26,plain,(
+  ? [X0,X1,X2] : ((? [X6] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X6)))) | p(s(bool,X2))) | ? [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5)))) | p(s(bool,X2))) & (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) & ~p(s(bool,X2))) | (! [X3] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) & ~p(s(bool,X2)))))),
+  inference(rectify,[],[f25])).
+fof(f25,plain,(
+  ? [X0,X1,X2] : ((? [X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) | p(s(bool,X2))) | ? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) | p(s(bool,X2))) & (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) & ~p(s(bool,X2))) | (! [X4] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) & ~p(s(bool,X2)))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ? [X0,X1,X2] : ((? [X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) | p(s(bool,X2))) | (? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) | p(s(bool,X2)))) & (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) & ~p(s(bool,X2))) | (! [X4] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) & ~p(s(bool,X2)))))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ? [X0,X1,X2] : (? [X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) | p(s(bool,X2))) <~> (? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) | p(s(bool,X2))))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1,X2] : (? [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => p(s(bool,X2))) <=> (! [X4] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) => p(s(bool,X2))))),
+  inference(flattening,[],[f10])).
+fof(f10,plain,(
+  ~! [X0] : ! [X1,X2] : (? [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => p(s(bool,X2))) <=> (! [X4] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) => p(s(bool,X2))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (? [X9] : (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,X8))) <=> (! [X9] : p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,X8))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (? [X9] : (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,X8))) <=> (! [X9] : p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,X8))))),
+  file('thm.bool.LEFT_EXISTS_IMP_THM','thm.bool.LEFT_EXISTS_IMP_THM')).
+fof(f50,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK3)))) | $spl5),
+  inference(cnf_transformation,[],[f50_D])).
+fof(f50_D,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK3)))) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f52,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK4)))) | $spl7),
+  inference(cnf_transformation,[],[f52_D])).
+fof(f52_D,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK4)))) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f47,plain,(
+  p(s(bool,sK2)) | $spl2),
+  inference(cnf_transformation,[],[f47_D])).
+fof(f47_D,plain,(
+  p(s(bool,sK2)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f44,plain,(
+  p(s(bool,sK2)) | ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK4)))) | ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK3))))),
+  inference(duplicate_literal_removal,[],[f29])).
+fof(f29,plain,(
+  p(s(bool,sK2)) | ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK4)))) | p(s(bool,sK2)) | ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK3))))),
+  inference(cnf_transformation,[],[f27])).
+fof(f46,plain,(
+  ( ! [X4] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4))))) ) | $spl0),
+  inference(cnf_transformation,[],[f46_D])).
+fof(f46_D,plain,(
+  ( ! [X4] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4))))) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f30,plain,(
+  ( ! [X4,X3] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X3)))) | p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4))))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f59,plain,(
+  $false | ($spl0 | $spl7)),
+  inference(subsumption_resolution,[],[f52,f46])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 5
+% Passive clauses: 13
+% Generated clauses: 29
+% Final active clauses: 4
+% Final passive clauses: 4
+% Input formulas: 8
+% Initial clauses: 15
+% 
+% Duplicate literals: 2
+% Fw subsumption resolutions: 2
+% 
+% Simple tautologies: 3
+% Forward subsumptions: 1
+% 
+% Binary resolution: 2
+% 
+% Split clauses: 5
+% Split components: 11
+% SAT solver clauses: 13
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 8
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 5
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 11
+% TWLsolver calls for satisfiability: 5
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

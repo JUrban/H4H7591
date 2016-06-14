@@ -1,0 +1,96 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f247,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f246])).
+fof(f246,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK0),s('type.num.num',sK1))))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK0),s('type.num.num',sK1)))))),
+  inference(forward_demodulation,[],[f238,f31])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X7] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6)))),
+  file('thm.arithmetic.SUC_ADD_SYM','thm.arithmetic.ADD_SYM')).
+fof(f238,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK0),s('type.num.num',sK1))))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK1),s('type.num.num',sK0)))))),
+  inference(superposition,[],[f25,f32])).
+fof(f32,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X7,X6] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))),s('type.num.num',X7))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7)))))),
+  file('thm.arithmetic.SUC_ADD_SYM','thm.arithmetic.ADD_CLAUSES|split|2')).
+fof(f25,plain,(
+  s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK0),s('type.num.num',sK1)))))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK0),s('type.num.num',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1)))))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X7)))))),
+  file('thm.arithmetic.SUC_ADD_SYM','thm.arithmetic.SUC_ADD_SYM')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 28
+% Generated clauses: 210
+% Final active clauses: 12
+% Final passive clauses: 10
+% Input formulas: 10
+% Initial clauses: 10
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 3
+% Fw demodulations: 1
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 101
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 4
+% Forward superposition: 48
+% Backward superposition: 47
+% Self superposition: 32
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

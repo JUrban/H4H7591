@@ -1,0 +1,315 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 150 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f4126,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4113,f153,f234,f151,f238,f2256,f2258,f242,f1284,f936,f928,f931,f929,f231,f240,f1195,f235])).
+fof(f235,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl2),
+  inference(cnf_transformation,[],[f235_D])).
+fof(f235_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f1195,plain,(
+  ( ! [X53] : (p(s(bool,X53))) ) | ($spl6 | $spl30)),
+  inference(subsumption_resolution,[],[f1017,f156])).
+fof(f156,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f108])).
+fof(f108,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X12] : (s(bool,'T_0') = s(bool,X12) <=> p(s(bool,X12)))),
+  file('thm.list.EVERY_MONOTONIC','thm.bool.EQ_CLAUSES|split|1')).
+fof(f1017,plain,(
+  ( ! [X53] : (p(s(bool,X53)) | s(bool,'T_0') = s(bool,X53)) ) | ($spl6 | $spl30)),
+  inference(superposition,[],[f238,f929])).
+fof(f240,plain,(
+  ( ! [X2,X3] : (~p(s(bool,X3)) | s(bool,X2) != s(bool,X3) | p(s(bool,X2))) ) | $spl10),
+  inference(cnf_transformation,[],[f240_D])).
+fof(f240_D,plain,(
+  ( ! [X2,X3] : (~p(s(bool,X3)) | s(bool,X2) != s(bool,X3) | p(s(bool,X2))) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f231,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,X2)) | ~p(s(bool,X0)) | p(s(bool,X1)) | s(bool,X0) != s(bool,X1)) )),
+  inference(duplicate_literal_removal,[],[f227])).
+fof(f227,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,X2)) | ~p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X1)) | s(bool,X0) != s(bool,X1)) )),
+  inference(cnf_transformation,[],[f147])).
+fof(f147,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | (((p(s(bool,X0)) & ~p(s(bool,X2))) | ~p(s(bool,X1)) | p(s(bool,X3))) & ((p(s(bool,X1)) & ~p(s(bool,X3))) | ~p(s(bool,X0)) | p(s(bool,X2)))))),
+  inference(flattening,[],[f146])).
+fof(f146,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | (((p(s(bool,X0)) & ~p(s(bool,X2))) | (~p(s(bool,X1)) | p(s(bool,X3)))) & ((p(s(bool,X1)) & ~p(s(bool,X3))) | (~p(s(bool,X0)) | p(s(bool,X2))))))),
+  inference(nnf_transformation,[],[f105])).
+fof(f105,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | ((~p(s(bool,X0)) | p(s(bool,X2))) <=> (~p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(flattening,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3))) | ((~p(s(bool,X0)) | p(s(bool,X2))) <=> (~p(s(bool,X1)) | p(s(bool,X3)))))),
+  inference(ennf_transformation,[],[f88])).
+fof(f88,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) = s(bool,X1) & (p(s(bool,X1)) => s(bool,X2) = s(bool,X3))) => ((p(s(bool,X0)) => p(s(bool,X2))) <=> (p(s(bool,X1)) => p(s(bool,X3)))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X9,X15,X16,X17] : ((s(bool,X9) = s(bool,X15) & (p(s(bool,X15)) => s(bool,X16) = s(bool,X17))) => ((p(s(bool,X9)) => p(s(bool,X16))) <=> (p(s(bool,X15)) => p(s(bool,X17)))))),
+  file('thm.list.EVERY_MONOTONIC','thm.bool.IMP_CONG')).
+fof(f929,plain,(
+  ( ! [X2,X3] : (s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X3)) ) | $spl30),
+  inference(cnf_transformation,[],[f929_D])).
+fof(f929_D,plain,(
+  ( ! [X2,X3] : (s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X3)) ) <=> ~$spl30),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl30])])).
+fof(f931,plain,(
+  s(bool,'T_0') != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | $spl33),
+  inference(cnf_transformation,[],[f931_D])).
+fof(f931_D,plain,(
+  s(bool,'T_0') != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) <=> ~$spl33),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl33])])).
+fof(f928,plain,(
+  ( ! [X2,X3] : (s(bool,'T_0') != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X3)) ) | ($spl1 | $spl6 | $spl10)),
+  inference(subsumption_resolution,[],[f909,f632])).
+fof(f632,plain,(
+  ( ! [X6,X7] : (s(bool,'F_0') != s(bool,X6) | s(bool,X6) = s(bool,X7) | s(bool,'T_0') = s(bool,X7)) ) | $spl6),
+  inference(subsumption_resolution,[],[f499,f238])).
+fof(f499,plain,(
+  ( ! [X6,X7] : (~p(s(bool,'T_0')) | s(bool,'F_0') != s(bool,X6) | s(bool,X6) = s(bool,X7) | s(bool,'T_0') = s(bool,X7)) )),
+  inference(superposition,[],[f160,f263])).
+fof(f263,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f155,f155])).
+fof(f155,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.list.EVERY_MONOTONIC',aHL_BOOL_CASES)).
+fof(f160,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'F_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f110])).
+fof(f110,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X12] : (s(bool,'F_0') = s(bool,X12) <=> ~p(s(bool,X12)))),
+  file('thm.list.EVERY_MONOTONIC','thm.bool.EQ_CLAUSES|split|3')).
+fof(f909,plain,(
+  ( ! [X2,X3] : (s(bool,'T_0') != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'F_0') = s(bool,X2) | s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X3)) ) | ($spl1 | $spl10)),
+  inference(superposition,[],[f362,f263])).
+fof(f362,plain,(
+  ( ! [X8] : (s(bool,X8) != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'F_0') = s(bool,X8)) ) | ($spl1 | $spl10)),
+  inference(subsumption_resolution,[],[f358,f234])).
+fof(f358,plain,(
+  ( ! [X8] : (p(s(bool,'F_0')) | s(bool,X8) != s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'F_0') = s(bool,X8)) ) | $spl10),
+  inference(superposition,[],[f285,f256])).
+fof(f256,plain,(
+  s(bool,'F_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))),
+  inference(resolution,[],[f150,f161])).
+fof(f161,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f110])).
+fof(f150,plain,(
+  ~p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))))),
+  inference(cnf_transformation,[],[f107])).
+fof(f107,plain,(
+  ! [X4] : (~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4)))) | p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,X4))))) & (p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK1),s('type.list.list'(sK0),sK3)))) & ~p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f106])).
+fof(f106,plain,(
+  ? [X0,X1,X2] : (! [X4] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X4)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) & ? [X3] : (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3)))) & ~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X3))))))),
+  inference(rectify,[],[f89])).
+fof(f89,plain,(
+  ? [X0,X1,X2] : (! [X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) & ? [X4] : (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X4)))) & ~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X4))))))),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1,X2] : (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) => ! [X4] : (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X4)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X4))))))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0] : ! [X1,X2] : (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3))))) => ! [X4] : (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X4)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X4))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (! [X9] : (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9))))) => ! [X10] : (p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X7),s('type.list.list'(X6),X10)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X10))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (! [X9] : (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9))))) => ! [X10] : (p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X7),s('type.list.list'(X6),X10)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X10))))))),
+  file('thm.list.EVERY_MONOTONIC','thm.list.EVERY_MONOTONIC')).
+fof(f285,plain,(
+  ( ! [X2,X1] : (p(s(bool,X1)) | s(bool,X1) != s(bool,X2) | s(bool,'F_0') = s(bool,X2)) ) | $spl10),
+  inference(resolution,[],[f240,f161])).
+fof(f936,plain,(
+  ( ! [X4] : (s(bool,X4) = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'T_0') = s(bool,X4)) ) | $spl34),
+  inference(cnf_transformation,[],[f936_D])).
+fof(f936_D,plain,(
+  ( ! [X4] : (s(bool,X4) = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'T_0') = s(bool,X4)) ) <=> ~$spl34),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl34])])).
+fof(f1284,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'T_0') = s(bool,X0)) ) | $spl33),
+  inference(trivial_inequality_removal,[],[f1278])).
+fof(f1278,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'T_0') | s(bool,X0) = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'T_0') = s(bool,X0)) ) | $spl33),
+  inference(superposition,[],[f931,f263])).
+fof(f242,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(resolution,[],[f235,f234])).
+fof(f2258,plain,(
+  s(bool,'F_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | $spl90),
+  inference(cnf_transformation,[],[f2258_D])).
+fof(f2258_D,plain,(
+  s(bool,'F_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) <=> ~$spl90),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl90])])).
+fof(f2256,plain,(
+  ( ! [X19] : (p(s(bool,X19)) | s(bool,'F_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))) ) | $spl34),
+  inference(subsumption_resolution,[],[f2251,f156])).
+fof(f2251,plain,(
+  ( ! [X19] : (p(s(bool,X19)) | s(bool,'F_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3))) | s(bool,'T_0') = s(bool,X19)) ) | $spl34),
+  inference(superposition,[],[f161,f936])).
+fof(f238,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f238_D])).
+fof(f238_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f151,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.list.EVERY_MONOTONIC','thm.bool.TRUTH')).
+fof(f234,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f234_D])).
+fof(f234_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f153,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.list.EVERY_MONOTONIC',aHL_FALSITY)).
+fof(f4113,plain,(
+  $false | ($spl1 | $spl6 | $spl90)),
+  inference(subsumption_resolution,[],[f4112,f234])).
+fof(f4112,plain,(
+  p(s(bool,'F_0')) | ($spl6 | $spl90)),
+  inference(forward_demodulation,[],[f4111,f2258])).
+fof(f4111,plain,(
+  p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))) | $spl6),
+  inference(duplicate_literal_removal,[],[f4092])).
+fof(f4092,plain,(
+  p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK3)))) | $spl6),
+  inference(resolution,[],[f4086,f4016])).
+fof(f4016,plain,(
+  ( ! [X0] : (p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK7(sK1,X0,sK3,sK0))))) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),X0),s('type.list.list'(sK0),sK3))))) ) | $spl6),
+  inference(resolution,[],[f3830,f148])).
+fof(f148,plain,(
+  ( ! [X4] : (~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X4)))) | p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,X4))))) )),
+  inference(cnf_transformation,[],[f107])).
+fof(f3830,plain,(
+  ( ! [X3] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK7(sK1,X3,sK3,sK0))))) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),X3),s('type.list.list'(sK0),sK3))))) ) | $spl6),
+  inference(subsumption_resolution,[],[f3814,f238])).
+fof(f3814,plain,(
+  ( ! [X3] : (~p(s(bool,'T_0')) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),X3),s('type.list.list'(sK0),sK3)))) | p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,sK7(sK1,X3,sK3,sK0)))))) )),
+  inference(superposition,[],[f208,f255])).
+fof(f255,plain,(
+  s(bool,'T_0') = s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK1),s('type.list.list'(sK0),sK3)))),
+  inference(resolution,[],[f149,f157])).
+fof(f157,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f108])).
+fof(f149,plain,(
+  p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),sK1),s('type.list.list'(sK0),sK3))))),
+  inference(cnf_transformation,[],[f107])).
+fof(f208,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) | p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1)))) | p(s(bool,happ(s(fun(X0,bool),X3),s(X0,sK7(X3,X2,X1,X0)))))) )),
+  inference(cnf_transformation,[],[f140])).
+fof(f140,plain,(
+  ! [X0,X1,X2,X3] : ((p(s(bool,happ(s(fun(X0,bool),X3),s(X0,sK7(X3,X2,X1,X0))))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,sK7(X3,X2,X1,X0)))))) | ~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) | p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK7])],[f99])).
+fof(f99,plain,(
+  ! [X0,X1,X2,X3] : (? [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) | ~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) | p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1,X2,X3] : (? [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) | (~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) | p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))))))),
+  inference(ennf_transformation,[],[f78])).
+fof(f78,plain,(
+  ! [X0,X1,X2,X3] : (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) => (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))))))),
+  inference(flattening,[],[f77])).
+fof(f77,plain,(
+  ! [X0] : ! [X1,X2,X3] : (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) => (p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : ! [X10,X8,X7] : (! [X9] : (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9))))) => (p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X7),s('type.list.list'(X6),X10)))) => p(s(bool,'const.list.EVERY_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X10))))))),
+  file('thm.list.EVERY_MONOTONIC','thm.list.MONO_EVERY')).
+fof(f4086,plain,(
+  ( ! [X3] : (~p(s(bool,happ(s(fun(sK0,bool),X3),s(sK0,sK7(sK1,X3,sK3,sK0))))) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),X3),s('type.list.list'(sK0),sK3))))) ) | $spl6),
+  inference(subsumption_resolution,[],[f4071,f238])).
+fof(f4071,plain,(
+  ( ! [X3] : (~p(s(bool,'T_0')) | p(s(bool,'const.list.EVERY_2'(s(fun(sK0,bool),X3),s('type.list.list'(sK0),sK3)))) | ~p(s(bool,happ(s(fun(sK0,bool),X3),s(sK0,sK7(sK1,X3,sK3,sK0)))))) )),
+  inference(superposition,[],[f209,f255])).
+fof(f209,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X3),s('type.list.list'(X0),X1)))) | p(s(bool,'const.list.EVERY_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,sK7(X3,X2,X1,X0)))))) )),
+  inference(cnf_transformation,[],[f140])).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 98
+% Passive clauses: 540
+% Generated clauses: 3940
+% Final active clauses: 65
+% Final passive clauses: 351
+% Input formulas: 37
+% Initial clauses: 83
+% 
+% Duplicate literals: 175
+% Trivial inequalities: 103
+% Fw subsumption resolutions: 472
+% Fw demodulations: 372
+% Bw demodulations: 26
+% 
+% Simple tautologies: 133
+% Equational tautologies: 21
+% Forward subsumptions: 1893
+% 
+% Binary resolution: 125
+% Forward superposition: 1537
+% Backward superposition: 843
+% Self superposition: 60
+% Equality factoring: 38
+% Equality resolution: 26
+% 
+% Split clauses: 138
+% Split components: 285
+% SAT solver clauses: 307
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 84
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 138
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 304
+% TWLsolver calls for satisfiability: 87
+% 
+% Memory used [KB]: 2686
+% Time elapsed: 0.070 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.066 s

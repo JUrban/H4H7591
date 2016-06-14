@@ -1,0 +1,252 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f282,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f281,f74,f102,f83,f103,f101,f170,f172,f171,f194,f115,f120,f118,f132])).
+fof(f132,plain,(
+  $false | ($spl1 | $spl8)),
+  inference(subsumption_resolution,[],[f121,f102])).
+fof(f121,plain,(
+  p(s(bool,'F_0')) | $spl8),
+  inference(backward_demodulation,[],[f118,f66])).
+fof(f66,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))))),
+  inference(cnf_transformation,[],[f51])).
+fof(f51,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f39])).
+fof(f39,plain,(
+  ? [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(ennf_transformation,[],[f20])).
+fof(f20,plain,(
+  ~! [X0,X1] : ~(p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ~(p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X7),s('type.realax.real',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ~(p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X7),s('type.realax.real',X6)))))),
+  file('thm.real.REAL_LT_ANTISYM','thm.real.REAL_LT_ANTISYM')).
+fof(f118,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl8),
+  inference(cnf_transformation,[],[f118_D])).
+fof(f118_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f120,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl11),
+  inference(cnf_transformation,[],[f120_D])).
+fof(f120_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f115,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f75])).
+fof(f75,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.real.REAL_LT_ANTISYM',aHL_BOOL_CASES)).
+fof(f194,plain,(
+  $false | ($spl11 | $spl12)),
+  inference(trivial_inequality_removal,[],[f191])).
+fof(f191,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl11 | $spl12)),
+  inference(superposition,[],[f120,f171])).
+fof(f171,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | $spl12),
+  inference(cnf_transformation,[],[f171_D])).
+fof(f171_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f172,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) | $spl14),
+  inference(cnf_transformation,[],[f172_D])).
+fof(f172_D,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f170,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) ) | $spl1),
+  inference(subsumption_resolution,[],[f162,f109])).
+fof(f109,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl1),
+  inference(superposition,[],[f102,f75])).
+fof(f162,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f95,f75])).
+fof(f95,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.real.REAL_LT_ANTISYM','thm.bool.IMP_ANTISYM_AX')).
+fof(f101,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(cnf_transformation,[],[f101_D])).
+fof(f101_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f103,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f103_D])).
+fof(f103_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f83,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X10] : ((p(s(bool,'F_0')) => p(s(bool,X10))) <=> p(s(bool,'T_0')))),
+  file('thm.real.REAL_LT_ANTISYM','thm.bool.IMP_CLAUSES|split|2')).
+fof(f102,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f102_D])).
+fof(f102_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f74,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.real.REAL_LT_ANTISYM',aHL_FALSITY)).
+fof(f281,plain,(
+  $false | ($spl1 | $spl2 | $spl14)),
+  inference(subsumption_resolution,[],[f280,f102])).
+fof(f280,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl2 | $spl14)),
+  inference(forward_demodulation,[],[f279,f207])).
+fof(f207,plain,(
+  ( ! [X1] : (s(bool,'F_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X1)))) ) | $spl14),
+  inference(resolution,[],[f172,f94])).
+fof(f94,plain,(
+  ( ! [X0] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))) )),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X6] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X6))))),
+  file('thm.real.REAL_LT_ANTISYM','thm.realax.REAL_LT_REFL')).
+fof(f279,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK0)))) | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f276,f103])).
+fof(f276,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK0)))) | ($spl1 | $spl2)),
+  inference(superposition,[],[f246,f117])).
+fof(f117,plain,(
+  s(bool,'T_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0))) | $spl1),
+  inference(subsumption_resolution,[],[f112,f102])).
+fof(f112,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0)))),
+  inference(superposition,[],[f67,f75])).
+fof(f67,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0))))),
+  inference(cnf_transformation,[],[f51])).
+fof(f246,plain,(
+  ( ! [X0] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',X0)))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',X0))))) ) | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f242,f103])).
+fof(f242,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',X0)))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',X0))))) ) | $spl1),
+  inference(superposition,[],[f100,f116])).
+fof(f116,plain,(
+  s(bool,'T_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))) | $spl1),
+  inference(subsumption_resolution,[],[f111,f102])).
+fof(f111,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1)))),
+  inference(superposition,[],[f66,f75])).
+fof(f100,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X2)))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X2))))) )),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X2)))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X2)))))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X2))))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X2)))))),
+  inference(ennf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X2))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X2)))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6,X7,X11] : ((p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X7),s('type.realax.real',X11))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X11)))))),
+  file('thm.real.REAL_LT_ANTISYM','thm.realax.REAL_LT_TRANS')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 67
+% Generated clauses: 214
+% Final active clauses: 15
+% Final passive clauses: 23
+% Input formulas: 18
+% Initial clauses: 35
+% 
+% Duplicate literals: 4
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 25
+% Fw demodulations: 9
+% Bw demodulations: 8
+% 
+% Simple tautologies: 14
+% Equational tautologies: 4
+% Forward subsumptions: 74
+% 
+% Binary resolution: 36
+% Factoring: 1
+% Forward superposition: 48
+% Backward superposition: 28
+% Self superposition: 6
+% Equality factoring: 2
+% 
+% Split clauses: 16
+% Split components: 33
+% SAT solver clauses: 32
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 21
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 16
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 31
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.02 s

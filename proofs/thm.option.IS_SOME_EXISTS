@@ -1,0 +1,209 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.option
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.option
+% SZS output start Proof for thm.option
+fof(f887,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f882,f199,f78,f119,f115,f79,f117,f116,f86,f121])).
+fof(f121,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f121_D])).
+fof(f121_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f86,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.option.IS_SOME_EXISTS',aHL_FALSITY)).
+fof(f116,plain,(
+  ~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) | $spl1),
+  inference(cnf_transformation,[],[f116_D])).
+fof(f116_D,plain,(
+  ~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f117,plain,(
+  ( ! [X2] : (s('type.option.option'(sK0),sK1) != s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,X2)))) ) | $spl2),
+  inference(cnf_transformation,[],[f117_D])).
+fof(f117_D,plain,(
+  ( ! [X2] : (s('type.option.option'(sK0),sK1) != s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,X2)))) ) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f79,plain,(
+  ( ! [X2] : (s('type.option.option'(sK0),sK1) != s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,X2))) | ~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1))))) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) | s('type.option.option'(sK0),sK1) = s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,sK2)))) & (~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) | ! [X2] : s('type.option.option'(sK0),sK1) != s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,X2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f62])).
+fof(f62,plain,(
+  ? [X0,X1] : ((p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) | ? [X3] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X3)))) & (~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) | ! [X2] : s('type.option.option'(X0),X1) != s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2)))))),
+  inference(rectify,[],[f61])).
+fof(f61,plain,(
+  ? [X0,X1] : ((p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) | ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2)))) & (~p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) | ! [X2] : s('type.option.option'(X0),X1) != s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2)))))),
+  inference(nnf_transformation,[],[f56])).
+fof(f56,plain,(
+  ? [X0,X1] : (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) <~> ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) <=> ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),X1)))) <=> ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X6),X7)))) <=> ? [X8] : s('type.option.option'(X6),X7) = s('type.option.option'(X6),'const.option.SOME_1'(s(X6,X8))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X6),X7)))) <=> ? [X8] : s('type.option.option'(X6),X7) = s('type.option.option'(X6),'const.option.SOME_1'(s(X6,X8))))),
+  file('thm.option.IS_SOME_EXISTS','thm.option.IS_SOME_EXISTS')).
+fof(f115,plain,(
+  p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) | $spl0),
+  inference(cnf_transformation,[],[f115_D])).
+fof(f115_D,plain,(
+  p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1)))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f119,plain,(
+  s('type.option.option'(sK0),sK1) = s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,sK2))) | $spl4),
+  inference(cnf_transformation,[],[f119_D])).
+fof(f119_D,plain,(
+  s('type.option.option'(sK0),sK1) = s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,sK2))) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f78,plain,(
+  s('type.option.option'(sK0),sK1) = s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,sK2))) | p(s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1))))),
+  inference(cnf_transformation,[],[f63])).
+fof(f199,plain,(
+  $false | ($spl1 | $spl4)),
+  inference(subsumption_resolution,[],[f191,f126])).
+fof(f126,plain,(
+  s(bool,'T_0') != s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1))) | $spl1),
+  inference(resolution,[],[f90,f116])).
+fof(f90,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f66])).
+fof(f66,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.option.IS_SOME_EXISTS','thm.bool.EQ_CLAUSES|split|0')).
+fof(f191,plain,(
+  s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1))) | $spl4),
+  inference(superposition,[],[f100,f119])).
+fof(f100,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1)))))) )),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1)))))),
+  inference(flattening,[],[f40])).
+fof(f40,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1)))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X8] : s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X6),'const.option.SOME_1'(s(X6,X8)))))),
+  file('thm.option.IS_SOME_EXISTS','thm.option.IS_SOME_DEF|split|0')).
+fof(f882,plain,(
+  $false | ($spl0 | $spl2 | $spl7)),
+  inference(subsumption_resolution,[],[f867,f129])).
+fof(f129,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.NONE_0')))) ) | $spl7),
+  inference(subsumption_resolution,[],[f127,f121])).
+fof(f127,plain,(
+  ( ! [X0] : (p(s(bool,'F_0')) | s(bool,'T_0') != s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(superposition,[],[f90,f87])).
+fof(f87,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : s(bool,'F_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X0),'const.option.NONE_0')))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : s(bool,'F_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(X6),'const.option.NONE_0')))),
+  file('thm.option.IS_SOME_EXISTS','thm.option.IS_SOME_DEF|split|1')).
+fof(f867,plain,(
+  s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),'const.option.NONE_0'))) | ($spl0 | $spl2)),
+  inference(backward_demodulation,[],[f865,f203])).
+fof(f203,plain,(
+  s(bool,'T_0') = s(bool,'const.option.IS_SOME_1'(s('type.option.option'(sK0),sK1))) | $spl0),
+  inference(resolution,[],[f115,f91])).
+fof(f91,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f66])).
+fof(f865,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),sK1) | $spl2),
+  inference(equality_resolution,[],[f828])).
+fof(f828,plain,(
+  ( ! [X0] : (s('type.option.option'(sK0),sK1) != s('type.option.option'(sK0),X0) | s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),X0)) ) | $spl2),
+  inference(superposition,[],[f117,f101])).
+fof(f101,plain,(
+  ( ! [X0,X1] : (s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,sK3(X1,X0)))) | s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),X1)) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ! [X0,X1] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),X1) | s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,sK3(X1,X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3])],[f43])).
+fof(f43,plain,(
+  ! [X0,X1] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),X1) | ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2))))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ! [X0] : ! [X1] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),X1) | ? [X2] : s('type.option.option'(X0),X1) = s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X2))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X7] : (s('type.option.option'(X6),'const.option.NONE_0') = s('type.option.option'(X6),X7) | ? [X8] : s('type.option.option'(X6),X7) = s('type.option.option'(X6),'const.option.SOME_1'(s(X6,X8))))),
+  file('thm.option.IS_SOME_EXISTS','thm.option.option_nchotomy')).
+% SZS output end Proof for thm.option
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 46
+% Passive clauses: 179
+% Generated clauses: 803
+% Final active clauses: 30
+% Final passive clauses: 97
+% Input formulas: 23
+% Initial clauses: 37
+% 
+% Duplicate literals: 9
+% Trivial inequalities: 31
+% Fw subsumption resolutions: 64
+% Fw demodulations: 102
+% Bw demodulations: 9
+% 
+% Simple tautologies: 25
+% Equational tautologies: 7
+% Forward subsumptions: 374
+% 
+% Binary resolution: 52
+% Factoring: 1
+% Forward superposition: 221
+% Backward superposition: 248
+% Self superposition: 8
+% Equality factoring: 4
+% Equality resolution: 6
+% 
+% Split clauses: 9
+% Split components: 18
+% SAT solver clauses: 29
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 15
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 9
+% Sat splitting refutations: 11
+% 
+% TWLsolver clauses: 27
+% TWLsolver calls for satisfiability: 9
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.024 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.026 s

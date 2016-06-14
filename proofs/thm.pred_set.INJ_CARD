@@ -1,0 +1,221 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f7290,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f7268,f209,f360,f882,f884,f361,f7188])).
+fof(f7188,plain,(
+  $false | ($spl3 | $spl21)),
+  inference(subsumption_resolution,[],[f7187,f884])).
+fof(f7187,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | $spl3),
+  inference(forward_demodulation,[],[f7186,f372])).
+fof(f372,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16)))),
+  inference(resolution,[],[f217,f201])).
+fof(f201,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16))))),
+  inference(cnf_transformation,[],[f130])).
+fof(f130,plain,(
+  p(s(bool,'const.pred_set.INJ_3'(s(fun(sK12,sK13),sK14),s(fun(sK12,bool),sK15),s(fun(sK13,bool),sK16)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16)))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK12,bool),sK15))),s('type.num.num','const.pred_set.CARD_1'(s(fun(sK13,bool),sK16))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15,sK16])],[f89])).
+fof(f89,plain,(
+  ? [X0,X1,X2,X3,X4] : (p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X2),s(fun(X0,bool),X3),s(fun(X1,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X4)))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X3))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X4)))))))),
+  inference(flattening,[],[f88])).
+fof(f88,plain,(
+  ? [X0,X1,X2,X3,X4] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X2),s(fun(X0,bool),X3),s(fun(X1,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X4))))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X3))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X4)))))))),
+  inference(ennf_transformation,[],[f37])).
+fof(f37,plain,(
+  ~! [X0,X1,X2,X3,X4] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X2),s(fun(X0,bool),X3),s(fun(X1,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X4))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X3))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X4)))))))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X2),s(fun(X0,bool),X3),s(fun(X1,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X4))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X3))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X4)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X6,X7),X8),s(fun(X6,bool),X9),s(fun(X7,bool),X10)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),X10))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X9))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X7,bool),X10)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X6,X7),X8),s(fun(X6,bool),X9),s(fun(X7,bool),X10)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),X10))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X9))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X7,bool),X10)))))))),
+  file('thm.pred_set.INJ_CARD','thm.pred_set.INJ_CARD')).
+fof(f217,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f133])).
+fof(f133,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.pred_set.INJ_CARD','thm.bool.EQ_CLAUSES|split|0')).
+fof(f7186,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16))) | $spl3),
+  inference(subsumption_resolution,[],[f7185,f360])).
+fof(f7185,plain,(
+  p(s(bool,'F_0')) | s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16)))),
+  inference(forward_demodulation,[],[f7150,f3435])).
+fof(f3435,plain,(
+  s(bool,'F_0') = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK12,bool),sK15))),s('type.num.num','const.pred_set.CARD_1'(s(fun(sK13,bool),sK16)))))),
+  inference(resolution,[],[f202,f221])).
+fof(f221,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f135])).
+fof(f135,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.pred_set.INJ_CARD','thm.bool.EQ_CLAUSES|split|2')).
+fof(f202,plain,(
+  ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK12,bool),sK15))),s('type.num.num','const.pred_set.CARD_1'(s(fun(sK13,bool),sK16))))))),
+  inference(cnf_transformation,[],[f130])).
+fof(f7150,plain,(
+  p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK12,bool),sK15))),s('type.num.num','const.pred_set.CARD_1'(s(fun(sK13,bool),sK16)))))) | s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK16)))),
+  inference(resolution,[],[f4564,f200])).
+fof(f200,plain,(
+  p(s(bool,'const.pred_set.INJ_3'(s(fun(sK12,sK13),sK14),s(fun(sK12,bool),sK15),s(fun(sK13,bool),sK16))))),
+  inference(cnf_transformation,[],[f130])).
+fof(f4564,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X2),s(fun(X0,bool),X3),s(fun(X1,bool),X4)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X3))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X4)))))) | s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X4)))) )),
+  inference(resolution,[],[f4563,f221])).
+fof(f4563,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) | ~p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X4),s(fun(X0,bool),X2),s(fun(X1,bool),X3)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X2))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X3))))))) )),
+  inference(subsumption_resolution,[],[f276,f278])).
+fof(f278,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X4)))) | p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) | ~p(s(bool,'const.pred_set.INJ_3'(s(fun(X1,X0),X2),s(fun(X1,bool),X3),s(fun(X0,bool),X4))))) )),
+  inference(cnf_transformation,[],[f110])).
+fof(f110,plain,(
+  ! [X0,X1,X2,X3,X4] : (~p(s(bool,'const.pred_set.INJ_3'(s(fun(X1,X0),X2),s(fun(X1,bool),X3),s(fun(X0,bool),X4)))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X4)))) | p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))))),
+  inference(flattening,[],[f109])).
+fof(f109,plain,(
+  ! [X0,X1,X2,X3,X4] : ((~p(s(bool,'const.pred_set.INJ_3'(s(fun(X1,X0),X2),s(fun(X1,bool),X3),s(fun(X0,bool),X4)))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X4))))) | p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))))),
+  inference(ennf_transformation,[],[f79])).
+fof(f79,plain,(
+  ! [X0,X1,X2,X3,X4] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X1,X0),X2),s(fun(X1,bool),X3),s(fun(X0,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X4))))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))))),
+  inference(flattening,[],[f78])).
+fof(f78,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X1,X0),X2),s(fun(X1,bool),X3),s(fun(X0,bool),X4)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X4))))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X7,X6] : ! [X8,X9,X10] : ((p(s(bool,'const.pred_set.INJ_3'(s(fun(X6,X7),X8),s(fun(X6,bool),X9),s(fun(X7,bool),X10)))) & p(s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),X10))))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X9)))))),
+  file('thm.pred_set.INJ_CARD','thm.pred_set.FINITE_INJ')).
+fof(f276,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X2))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X3)))))) | ~p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X4),s(fun(X0,bool),X2),s(fun(X1,bool),X3)))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f107])).
+fof(f107,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2)))) | ! [X3] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) | ! [X4] : (~p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X4),s(fun(X0,bool),X2),s(fun(X1,bool),X3)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X2))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X3)))))))))),
+  inference(ennf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2)))) => ! [X3] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) => ! [X4] : (p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X4),s(fun(X0,bool),X2),s(fun(X1,bool),X3)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X2))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X3)))))))))),
+  inference(flattening,[],[f74])).
+fof(f74,plain,(
+  ! [X0,X1] : ! [X2] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2)))) => ! [X3] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X1,bool),X3)))) => ! [X4] : (p(s(bool,'const.pred_set.INJ_3'(s(fun(X0,X1),X4),s(fun(X0,bool),X2),s(fun(X1,bool),X3)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X2))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X1,bool),X3)))))))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6,X7] : ! [X9] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X9)))) => ! [X10] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),X10)))) => ! [X8] : (p(s(bool,'const.pred_set.INJ_3'(s(fun(X6,X7),X8),s(fun(X6,bool),X9),s(fun(X7,bool),X10)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X9))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X7,bool),X10)))))))))),
+  file('thm.pred_set.INJ_CARD','thm.pred_set.pred_set_246_prove_ltb')).
+fof(f361,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl4),
+  inference(cnf_transformation,[],[f361_D])).
+fof(f361_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f884,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl21),
+  inference(cnf_transformation,[],[f884_D])).
+fof(f884_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl21),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl21])])).
+fof(f882,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0))) )),
+  inference(subsumption_resolution,[],[f842,f216])).
+fof(f216,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f133])).
+fof(f842,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f216,f210])).
+fof(f210,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.pred_set.INJ_CARD',aHL_BOOL_CASES)).
+fof(f360,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f360_D])).
+fof(f360_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f209,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.INJ_CARD',aHL_FALSITY)).
+fof(f7268,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(resolution,[],[f361,f360])).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 440
+% Passive clauses: 2306
+% Generated clauses: 7062
+% Final active clauses: 430
+% Final passive clauses: 1590
+% Input formulas: 34
+% Initial clauses: 153
+% 
+% Duplicate literals: 240
+% Trivial inequalities: 15
+% Fw subsumption resolutions: 754
+% Fw demodulations: 86
+% Bw demodulations: 4
+% 
+% Simple tautologies: 169
+% Equational tautologies: 42
+% Forward subsumptions: 3207
+% 
+% Binary resolution: 3491
+% Factoring: 811
+% Forward superposition: 468
+% Backward superposition: 833
+% Self superposition: 22
+% Equality factoring: 26
+% Equality resolution: 4
+% 
+% Split clauses: 298
+% Split components: 604
+% SAT solver clauses: 441
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 103
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 298
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 436
+% TWLsolver calls for satisfiability: 220
+% 
+% Memory used [KB]: 3582
+% Time elapsed: 0.170 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.172 s

@@ -1,0 +1,112 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f4021,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f3996])).
+fof(f3996,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))),
+  inference(superposition,[],[f31,f3191])).
+fof(f3191,plain,(
+  ( ! [X3] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X3)))) )),
+  inference(trivial_inequality_removal,[],[f3186])).
+fof(f3186,plain,(
+  ( ! [X2,X3] : (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) | s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X3)))) )),
+  inference(superposition,[],[f1387,f215])).
+fof(f215,plain,(
+  ( ! [X0] : (s('type.integer.int',X0) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X0)))) )),
+  inference(equality_resolution,[],[f42])).
+fof(f42,plain,(
+  ( ! [X0,X1] : (s('type.integer.int',X0) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) | s('type.integer.int',X1) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1] : ((s('type.integer.int',X1) != s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))) | s('type.integer.int',X0) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))) & (s('type.integer.int',X0) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) | s('type.integer.int',X1) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1)))))),
+  inference(nnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1] : (s('type.integer.int',X1) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))) <=> s('type.integer.int',X0) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6,X8] : (s('type.integer.int',X8) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X8))) <=> s('type.integer.int',X6) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  file('thm.integer.INT_MUL_LZERO','thm.integer.INT_ADD_LID_UNIQ')).
+fof(f1387,plain,(
+  ( ! [X6,X8,X7] : (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X8),s('type.integer.int',X7))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X8))),s('type.integer.int',X7))) | s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) )),
+  inference(superposition,[],[f41,f44])).
+fof(f44,plain,(
+  ( ! [X2,X0,X1] : (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X2))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X2))),s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))) )),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2] : s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X2))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X2))),s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X8,X9] : s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X8))),s('type.integer.int',X9))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X6),s('type.integer.int',X9))),s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X8),s('type.integer.int',X9)))))),
+  file('thm.integer.INT_MUL_LZERO','thm.integer.INT_RDISTRIB')).
+fof(f41,plain,(
+  ( ! [X0,X1] : (s('type.integer.int',X1) != s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))) | s('type.integer.int',X0) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f31,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',sK0)))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f24])).
+fof(f24,plain,(
+  ? [X0] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X0)))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X6)))),
+  file('thm.integer.INT_MUL_LZERO','thm.integer.INT_MUL_LZERO')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 40
+% Passive clauses: 733
+% Generated clauses: 3840
+% Final active clauses: 38
+% Final passive clauses: 672
+% Input formulas: 11
+% Initial clauses: 14
+% 
+% Duplicate literals: 408
+% Trivial inequalities: 50
+% Fw subsumption resolutions: 280
+% Fw demodulations: 44
+% 
+% Simple tautologies: 114
+% Equational tautologies: 82
+% Forward subsumptions: 1516
+% 
+% Binary resolution: 12
+% Forward superposition: 1388
+% Backward superposition: 1171
+% Self superposition: 234
+% Equality factoring: 206
+% Equality resolution: 3
+% 
+% Split clauses: 218
+% Split components: 437
+% SAT solver clauses: 609
+% SAT solver unit clauses: 233
+% SAT solver binary clauses: 189
+% 
+% Sat splits: 218
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 609
+% TWLsolver calls for satisfiability: 27
+% 
+% Memory used [KB]: 2046
+% Time elapsed: 0.153 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.155 s

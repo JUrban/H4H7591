@@ -1,0 +1,70 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f36,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f35])).
+fof(f35,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') != s('type.num.num','const.arithmetic.ZERO_0')),
+  inference(superposition,[],[f32,f26])).
+fof(f26,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6] : s('type.num.num',X6) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6)))),
+  file('thm.arithmetic.NORM_|48|','thm.arithmetic.NUMERAL_DEF')).
+fof(f32,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') != s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.ZERO_0')))),
+  inference(forward_demodulation,[],[f21,f24])).
+fof(f24,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  inference(cnf_transformation,[],[f8])).
+fof(f8,axiom,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  file('thm.arithmetic.NORM_|48|','thm.arithmetic.ALT_ZERO')).
+fof(f21,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.ZERO_0')))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.ZERO_0')))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.ZERO_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.ZERO_0')))),
+  file('thm.arithmetic.NORM_|48|','thm.arithmetic.NORM_|48|')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 5
+% Passive clauses: 10
+% Generated clauses: 14
+% Final active clauses: 5
+% Final passive clauses: 2
+% Input formulas: 9
+% Initial clauses: 10
+% 
+% Trivial inequalities: 2
+% Fw demodulations: 1
+% 
+% Equational tautologies: 1
+% Forward subsumptions: 2
+% 
+% Forward superposition: 1
+% Backward superposition: 1
+% Self superposition: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.022 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.04 s

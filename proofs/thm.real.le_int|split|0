@@ -1,0 +1,86 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f1963,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f101,f145])).
+fof(f145,plain,(
+  ( ! [X0,X1] : (s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f32])).
+fof(f32,axiom,(
+  ! [X7,X6] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X7))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X6)))))),
+  file('thm.real.le_int|split|0','thm.real.REAL_LE')).
+fof(f101,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK0),s('type.num.num',sK1))) != s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',sK0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',sK1)))))),
+  inference(cnf_transformation,[],[f80])).
+fof(f80,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK0),s('type.num.num',sK1))) != s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',sK0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f71])).
+fof(f71,plain,(
+  ? [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) != s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X1)))))),
+  inference(ennf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~! [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X0))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X6),s('type.num.num',X7))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X6))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X6),s('type.num.num',X7))) = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X6))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num',X7)))))),
+  file('thm.real.le_int|split|0','thm.real.le_int|split|0')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 49
+% Passive clauses: 337
+% Generated clauses: 1813
+% Final active clauses: 38
+% Final passive clauses: 236
+% Input formulas: 33
+% Initial clauses: 54
+% 
+% Duplicate literals: 153
+% Trivial inequalities: 50
+% Fw subsumption resolutions: 215
+% Fw demodulations: 127
+% Bw demodulations: 5
+% 
+% Simple tautologies: 91
+% Equational tautologies: 32
+% Forward subsumptions: 800
+% 
+% Binary resolution: 60
+% Factoring: 1
+% Forward superposition: 364
+% Backward superposition: 654
+% Self superposition: 46
+% Equality factoring: 54
+% Equality resolution: 8
+% 
+% Split clauses: 17
+% Split components: 34
+% SAT solver clauses: 40
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 27
+% SAT solver learnt clauses: 1
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 17
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 39
+% TWLsolver calls for satisfiability: 16
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.048 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.049 s

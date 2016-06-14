@@ -1,0 +1,69 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.realax
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.realax
+% SZS output start Proof for thm.realax
+fof(f34,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f33])).
+fof(f33,plain,(
+  s('type.hreal.hreal',sK0) != s('type.hreal.hreal',sK0)),
+  inference(superposition,[],[f29,f23])).
+fof(f23,plain,(
+  s('type.hreal.hreal',sK0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK1)))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  s('type.hreal.hreal',sK0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1] : s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1] : s('type.hreal.hreal',X0) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ~s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ~s('type.hreal.hreal',X6) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ~s('type.hreal.hreal',X6) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))),
+  file('thm.realax.HREAL_EQ_ADDL','thm.realax.HREAL_EQ_ADDL')).
+fof(f29,plain,(
+  ( ! [X0,X1] : (s('type.hreal.hreal',X0) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : s('type.hreal.hreal',X0) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : ~s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7] : ~s('type.hreal.hreal',X6) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))),
+  file('thm.realax.HREAL_EQ_ADDL','thm.realax.HREAL_EQ_ADDR')).
+% SZS output end Proof for thm.realax
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 4
+% Passive clauses: 6
+% Generated clauses: 10
+% Final active clauses: 4
+% Final passive clauses: 2
+% Input formulas: 7
+% Initial clauses: 8
+% 
+% Trivial inequalities: 1
+% 
+% Simple tautologies: 2
+% 
+% Forward superposition: 3
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

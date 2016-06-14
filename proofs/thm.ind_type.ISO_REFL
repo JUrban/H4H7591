@@ -1,0 +1,207 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ind_type
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ind_type
+% SZS output start Proof for thm.ind_type
+fof(f1386,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1366,f57,f86,f367,f372,f370,f83,f90,f431])).
+fof(f431,plain,(
+  $false | ($spl1 | $spl6 | $spl12)),
+  inference(subsumption_resolution,[],[f378,f90])).
+fof(f378,plain,(
+  ~p(s(bool,'T_0')) | ($spl1 | $spl12)),
+  inference(backward_demodulation,[],[f370,f86])).
+fof(f90,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f90_D])).
+fof(f90_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f83,plain,(
+  p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f75])).
+fof(f75,plain,(
+  ( ! [X0,X1] : (p(s(bool,'T_0')) | s(X0,X1) != s(X0,X1)) )),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1] : ((s(X0,X1) != s(X0,X1) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | s(X0,X1) = s(X0,X1)))),
+  inference(nnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6] : ! [X8] : (s(X6,X8) = s(X6,X8) <=> p(s(bool,'T_0')))),
+  file('thm.ind_type.ISO_REFL','thm.bool.REFL_CLAUSE')).
+fof(f370,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl12),
+  inference(cnf_transformation,[],[f370_D])).
+fof(f370_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f372,plain,(
+  s(bool,'F_0') = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) | $spl14),
+  inference(cnf_transformation,[],[f372_D])).
+fof(f372_D,plain,(
+  s(bool,'F_0') = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f367,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) | s(bool,'T_0') = s(bool,X9)) ) | $spl6),
+  inference(duplicate_literal_removal,[],[f323])).
+fof(f323,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) ) | $spl6),
+  inference(superposition,[],[f267,f58])).
+fof(f58,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.ind_type.ISO_REFL',aHL_BOOL_CASES)).
+fof(f267,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) | s(bool,'T_0') = s(bool,X9)) ) | $spl6),
+  inference(subsumption_resolution,[],[f192,f90])).
+fof(f192,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f54,f92])).
+fof(f92,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f58,f58])).
+fof(f54,plain,(
+  ~p(s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))))),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~p(s(bool,'const.ind_type.ISO_2'(s(fun(sK0,sK0),'_i_0_0'),s(fun(sK0,sK0),'_i_0_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f33])).
+fof(f33,plain,(
+  ? [X0] : ~p(s(bool,'const.ind_type.ISO_2'(s(fun(X0,X0),'_i_0_0'),s(fun(X0,X0),'_i_0_0'))))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~! [X0] : p(s(bool,'const.ind_type.ISO_2'(s(fun(X0,X0),'_i_0_0'),s(fun(X0,X0),'_i_0_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.ind_type.ISO_2'(s(fun(X6,X6),'_i_0_0'),s(fun(X6,X6),'_i_0_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.ind_type.ISO_2'(s(fun(X6,X6),'_i_0_0'),s(fun(X6,X6),'_i_0_0'))))),
+  file('thm.ind_type.ISO_REFL','thm.ind_type.ISO_REFL')).
+fof(f86,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f86_D])).
+fof(f86_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f57,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.ind_type.ISO_REFL',aHL_FALSITY)).
+fof(f1366,plain,(
+  $false | ($spl1 | $spl14)),
+  inference(subsumption_resolution,[],[f1365,f74])).
+fof(f74,plain,(
+  ( ! [X0,X1] : (s(X0,X1) = s(X0,happ(s(fun(X0,X0),'_i_0_0'),s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1] : s(X0,X1) = s(X0,happ(s(fun(X0,X0),'_i_0_0'),s(X0,X1)))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : ! [X1] : s(X0,X1) = s(X0,happ(s(fun(X0,X0),'_i_0_0'),s(X0,X1)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X13] : ! [X14] : s(X13,X14) = s(X13,happ(s(fun(X13,X13),'_i_0_0'),s(X13,X14)))),
+  file('thm.ind_type.ISO_REFL','_i0_ax')).
+fof(f1365,plain,(
+  s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)))) | ($spl1 | $spl14)),
+  inference(forward_demodulation,[],[f1364,f74])).
+fof(f1364,plain,(
+  s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)))))) | ($spl1 | $spl14)),
+  inference(subsumption_resolution,[],[f1363,f74])).
+fof(f1363,plain,(
+  s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)))) | s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)))))) | ($spl1 | $spl14)),
+  inference(forward_demodulation,[],[f1362,f74])).
+fof(f1362,plain,(
+  s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)))))) | s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)))))) | ($spl1 | $spl14)),
+  inference(subsumption_resolution,[],[f1345,f86])).
+fof(f1345,plain,(
+  p(s(bool,'F_0')) | s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK3('_i_0_0','_i_0_0',sK0,sK0)))))) | s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)) != s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,happ(s(fun(sK0,sK0),'_i_0_0'),s(sK0,sK2('_i_0_0','_i_0_0',sK0,sK0)))))) | $spl14),
+  inference(superposition,[],[f82,f372])).
+fof(f82,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) | s(X1,sK3(X3,X2,X1,X0)) != s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,sK3(X3,X2,X1,X0)))))) | s(X0,sK2(X3,X2,X1,X0)) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,sK2(X3,X2,X1,X0))))))) )),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) | (! [X7] : s(X0,X7) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X7))))) & ! [X6] : s(X1,X6) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))))))) & (s(X0,sK2(X3,X2,X1,X0)) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,sK2(X3,X2,X1,X0)))))) | s(X1,sK3(X3,X2,X1,X0)) != s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,sK3(X3,X2,X1,X0)))))) | p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2,sK3])],[f52])).
+fof(f52,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) | (! [X7] : s(X0,X7) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X7))))) & ! [X6] : s(X1,X6) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))))))) & (? [X5] : s(X0,X5) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) | ? [X4] : s(X1,X4) != s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))) | p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3))))))),
+  inference(rectify,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) | (! [X5] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) & ! [X4] : s(X1,X4) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))))) & (? [X5] : s(X0,X5) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) | ? [X4] : s(X1,X4) != s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))) | p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3))))))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) | (! [X5] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) & ! [X4] : s(X1,X4) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))))) & ((? [X5] : s(X0,X5) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) | ? [X4] : s(X1,X4) != s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))) | p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3))))))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) <=> (! [X5] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) & ! [X4] : s(X1,X4) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))))),
+  inference(flattening,[],[f31])).
+fof(f31,plain,(
+  ! [X0,X1] : ! [X2,X3] : (p(s(bool,'const.ind_type.ISO_2'(s(fun(X1,X0),X2),s(fun(X0,X1),X3)))) <=> (! [X5] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X3),s(X0,X5))))) & ! [X4] : s(X1,X4) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X9,X6] : ! [X10,X11] : (p(s(bool,'const.ind_type.ISO_2'(s(fun(X6,X9),X10),s(fun(X9,X6),X11)))) <=> (! [X8] : s(X9,X8) = s(X9,happ(s(fun(X6,X9),X10),s(X6,happ(s(fun(X9,X6),X11),s(X9,X8))))) & ! [X12] : s(X6,X12) = s(X6,happ(s(fun(X9,X6),X11),s(X9,happ(s(fun(X6,X9),X10),s(X6,X12)))))))),
+  file('thm.ind_type.ISO_REFL','thm.ind_type.ISO')).
+% SZS output end Proof for thm.ind_type
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 119
+% Generated clauses: 1272
+% Final active clauses: 23
+% Final passive clauses: 70
+% Input formulas: 15
+% Initial clauses: 29
+% 
+% Duplicate literals: 195
+% Trivial inequalities: 24
+% Fw subsumption resolutions: 62
+% Fw demodulations: 67
+% Bw demodulations: 5
+% 
+% Simple tautologies: 58
+% Equational tautologies: 20
+% Forward subsumptions: 648
+% 
+% Binary resolution: 12
+% Forward superposition: 419
+% Backward superposition: 325
+% Self superposition: 62
+% Equality factoring: 46
+% Equality resolution: 2
+% 
+% Split clauses: 46
+% Split components: 92
+% SAT solver clauses: 90
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 35
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 46
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 81
+% TWLsolver calls for satisfiability: 18
+% 
+% Memory used [KB]: 1151
+% Time elapsed: 0.035 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.045 s

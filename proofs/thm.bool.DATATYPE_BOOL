@@ -1,0 +1,83 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f201,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f18,f22])).
+fof(f22,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(flattening,[],[f10])).
+fof(f10,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7] : ! [X8] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X7,X8)))),
+  file('thm.bool.DATATYPE_BOOL','thm.bool.DATATYPE_TAG_THM')).
+fof(f18,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),sK0),s(bool,'T_0'))),s(bool,'F_0')))))),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),sK0),s(bool,'T_0'))),s(bool,'F_0')))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f14])).
+fof(f14,plain,(
+  ? [X0] : s(bool,'T_0') != s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),X0),s(bool,'T_0'))),s(bool,'F_0')))))),
+  inference(ennf_transformation,[],[f8])).
+fof(f8,plain,(
+  ~! [X0] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),X0),s(bool,'T_0'))),s(bool,'F_0')))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),X6),s(bool,'T_0'))),s(bool,'F_0')))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun(bool,bool),happ(s(fun(bool,fun(bool,bool)),X6),s(bool,'T_0'))),s(bool,'F_0')))))),
+  file('thm.bool.DATATYPE_BOOL','thm.bool.DATATYPE_BOOL')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 9
+% Passive clauses: 22
+% Generated clauses: 171
+% Final active clauses: 7
+% Final passive clauses: 9
+% Input formulas: 6
+% Initial clauses: 6
+% 
+% Duplicate literals: 39
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 75
+% 
+% Binary resolution: 2
+% Forward superposition: 24
+% Backward superposition: 44
+% Self superposition: 25
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.025 s

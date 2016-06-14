@@ -1,0 +1,190 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.quantHeuristics
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quantHeuristics
+% SZS output start Proof for thm.quantHeuristics
+fof(f4642,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4635,f122,f187,f124,f191])).
+fof(f191,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f191_D])).
+fof(f191_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f124,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT',aHL_FALSITY)).
+fof(f187,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f187_D])).
+fof(f187_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f122,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT',aHL_TRUTH)).
+fof(f4635,plain,(
+  $false | ($spl0 | $spl7)),
+  inference(subsumption_resolution,[],[f4634,f187])).
+fof(f4634,plain,(
+  ~p(s(bool,'T_0')) | $spl7),
+  inference(forward_demodulation,[],[f4633,f205])).
+fof(f205,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(resolution,[],[f120,f127])).
+fof(f127,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f80])).
+fof(f80,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT','thm.bool.EQ_CLAUSES|split|1')).
+fof(f120,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))))),
+  inference(cnf_transformation,[],[f79])).
+fof(f79,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))) & ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',sK0),'_dst_x0_1'(s(sK0,sK1))),s(fun(sK0,bool),sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f64])).
+fof(f64,plain,(
+  ? [X0,X1,X2] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) & ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',X0),'_dst_x0_1'(s(X0,X1))),s(fun(X0,bool),X2)))))),
+  inference(ennf_transformation,[],[f29])).
+fof(f29,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',X0),'_dst_x0_1'(s(X0,X1))),s(fun(X0,bool),X2)))))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ~! [X0] : ! [X1,X2] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',X0),'_dst_x0_1'(s(X0,X1))),s(fun(X0,bool),X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',X6),'_dst_x0_1'(s(X6,X7))),s(fun(X6,bool),X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',X6),'_dst_x0_1'(s(X6,X7))),s(fun(X6,bool),X8)))))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT','thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT')).
+fof(f4633,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))) | $spl7),
+  inference(subsumption_resolution,[],[f4605,f191])).
+fof(f4605,plain,(
+  p(s(bool,'F_0')) | ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))))),
+  inference(superposition,[],[f2400,f246])).
+fof(f246,plain,(
+  s(bool,'F_0') = s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',sK0),'_dst_x0_1'(s(sK0,sK1))),s(fun(sK0,bool),sK2)))),
+  inference(resolution,[],[f121,f131])).
+fof(f131,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f82])).
+fof(f82,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT','thm.bool.EQ_CLAUSES|split|2')).
+fof(f121,plain,(
+  ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun('type.one.one',sK0),'_dst_x0_1'(s(sK0,sK1))),s(fun(sK0,bool),sK2))))),
+  inference(cnf_transformation,[],[f79])).
+fof(f2400,plain,(
+  ( ! [X24,X23,X25,X22] : (p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X23,X22),'_dst_x0_1'(s(X22,X24))),s(fun(X22,bool),X25)))) | ~p(s(bool,happ(s(fun(X22,bool),X25),s(X22,X24))))) )),
+  inference(superposition,[],[f156,f153])).
+fof(f153,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1,X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(flattening,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(rectify,[],[f27])).
+fof(f27,axiom,(
+  ! [X22,X23] : ! [X24,X25] : s(X23,X24) = s(X23,happ(s(fun(X22,X23),'_dst_x0_1'(s(X23,X24))),s(X22,X25)))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT','_dst_x0_ax')).
+fof(f156,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,sK4(X3,X2,X1,X0))))))) | p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3))))) )),
+  inference(cnf_transformation,[],[f100])).
+fof(f100,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3)))) | ! [X5] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X5))))))) & (~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,sK4(X3,X2,X1,X0))))))) | p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK4])],[f99])).
+fof(f99,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3)))) | ! [X5] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X5))))))) & (? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))) | p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3))))))),
+  inference(rectify,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3)))) | ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))))) & (? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))) | p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3))))))),
+  inference(nnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3)))) <=> ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0,X1] : ! [X2,X3] : (p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X1,X0),X2),s(fun(X0,bool),X3)))) <=> ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X17,X6] : ! [X20,X21] : (p(s(bool,'const.quantHeuristics.GUESS_EXISTS_POINT_2'(s(fun(X6,X17),X20),s(fun(X17,bool),X21)))) <=> ! [X19] : p(s(bool,happ(s(fun(X17,bool),X21),s(X17,happ(s(fun(X6,X17),X20),s(X6,X19)))))))),
+  file('thm.quantHeuristics.GUESS_RULES_TRIVIAL_EXISTS_POINT','thm.quantHeuristics.GUESS_REWRITES|split|2')).
+% SZS output end Proof for thm.quantHeuristics
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 111
+% Passive clauses: 852
+% Generated clauses: 4454
+% Final active clauses: 92
+% Final passive clauses: 641
+% Input formulas: 26
+% Initial clauses: 65
+% 
+% Duplicate literals: 193
+% Trivial inequalities: 130
+% Fw subsumption resolutions: 478
+% Fw demodulations: 472
+% Bw demodulations: 14
+% 
+% Simple tautologies: 142
+% Equational tautologies: 16
+% Forward subsumptions: 2015
+% Bw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 383
+% Forward superposition: 1735
+% Backward superposition: 839
+% Self superposition: 34
+% Equality factoring: 28
+% Equality resolution: 22
+% 
+% Split clauses: 125
+% Split components: 252
+% SAT solver clauses: 256
+% SAT solver unit clauses: 17
+% SAT solver binary clauses: 126
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 125
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 252
+% TWLsolver calls for satisfiability: 94
+% 
+% Memory used [KB]: 3709
+% Time elapsed: 0.128 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.13 s

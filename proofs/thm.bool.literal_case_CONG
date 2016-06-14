@@ -1,0 +1,119 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f238,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f237,f229])).
+fof(f229,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4)))),
+  inference(forward_demodulation,[],[f205,f32])).
+fof(f32,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X3)))) )),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ! [X0,X1,X2,X3] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7] : ! [X5,X13] : s(X6,happ(s(fun(X7,X6),X5),s(X7,X13))) = s(X6,'const.bool.literal_case_2'(s(fun(X7,X6),X5),s(X7,X13)))),
+  file('thm.bool.literal_case_CONG','thm.bool.literal_case_DEF')).
+fof(f205,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4))) != s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK2),s(sK1,sK4)))),
+  inference(backward_demodulation,[],[f32,f192])).
+fof(f192,plain,(
+  s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4)))),
+  inference(forward_demodulation,[],[f28,f26])).
+fof(f26,plain,(
+  s(sK1,sK4) = s(sK1,sK5)),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  s(sK1,sK4) = s(sK1,sK5) & ! [X6] : (s(sK1,sK5) != s(sK1,X6) | s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X6))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X6)))) & s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK3),s(sK1,sK5)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4,sK5])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2,X3,X4,X5] : (s(X1,X4) = s(X1,X5) & ! [X6] : (s(X1,X5) != s(X1,X6) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6)))) & s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X4))) != s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X3),s(X1,X5))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ? [X0,X1,X2,X3,X4,X5] : ((s(X1,X4) = s(X1,X5) & ! [X6] : (s(X1,X5) != s(X1,X6) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) & s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X4))) != s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X3),s(X1,X5))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2,X3,X4,X5] : ((s(X1,X4) = s(X1,X5) & ! [X6] : (s(X1,X5) = s(X1,X6) => s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) => s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X3),s(X1,X5))))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4,X5] : ((s(X1,X4) = s(X1,X5) & ! [X6] : (s(X1,X5) = s(X1,X6) => s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) => s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,'const.bool.literal_case_2'(s(fun(X1,X0),X3),s(X1,X5))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10,X11] : ((s(X7,X10) = s(X7,X11) & ! [X12] : (s(X7,X11) = s(X7,X12) => s(X6,happ(s(fun(X7,X6),X8),s(X7,X12))) = s(X6,happ(s(fun(X7,X6),X9),s(X7,X12))))) => s(X6,'const.bool.literal_case_2'(s(fun(X7,X6),X8),s(X7,X10))) = s(X6,'const.bool.literal_case_2'(s(fun(X7,X6),X9),s(X7,X11))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10,X11] : ((s(X7,X10) = s(X7,X11) & ! [X12] : (s(X7,X11) = s(X7,X12) => s(X6,happ(s(fun(X7,X6),X8),s(X7,X12))) = s(X6,happ(s(fun(X7,X6),X9),s(X7,X12))))) => s(X6,'const.bool.literal_case_2'(s(fun(X7,X6),X8),s(X7,X10))) = s(X6,'const.bool.literal_case_2'(s(fun(X7,X6),X9),s(X7,X11))))),
+  file('thm.bool.literal_case_CONG','thm.bool.literal_case_CONG')).
+fof(f28,plain,(
+  s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,'const.bool.literal_case_2'(s(fun(sK1,sK0),sK3),s(sK1,sK5)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f237,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4)))),
+  inference(forward_demodulation,[],[f236,f26])).
+fof(f236,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK5)))),
+  inference(trivial_inequality_removal,[],[f233])).
+fof(f233,plain,(
+  s(sK1,sK4) != s(sK1,sK4) | s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK5)))),
+  inference(superposition,[],[f232,f26])).
+fof(f232,plain,(
+  ( ! [X6] : (s(sK1,sK4) != s(sK1,X6) | s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X6))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X6)))) )),
+  inference(forward_demodulation,[],[f27,f26])).
+fof(f27,plain,(
+  ( ! [X6] : (s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X6))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X6))) | s(sK1,sK5) != s(sK1,X6)) )),
+  inference(cnf_transformation,[],[f22])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 35
+% Generated clauses: 200
+% Final active clauses: 11
+% Final passive clauses: 15
+% Input formulas: 7
+% Initial clauses: 14
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 1
+% Fw demodulations: 6
+% Bw demodulations: 1
+% 
+% Simple tautologies: 22
+% Equational tautologies: 14
+% Forward subsumptions: 80
+% 
+% Binary resolution: 4
+% Forward superposition: 42
+% Backward superposition: 37
+% Self superposition: 26
+% Equality factoring: 26
+% Equality resolution: 1
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

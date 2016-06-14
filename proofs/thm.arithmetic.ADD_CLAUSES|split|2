@@ -1,0 +1,83 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f274,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f267])).
+fof(f267,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK1),s('type.num.num',sK0))))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK1),s('type.num.num',sK0)))))),
+  inference(superposition,[],[f48,f73])).
+fof(f73,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))),s('type.num.num',X1)))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X1))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))),s('type.num.num',X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X7,X6] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6)))),
+  file('thm.arithmetic.ADD_CLAUSES|split|2','thm.arithmetic.ADD|split|1')).
+fof(f48,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK1),s('type.num.num',sK0))))) != s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0)))),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK1),s('type.num.num',sK0))))) != s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f33])).
+fof(f33,plain,(
+  ? [X0,X1] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0))))) != s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0)))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~! [X0,X1] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6))))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6)))),
+  file('thm.arithmetic.ADD_CLAUSES|split|2','thm.arithmetic.ADD_CLAUSES|split|2')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 26
+% Generated clauses: 201
+% Final active clauses: 12
+% Final passive clauses: 5
+% Input formulas: 16
+% Initial clauses: 27
+% 
+% Duplicate literals: 38
+% Trivial inequalities: 4
+% 
+% Simple tautologies: 27
+% Equational tautologies: 15
+% Forward subsumptions: 75
+% Fw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 4
+% Forward superposition: 36
+% Backward superposition: 41
+% Self superposition: 30
+% Equality factoring: 26
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 11
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 6
+% 
+% Sat splits: 5
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 11
+% TWLsolver calls for satisfiability: 7
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.014 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.016 s

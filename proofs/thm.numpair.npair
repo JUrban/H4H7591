@@ -1,0 +1,115 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.numpair
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numpair
+% SZS output start Proof for thm.numpair
+fof(f404,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f403,f34])).
+fof(f34,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.numpair.npair_2'(s('type.num.num',sK1(X0)),s('type.num.num',sK2(X0))))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.numpair.npair_2'(s('type.num.num',sK1(X0)),s('type.num.num',sK2(X0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2])],[f16])).
+fof(f16,plain,(
+  ! [X0] : ? [X1,X2] : s('type.num.num',X0) = s('type.num.num','const.numpair.npair_2'(s('type.num.num',X1),s('type.num.num',X2)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ? [X8,X9] : s('type.num.num',X6) = s('type.num.num','const.numpair.npair_2'(s('type.num.num',X8),s('type.num.num',X9)))),
+  file('thm.numpair.npair','thm.numpair.npair_cases')).
+fof(f403,plain,(
+  s('type.num.num',sK0) != s('type.num.num','const.numpair.npair_2'(s('type.num.num',sK1(sK0)),s('type.num.num',sK2(sK0))))),
+  inference(forward_demodulation,[],[f402,f71])).
+fof(f71,plain,(
+  ( ! [X0] : (s('type.num.num',sK1(X0)) = s('type.num.num','const.numpair.nfst_1'(s('type.num.num',X0)))) )),
+  inference(superposition,[],[f35,f34])).
+fof(f35,plain,(
+  ( ! [X0,X1] : (s('type.num.num',X1) = s('type.num.num','const.numpair.nfst_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X1),s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : s('type.num.num',X1) = s('type.num.num','const.numpair.nfst_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X1),s('type.num.num',X0)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X9,X8] : s('type.num.num',X8) = s('type.num.num','const.numpair.nfst_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X8),s('type.num.num',X9)))))),
+  file('thm.numpair.npair','thm.numpair.nfst_npair')).
+fof(f402,plain,(
+  s('type.num.num',sK0) != s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',sK0))),s('type.num.num',sK2(sK0))))),
+  inference(forward_demodulation,[],[f27,f149])).
+fof(f149,plain,(
+  ( ! [X0] : (s('type.num.num',sK2(X0)) = s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',X0)))) )),
+  inference(superposition,[],[f36,f34])).
+fof(f36,plain,(
+  ( ! [X0,X1] : (s('type.num.num',X0) = s('type.num.num','const.numpair.nsnd_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X1),s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : s('type.num.num',X0) = s('type.num.num','const.numpair.nsnd_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X1),s('type.num.num',X0)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X9,X8] : s('type.num.num',X9) = s('type.num.num','const.numpair.nsnd_1'(s('type.num.num','const.numpair.npair_2'(s('type.num.num',X8),s('type.num.num',X9)))))),
+  file('thm.numpair.npair','thm.numpair.nsnd_npair')).
+fof(f27,plain,(
+  s('type.num.num',sK0) != s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',sK0))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',sK0)))))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  s('type.num.num',sK0) != s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',sK0))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',sK0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f21])).
+fof(f21,plain,(
+  ? [X0] : s('type.num.num',X0) != s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',X0))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',X0)))))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : s('type.num.num',X0) = s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',X0))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.num.num',X6) = s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',X6))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.num.num',X6) = s('type.num.num','const.numpair.npair_2'(s('type.num.num','const.numpair.nfst_1'(s('type.num.num',X6))),s('type.num.num','const.numpair.nsnd_1'(s('type.num.num',X6)))))),
+  file('thm.numpair.npair','thm.numpair.npair')).
+% SZS output end Proof for thm.numpair
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 20
+% Passive clauses: 132
+% Generated clauses: 377
+% Final active clauses: 18
+% Final passive clauses: 103
+% Input formulas: 10
+% Initial clauses: 11
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% Fw demodulations: 115
+% 
+% Simple tautologies: 2
+% Equational tautologies: 3
+% Forward subsumptions: 124
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 2
+% Forward superposition: 114
+% Backward superposition: 108
+% Self superposition: 20
+% Equality factoring: 2
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.019 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.021 s

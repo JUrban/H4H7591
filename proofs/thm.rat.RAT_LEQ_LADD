@@ -1,0 +1,364 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f1491,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1490,f293,f280,f614,f55,f58,f56,f67,f274,f281,f311,f315,f313,f373,f278,f286,f283,f252,f250,f544,f926,f249,f1386,f1017,f1021,f1019,f453,f279,f1344,f1422])).
+fof(f1422,plain,(
+  $false | ($spl13 | $spl20)),
+  inference(subsumption_resolution,[],[f1393,f79])).
+fof(f79,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X0)))) )),
+  inference(resolution,[],[f78,f52])).
+fof(f52,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f36,f37])).
+fof(f37,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.rat.RAT_LEQ_LADD',aHL_BOOL_CASES)).
+fof(f36,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rat.RAT_LEQ_LADD',aHL_FALSITY)).
+fof(f78,plain,(
+  ( ! [X0] : (p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X0))))) )),
+  inference(equality_resolution,[],[f44])).
+fof(f44,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat',X0) != s('type.rat.rat',X1) | p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | s('type.rat.rat',X0) = s('type.rat.rat',X1)) & ((~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) & s('type.rat.rat',X0) != s('type.rat.rat',X1)) | p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))))))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | (p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | s('type.rat.rat',X0) = s('type.rat.rat',X1))) & ((~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) & s('type.rat.rat',X0) != s('type.rat.rat',X1)) | p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))))))),
+  inference(nnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : (p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) <=> (p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | s('type.rat.rat',X0) = s('type.rat.rat',X1)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X7] : (p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X6),s('type.rat.rat',X7)))) <=> (p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X6),s('type.rat.rat',X7)))) | s('type.rat.rat',X6) = s('type.rat.rat',X7)))),
+  file('thm.rat.RAT_LEQ_LADD','thm.rat.rat_leq_def')).
+fof(f1393,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK0))) | ($spl13 | $spl20)),
+  inference(backward_demodulation,[],[f313,f281])).
+fof(f1344,plain,(
+  $false | ($spl21 | $spl46)),
+  inference(subsumption_resolution,[],[f1342,f312])).
+fof(f312,plain,(
+  s('type.rat.rat',sK0) != s('type.rat.rat',sK1) | $spl21),
+  inference(cnf_transformation,[],[f312_D])).
+fof(f312_D,plain,(
+  s('type.rat.rat',sK0) != s('type.rat.rat',sK1) <=> ~$spl21),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl21])])).
+fof(f1342,plain,(
+  s('type.rat.rat',sK0) = s('type.rat.rat',sK1) | $spl46),
+  inference(equality_resolution,[],[f1029])).
+fof(f1029,plain,(
+  ( ! [X2] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',X2))) | s('type.rat.rat',sK1) = s('type.rat.rat',X2)) ) | $spl46),
+  inference(superposition,[],[f47,f1019])).
+fof(f47,plain,(
+  ( ! [X2,X0,X1] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1))) | s('type.rat.rat',X0) = s('type.rat.rat',X1)) )),
+  inference(cnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1,X2] : ((s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1))) | s('type.rat.rat',X0) = s('type.rat.rat',X1)) & (s('type.rat.rat',X0) != s('type.rat.rat',X1) | s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1)))))),
+  inference(nnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1,X2] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1))) <=> s('type.rat.rat',X0) = s('type.rat.rat',X1))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X7,X8] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X6))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X7))) <=> s('type.rat.rat',X6) = s('type.rat.rat',X7))),
+  file('thm.rat.RAT_LEQ_LADD','thm.rat.RAT_EQ_LADD')).
+fof(f279,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s(bool,'T_0') = s(bool,X0)) ) | $spl10),
+  inference(cnf_transformation,[],[f279_D])).
+fof(f279_D,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f453,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s(bool,'T_0') = s(bool,X0)) ) | $spl15),
+  inference(trivial_inequality_removal,[],[f447])).
+fof(f447,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'T_0') | s(bool,X0) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s(bool,'T_0') = s(bool,X0)) ) | $spl15),
+  inference(superposition,[],[f282,f50])).
+fof(f50,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f37,f37])).
+fof(f282,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | $spl15),
+  inference(cnf_transformation,[],[f282_D])).
+fof(f282_D,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) <=> ~$spl15),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl15])])).
+fof(f1019,plain,(
+  s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))) | $spl46),
+  inference(cnf_transformation,[],[f1019_D])).
+fof(f1019_D,plain,(
+  s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))) <=> ~$spl46),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl46])])).
+fof(f1021,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | $spl48),
+  inference(cnf_transformation,[],[f1021_D])).
+fof(f1021_D,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) <=> ~$spl48),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl48])])).
+fof(f1017,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))) | ($spl6 | $spl14)),
+  inference(subsumption_resolution,[],[f1007,f34])).
+fof(f34,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rat.RAT_LEQ_LADD',aHL_TRUTH)).
+fof(f1007,plain,(
+  ~p(s(bool,'T_0')) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))) | ($spl6 | $spl14)),
+  inference(superposition,[],[f250,f283])).
+fof(f1386,plain,(
+  $false | ($spl23 | $spl48)),
+  inference(subsumption_resolution,[],[f1366,f314])).
+fof(f314,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl23),
+  inference(cnf_transformation,[],[f314_D])).
+fof(f314_D,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl23),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl23])])).
+fof(f1366,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl48),
+  inference(superposition,[],[f1021,f46])).
+fof(f46,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1)))))) )),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0,X1,X2] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1)))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6,X7,X8] : s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) = s(bool,'const.rat.rat_les_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X6))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X7)))))),
+  file('thm.rat.RAT_LEQ_LADD','thm.rat.RAT_LES_LADD')).
+fof(f249,plain,(
+  ( ! [X8] : (s(bool,'T_0') = s(bool,X8)) ) | $spl4),
+  inference(cnf_transformation,[],[f249_D])).
+fof(f249_D,plain,(
+  ( ! [X8] : (s(bool,'T_0') = s(bool,X8)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f926,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | ($spl10 | $spl14)),
+  inference(duplicate_literal_removal,[],[f905])).
+fof(f905,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) ) | ($spl10 | $spl14)),
+  inference(superposition,[],[f283,f279])).
+fof(f544,plain,(
+  ( ! [X1] : (s(bool,'T_0') = s(bool,X1)) ) | ($spl10 | $spl22)),
+  inference(subsumption_resolution,[],[f543,f34])).
+fof(f543,plain,(
+  ( ! [X1] : (~p(s(bool,'T_0')) | s(bool,'T_0') = s(bool,X1)) ) | ($spl10 | $spl22)),
+  inference(forward_demodulation,[],[f542,f315])).
+fof(f542,plain,(
+  ( ! [X1] : (~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1)))) | s(bool,'T_0') = s(bool,X1)) ) | $spl10),
+  inference(subsumption_resolution,[],[f510,f52])).
+fof(f510,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | ~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1)))) | s(bool,'T_0') = s(bool,X1)) ) | $spl10),
+  inference(superposition,[],[f380,f279])).
+fof(f380,plain,(
+  ( ! [X4,X5,X3] : (p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X3),s('type.rat.rat',X4))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X3),s('type.rat.rat',X5)))))) | ~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X4),s('type.rat.rat',X5))))) )),
+  inference(superposition,[],[f43,f46])).
+fof(f43,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f250,plain,(
+  ( ! [X6,X7] : (~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X6),s('type.rat.rat',X7)))) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) | s('type.rat.rat',X6) = s('type.rat.rat',X7)) ) | $spl6),
+  inference(cnf_transformation,[],[f250_D])).
+fof(f250_D,plain,(
+  ( ! [X6,X7] : (~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X6),s('type.rat.rat',X7)))) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) | s('type.rat.rat',X6) = s('type.rat.rat',X7)) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f252,plain,(
+  ( ! [X12,X13] : (s('type.rat.rat',X12) = s('type.rat.rat',X13) | ~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X12),s('type.rat.rat',X13)))) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X12),s('type.rat.rat',X13)))) )),
+  inference(subsumption_resolution,[],[f247,f36])).
+fof(f247,plain,(
+  ( ! [X12,X13] : (p(s(bool,'F_0')) | s('type.rat.rat',X12) = s('type.rat.rat',X13) | ~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X12),s('type.rat.rat',X13)))) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X12),s('type.rat.rat',X13)))) )),
+  inference(superposition,[],[f42,f37])).
+fof(f42,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.rat.rat_les_2'(s('type.rat.rat',X0),s('type.rat.rat',X1)))) | s('type.rat.rat',X0) = s('type.rat.rat',X1) | ~p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f283,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | $spl14),
+  inference(cnf_transformation,[],[f283_D])).
+fof(f283_D,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f286,plain,(
+  s(bool,'F_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl19),
+  inference(cnf_transformation,[],[f286_D])).
+fof(f286_D,plain,(
+  s(bool,'F_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl19),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl19])])).
+fof(f278,plain,(
+  s(bool,'F_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1)))))),
+  inference(superposition,[],[f33,f37])).
+fof(f33,plain,(
+  s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1)))))),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f23])).
+fof(f23,plain,(
+  ? [X0,X1,X2] : s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1)))))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1,X2] : s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X6))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X6))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X7)))))),
+  file('thm.rat.RAT_LEQ_LADD','thm.rat.RAT_LEQ_LADD')).
+fof(f373,plain,(
+  $false | ($spl15 | $spl20)),
+  inference(subsumption_resolution,[],[f372,f79])).
+fof(f372,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))))) | ($spl15 | $spl20)),
+  inference(forward_demodulation,[],[f282,f313])).
+fof(f313,plain,(
+  s('type.rat.rat',sK0) = s('type.rat.rat',sK1) | $spl20),
+  inference(cnf_transformation,[],[f313_D])).
+fof(f313_D,plain,(
+  s('type.rat.rat',sK0) = s('type.rat.rat',sK1) <=> ~$spl20),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl20])])).
+fof(f315,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl22),
+  inference(cnf_transformation,[],[f315_D])).
+fof(f315_D,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl22),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl22])])).
+fof(f311,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s('type.rat.rat',sK0) = s('type.rat.rat',sK1) | ($spl6 | $spl12)),
+  inference(subsumption_resolution,[],[f300,f34])).
+fof(f300,plain,(
+  ~p(s(bool,'T_0')) | s(bool,'T_0') = s(bool,'const.rat.rat_les_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s('type.rat.rat',sK0) = s('type.rat.rat',sK1) | ($spl6 | $spl12)),
+  inference(superposition,[],[f250,f280])).
+fof(f281,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl13),
+  inference(cnf_transformation,[],[f281_D])).
+fof(f281_D,plain,(
+  s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl13),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl13])])).
+fof(f274,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s(bool,X0) = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK0))),s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK2),s('type.rat.rat',sK1))))) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f33,f50])).
+fof(f67,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f64,f34])).
+fof(f64,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f36,f56])).
+fof(f56,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f56_D])).
+fof(f56_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f58,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f58_D])).
+fof(f58_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f55,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f37])).
+fof(f614,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f604])).
+fof(f604,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f58,f249])).
+fof(f280,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl12),
+  inference(cnf_transformation,[],[f280_D])).
+fof(f280_D,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f293,plain,(
+  ( ! [X2] : (s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s(bool,'T_0') = s(bool,X2)) ) | $spl19),
+  inference(subsumption_resolution,[],[f289,f37])).
+fof(f289,plain,(
+  ( ! [X2] : (s(bool,'F_0') != s(bool,X2) | s(bool,'T_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | s(bool,'T_0') = s(bool,X2)) ) | $spl19),
+  inference(superposition,[],[f286,f50])).
+fof(f1490,plain,(
+  $false | ($spl18 | $spl22)),
+  inference(subsumption_resolution,[],[f1489,f36])).
+fof(f1489,plain,(
+  p(s(bool,'F_0')) | ($spl18 | $spl22)),
+  inference(forward_demodulation,[],[f1488,f285])).
+fof(f285,plain,(
+  s(bool,'F_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) | $spl18),
+  inference(cnf_transformation,[],[f285_D])).
+fof(f285_D,plain,(
+  s(bool,'F_0') = s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) <=> ~$spl18),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl18])])).
+fof(f1488,plain,(
+  p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1)))) | $spl22),
+  inference(subsumption_resolution,[],[f1478,f34])).
+fof(f1478,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.rat.rat_leq_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1)))) | $spl22),
+  inference(superposition,[],[f43,f315])).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 70
+% Passive clauses: 250
+% Generated clauses: 1469
+% Final active clauses: 23
+% Final passive clauses: 76
+% Input formulas: 11
+% Initial clauses: 16
+% 
+% Duplicate literals: 154
+% Trivial inequalities: 17
+% Fw subsumption resolutions: 98
+% Fw demodulations: 156
+% Bw demodulations: 23
+% 
+% Simple tautologies: 45
+% Equational tautologies: 21
+% Forward subsumptions: 663
+% 
+% Binary resolution: 29
+% Forward superposition: 403
+% Backward superposition: 421
+% Self superposition: 36
+% Equality factoring: 34
+% Equality resolution: 7
+% 
+% Split clauses: 50
+% Split components: 102
+% SAT solver clauses: 100
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 34
+% SAT solver learnt clauses: 3
+% SAT solver learnt literals: 3
+% 
+% Sat splits: 50
+% Sat splitting refutations: 13
+% 
+% TWLsolver clauses: 95
+% TWLsolver calls for satisfiability: 32
+% 
+% Memory used [KB]: 1151
+% Time elapsed: 0.039 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.041 s

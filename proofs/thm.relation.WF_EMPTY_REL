@@ -1,0 +1,267 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f1385,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1382,f82,f126,f80,f130,f757,f759,f476,f145,f148,f146,f155,f128,f132,f1325,f1327,f422,f424,f423])).
+fof(f423,plain,(
+  ( ! [X25] : (s(bool,'T_0') = s(bool,X25)) ) | $spl12),
+  inference(cnf_transformation,[],[f423_D])).
+fof(f423_D,plain,(
+  ( ! [X25] : (s(bool,'T_0') = s(bool,X25)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f424,plain,(
+  ( ! [X24,X23] : (p(s(bool,'const.relation.WF_1'(s(fun(X23,fun(X23,bool)),X24)))) | s(bool,'T_0') = s(bool,happ(s(fun(X23,bool),sK2(X24,X23)),s(X23,sK3(X24,X23))))) ) | $spl14),
+  inference(cnf_transformation,[],[f424_D])).
+fof(f424_D,plain,(
+  ( ! [X24,X23] : (p(s(bool,'const.relation.WF_1'(s(fun(X23,fun(X23,bool)),X24)))) | s(bool,'T_0') = s(bool,happ(s(fun(X23,bool),sK2(X24,X23)),s(X23,sK3(X24,X23))))) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f422,plain,(
+  ( ! [X24,X23,X25] : (p(s(bool,'const.relation.WF_1'(s(fun(X23,fun(X23,bool)),X24)))) | s(bool,'T_0') = s(bool,X25) | s(bool,'T_0') = s(bool,happ(s(fun(X23,bool),sK2(X24,X23)),s(X23,sK3(X24,X23))))) ) | $spl1),
+  inference(subsumption_resolution,[],[f271,f137])).
+fof(f137,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl1),
+  inference(superposition,[],[f126,f83])).
+fof(f83,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.relation.WF_EMPTY_REL',aHL_BOOL_CASES)).
+fof(f271,plain,(
+  ( ! [X24,X23,X25] : (p(s(bool,X25)) | p(s(bool,'const.relation.WF_1'(s(fun(X23,fun(X23,bool)),X24)))) | s(bool,'T_0') = s(bool,X25) | s(bool,'T_0') = s(bool,happ(s(fun(X23,bool),sK2(X24,X23)),s(X23,sK3(X24,X23))))) )),
+  inference(superposition,[],[f116,f135])).
+fof(f135,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f83,f83])).
+fof(f116,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(X0,bool),sK2(X1,X0)),s(X0,sK3(X1,X0))))) | p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X6] : (! [X9] : ~p(s(bool,happ(s(fun(X0,bool),X6),s(X0,X9)))) | (p(s(bool,happ(s(fun(X0,bool),X6),s(X0,sK1(X6,X1,X0))))) & ! [X8] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X8))),s(X0,sK1(X6,X1,X0))))) | ~p(s(bool,happ(s(fun(X0,bool),X6),s(X0,X8)))))))) & ((p(s(bool,happ(s(fun(X0,bool),sK2(X1,X0)),s(X0,sK3(X1,X0))))) & ! [X3] : (~p(s(bool,happ(s(fun(X0,bool),sK2(X1,X0)),s(X0,X3)))) | (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK4(X3,X1,X0)))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),sK2(X1,X0)),s(X0,sK4(X3,X1,X0)))))))) | p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2,sK3,sK4])],[f74])).
+fof(f74,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X6] : (! [X9] : ~p(s(bool,happ(s(fun(X0,bool),X6),s(X0,X9)))) | ? [X7] : (p(s(bool,happ(s(fun(X0,bool),X6),s(X0,X7)))) & ! [X8] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X8))),s(X0,X7)))) | ~p(s(bool,happ(s(fun(X0,bool),X6),s(X0,X8)))))))) & (? [X2] : (? [X5] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5)))) & ! [X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) | ? [X4] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X4))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))))) | p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f73])).
+fof(f73,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X2] : (! [X3] : ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) | ? [X4] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5)))))))) & (? [X2] : (? [X3] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) & ! [X4] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) | ? [X5] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) & p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5))))))) | p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(nnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2] : (! [X3] : ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) | ? [X4] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) | ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5))))))))),
+  inference(ennf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2] : (? [X3] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => ? [X4] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) => ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5))))))))),
+  inference(flattening,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2] : (? [X3] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => ? [X4] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) => ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5))))))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6] : ! [X9] : (p(s(bool,'const.relation.WF_1'(s(fun(X6,fun(X6,bool)),X9)))) <=> ! [X10] : (? [X11] : p(s(bool,happ(s(fun(X6,bool),X10),s(X6,X11)))) => ? [X12] : (p(s(bool,happ(s(fun(X6,bool),X10),s(X6,X12)))) & ! [X13] : (p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X9),s(X6,X13))),s(X6,X12)))) => ~p(s(bool,happ(s(fun(X6,bool),X10),s(X6,X13))))))))),
+  file('thm.relation.WF_EMPTY_REL','thm.relation.WF_DEF')).
+fof(f1327,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2('const.relation.EMPTY_REL_0',sK0)),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0)))) | $spl30),
+  inference(cnf_transformation,[],[f1327_D])).
+fof(f1327_D,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2('const.relation.EMPTY_REL_0',sK0)),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0)))) <=> ~$spl30),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl30])])).
+fof(f1325,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2('const.relation.EMPTY_REL_0',sK0)),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0)))) | s(bool,'T_0') = s(bool,X0)) ) | ($spl1 | $spl6 | $spl14)),
+  inference(subsumption_resolution,[],[f1316,f137])).
+fof(f1316,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2('const.relation.EMPTY_REL_0',sK0)),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0)))) | s(bool,'T_0') = s(bool,X0)) ) | ($spl6 | $spl14)),
+  inference(superposition,[],[f424,f426])).
+fof(f426,plain,(
+  ( ! [X21] : (s(bool,X21) = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) | s(bool,'T_0') = s(bool,X21)) ) | $spl6),
+  inference(subsumption_resolution,[],[f314,f130])).
+fof(f314,plain,(
+  ( ! [X21] : (~p(s(bool,'T_0')) | s(bool,X21) = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) | s(bool,'T_0') = s(bool,X21)) )),
+  inference(superposition,[],[f79,f135])).
+fof(f79,plain,(
+  ~p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))))),
+  inference(cnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ~p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f44])).
+fof(f44,plain,(
+  ? [X0] : ~p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'))))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0] : p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.relation.WF_1'(s(fun(X6,fun(X6,bool)),'const.relation.EMPTY_REL_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.relation.WF_1'(s(fun(X6,fun(X6,bool)),'const.relation.EMPTY_REL_0'))))),
+  file('thm.relation.WF_EMPTY_REL','thm.relation.WF_EMPTY_REL')).
+fof(f132,plain,(
+  $false | ($spl4 | $spl6)),
+  inference(subsumption_resolution,[],[f130,f128])).
+fof(f128,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) | $spl4),
+  inference(cnf_transformation,[],[f128_D])).
+fof(f128_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f155,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | ($spl1 | $spl8)),
+  inference(superposition,[],[f126,f146])).
+fof(f146,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl8),
+  inference(cnf_transformation,[],[f146_D])).
+fof(f146_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f148,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl11),
+  inference(cnf_transformation,[],[f148_D])).
+fof(f148_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f145,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f83])).
+fof(f476,plain,(
+  $false | ($spl11 | $spl12)),
+  inference(trivial_inequality_removal,[],[f469])).
+fof(f469,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl11 | $spl12)),
+  inference(superposition,[],[f148,f423])).
+fof(f759,plain,(
+  s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) | $spl16),
+  inference(cnf_transformation,[],[f759_D])).
+fof(f759_D,plain,(
+  s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) <=> ~$spl16),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl16])])).
+fof(f757,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) | s(bool,'T_0') = s(bool,X0)) ) | $spl6),
+  inference(duplicate_literal_removal,[],[f683])).
+fof(f683,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'))) | s(bool,'T_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) ) | $spl6),
+  inference(superposition,[],[f426,f83])).
+fof(f130,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f130_D])).
+fof(f130_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f80,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.relation.WF_EMPTY_REL',aHL_TRUTH)).
+fof(f126,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f126_D])).
+fof(f126_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f82,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.relation.WF_EMPTY_REL',aHL_FALSITY)).
+fof(f1382,plain,(
+  $false | ($spl1 | $spl6 | $spl16 | $spl30)),
+  inference(subsumption_resolution,[],[f1381,f126])).
+fof(f1381,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl6 | $spl16 | $spl30)),
+  inference(forward_demodulation,[],[f1380,f759])).
+fof(f1380,plain,(
+  p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0')))) | ($spl1 | $spl6 | $spl30)),
+  inference(subsumption_resolution,[],[f1379,f126])).
+fof(f1379,plain,(
+  p(s(bool,'F_0')) | p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0')))) | ($spl6 | $spl30)),
+  inference(forward_demodulation,[],[f1378,f682])).
+fof(f682,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'F_0') = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'),s(X0,X1))),s(X0,X2)))) )),
+  inference(forward_demodulation,[],[f122,f121])).
+fof(f121,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'F_0') = s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0,X1,X2] : s(bool,'F_0') = s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f38])).
+fof(f38,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'F_0') = s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X8,X14] : s(bool,'F_0') = s(bool,'const.relation.EMPTY_REL_2'(s(X6,X8),s(X6,X14)))),
+  file('thm.relation.WF_EMPTY_REL','thm.relation.EMPTY_REL_DEF')).
+fof(f122,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'),s(X0,X1))),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0,X1,X2] : s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'),s(X0,X1))),s(X0,X2)))),
+  inference(flattening,[],[f40])).
+fof(f40,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.relation.EMPTY_REL_2'(s(X0,X1),s(X0,X2))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.EMPTY_REL_0'),s(X0,X1))),s(X0,X2)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6] : ! [X15,X16] : s(bool,'const.relation.EMPTY_REL_2'(s(X6,X15),s(X6,X16))) = s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),'const.relation.EMPTY_REL_0'),s(X6,X15))),s(X6,X16)))),
+  file('thm.relation.WF_EMPTY_REL','ARITY_0_2_const.relation.EMPTY_REL')).
+fof(f1378,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'),s(sK0,sK4(sK3('const.relation.EMPTY_REL_0',sK0),'const.relation.EMPTY_REL_0',sK0)))),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0))))) | p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0')))) | ($spl6 | $spl30)),
+  inference(subsumption_resolution,[],[f1342,f130])).
+fof(f1342,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,happ(s(fun(sK0,bool),happ(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0'),s(sK0,sK4(sK3('const.relation.EMPTY_REL_0',sK0),'const.relation.EMPTY_REL_0',sK0)))),s(sK0,sK3('const.relation.EMPTY_REL_0',sK0))))) | p(s(bool,'const.relation.WF_1'(s(fun(sK0,fun(sK0,bool)),'const.relation.EMPTY_REL_0')))) | $spl30),
+  inference(superposition,[],[f117,f1327])).
+fof(f117,plain,(
+  ( ! [X0,X3,X1] : (~p(s(bool,happ(s(fun(X0,bool),sK2(X1,X0)),s(X0,X3)))) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK4(X3,X1,X0)))),s(X0,X3)))) | p(s(bool,'const.relation.WF_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f75])).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 40
+% Passive clauses: 189
+% Generated clauses: 1280
+% Final active clauses: 30
+% Final passive clauses: 87
+% Input formulas: 20
+% Initial clauses: 45
+% 
+% Duplicate literals: 110
+% Trivial inequalities: 17
+% Fw subsumption resolutions: 86
+% Fw demodulations: 40
+% Bw demodulations: 6
+% 
+% Simple tautologies: 48
+% Equational tautologies: 16
+% Forward subsumptions: 771
+% 
+% Binary resolution: 16
+% Forward superposition: 577
+% Backward superposition: 281
+% Self superposition: 46
+% Equality factoring: 30
+% Equality resolution: 4
+% 
+% Split clauses: 33
+% Split components: 67
+% SAT solver clauses: 59
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 21
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 33
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 58
+% TWLsolver calls for satisfiability: 22
+% 
+% Memory used [KB]: 1535
+% Time elapsed: 0.037 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.039 s

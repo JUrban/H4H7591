@@ -1,0 +1,166 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.real_sigma
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real_sigma
+% SZS output start Proof for thm.real_sigma
+fof(f5493,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f5492,f241,f358,f360,f217,f361])).
+fof(f361,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f361_D])).
+fof(f361_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f217,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD',aHL_FALSITY)).
+fof(f360,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f360_D])).
+fof(f360_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f358,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f358_D])).
+fof(f358_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f241,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f162])).
+fof(f162,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f161])).
+fof(f161,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f118])).
+fof(f118,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X9] : ((p(s(bool,'F_0')) => p(s(bool,X9))) <=> p(s(bool,'T_0')))),
+  file('thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD','thm.bool.IMP_CLAUSES|split|2')).
+fof(f5492,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f5491,f210])).
+fof(f210,plain,(
+  s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK10,bool),sK11))))) != s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(sK10,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(sK10,bool),'_dst_x1x0_2'(s(fun(sK10,fun(fun(sK10,bool),bool)),'const.bool.IN_0'),s(fun(sK10,bool),sK11))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(sK10,bool),sK11)))),
+  inference(cnf_transformation,[],[f148])).
+fof(f148,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK10,bool),sK11)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK10,bool),sK11))))) != s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(sK10,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(sK10,bool),'_dst_x1x0_2'(s(fun(sK10,fun(fun(sK10,bool),bool)),'const.bool.IN_0'),s(fun(sK10,bool),sK11))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(sK10,bool),sK11)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11])],[f110])).
+fof(f110,plain,(
+  ? [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) != s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(ennf_transformation,[],[f45])).
+fof(f45,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f44])).
+fof(f44,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X7))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X6,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X7))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X6,bool),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X7))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X6,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X7))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X6,bool),X7))))),
+  file('thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD','thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD')).
+fof(f5491,plain,(
+  s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK10,bool),sK11))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(sK10,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(sK10,bool),'_dst_x1x0_2'(s(fun(sK10,fun(fun(sK10,bool),bool)),'const.bool.IN_0'),s(fun(sK10,bool),sK11))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(sK10,bool),sK11))) | $spl0),
+  inference(subsumption_resolution,[],[f5483,f358])).
+fof(f5483,plain,(
+  ~p(s(bool,'T_0')) | s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(sK10,bool),sK11))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(sK10,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(sK10,bool),'_dst_x1x0_2'(s(fun(sK10,fun(fun(sK10,bool),bool)),'const.bool.IN_0'),s(fun(sK10,bool),sK11))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(sK10,bool),sK11)))),
+  inference(superposition,[],[f251,f373])).
+fof(f373,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK10,bool),sK11)))),
+  inference(resolution,[],[f225,f209])).
+fof(f209,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK10,bool),sK11))))),
+  inference(cnf_transformation,[],[f148])).
+fof(f225,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f151])).
+fof(f151,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD','thm.bool.EQ_CLAUSES|split|1')).
+fof(f251,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f120])).
+fof(f120,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(ennf_transformation,[],[f70])).
+fof(f70,plain,(
+  ! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f69])).
+fof(f69,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X0,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X7))))) = s('type.realax.real','const.real_sigma.REAL_SUM_IMAGE_2'(s(fun(X6,'type.realax.real'),'_dst_x0x1x0x0_4'(s(fun(bool,fun('type.realax.real',fun('type.realax.real','type.realax.real'))),'const.bool.COND_0'),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X7))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s(fun(X6,bool),X7))))),
+  file('thm.real_sigma.REAL_SUM_IMAGE_EQ_CARD','thm.real_sigma.real_sigma_2|48|_prove_ltb')).
+% SZS output end Proof for thm.real_sigma
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 329
+% Passive clauses: 1934
+% Generated clauses: 5276
+% Final active clauses: 328
+% Final passive clauses: 1460
+% Input formulas: 42
+% Initial clauses: 145
+% 
+% Duplicate literals: 137
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 315
+% Fw demodulations: 148
+% Bw demodulations: 1
+% 
+% Simple tautologies: 108
+% Equational tautologies: 22
+% Forward subsumptions: 2576
+% 
+% Binary resolution: 2546
+% Factoring: 738
+% Forward superposition: 348
+% Backward superposition: 817
+% Self superposition: 35
+% Equality factoring: 2
+% Equality resolution: 3
+% 
+% Split clauses: 90
+% Split components: 181
+% SAT solver clauses: 182
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 32
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 90
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 181
+% TWLsolver calls for satisfiability: 160
+% 
+% Memory used [KB]: 4605
+% Time elapsed: 0.151 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.154 s

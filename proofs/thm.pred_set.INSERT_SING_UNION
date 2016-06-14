@@ -1,0 +1,269 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% (48092)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 1116
+% Passive clauses: 9989
+% Generated clauses: 33954
+% Final active clauses: 975
+% Final passive clauses: 8308
+% Input formulas: 260
+% Initial clauses: 622
+% 
+% Duplicate literals: 214
+% Trivial inequalities: 263
+% Fw subsumption resolutions: 1783
+% Fw demodulations: 3668
+% Bw demodulations: 127
+% 
+% Simple tautologies: 406
+% Equational tautologies: 39
+% Forward subsumptions: 16966
+% 
+% Binary resolution: 8529
+% Factoring: 555
+% Forward superposition: 7587
+% Backward superposition: 10243
+% Self superposition: 39
+% Equality factoring: 2
+% Equality resolution: 41
+% 
+% Split clauses: 766
+% Split components: 1534
+% SAT solver clauses: 948
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 75
+% 
+% Sat splits: 766
+% Sat splitting refutations: 8
+% 
+% TWLsolver clauses: 944
+% TWLsolver calls for satisfiability: 338
+% 
+% Memory used [KB]: 17270
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 143 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.pred_set
+% (48106)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 563
+% Passive clauses: 3860
+% Generated clauses: 19681
+% Final active clauses: 547
+% Final passive clauses: 3186
+% Input formulas: 260
+% Initial clauses: 622
+% 
+% Duplicate literals: 110
+% Trivial inequalities: 36
+% Fw subsumption resolutions: 833
+% Fw demodulations: 2534
+% Bw demodulations: 125
+% Condensations: 138
+% Global subsumptions: 28
+% 
+% Simple tautologies: 303
+% Equational tautologies: 9
+% Forward subsumptions: 7244
+% 
+% Binary resolution: 3626
+% Factoring: 309
+% Forward superposition: 4511
+% Backward superposition: 2866
+% Self superposition: 39
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 39
+% Split components: 78
+% SAT solver clauses: 5175
+% SAT solver unit clauses: 692
+% SAT solver binary clauses: 213
+% SAT solver learnt clauses: 56
+% SAT solver learnt literals: 30
+% 
+% Sat splits: 39
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 5065
+% TWLsolver calls for satisfiability: 4337
+% 
+% Memory used [KB]: 19189
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f72248,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f72247,f7562])).
+fof(f7562,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.pred_set.INSERT_3'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1))))) )),
+  inference(forward_demodulation,[],[f7472,f1302])).
+fof(f1302,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f428])).
+fof(f428,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f427])).
+fof(f427,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f58])).
+fof(f58,axiom,(
+  ! [X6] : ! [X10,X11] : s(X6,X11) = s(X6,'const.bool.COND_3'(s(bool,'F_0'),s(X6,X10),s(X6,X11)))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.bool.COND_CLAUSES|split|1')).
+fof(f7472,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.INSERT_3'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X2),s(X0,X1))))))) )),
+  inference(unit_resulting_resolution,[],[f1302,f1364])).
+fof(f1364,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))) | s(X0,X1) != s(X0,X2)) )),
+  inference(cnf_transformation,[],[f932])).
+fof(f932,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))) | s(X0,X1) = s(X0,X2)) & (s(X0,X1) != s(X0,X2) | p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1))))))),
+  inference(nnf_transformation,[],[f508])).
+fof(f508,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))) <=> s(X0,X1) = s(X0,X2))),
+  inference(flattening,[],[f507])).
+fof(f507,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))) <=> s(X0,X1) = s(X0,X2))),
+  inference(rectify,[],[f167])).
+fof(f167,axiom,(
+  ! [X6] : ! [X8,X12] : (p(s(bool,'const.pred_set.INSERT_3'(s(X6,X12),s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(X6,X8)))) <=> s(X6,X8) = s(X6,X12))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.pred_set.SING_applied')).
+fof(f72247,plain,(
+  ~p(s(bool,'const.pred_set.INSERT_3'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))),s(fun(fun(sK17,bool),bool),'const.pred_set.EMPTY_0'),s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))))))),
+  inference(forward_demodulation,[],[f72226,f1240])).
+fof(f1240,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f352])).
+fof(f352,plain,(
+  ! [X0,X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1)))),
+  inference(flattening,[],[f351])).
+fof(f351,plain,(
+  ! [X0] : ! [X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1)))),
+  inference(rectify,[],[f63])).
+fof(f63,axiom,(
+  ! [X6] : ! [X7] : s(fun(X6,bool),X7) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X6,bool),X7)))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.pred_set.UNION_EMPTY|split|0')).
+fof(f72226,plain,(
+  ~p(s(bool,'const.pred_set.INSERT_3'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))),s(fun(fun(sK17,bool),bool),'const.pred_set.EMPTY_0'),s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),'const.pred_set.UNION_2'(s(fun(sK17,bool),'const.pred_set.EMPTY_0'),s(fun(sK17,bool),sK18))))))))),
+  inference(backward_demodulation,[],[f71377,f7369])).
+fof(f7369,plain,(
+  ~p(s(bool,'const.pred_set.INSERT_3'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))),s(fun(fun(sK17,bool),bool),'const.pred_set.EMPTY_0'),s(fun(sK17,bool),'const.pred_set.UNION_2'(s(fun(sK17,bool),sK18),s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),'const.pred_set.EMPTY_0'))))))))),
+  inference(forward_demodulation,[],[f7309,f1309])).
+fof(f1309,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f442])).
+fof(f442,plain,(
+  ! [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))),
+  inference(flattening,[],[f441])).
+fof(f441,plain,(
+  ! [X0] : ! [X1,X2] : s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))),
+  inference(rectify,[],[f34])).
+fof(f34,axiom,(
+  ! [X6] : ! [X7,X9] : s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X9))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X9),s(fun(X6,bool),X7)))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.pred_set.UNION_COMM')).
+fof(f7309,plain,(
+  ~p(s(bool,'const.pred_set.INSERT_3'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))),s(fun(fun(sK17,bool),bool),'const.pred_set.EMPTY_0'),s(fun(sK17,bool),'const.pred_set.UNION_2'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),'const.pred_set.EMPTY_0'))),s(fun(sK17,bool),sK18))))))),
+  inference(unit_resulting_resolution,[],[f1138,f1363])).
+fof(f1363,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.INSERT_3'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))) | s(X0,X1) = s(X0,X2)) )),
+  inference(cnf_transformation,[],[f932])).
+fof(f1138,plain,(
+  s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))) != s(fun(sK17,bool),'const.pred_set.UNION_2'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),'const.pred_set.EMPTY_0'))),s(fun(sK17,bool),sK18)))),
+  inference(cnf_transformation,[],[f829])).
+fof(f829,plain,(
+  s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),sK18))) != s(fun(sK17,bool),'const.pred_set.UNION_2'(s(fun(sK17,bool),'const.pred_set.INSERT_2'(s(sK17,sK19),s(fun(sK17,bool),'const.pred_set.EMPTY_0'))),s(fun(sK17,bool),sK18)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK17,sK18,sK19])],[f730])).
+fof(f730,plain,(
+  ? [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))) != s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s(fun(X0,bool),X1)))),
+  inference(ennf_transformation,[],[f263])).
+fof(f263,plain,(
+  ~! [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s(fun(X0,bool),X1)))),
+  inference(flattening,[],[f262])).
+fof(f262,plain,(
+  ~! [X0] : ! [X1,X2] : s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s(fun(X0,bool),X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),X7))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),'const.pred_set.EMPTY_0'))),s(fun(X6,bool),X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),X7))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),'const.pred_set.EMPTY_0'))),s(fun(X6,bool),X7)))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.pred_set.INSERT_SING_UNION')).
+fof(f71377,plain,(
+  ( ! [X10,X8,X7,X9] : (s(fun(X7,bool),'const.pred_set.INSERT_2'(s(X7,X8),s(fun(X7,bool),'const.pred_set.UNION_2'(s(fun(X7,bool),X9),s(fun(X7,bool),X10))))) = s(fun(X7,bool),'const.pred_set.UNION_2'(s(fun(X7,bool),X10),s(fun(X7,bool),'const.pred_set.INSERT_2'(s(X7,X8),s(fun(X7,bool),X9)))))) )),
+  inference(superposition,[],[f1445,f1309])).
+fof(f1445,plain,(
+  ( ! [X2,X0,X3,X1] : (s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X3)))) )),
+  inference(cnf_transformation,[],[f562])).
+fof(f562,plain,(
+  ! [X0,X1,X2,X3] : s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X3)))),
+  inference(flattening,[],[f561])).
+fof(f561,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))),s(fun(X0,bool),X3)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X6] : ! [X8,X7,X9] : s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X9))))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),X7))),s(fun(X6,bool),X9)))),
+  file('thm.pred_set.INSERT_SING_UNION','thm.pred_set.INSERT_UNION_EQ')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 953
+% Passive clauses: 9141
+% Generated clauses: 71095
+% Final active clauses: 922
+% Final passive clauses: 7704
+% Input formulas: 260
+% Initial clauses: 622
+% 
+% Duplicate literals: 14
+% Trivial inequalities: 36
+% Fw subsumption resolutions: 754
+% Fw demodulations: 26444
+% Bw demodulations: 481
+% Condensations: 147
+% Global subsumptions: 7
+% 
+% Simple tautologies: 246
+% Equational tautologies: 36
+% Forward subsumptions: 26392
+% Fw demodulations to eq. taut.: 7475
+% Bw demodulations to eq. taut.: 34
+% 
+% Unit resulting resolution: 19961
+% Factoring: 2
+% Forward superposition: 12646
+% Backward superposition: 9847
+% Self superposition: 111
+% Equality factoring: 2
+% Equality resolution: 15
+% 
+% Split clauses: 6
+% Split components: 12
+% SAT solver clauses: 9162
+% SAT solver unit clauses: 2780
+% SAT solver binary clauses: 4077
+% 
+% Sat splits: 6
+% 
+% Memory used [KB]: 58847
+% Time elapsed: 3.438 s
+% ------------------------------
+% ------------------------------
+% Success in time 4.78 s

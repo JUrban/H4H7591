@@ -1,0 +1,88 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f87,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f86])).
+fof(f86,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK1)),
+  inference(superposition,[],[f41,f46])).
+fof(f46,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X8] : ! [X7] : s('type.list.list'(X8),X7) = s('type.list.list'(X8),'const.list.APPEND_2'(s('type.list.list'(X8),'const.list.NIL_0'),s('type.list.list'(X8),X7)))),
+  file('thm.rich_list.APPEND_NIL|split|1','thm.list.APPEND|split|0')).
+fof(f41,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),'const.list.NIL_0'),s('type.list.list'(sK0),sK1)))),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),'const.list.NIL_0'),s('type.list.list'(sK0),sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f30])).
+fof(f30,plain,(
+  ? [X0,X1] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ~! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X7)))),
+  file('thm.rich_list.APPEND_NIL|split|1','thm.rich_list.APPEND_NIL|split|1')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 9
+% Passive clauses: 19
+% Generated clauses: 45
+% Final active clauses: 7
+% Final passive clauses: 5
+% Input formulas: 12
+% Initial clauses: 15
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 2
+% 
+% Simple tautologies: 4
+% Equational tautologies: 4
+% Forward subsumptions: 14
+% 
+% Binary resolution: 2
+% Forward superposition: 10
+% Backward superposition: 7
+% Self superposition: 5
+% Equality factoring: 2
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

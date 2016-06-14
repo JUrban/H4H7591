@@ -1,0 +1,156 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.quotient_sum
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quotient_sum
+% SZS output start Proof for thm.quotient_sum
+fof(f1914,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1913,f90,f229])).
+fof(f229,plain,(
+  s(bool,'T_0') = s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9))) | $spl8),
+  inference(cnf_transformation,[],[f229_D])).
+fof(f229_D,plain,(
+  s(bool,'T_0') = s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9))) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f90,plain,(
+  s(bool,'T_0') = s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9)))),
+  inference(subsumption_resolution,[],[f89,f44])).
+fof(f44,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.quotient_sum.INR_PRS',aHL_FALSITY)).
+fof(f89,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9)))),
+  inference(superposition,[],[f40,f45])).
+fof(f45,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.quotient_sum.INR_PRS',aHL_BOOL_CASES)).
+fof(f40,plain,(
+  p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9))))),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK1,fun(sK1,bool)),sK4),s(fun(sK1,sK0),sK5),s(fun(sK0,sK1),sK6)))) & (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK2,fun(sK2,bool)),sK7),s(fun(sK2,sK3),sK8),s(fun(sK3,sK2),sK9)))) & s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,sK10))) != s('type.sum.sum'(sK0,sK3),'const.sum.++_3'(s(fun(sK1,sK0),sK5),s(fun(sK2,sK3),sK8),s('type.sum.sum'(sK1,sK2),'const.sum.INR_1'(s(sK2,happ(s(fun(sK3,sK2),sK9),s(sK3,sK10))))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4,sK5,sK6,sK7,sK8,sK9,sK10])],[f31])).
+fof(f31,plain,(
+  ? [X0,X1,X2,X3,X4,X5,X6] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X4),s(fun(X1,X0),X5),s(fun(X0,X1),X6)))) & ? [X7,X8,X9] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X2,fun(X2,bool)),X7),s(fun(X2,X3),X8),s(fun(X3,X2),X9)))) & ? [X10] : s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X10))) != s('type.sum.sum'(X0,X3),'const.sum.++_3'(s(fun(X1,X0),X5),s(fun(X2,X3),X8),s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X9),s(X3,X10)))))))))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1,X2,X3,X4,X5,X6] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X4),s(fun(X1,X0),X5),s(fun(X0,X1),X6)))) => ! [X7,X8,X9] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X2,fun(X2,bool)),X7),s(fun(X2,X3),X8),s(fun(X3,X2),X9)))) => ! [X10] : s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X10))) = s('type.sum.sum'(X0,X3),'const.sum.++_3'(s(fun(X1,X0),X5),s(fun(X2,X3),X8),s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X9),s(X3,X10)))))))))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ~! [X0,X1,X2,X3] : ! [X4,X5,X6] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X4),s(fun(X1,X0),X5),s(fun(X0,X1),X6)))) => ! [X7,X8,X9] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X2,fun(X2,bool)),X7),s(fun(X2,X3),X8),s(fun(X3,X2),X9)))) => ! [X10] : s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X10))) = s('type.sum.sum'(X0,X3),'const.sum.++_3'(s(fun(X1,X0),X5),s(fun(X2,X3),X8),s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X9),s(X3,X10)))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8,X9] : ! [X10,X11,X12] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X7,fun(X7,bool)),X10),s(fun(X7,X6),X11),s(fun(X6,X7),X12)))) => ! [X13,X14,X15] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X8,fun(X8,bool)),X13),s(fun(X8,X9),X14),s(fun(X9,X8),X15)))) => ! [X16] : s('type.sum.sum'(X6,X9),'const.sum.INR_1'(s(X9,X16))) = s('type.sum.sum'(X6,X9),'const.sum.++_3'(s(fun(X7,X6),X11),s(fun(X8,X9),X14),s('type.sum.sum'(X7,X8),'const.sum.INR_1'(s(X8,happ(s(fun(X9,X8),X15),s(X9,X16)))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8,X9] : ! [X10,X11,X12] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X7,fun(X7,bool)),X10),s(fun(X7,X6),X11),s(fun(X6,X7),X12)))) => ! [X13,X14,X15] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X8,fun(X8,bool)),X13),s(fun(X8,X9),X14),s(fun(X9,X8),X15)))) => ! [X16] : s('type.sum.sum'(X6,X9),'const.sum.INR_1'(s(X9,X16))) = s('type.sum.sum'(X6,X9),'const.sum.++_3'(s(fun(X7,X6),X11),s(fun(X8,X9),X14),s('type.sum.sum'(X7,X8),'const.sum.INR_1'(s(X8,happ(s(fun(X9,X8),X15),s(X9,X16)))))))))),
+  file('thm.quotient_sum.INR_PRS','thm.quotient_sum.INR_PRS')).
+fof(f1913,plain,(
+  $false | $spl8),
+  inference(trivial_inequality_removal,[],[f1912])).
+fof(f1912,plain,(
+  s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,sK10))) != s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,sK10))) | $spl8),
+  inference(forward_demodulation,[],[f1324,f1702])).
+fof(f1702,plain,(
+  ( ! [X1] : (s(sK3,X1) = s(sK3,happ(s(fun(sK2,sK3),sK8),s(sK2,happ(s(fun(sK3,sK2),sK9),s(sK3,X1)))))) ) | $spl8),
+  inference(subsumption_resolution,[],[f1695,f42])).
+fof(f42,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.quotient_sum.INR_PRS',aHL_TRUTH)).
+fof(f1695,plain,(
+  ( ! [X1] : (~p(s(bool,'T_0')) | s(sK3,X1) = s(sK3,happ(s(fun(sK2,sK3),sK8),s(sK2,happ(s(fun(sK3,sK2),sK9),s(sK3,X1)))))) ) | $spl8),
+  inference(superposition,[],[f53,f229])).
+fof(f53,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (~p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) | s(X1,X5) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5)))))) )),
+  inference(cnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ! [X0,X1,X2,X3,X4] : (~p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) | ! [X5] : s(X1,X5) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1,X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) => ! [X5] : s(X1,X5) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) => ! [X5] : s(X1,X5) = s(X1,happ(s(fun(X0,X1),X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X7,X8] : ! [X18,X19,X20] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X7,fun(X7,bool)),X18),s(fun(X7,X8),X19),s(fun(X8,X7),X20)))) => ! [X21] : s(X8,X21) = s(X8,happ(s(fun(X7,X8),X19),s(X7,happ(s(fun(X8,X7),X20),s(X8,X21))))))),
+  file('thm.quotient_sum.INR_PRS','thm.quotient.QUOTIENT_ABS_REP')).
+fof(f1324,plain,(
+  s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,sK10))) != s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,happ(s(fun(sK2,sK3),sK8),s(sK2,happ(s(fun(sK3,sK2),sK9),s(sK3,sK10)))))))),
+  inference(superposition,[],[f41,f55])).
+fof(f55,plain,(
+  ( ! [X6,X4,X2,X0,X5,X3,X1] : (s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X5),s(X3,X6))))) = s('type.sum.sum'(X1,X2),'const.sum.++_3'(s(fun(X0,X1),X4),s(fun(X3,X2),X5),s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X6)))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6] : s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X5),s(X3,X6))))) = s('type.sum.sum'(X1,X2),'const.sum.++_3'(s(fun(X0,X1),X4),s(fun(X3,X2),X5),s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X6)))))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1,X2,X3] : ! [X4,X5,X6] : s('type.sum.sum'(X1,X2),'const.sum.INR_1'(s(X2,happ(s(fun(X3,X2),X5),s(X3,X6))))) = s('type.sum.sum'(X1,X2),'const.sum.++_3'(s(fun(X0,X1),X4),s(fun(X3,X2),X5),s('type.sum.sum'(X0,X3),'const.sum.INR_1'(s(X3,X6)))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X7,X6,X9,X8] : ! [X23,X24,X16] : s('type.sum.sum'(X6,X9),'const.sum.INR_1'(s(X9,happ(s(fun(X8,X9),X24),s(X8,X16))))) = s('type.sum.sum'(X6,X9),'const.sum.++_3'(s(fun(X7,X6),X23),s(fun(X8,X9),X24),s('type.sum.sum'(X7,X8),'const.sum.INR_1'(s(X8,X16)))))),
+  file('thm.quotient_sum.INR_PRS','thm.sum.SUM_MAP_def|split|1')).
+fof(f41,plain,(
+  s('type.sum.sum'(sK0,sK3),'const.sum.INR_1'(s(sK3,sK10))) != s('type.sum.sum'(sK0,sK3),'const.sum.++_3'(s(fun(sK1,sK0),sK5),s(fun(sK2,sK3),sK8),s('type.sum.sum'(sK1,sK2),'const.sum.INR_1'(s(sK2,happ(s(fun(sK3,sK2),sK9),s(sK3,sK10)))))))),
+  inference(cnf_transformation,[],[f34])).
+% SZS output end Proof for thm.quotient_sum
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 43
+% Passive clauses: 428
+% Generated clauses: 1788
+% Final active clauses: 36
+% Final passive clauses: 227
+% Input formulas: 12
+% Initial clauses: 17
+% 
+% Duplicate literals: 246
+% Trivial inequalities: 32
+% Fw subsumption resolutions: 142
+% Fw demodulations: 72
+% Bw demodulations: 2
+% 
+% Simple tautologies: 38
+% Equational tautologies: 37
+% Forward subsumptions: 655
+% 
+% Binary resolution: 7
+% Forward superposition: 454
+% Backward superposition: 612
+% Self superposition: 98
+% Equality factoring: 78
+% Equality resolution: 14
+% 
+% Split clauses: 116
+% Split components: 238
+% SAT solver clauses: 184
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 38
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 116
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 161
+% TWLsolver calls for satisfiability: 19
+% 
+% Memory used [KB]: 1663
+% Time elapsed: 0.059 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.061 s

@@ -1,0 +1,234 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f911,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f910,f583,f584,f249,f285,f62,f66,f64,f77])).
+fof(f77,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f67,f43])).
+fof(f43,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST',aHL_FALSITY)).
+fof(f67,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(backward_demodulation,[],[f64,f39])).
+fof(f39,plain,(
+  p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2)))) & ~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f28])).
+fof(f28,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) & ~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))))),
+  inference(ennf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) => p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))))),
+  inference(flattening,[],[f13])).
+fof(f13,plain,(
+  ~! [X0] : ! [X1,X2] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) => p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))) => p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))) => p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST','thm.rich_list.IS_SUFFIX_IS_SUBLIST')).
+fof(f64,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f64_D])).
+fof(f64_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f66,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f66_D])).
+fof(f66_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f62,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f44])).
+fof(f44,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST',aHL_BOOL_CASES)).
+fof(f285,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f282])).
+fof(f282,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f66,f249])).
+fof(f249,plain,(
+  ( ! [X14] : (s(bool,'T_0') = s(bool,X14)) ) | $spl4),
+  inference(cnf_transformation,[],[f249_D])).
+fof(f249_D,plain,(
+  ( ! [X14] : (s(bool,'T_0') = s(bool,X14)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f584,plain,(
+  ( ! [X4,X3] : (s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),X3),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK2),s('type.list.list'(sK0),X4)))))) ) | $spl14),
+  inference(cnf_transformation,[],[f584_D])).
+fof(f584_D,plain,(
+  ( ! [X4,X3] : (s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),X3),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK2),s('type.list.list'(sK0),X4)))))) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f583,plain,(
+  ( ! [X4,X2,X3] : (s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),X3),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK2),s('type.list.list'(sK0),X4))))) | s(bool,'T_0') = s(bool,X2)) )),
+  inference(subsumption_resolution,[],[f569,f57])).
+fof(f57,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f43,f44])).
+fof(f569,plain,(
+  ( ! [X4,X2,X3] : (p(s(bool,X2)) | s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),X3),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK2),s('type.list.list'(sK0),X4))))) | s(bool,'T_0') = s(bool,X2)) )),
+  inference(superposition,[],[f52,f252])).
+fof(f252,plain,(
+  ( ! [X14] : (s(bool,X14) = s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))) | s(bool,'T_0') = s(bool,X14)) )),
+  inference(subsumption_resolution,[],[f173,f41])).
+fof(f41,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST',aHL_TRUTH)).
+fof(f173,plain,(
+  ( ! [X14] : (~p(s(bool,'T_0')) | s(bool,X14) = s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))) | s(bool,'T_0') = s(bool,X14)) )),
+  inference(superposition,[],[f40,f55])).
+fof(f55,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f44,f44])).
+fof(f40,plain,(
+  ~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))))),
+  inference(cnf_transformation,[],[f30])).
+fof(f52,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4)))))) )),
+  inference(cnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),sK4(X2,X1,X0)),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),sK5(X2,X1,X0))))))) & (! [X3,X4] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4))))) | p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK4,sK5])],[f36])).
+fof(f36,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | ? [X5,X6] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X5),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X6)))))) & (! [X3,X4] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4))))) | p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(rectify,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | ? [X3,X4] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4)))))) & (! [X3,X4] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4))))) | p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(nnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) <=> ? [X3,X4] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4))))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) <=> ? [X3,X4] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X4))))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.rich_list.IS_SUBLIST_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))) <=> ? [X10,X12] : s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X10),s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X8),s('type.list.list'(X6),X12))))))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST','thm.rich_list.IS_SUBLIST_APPEND')).
+fof(f910,plain,(
+  $false | $spl14),
+  inference(trivial_inequality_removal,[],[f907])).
+fof(f907,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK1) | $spl14),
+  inference(superposition,[],[f897,f468])).
+fof(f468,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK3(sK2,sK1,sK0)),s('type.list.list'(sK0),sK2)))),
+  inference(subsumption_resolution,[],[f457,f41])).
+fof(f457,plain,(
+  ~p(s(bool,'T_0')) | s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK3(sK2,sK1,sK0)),s('type.list.list'(sK0),sK2)))),
+  inference(superposition,[],[f49,f63])).
+fof(f63,plain,(
+  s(bool,'T_0') = s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2)))),
+  inference(subsumption_resolution,[],[f59,f43])).
+fof(f59,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2)))),
+  inference(superposition,[],[f39,f44])).
+fof(f49,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),sK3(X2,X1,X0)),s('type.list.list'(X0),X2)))) )),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),sK3(X2,X1,X0)),s('type.list.list'(X0),X2)))) & (! [X3] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2))) | p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3])],[f33])).
+fof(f33,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | ? [X4] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X4),s('type.list.list'(X0),X2)))) & (! [X3] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2))) | p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(rectify,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) | ? [X3] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2)))) & (! [X3] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2))) | p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(nnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) <=> ? [X3] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2))))),
+  inference(flattening,[],[f22])).
+fof(f22,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))) <=> ? [X3] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X2))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))) <=> ? [X10] : s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X10),s('type.list.list'(X6),X8))))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST','thm.rich_list.IS_SUFFIX_APPEND')).
+fof(f897,plain,(
+  ( ! [X0] : (s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),X0),s('type.list.list'(sK0),sK2)))) ) | $spl14),
+  inference(superposition,[],[f584,f46])).
+fof(f46,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))) )),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X10] : s('type.list.list'(X6),X10) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X10),s('type.list.list'(X6),'const.list.NIL_0')))),
+  file('thm.rich_list.IS_SUFFIX_IS_SUBLIST','thm.list.APPEND_NIL')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 44
+% Passive clauses: 158
+% Generated clauses: 857
+% Final active clauses: 32
+% Final passive clauses: 87
+% Input formulas: 11
+% Initial clauses: 15
+% 
+% Duplicate literals: 77
+% Trivial inequalities: 8
+% Fw subsumption resolutions: 33
+% Fw demodulations: 122
+% Bw demodulations: 9
+% 
+% Simple tautologies: 20
+% Equational tautologies: 16
+% Forward subsumptions: 415
+% 
+% Binary resolution: 12
+% Forward superposition: 257
+% Backward superposition: 246
+% Self superposition: 33
+% Equality factoring: 28
+% Equality resolution: 3
+% 
+% Split clauses: 11
+% Split components: 22
+% SAT solver clauses: 25
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 13
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 11
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 24
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.030 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.032 s

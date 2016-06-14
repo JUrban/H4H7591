@@ -1,0 +1,93 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f177,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f175,f77])).
+fof(f77,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.list.DROP_2'(s('type.num.num',sK2),s('type.list.list'(sK0),sK1)))),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  s('type.num.num',sK2) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))) & s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.list.DROP_2'(s('type.num.num',sK2),s('type.list.list'(sK0),sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f44])).
+fof(f44,plain,(
+  ? [X0,X1,X2] : (s('type.num.num',X2) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) & s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X2),s('type.list.list'(X0),X1))))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0,X1,X2] : (s('type.num.num',X2) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) => s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X2),s('type.list.list'(X0),X1))))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.num.num',X2) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))) => s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X2),s('type.list.list'(X0),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.num.num',X8) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))) => s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.list.DROP_2'(s('type.num.num',X8),s('type.list.list'(X6),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.num.num',X8) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))) => s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.list.DROP_2'(s('type.num.num',X8),s('type.list.list'(X6),X7))))),
+  file('thm.rich_list.DROP_LENGTH_NIL_rwt','thm.rich_list.DROP_LENGTH_NIL_rwt')).
+fof(f175,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') = s('type.list.list'(sK0),'const.list.DROP_2'(s('type.num.num',sK2),s('type.list.list'(sK0),sK1)))),
+  inference(superposition,[],[f105,f76])).
+fof(f76,plain,(
+  s('type.num.num',sK2) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1)))),
+  inference(cnf_transformation,[],[f55])).
+fof(f105,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X7] : s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.list.DROP_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))),s('type.list.list'(X6),X7)))),
+  file('thm.rich_list.DROP_LENGTH_NIL_rwt','thm.rich_list.DROP_LENGTH_NIL')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 17
+% Passive clauses: 33
+% Generated clauses: 101
+% Final active clauses: 13
+% Final passive clauses: 6
+% Input formulas: 19
+% Initial clauses: 47
+% 
+% Duplicate literals: 2
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 3
+% 
+% Simple tautologies: 22
+% Equational tautologies: 3
+% Forward subsumptions: 22
+% 
+% Binary resolution: 12
+% Forward superposition: 5
+% Backward superposition: 13
+% Self superposition: 3
+% Equality factoring: 2
+% Equality resolution: 3
+% 
+% Split clauses: 14
+% Split components: 30
+% SAT solver clauses: 21
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 16
+% 
+% Sat splits: 14
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 21
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.014 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

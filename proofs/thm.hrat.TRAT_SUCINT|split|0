@@ -1,0 +1,174 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hrat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hrat
+% SZS output start Proof for thm.hrat
+fof(f365,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f359,f247,f252,f250,f293,f41,f44,f42,f53])).
+fof(f53,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f50,f25])).
+fof(f25,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.hrat.TRAT_SUCINT|split|0','thm.bool.TRUTH')).
+fof(f50,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f28,f42])).
+fof(f28,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.hrat.TRAT_SUCINT|split|0',aHL_FALSITY)).
+fof(f42,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f42_D])).
+fof(f42_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f44,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f44_D])).
+fof(f44_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f41,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f30])).
+fof(f30,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.hrat.TRAT_SUCINT|split|0',aHL_BOOL_CASES)).
+fof(f293,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f288])).
+fof(f288,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f44,f250])).
+fof(f250,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl4),
+  inference(cnf_transformation,[],[f250_D])).
+fof(f250_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f252,plain,(
+  s(bool,'F_0') = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) | $spl6),
+  inference(cnf_transformation,[],[f252_D])).
+fof(f252_D,plain,(
+  s(bool,'F_0') = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f247,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(duplicate_literal_removal,[],[f213])).
+fof(f213,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f194,f30])).
+fof(f194,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(subsumption_resolution,[],[f124,f25])).
+fof(f124,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f60,f36])).
+fof(f36,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f30,f30])).
+fof(f60,plain,(
+  ~p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))))),
+  inference(forward_demodulation,[],[f24,f27])).
+fof(f27,plain,(
+  s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0') = s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0')))),
+  inference(cnf_transformation,[],[f9])).
+fof(f9,axiom,(
+  s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0') = s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0')))),
+  file('thm.hrat.TRAT_SUCINT|split|0','thm.hrat.trat_sucint|split|0')).
+fof(f24,plain,(
+  ~p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0'))),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))))),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0'))),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0'))),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_sucint_1'(s('type.num.num','const.num.|48|_0'))),s('type.pair.prod'('type.num.num','type.num.num'),'const.hrat.trat_|49|_0'))))),
+  file('thm.hrat.TRAT_SUCINT|split|0','thm.hrat.TRAT_SUCINT|split|0')).
+fof(f359,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f351,f28])).
+fof(f351,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(superposition,[],[f346,f252])).
+fof(f346,plain,(
+  ( ! [X0] : (p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X0))))) )),
+  inference(equality_resolution,[],[f33])).
+fof(f33,plain,(
+  ( ! [X0,X1] : (s('type.pair.prod'('type.num.num','type.num.num'),X0) != s('type.pair.prod'('type.num.num','type.num.num'),X1) | p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X1))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1] : (s('type.pair.prod'('type.num.num','type.num.num'),X0) != s('type.pair.prod'('type.num.num','type.num.num'),X1) | p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X1)))))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : (s('type.pair.prod'('type.num.num','type.num.num'),X0) = s('type.pair.prod'('type.num.num','type.num.num'),X1) => p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X1)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X9,X10] : (s('type.pair.prod'('type.num.num','type.num.num'),X9) = s('type.pair.prod'('type.num.num','type.num.num'),X10) => p(s(bool,'const.hrat.trat_eq_2'(s('type.pair.prod'('type.num.num','type.num.num'),X9),s('type.pair.prod'('type.num.num','type.num.num'),X10)))))),
+  file('thm.hrat.TRAT_SUCINT|split|0','thm.hrat.TRAT_EQ_AP')).
+% SZS output end Proof for thm.hrat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 19
+% Passive clauses: 38
+% Generated clauses: 321
+% Final active clauses: 13
+% Final passive clauses: 8
+% Input formulas: 10
+% Initial clauses: 11
+% 
+% Duplicate literals: 59
+% Trivial inequalities: 6
+% Fw subsumption resolutions: 9
+% Fw demodulations: 3
+% Bw demodulations: 3
+% 
+% Simple tautologies: 20
+% Equational tautologies: 16
+% Forward subsumptions: 164
+% 
+% Binary resolution: 8
+% Forward superposition: 85
+% Backward superposition: 73
+% Self superposition: 28
+% Equality factoring: 28
+% Equality resolution: 1
+% 
+% Split clauses: 6
+% Split components: 12
+% SAT solver clauses: 13
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 7
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 6
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 9
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.018 s

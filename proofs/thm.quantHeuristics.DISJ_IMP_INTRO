@@ -1,0 +1,151 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.quantHeuristics
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quantHeuristics
+% SZS output start Proof for thm.quantHeuristics
+fof(f4164,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4162,f347,f350,f348,f352,f198,f356])).
+fof(f356,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f356_D])).
+fof(f356_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f198,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.quantHeuristics.DISJ_IMP_INTRO',aHL_FALSITY)).
+fof(f352,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13)))) | $spl3),
+  inference(cnf_transformation,[],[f352_D])).
+fof(f352_D,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13)))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f348,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13))))),
+  inference(duplicate_literal_removal,[],[f190])).
+fof(f190,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13)))) | ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13))))),
+  inference(cnf_transformation,[],[f120])).
+fof(f120,plain,(
+  ! [X4] : (p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,X4)))) | p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,X4))))) & ((~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13)))) & ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13))))) | (~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) & ~p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15])],[f81])).
+fof(f81,plain,(
+  ? [X0,X1,X2,X3] : (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) & ((~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))) | (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) & ~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))))))),
+  inference(ennf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~! [X0,X1,X2,X3] : (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) => ((~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))) & (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) => p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))))))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (! [X4] : (p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X4)))) | p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4))))) => ((~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))) & (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) => p(s(bool,happ(s(fun(X0,bool),X3),s(X0,X1)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (! [X10] : (p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X10)))) | p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X10))))) => ((~p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X7)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))))) & (~p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))) => p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X7)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (! [X10] : (p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X10)))) | p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X10))))) => ((~p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X7)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))))) & (~p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7)))) => p(s(bool,happ(s(fun(X6,bool),X9),s(X6,X7)))))))),
+  file('thm.quantHeuristics.DISJ_IMP_INTRO','thm.quantHeuristics.DISJ_IMP_INTRO')).
+fof(f350,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) | $spl1),
+  inference(cnf_transformation,[],[f350_D])).
+fof(f350_D,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f347,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13))))),
+  inference(duplicate_literal_removal,[],[f189])).
+fof(f189,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) | ~p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13))))),
+  inference(cnf_transformation,[],[f120])).
+fof(f4162,plain,(
+  $false | ($spl1 | $spl3 | $spl7)),
+  inference(subsumption_resolution,[],[f4161,f356])).
+fof(f4161,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl3 | $spl7)),
+  inference(forward_demodulation,[],[f4160,f664])).
+fof(f664,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13))) | $spl1),
+  inference(resolution,[],[f350,f213])).
+fof(f213,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f125])).
+fof(f125,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X13] : (s(bool,'F_0') = s(bool,X13) <=> ~p(s(bool,X13)))),
+  file('thm.quantHeuristics.DISJ_IMP_INTRO','thm.bool.EQ_CLAUSES|split|3')).
+fof(f4160,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) | ($spl3 | $spl7)),
+  inference(subsumption_resolution,[],[f4158,f356])).
+fof(f4158,plain,(
+  p(s(bool,'F_0')) | p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,sK13)))) | $spl3),
+  inference(superposition,[],[f187,f691])).
+fof(f691,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,sK13))) | $spl3),
+  inference(resolution,[],[f352,f213])).
+fof(f187,plain,(
+  ( ! [X4] : (p(s(bool,happ(s(fun(sK12,bool),sK15),s(sK12,X4)))) | p(s(bool,happ(s(fun(sK12,bool),sK14),s(sK12,X4))))) )),
+  inference(cnf_transformation,[],[f120])).
+% SZS output end Proof for thm.quantHeuristics
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 313
+% Passive clauses: 1254
+% Generated clauses: 3969
+% Final active clauses: 311
+% Final passive clauses: 836
+% Input formulas: 32
+% Initial clauses: 156
+% 
+% Duplicate literals: 134
+% Trivial inequalities: 25
+% Fw subsumption resolutions: 277
+% Fw demodulations: 15
+% Bw demodulations: 2
+% 
+% Simple tautologies: 123
+% Equational tautologies: 20
+% Forward subsumptions: 2080
+% 
+% Binary resolution: 2330
+% Factoring: 677
+% Forward superposition: 108
+% Backward superposition: 203
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 79
+% Split components: 159
+% SAT solver clauses: 153
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 31
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 79
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 152
+% TWLsolver calls for satisfiability: 129
+% 
+% Memory used [KB]: 2046
+% Time elapsed: 0.088 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.09 s

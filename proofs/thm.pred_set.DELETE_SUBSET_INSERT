@@ -1,0 +1,92 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f7883,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f7731])).
+fof(f7731,plain,(
+  s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),'const.pred_set.INSERT_2'(s(sK12,sK14),s(fun(sK12,bool),sK15))))) != s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),'const.pred_set.INSERT_2'(s(sK12,sK14),s(fun(sK12,bool),sK15)))))),
+  inference(superposition,[],[f348,f438])).
+fof(f438,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X3))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1))),s(fun(X0,bool),X3)))) )),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X3))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1))),s(fun(X0,bool),X3)))),
+  inference(flattening,[],[f128])).
+fof(f128,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X2),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X3))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1))),s(fun(X0,bool),X3)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X11,X7,X10] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X11),s(fun(X6,bool),X10))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X7),s(X6,X11))),s(fun(X6,bool),X10)))),
+  file('thm.pred_set.DELETE_SUBSET_INSERT','thm.pred_set.SUBSET_INSERT_DELETE')).
+fof(f348,plain,(
+  s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),'const.pred_set.DELETE_2'(s(fun(sK12,bool),sK13),s(sK12,sK14))),s(fun(sK12,bool),sK15))) != s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),'const.pred_set.INSERT_2'(s(sK12,sK14),s(fun(sK12,bool),sK15)))))),
+  inference(cnf_transformation,[],[f233])).
+fof(f233,plain,(
+  s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),'const.pred_set.DELETE_2'(s(fun(sK12,bool),sK13),s(sK12,sK14))),s(fun(sK12,bool),sK15))) != s(bool,'const.pred_set.SUBSET_2'(s(fun(sK12,bool),sK13),s(fun(sK12,bool),'const.pred_set.INSERT_2'(s(sK12,sK14),s(fun(sK12,bool),sK15)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15])],[f176])).
+fof(f176,plain,(
+  ? [X0,X1,X2,X3] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X3))))) != s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X2))),s(fun(X0,bool),X3)))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2,X3] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X3))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X2))),s(fun(X0,bool),X3)))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : ! [X1,X2,X3] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X3))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X2))),s(fun(X0,bool),X3)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),X9))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X7),s(X6,X8))),s(fun(X6,bool),X9)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X8),s(fun(X6,bool),X9))))) = s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X7),s(X6,X8))),s(fun(X6,bool),X9)))),
+  file('thm.pred_set.DELETE_SUBSET_INSERT','thm.pred_set.DELETE_SUBSET_INSERT')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 472
+% Passive clauses: 2578
+% Generated clauses: 7481
+% Final active clauses: 469
+% Final passive clauses: 1976
+% Input formulas: 69
+% Initial clauses: 245
+% 
+% Duplicate literals: 151
+% Trivial inequalities: 24
+% Fw subsumption resolutions: 489
+% Fw demodulations: 520
+% Bw demodulations: 2
+% 
+% Simple tautologies: 209
+% Equational tautologies: 21
+% Forward subsumptions: 3164
+% 
+% Binary resolution: 3426
+% Factoring: 684
+% Forward superposition: 613
+% Backward superposition: 1250
+% Self superposition: 12
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 218
+% Split components: 438
+% SAT solver clauses: 309
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 46
+% 
+% Sat splits: 218
+% 
+% TWLsolver clauses: 309
+% TWLsolver calls for satisfiability: 193
+% 
+% Memory used [KB]: 4477
+% Time elapsed: 0.174 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.169 s

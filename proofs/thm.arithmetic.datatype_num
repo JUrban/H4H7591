@@ -1,0 +1,97 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f509,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f508,f23])).
+fof(f23,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.arithmetic.datatype_num','thm.bool.TRUTH')).
+fof(f508,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(forward_demodulation,[],[f22,f28])).
+fof(f28,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : ! [X8] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X6,X8)))),
+  file('thm.arithmetic.datatype_num','thm.bool.DATATYPE_TAG_THM')).
+fof(f22,plain,(
+  ~p(s(bool,'const.bool.DATATYPE_1'(s(sK0,happ(s(fun(fun('type.num.num','type.num.num'),sK0),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),sK0)),sK1),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ~p(s(bool,'const.bool.DATATYPE_1'(s(sK0,happ(s(fun(fun('type.num.num','type.num.num'),sK0),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),sK0)),sK1),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.bool.DATATYPE_1'(s(X0,happ(s(fun(fun('type.num.num','type.num.num'),X0),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),X0)),X1),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1] : p(s(bool,'const.bool.DATATYPE_1'(s(X0,happ(s(fun(fun('type.num.num','type.num.num'),X0),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),X0)),X1),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(flattening,[],[f10])).
+fof(f10,plain,(
+  ~! [X0] : ! [X1] : p(s(bool,'const.bool.DATATYPE_1'(s(X0,happ(s(fun(fun('type.num.num','type.num.num'),X0),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),X0)),X1),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : p(s(bool,'const.bool.DATATYPE_1'(s(X6,happ(s(fun(fun('type.num.num','type.num.num'),X6),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),X6)),X7),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : p(s(bool,'const.bool.DATATYPE_1'(s(X6,happ(s(fun(fun('type.num.num','type.num.num'),X6),happ(s(fun('type.num.num',fun(fun('type.num.num','type.num.num'),X6)),X7),s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))))))),
+  file('thm.arithmetic.datatype_num','thm.arithmetic.datatype_num')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 42
+% Generated clauses: 455
+% Final active clauses: 12
+% Final passive clauses: 21
+% Input formulas: 8
+% Initial clauses: 8
+% 
+% Duplicate literals: 84
+% Trivial inequalities: 7
+% Fw subsumption resolutions: 6
+% Fw demodulations: 14
+% 
+% Simple tautologies: 25
+% Equational tautologies: 16
+% Forward subsumptions: 246
+% 
+% Binary resolution: 4
+% Forward superposition: 121
+% Backward superposition: 113
+% Self superposition: 50
+% Equality factoring: 40
+% Equality resolution: 1
+% 
+% Split clauses: 12
+% Split components: 24
+% SAT solver clauses: 18
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 12
+% 
+% Sat splits: 12
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.019 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.02 s

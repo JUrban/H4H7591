@@ -1,0 +1,177 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.probability
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.probability
+% SZS output start Proof for thm.probability
+fof(f770,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f765,f80,f131,f385,f132,f387,f139,f82,f134])).
+fof(f134,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f134_D])).
+fof(f134_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f82,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA',aHL_FALSITY)).
+fof(f139,plain,(
+  $false | ($spl2 | $spl5)),
+  inference(subsumption_resolution,[],[f134,f132])).
+fof(f387,plain,(
+  s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) | $spl16),
+  inference(cnf_transformation,[],[f387_D])).
+fof(f387_D,plain,(
+  s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) <=> ~$spl16),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl16])])).
+fof(f132,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl2),
+  inference(cnf_transformation,[],[f132_D])).
+fof(f132_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f385,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(subsumption_resolution,[],[f247,f84])).
+fof(f84,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f56])).
+fof(f56,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X8] : (s(bool,'T_0') = s(bool,X8) <=> p(s(bool,X8)))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA','thm.bool.EQ_CLAUSES|split|1')).
+fof(f247,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,X33) | s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(superposition,[],[f78,f149])).
+fof(f149,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f83,f83])).
+fof(f83,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA',aHL_BOOL_CASES)).
+fof(f78,plain,(
+  p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) & ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))),s(fun(fun(sK0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f44])).
+fof(f44,plain,(
+  ? [X0,X1] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))))))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA','thm.probability.EVENTS_SIGMA_ALGEBRA')).
+fof(f131,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f131_D])).
+fof(f131_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f80,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA',aHL_TRUTH)).
+fof(f765,plain,(
+  $false | ($spl0 | $spl16)),
+  inference(subsumption_resolution,[],[f764,f131])).
+fof(f764,plain,(
+  ~p(s(bool,'T_0')) | $spl16),
+  inference(forward_demodulation,[],[f755,f387])).
+fof(f755,plain,(
+  ~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))),
+  inference(resolution,[],[f107,f79])).
+fof(f79,plain,(
+  ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(sK0,bool),fun(fun(sK0,bool),bool)),'const.pair.,_2'(s(fun(sK0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))),s(fun(fun(sK0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))))))),
+  inference(cnf_transformation,[],[f55])).
+fof(f107,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) | ~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) & p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) = s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) & (~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) | ~p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ~p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) != s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))) | p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))),
+  inference(flattening,[],[f70])).
+fof(f70,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) & p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) = s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) & ((~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) | ~p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ~p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) != s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))),
+  inference(nnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0,X1] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) & p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) = s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.pair.,_2'(s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))) & p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) = s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) <=> (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.pair.,_2'(s(fun(X6,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))))) & p(s(bool,'const.measure.positive_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.measure.countably_additive_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) = s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),'const.probability.p_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))))),
+  file('thm.probability.EVENTS_SIGMA_ALGEBRA','thm.probability.PROB_SPACE')).
+% SZS output end Proof for thm.probability
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 37
+% Passive clauses: 131
+% Generated clauses: 665
+% Final active clauses: 32
+% Final passive clauses: 56
+% Input formulas: 19
+% Initial clauses: 51
+% 
+% Duplicate literals: 60
+% Trivial inequalities: 20
+% Fw subsumption resolutions: 86
+% Fw demodulations: 5
+% Bw demodulations: 1
+% 
+% Simple tautologies: 67
+% Equational tautologies: 15
+% Forward subsumptions: 234
+% 
+% Binary resolution: 59
+% Forward superposition: 199
+% Backward superposition: 104
+% Self superposition: 22
+% Equality factoring: 26
+% Equality resolution: 12
+% 
+% Split clauses: 37
+% Split components: 76
+% SAT solver clauses: 85
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 43
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 37
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 81
+% TWLsolver calls for satisfiability: 39
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.028 s

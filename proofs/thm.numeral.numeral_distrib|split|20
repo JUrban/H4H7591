@@ -1,0 +1,106 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.numeral
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numeral
+% SZS output start Proof for thm.numeral
+fof(f1872,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f1847])).
+fof(f1847,plain,(
+  s(bool,'F_0') != s(bool,'F_0')),
+  inference(superposition,[],[f368,f705])).
+fof(f705,plain,(
+  ( ! [X6] : (s(bool,'F_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.|48|_0')))) )),
+  inference(resolution,[],[f412,f468])).
+fof(f468,plain,(
+  ( ! [X0] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0'))))) )),
+  inference(cnf_transformation,[],[f151])).
+fof(f151,plain,(
+  ! [X0] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0'))))),
+  inference(flattening,[],[f150])).
+fof(f150,plain,(
+  ! [X0] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0'))))),
+  inference(rectify,[],[f78])).
+fof(f78,axiom,(
+  ! [X6] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.|48|_0'))))),
+  file('thm.numeral.numeral_distrib|split|20','thm.prim_rec.NOT_LESS_|48|')).
+fof(f412,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f252])).
+fof(f252,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f123])).
+fof(f123,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f122])).
+fof(f122,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f64])).
+fof(f64,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.numeral.numeral_distrib|split|20','thm.bool.EQ_CLAUSES|split|3')).
+fof(f368,plain,(
+  s(bool,'F_0') != s(bool,'const.prim_rec.<_2'(s('type.num.num',sK13),s('type.num.num','const.num.|48|_0')))),
+  inference(cnf_transformation,[],[f247])).
+fof(f247,plain,(
+  s(bool,'F_0') != s(bool,'const.prim_rec.<_2'(s('type.num.num',sK13),s('type.num.num','const.num.|48|_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13])],[f196])).
+fof(f196,plain,(
+  ? [X0] : s(bool,'F_0') != s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(ennf_transformation,[],[f89])).
+fof(f89,plain,(
+  ~! [X0] : s(bool,'F_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s(bool,'F_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.|48|_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s(bool,'F_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.|48|_0')))),
+  file('thm.numeral.numeral_distrib|split|20','thm.numeral.numeral_distrib|split|20')).
+% SZS output end Proof for thm.numeral
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 183
+% Passive clauses: 350
+% Generated clauses: 1486
+% Final active clauses: 182
+% Final passive clauses: 134
+% Input formulas: 87
+% Initial clauses: 277
+% 
+% Duplicate literals: 34
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 103
+% Fw demodulations: 23
+% Bw demodulations: 1
+% 
+% Simple tautologies: 116
+% Equational tautologies: 3
+% Forward subsumptions: 792
+% 
+% Binary resolution: 615
+% Factoring: 168
+% Forward superposition: 137
+% Backward superposition: 114
+% Self superposition: 9
+% Equality resolution: 1
+% 
+% Split clauses: 49
+% Split components: 100
+% SAT solver clauses: 70
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 31
+% 
+% Sat splits: 49
+% 
+% TWLsolver clauses: 70
+% TWLsolver calls for satisfiability: 36
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.034 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.038 s

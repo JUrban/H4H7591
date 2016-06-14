@@ -1,0 +1,95 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f518,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f24,f248])).
+fof(f248,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.integer.int_lt_2'(s('type.integer.int',X2),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X2),s('type.integer.int',X1))),s('type.integer.int',X0)))) )),
+  inference(superposition,[],[f33,f31])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (s('type.integer.int',X0) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X1)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : s('type.integer.int',X0) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X1)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X7] : s('type.integer.int',X6) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X6),s('type.integer.int',X7))),s('type.integer.int',X7)))),
+  file('thm.integer.INT_LT_ADD_SUB','thm.integer.INT_SUB_ADD')).
+fof(f33,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X2))),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1,X2] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X2))),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7,X8] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int',X7))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X8))),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X7),s('type.integer.int',X8)))))),
+  file('thm.integer.INT_LT_ADD_SUB','thm.integer.INT_LT_RADD')).
+fof(f24,plain,(
+  s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK0),s('type.integer.int',sK1))),s('type.integer.int',sK2))) != s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK2),s('type.integer.int',sK1)))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK0),s('type.integer.int',sK1))),s('type.integer.int',sK2))) != s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK2),s('type.integer.int',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1,X2] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X2),s('type.integer.int',X1))))) != s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X2)))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1,X2] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X2),s('type.integer.int',X1))))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int',X1))),s('type.integer.int',X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X8),s('type.integer.int',X7))))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X7))),s('type.integer.int',X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X8),s('type.integer.int',X7))))) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X6),s('type.integer.int',X7))),s('type.integer.int',X8)))),
+  file('thm.integer.INT_LT_ADD_SUB','thm.integer.INT_LT_ADD_SUB')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 106
+% Generated clauses: 484
+% Final active clauses: 14
+% Final passive clauses: 69
+% Input formulas: 9
+% Initial clauses: 10
+% 
+% Duplicate literals: 67
+% Trivial inequalities: 9
+% Fw subsumption resolutions: 13
+% Fw demodulations: 24
+% Bw demodulations: 5
+% 
+% Simple tautologies: 23
+% Equational tautologies: 16
+% Forward subsumptions: 196
+% 
+% Binary resolution: 6
+% Forward superposition: 154
+% Backward superposition: 115
+% Self superposition: 30
+% Equality factoring: 28
+% Equality resolution: 1
+% 
+% Split clauses: 11
+% Split components: 22
+% SAT solver clauses: 26
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 15
+% 
+% Sat splits: 11
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 26
+% TWLsolver calls for satisfiability: 9
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.022 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

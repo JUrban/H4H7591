@@ -1,0 +1,200 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.topology
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.topology
+% SZS output start Proof for thm.topology
+fof(f2468,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2466,f117,f201,f199,f2378,f118,f202,f200,f121,f204])).
+fof(f204,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f204_D])).
+fof(f204_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f121,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.topology.topology_2_prove_ltb',aHL_FALSITY)).
+fof(f200,plain,(
+  ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl1),
+  inference(cnf_transformation,[],[f200_D])).
+fof(f200_D,plain,(
+  ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f202,plain,(
+  p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl2),
+  inference(cnf_transformation,[],[f202_D])).
+fof(f202_D,plain,(
+  p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f118,plain,(
+  p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8))))),
+  inference(cnf_transformation,[],[f81])).
+fof(f81,plain,(
+  (p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | ~p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8))))) & (~p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK6,sK7,sK8])],[f80])).
+fof(f80,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X1),s(X0,X2)))) | ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))))) & (~p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X1),s(X0,X2)))) | p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))))))),
+  inference(nnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X1),s(X0,X2)))) <~> ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X1),s(X0,X2)))) <=> ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ~! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X1),s(X0,X2)))) <=> ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X5] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X6,bool),X7),s(X6,X5)))) <=> ~p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X5)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X5] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X6,bool),X7),s(X6,X5)))) <=> ~p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X5)))))),
+  file('thm.topology.topology_2_prove_ltb','thm.topology.topology_2_prove_ltb')).
+fof(f2378,plain,(
+  $false | ($spl1 | $spl3 | $spl5)),
+  inference(subsumption_resolution,[],[f2377,f204])).
+fof(f2377,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl3 | $spl5)),
+  inference(forward_demodulation,[],[f2376,f510])).
+fof(f510,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8))) | $spl1),
+  inference(resolution,[],[f200,f133])).
+fof(f133,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X8] : (s(bool,'F_0') = s(bool,X8) <=> ~p(s(bool,X8)))),
+  file('thm.topology.topology_2_prove_ltb','thm.bool.EQ_CLAUSES|split|3')).
+fof(f2376,plain,(
+  p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | ($spl3 | $spl5)),
+  inference(subsumption_resolution,[],[f2371,f204])).
+fof(f2371,plain,(
+  p(s(bool,'F_0')) | p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl3),
+  inference(superposition,[],[f1961,f545])).
+fof(f545,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8))) | $spl3),
+  inference(resolution,[],[f201,f133])).
+fof(f1961,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) | p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1))))) )),
+  inference(forward_demodulation,[],[f145,f142])).
+fof(f142,plain,(
+  ( ! [X2,X0,X1] : (s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1,X2] : s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : ! [X7,X9] : s(bool,happ(s(fun(X6,bool),X7),s(X6,X9))) = s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X7)))),
+  file('thm.topology.topology_2_prove_ltb','thm.pred_set.SPECIFICATION')).
+fof(f145,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1)))) | p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f90])).
+fof(f90,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1)))) | ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))))) & (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) | p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1))))))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1)))) <=> ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1)))) <=> ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : ! [X9,X13] : (p(s(bool,'const.pred_set.COMPL_2'(s(fun(X6,bool),X13),s(X6,X9)))) <=> ~p(s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X13)))))),
+  file('thm.topology.topology_2_prove_ltb','thm.pred_set.COMPL_applied')).
+fof(f199,plain,(
+  p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl0),
+  inference(cnf_transformation,[],[f199_D])).
+fof(f199_D,plain,(
+  p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f201,plain,(
+  ~p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl3),
+  inference(cnf_transformation,[],[f201_D])).
+fof(f201_D,plain,(
+  ~p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f117,plain,(
+  ~p(s(bool,happ(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8))))),
+  inference(cnf_transformation,[],[f81])).
+fof(f2466,plain,(
+  $false | ($spl0 | $spl2)),
+  inference(subsumption_resolution,[],[f2426,f199])).
+fof(f2426,plain,(
+  ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(sK6,bool),sK7),s(sK6,sK8)))) | $spl2),
+  inference(resolution,[],[f202,f1912])).
+fof(f1912,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) | ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1))))) )),
+  inference(forward_demodulation,[],[f144,f142])).
+fof(f144,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) | ~p(s(bool,'const.pred_set.COMPL_2'(s(fun(X0,bool),X2),s(X0,X1))))) )),
+  inference(cnf_transformation,[],[f90])).
+% SZS output end Proof for thm.topology
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 200
+% Passive clauses: 999
+% Generated clauses: 2348
+% Final active clauses: 182
+% Final passive clauses: 676
+% Input formulas: 23
+% Initial clauses: 80
+% 
+% Duplicate literals: 39
+% Trivial inequalities: 26
+% Fw subsumption resolutions: 160
+% Fw demodulations: 13
+% Bw demodulations: 2
+% 
+% Simple tautologies: 54
+% Equational tautologies: 12
+% Forward subsumptions: 1038
+% 
+% Binary resolution: 1441
+% Factoring: 200
+% Forward superposition: 108
+% Backward superposition: 245
+% Self superposition: 3
+% Equality factoring: 2
+% Equality resolution: 7
+% 
+% Split clauses: 31
+% Split components: 62
+% SAT solver clauses: 73
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 36
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 31
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 71
+% TWLsolver calls for satisfiability: 60
+% 
+% Memory used [KB]: 1535
+% Time elapsed: 0.053 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.063 s

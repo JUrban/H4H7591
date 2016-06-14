@@ -1,0 +1,102 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f87,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f86,f38])).
+fof(f38,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.list.LAST_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2)))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.list.LAST_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2)))))),
+  inference(flattening,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.list.LAST_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X8,X7] : s(X6,X8) = s(X6,'const.list.LAST_1'(s('type.list.list'(X6),'const.list.SNOC_2'(s(X6,X8),s('type.list.list'(X6),X7)))))),
+  file('thm.rich_list.ELL_|48|_SNOC','thm.list.LAST_SNOC')).
+fof(f86,plain,(
+  s(sK0,sK2) != s(sK0,'const.list.LAST_1'(s('type.list.list'(sK0),'const.list.SNOC_2'(s(sK0,sK2),s('type.list.list'(sK0),sK1)))))),
+  inference(superposition,[],[f30,f35])).
+fof(f35,plain,(
+  ( ! [X0,X1] : (s(X0,'const.list.LAST_1'(s('type.list.list'(X0),X1))) = s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : s(X0,'const.list.LAST_1'(s('type.list.list'(X0),X1))) = s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ! [X0] : ! [X1] : s(X0,'const.list.LAST_1'(s('type.list.list'(X0),X1))) = s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : ! [X7] : s(X6,'const.list.LAST_1'(s('type.list.list'(X6),X7))) = s(X6,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X6),X7)))),
+  file('thm.rich_list.ELL_|48|_SNOC','thm.rich_list.ELL|split|0')).
+fof(f30,plain,(
+  s(sK0,sK2) != s(sK0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(sK0),'const.list.SNOC_2'(s(sK0,sK2),s('type.list.list'(sK0),sK1)))))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  s(sK0,sK2) != s(sK0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(sK0),'const.list.SNOC_2'(s(sK0,sK2),s('type.list.list'(sK0),sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f25])).
+fof(f25,plain,(
+  ? [X0,X1,X2] : s(X0,X2) != s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X1)))))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1,X2] : s(X0,X2) = s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(X6,X8) = s(X6,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X6),'const.list.SNOC_2'(s(X6,X8),s('type.list.list'(X6),X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(X6,X8) = s(X6,'const.rich_list.ELL_2'(s('type.num.num','const.num.|48|_0'),s('type.list.list'(X6),'const.list.SNOC_2'(s(X6,X8),s('type.list.list'(X6),X7)))))),
+  file('thm.rich_list.ELL_|48|_SNOC','thm.rich_list.ELL_|48|_SNOC')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 10
+% Passive clauses: 22
+% Generated clauses: 57
+% Final active clauses: 8
+% Final passive clauses: 7
+% Input formulas: 10
+% Initial clauses: 11
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% Fw demodulations: 2
+% 
+% Simple tautologies: 2
+% Equational tautologies: 3
+% Forward subsumptions: 24
+% 
+% Binary resolution: 2
+% Forward superposition: 17
+% Backward superposition: 11
+% Self superposition: 7
+% Equality factoring: 2
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

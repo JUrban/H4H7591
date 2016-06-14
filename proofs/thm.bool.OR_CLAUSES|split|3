@@ -1,0 +1,106 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f55,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f38,f51,f48,f52,f50,f49,f53])).
+fof(f53,plain,(
+  ~p(s(bool,sK0)) | $spl3),
+  inference(cnf_transformation,[],[f53_D])).
+fof(f53_D,plain,(
+  ~p(s(bool,sK0)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f49,plain,(
+  ~p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f34])).
+fof(f34,plain,(
+  ~p(s(bool,sK0)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  (p(s(bool,sK0)) | p(s(bool,'F_0')) | p(s(bool,sK0))) & ((~p(s(bool,sK0)) & ~p(s(bool,'F_0'))) | ~p(s(bool,sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f30])).
+fof(f30,plain,(
+  ? [X0] : ((p(s(bool,X0)) | p(s(bool,'F_0')) | p(s(bool,X0))) & ((~p(s(bool,X0)) & ~p(s(bool,'F_0'))) | ~p(s(bool,X0))))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ? [X0] : (((p(s(bool,X0)) | p(s(bool,'F_0'))) | p(s(bool,X0))) & ((~p(s(bool,X0)) & ~p(s(bool,'F_0'))) | ~p(s(bool,X0))))),
+  inference(nnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ? [X0] : ((p(s(bool,X0)) | p(s(bool,'F_0'))) <~> p(s(bool,X0)))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : ((p(s(bool,X0)) | p(s(bool,'F_0'))) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ((p(s(bool,X6)) | p(s(bool,'F_0'))) <=> p(s(bool,X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ((p(s(bool,X6)) | p(s(bool,'F_0'))) <=> p(s(bool,X6)))),
+  file('thm.bool.OR_CLAUSES|split|3','thm.bool.OR_CLAUSES|split|3')).
+fof(f50,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(cnf_transformation,[],[f50_D])).
+fof(f50_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f52,plain,(
+  p(s(bool,sK0)) | $spl2),
+  inference(cnf_transformation,[],[f52_D])).
+fof(f52_D,plain,(
+  p(s(bool,sK0)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f48,plain,(
+  p(s(bool,sK0)) | p(s(bool,'F_0'))),
+  inference(duplicate_literal_removal,[],[f33])).
+fof(f33,plain,(
+  p(s(bool,sK0)) | p(s(bool,'F_0')) | p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f31])).
+fof(f51,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f51_D])).
+fof(f51_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f38,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.OR_CLAUSES|split|3',aHL_FALSITY)).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Passive clauses: 6
+% Generated clauses: 17
+% Final passive clauses: 6
+% Input formulas: 10
+% Initial clauses: 15
+% 
+% Duplicate literals: 2
+% 
+% Simple tautologies: 4
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 6
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 3
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 3
+% 
+% TWLsolver clauses: 4
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

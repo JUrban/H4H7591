@@ -1,0 +1,89 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f424,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f23,f27])).
+fof(f27,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ! [X0,X1,X2] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : ! [X7,X8] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X8))),s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X7)))))),
+  file('thm.rich_list.IS_SUFFIX_compute','thm.rich_list.IS_PREFIX_REVERSE')).
+fof(f23,plain,(
+  s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))) != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))),s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1)))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))) != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))),s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0] : ! [X1,X2] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X8))),s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(bool,'const.rich_list.IS_SUFFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X8))),s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X7)))))),
+  file('thm.rich_list.IS_SUFFIX_compute','thm.rich_list.IS_SUFFIX_compute')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 20
+% Passive clauses: 45
+% Generated clauses: 390
+% Final active clauses: 10
+% Final passive clauses: 17
+% Input formulas: 7
+% Initial clauses: 8
+% 
+% Duplicate literals: 67
+% Trivial inequalities: 8
+% Fw subsumption resolutions: 13
+% Fw demodulations: 10
+% Bw demodulations: 4
+% 
+% Simple tautologies: 26
+% Equational tautologies: 15
+% Forward subsumptions: 174
+% 
+% Binary resolution: 6
+% Forward superposition: 103
+% Backward superposition: 93
+% Self superposition: 28
+% Equality factoring: 28
+% Equality resolution: 1
+% 
+% Split clauses: 11
+% Split components: 22
+% SAT solver clauses: 26
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 15
+% 
+% Sat splits: 11
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 26
+% TWLsolver calls for satisfiability: 9
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.017 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.019 s

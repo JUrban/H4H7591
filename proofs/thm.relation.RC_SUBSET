@@ -1,0 +1,101 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f5248,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f5209,f221])).
+fof(f221,plain,(
+  ~p(s(bool,'const.relation.RC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(cnf_transformation,[],[f144])).
+fof(f144,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),happ(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14))),s(sK12,sK15)))) & ~p(s(bool,'const.relation.RC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15])],[f104])).
+fof(f104,plain,(
+  ? [X0,X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & ~p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(ennf_transformation,[],[f43])).
+fof(f43,plain,(
+  ~! [X0,X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) => p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) => p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9)))) => p(s(bool,'const.relation.RC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X9)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9)))) => p(s(bool,'const.relation.RC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X9)))))),
+  file('thm.relation.RC_SUBSET','thm.relation.RC_SUBSET')).
+fof(f5209,plain,(
+  p(s(bool,'const.relation.RC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(resolution,[],[f278,f220])).
+fof(f220,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),happ(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14))),s(sK12,sK15))))),
+  inference(cnf_transformation,[],[f144])).
+fof(f278,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))) )),
+  inference(cnf_transformation,[],[f171])).
+fof(f171,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) | s(X0,X2) = s(X0,X3) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))) & ((s(X0,X2) != s(X0,X3) & ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))) | p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(flattening,[],[f170])).
+fof(f170,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) | (s(X0,X2) = s(X0,X3) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))))) & ((s(X0,X2) != s(X0,X3) & ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))) | p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(nnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) <=> (s(X0,X2) = s(X0,X3) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))))),
+  inference(flattening,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : ! [X1,X2,X3] : (p(s(bool,'const.relation.RC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) <=> (s(X0,X2) = s(X0,X3) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X6] : ! [X7,X8,X9] : (p(s(bool,'const.relation.RC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X9)))) <=> (s(X6,X8) = s(X6,X9) | p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9))))))),
+  file('thm.relation.RC_SUBSET','thm.relation.RC_DEF')).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 382
+% Passive clauses: 1630
+% Generated clauses: 5017
+% Final active clauses: 379
+% Final passive clauses: 1148
+% Input formulas: 40
+% Initial clauses: 169
+% 
+% Duplicate literals: 136
+% Trivial inequalities: 18
+% Fw subsumption resolutions: 348
+% Fw demodulations: 191
+% Bw demodulations: 2
+% 
+% Simple tautologies: 160
+% Equational tautologies: 21
+% Forward subsumptions: 2408
+% 
+% Binary resolution: 2635
+% Factoring: 606
+% Forward superposition: 393
+% Backward superposition: 455
+% Self superposition: 4
+% Equality factoring: 2
+% Equality resolution: 7
+% 
+% Split clauses: 108
+% Split components: 217
+% SAT solver clauses: 172
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 31
+% 
+% Sat splits: 108
+% 
+% TWLsolver clauses: 172
+% TWLsolver calls for satisfiability: 152
+% 
+% Memory used [KB]: 2302
+% Time elapsed: 0.107 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.116 s

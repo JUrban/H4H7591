@@ -1,0 +1,174 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f21876,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f21875,f21538,f266,f431,f429,f265,f430,f428])).
+fof(f428,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) | $spl0),
+  inference(cnf_transformation,[],[f428_D])).
+fof(f428_D,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f430,plain,(
+  s('type.num.num',sK0) = s('type.num.num',sK1) | $spl2),
+  inference(cnf_transformation,[],[f430_D])).
+fof(f430_D,plain,(
+  s('type.num.num',sK0) = s('type.num.num',sK1) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f265,plain,(
+  s('type.num.num',sK0) = s('type.num.num',sK1) | s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1)))))))),
+  inference(cnf_transformation,[],[f209])).
+fof(f209,plain,(
+  (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) | s('type.num.num',sK0) = s('type.num.num',sK1)) & (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) | s('type.num.num',sK0) != s('type.num.num',sK1))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f208])).
+fof(f208,plain,(
+  ? [X0,X1] : ((s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1))))))) | s('type.num.num',X0) = s('type.num.num',X1)) & (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1))))))) | s('type.num.num',X0) != s('type.num.num',X1)))),
+  inference(nnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ? [X0,X1] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1))))))) <~> s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(ennf_transformation,[],[f100])).
+fof(f100,plain,(
+  ~! [X0,X1] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1))))))) <=> s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7))))))) <=> s('type.num.num',X6) = s('type.num.num',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7))))))) <=> s('type.num.num',X6) = s('type.num.num',X7))),
+  file('thm.integer.INT_EQ_REDUCE|split|14','thm.integer.INT_EQ_REDUCE|split|14')).
+fof(f429,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) | $spl1),
+  inference(cnf_transformation,[],[f429_D])).
+fof(f429_D,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1))))))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f431,plain,(
+  s('type.num.num',sK0) != s('type.num.num',sK1) | $spl3),
+  inference(cnf_transformation,[],[f431_D])).
+fof(f431_D,plain,(
+  s('type.num.num',sK0) != s('type.num.num',sK1) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f266,plain,(
+  s('type.num.num',sK0) != s('type.num.num',sK1) | s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1)))))))),
+  inference(cnf_transformation,[],[f209])).
+fof(f21538,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f21512,f431])).
+fof(f21512,plain,(
+  s('type.num.num',sK0) = s('type.num.num',sK1) | $spl0),
+  inference(equality_resolution,[],[f21376])).
+fof(f21376,plain,(
+  ( ! [X0] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))) | s('type.num.num',sK1) = s('type.num.num',X0)) ) | $spl0),
+  inference(superposition,[],[f389,f21370])).
+fof(f21370,plain,(
+  s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1))) | $spl0),
+  inference(equality_resolution,[],[f4361])).
+fof(f4361,plain,(
+  ( ! [X2] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X2))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))))) | s('type.integer.int',X2) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1)))) ) | $spl0),
+  inference(superposition,[],[f385,f4354])).
+fof(f4354,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1))))) | $spl0),
+  inference(forward_demodulation,[],[f4353,f280])).
+fof(f280,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f105])).
+fof(f105,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8] : s('type.num.num',X8) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X8)))),
+  file('thm.integer.INT_EQ_REDUCE|split|14','thm.arithmetic.NUMERAL_DEF')).
+fof(f4353,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) | $spl0),
+  inference(forward_demodulation,[],[f428,f280])).
+fof(f385,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1))) | s('type.integer.int',X0) = s('type.integer.int',X1)) )),
+  inference(cnf_transformation,[],[f248])).
+fof(f248,plain,(
+  ! [X0,X1] : ((s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1))) | s('type.integer.int',X0) = s('type.integer.int',X1)) & (s('type.integer.int',X0) != s('type.integer.int',X1) | s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))),
+  inference(nnf_transformation,[],[f179])).
+fof(f179,plain,(
+  ! [X0,X1] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1))) <=> s('type.integer.int',X0) = s('type.integer.int',X1))),
+  inference(rectify,[],[f54])).
+fof(f54,axiom,(
+  ! [X8,X15] : (s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X8))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X15))) <=> s('type.integer.int',X8) = s('type.integer.int',X15))),
+  file('thm.integer.INT_EQ_REDUCE|split|14','thm.integer.INT_EQ_NEG')).
+fof(f389,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1))) | s('type.num.num',X0) = s('type.num.num',X1)) )),
+  inference(cnf_transformation,[],[f250])).
+fof(f250,plain,(
+  ! [X0,X1] : ((s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))) != s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1))) | s('type.num.num',X0) = s('type.num.num',X1)) & (s('type.num.num',X0) != s('type.num.num',X1) | s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))),
+  inference(nnf_transformation,[],[f181])).
+fof(f181,plain,(
+  ! [X0,X1] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1))) <=> s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(rectify,[],[f53])).
+fof(f53,axiom,(
+  ! [X7,X6] : (s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X6))) = s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X7))) <=> s('type.num.num',X6) = s('type.num.num',X7))),
+  file('thm.integer.INT_EQ_REDUCE|split|14','thm.integer.INT_INJ')).
+fof(f21875,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f21874])).
+fof(f21874,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f21540,f430])).
+fof(f21540,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK0))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1))))) | $spl1),
+  inference(forward_demodulation,[],[f21539,f280])).
+fof(f21539,plain,(
+  s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK1))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))))))) | $spl1),
+  inference(forward_demodulation,[],[f429,f280])).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 294
+% Passive clauses: 3077
+% Generated clauses: 21647
+% Final active clauses: 227
+% Final passive clauses: 2380
+% Input formulas: 98
+% Initial clauses: 160
+% 
+% Duplicate literals: 272
+% Trivial inequalities: 253
+% Fw subsumption resolutions: 542
+% Fw demodulations: 5029
+% Bw demodulations: 44
+% 
+% Simple tautologies: 189
+% Equational tautologies: 29
+% Forward subsumptions: 12333
+% Fw demodulations to eq. taut.: 34
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 60
+% Forward superposition: 7679
+% Backward superposition: 7220
+% Self superposition: 96
+% Equality factoring: 36
+% Equality resolution: 70
+% 
+% Split clauses: 62
+% Split components: 124
+% SAT solver clauses: 128
+% SAT solver unit clauses: 17
+% SAT solver binary clauses: 59
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 62
+% Sat splitting refutations: 18
+% 
+% TWLsolver clauses: 125
+% TWLsolver calls for satisfiability: 44
+% 
+% Memory used [KB]: 12792
+% Time elapsed: 0.433 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.436 s

@@ -1,0 +1,138 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sum
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sum
+% SZS output start Proof for thm.sum
+fof(f310,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f309,f26,f38,f36,f291,f25,f37,f35])).
+fof(f35,plain,(
+  s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) = s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) | $spl0),
+  inference(cnf_transformation,[],[f35_D])).
+fof(f35_D,plain,(
+  s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) = s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f37,plain,(
+  s(sK1,sK2) = s(sK1,sK3) | $spl2),
+  inference(cnf_transformation,[],[f37_D])).
+fof(f37_D,plain,(
+  s(sK1,sK2) = s(sK1,sK3) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f25,plain,(
+  s(sK1,sK2) = s(sK1,sK3) | s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) = s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3)))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  (s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) = s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) | s(sK1,sK2) = s(sK1,sK3)) & (s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) | s(sK1,sK2) != s(sK1,sK3))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f20])).
+fof(f20,plain,(
+  ? [X0,X1,X2,X3] : ((s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) | s(X1,X2) = s(X1,X3)) & (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) != s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) | s(X1,X2) != s(X1,X3)))),
+  inference(nnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2,X3] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) <~> s(X1,X2) = s(X1,X3))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2,X3] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) <=> s(X1,X2) = s(X1,X3))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ! [X2,X3] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) <=> s(X1,X2) = s(X1,X3))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : (s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X8))) = s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X9))) <=> s(X7,X8) = s(X7,X9))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : (s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X8))) = s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X9))) <=> s(X7,X8) = s(X7,X9))),
+  file('thm.sum.INR_INL_|49||49||split|0','thm.sum.INR_INL_|49||49||split|0')).
+fof(f291,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f290,f38])).
+fof(f290,plain,(
+  s(sK1,sK2) = s(sK1,sK3) | $spl0),
+  inference(equality_resolution,[],[f70])).
+fof(f70,plain,(
+  ( ! [X0] : (s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,X0))) | s(sK1,sK3) = s(sK1,X0)) ) | $spl0),
+  inference(superposition,[],[f31,f35])).
+fof(f31,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) != s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) | s(X1,X2) = s(X1,X3)) )),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2,X3] : ((s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) != s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) | s(X1,X2) = s(X1,X3)) & (s(X1,X2) != s(X1,X3) | s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3)))))),
+  inference(nnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1,X2,X3] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) <=> s(X1,X2) = s(X1,X3))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : ! [X2,X3] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X3))) <=> s(X1,X2) = s(X1,X3))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7] : ! [X8,X9] : (s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X8))) = s('type.sum.sum'(X7,X6),'const.sum.INL_1'(s(X7,X9))) <=> s(X7,X8) = s(X7,X9))),
+  file('thm.sum.INR_INL_|49||49||split|0','thm.sum.INL_|49||49|')).
+fof(f36,plain,(
+  s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) | $spl1),
+  inference(cnf_transformation,[],[f36_D])).
+fof(f36_D,plain,(
+  s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f38,plain,(
+  s(sK1,sK2) != s(sK1,sK3) | $spl3),
+  inference(cnf_transformation,[],[f38_D])).
+fof(f38_D,plain,(
+  s(sK1,sK2) != s(sK1,sK3) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f26,plain,(
+  s(sK1,sK2) != s(sK1,sK3) | s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK3)))),
+  inference(cnf_transformation,[],[f21])).
+fof(f309,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f308])).
+fof(f308,plain,(
+  s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) != s('type.sum.sum'(sK1,sK0),'const.sum.INL_1'(s(sK1,sK2))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f36,f37])).
+% SZS output end Proof for thm.sum
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 17
+% Passive clauses: 92
+% Generated clauses: 271
+% Final active clauses: 12
+% Final passive clauses: 69
+% Input formulas: 7
+% Initial clauses: 10
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 1
+% Fw demodulations: 17
+% 
+% Simple tautologies: 16
+% Equational tautologies: 18
+% Forward subsumptions: 83
+% 
+% Binary resolution: 4
+% Forward superposition: 88
+% Backward superposition: 50
+% Self superposition: 24
+% Equality factoring: 26
+% Equality resolution: 5
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 8
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 5
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 3
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 6
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.018 s

@@ -1,0 +1,186 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f449,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f444,f72,f107,f74,f110])).
+fof(f110,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f110_D])).
+fof(f110_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f74,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.SUBSET_UNIV',aHL_FALSITY)).
+fof(f107,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f107_D])).
+fof(f107_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f72,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.pred_set.SUBSET_UNIV',aHL_TRUTH)).
+fof(f444,plain,(
+  $false | ($spl0 | $spl5)),
+  inference(subsumption_resolution,[],[f438,f110])).
+fof(f438,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(superposition,[],[f422,f121])).
+fof(f121,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.SUBSET_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'const.pred_set.UNIV_0')))),
+  inference(resolution,[],[f71,f81])).
+fof(f81,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X8] : (s(bool,'F_0') = s(bool,X8) <=> ~p(s(bool,X8)))),
+  file('thm.pred_set.SUBSET_UNIV','thm.bool.EQ_CLAUSES|split|3')).
+fof(f71,plain,(
+  ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'const.pred_set.UNIV_0'))))),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),'const.pred_set.UNIV_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f42])).
+fof(f42,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(ennf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~! [X0,X1] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(flattening,[],[f20])).
+fof(f20,plain,(
+  ~! [X0] : ! [X1] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'const.pred_set.UNIV_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),'const.pred_set.UNIV_0'))))),
+  file('thm.pred_set.SUBSET_UNIV','thm.pred_set.SUBSET_UNIV')).
+fof(f422,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))) ) | $spl0),
+  inference(subsumption_resolution,[],[f415,f107])).
+fof(f415,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))) )),
+  inference(superposition,[],[f104,f120])).
+fof(f120,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) )),
+  inference(resolution,[],[f99,f77])).
+fof(f77,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X8] : (s(bool,'T_0') = s(bool,X8) <=> p(s(bool,X8)))),
+  file('thm.pred_set.SUBSET_UNIV','thm.bool.EQ_CLAUSES|split|0')).
+fof(f99,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))) )),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1] : p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(flattening,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : ! [X1] : p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X6] : ! [X9] : p(s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),'const.pred_set.UNIV_0'))))),
+  file('thm.pred_set.SUBSET_UNIV','thm.pred_set.IN_UNIV')).
+fof(f104,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X2)))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f69])).
+fof(f69,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ! [X4] : (~p(s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X1)))) | p(s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X2)))))) & ((p(s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X1)))) & ~p(s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X2))))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2])],[f68])).
+fof(f68,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ! [X4] : (~p(s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X1)))) | p(s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X2)))))) & (? [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) & ~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(rectify,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ! [X3] : (~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) | p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2)))))) & (? [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) & ~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> ! [X3] : (~p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) | p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))))),
+  inference(ennf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> ! [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) => p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))))),
+  inference(flattening,[],[f38])).
+fof(f38,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> ! [X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1)))) => p(s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))) <=> ! [X9] : (p(s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X7)))) => p(s(bool,'const.bool.IN_2'(s(X6,X9),s(fun(X6,bool),X8))))))),
+  file('thm.pred_set.SUBSET_UNIV','thm.pred_set.SUBSET_DEF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 22
+% Passive clauses: 84
+% Generated clauses: 364
+% Final active clauses: 18
+% Final passive clauses: 47
+% Input formulas: 18
+% Initial clauses: 35
+% 
+% Duplicate literals: 42
+% Trivial inequalities: 9
+% Fw subsumption resolutions: 33
+% Fw demodulations: 1
+% Bw demodulations: 2
+% 
+% Simple tautologies: 34
+% Equational tautologies: 15
+% Forward subsumptions: 138
+% 
+% Binary resolution: 25
+% Forward superposition: 58
+% Backward superposition: 101
+% Self superposition: 23
+% Equality factoring: 26
+% Equality resolution: 1
+% 
+% Split clauses: 14
+% Split components: 29
+% SAT solver clauses: 23
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 15
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 14
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 19
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.018 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.02 s

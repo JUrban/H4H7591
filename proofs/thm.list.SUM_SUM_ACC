@@ -1,0 +1,96 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f4769,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f4766])).
+fof(f4766,plain,(
+  s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),sK10))) != s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),sK10)))),
+  inference(superposition,[],[f252,f3778])).
+fof(f3778,plain,(
+  ( ! [X2] : (s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X2))) = s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X2),s('type.num.num','const.num.|48|_0')))) )),
+  inference(superposition,[],[f334,f260])).
+fof(f260,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f57])).
+fof(f57,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7] : s('type.num.num',X7) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num','const.num.|48|_0')))),
+  file('thm.list.SUM_SUM_ACC','thm.arithmetic.ADD_|48|')).
+fof(f334,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X0))),s('type.num.num',X1)))) )),
+  inference(cnf_transformation,[],[f100])).
+fof(f100,plain,(
+  ! [X0,X1] : s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X0))),s('type.num.num',X1)))),
+  inference(rectify,[],[f43])).
+fof(f43,axiom,(
+  ! [X6,X16] : s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X6),s('type.num.num',X16))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X6))),s('type.num.num',X16)))),
+  file('thm.list.SUM_SUM_ACC','thm.list.SUM_ACC_SUM_LEM')).
+fof(f252,plain,(
+  s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),sK10))) != s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),sK10),s('type.num.num','const.num.|48|_0')))),
+  inference(cnf_transformation,[],[f162])).
+fof(f162,plain,(
+  s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),sK10))) != s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),sK10),s('type.num.num','const.num.|48|_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10])],[f122])).
+fof(f122,plain,(
+  ? [X0] : s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X0))) != s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X0),s('type.num.num','const.num.|48|_0')))),
+  inference(ennf_transformation,[],[f53])).
+fof(f53,plain,(
+  ~! [X0] : s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X0))) = s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X6))) = s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X6),s('type.num.num','const.num.|48|_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.num.num','const.list.SUM_1'(s('type.list.list'('type.num.num'),X6))) = s('type.num.num','const.list.SUM_ACC_2'(s('type.list.list'('type.num.num'),X6),s('type.num.num','const.num.|48|_0')))),
+  file('thm.list.SUM_SUM_ACC','thm.list.SUM_SUM_ACC')).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 352
+% Passive clauses: 1540
+% Generated clauses: 4512
+% Final active clauses: 352
+% Final passive clauses: 1010
+% Input formulas: 51
+% Initial clauses: 188
+% 
+% Duplicate literals: 146
+% Trivial inequalities: 27
+% Fw subsumption resolutions: 296
+% 
+% Simple tautologies: 162
+% Equational tautologies: 31
+% Forward subsumptions: 2301
+% 
+% Binary resolution: 2810
+% Factoring: 773
+% Forward superposition: 150
+% Backward superposition: 64
+% Self superposition: 4
+% Equality factoring: 2
+% Equality resolution: 14
+% 
+% Split clauses: 107
+% Split components: 215
+% SAT solver clauses: 191
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 48
+% 
+% Sat splits: 107
+% 
+% TWLsolver clauses: 191
+% TWLsolver calls for satisfiability: 155
+% 
+% Memory used [KB]: 2174
+% Time elapsed: 0.125 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.119 s

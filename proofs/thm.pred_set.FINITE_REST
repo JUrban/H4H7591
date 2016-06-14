@@ -1,0 +1,209 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f497,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f489,f57,f84,f94,f98,f96,f109,f314,f319,f317,f55,f81,f360])).
+fof(f360,plain,(
+  $false | ($spl11 | $spl12)),
+  inference(trivial_inequality_removal,[],[f355])).
+fof(f355,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl11 | $spl12)),
+  inference(superposition,[],[f98,f317])).
+fof(f81,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f81_D])).
+fof(f81_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f55,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.pred_set.FINITE_REST',aHL_TRUTH)).
+fof(f317,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl12),
+  inference(cnf_transformation,[],[f317_D])).
+fof(f317_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f319,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) | $spl14),
+  inference(cnf_transformation,[],[f319_D])).
+fof(f319_D,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f314,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) | s(bool,'T_0') = s(bool,X9)) ) | $spl2),
+  inference(duplicate_literal_removal,[],[f280])).
+fof(f280,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) ) | $spl2),
+  inference(superposition,[],[f260,f58])).
+fof(f58,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.pred_set.FINITE_REST',aHL_BOOL_CASES)).
+fof(f260,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) | s(bool,'T_0') = s(bool,X9)) ) | $spl2),
+  inference(subsumption_resolution,[],[f186,f81])).
+fof(f186,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f54,f87])).
+fof(f87,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f58,f58])).
+fof(f54,plain,(
+  ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))))),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),sK1)))) & ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),'const.pred_set.REST_1'(s(fun(sK0,bool),sK1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f32])).
+fof(f32,plain,(
+  ? [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) & ~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1)))))))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1)))))))),
+  inference(flattening,[],[f16])).
+fof(f16,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),'const.pred_set.REST_1'(s(fun(X6,bool),X7)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),'const.pred_set.REST_1'(s(fun(X6,bool),X7)))))))),
+  file('thm.pred_set.FINITE_REST','thm.pred_set.FINITE_REST')).
+fof(f109,plain,(
+  $false | ($spl7 | $spl8)),
+  inference(subsumption_resolution,[],[f99,f84])).
+fof(f99,plain,(
+  p(s(bool,'F_0')) | $spl8),
+  inference(backward_demodulation,[],[f96,f53])).
+fof(f53,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),sK1))))),
+  inference(cnf_transformation,[],[f39])).
+fof(f96,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl8),
+  inference(cnf_transformation,[],[f96_D])).
+fof(f96_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f98,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl11),
+  inference(cnf_transformation,[],[f98_D])).
+fof(f98_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f94,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f58])).
+fof(f84,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f84_D])).
+fof(f84_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f57,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.FINITE_REST',aHL_FALSITY)).
+fof(f489,plain,(
+  $false | ($spl7 | $spl11 | $spl14)),
+  inference(subsumption_resolution,[],[f488,f98])).
+fof(f488,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl7 | $spl14)),
+  inference(forward_demodulation,[],[f468,f95])).
+fof(f95,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),sK1))) | $spl7),
+  inference(subsumption_resolution,[],[f91,f84])).
+fof(f91,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),sK1)))),
+  inference(superposition,[],[f53,f58])).
+fof(f468,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK0,bool),sK1))) | $spl14),
+  inference(superposition,[],[f449,f319])).
+fof(f449,plain,(
+  ( ! [X0,X1] : (s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1))) = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1)))))) )),
+  inference(superposition,[],[f77,f74])).
+fof(f74,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1))) = s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,'const.pred_set.CHOICE_1'(s(fun(X0,bool),X1)))))) )),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1] : s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1))) = s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,'const.pred_set.CHOICE_1'(s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : ! [X1] : s(fun(X0,bool),'const.pred_set.REST_1'(s(fun(X0,bool),X1))) = s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,'const.pred_set.CHOICE_1'(s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6] : ! [X7] : s(fun(X6,bool),'const.pred_set.REST_1'(s(fun(X6,bool),X7))) = s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X7),s(X6,'const.pred_set.CHOICE_1'(s(fun(X6,bool),X7)))))),
+  file('thm.pred_set.FINITE_REST','thm.pred_set.REST_DEF')).
+fof(f77,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2))) = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1)))))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1,X2] : s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2))) = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1)))))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2))) = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X2),s(X0,X1)))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : ! [X9,X7] : s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7))) = s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X7),s(X6,X9)))))),
+  file('thm.pred_set.FINITE_REST','thm.pred_set.FINITE_DELETE')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 88
+% Generated clauses: 428
+% Final active clauses: 15
+% Final passive clauses: 48
+% Input formulas: 14
+% Initial clauses: 26
+% 
+% Duplicate literals: 63
+% Trivial inequalities: 5
+% Fw subsumption resolutions: 12
+% Fw demodulations: 13
+% Bw demodulations: 6
+% 
+% Simple tautologies: 29
+% Equational tautologies: 15
+% Forward subsumptions: 187
+% 
+% Binary resolution: 7
+% Forward superposition: 120
+% Backward superposition: 102
+% Self superposition: 30
+% Equality factoring: 28
+% 
+% Split clauses: 12
+% Split components: 25
+% SAT solver clauses: 27
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 14
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 12
+% Sat splitting refutations: 9
+% 
+% TWLsolver clauses: 24
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.020 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.022 s

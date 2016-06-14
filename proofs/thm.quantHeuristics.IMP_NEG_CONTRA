@@ -1,0 +1,83 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.quantHeuristics
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quantHeuristics
+% SZS output start Proof for thm.quantHeuristics
+fof(f744,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f743,f234])).
+fof(f234,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK13),s(sK12,sK14))))),
+  inference(cnf_transformation,[],[f158])).
+fof(f158,plain,(
+  ~p(s(bool,happ(s(fun(sK12,bool),sK13),s(sK12,sK14)))) & p(s(bool,happ(s(fun(sK12,bool),sK13),s(sK12,sK15)))) & s(sK12,sK14) = s(sK12,sK15)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15])],[f107])).
+fof(f107,plain,(
+  ? [X0,X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))) & p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) & s(X0,X2) = s(X0,X3))),
+  inference(flattening,[],[f106])).
+fof(f106,plain,(
+  ? [X0,X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))) & (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) & s(X0,X2) = s(X0,X3)))),
+  inference(ennf_transformation,[],[f44])).
+fof(f44,plain,(
+  ~! [X0,X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))) => (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => s(X0,X2) != s(X0,X3)))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2)))) => (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))) => ~s(X0,X2) = s(X0,X3)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (~p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X8)))) => (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => ~s(X6,X8) = s(X6,X9)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (~p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X8)))) => (p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9)))) => ~s(X6,X8) = s(X6,X9)))),
+  file('thm.quantHeuristics.IMP_NEG_CONTRA','thm.quantHeuristics.IMP_NEG_CONTRA')).
+fof(f743,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),sK13),s(sK12,sK14))))),
+  inference(forward_demodulation,[],[f235,f236])).
+fof(f236,plain,(
+  s(sK12,sK14) = s(sK12,sK15)),
+  inference(cnf_transformation,[],[f158])).
+fof(f235,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),sK13),s(sK12,sK15))))),
+  inference(cnf_transformation,[],[f158])).
+% SZS output end Proof for thm.quantHeuristics
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 89
+% Passive clauses: 220
+% Generated clauses: 506
+% Final active clauses: 89
+% Final passive clauses: 114
+% Input formulas: 41
+% Initial clauses: 175
+% 
+% Duplicate literals: 10
+% Fw subsumption resolutions: 19
+% Fw demodulations: 1
+% 
+% Simple tautologies: 57
+% Equational tautologies: 2
+% Forward subsumptions: 191
+% 
+% Binary resolution: 262
+% Factoring: 32
+% Equality resolution: 3
+% 
+% Split clauses: 18
+% Split components: 37
+% SAT solver clauses: 22
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 17
+% 
+% Sat splits: 18
+% 
+% TWLsolver clauses: 22
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.018 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.021 s

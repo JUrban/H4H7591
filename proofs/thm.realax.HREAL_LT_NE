@@ -1,0 +1,146 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.realax
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.realax
+% SZS output start Proof for thm.realax
+fof(f260,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f259,f31])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (s('type.hreal.hreal',X0) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : s('type.hreal.hreal',X0) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(flattening,[],[f13])).
+fof(f13,plain,(
+  ! [X0,X1] : ~s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7] : ~s('type.hreal.hreal',X6) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))),
+  file('thm.realax.HREAL_LT_NE','thm.realax.HREAL_EQ_ADDL')).
+fof(f259,plain,(
+  s('type.hreal.hreal',sK0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK2(sK0,sK0))))),
+  inference(subsumption_resolution,[],[f250,f26])).
+fof(f26,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.realax.HREAL_LT_NE',aHL_TRUTH)).
+fof(f250,plain,(
+  ~p(s(bool,'T_0')) | s('type.hreal.hreal',sK0) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK2(sK0,sK0))))),
+  inference(superposition,[],[f29,f43])).
+fof(f43,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK0)))),
+  inference(subsumption_resolution,[],[f40,f27])).
+fof(f27,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.realax.HREAL_LT_NE',aHL_FALSITY)).
+fof(f40,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK0)))),
+  inference(superposition,[],[f33,f28])).
+fof(f28,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.realax.HREAL_LT_NE',aHL_BOOL_CASES)).
+fof(f33,plain,(
+  p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK0))))),
+  inference(forward_demodulation,[],[f24,f25])).
+fof(f25,plain,(
+  s('type.hreal.hreal',sK0) = s('type.hreal.hreal',sK1)),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK1)))) & s('type.hreal.hreal',sK0) = s('type.hreal.hreal',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f17])).
+fof(f17,plain,(
+  ? [X0,X1] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) & s('type.hreal.hreal',X0) = s('type.hreal.hreal',X1))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) => s('type.hreal.hreal',X0) != s('type.hreal.hreal',X1))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) => ~s('type.hreal.hreal',X0) = s('type.hreal.hreal',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))) => ~s('type.hreal.hreal',X6) = s('type.hreal.hreal',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X6),s('type.hreal.hreal',X7)))) => ~s('type.hreal.hreal',X6) = s('type.hreal.hreal',X7))),
+  file('thm.realax.HREAL_LT_NE','thm.realax.HREAL_LT_NE')).
+fof(f24,plain,(
+  p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',sK0),s('type.hreal.hreal',sK1))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f29,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) | s('type.hreal.hreal',X1) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',sK2(X1,X0))))) )),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) | s('type.hreal.hreal',X1) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',sK2(X1,X0))))) & (! [X2] : s('type.hreal.hreal',X1) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X2))) | p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2])],[f21])).
+fof(f21,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) | ? [X3] : s('type.hreal.hreal',X1) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X3)))) & (! [X2] : s('type.hreal.hreal',X1) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X2))) | p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))))))),
+  inference(rectify,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) | ? [X2] : s('type.hreal.hreal',X1) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X2)))) & (! [X2] : s('type.hreal.hreal',X1) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X2))) | p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))))))),
+  inference(nnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1)))) <=> ? [X2] : s('type.hreal.hreal',X1) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X2))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8,X9] : (p(s(bool,'const.hreal.hreal_lt_2'(s('type.hreal.hreal',X8),s('type.hreal.hreal',X9)))) <=> ? [X10] : s('type.hreal.hreal',X9) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X8),s('type.hreal.hreal',X10))))),
+  file('thm.realax.HREAL_LT_NE','thm.hreal.HREAL_LT')).
+% SZS output end Proof for thm.realax
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 17
+% Passive clauses: 34
+% Generated clauses: 224
+% Final active clauses: 13
+% Final passive clauses: 8
+% Input formulas: 7
+% Initial clauses: 9
+% 
+% Duplicate literals: 45
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 8
+% Fw demodulations: 4
+% Bw demodulations: 3
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 93
+% 
+% Binary resolution: 6
+% Forward superposition: 52
+% Backward superposition: 40
+% Self superposition: 24
+% Equality factoring: 26
+% Equality resolution: 1
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 6
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 3
+% 
+% Sat splits: 3
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 6
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.010 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.01 s

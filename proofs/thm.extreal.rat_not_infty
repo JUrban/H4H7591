@@ -1,0 +1,153 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 44
+dis+11_7_41 on thm.extreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.extreal
+% SZS output start Proof for thm.extreal
+fof(f81548,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f81546,f1881,f2899,f2897,f81171])).
+fof(f81171,plain,(
+  $false | $spl2),
+  inference(subsumption_resolution,[],[f81071,f2153])).
+fof(f2153,plain,(
+  ( ! [X0] : (s('type.extreal.extreal','const.extreal.PosInf_0') != s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))) )),
+  inference(cnf_transformation,[],[f697])).
+fof(f697,plain,(
+  ! [X0] : s('type.extreal.extreal','const.extreal.PosInf_0') != s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))),
+  inference(flattening,[],[f696])).
+fof(f696,plain,(
+  ! [X0] : ~s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))),
+  inference(rectify,[],[f402])).
+fof(f402,axiom,(
+  ! [X15] : ~s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X15)))),
+  file('thm.extreal.rat_not_infty','thm.extreal.extreal_not_infty|split|1')).
+fof(f81071,plain,(
+  s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',sK23('const.extreal.PosInf_0')))) | $spl2),
+  inference(resolution,[],[f1994,f3628])).
+fof(f3628,plain,(
+  p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal','const.extreal.PosInf_0'),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) | $spl2),
+  inference(forward_demodulation,[],[f1880,f2899])).
+fof(f1880,plain,(
+  p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',sK20),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0'))))),
+  inference(cnf_transformation,[],[f1468])).
+fof(f1468,plain,(
+  p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',sK20),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) & (s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',sK20) | s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',sK20))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK20])],[f1200])).
+fof(f1200,plain,(
+  ? [X0] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) & (s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',X0) | s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',X0)))),
+  inference(ennf_transformation,[],[f519])).
+fof(f519,plain,(
+  ~! [X0] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => (s('type.extreal.extreal','const.extreal.NegInf_0') != s('type.extreal.extreal',X0) & s('type.extreal.extreal','const.extreal.PosInf_0') != s('type.extreal.extreal',X0)))),
+  inference(flattening,[],[f518])).
+fof(f518,plain,(
+  ~! [X0] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => (~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',X0) & ~s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X6),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => (~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',X6) & ~s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X6),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => (~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',X6) & ~s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',X6)))),
+  file('thm.extreal.rat_not_infty','thm.extreal.rat_not_infty')).
+fof(f1994,plain,(
+  ( ! [X0] : (~p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) | s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',sK23(X0))))) )),
+  inference(cnf_transformation,[],[f1473])).
+fof(f1473,plain,(
+  ! [X0] : (~p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) | s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',sK23(X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK23])],[f1205])).
+fof(f1205,plain,(
+  ! [X0] : (~p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) | ? [X1] : s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X1))))),
+  inference(ennf_transformation,[],[f615])).
+fof(f615,plain,(
+  ! [X0] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X0),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => ? [X1] : s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X1))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X15] : (p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal',X15),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) => ? [X16] : s('type.extreal.extreal',X15) = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X16))))),
+  file('thm.extreal.rat_not_infty','thm.extreal.Q_not_infty')).
+fof(f2897,plain,(
+  s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',sK20) | $spl0),
+  inference(cnf_transformation,[],[f2897_D])).
+fof(f2897_D,plain,(
+  s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',sK20) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f2899,plain,(
+  s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',sK20) | $spl2),
+  inference(cnf_transformation,[],[f2899_D])).
+fof(f2899_D,plain,(
+  s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',sK20) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f1881,plain,(
+  s('type.extreal.extreal','const.extreal.PosInf_0') = s('type.extreal.extreal',sK20) | s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal',sK20)),
+  inference(cnf_transformation,[],[f1468])).
+fof(f81546,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f81495,f2152])).
+fof(f2152,plain,(
+  ( ! [X0] : (s('type.extreal.extreal','const.extreal.NegInf_0') != s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))) )),
+  inference(cnf_transformation,[],[f695])).
+fof(f695,plain,(
+  ! [X0] : s('type.extreal.extreal','const.extreal.NegInf_0') != s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))),
+  inference(flattening,[],[f694])).
+fof(f694,plain,(
+  ! [X0] : ~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X0)))),
+  inference(rectify,[],[f403])).
+fof(f403,axiom,(
+  ! [X15] : ~s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',X15)))),
+  file('thm.extreal.rat_not_infty','thm.extreal.extreal_not_infty|split|0')).
+fof(f81495,plain,(
+  s('type.extreal.extreal','const.extreal.NegInf_0') = s('type.extreal.extreal','const.extreal.Normal_1'(s('type.realax.real',sK23('const.extreal.NegInf_0')))) | $spl0),
+  inference(resolution,[],[f81494,f1994])).
+fof(f81494,plain,(
+  p(s(bool,'const.bool.IN_2'(s('type.extreal.extreal','const.extreal.NegInf_0'),s(fun('type.extreal.extreal',bool),'const.extreal.Q_set_0')))) | $spl0),
+  inference(forward_demodulation,[],[f1880,f2897])).
+% SZS output end Proof for thm.extreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 1994
+% Passive clauses: 14688
+% Generated clauses: 79612
+% Final active clauses: 1754
+% Final passive clauses: 12048
+% Input formulas: 516
+% Initial clauses: 1006
+% 
+% Duplicate literals: 300
+% Trivial inequalities: 110
+% Fw subsumption resolutions: 3710
+% Fw demodulations: 7352
+% Bw demodulations: 205
+% 
+% Simple tautologies: 415
+% Equational tautologies: 38
+% Forward subsumptions: 52650
+% Fw demodulations to eq. taut.: 4
+% Bw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 12341
+% Factoring: 1073
+% Forward superposition: 22411
+% Backward superposition: 30687
+% Self superposition: 106
+% Equality factoring: 2
+% Equality resolution: 38
+% 
+% Split clauses: 590
+% Split components: 1182
+% SAT solver clauses: 905
+% SAT solver unit clauses: 49
+% SAT solver binary clauses: 126
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 590
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 904
+% TWLsolver calls for satisfiability: 685
+% 
+% Memory used [KB]: 43624
+% Time elapsed: 1.354 s
+% ------------------------------
+% ------------------------------
+% Success in time 1.381 s

@@ -1,0 +1,105 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.marker
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.marker
+% SZS output start Proof for thm.marker
+fof(f110,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f97,f102,f100,f98,f101,f99,f103])).
+fof(f103,plain,(
+  ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | $spl3),
+  inference(cnf_transformation,[],[f103_D])).
+fof(f103_D,plain,(
+  ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f99,plain,(
+  ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1))))),
+  inference(duplicate_literal_removal,[],[f59])).
+fof(f59,plain,(
+  ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1))))),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  (p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | p(s(bool,sK0)) | p(s(bool,sK0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,sK1))))) & ((~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) & ~p(s(bool,sK0))) | (~p(s(bool,sK0)) & ~p(s(bool,'const.marker.stmarker_1'(s(bool,sK1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f37])).
+fof(f37,plain,(
+  ? [X0,X1] : ((p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) | p(s(bool,X0)) | p(s(bool,X0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X1))))) & ((~p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) & ~p(s(bool,X0))) | (~p(s(bool,X0)) & ~p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))))))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ? [X0,X1] : (((p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) | p(s(bool,X0))) | (p(s(bool,X0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))))) & ((~p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) & ~p(s(bool,X0))) | (~p(s(bool,X0)) & ~p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))))))),
+  inference(nnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ? [X0,X1] : ((p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) | p(s(bool,X0))) <~> (p(s(bool,X0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X1))))))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~! [X0,X1] : ((p(s(bool,'const.marker.stmarker_1'(s(bool,X1)))) | p(s(bool,X0))) <=> (p(s(bool,X0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X1))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ((p(s(bool,'const.marker.stmarker_1'(s(bool,X7)))) | p(s(bool,X6))) <=> (p(s(bool,X6)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X7))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ((p(s(bool,'const.marker.stmarker_1'(s(bool,X7)))) | p(s(bool,X6))) <=> (p(s(bool,X6)) | p(s(bool,'const.marker.stmarker_1'(s(bool,X7))))))),
+  file('thm.marker.move_right_disj|split|0','thm.marker.move_right_disj|split|0')).
+fof(f101,plain,(
+  ~p(s(bool,sK0)) | $spl1),
+  inference(cnf_transformation,[],[f101_D])).
+fof(f101_D,plain,(
+  ~p(s(bool,sK0)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f98,plain,(
+  ~p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f58])).
+fof(f58,plain,(
+  ~p(s(bool,sK0)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f38])).
+fof(f100,plain,(
+  p(s(bool,sK0)) | $spl0),
+  inference(cnf_transformation,[],[f100_D])).
+fof(f100_D,plain,(
+  p(s(bool,sK0)) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f102,plain,(
+  p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | $spl2),
+  inference(cnf_transformation,[],[f102_D])).
+fof(f102_D,plain,(
+  p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f97,plain,(
+  p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f56])).
+fof(f56,plain,(
+  p(s(bool,'const.marker.stmarker_1'(s(bool,sK1)))) | p(s(bool,sK0)) | p(s(bool,sK0)) | p(s(bool,'const.marker.stmarker_1'(s(bool,sK1))))),
+  inference(cnf_transformation,[],[f38])).
+% SZS output end Proof for thm.marker
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Passive clauses: 5
+% Generated clauses: 44
+% Final passive clauses: 5
+% Input formulas: 15
+% Initial clauses: 39
+% 
+% Duplicate literals: 5
+% Trivial inequalities: 1
+% 
+% Simple tautologies: 23
+% Equational tautologies: 1
+% 
+% Split clauses: 7
+% Split components: 14
+% SAT solver clauses: 11
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 7
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 7
+% 
+% TWLsolver clauses: 5
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

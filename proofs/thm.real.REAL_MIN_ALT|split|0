@@ -1,0 +1,120 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f5268,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f5267,f256])).
+fof(f256,plain,(
+  s('type.realax.real',sK12) != s('type.realax.real','const.real.min_2'(s('type.realax.real',sK12),s('type.realax.real',sK13)))),
+  inference(cnf_transformation,[],[f172])).
+fof(f172,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real',sK12),s('type.realax.real',sK13)))) & s('type.realax.real',sK12) != s('type.realax.real','const.real.min_2'(s('type.realax.real',sK12),s('type.realax.real',sK13)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f124])).
+fof(f124,plain,(
+  ? [X0,X1] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & s('type.realax.real',X0) != s('type.realax.real','const.real.min_2'(s('type.realax.real',X0),s('type.realax.real',X1))))),
+  inference(ennf_transformation,[],[f51])).
+fof(f51,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) => s('type.realax.real',X0) = s('type.realax.real','const.real.min_2'(s('type.realax.real',X0),s('type.realax.real',X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) => s('type.realax.real',X6) = s('type.realax.real','const.real.min_2'(s('type.realax.real',X6),s('type.realax.real',X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) => s('type.realax.real',X6) = s('type.realax.real','const.real.min_2'(s('type.realax.real',X6),s('type.realax.real',X7))))),
+  file('thm.real.REAL_MIN_ALT|split|0','thm.real.REAL_MIN_ALT|split|0')).
+fof(f5267,plain,(
+  s('type.realax.real',sK12) = s('type.realax.real','const.real.min_2'(s('type.realax.real',sK12),s('type.realax.real',sK13)))),
+  inference(forward_demodulation,[],[f5188,f304])).
+fof(f304,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f37])).
+fof(f37,axiom,(
+  ! [X12] : ! [X8,X9] : s(X12,X8) = s(X12,'const.bool.COND_3'(s(bool,'T_0'),s(X12,X8),s(X12,X9)))),
+  file('thm.real.REAL_MIN_ALT|split|0','thm.bool.COND_CLAUSES|split|0')).
+fof(f5188,plain,(
+  s('type.realax.real','const.real.min_2'(s('type.realax.real',sK12),s('type.realax.real',sK13))) = s('type.realax.real','const.bool.COND_3'(s(bool,'T_0'),s('type.realax.real',sK12),s('type.realax.real',sK13)))),
+  inference(superposition,[],[f314,f484])).
+fof(f484,plain,(
+  s(bool,'T_0') = s(bool,'const.real.real_lte_2'(s('type.realax.real',sK12),s('type.realax.real',sK13)))),
+  inference(resolution,[],[f276,f255])).
+fof(f255,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real',sK12),s('type.realax.real',sK13))))),
+  inference(cnf_transformation,[],[f172])).
+fof(f276,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f175])).
+fof(f175,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f66])).
+fof(f66,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.real.REAL_MIN_ALT|split|0','thm.bool.EQ_CLAUSES|split|1')).
+fof(f314,plain,(
+  ( ! [X0,X1] : (s('type.realax.real','const.real.min_2'(s('type.realax.real',X0),s('type.realax.real',X1))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s('type.realax.real',X0),s('type.realax.real',X1)))) )),
+  inference(cnf_transformation,[],[f96])).
+fof(f96,plain,(
+  ! [X0,X1] : s('type.realax.real','const.real.min_2'(s('type.realax.real',X0),s('type.realax.real',X1))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s('type.realax.real',X0),s('type.realax.real',X1)))),
+  inference(rectify,[],[f40])).
+fof(f40,axiom,(
+  ! [X6,X7] : s('type.realax.real','const.real.min_2'(s('type.realax.real',X6),s('type.realax.real',X7))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real',X6),s('type.realax.real',X7))),s('type.realax.real',X6),s('type.realax.real',X7)))),
+  file('thm.real.REAL_MIN_ALT|split|0','thm.real.min_def')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 387
+% Passive clauses: 1496
+% Generated clauses: 5033
+% Final active clauses: 347
+% Final passive clauses: 963
+% Input formulas: 49
+% Initial clauses: 205
+% 
+% Duplicate literals: 146
+% Trivial inequalities: 7
+% Fw subsumption resolutions: 354
+% Fw demodulations: 124
+% Bw demodulations: 34
+% 
+% Simple tautologies: 158
+% Equational tautologies: 21
+% Forward subsumptions: 2580
+% 
+% Binary resolution: 2612
+% Factoring: 749
+% Forward superposition: 312
+% Backward superposition: 396
+% Self superposition: 9
+% Equality factoring: 2
+% Equality resolution: 6
+% 
+% Split clauses: 115
+% Split components: 232
+% SAT solver clauses: 213
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 41
+% 
+% Sat splits: 115
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 213
+% TWLsolver calls for satisfiability: 179
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.115 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.119 s

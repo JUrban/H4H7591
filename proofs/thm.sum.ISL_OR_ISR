@@ -1,0 +1,245 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sum
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sum
+% SZS output start Proof for thm.sum
+fof(f17513,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f17467,f78,f116,f76,f120])).
+fof(f120,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f120_D])).
+fof(f120_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f76,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.sum.ISL_OR_ISR',aHL_TRUTH)).
+fof(f116,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f116_D])).
+fof(f116_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f78,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.sum.ISL_OR_ISR',aHL_FALSITY)).
+fof(f17467,plain,(
+  $false | ($spl1 | $spl6)),
+  inference(subsumption_resolution,[],[f17466,f123])).
+fof(f123,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl6),
+  inference(resolution,[],[f85,f120])).
+fof(f85,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'F_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X11] : (s(bool,'F_0') = s(bool,X11) <=> ~p(s(bool,X11)))),
+  file('thm.sum.ISL_OR_ISR','thm.bool.EQ_CLAUSES|split|3')).
+fof(f17466,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl1 | $spl6)),
+  inference(subsumption_resolution,[],[f17293,f1806])).
+fof(f1806,plain,(
+  ( ! [X46] : (s(bool,X46) != s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2))) | s(bool,'F_0') = s(bool,X46)) ) | ($spl1 | $spl6)),
+  inference(subsumption_resolution,[],[f1787,f116])).
+fof(f1787,plain,(
+  ( ! [X46] : (p(s(bool,'F_0')) | s(bool,X46) != s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2))) | s(bool,'F_0') = s(bool,X46)) ) | $spl6),
+  inference(superposition,[],[f1722,f127])).
+fof(f127,plain,(
+  s(bool,'F_0') = s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2)))),
+  inference(resolution,[],[f86,f74])).
+fof(f74,plain,(
+  ~p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2))))),
+  inference(cnf_transformation,[],[f57])).
+fof(f57,plain,(
+  ~p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2)))) & ~p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(sK0,sK1),sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f52])).
+fof(f52,plain,(
+  ? [X0,X1,X2] : (~p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X0,X1),X2)))) & ~p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),X2)))))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X0,X1),X2)))) | p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),X2)))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ~! [X0,X1] : ! [X2] : (p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X0,X1),X2)))) | p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8] : (p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X6,X7),X8)))) | p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X6,X7),X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8] : (p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X6,X7),X8)))) | p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X6,X7),X8)))))),
+  file('thm.sum.ISL_OR_ISR','thm.sum.ISL_OR_ISR')).
+fof(f86,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f60])).
+fof(f1722,plain,(
+  ( ! [X56,X55] : (p(s(bool,X56)) | s(bool,X55) != s(bool,X56) | s(bool,'F_0') = s(bool,X55)) ) | $spl6),
+  inference(subsumption_resolution,[],[f1386,f123])).
+fof(f1386,plain,(
+  ( ! [X56,X55] : (s(bool,X55) != s(bool,X56) | p(s(bool,X56)) | s(bool,'F_0') = s(bool,X55) | s(bool,'T_0') = s(bool,'F_0')) )),
+  inference(superposition,[],[f81,f388])).
+fof(f388,plain,(
+  ( ! [X12,X13] : (s(bool,X12) = s(bool,X13) | s(bool,'F_0') = s(bool,X13) | s(bool,'F_0') = s(bool,X12)) )),
+  inference(resolution,[],[f216,f86])).
+fof(f216,plain,(
+  ( ! [X6,X7] : (~p(s(bool,X6)) | s(bool,X6) = s(bool,X7) | s(bool,'F_0') = s(bool,X7)) )),
+  inference(resolution,[],[f107,f86])).
+fof(f107,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f54])).
+fof(f54,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X9,X10] : ((p(s(bool,X9)) => p(s(bool,X10))) => ((p(s(bool,X10)) => p(s(bool,X9))) => s(bool,X9) = s(bool,X10)))),
+  file('thm.sum.ISL_OR_ISR','thm.bool.IMP_ANTISYM_AX')).
+fof(f81,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.sum.ISL_OR_ISR','thm.bool.EQ_CLAUSES|split|1')).
+fof(f17293,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | s(bool,'T_0') = s(bool,'const.sum.ISL_1'(s('type.sum.sum'(sK0,sK1),sK2)))),
+  inference(superposition,[],[f17247,f128])).
+fof(f128,plain,(
+  s(bool,'F_0') = s(bool,'const.sum.ISR_1'(s('type.sum.sum'(sK0,sK1),sK2)))),
+  inference(resolution,[],[f86,f75])).
+fof(f75,plain,(
+  ~p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(sK0,sK1),sK2))))),
+  inference(cnf_transformation,[],[f57])).
+fof(f17247,plain,(
+  ( ! [X6,X8,X7] : (s(bool,'T_0') = s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X6,X7),X8))) | s(bool,'T_0') = s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X6,X7),X8)))) )),
+  inference(superposition,[],[f132,f373])).
+fof(f373,plain,(
+  ( ! [X4,X5,X3] : (s('type.sum.sum'(X3,X4),X5) = s('type.sum.sum'(X3,X4),'const.sum.INL_1'(s(X3,sK3(X5,X4,X3)))) | s(bool,'T_0') = s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X3,X4),X5)))) )),
+  inference(superposition,[],[f130,f110])).
+fof(f110,plain,(
+  ( ! [X2,X0,X1] : (s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,sK4(X2,X1,X0)))) | s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,sK3(X2,X1,X0))))) )),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ! [X0,X1,X2] : (s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,sK3(X2,X1,X0)))) | s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,sK4(X2,X1,X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3,sK4])],[f45])).
+fof(f45,plain,(
+  ! [X0,X1,X2] : (? [X4] : s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,X4))) | ? [X3] : s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X3))))),
+  inference(flattening,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1] : ! [X2] : (? [X4] : s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,X4))) | ? [X3] : s('type.sum.sum'(X0,X1),X2) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X3))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6,X7] : ! [X12] : (? [X8] : s('type.sum.sum'(X6,X7),X12) = s('type.sum.sum'(X6,X7),'const.sum.INL_1'(s(X6,X8))) | ? [X13] : s('type.sum.sum'(X6,X7),X12) = s('type.sum.sum'(X6,X7),'const.sum.INR_1'(s(X7,X13))))),
+  file('thm.sum.ISL_OR_ISR','thm.sum.sum_CASES')).
+fof(f130,plain,(
+  ( ! [X4,X5,X3] : (s(bool,'T_0') = s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X3,X4),'const.sum.INR_1'(s(X4,X5)))))) )),
+  inference(resolution,[],[f108,f82])).
+fof(f82,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f58])).
+fof(f108,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X2))))))) )),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0,X1,X2] : p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X2))))))),
+  inference(flattening,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1] : ! [X2] : p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X2))))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X6,X7] : ! [X8] : p(s(bool,'const.sum.ISR_1'(s('type.sum.sum'(X6,X7),'const.sum.INR_1'(s(X7,X8))))))),
+  file('thm.sum.ISL_OR_ISR','thm.sum.ISR|split|0')).
+fof(f132,plain,(
+  ( ! [X4,X5,X3] : (s(bool,'T_0') = s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X3,X4),'const.sum.INL_1'(s(X3,X5)))))) )),
+  inference(resolution,[],[f109,f82])).
+fof(f109,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))))))) )),
+  inference(cnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1,X2] : p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))))))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : ! [X2] : p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X7,X6] : ! [X8] : p(s(bool,'const.sum.ISL_1'(s('type.sum.sum'(X6,X7),'const.sum.INL_1'(s(X6,X8))))))),
+  file('thm.sum.ISL_OR_ISR','thm.sum.ISL|split|0')).
+% SZS output end Proof for thm.sum
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 133
+% Passive clauses: 1467
+% Generated clauses: 17185
+% Final active clauses: 112
+% Final passive clauses: 1035
+% Input formulas: 22
+% Initial clauses: 40
+% 
+% Duplicate literals: 737
+% Trivial inequalities: 332
+% Fw subsumption resolutions: 2519
+% Fw demodulations: 2691
+% Bw demodulations: 17
+% 
+% Simple tautologies: 378
+% Equational tautologies: 38
+% Forward subsumptions: 8881
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 192
+% Factoring: 2
+% Forward superposition: 6222
+% Backward superposition: 4158
+% Self superposition: 129
+% Equality factoring: 72
+% Equality resolution: 30
+% 
+% Split clauses: 111
+% Split components: 231
+% SAT solver clauses: 383
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 101
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 111
+% Sat splitting refutations: 9
+% 
+% TWLsolver clauses: 374
+% TWLsolver calls for satisfiability: 131
+% 
+% Memory used [KB]: 7547
+% Time elapsed: 0.355 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.356 s

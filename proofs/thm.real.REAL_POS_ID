@@ -1,0 +1,118 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f281,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f280,f90])).
+fof(f90,plain,(
+  s('type.realax.real',sK0) != s('type.realax.real','const.real.pos_1'(s('type.realax.real',sK0)))),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',sK0)))) & s('type.realax.real',sK0) != s('type.realax.real','const.real.pos_1'(s('type.realax.real',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f54])).
+fof(f54,plain,(
+  ? [X0] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) & s('type.realax.real',X0) != s('type.realax.real','const.real.pos_1'(s('type.realax.real',X0))))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) => s('type.realax.real',X0) = s('type.realax.real','const.real.pos_1'(s('type.realax.real',X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X6)))) => s('type.realax.real',X6) = s('type.realax.real','const.real.pos_1'(s('type.realax.real',X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X6)))) => s('type.realax.real',X6) = s('type.realax.real','const.real.pos_1'(s('type.realax.real',X6))))),
+  file('thm.real.REAL_POS_ID','thm.real.REAL_POS_ID')).
+fof(f280,plain,(
+  s('type.realax.real',sK0) = s('type.realax.real','const.real.pos_1'(s('type.realax.real',sK0)))),
+  inference(forward_demodulation,[],[f271,f121])).
+fof(f121,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X8] : ! [X10,X11] : s(X8,X10) = s(X8,'const.bool.COND_3'(s(bool,'T_0'),s(X8,X10),s(X8,X11)))),
+  file('thm.real.REAL_POS_ID','thm.bool.COND_CLAUSES|split|0')).
+fof(f271,plain,(
+  s('type.realax.real','const.real.pos_1'(s('type.realax.real',sK0))) = s('type.realax.real','const.bool.COND_3'(s(bool,'T_0'),s('type.realax.real',sK0),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(superposition,[],[f94,f161])).
+fof(f161,plain,(
+  s(bool,'T_0') = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',sK0)))),
+  inference(resolution,[],[f89,f97])).
+fof(f97,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X7] : (s(bool,'T_0') = s(bool,X7) <=> p(s(bool,X7)))),
+  file('thm.real.REAL_POS_ID','thm.bool.EQ_CLAUSES|split|1')).
+fof(f89,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',sK0))))),
+  inference(cnf_transformation,[],[f67])).
+fof(f94,plain,(
+  ( ! [X0] : (s('type.realax.real','const.real.pos_1'(s('type.realax.real',X0))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0))),s('type.realax.real',X0),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : s('type.realax.real','const.real.pos_1'(s('type.realax.real',X0))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0))),s('type.realax.real',X0),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : s('type.realax.real','const.real.pos_1'(s('type.realax.real',X6))) = s('type.realax.real','const.bool.COND_3'(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X6))),s('type.realax.real',X6),s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  file('thm.real.REAL_POS_ID','thm.real.pos_def')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 17
+% Passive clauses: 47
+% Generated clauses: 186
+% Final active clauses: 16
+% Final passive clauses: 21
+% Input formulas: 23
+% Initial clauses: 55
+% 
+% Duplicate literals: 2
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 6
+% Fw demodulations: 16
+% Bw demodulations: 1
+% 
+% Simple tautologies: 25
+% Equational tautologies: 4
+% Forward subsumptions: 65
+% 
+% Binary resolution: 17
+% Forward superposition: 31
+% Backward superposition: 42
+% Self superposition: 7
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 14
+% Split components: 30
+% SAT solver clauses: 18
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 12
+% 
+% Sat splits: 14
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

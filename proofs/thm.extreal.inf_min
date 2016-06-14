@@ -1,0 +1,252 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.extreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.extreal
+% SZS output start Proof for thm.extreal
+fof(f18532,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f18458,f17659,f17651,f17661,f107,f182,f18260,f109,f178])).
+fof(f178,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f178_D])).
+fof(f178_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f109,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.extreal.inf_min',aHL_FALSITY)).
+fof(f18260,plain,(
+  $false | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f18259,f188])).
+fof(f188,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl1),
+  inference(resolution,[],[f111,f178])).
+fof(f111,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.extreal.inf_min','thm.bool.EQ_CLAUSES|split|1')).
+fof(f18259,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl1 | $spl590)),
+  inference(forward_demodulation,[],[f18258,f196])).
+fof(f196,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1)))),
+  inference(resolution,[],[f104,f112])).
+fof(f112,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f104,plain,(
+  p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))))),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1)))) & ! [X2] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',X2)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK1),s('type.extreal.extreal',X2))))) & s('type.extreal.extreal',sK1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f55])).
+fof(f55,plain,(
+  ? [X0,X1] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X1)))) & ! [X2] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X2)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X2))))) & s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))))),
+  inference(flattening,[],[f54])).
+fof(f54,plain,(
+  ? [X0,X1] : ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X1)))) & ! [X2] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X2)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X2)))))) & s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))))),
+  inference(ennf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~! [X0,X1] : ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X1)))) & ! [X2] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X2)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X2)))))) => s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X7)))) & ! [X8] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X8)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X7),s('type.extreal.extreal',X8)))))) => s('type.extreal.extreal',X7) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X7)))) & ! [X8] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X8)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X7),s('type.extreal.extreal',X8)))))) => s('type.extreal.extreal',X7) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X6))))),
+  file('thm.extreal.inf_min','thm.extreal.inf_min')).
+fof(f18258,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f18257,f178])).
+fof(f18257,plain,(
+  p(s(bool,'F_0')) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(forward_demodulation,[],[f18256,f17661])).
+fof(f18256,plain,(
+  p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0))))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f18255,f106])).
+fof(f106,plain,(
+  s('type.extreal.extreal',sK1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0)))),
+  inference(cnf_transformation,[],[f67])).
+fof(f18255,plain,(
+  p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0))))) | s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f18104,f178])).
+fof(f18104,plain,(
+  p(s(bool,'F_0')) | p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0))))) | s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(superposition,[],[f955,f17911])).
+fof(f17911,plain,(
+  s(bool,'F_0') = s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f17910,f106])).
+fof(f17910,plain,(
+  s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | s(bool,'F_0') = s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1))) | ($spl1 | $spl590)),
+  inference(subsumption_resolution,[],[f17751,f178])).
+fof(f17751,plain,(
+  p(s(bool,'F_0')) | s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | s(bool,'F_0') = s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1))) | $spl590),
+  inference(superposition,[],[f840,f17661])).
+fof(f840,plain,(
+  ( ! [X2,X3] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X3),s('type.extreal.extreal',sK3(X2,X3))))) | s('type.extreal.extreal',X2) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X3))) | s(bool,'F_0') = s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X2,X3)),s('type.extreal.extreal',X2)))) )),
+  inference(resolution,[],[f158,f116])).
+fof(f116,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f70])).
+fof(f70,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.extreal.inf_min','thm.bool.EQ_CLAUSES|split|3')).
+fof(f158,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X1)))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',sK3(X1,X0)))))) )),
+  inference(cnf_transformation,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1] : ((s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | (! [X7] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X7)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X7))))) & ! [X5] : ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',sK2(X5,X1,X0))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X5),s('type.extreal.extreal',sK2(X5,X1,X0)))))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X5),s('type.extreal.extreal',X1))))))) & ((p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',sK3(X1,X0))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',sK3(X1,X0)))))) | (! [X3] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X3))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X1))))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2,sK3,sK4])],[f97])).
+fof(f97,plain,(
+  ! [X0,X1] : ((s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | (! [X7] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X7)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X7))))) & ! [X5] : (? [X6] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X6)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X5),s('type.extreal.extreal',X6))))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X5),s('type.extreal.extreal',X1))))))) & (? [X4] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) | ? [X2] : (! [X3] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1))))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0)))))),
+  inference(rectify,[],[f96])).
+fof(f96,plain,(
+  ! [X0,X1] : ((s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | (! [X4] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) & ! [X2] : (? [X3] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1))))))) & (? [X4] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) | ? [X2] : (! [X3] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1))))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0)))))),
+  inference(flattening,[],[f95])).
+fof(f95,plain,(
+  ! [X0,X1] : ((s('type.extreal.extreal',X1) != s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | (! [X4] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) & ! [X2] : (? [X3] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1))))))) & ((? [X4] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) | ? [X2] : (! [X3] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1)))))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0)))))),
+  inference(nnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ! [X0,X1] : (s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) <=> (! [X4] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) & ! [X2] : (? [X3] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) & ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1)))))))),
+  inference(ennf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1] : (s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) <=> (! [X4] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X4)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',X4))))) & ! [X2] : (! [X3] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X3))))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X1)))))))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X6,X8] : (s('type.extreal.extreal',X8) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X6))) <=> (! [X11] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X11)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X8),s('type.extreal.extreal',X11))))) & ! [X11] : (! [X7] : (p(s(bool,happ(s(fun('type.extreal.extreal',bool),X6),s('type.extreal.extreal',X7)))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X11),s('type.extreal.extreal',X7))))) => p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X11),s('type.extreal.extreal',X8)))))))),
+  file('thm.extreal.inf_min','thm.extreal.inf_eq')).
+fof(f955,plain,(
+  ( ! [X4,X5,X3] : (p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X3,X4)),s('type.extreal.extreal',X5)))) | p(s(bool,happ(s(fun('type.extreal.extreal',bool),X4),s('type.extreal.extreal',sK3(X3,X4))))) | s('type.extreal.extreal',X3) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X4))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),X4),s('type.extreal.extreal',X5)))) )),
+  inference(resolution,[],[f156,f116])).
+fof(f156,plain,(
+  ( ! [X0,X3,X1] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X3)))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',sK3(X1,X0)))))) )),
+  inference(cnf_transformation,[],[f98])).
+fof(f182,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f182_D])).
+fof(f182_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f107,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.extreal.inf_min',aHL_TRUTH)).
+fof(f17661,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0)))) | $spl590),
+  inference(cnf_transformation,[],[f17661_D])).
+fof(f17661_D,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0)))) <=> ~$spl590),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl590])])).
+fof(f17651,plain,(
+  p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1)))) | $spl582),
+  inference(cnf_transformation,[],[f17651_D])).
+fof(f17651_D,plain,(
+  p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1)))) <=> ~$spl582),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl582])])).
+fof(f17659,plain,(
+  p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1)))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0)))) | $spl6),
+  inference(subsumption_resolution,[],[f17595,f106])).
+fof(f17595,plain,(
+  s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(sK1,sK0)),s('type.extreal.extreal',sK1)))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0)))) | $spl6),
+  inference(resolution,[],[f951,f237])).
+fof(f237,plain,(
+  ( ! [X0] : (p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK1),s('type.extreal.extreal',X0)))) | s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',X0)))) )),
+  inference(resolution,[],[f105,f116])).
+fof(f105,plain,(
+  ( ! [X2] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',X2)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK1),s('type.extreal.extreal',X2))))) )),
+  inference(cnf_transformation,[],[f67])).
+fof(f951,plain,(
+  ( ! [X0] : (~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',sK3(X0,sK0))))) | s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X0,sK0)),s('type.extreal.extreal',sK1))))) ) | $spl6),
+  inference(subsumption_resolution,[],[f944,f182])).
+fof(f944,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X0,sK0)),s('type.extreal.extreal',sK1)))) | s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',sK3(X0,sK0)))))) )),
+  inference(superposition,[],[f157,f196])).
+fof(f157,plain,(
+  ( ! [X0,X3,X1] : (~p(s(bool,happ(s(fun('type.extreal.extreal',bool),X0),s('type.extreal.extreal',X3)))) | p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X3)))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',sK3(X1,X0)))))) )),
+  inference(cnf_transformation,[],[f98])).
+fof(f18458,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.extreal.extreal',bool),sK0),s('type.extreal.extreal',sK3(sK1,sK0)))) | $spl582),
+  inference(resolution,[],[f18434,f237])).
+fof(f18434,plain,(
+  ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK1),s('type.extreal.extreal',sK3(sK1,sK0))))) | $spl582),
+  inference(subsumption_resolution,[],[f18404,f106])).
+fof(f18404,plain,(
+  s('type.extreal.extreal',sK1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),sK0))) | ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK1),s('type.extreal.extreal',sK3(sK1,sK0))))) | $spl582),
+  inference(resolution,[],[f17651,f159])).
+fof(f159,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',sK4(X1,X0)),s('type.extreal.extreal',X1)))) | s('type.extreal.extreal',X1) = s('type.extreal.extreal','const.extreal.extreal_inf_1'(s(fun('type.extreal.extreal',bool),X0))) | ~p(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X1),s('type.extreal.extreal',sK3(X1,X0)))))) )),
+  inference(cnf_transformation,[],[f98])).
+% SZS output end Proof for thm.extreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 162
+% Passive clauses: 2114
+% Generated clauses: 17980
+% Final active clauses: 150
+% Final passive clauses: 1774
+% Input formulas: 25
+% Initial clauses: 71
+% 
+% Duplicate literals: 839
+% Trivial inequalities: 404
+% Fw subsumption resolutions: 3364
+% Fw demodulations: 1863
+% Bw demodulations: 5
+% 
+% Simple tautologies: 456
+% Equational tautologies: 54
+% Forward subsumptions: 6991
+% 
+% Binary resolution: 680
+% Forward superposition: 3893
+% Backward superposition: 6266
+% Self superposition: 179
+% Equality factoring: 155
+% Equality resolution: 40
+% 
+% Split clauses: 1340
+% Split components: 2798
+% SAT solver clauses: 2047
+% SAT solver unit clauses: 26
+% SAT solver binary clauses: 233
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 1340
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 2037
+% TWLsolver calls for satisfiability: 206
+% 
+% Memory used [KB]: 8699
+% Time elapsed: 0.514 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.52 s

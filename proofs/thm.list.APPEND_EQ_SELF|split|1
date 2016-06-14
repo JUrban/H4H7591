@@ -1,0 +1,154 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f8085,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f8084,f292,f518,f516,f7664,f291,f517,f515])).
+fof(f515,plain,(
+  s('type.list.list'(sK12),sK14) = s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) | $spl0),
+  inference(cnf_transformation,[],[f515_D])).
+fof(f515_D,plain,(
+  s('type.list.list'(sK12),sK14) = s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f517,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13) | $spl2),
+  inference(cnf_transformation,[],[f517_D])).
+fof(f517_D,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f291,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13) | s('type.list.list'(sK12),sK14) = s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14)))),
+  inference(cnf_transformation,[],[f187])).
+fof(f187,plain,(
+  (s('type.list.list'(sK12),sK14) = s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) | s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13)) & (s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) | s('type.list.list'(sK12),'const.list.NIL_0') != s('type.list.list'(sK12),sK13))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f186])).
+fof(f186,plain,(
+  ? [X0,X1,X2] : ((s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) | s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1)) & (s('type.list.list'(X0),X2) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) | s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),X1)))),
+  inference(nnf_transformation,[],[f143])).
+fof(f143,plain,(
+  ? [X0,X1,X2] : (s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) <~> s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1))),
+  inference(ennf_transformation,[],[f60])).
+fof(f60,plain,(
+  ~! [X0,X1,X2] : (s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) <=> s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1))),
+  inference(flattening,[],[f59])).
+fof(f59,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))) <=> s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.list.list'(X6),X8) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))) <=> s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.list.list'(X6),X8) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))) <=> s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),X7))),
+  file('thm.list.APPEND_EQ_SELF|split|1','thm.list.APPEND_EQ_SELF|split|1')).
+fof(f7664,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f7660,f518])).
+fof(f7660,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13) | $spl0),
+  inference(trivial_inequality_removal,[],[f7659])).
+fof(f7659,plain,(
+  s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),sK14) | s('type.list.list'(sK12),'const.list.NIL_0') = s('type.list.list'(sK12),sK13) | $spl0),
+  inference(superposition,[],[f4308,f370])).
+fof(f370,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f105])).
+fof(f105,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f104])).
+fof(f104,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f44])).
+fof(f44,axiom,(
+  ! [X6] : ! [X18] : s('type.list.list'(X6),X18) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X18)))),
+  file('thm.list.APPEND_EQ_SELF|split|1','thm.list.APPEND|split|0')).
+fof(f4308,plain,(
+  ( ! [X0] : (s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),X0),s('type.list.list'(sK12),sK14))) | s('type.list.list'(sK12),sK13) = s('type.list.list'(sK12),X0)) ) | $spl0),
+  inference(superposition,[],[f382,f515])).
+fof(f382,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1))) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X1))) | s('type.list.list'(X0),X2) = s('type.list.list'(X0),X3)) )),
+  inference(cnf_transformation,[],[f235])).
+fof(f235,plain,(
+  ! [X0,X1,X2,X3] : ((s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1))) != s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X1))) | s('type.list.list'(X0),X2) = s('type.list.list'(X0),X3)) & (s('type.list.list'(X0),X2) != s('type.list.list'(X0),X3) | s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X1)))))),
+  inference(nnf_transformation,[],[f117])).
+fof(f117,plain,(
+  ! [X0,X1,X2,X3] : (s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X1))) <=> s('type.list.list'(X0),X2) = s('type.list.list'(X0),X3))),
+  inference(flattening,[],[f116])).
+fof(f116,plain,(
+  ! [X0] : ! [X1,X2,X3] : (s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X3),s('type.list.list'(X0),X1))) <=> s('type.list.list'(X0),X2) = s('type.list.list'(X0),X3))),
+  inference(rectify,[],[f48])).
+fof(f48,axiom,(
+  ! [X6] : ! [X7,X8,X20] : (s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X8),s('type.list.list'(X6),X7))) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X20),s('type.list.list'(X6),X7))) <=> s('type.list.list'(X6),X8) = s('type.list.list'(X6),X20))),
+  file('thm.list.APPEND_EQ_SELF|split|1','thm.list.APPEND_|49||49||split|1')).
+fof(f516,plain,(
+  s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) | $spl1),
+  inference(cnf_transformation,[],[f516_D])).
+fof(f516_D,plain,(
+  s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f518,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') != s('type.list.list'(sK12),sK13) | $spl3),
+  inference(cnf_transformation,[],[f518_D])).
+fof(f518_D,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') != s('type.list.list'(sK12),sK13) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f292,plain,(
+  s('type.list.list'(sK12),'const.list.NIL_0') != s('type.list.list'(sK12),sK13) | s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),sK13),s('type.list.list'(sK12),sK14)))),
+  inference(cnf_transformation,[],[f187])).
+fof(f8084,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f8083,f370])).
+fof(f8083,plain,(
+  s('type.list.list'(sK12),sK14) != s('type.list.list'(sK12),'const.list.APPEND_2'(s('type.list.list'(sK12),'const.list.NIL_0'),s('type.list.list'(sK12),sK14))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f516,f517])).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 443
+% Passive clauses: 2913
+% Generated clauses: 7772
+% Final active clauses: 440
+% Final passive clauses: 2240
+% Input formulas: 57
+% Initial clauses: 217
+% 
+% Duplicate literals: 218
+% Trivial inequalities: 39
+% Fw subsumption resolutions: 686
+% Fw demodulations: 38
+% 
+% Simple tautologies: 206
+% Equational tautologies: 59
+% Forward subsumptions: 3502
+% 
+% Binary resolution: 4314
+% Factoring: 888
+% Forward superposition: 470
+% Backward superposition: 759
+% Self superposition: 27
+% Equality factoring: 26
+% Equality resolution: 21
+% 
+% Split clauses: 167
+% Split components: 335
+% SAT solver clauses: 345
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 78
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 167
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 343
+% TWLsolver calls for satisfiability: 225
+% 
+% Memory used [KB]: 3837
+% Time elapsed: 0.213 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.216 s

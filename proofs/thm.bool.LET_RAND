@@ -1,0 +1,223 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f13863,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f13834,f2157,f2184,f2182,f2807,f2186,f5754,f2918,f2181,f34,f37,f35,f46])).
+fof(f46,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f43,f23])).
+fof(f23,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.LET_RAND',aHL_TRUTH)).
+fof(f43,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f24,f35])).
+fof(f24,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.LET_RAND',aHL_FALSITY)).
+fof(f35,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f35_D])).
+fof(f35_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f37,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f37_D])).
+fof(f37_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f34,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f25])).
+fof(f25,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.bool.LET_RAND',aHL_BOOL_CASES)).
+fof(f2181,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4))) | $spl41),
+  inference(cnf_transformation,[],[f2181_D])).
+fof(f2181_D,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4))) <=> ~$spl41),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl41])])).
+fof(f2918,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4))) | $spl46),
+  inference(backward_demodulation,[],[f2186,f864])).
+fof(f864,plain,(
+  s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4)))),
+  inference(forward_demodulation,[],[f22,f26])).
+fof(f26,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,'const.bool.LET_2'(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))) )),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ! [X0,X1,X2,X3] : s(X0,'const.bool.LET_2'(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X0,'const.bool.LET_2'(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7] : ! [X11,X12] : s(X6,'const.bool.LET_2'(s(fun(X7,X6),X11),s(X7,X12))) = s(X6,happ(s(fun(X7,X6),X11),s(X7,X12)))),
+  file('thm.bool.LET_RAND','thm.bool.LET_THM')).
+fof(f22,plain,(
+  s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4)))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) != s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2,X3,X4] : s(bool,happ(s(fun(X0,bool),X2),s(X0,'const.bool.LET_2'(s(fun(X1,X0),X3),s(X1,X4))))) != s(bool,'const.bool.LET_2'(s(fun(X1,bool),'_dst_x0x1_2'(s(fun(X0,bool),X2),s(fun(X1,X0),X3))),s(X1,X4)))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2,X3,X4] : s(bool,happ(s(fun(X0,bool),X2),s(X0,'const.bool.LET_2'(s(fun(X1,X0),X3),s(X1,X4))))) = s(bool,'const.bool.LET_2'(s(fun(X1,bool),'_dst_x0x1_2'(s(fun(X0,bool),X2),s(fun(X1,X0),X3))),s(X1,X4)))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : s(bool,happ(s(fun(X0,bool),X2),s(X0,'const.bool.LET_2'(s(fun(X1,X0),X3),s(X1,X4))))) = s(bool,'const.bool.LET_2'(s(fun(X1,bool),'_dst_x0x1_2'(s(fun(X0,bool),X2),s(fun(X1,X0),X3))),s(X1,X4)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : s(bool,happ(s(fun(X6,bool),X8),s(X6,'const.bool.LET_2'(s(fun(X7,X6),X9),s(X7,X10))))) = s(bool,'const.bool.LET_2'(s(fun(X7,bool),'_dst_x0x1_2'(s(fun(X6,bool),X8),s(fun(X7,X6),X9))),s(X7,X10)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : s(bool,happ(s(fun(X6,bool),X8),s(X6,'const.bool.LET_2'(s(fun(X7,X6),X9),s(X7,X10))))) = s(bool,'const.bool.LET_2'(s(fun(X7,bool),'_dst_x0x1_2'(s(fun(X6,bool),X8),s(fun(X7,X6),X9))),s(X7,X10)))),
+  file('thm.bool.LET_RAND','thm.bool.LET_RAND')).
+fof(f5754,plain,(
+  $false | ($spl3 | $spl41 | $spl46)),
+  inference(subsumption_resolution,[],[f5753,f37])).
+fof(f5753,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl41 | $spl46)),
+  inference(forward_demodulation,[],[f5752,f2186])).
+fof(f5752,plain,(
+  s(bool,'F_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl41),
+  inference(trivial_inequality_removal,[],[f5713])).
+fof(f5713,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | s(bool,'F_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl41),
+  inference(superposition,[],[f5260,f207])).
+fof(f207,plain,(
+  ( ! [X17,X18,X16] : (s(bool,'T_0') = s(bool,happ(s(fun(X16,bool),X17),s(X16,X18))) | s(bool,'F_0') = s(bool,'const.bool.LET_2'(s(fun(X16,bool),X17),s(X16,X18)))) )),
+  inference(superposition,[],[f26,f25])).
+fof(f5260,plain,(
+  s(bool,'T_0') != s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl41),
+  inference(superposition,[],[f2181,f3325])).
+fof(f3325,plain,(
+  ( ! [X222,X220,X219,X223,X221,X224] : (s(X219,happ(s(fun(X221,X219),X222),s(X221,'const.bool.LET_2'(s(fun(X220,X221),X223),s(X220,X224))))) = s(X219,'const.bool.LET_2'(s(fun(X220,X219),'_dst_x0x1_2'(s(fun(X221,X219),X222),s(fun(X220,X221),X223))),s(X220,X224)))) )),
+  inference(superposition,[],[f2999,f26])).
+fof(f2999,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X0,happ(s(fun(X1,X0),X3),s(X1,'const.bool.LET_2'(s(fun(X2,X1),X4),s(X2,X5))))) = s(X0,happ(s(fun(X2,X0),'_dst_x0x1_2'(s(fun(X1,X0),X3),s(fun(X2,X1),X4))),s(X2,X5)))) )),
+  inference(forward_demodulation,[],[f28,f26])).
+fof(f28,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X2,X1),X4),s(X2,X5))))) = s(X0,happ(s(fun(X2,X0),'_dst_x0x1_2'(s(fun(X1,X0),X3),s(fun(X2,X1),X4))),s(X2,X5)))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X2,X1),X4),s(X2,X5))))) = s(X0,happ(s(fun(X2,X0),'_dst_x0x1_2'(s(fun(X1,X0),X3),s(fun(X2,X1),X4))),s(X2,X5)))),
+  inference(flattening,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1,X2] : ! [X3,X4,X5] : s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X2,X1),X4),s(X2,X5))))) = s(X0,happ(s(fun(X2,X0),'_dst_x0x1_2'(s(fun(X1,X0),X3),s(fun(X2,X1),X4))),s(X2,X5)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X13,X14,X15] : ! [X16,X17,X18] : s(X13,happ(s(fun(X14,X13),X16),s(X14,happ(s(fun(X15,X14),X17),s(X15,X18))))) = s(X13,happ(s(fun(X15,X13),'_dst_x0x1_2'(s(fun(X14,X13),X16),s(fun(X15,X14),X17))),s(X15,X18)))),
+  file('thm.bool.LET_RAND','_dst_x0x1_ax')).
+fof(f2186,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl46),
+  inference(cnf_transformation,[],[f2186_D])).
+fof(f2186_D,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) <=> ~$spl46),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl46])])).
+fof(f2807,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl43),
+  inference(trivial_inequality_removal,[],[f2775])).
+fof(f2775,plain,(
+  s(bool,'F_0') != s(bool,'F_0') | s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl43),
+  inference(superposition,[],[f2184,f25])).
+fof(f2182,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4))) | $spl40),
+  inference(cnf_transformation,[],[f2182_D])).
+fof(f2182_D,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4))) <=> ~$spl40),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl40])])).
+fof(f2184,plain,(
+  s(bool,'F_0') != s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl43),
+  inference(cnf_transformation,[],[f2184_D])).
+fof(f2184_D,plain,(
+  s(bool,'F_0') != s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) <=> ~$spl43),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl43])])).
+fof(f2157,plain,(
+  s(bool,'F_0') != s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK2),s(fun(sK1,sK0),sK3))),s(sK1,sK4)))),
+  inference(superposition,[],[f864,f25])).
+fof(f13834,plain,(
+  $false | ($spl40 | $spl47)),
+  inference(subsumption_resolution,[],[f13735,f2187])).
+fof(f2187,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl47),
+  inference(cnf_transformation,[],[f2187_D])).
+fof(f2187_D,plain,(
+  s(bool,'T_0') != s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) <=> ~$spl47),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl47])])).
+fof(f13735,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.LET_2'(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl40),
+  inference(superposition,[],[f8589,f26])).
+fof(f8589,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,'const.bool.LET_2'(s(fun(sK1,sK0),sK3),s(sK1,sK4))))) | $spl40),
+  inference(superposition,[],[f2182,f3325])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 68
+% Passive clauses: 3131
+% Generated clauses: 13534
+% Final active clauses: 60
+% Final passive clauses: 2946
+% Input formulas: 7
+% Initial clauses: 7
+% 
+% Duplicate literals: 793
+% Trivial inequalities: 175
+% Fw subsumption resolutions: 1341
+% Fw demodulations: 1319
+% Bw demodulations: 2
+% 
+% Simple tautologies: 246
+% Equational tautologies: 86
+% Forward subsumptions: 4974
+% 
+% Binary resolution: 28
+% Forward superposition: 5706
+% Backward superposition: 3492
+% Self superposition: 317
+% Equality factoring: 228
+% Equality resolution: 9
+% 
+% Split clauses: 569
+% Split components: 1141
+% SAT solver clauses: 1530
+% SAT solver unit clauses: 293
+% SAT solver binary clauses: 481
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 569
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 1514
+% TWLsolver calls for satisfiability: 71
+% 
+% Memory used [KB]: 8187
+% Time elapsed: 0.570 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.575 s

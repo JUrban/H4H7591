@@ -1,0 +1,257 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.integer
+% (82902)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 754
+% Passive clauses: 8925
+% Generated clauses: 21463
+% Final active clauses: 744
+% Final passive clauses: 7763
+% Input formulas: 41
+% Initial clauses: 177
+% 
+% Duplicate literals: 559
+% Trivial inequalities: 24
+% Fw subsumption resolutions: 2308
+% Fw demodulations: 876
+% Bw demodulations: 9
+% 
+% Simple tautologies: 252
+% Equational tautologies: 57
+% Forward subsumptions: 7791
+% 
+% Binary resolution: 10074
+% Factoring: 1346
+% Forward superposition: 2772
+% Backward superposition: 3025
+% Self superposition: 30
+% Equality factoring: 32
+% Equality resolution: 5
+% 
+% Split clauses: 601
+% Split components: 1209
+% SAT solver clauses: 1089
+% SAT solver unit clauses: 20
+% SAT solver binary clauses: 117
+% 
+% Sat splits: 601
+% 
+% TWLsolver clauses: 1088
+% TWLsolver calls for satisfiability: 453
+% 
+% Memory used [KB]: 9978
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 293 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f2403,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2402,f226,f412,f2298,f2299,f276,f438,f278,f440,f2249,f2250,f227,f416,f321,f456,f535,f538,f225,f414,f244,f424])).
+fof(f424,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl10),
+  inference(cnf_transformation,[],[f424_D])).
+fof(f424_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f244,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f148])).
+fof(f148,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.bool.EQ_CLAUSES|split|1')).
+fof(f414,plain,(
+  p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13)))) | $spl2),
+  inference(cnf_transformation,[],[f414_D])).
+fof(f414_D,plain,(
+  p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f225,plain,(
+  p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))))),
+  inference(cnf_transformation,[],[f145])).
+fof(f145,plain,(
+  p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13)))) & s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK14))) != s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',sK14)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f102])).
+fof(f102,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) & s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) != s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X1),s('type.integer.int',X2))))))),
+  inference(ennf_transformation,[],[f43])).
+fof(f43,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X1),s('type.integer.int',X2))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) => s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X8))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X7),s('type.integer.int',X8))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) => s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X8))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X7),s('type.integer.int',X8))))))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.integer.INT_DIVIDES_LSUB')).
+fof(f538,plain,(
+  s(bool,'T_0') = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))) | $spl200),
+  inference(cnf_transformation,[],[f538_D])).
+fof(f538_D,plain,(
+  s(bool,'T_0') = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))) <=> ~$spl200),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl200])])).
+fof(f535,plain,(
+  s(bool,'T_0') = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))) | ($spl2 | $spl10)),
+  inference(resolution,[],[f424,f414])).
+fof(f456,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))) ) | $spl56),
+  inference(cnf_transformation,[],[f456_D])).
+fof(f456_D,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2)))))) ) <=> ~$spl56),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl56])])).
+fof(f321,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2))))) | ~p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) )),
+  inference(cnf_transformation,[],[f125])).
+fof(f125,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2))))))),
+  inference(ennf_transformation,[],[f92])).
+fof(f92,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X2))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X1),s('type.integer.int',X2))))))),
+  inference(rectify,[],[f30])).
+fof(f30,axiom,(
+  ! [X6,X7,X8] : (p(s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) => s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X8))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X7),s('type.integer.int',X8))))))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.integer.INT_DIVIDES_LADD')).
+fof(f416,plain,(
+  p(s(bool,'T_0')) | $spl4),
+  inference(cnf_transformation,[],[f416_D])).
+fof(f416_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f227,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.bool.TRUTH')).
+fof(f2250,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | $spl884),
+  inference(cnf_transformation,[],[f2250_D])).
+fof(f2250_D,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) <=> ~$spl884),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl884])])).
+fof(f2249,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | ($spl4 | $spl56 | $spl200)),
+  inference(subsumption_resolution,[],[f2225,f416])).
+fof(f2225,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | ($spl56 | $spl200)),
+  inference(superposition,[],[f456,f538])).
+fof(f440,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) ) | $spl34),
+  inference(cnf_transformation,[],[f440_D])).
+fof(f440_D,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) ) <=> ~$spl34),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl34])])).
+fof(f278,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) )),
+  inference(cnf_transformation,[],[f77])).
+fof(f77,plain,(
+  ! [X0,X1] : s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X14,X18] : s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',X14),s('type.integer.int',X18))) = s('type.integer.int','const.integer.int_add_2'(s('type.integer.int',X14),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X18)))))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.integer.int_sub')).
+fof(f438,plain,(
+  ( ! [X0,X1] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) ) | $spl30),
+  inference(cnf_transformation,[],[f438_D])).
+fof(f438_D,plain,(
+  ( ! [X0,X1] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) ) <=> ~$spl30),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl30])])).
+fof(f276,plain,(
+  ( ! [X0,X1] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1] : s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))))),
+  inference(rectify,[],[f31])).
+fof(f31,axiom,(
+  ! [X6,X7] : s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int',X7))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',X6),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X7)))))),
+  file('thm.integer.INT_DIVIDES_LSUB','thm.integer.INT_DIVIDES_NEG|split|0')).
+fof(f2299,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | $spl890),
+  inference(cnf_transformation,[],[f2299_D])).
+fof(f2299_D,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) <=> ~$spl890),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl890])])).
+fof(f2298,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',X0))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | ($spl30 | $spl34 | $spl884)),
+  inference(forward_demodulation,[],[f2257,f438])).
+fof(f2257,plain,(
+  ( ! [X0] : (s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))))) = s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',X0)))))) ) | ($spl34 | $spl884)),
+  inference(superposition,[],[f2250,f440])).
+fof(f412,plain,(
+  s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK14))) != s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',sK14))))) | $spl1),
+  inference(cnf_transformation,[],[f412_D])).
+fof(f412_D,plain,(
+  s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK14))) != s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',sK14))))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f226,plain,(
+  s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int',sK14))) != s(bool,'const.integer.int_divides_2'(s('type.integer.int',sK12),s('type.integer.int','const.integer.int_sub_2'(s('type.integer.int',sK13),s('type.integer.int',sK14)))))),
+  inference(cnf_transformation,[],[f145])).
+fof(f2402,plain,(
+  $false | ($spl1 | $spl890)),
+  inference(subsumption_resolution,[],[f412,f2299])).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 190
+% Passive clauses: 473
+% Generated clauses: 2210
+% Final active clauses: 186
+% Final passive clauses: 272
+% Input formulas: 41
+% Initial clauses: 177
+% 
+% Duplicate literals: 75
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 171
+% Fw demodulations: 76
+% Bw demodulations: 12
+% Condensations: 26
+% Global subsumptions: 13
+% 
+% Simple tautologies: 162
+% Equational tautologies: 4
+% Forward subsumptions: 588
+% 
+% Binary resolution: 730
+% Factoring: 53
+% Forward superposition: 132
+% Backward superposition: 212
+% Self superposition: 4
+% Equality factoring: 2
+% Equality resolution: 2
+% 
+% Split clauses: 12
+% Split components: 24
+% SAT solver clauses: 752
+% SAT solver unit clauses: 182
+% SAT solver binary clauses: 61
+% SAT solver learnt clauses: 28
+% SAT solver learnt literals: 11
+% 
+% Sat splits: 12
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 698
+% TWLsolver calls for satisfiability: 1591
+% 
+% Memory used [KB]: 2558
+% Time elapsed: 0.052 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.667 s

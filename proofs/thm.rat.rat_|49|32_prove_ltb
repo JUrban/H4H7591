@@ -1,0 +1,102 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f91,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f84])).
+fof(f84,plain,(
+  s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',sK0))))) != s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',sK0)))))),
+  inference(superposition,[],[f29,f78])).
+fof(f78,plain,(
+  ( ! [X0] : (s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X0))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X0)))))) )),
+  inference(superposition,[],[f74,f33])).
+fof(f33,plain,(
+  ( ! [X0] : (s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X0))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X0)))))))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X0))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X0)))))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X6))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X6)))))))),
+  file('thm.rat.rat_|49|32_prove_ltb','thm.frac.FRAC_SGN_NEG')).
+fof(f74,plain,(
+  ( ! [X0] : (s('type.integer.int',X0) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0)))))) )),
+  inference(equality_resolution,[],[f39])).
+fof(f39,plain,(
+  ( ! [X0,X1] : (s('type.integer.int',X1) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) | s('type.integer.int',X0) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : ((s('type.integer.int',X1) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) | s('type.integer.int',X0) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1)))) & (s('type.integer.int',X0) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1))) | s('type.integer.int',X1) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0)))))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0,X1] : (s('type.integer.int',X1) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))) <=> s('type.integer.int',X0) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X1))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X8,X9] : (s('type.integer.int',X9) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X8))) <=> s('type.integer.int',X8) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X9))))),
+  file('thm.rat.rat_|49|32_prove_ltb','thm.integer.INT_NEG_EQ')).
+fof(f29,plain,(
+  s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',sK0))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',sK0)))))),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',sK0))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',sK0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f22])).
+fof(f22,plain,(
+  ? [X0] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X0))))) != s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X0)))))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X0))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X6))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac','const.frac.frac_ainv_1'(s('type.frac.frac',X6))))) = s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int','const.frac.frac_sgn_1'(s('type.frac.frac',X6)))))),
+  file('thm.rat.rat_|49|32_prove_ltb','thm.rat.rat_|49|32_prove_ltb')).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 12
+% Passive clauses: 24
+% Generated clauses: 61
+% Final active clauses: 10
+% Final passive clauses: 7
+% Input formulas: 10
+% Initial clauses: 13
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 2
+% Fw demodulations: 2
+% 
+% Simple tautologies: 4
+% Equational tautologies: 3
+% Forward subsumptions: 18
+% 
+% Binary resolution: 2
+% Forward superposition: 16
+% Backward superposition: 16
+% Self superposition: 5
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

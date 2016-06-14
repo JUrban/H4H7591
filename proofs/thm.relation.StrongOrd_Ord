@@ -1,0 +1,222 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f1099,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1095,f110,f180,f112,f182])).
+fof(f182,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f182_D])).
+fof(f182_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f112,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.relation.StrongOrd_Ord',aHL_FALSITY)).
+fof(f180,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f180_D])).
+fof(f180_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f110,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.relation.StrongOrd_Ord',aHL_TRUTH)).
+fof(f1095,plain,(
+  $false | ($spl2 | $spl5)),
+  inference(subsumption_resolution,[],[f1094,f182])).
+fof(f1094,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(forward_demodulation,[],[f1093,f194])).
+fof(f194,plain,(
+  s(bool,'F_0') = s(bool,'const.relation.Order_1'(s(fun(sK0,fun(sK0,bool)),sK1)))),
+  inference(resolution,[],[f119,f109])).
+fof(f109,plain,(
+  ~p(s(bool,'const.relation.Order_1'(s(fun(sK0,fun(sK0,bool)),sK1))))),
+  inference(cnf_transformation,[],[f73])).
+fof(f73,plain,(
+  p(s(bool,'const.relation.StrongOrder_1'(s(fun(sK0,fun(sK0,bool)),sK1)))) & ~p(s(bool,'const.relation.Order_1'(s(fun(sK0,fun(sK0,bool)),sK1))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f60])).
+fof(f60,plain,(
+  ? [X0,X1] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) & ~p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(ennf_transformation,[],[f29])).
+fof(f29,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) => p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) => p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X6,fun(X6,bool)),X7)))) => p(s(bool,'const.relation.Order_1'(s(fun(X6,fun(X6,bool)),X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X6,fun(X6,bool)),X7)))) => p(s(bool,'const.relation.Order_1'(s(fun(X6,fun(X6,bool)),X7)))))),
+  file('thm.relation.StrongOrd_Ord','thm.relation.StrongOrd_Ord')).
+fof(f119,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f76])).
+fof(f76,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X8] : (s(bool,'F_0') = s(bool,X8) <=> ~p(s(bool,X8)))),
+  file('thm.relation.StrongOrd_Ord','thm.bool.EQ_CLAUSES|split|2')).
+fof(f1093,plain,(
+  p(s(bool,'const.relation.Order_1'(s(fun(sK0,fun(sK0,bool)),sK1)))) | $spl2),
+  inference(subsumption_resolution,[],[f1086,f180])).
+fof(f1086,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.relation.Order_1'(s(fun(sK0,fun(sK0,bool)),sK1))))),
+  inference(superposition,[],[f985,f191])).
+fof(f191,plain,(
+  s(bool,'T_0') = s(bool,'const.relation.StrongOrder_1'(s(fun(sK0,fun(sK0,bool)),sK1)))),
+  inference(resolution,[],[f115,f108])).
+fof(f108,plain,(
+  p(s(bool,'const.relation.StrongOrder_1'(s(fun(sK0,fun(sK0,bool)),sK1))))),
+  inference(cnf_transformation,[],[f73])).
+fof(f115,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X8] : (s(bool,'T_0') = s(bool,X8) <=> p(s(bool,X8)))),
+  file('thm.relation.StrongOrd_Ord','thm.bool.EQ_CLAUSES|split|0')).
+fof(f985,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(subsumption_resolution,[],[f972,f865])).
+fof(f865,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(subsumption_resolution,[],[f853,f157])).
+fof(f157,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f101])).
+fof(f101,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) | (p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))))) & (~p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(flattening,[],[f100])).
+fof(f100,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) | (p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))))) & ((~p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))) | p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(nnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> (p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(flattening,[],[f52])).
+fof(f52,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> (p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X16] : ! [X17] : (p(s(bool,'const.relation.StrongOrder_1'(s(fun(X16,fun(X16,bool)),X17)))) <=> (p(s(bool,'const.relation.irreflexive_1'(s(fun(X16,fun(X16,bool)),X17)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X16,fun(X16,bool)),X17))))))),
+  file('thm.relation.StrongOrd_Ord','thm.relation.StrongOrder')).
+fof(f853,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(resolution,[],[f152,f156])).
+fof(f156,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f101])).
+fof(f152,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(flattening,[],[f66])).
+fof(f66,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(ennf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1] : ((p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))) => p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(flattening,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : ! [X1] : ((p(s(bool,'const.relation.irreflexive_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))) => p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))))),
+  inference(rectify,[],[f27])).
+fof(f27,axiom,(
+  ! [X6] : ! [X7] : ((p(s(bool,'const.relation.irreflexive_1'(s(fun(X6,fun(X6,bool)),X7)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X6,fun(X6,bool)),X7))))) => p(s(bool,'const.relation.antisymmetric_1'(s(fun(X6,fun(X6,bool)),X7)))))),
+  file('thm.relation.StrongOrd_Ord','thm.relation.irrefl_trans_implies_antisym')).
+fof(f972,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.StrongOrder_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(resolution,[],[f155,f157])).
+fof(f155,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f99])).
+fof(f99,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) | (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))))) & (~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))) | p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(flattening,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) | (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1)))))) & ((~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ~p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))) | p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(nnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.relation.Order_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X16] : ! [X17] : (p(s(bool,'const.relation.Order_1'(s(fun(X16,fun(X16,bool)),X17)))) <=> (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X16,fun(X16,bool)),X17)))) & p(s(bool,'const.relation.transitive_1'(s(fun(X16,fun(X16,bool)),X17))))))),
+  file('thm.relation.StrongOrd_Ord','thm.relation.Order')).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 47
+% Passive clauses: 175
+% Generated clauses: 965
+% Final active clauses: 40
+% Final passive clauses: 94
+% Input formulas: 26
+% Initial clauses: 68
+% 
+% Duplicate literals: 80
+% Trivial inequalities: 25
+% Fw subsumption resolutions: 127
+% Fw demodulations: 38
+% Bw demodulations: 3
+% 
+% Simple tautologies: 78
+% Equational tautologies: 16
+% Forward subsumptions: 360
+% 
+% Binary resolution: 77
+% Forward superposition: 279
+% Backward superposition: 180
+% Self superposition: 24
+% Equality factoring: 28
+% Equality resolution: 11
+% 
+% Split clauses: 51
+% Split components: 104
+% SAT solver clauses: 100
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 57
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 51
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 99
+% TWLsolver calls for satisfiability: 42
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.029 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.031 s

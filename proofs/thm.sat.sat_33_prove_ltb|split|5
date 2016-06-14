@@ -1,0 +1,67 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sat
+% SZS output start Proof for thm.sat
+fof(f163,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f97,f96])).
+fof(f96,plain,(
+  p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  p(s(bool,sK1)) & p(s(bool,sK0)) & ~p(s(bool,sK0))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f53])).
+fof(f53,plain,(
+  ? [X0,X1] : (p(s(bool,X1)) & p(s(bool,X0)) & ~p(s(bool,X0)))),
+  inference(flattening,[],[f52])).
+fof(f52,plain,(
+  ? [X0,X1] : ((p(s(bool,X1)) & p(s(bool,X0))) & ~p(s(bool,X0)))),
+  inference(ennf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~! [X0,X1] : ((p(s(bool,X1)) & p(s(bool,X0))) => p(s(bool,X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ((p(s(bool,X7)) & p(s(bool,X6))) => p(s(bool,X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ((p(s(bool,X7)) & p(s(bool,X6))) => p(s(bool,X6)))),
+  file('thm.sat.sat_33_prove_ltb|split|5','thm.sat.sat_33_prove_ltb|split|5')).
+fof(f97,plain,(
+  ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f60])).
+% SZS output end Proof for thm.sat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 2
+% Passive clauses: 10
+% Generated clauses: 65
+% Final active clauses: 2
+% Final passive clauses: 7
+% Input formulas: 25
+% Initial clauses: 60
+% 
+% Duplicate literals: 2
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 31
+% 
+% Split clauses: 20
+% Split components: 41
+% SAT solver clauses: 21
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 19
+% 
+% Sat splits: 20
+% 
+% TWLsolver clauses: 21
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

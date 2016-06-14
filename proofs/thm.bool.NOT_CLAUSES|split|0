@@ -1,0 +1,75 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f59,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f54,f53])).
+fof(f53,plain,(
+  p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f37])).
+fof(f37,plain,(
+  p(s(bool,sK0)) | p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  (p(s(bool,sK0)) | p(s(bool,sK0))) & (~p(s(bool,sK0)) | ~p(s(bool,sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f34])).
+fof(f34,plain,(
+  ? [X0] : ((p(s(bool,X0)) | p(s(bool,X0))) & (~p(s(bool,X0)) | ~p(s(bool,X0))))),
+  inference(nnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ? [X0] : (p(s(bool,X0)) <~> p(s(bool,X0)))),
+  inference(ennf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~! [X0] : (p(s(bool,X0)) <=> p(s(bool,X0)))),
+  inference(flattening,[],[f13])).
+fof(f13,plain,(
+  ~! [X0] : (~~p(s(bool,X0)) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (~~p(s(bool,X6)) <=> p(s(bool,X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (~~p(s(bool,X6)) <=> p(s(bool,X6)))),
+  file('thm.bool.NOT_CLAUSES|split|0','thm.bool.NOT_CLAUSES|split|0')).
+fof(f54,plain,(
+  ~p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f38])).
+fof(f38,plain,(
+  ~p(s(bool,sK0)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f35])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 1
+% Passive clauses: 11
+% Generated clauses: 21
+% Final active clauses: 1
+% Final passive clauses: 9
+% Input formulas: 11
+% Initial clauses: 16
+% 
+% Duplicate literals: 2
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 5
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 2
+% SAT solver binary clauses: 2
+% 
+% Sat splits: 2
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

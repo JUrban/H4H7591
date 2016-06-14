@@ -1,0 +1,228 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.measure
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.measure
+% SZS output start Proof for thm.measure
+fof(f5238,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f5231,f110,f178,f112,f180,f431,f181,f433,f186])).
+fof(f186,plain,(
+  $false | ($spl5 | $spl6)),
+  inference(resolution,[],[f181,f180])).
+fof(f433,plain,(
+  s(bool,'T_0') = s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) | $spl16),
+  inference(cnf_transformation,[],[f433_D])).
+fof(f433_D,plain,(
+  s(bool,'T_0') = s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) <=> ~$spl16),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl16])])).
+fof(f181,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl6),
+  inference(cnf_transformation,[],[f181_D])).
+fof(f181_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f431,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(subsumption_resolution,[],[f293,f114])).
+fof(f114,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.measure.SUBADDITIVE','thm.bool.EQ_CLAUSES|split|0')).
+fof(f293,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,X33) | s(bool,'T_0') = s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(superposition,[],[f105,f195])).
+fof(f195,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f113,f113])).
+fof(f113,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.measure.SUBADDITIVE',aHL_BOOL_CASES)).
+fof(f105,plain,(
+  p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) & p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK3),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) & s(fun(sK0,bool),sK4) = s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK2),s(fun(sK0,bool),sK3))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK3))))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f58])).
+fof(f58,plain,(
+  ? [X0,X1,X2,X3,X4] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & s(fun(X0,bool),X4) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3)))))))))),
+  inference(flattening,[],[f57])).
+fof(f57,plain,(
+  ? [X0,X1,X2,X3,X4] : ((p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & s(fun(X0,bool),X4) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3)))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3)))))))))),
+  inference(ennf_transformation,[],[f28])).
+fof(f28,plain,(
+  ~! [X0,X1,X2,X3,X4] : ((p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & s(fun(X0,bool),X4) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3)))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3)))))))))),
+  inference(flattening,[],[f27])).
+fof(f27,plain,(
+  ~! [X0] : ! [X1,X2,X3,X4] : ((p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & s(fun(X0,bool),X4) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3)))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3)))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9,X10] : ((p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X9),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))) & s(fun(X6,bool),X10) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X9)))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X10))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X9)))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9,X10] : ((p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X9),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))) & s(fun(X6,bool),X10) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X9)))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X10))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X9)))))))))),
+  file('thm.measure.SUBADDITIVE','thm.measure.SUBADDITIVE')).
+fof(f180,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f180_D])).
+fof(f180_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f112,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.measure.SUBADDITIVE',aHL_FALSITY)).
+fof(f178,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f178_D])).
+fof(f178_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f110,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.measure.SUBADDITIVE',aHL_TRUTH)).
+fof(f5231,plain,(
+  $false | ($spl2 | $spl5 | $spl16)),
+  inference(subsumption_resolution,[],[f5230,f178])).
+fof(f5230,plain,(
+  ~p(s(bool,'T_0')) | ($spl5 | $spl16)),
+  inference(forward_demodulation,[],[f5229,f433])).
+fof(f5229,plain,(
+  ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) | $spl5),
+  inference(subsumption_resolution,[],[f5228,f106])).
+fof(f106,plain,(
+  p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))))),
+  inference(cnf_transformation,[],[f71])).
+fof(f5228,plain,(
+  ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) | ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) | $spl5),
+  inference(subsumption_resolution,[],[f5227,f107])).
+fof(f107,plain,(
+  p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK3),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))))),
+  inference(cnf_transformation,[],[f71])).
+fof(f5227,plain,(
+  ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK3),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) | ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) | $spl5),
+  inference(subsumption_resolution,[],[f5220,f180])).
+fof(f5220,plain,(
+  p(s(bool,'F_0')) | ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK3),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) | ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))),
+  inference(superposition,[],[f1390,f862])).
+fof(f862,plain,(
+  s(bool,'F_0') = s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK3)))))))),
+  inference(resolution,[],[f109,f119])).
+fof(f119,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.measure.SUBADDITIVE','thm.bool.EQ_CLAUSES|split|2')).
+fof(f109,plain,(
+  ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK3))))))))),
+  inference(cnf_transformation,[],[f71])).
+fof(f1390,plain,(
+  ( ! [X0] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0),s(fun(sK0,bool),sK4))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0),s(fun(sK0,bool),sK2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0),s(fun(sK0,bool),sK3)))))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK3),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0)))))) | ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),X0))))) )),
+  inference(superposition,[],[f152,f108])).
+fof(f108,plain,(
+  s(fun(sK0,bool),sK4) = s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK2),s(fun(sK0,bool),sK3)))),
+  inference(cnf_transformation,[],[f71])).
+fof(f152,plain,(
+  ( ! [X4,X0,X5,X1] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X4),s(fun(X0,bool),X5))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X5)))))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X5),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X4),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))) )),
+  inference(cnf_transformation,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ! [X4,X5] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X4),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X5),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X4),s(fun(X0,bool),X5))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X5)))))))))) & ((p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),sK5(X1,X0)),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),sK6(X1,X0)),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),sK5(X1,X0)),s(fun(X0,bool),sK6(X1,X0)))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),sK5(X1,X0)))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),sK6(X1,X0)))))))))) | p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK5,sK6])],[f97])).
+fof(f97,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ! [X4,X5] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X4),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X5),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X4),s(fun(X0,bool),X5))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X4))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X5)))))))))) & (? [X2,X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))) | p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))),
+  inference(rectify,[],[f96])).
+fof(f96,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ! [X2,X3] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3)))))))))) & (? [X2,X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))) | p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))),
+  inference(nnf_transformation,[],[f65])).
+fof(f65,plain,(
+  ! [X0,X1] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> ! [X2,X3] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))))),
+  inference(flattening,[],[f64])).
+fof(f64,plain,(
+  ! [X0,X1] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> ! [X2,X3] : ((~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))))),
+  inference(ennf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> ! [X2,X3] : ((p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) <=> ! [X2,X3] : ((p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X3))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X3))))))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.measure.subadditive_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) <=> ! [X8,X9] : ((p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X9),s(fun(fun(X6,bool),bool),'const.measure.measurable_sets_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X9))))),s('type.realax.real','const.realax.real_add_2'(s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))),s('type.realax.real','const.measure.measure_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X9))))))))))),
+  file('thm.measure.SUBADDITIVE','thm.measure.subadditive_def')).
+% SZS output end Proof for thm.measure
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 105
+% Passive clauses: 668
+% Generated clauses: 5017
+% Final active clauses: 97
+% Final passive clauses: 457
+% Input formulas: 25
+% Initial clauses: 69
+% 
+% Duplicate literals: 299
+% Trivial inequalities: 99
+% Fw subsumption resolutions: 832
+% Fw demodulations: 546
+% Bw demodulations: 4
+% 
+% Simple tautologies: 171
+% Equational tautologies: 16
+% Forward subsumptions: 2020
+% 
+% Binary resolution: 247
+% Forward superposition: 1801
+% Backward superposition: 956
+% Self superposition: 38
+% Equality factoring: 28
+% Equality resolution: 22
+% 
+% Split clauses: 213
+% Split components: 434
+% SAT solver clauses: 473
+% SAT solver unit clauses: 15
+% SAT solver binary clauses: 81
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 213
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 468
+% TWLsolver calls for satisfiability: 145
+% 
+% Memory used [KB]: 3326
+% Time elapsed: 0.123 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.128 s

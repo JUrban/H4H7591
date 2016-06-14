@@ -1,0 +1,142 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f1219,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1201,f321,f457,f459,f267,f460])).
+fof(f460,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f460_D])).
+fof(f460_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f267,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rich_list.IS_PREFIX_NIL|split|0',aHL_FALSITY)).
+fof(f459,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f459_D])).
+fof(f459_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f457,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f457_D])).
+fof(f457_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f321,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f200])).
+fof(f200,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f199])).
+fof(f199,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f141])).
+fof(f141,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f89])).
+fof(f89,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X8] : ((p(s(bool,'F_0')) => p(s(bool,X8))) <=> p(s(bool,'T_0')))),
+  file('thm.rich_list.IS_PREFIX_NIL|split|0','thm.bool.IMP_CLAUSES|split|2')).
+fof(f1201,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f1171,f457])).
+fof(f1171,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(backward_demodulation,[],[f337,f260])).
+fof(f260,plain,(
+  ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK10),'const.list.NIL_0'),s('type.list.list'(sK10),sK11))))),
+  inference(cnf_transformation,[],[f170])).
+fof(f170,plain,(
+  ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK10),'const.list.NIL_0'),s('type.list.list'(sK10),sK11))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11])],[f131])).
+fof(f131,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1))))),
+  inference(ennf_transformation,[],[f56])).
+fof(f56,plain,(
+  ~! [X0,X1] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1))))),
+  inference(flattening,[],[f55])).
+fof(f55,plain,(
+  ~! [X0] : ! [X1] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X7))))),
+  file('thm.rich_list.IS_PREFIX_NIL|split|0','thm.rich_list.IS_PREFIX_NIL|split|0')).
+fof(f337,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f99])).
+fof(f99,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f98])).
+fof(f98,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f43])).
+fof(f43,axiom,(
+  ! [X6] : ! [X13] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X13)))),
+  file('thm.rich_list.IS_PREFIX_NIL|split|0','thm.list.isPREFIX|split|0')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 121
+% Passive clauses: 271
+% Generated clauses: 953
+% Final active clauses: 120
+% Final passive clauses: 125
+% Input formulas: 53
+% Initial clauses: 191
+% 
+% Duplicate literals: 23
+% Trivial inequalities: 7
+% Fw subsumption resolutions: 68
+% Fw demodulations: 2
+% Bw demodulations: 1
+% 
+% Simple tautologies: 92
+% Equational tautologies: 4
+% Forward subsumptions: 458
+% 
+% Binary resolution: 452
+% Factoring: 102
+% Forward superposition: 1
+% Backward superposition: 87
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 3
+% 
+% Split clauses: 43
+% Split components: 87
+% SAT solver clauses: 54
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 26
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 43
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 53
+% TWLsolver calls for satisfiability: 24
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.025 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.028 s

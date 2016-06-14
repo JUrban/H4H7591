@@ -1,0 +1,107 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f4277,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f4276])).
+fof(f4276,plain,(
+  s(sK0,'const.list.FOLDR_3'(s(fun(sK1,fun(sK0,sK0)),sK2),s(sK0,sK3),s('type.list.list'(sK1),'const.list.REVERSE_1'(s('type.list.list'(sK1),sK4))))) != s(sK0,'const.list.FOLDR_3'(s(fun(sK1,fun(sK0,sK0)),sK2),s(sK0,sK3),s('type.list.list'(sK1),'const.list.REVERSE_1'(s('type.list.list'(sK1),sK4)))))),
+  inference(superposition,[],[f40,f1391])).
+fof(f1391,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X2,'const.list.FOLDR_3'(s(fun(X0,fun(X2,X2)),X3),s(X2,X4),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))))) = s(X2,'const.list.FOLDL_3'(s(fun(X2,fun(X0,X2)),'_dst_x01x10_2'(s(fun(X0,fun(X2,X2)),X3),s(fun(X2,X2),'_i_0_0'))),s(X2,X4),s('type.list.list'(X0),X1)))) )),
+  inference(superposition,[],[f52,f46])).
+fof(f46,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f20])).
+fof(f20,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X7] : ! [X10] : s('type.list.list'(X7),X10) = s('type.list.list'(X7),'const.list.REVERSE_1'(s('type.list.list'(X7),'const.list.REVERSE_1'(s('type.list.list'(X7),X10)))))),
+  file('thm.rich_list.FOLDR_REVERSE','thm.list.REVERSE_REVERSE')).
+fof(f52,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),X4))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4)))))) )),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0,X1,X2,X3,X4] : s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),X4))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4)))))),
+  inference(flattening,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),X4))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X7] : ! [X8,X9,X10] : s(X6,'const.list.FOLDR_3'(s(fun(X7,fun(X6,X6)),X8),s(X6,X9),s('type.list.list'(X7),X10))) = s(X6,'const.list.FOLDL_3'(s(fun(X6,fun(X7,X6)),'_dst_x01x10_2'(s(fun(X7,fun(X6,X6)),X8),s(fun(X6,X6),'_i_0_0'))),s(X6,X9),s('type.list.list'(X7),'const.list.REVERSE_1'(s('type.list.list'(X7),X10)))))),
+  file('thm.rich_list.FOLDR_REVERSE','thm.rich_list.FOLDR_FOLDL_REVERSE')).
+fof(f40,plain,(
+  s(sK0,'const.list.FOLDR_3'(s(fun(sK1,fun(sK0,sK0)),sK2),s(sK0,sK3),s('type.list.list'(sK1),'const.list.REVERSE_1'(s('type.list.list'(sK1),sK4))))) != s(sK0,'const.list.FOLDL_3'(s(fun(sK0,fun(sK1,sK0)),'_dst_x01x10_2'(s(fun(sK1,fun(sK0,sK0)),sK2),s(fun(sK0,sK0),'_i_0_0'))),s(sK0,sK3),s('type.list.list'(sK1),sK4)))),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  s(sK0,'const.list.FOLDR_3'(s(fun(sK1,fun(sK0,sK0)),sK2),s(sK0,sK3),s('type.list.list'(sK1),'const.list.REVERSE_1'(s('type.list.list'(sK1),sK4))))) != s(sK0,'const.list.FOLDL_3'(s(fun(sK0,fun(sK1,sK0)),'_dst_x01x10_2'(s(fun(sK1,fun(sK0,sK0)),sK2),s(fun(sK0,sK0),'_i_0_0'))),s(sK0,sK3),s('type.list.list'(sK1),sK4)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f33])).
+fof(f33,plain,(
+  ? [X0,X1,X2,X3,X4] : s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4))))) != s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),X4)))),
+  inference(ennf_transformation,[],[f16])).
+fof(f16,plain,(
+  ~! [X0,X1,X2,X3,X4] : s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4))))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),X4)))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : s(X0,'const.list.FOLDR_3'(s(fun(X1,fun(X0,X0)),X2),s(X0,X3),s('type.list.list'(X1),'const.list.REVERSE_1'(s('type.list.list'(X1),X4))))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X1,X0)),'_dst_x01x10_2'(s(fun(X1,fun(X0,X0)),X2),s(fun(X0,X0),'_i_0_0'))),s(X0,X3),s('type.list.list'(X1),X4)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : s(X6,'const.list.FOLDR_3'(s(fun(X7,fun(X6,X6)),X8),s(X6,X9),s('type.list.list'(X7),'const.list.REVERSE_1'(s('type.list.list'(X7),X10))))) = s(X6,'const.list.FOLDL_3'(s(fun(X6,fun(X7,X6)),'_dst_x01x10_2'(s(fun(X7,fun(X6,X6)),X8),s(fun(X6,X6),'_i_0_0'))),s(X6,X9),s('type.list.list'(X7),X10)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : s(X6,'const.list.FOLDR_3'(s(fun(X7,fun(X6,X6)),X8),s(X6,X9),s('type.list.list'(X7),'const.list.REVERSE_1'(s('type.list.list'(X7),X10))))) = s(X6,'const.list.FOLDL_3'(s(fun(X6,fun(X7,X6)),'_dst_x01x10_2'(s(fun(X7,fun(X6,X6)),X8),s(fun(X6,X6),'_i_0_0'))),s(X6,X9),s('type.list.list'(X7),X10)))),
+  file('thm.rich_list.FOLDR_REVERSE','thm.rich_list.FOLDR_REVERSE')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 52
+% Passive clauses: 716
+% Generated clauses: 4005
+% Final active clauses: 48
+% Final passive clauses: 615
+% Input formulas: 13
+% Initial clauses: 15
+% 
+% Duplicate literals: 322
+% Trivial inequalities: 62
+% Fw subsumption resolutions: 351
+% Fw demodulations: 436
+% Bw demodulations: 2
+% 
+% Simple tautologies: 102
+% Equational tautologies: 20
+% Forward subsumptions: 1819
+% 
+% Binary resolution: 6
+% Forward superposition: 1775
+% Backward superposition: 949
+% Self superposition: 107
+% Equality factoring: 47
+% Equality resolution: 10
+% 
+% Split clauses: 115
+% Split components: 239
+% SAT solver clauses: 223
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 73
+% 
+% Sat splits: 115
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 222
+% TWLsolver calls for satisfiability: 39
+% 
+% Memory used [KB]: 3709
+% Time elapsed: 0.147 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.15 s

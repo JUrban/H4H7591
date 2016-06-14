@@ -1,0 +1,66 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ConseqConv
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ConseqConv
+% SZS output start Proof for thm.ConseqConv
+fof(f46,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f45])).
+fof(f45,plain,(
+  s(bool,sK1) != s(bool,sK1)),
+  inference(superposition,[],[f30,f39])).
+fof(f39,plain,(
+  ( ! [X0,X1] : (s(bool,X1) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X0),s(bool,X1)))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : s(bool,X1) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X0),s(bool,X1)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X5,X8] : s(bool,X8) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X5),s(bool,X8)))),
+  file('thm.ConseqConv.ASM_MARKER_THM','thm.ConseqConv.ASM_MARKER_DEF')).
+fof(f30,plain,(
+  s(bool,sK1) != s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,sK0),s(bool,sK1)))),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  s(bool,sK1) != s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,sK0),s(bool,sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f22])).
+fof(f22,plain,(
+  ? [X0,X1] : s(bool,X1) != s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X0),s(bool,X1)))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : s(bool,X1) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X0),s(bool,X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,X7) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X6),s(bool,X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,X7) = s(bool,'const.ConseqConv.ASM_MARKER_2'(s(bool,X6),s(bool,X7)))),
+  file('thm.ConseqConv.ASM_MARKER_THM','thm.ConseqConv.ASM_MARKER_THM')).
+% SZS output end Proof for thm.ConseqConv
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 4
+% Passive clauses: 8
+% Generated clauses: 15
+% Final active clauses: 4
+% Final passive clauses: 2
+% Input formulas: 10
+% Initial clauses: 12
+% 
+% Trivial inequalities: 2
+% 
+% Simple tautologies: 2
+% Equational tautologies: 2
+% Forward subsumptions: 2
+% 
+% Backward superposition: 1
+% Self superposition: 2
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

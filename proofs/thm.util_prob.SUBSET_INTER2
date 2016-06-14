@@ -1,0 +1,97 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.util_prob
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.util_prob
+% SZS output start Proof for thm.util_prob
+fof(f5681,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f5649,f352])).
+fof(f352,plain,(
+  s(fun(sK13,bool),sK14) != s(fun(sK13,bool),'const.pred_set.INTER_2'(s(fun(sK13,bool),sK15),s(fun(sK13,bool),sK14)))),
+  inference(cnf_transformation,[],[f233])).
+fof(f233,plain,(
+  p(s(bool,'const.pred_set.SUBSET_2'(s(fun(sK13,bool),sK14),s(fun(sK13,bool),sK15)))) & s(fun(sK13,bool),sK14) != s(fun(sK13,bool),'const.pred_set.INTER_2'(s(fun(sK13,bool),sK15),s(fun(sK13,bool),sK14)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13,sK14,sK15])],[f178])).
+fof(f178,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & s(fun(X0,bool),X1) != s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) => s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) => s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))) => s(fun(X6,bool),X7) = s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))) => s(fun(X6,bool),X7) = s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X7))))),
+  file('thm.util_prob.SUBSET_INTER2','thm.util_prob.SUBSET_INTER2')).
+fof(f5649,plain,(
+  s(fun(sK13,bool),sK14) = s(fun(sK13,bool),'const.pred_set.INTER_2'(s(fun(sK13,bool),sK15),s(fun(sK13,bool),sK14)))),
+  inference(resolution,[],[f441,f351])).
+fof(f351,plain,(
+  p(s(bool,'const.pred_set.SUBSET_2'(s(fun(sK13,bool),sK14),s(fun(sK13,bool),sK15))))),
+  inference(cnf_transformation,[],[f233])).
+fof(f441,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))) )),
+  inference(cnf_transformation,[],[f278])).
+fof(f278,plain,(
+  ! [X0,X1,X2] : ((s(fun(X0,bool),X1) != s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))) & (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1)))))),
+  inference(nnf_transformation,[],[f134])).
+fof(f134,plain,(
+  ! [X0,X1,X2] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))) <=> p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))),
+  inference(flattening,[],[f133])).
+fof(f133,plain,(
+  ! [X0] : ! [X1,X2] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.INTER_2'(s(fun(X0,bool),X2),s(fun(X0,bool),X1))) <=> p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ! [X12,X13] : (s(fun(X6,bool),X12) = s(fun(X6,bool),'const.pred_set.INTER_2'(s(fun(X6,bool),X13),s(fun(X6,bool),X12))) <=> p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X12),s(fun(X6,bool),X13)))))),
+  file('thm.util_prob.SUBSET_INTER2','thm.pred_set.INTER_SUBSET_EQN|split|1')).
+% SZS output end Proof for thm.util_prob
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 418
+% Passive clauses: 1855
+% Generated clauses: 5323
+% Final active clauses: 418
+% Final passive clauses: 1245
+% Input formulas: 69
+% Initial clauses: 252
+% 
+% Duplicate literals: 158
+% Trivial inequalities: 28
+% Fw subsumption resolutions: 317
+% Fw demodulations: 118
+% 
+% Simple tautologies: 198
+% Equational tautologies: 32
+% Forward subsumptions: 2575
+% 
+% Binary resolution: 2996
+% Factoring: 772
+% Forward superposition: 466
+% Backward superposition: 145
+% Self superposition: 6
+% Equality factoring: 2
+% Equality resolution: 17
+% 
+% Split clauses: 123
+% Split components: 248
+% SAT solver clauses: 211
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 53
+% 
+% Sat splits: 123
+% 
+% TWLsolver clauses: 211
+% TWLsolver calls for satisfiability: 171
+% 
+% Memory used [KB]: 2686
+% Time elapsed: 0.129 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.132 s

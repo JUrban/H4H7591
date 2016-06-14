@@ -1,0 +1,94 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f217,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f213])).
+fof(f213,plain,(
+  s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))) != s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',sK0),s('type.realax.real',sK1)))),
+  inference(superposition,[],[f24,f204])).
+fof(f204,plain,(
+  ( ! [X0,X1] : (s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X1),s('type.realax.real',X0))) = s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X1),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X0)))))) )),
+  inference(superposition,[],[f32,f28])).
+fof(f28,plain,(
+  ( ! [X0] : (s('type.realax.real',X0) = s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X0)))))) )),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ! [X0] : s('type.realax.real',X0) = s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X0)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : s('type.realax.real',X6) = s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X6)))))),
+  file('thm.real.REAL_SUB_RNEG','thm.real.REAL_NEGNEG')).
+fof(f32,plain,(
+  ( ! [X0,X1] : (s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X0),s('type.realax.real',X1))) = s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X1)))))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X0),s('type.realax.real',X1))) = s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X1)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7] : s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X6),s('type.realax.real',X7))) = s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X6),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X7)))))),
+  file('thm.real.REAL_SUB_RNEG','thm.real.real_sub')).
+fof(f24,plain,(
+  s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))) != s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',sK0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',sK1)))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))) != s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',sK0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1] : s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X0),s('type.realax.real',X1))) != s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X1)))))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1] : s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X0),s('type.realax.real',X1))) = s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X0),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X6),s('type.realax.real',X7))) = s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X6),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.realax.real','const.realax.real_add_2'(s('type.realax.real',X6),s('type.realax.real',X7))) = s('type.realax.real','const.real.real_sub_2'(s('type.realax.real',X6),s('type.realax.real','const.realax.real_neg_1'(s('type.realax.real',X7)))))),
+  file('thm.real.REAL_SUB_RNEG','thm.real.REAL_SUB_RNEG')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 13
+% Passive clauses: 24
+% Generated clauses: 174
+% Final active clauses: 11
+% Final passive clauses: 5
+% Input formulas: 9
+% Initial clauses: 10
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 4
+% 
+% Simple tautologies: 16
+% Equational tautologies: 15
+% Forward subsumptions: 75
+% 
+% Binary resolution: 4
+% Forward superposition: 34
+% Backward superposition: 35
+% Self superposition: 29
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.014 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.016 s

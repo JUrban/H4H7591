@@ -1,0 +1,89 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f251,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f244])).
+fof(f244,plain,(
+  s(bool,'F_0') != s(bool,'F_0')),
+  inference(superposition,[],[f31,f36])).
+fof(f36,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.NIL_0')))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1,X2] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(flattening,[],[f16])).
+fof(f16,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X10,X11] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X11),s('type.list.list'(X6),X10))),s('type.list.list'(X6),'const.list.NIL_0')))),
+  file('thm.rich_list.IS_PREFIX|split|1','thm.list.isPREFIX_THM|split|1')).
+fof(f31,plain,(
+  s(bool,'F_0') != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK1),s('type.list.list'(sK0),sK2))),s('type.list.list'(sK0),'const.list.NIL_0')))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  s(bool,'F_0') != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK1),s('type.list.list'(sK0),sK2))),s('type.list.list'(sK0),'const.list.NIL_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f24])).
+fof(f24,plain,(
+  ? [X0,X1,X2] : s(bool,'F_0') != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1,X2] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : ! [X1,X2] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X7),s('type.list.list'(X6),X8))),s('type.list.list'(X6),'const.list.NIL_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(bool,'F_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X7),s('type.list.list'(X6),X8))),s('type.list.list'(X6),'const.list.NIL_0')))),
+  file('thm.rich_list.IS_PREFIX|split|1','thm.rich_list.IS_PREFIX|split|1')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 12
+% Passive clauses: 25
+% Generated clauses: 192
+% Final active clauses: 10
+% Final passive clauses: 9
+% Input formulas: 9
+% Initial clauses: 12
+% 
+% Duplicate literals: 41
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 2
+% 
+% Simple tautologies: 18
+% Equational tautologies: 14
+% Forward subsumptions: 77
+% 
+% Binary resolution: 4
+% Forward superposition: 48
+% Backward superposition: 41
+% Self superposition: 25
+% Equality factoring: 26
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 5
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 3
+% 
+% Sat splits: 3
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 5
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

@@ -1,0 +1,74 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f36,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f35,f25])).
+fof(f25,plain,(
+  s(sK0,sK1) != s(sK0,sK2)),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  s(sK0,sK3) = s(sK0,sK4) & s(sK0,sK2) = s(sK0,sK4) & s(sK0,sK1) = s(sK0,sK3) & s(sK0,sK1) != s(sK0,sK2)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f17])).
+fof(f17,plain,(
+  ? [X0,X1,X2,X3,X4] : (s(X0,X3) = s(X0,X4) & s(X0,X2) = s(X0,X4) & s(X0,X1) = s(X0,X3) & s(X0,X1) != s(X0,X2))),
+  inference(flattening,[],[f16])).
+fof(f16,plain,(
+  ? [X0,X1,X2,X3,X4] : (s(X0,X3) = s(X0,X4) & ((s(X0,X2) = s(X0,X4) & s(X0,X1) = s(X0,X3)) & s(X0,X1) != s(X0,X2)))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2,X3,X4] : (s(X0,X3) = s(X0,X4) => ((s(X0,X2) = s(X0,X4) & s(X0,X1) = s(X0,X3)) => s(X0,X1) = s(X0,X2)))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0] : ! [X1,X2,X3,X4] : (s(X0,X3) = s(X0,X4) => ((s(X0,X2) = s(X0,X4) & s(X0,X1) = s(X0,X3)) => s(X0,X1) = s(X0,X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9,X10] : (s(X6,X9) = s(X6,X10) => ((s(X6,X8) = s(X6,X10) & s(X6,X7) = s(X6,X9)) => s(X6,X7) = s(X6,X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9,X10] : (s(X6,X9) = s(X6,X10) => ((s(X6,X8) = s(X6,X10) & s(X6,X7) = s(X6,X9)) => s(X6,X7) = s(X6,X8)))),
+  file('thm.rat.rat_7_prove_ltb','thm.rat.rat_7_prove_ltb')).
+fof(f35,plain,(
+  s(sK0,sK1) = s(sK0,sK2)),
+  inference(forward_demodulation,[],[f34,f24])).
+fof(f24,plain,(
+  s(sK0,sK1) = s(sK0,sK3)),
+  inference(cnf_transformation,[],[f19])).
+fof(f34,plain,(
+  s(sK0,sK2) = s(sK0,sK3)),
+  inference(backward_demodulation,[],[f23,f22])).
+fof(f22,plain,(
+  s(sK0,sK3) = s(sK0,sK4)),
+  inference(cnf_transformation,[],[f19])).
+fof(f23,plain,(
+  s(sK0,sK2) = s(sK0,sK4)),
+  inference(cnf_transformation,[],[f19])).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 6
+% Passive clauses: 11
+% Generated clauses: 15
+% Final active clauses: 5
+% Final passive clauses: 2
+% Input formulas: 7
+% Initial clauses: 11
+% 
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% Fw demodulations: 1
+% Bw demodulations: 1
+% 
+% Equational tautologies: 1
+% Forward subsumptions: 2
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

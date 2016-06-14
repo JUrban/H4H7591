@@ -1,0 +1,218 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.intExtension
+% (89331)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 713
+% Passive clauses: 8148
+% Generated clauses: 20528
+% Final active clauses: 713
+% Final passive clauses: 7027
+% Input formulas: 69
+% Initial clauses: 241
+% 
+% Duplicate literals: 507
+% Trivial inequalities: 64
+% Fw subsumption resolutions: 1658
+% Fw demodulations: 603
+% 
+% Simple tautologies: 264
+% Equational tautologies: 58
+% Forward subsumptions: 8958
+% Fw demodulations to eq. taut.: 28
+% 
+% Binary resolution: 10048
+% Factoring: 2516
+% Forward superposition: 2320
+% Backward superposition: 2303
+% Self superposition: 54
+% Equality factoring: 26
+% Equality resolution: 41
+% 
+% Split clauses: 326
+% Split components: 678
+% SAT solver clauses: 656
+% SAT solver unit clauses: 17
+% SAT solver binary clauses: 117
+% 
+% Sat splits: 326
+% 
+% TWLsolver clauses: 656
+% TWLsolver calls for satisfiability: 423
+% 
+% Memory used [KB]: 8443
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 143 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.intExtension
+% (89352)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 378
+% Passive clauses: 2185
+% Generated clauses: 10928
+% Final active clauses: 373
+% Final passive clauses: 1788
+% Input formulas: 69
+% Initial clauses: 241
+% 
+% Duplicate literals: 234
+% Trivial inequalities: 19
+% Fw subsumption resolutions: 810
+% Fw demodulations: 292
+% Bw demodulations: 20
+% Condensations: 352
+% Global subsumptions: 20
+% 
+% Simple tautologies: 268
+% Equational tautologies: 25
+% Forward subsumptions: 4182
+% Fw demodulations to eq. taut.: 16
+% 
+% Binary resolution: 3339
+% Factoring: 344
+% Forward superposition: 1302
+% Backward superposition: 1623
+% Self superposition: 58
+% Equality factoring: 26
+% Equality resolution: 16
+% 
+% Split clauses: 24
+% Split components: 48
+% SAT solver clauses: 2761
+% SAT solver unit clauses: 244
+% SAT solver binary clauses: 79
+% SAT solver learnt clauses: 40
+% SAT solver learnt literals: 10
+% 
+% Sat splits: 24
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 2681
+% TWLsolver calls for satisfiability: 1909
+% 
+% Memory used [KB]: 11385
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.intExtension
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.intExtension
+% SZS output start Proof for thm.intExtension
+fof(f32001,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f31992])).
+fof(f31992,plain,(
+  s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))))) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',sK12),s('type.integer.int',sK13)))))),
+  inference(superposition,[],[f312,f1974])).
+fof(f1974,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1)))))) )),
+  inference(forward_demodulation,[],[f1973,f393])).
+fof(f393,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f121])).
+fof(f121,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f49])).
+fof(f49,axiom,(
+  ! [X20] : ! [X15,X16] : s(X20,X15) = s(X20,'const.bool.COND_3'(s(bool,'T_0'),s(X20,X15),s(X20,X16)))),
+  file('thm.intExtension.INT_SGN_MUL2','thm.bool.COND_CLAUSES|split|0')).
+fof(f1973,plain,(
+  ( ! [X2,X0,X1] : (s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.bool.COND_3'(s(bool,'T_0'),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))),s('type.integer.int',X2))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1)))))) )),
+  inference(forward_demodulation,[],[f1963,f393])).
+fof(f1963,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.bool.COND_3'(s(bool,'T_0'),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))),s('type.integer.int',X2))),s('type.integer.int','const.bool.COND_3'(s(bool,'T_0'),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1))),s('type.integer.int',X3)))))) )),
+  inference(unit_resulting_resolution,[],[f393,f393,f544])).
+fof(f544,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.integer.int',X2) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))) | s('type.integer.int',X3) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1)))))) )),
+  inference(cnf_transformation,[],[f190])).
+fof(f190,plain,(
+  ! [X0,X1,X2,X3] : (s('type.integer.int',X2) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))) | s('type.integer.int',X3) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))))),
+  inference(flattening,[],[f189])).
+fof(f189,plain,(
+  ! [X0,X1,X2,X3] : (s('type.integer.int',X2) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))) | (s('type.integer.int',X3) != s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1)))))))),
+  inference(ennf_transformation,[],[f159])).
+fof(f159,plain,(
+  ! [X0,X1,X2,X3] : (s('type.integer.int',X2) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))) => (s('type.integer.int',X3) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1))) => s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X2),s('type.integer.int',X3))) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1)))))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8,X9,X10,X11] : (s('type.integer.int',X10) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X8))) => (s('type.integer.int',X11) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X9))) => s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X10),s('type.integer.int',X11))) = s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X8),s('type.integer.int',X9)))))))),
+  file('thm.intExtension.INT_SGN_MUL2','thm.intExtension.INT_SGN_MUL')).
+fof(f312,plain,(
+  s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',sK12))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',sK13)))))),
+  inference(cnf_transformation,[],[f211])).
+fof(f211,plain,(
+  s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',sK12),s('type.integer.int',sK13))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',sK12))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',sK13)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f161])).
+fof(f161,plain,(
+  ? [X0,X1] : s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1)))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1] : s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X0))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X6),s('type.integer.int',X7))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X6))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int',X6),s('type.integer.int',X7))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X6))),s('type.integer.int','const.intExtension.SGN_1'(s('type.integer.int',X7)))))),
+  file('thm.intExtension.INT_SGN_MUL2','thm.intExtension.INT_SGN_MUL2')).
+% SZS output end Proof for thm.intExtension
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 353
+% Passive clauses: 1087
+% Generated clauses: 31481
+% Final active clauses: 321
+% Final passive clauses: 587
+% Input formulas: 69
+% Initial clauses: 241
+% 
+% Duplicate literals: 355
+% Trivial inequalities: 39
+% Fw subsumption resolutions: 383
+% Fw demodulations: 15333
+% Bw demodulations: 128
+% Condensations: 769
+% Global subsumptions: 44
+% 
+% Simple tautologies: 104
+% Equational tautologies: 91
+% Forward subsumptions: 5830
+% Fw demodulations to eq. taut.: 7081
+% 
+% Unit resulting resolution: 9155
+% Factoring: 1
+% Forward superposition: 3234
+% Backward superposition: 1659
+% Self superposition: 58
+% Equality factoring: 26
+% Equality resolution: 22
+% 
+% Split clauses: 57
+% Split components: 114
+% SAT solver clauses: 1546
+% SAT solver unit clauses: 446
+% SAT solver binary clauses: 351
+% 
+% Sat splits: 57
+% Sat splitting refutations: 299
+% 
+% Memory used [KB]: 9338
+% Time elapsed: 0.586 s
+% ------------------------------
+% ------------------------------
+% Success in time 1.91 s

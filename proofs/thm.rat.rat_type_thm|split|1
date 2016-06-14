@@ -1,0 +1,307 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f3243,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f3242,f2306,f74,f125,f123,f75,f128,f73,f124,f122,f77,f130])).
+fof(f130,plain,(
+  ~p(s(bool,'F_0')) | $spl9),
+  inference(cnf_transformation,[],[f130_D])).
+fof(f130_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl9),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl9])])).
+fof(f77,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rat.rat_type_thm|split|1',aHL_FALSITY)).
+fof(f122,plain,(
+  p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) | $spl0),
+  inference(cnf_transformation,[],[f122_D])).
+fof(f122_D,plain,(
+  p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f124,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | $spl2),
+  inference(cnf_transformation,[],[f124_D])).
+fof(f124_D,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f73,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2))))),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2)))) & (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2])],[f49])).
+fof(f49,plain,(
+  ? [X0,X1] : ((p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))) & (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))))),
+  inference(nnf_transformation,[],[f45])).
+fof(f45,plain,(
+  ? [X0,X1] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) <~> s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) <=> s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X7)))) <=> s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X6))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X7)))) <=> s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X6))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X7))))),
+  file('thm.rat.rat_type_thm|split|1','thm.rat.rat_type_thm|split|1')).
+fof(f128,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f128_D])).
+fof(f128_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f75,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rat.rat_type_thm|split|1',aHL_TRUTH)).
+fof(f123,plain,(
+  ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) | $spl1),
+  inference(cnf_transformation,[],[f123_D])).
+fof(f123_D,plain,(
+  ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f125,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | $spl3),
+  inference(cnf_transformation,[],[f125_D])).
+fof(f125_D,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f74,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2))))),
+  inference(cnf_transformation,[],[f50])).
+fof(f2306,plain,(
+  $false | ($spl0 | $spl3 | $spl6)),
+  inference(subsumption_resolution,[],[f2305,f125])).
+fof(f2305,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | ($spl0 | $spl6)),
+  inference(subsumption_resolution,[],[f2295,f128])).
+fof(f2295,plain,(
+  ~p(s(bool,'T_0')) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK2))) | $spl0),
+  inference(superposition,[],[f1435,f135])).
+fof(f135,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2))) | $spl0),
+  inference(resolution,[],[f83,f122])).
+fof(f83,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.rat.rat_type_thm|split|1','thm.bool.EQ_CLAUSES|split|1')).
+fof(f1435,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))) )),
+  inference(forward_demodulation,[],[f1434,f80])).
+fof(f80,plain,(
+  ( ! [X0] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0)))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X16] : s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X16))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X16)))),
+  file('thm.rat.rat_type_thm|split|1','ARITY_0_1_const.rat.abs_rat')).
+fof(f1434,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0))) | ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))) )),
+  inference(forward_demodulation,[],[f1433,f80])).
+fof(f1433,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X1)))) )),
+  inference(forward_demodulation,[],[f1430,f107])).
+fof(f107,plain,(
+  ( ! [X0,X1] : (s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))) = s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1)))) )),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1] : s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))) = s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X16,X17] : s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X16),s('type.frac.frac',X17))) = s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X16))),s('type.frac.frac',X17)))),
+  file('thm.rat.rat_type_thm|split|1','ARITY_0_2_const.rat.rat_equiv')).
+fof(f1430,plain,(
+  ( ! [X0,X1] : (~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1)))) | s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0))) = s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X1)))) )),
+  inference(resolution,[],[f113,f435])).
+fof(f435,plain,(
+  sP0('type.rat.rat','type.frac.frac','const.rat.abs_rat_0','const.rat.rat_equiv_0','const.rat.rep_rat_0')),
+  inference(resolution,[],[f119,f76])).
+fof(f76,plain,(
+  p(s(bool,'const.quotient.QUOTIENT_3'(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s(fun('type.rat.rat','type.frac.frac'),'const.rat.rep_rat_0'))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,axiom,(
+  p(s(bool,'const.quotient.QUOTIENT_3'(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s(fun('type.rat.rat','type.frac.frac'),'const.rat.rep_rat_0'))))),
+  file('thm.rat.rat_type_thm|split|1','thm.rat.rat_QUOTIENT')).
+fof(f119,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4)))) | sP0(X0,X1,X3,X2,X4)) )),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ! [X0,X1,X2,X3,X4] : ((~p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4)))) | sP0(X0,X1,X3,X2,X4)) & (~sP0(X0,X1,X3,X2,X4) | p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4))))))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1,X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4)))) <=> sP0(X0,X1,X3,X2,X4))),
+  inference(definition_folding,[],[f44,f47])).
+fof(f47,plain,(
+  ! [X0,X1,X3,X2,X4] : (sP0(X0,X1,X3,X2,X4) <=> (! [X8] : s(X0,X8) = s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) & ! [X7] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) & ! [X5,X6] : (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) <=> (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6)))))))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP0])])).
+fof(f44,plain,(
+  ! [X0,X1,X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4)))) <=> (! [X8] : s(X0,X8) = s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) & ! [X7] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) & ! [X5,X6] : (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) <=> (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6)))))))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X1,fun(X1,bool)),X2),s(fun(X1,X0),X3),s(fun(X0,X1),X4)))) <=> (! [X8] : s(X0,X8) = s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) & ! [X7] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) & ! [X5,X6] : (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) <=> (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6)))))))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X11,X8] : ! [X12,X13,X14] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X8,fun(X8,bool)),X12),s(fun(X8,X11),X13),s(fun(X11,X8),X14)))) <=> (! [X15] : s(X11,X15) = s(X11,happ(s(fun(X8,X11),X13),s(X8,happ(s(fun(X11,X8),X14),s(X11,X15))))) & ! [X15] : p(s(bool,happ(s(fun(X8,bool),happ(s(fun(X8,fun(X8,bool)),X12),s(X8,happ(s(fun(X11,X8),X14),s(X11,X15))))),s(X8,happ(s(fun(X11,X8),X14),s(X11,X15)))))) & ! [X6,X7] : (p(s(bool,happ(s(fun(X8,bool),happ(s(fun(X8,fun(X8,bool)),X12),s(X8,X6))),s(X8,X7)))) <=> (p(s(bool,happ(s(fun(X8,bool),happ(s(fun(X8,fun(X8,bool)),X12),s(X8,X6))),s(X8,X6)))) & p(s(bool,happ(s(fun(X8,bool),happ(s(fun(X8,fun(X8,bool)),X12),s(X8,X7))),s(X8,X7)))) & s(X11,happ(s(fun(X8,X11),X13),s(X8,X6))) = s(X11,happ(s(fun(X8,X11),X13),s(X8,X7)))))))),
+  file('thm.rat.rat_type_thm|split|1','thm.quotient.QUOTIENT_def')).
+fof(f113,plain,(
+  ( ! [X4,X2,X0,X10,X3,X1,X9] : (~sP0(X0,X1,X2,X3,X4) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10)))) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X10)))) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ! [X0,X1,X2,X3,X4] : ((~sP0(X0,X1,X2,X3,X4) | (! [X12] : s(X0,X12) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X12))))) & ! [X11] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X11))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X11)))))) & ! [X9,X10] : ((~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X9)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X10))),s(X1,X10)))) & s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X10))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X9)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X10))),s(X1,X10)))) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X10))) | p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10)))))))) & (s(X0,sK4(X4,X3,X2,X1,X0)) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,sK4(X4,X3,X2,X1,X0)))))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,sK5(X4,X3,X2,X1,X0)))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,sK5(X4,X3,X2,X1,X0))))))) | ((p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK6(X4,X3,X2,X1,X0)))),s(X1,sK7(X4,X3,X2,X1,X0))))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK6(X4,X3,X2,X1,X0)))),s(X1,sK6(X4,X3,X2,X1,X0))))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK7(X4,X3,X2,X1,X0)))),s(X1,sK7(X4,X3,X2,X1,X0))))) & s(X0,happ(s(fun(X1,X0),X2),s(X1,sK6(X4,X3,X2,X1,X0)))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,sK7(X4,X3,X2,X1,X0)))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK6(X4,X3,X2,X1,X0)))),s(X1,sK7(X4,X3,X2,X1,X0))))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK6(X4,X3,X2,X1,X0)))),s(X1,sK6(X4,X3,X2,X1,X0))))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,sK7(X4,X3,X2,X1,X0)))),s(X1,sK7(X4,X3,X2,X1,X0))))) | s(X0,happ(s(fun(X1,X0),X2),s(X1,sK6(X4,X3,X2,X1,X0)))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,sK7(X4,X3,X2,X1,X0)))))) | sP0(X0,X1,X2,X3,X4)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK4,sK5,sK6,sK7])],[f70])).
+fof(f70,plain,(
+  ! [X0,X1,X2,X3,X4] : ((~sP0(X0,X1,X2,X3,X4) | (! [X12] : s(X0,X12) = s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X12))))) & ! [X11] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X11))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X11)))))) & ! [X9,X10] : ((~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X9)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X10))),s(X1,X10)))) & s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X10))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X9)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X10))),s(X1,X10)))) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X10))) | p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10)))))))) & (? [X8] : s(X0,X8) != s(X0,happ(s(fun(X1,X0),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) | ? [X7] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) | ? [X5,X6] : ((p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X5))),s(X1,X6)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X2),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X5))),s(X1,X6)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X5))),s(X1,X5)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X6))),s(X1,X6)))) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X6))))) | sP0(X0,X1,X2,X3,X4)))),
+  inference(rectify,[],[f69])).
+fof(f69,plain,(
+  ! [X0,X1,X3,X2,X4] : ((~sP0(X0,X1,X3,X2,X4) | (! [X8] : s(X0,X8) = s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) & ! [X7] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) & ! [X5,X6] : ((~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))) | p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))))))) & (? [X8] : s(X0,X8) != s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) | ? [X7] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) | ? [X5,X6] : ((p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) | sP0(X0,X1,X3,X2,X4)))),
+  inference(flattening,[],[f68])).
+fof(f68,plain,(
+  ! [X0,X1,X3,X2,X4] : ((~sP0(X0,X1,X3,X2,X4) | (! [X8] : s(X0,X8) = s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) & ! [X7] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) & ! [X5,X6] : ((~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) & ((~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X6)))) | p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))))))) & ((? [X8] : s(X0,X8) != s(X0,happ(s(fun(X1,X0),X3),s(X1,happ(s(fun(X0,X1),X4),s(X0,X8))))) | ? [X7] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7))))),s(X1,happ(s(fun(X0,X1),X4),s(X0,X7)))))) | ? [X5,X6] : ((p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | (p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) & p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) & s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))) & (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X6)))) | (~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X5))),s(X1,X5)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X2),s(X1,X6))),s(X1,X6)))) | s(X0,happ(s(fun(X1,X0),X3),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X6))))))) | sP0(X0,X1,X3,X2,X4)))),
+  inference(nnf_transformation,[],[f47])).
+fof(f3242,plain,(
+  $false | ($spl1 | $spl2 | $spl6 | $spl9)),
+  inference(subsumption_resolution,[],[f3241,f130])).
+fof(f3241,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl2 | $spl6)),
+  inference(forward_demodulation,[],[f3236,f2311])).
+fof(f2311,plain,(
+  s(bool,'F_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2))) | $spl1),
+  inference(resolution,[],[f123,f87])).
+fof(f87,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.rat.rat_type_thm|split|1','thm.bool.EQ_CLAUSES|split|3')).
+fof(f3236,plain,(
+  p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK2)))) | ($spl2 | $spl6)),
+  inference(equality_resolution,[],[f2858])).
+fof(f2858,plain,(
+  ( ! [X2] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X2))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X2),s('type.frac.frac',sK2))))) ) | ($spl2 | $spl6)),
+  inference(superposition,[],[f1447,f124])).
+fof(f1447,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))) ) | $spl6),
+  inference(forward_demodulation,[],[f1446,f107])).
+fof(f1446,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) ) | $spl6),
+  inference(subsumption_resolution,[],[f1445,f128])).
+fof(f1445,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) ) | $spl6),
+  inference(forward_demodulation,[],[f1444,f136])).
+fof(f136,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0)))) )),
+  inference(resolution,[],[f83,f78])).
+fof(f78,plain,(
+  ( ! [X0] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0))))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X15] : p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X15),s('type.frac.frac',X15))))),
+  file('thm.rat.rat_type_thm|split|1','thm.rat.RAT_EQUIV_REF')).
+fof(f1444,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) ) | $spl6),
+  inference(forward_demodulation,[],[f1443,f107])).
+fof(f1443,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) ) | $spl6),
+  inference(subsumption_resolution,[],[f1442,f128])).
+fof(f1442,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) )),
+  inference(forward_demodulation,[],[f1441,f136])).
+fof(f1441,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X1),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) )),
+  inference(forward_demodulation,[],[f1440,f107])).
+fof(f1440,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X1))),s('type.frac.frac',X1)))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) )),
+  inference(forward_demodulation,[],[f1439,f80])).
+fof(f1439,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) != s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X1))),s('type.frac.frac',X1)))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) )),
+  inference(forward_demodulation,[],[f1436,f80])).
+fof(f1436,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X0))) != s('type.rat.rat',happ(s(fun('type.frac.frac','type.rat.rat'),'const.rat.abs_rat_0'),s('type.frac.frac',X1))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X1))),s('type.frac.frac',X1)))) | ~p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X0)))) | p(s(bool,happ(s(fun('type.frac.frac',bool),happ(s(fun('type.frac.frac',fun('type.frac.frac',bool)),'const.rat.rat_equiv_0'),s('type.frac.frac',X0))),s('type.frac.frac',X1))))) )),
+  inference(resolution,[],[f114,f435])).
+fof(f114,plain,(
+  ( ! [X4,X2,X0,X10,X3,X1,X9] : (~sP0(X0,X1,X2,X3,X4) | s(X0,happ(s(fun(X1,X0),X2),s(X1,X9))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X10))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X10))),s(X1,X10)))) | ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X9)))) | p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X1,fun(X1,bool)),X3),s(X1,X9))),s(X1,X10))))) )),
+  inference(cnf_transformation,[],[f71])).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 99
+% Passive clauses: 494
+% Generated clauses: 3089
+% Final active clauses: 81
+% Final passive clauses: 315
+% Input formulas: 21
+% Initial clauses: 48
+% 
+% Duplicate literals: 239
+% Trivial inequalities: 56
+% Fw subsumption resolutions: 340
+% Fw demodulations: 352
+% Bw demodulations: 13
+% 
+% Simple tautologies: 135
+% Equational tautologies: 18
+% Forward subsumptions: 1384
+% 
+% Binary resolution: 143
+% Forward superposition: 1068
+% Backward superposition: 706
+% Self superposition: 36
+% Equality factoring: 30
+% Equality resolution: 17
+% 
+% Split clauses: 67
+% Split components: 139
+% SAT solver clauses: 150
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 27
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 67
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 148
+% TWLsolver calls for satisfiability: 62
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.083 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.085 s

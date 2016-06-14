@@ -1,0 +1,89 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sat
+% SZS output start Proof for thm.sat
+fof(f119,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f115,f70])).
+fof(f70,plain,(
+  s(bool,'F_0') != s(bool,sK0)),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~p(s(bool,sK0)) & s(bool,'F_0') != s(bool,sK0)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f43])).
+fof(f43,plain,(
+  ? [X0] : (~p(s(bool,X0)) & s(bool,'F_0') != s(bool,X0))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0] : (~p(s(bool,X0)) => s(bool,'F_0') = s(bool,X0))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ~! [X0] : (~p(s(bool,X0)) => s(bool,'F_0') = s(bool,X0))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (~p(s(bool,X6)) => s(bool,'F_0') = s(bool,X6))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (~p(s(bool,X6)) => s(bool,'F_0') = s(bool,X6))),
+  file('thm.sat.sat_|49|9_prove_ltb','thm.sat.sat_|49|9_prove_ltb')).
+fof(f115,plain,(
+  s(bool,'F_0') = s(bool,sK0)),
+  inference(resolution,[],[f85,f69])).
+fof(f69,plain,(
+  ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f50])).
+fof(f85,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X7] : (s(bool,'F_0') = s(bool,X7) <=> ~p(s(bool,X7)))),
+  file('thm.sat.sat_|49|9_prove_ltb','thm.bool.EQ_CLAUSES|split|3')).
+% SZS output end Proof for thm.sat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 9
+% Passive clauses: 18
+% Generated clauses: 47
+% Final active clauses: 9
+% Final passive clauses: 5
+% Input formulas: 19
+% Initial clauses: 37
+% 
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 10
+% Equational tautologies: 2
+% Forward subsumptions: 3
+% 
+% Binary resolution: 6
+% Equality resolution: 1
+% 
+% Split clauses: 12
+% Split components: 25
+% SAT solver clauses: 15
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 11
+% 
+% Sat splits: 12
+% 
+% TWLsolver clauses: 15
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

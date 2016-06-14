@@ -1,0 +1,249 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f1400,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1386,f137,f186,f133,f185,f187,f234,f415,f416,f281,f196,f216,f312,f203,f207,f205])).
+fof(f205,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl10),
+  inference(cnf_transformation,[],[f205_D])).
+fof(f205_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f207,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl13),
+  inference(cnf_transformation,[],[f207_D])).
+fof(f207_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl13),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl13])])).
+fof(f203,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f140])).
+fof(f140,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.integer.INT_LT_IMP_NE',aHL_BOOL_CASES)).
+fof(f312,plain,(
+  $false | ($spl13 | $spl22)),
+  inference(trivial_inequality_removal,[],[f307])).
+fof(f307,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl13 | $spl22)),
+  inference(superposition,[],[f207,f281])).
+fof(f216,plain,(
+  ( ! [X1] : (~p(s(bool,X1)) | s(bool,'T_0') = s(bool,X1)) ) | $spl18),
+  inference(cnf_transformation,[],[f216_D])).
+fof(f216_D,plain,(
+  ( ! [X1] : (~p(s(bool,X1)) | s(bool,'T_0') = s(bool,X1)) ) <=> ~$spl18),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl18])])).
+fof(f196,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl5),
+  inference(superposition,[],[f186,f140])).
+fof(f281,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | $spl22),
+  inference(cnf_transformation,[],[f281_D])).
+fof(f281_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl22),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl22])])).
+fof(f416,plain,(
+  ( ! [X3] : (p(s(bool,X3)) | s(bool,'F_0') = s(bool,X3)) ) | $spl26),
+  inference(cnf_transformation,[],[f416_D])).
+fof(f416_D,plain,(
+  ( ! [X3] : (p(s(bool,X3)) | s(bool,'F_0') = s(bool,X3)) ) <=> ~$spl26),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl26])])).
+fof(f415,plain,(
+  ( ! [X2,X3] : (p(s(bool,X3)) | s(bool,'F_0') = s(bool,X3) | s(bool,'T_0') = s(bool,X2)) ) | $spl18),
+  inference(subsumption_resolution,[],[f401,f216])).
+fof(f401,plain,(
+  ( ! [X2,X3] : (p(s(bool,X2)) | p(s(bool,X3)) | s(bool,'F_0') = s(bool,X3) | s(bool,'T_0') = s(bool,X2)) )),
+  inference(superposition,[],[f155,f140])).
+fof(f155,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f100])).
+fof(f100,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f99])).
+fof(f99,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.integer.INT_LT_IMP_NE','thm.bool.IMP_ANTISYM_AX')).
+fof(f234,plain,(
+  $false | ($spl5 | $spl10)),
+  inference(subsumption_resolution,[],[f220,f186])).
+fof(f220,plain,(
+  p(s(bool,'F_0')) | $spl10),
+  inference(backward_demodulation,[],[f205,f190])).
+fof(f190,plain,(
+  p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK0))))),
+  inference(forward_demodulation,[],[f127,f128])).
+fof(f128,plain,(
+  s('type.integer.int',sK0) = s('type.integer.int',sK1)),
+  inference(cnf_transformation,[],[f114])).
+fof(f114,plain,(
+  p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK1)))) & s('type.integer.int',sK0) = s('type.integer.int',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f96])).
+fof(f96,plain,(
+  ? [X0,X1] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) & s('type.integer.int',X0) = s('type.integer.int',X1))),
+  inference(ennf_transformation,[],[f41])).
+fof(f41,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => s('type.integer.int',X0) != s('type.integer.int',X1))),
+  inference(flattening,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => ~s('type.integer.int',X0) = s('type.integer.int',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) => ~s('type.integer.int',X6) = s('type.integer.int',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int',X7)))) => ~s('type.integer.int',X6) = s('type.integer.int',X7))),
+  file('thm.integer.INT_LT_IMP_NE','thm.integer.INT_LT_IMP_NE')).
+fof(f127,plain,(
+  p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK1))))),
+  inference(cnf_transformation,[],[f114])).
+fof(f187,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f187_D])).
+fof(f187_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f185,plain,(
+  p(s(bool,'F_0')) | $spl4),
+  inference(cnf_transformation,[],[f185_D])).
+fof(f185_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f133,plain,(
+  p(s(bool,'F_0')) | p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f116])).
+fof(f116,plain,(
+  (p(s(bool,'T_0')) | p(s(bool,'F_0'))) & (~p(s(bool,'F_0')) | ~p(s(bool,'T_0')))),
+  inference(nnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ~p(s(bool,'T_0')) <=> p(s(bool,'F_0'))),
+  inference(flattening,[],[f11])).
+fof(f11,axiom,(
+  ~p(s(bool,'T_0')) <=> p(s(bool,'F_0'))),
+  file('thm.integer.INT_LT_IMP_NE','thm.bool.NOT_CLAUSES|split|1')).
+fof(f186,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f186_D])).
+fof(f186_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f137,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.integer.INT_LT_IMP_NE',aHL_FALSITY)).
+fof(f1386,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | ($spl5 | $spl6 | $spl26)),
+  inference(duplicate_literal_removal,[],[f1355])).
+fof(f1355,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0)) ) | ($spl5 | $spl6 | $spl26)),
+  inference(superposition,[],[f1300,f684])).
+fof(f684,plain,(
+  ( ! [X4] : (s(bool,X4) = s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK0))) | s(bool,'F_0') = s(bool,X4)) ) | ($spl5 | $spl6 | $spl26)),
+  inference(subsumption_resolution,[],[f674,f187])).
+fof(f674,plain,(
+  ( ! [X4] : (~p(s(bool,'T_0')) | s(bool,X4) = s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK0))) | s(bool,'F_0') = s(bool,X4)) ) | ($spl5 | $spl26)),
+  inference(superposition,[],[f439,f204])).
+fof(f204,plain,(
+  s(bool,'T_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK0))) | $spl5),
+  inference(subsumption_resolution,[],[f199,f186])).
+fof(f199,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int',sK0)))),
+  inference(superposition,[],[f190,f140])).
+fof(f439,plain,(
+  ( ! [X4,X3] : (~p(s(bool,X3)) | s(bool,X3) = s(bool,X4) | s(bool,'F_0') = s(bool,X4)) ) | $spl26),
+  inference(resolution,[],[f158,f416])).
+fof(f158,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f100])).
+fof(f1300,plain,(
+  ( ! [X2] : (s(bool,'F_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int',X2),s('type.integer.int',X2)))) ) | $spl26),
+  inference(superposition,[],[f152,f426])).
+fof(f426,plain,(
+  ( ! [X2] : (s(bool,'F_0') = s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),X2),s('type.pair.prod'('type.num.num','type.num.num'),X2)))) ) | $spl26),
+  inference(resolution,[],[f416,f146])).
+fof(f146,plain,(
+  ( ! [X0] : (~p(s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X0))))) )),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : ~p(s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X0))))),
+  inference(flattening,[],[f54])).
+fof(f54,plain,(
+  ! [X0] : ~p(s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),X0),s('type.pair.prod'('type.num.num','type.num.num'),X0))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : ~p(s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),X6),s('type.pair.prod'('type.num.num','type.num.num'),X6))))),
+  file('thm.integer.INT_LT_IMP_NE','thm.integer.TINT_LT_REFL')).
+fof(f152,plain,(
+  ( ! [X0,X1] : (s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X0))),s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X1)))))) )),
+  inference(cnf_transformation,[],[f64])).
+fof(f64,plain,(
+  ! [X0,X1] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1))) = s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X0))),s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X1)))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X17,X18] : s(bool,'const.integer.int_lt_2'(s('type.integer.int',X17),s('type.integer.int',X18))) = s(bool,'const.integer.tint_lt_2'(s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X17))),s('type.pair.prod'('type.num.num','type.num.num'),'const.integer.int_REP_1'(s('type.integer.int',X18)))))),
+  file('thm.integer.INT_LT_IMP_NE','thm.integer.int_lt')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 50
+% Passive clauses: 219
+% Generated clauses: 1252
+% Final active clauses: 37
+% Final passive clauses: 130
+% Input formulas: 38
+% Initial clauses: 54
+% 
+% Duplicate literals: 31
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 106
+% Fw demodulations: 230
+% Bw demodulations: 11
+% 
+% Simple tautologies: 16
+% Equational tautologies: 7
+% Forward subsumptions: 646
+% 
+% Binary resolution: 73
+% Factoring: 1
+% Forward superposition: 314
+% Backward superposition: 386
+% Self superposition: 19
+% Equality factoring: 8
+% 
+% Split clauses: 13
+% Split components: 26
+% SAT solver clauses: 30
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 15
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 13
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 26
+% TWLsolver calls for satisfiability: 13
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.033 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.036 s

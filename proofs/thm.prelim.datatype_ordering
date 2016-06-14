@@ -1,0 +1,94 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.prelim
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prelim
+% SZS output start Proof for thm.prelim
+fof(f521,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f520,f20])).
+fof(f20,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.prelim.datatype_ordering','thm.bool.TRUTH')).
+fof(f520,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(forward_demodulation,[],[f19,f24])).
+fof(f24,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X0,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X7] : ! [X8] : s(bool,'T_0') = s(bool,'const.bool.DATATYPE_1'(s(X7,X8)))),
+  file('thm.prelim.datatype_ordering','thm.bool.DATATYPE_TAG_THM')).
+fof(f19,plain,(
+  ~p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),sK0),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),sK0),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f15])).
+fof(f15,plain,(
+  ? [X0] : ~p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),X0),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0] : p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),X0),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),X6),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.bool.DATATYPE_1'(s(bool,happ(s(fun('type.prelim.ordering',bool),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',bool)),happ(s(fun('type.prelim.ordering',fun('type.prelim.ordering',fun('type.prelim.ordering',bool))),X6),s('type.prelim.ordering','const.prelim.LESS_0'))),s('type.prelim.ordering','const.prelim.EQUAL_0'))),s('type.prelim.ordering','const.prelim.GREATER_0'))))))),
+  file('thm.prelim.datatype_ordering','thm.prelim.datatype_ordering')).
+% SZS output end Proof for thm.prelim
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 57
+% Generated clauses: 470
+% Final active clauses: 12
+% Final passive clauses: 36
+% Input formulas: 7
+% Initial clauses: 7
+% 
+% Duplicate literals: 84
+% Trivial inequalities: 7
+% Fw subsumption resolutions: 6
+% Fw demodulations: 16
+% 
+% Simple tautologies: 25
+% Equational tautologies: 16
+% Forward subsumptions: 244
+% 
+% Binary resolution: 4
+% Forward superposition: 123
+% Backward superposition: 126
+% Self superposition: 49
+% Equality factoring: 40
+% Equality resolution: 1
+% 
+% Split clauses: 12
+% Split components: 24
+% SAT solver clauses: 18
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 12
+% 
+% Sat splits: 12
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.020 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.028 s

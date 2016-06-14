@@ -1,0 +1,96 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f59,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f56,f30])).
+fof(f30,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.NOT_F',aHL_TRUTH)).
+fof(f56,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(backward_demodulation,[],[f51,f28])).
+fof(f28,plain,(
+  ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,sK0)) & s(bool,'F_0') != s(bool,sK0)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f19])).
+fof(f19,plain,(
+  ? [X0] : (~p(s(bool,X0)) & s(bool,'F_0') != s(bool,X0))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : (~p(s(bool,X0)) => s(bool,'F_0') = s(bool,X0))),
+  inference(flattening,[],[f10])).
+fof(f10,plain,(
+  ~! [X0] : (~p(s(bool,X0)) => s(bool,'F_0') = s(bool,X0))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (~p(s(bool,X6)) => s(bool,'F_0') = s(bool,X6))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (~p(s(bool,X6)) => s(bool,'F_0') = s(bool,X6))),
+  file('thm.bool.NOT_F','thm.bool.NOT_F')).
+fof(f51,plain,(
+  s(bool,'T_0') = s(bool,sK0)),
+  inference(trivial_inequality_removal,[],[f47])).
+fof(f47,plain,(
+  s(bool,'F_0') != s(bool,'F_0') | s(bool,'T_0') = s(bool,sK0)),
+  inference(superposition,[],[f29,f32])).
+fof(f32,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.bool.NOT_F',aHL_BOOL_CASES)).
+fof(f29,plain,(
+  s(bool,'F_0') != s(bool,sK0)),
+  inference(cnf_transformation,[],[f26])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 6
+% Passive clauses: 13
+% Generated clauses: 28
+% Final active clauses: 4
+% Final passive clauses: 6
+% Input formulas: 8
+% Initial clauses: 12
+% 
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% Bw demodulations: 2
+% 
+% Simple tautologies: 3
+% Equational tautologies: 1
+% Forward subsumptions: 3
+% 
+% Forward superposition: 1
+% Backward superposition: 5
+% Self superposition: 2
+% Equality factoring: 2
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 4
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 2
+% 
+% Sat splits: 2
+% 
+% TWLsolver clauses: 4
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.002 s

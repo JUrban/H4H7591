@@ -1,0 +1,174 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.ringNorm
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ringNorm
+% SZS output start Proof for thm.ringNorm
+fof(f6495,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f6492,f135,f209,f207,f247,f136,f210,f208])).
+fof(f208,plain,(
+  s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) != s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) | $spl1),
+  inference(cnf_transformation,[],[f208_D])).
+fof(f208_D,plain,(
+  s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) != s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f210,plain,(
+  s(sK0,sK1) != s(sK0,sK2) | $spl3),
+  inference(cnf_transformation,[],[f210_D])).
+fof(f210_D,plain,(
+  s(sK0,sK1) != s(sK0,sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f136,plain,(
+  s(sK0,sK1) != s(sK0,sK2) | s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) != s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2)))),
+  inference(cnf_transformation,[],[f114])).
+fof(f114,plain,(
+  (s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) = s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) | s(sK0,sK1) = s(sK0,sK2)) & (s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) != s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) | s(sK0,sK1) != s(sK0,sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f113])).
+fof(f113,plain,(
+  ? [X0,X1,X2] : ((s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X1))) = s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X2))) | s(X0,X1) = s(X0,X2)) & (s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X1))) != s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X2))) | s(X0,X1) != s(X0,X2)))),
+  inference(nnf_transformation,[],[f97])).
+fof(f97,plain,(
+  ? [X0,X1,X2] : (s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X1))) = s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X2))) <~> s(X0,X1) = s(X0,X2))),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1,X2] : (s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X1))) = s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X2))) <=> s(X0,X1) = s(X0,X2))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X1))) = s('type.ringNorm.polynom'(X0),'const.ringNorm.Pconst_1'(s(X0,X2))) <=> s(X0,X1) = s(X0,X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.ringNorm.polynom'(X6),'const.ringNorm.Pconst_1'(s(X6,X7))) = s('type.ringNorm.polynom'(X6),'const.ringNorm.Pconst_1'(s(X6,X8))) <=> s(X6,X7) = s(X6,X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.ringNorm.polynom'(X6),'const.ringNorm.Pconst_1'(s(X6,X7))) = s('type.ringNorm.polynom'(X6),'const.ringNorm.Pconst_1'(s(X6,X8))) <=> s(X6,X7) = s(X6,X8))),
+  file('thm.ringNorm.polynom_|49||49||split|1','thm.ringNorm.polynom_|49||49||split|1')).
+fof(f247,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f246])).
+fof(f246,plain,(
+  s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) != s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f208,f209])).
+fof(f207,plain,(
+  s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) = s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) | $spl0),
+  inference(cnf_transformation,[],[f207_D])).
+fof(f207_D,plain,(
+  s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) = s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f209,plain,(
+  s(sK0,sK1) = s(sK0,sK2) | $spl2),
+  inference(cnf_transformation,[],[f209_D])).
+fof(f209_D,plain,(
+  s(sK0,sK1) = s(sK0,sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f135,plain,(
+  s(sK0,sK1) = s(sK0,sK2) | s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))) = s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK2)))),
+  inference(cnf_transformation,[],[f114])).
+fof(f6492,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f6491,f210])).
+fof(f6491,plain,(
+  s(sK0,sK1) = s(sK0,sK2) | $spl0),
+  inference(forward_demodulation,[],[f6468,f167])).
+fof(f167,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))),
+  inference(flattening,[],[f60])).
+fof(f60,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6] : ! [X7,X11] : s(X6,X7) = s(X6,'const.ind_type.FCONS_3'(s(X6,X7),s(fun('type.num.num',X6),X11),s('type.num.num','const.num.|48|_0')))),
+  file('thm.ringNorm.polynom_|49||49||split|1','thm.ind_type.FCONS|split|0')).
+fof(f6468,plain,(
+  ( ! [X2] : (s(sK0,sK2) = s(sK0,'const.ind_type.FCONS_3'(s(sK0,sK1),s(fun('type.num.num',sK0),X2),s('type.num.num','const.num.|48|_0')))) ) | $spl0),
+  inference(superposition,[],[f3985,f167])).
+fof(f3985,plain,(
+  ( ! [X165,X164] : (s(sK0,'const.ind_type.FCONS_3'(s(sK0,sK1),s(fun('type.num.num',sK0),X164),s('type.num.num',X165))) = s(sK0,'const.ind_type.FCONS_3'(s(sK0,sK2),s(fun('type.num.num',sK0),X164),s('type.num.num',X165)))) ) | $spl0),
+  inference(forward_demodulation,[],[f3922,f178])).
+fof(f178,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))) )),
+  inference(cnf_transformation,[],[f77])).
+fof(f77,plain,(
+  ! [X0,X1,X2,X3] : s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))),
+  inference(flattening,[],[f76])).
+fof(f76,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6] : ! [X9,X16,X22] : s(X6,'const.ind_type.FCONS_3'(s(X6,X9),s(fun('type.num.num',X6),X16),s('type.num.num',X22))) = s(X6,happ(s(fun('type.num.num',X6),happ(s(fun(fun('type.num.num',X6),fun('type.num.num',X6)),happ(s(fun(X6,fun(fun('type.num.num',X6),fun('type.num.num',X6))),'const.ind_type.FCONS_0'),s(X6,X9))),s(fun('type.num.num',X6),X16))),s('type.num.num',X22)))),
+  file('thm.ringNorm.polynom_|49||49||split|1','ARITY_0_3_const.ind_type.FCONS')).
+fof(f3922,plain,(
+  ( ! [X165,X164] : (s(sK0,'const.ind_type.FCONS_3'(s(sK0,sK2),s(fun('type.num.num',sK0),X164),s('type.num.num',X165))) = s(sK0,happ(s(fun('type.num.num',sK0),happ(s(fun(fun('type.num.num',sK0),fun('type.num.num',sK0)),happ(s(fun(sK0,fun(fun('type.num.num',sK0),fun('type.num.num',sK0))),'const.ind_type.FCONS_0'),s(sK0,sK1))),s(fun('type.num.num',sK0),X164))),s('type.num.num',X165)))) ) | $spl0),
+  inference(superposition,[],[f178,f3808])).
+fof(f3808,plain,(
+  ( ! [X0,X1] : (s(X0,happ(s(fun(sK0,X0),X1),s(sK0,sK1))) = s(X0,happ(s(fun(sK0,X0),X1),s(sK0,sK2)))) ) | $spl0),
+  inference(forward_demodulation,[],[f3670,f189])).
+fof(f189,plain,(
+  ( ! [X6,X4,X2,X0,X7,X5,X3,X1] : (s(X0,happ(s(fun(X1,X0),X4),s(X1,X2))) = s(X0,'const.ringNorm.polynom_CASE_6'(s('type.ringNorm.polynom'(X1),'const.ringNorm.Pconst_1'(s(X1,X2))),s(fun('type.quote.index',X0),X3),s(fun(X1,X0),X4),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X5),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X6),s(fun('type.ringNorm.polynom'(X1),X0),X7)))) )),
+  inference(cnf_transformation,[],[f92])).
+fof(f92,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6,X7] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X2))) = s(X0,'const.ringNorm.polynom_CASE_6'(s('type.ringNorm.polynom'(X1),'const.ringNorm.Pconst_1'(s(X1,X2))),s(fun('type.quote.index',X0),X3),s(fun(X1,X0),X4),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X5),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X6),s(fun('type.ringNorm.polynom'(X1),X0),X7)))),
+  inference(flattening,[],[f91])).
+fof(f91,plain,(
+  ! [X0,X1] : ! [X2,X3,X4,X5,X6,X7] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X2))) = s(X0,'const.ringNorm.polynom_CASE_6'(s('type.ringNorm.polynom'(X1),'const.ringNorm.Pconst_1'(s(X1,X2))),s(fun('type.quote.index',X0),X3),s(fun(X1,X0),X4),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X5),s(fun('type.ringNorm.polynom'(X1),fun('type.ringNorm.polynom'(X1),X0)),X6),s(fun('type.ringNorm.polynom'(X1),X0),X7)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X10,X6] : ! [X7,X11,X12,X13,X14,X15] : s(X10,happ(s(fun(X6,X10),X12),s(X6,X7))) = s(X10,'const.ringNorm.polynom_CASE_6'(s('type.ringNorm.polynom'(X6),'const.ringNorm.Pconst_1'(s(X6,X7))),s(fun('type.quote.index',X10),X11),s(fun(X6,X10),X12),s(fun('type.ringNorm.polynom'(X6),fun('type.ringNorm.polynom'(X6),X10)),X13),s(fun('type.ringNorm.polynom'(X6),fun('type.ringNorm.polynom'(X6),X10)),X14),s(fun('type.ringNorm.polynom'(X6),X10),X15)))),
+  file('thm.ringNorm.polynom_|49||49||split|1','thm.ringNorm.polynom_case_def|split|1')).
+fof(f3670,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X0,happ(s(fun(sK0,X0),X1),s(sK0,sK2))) = s(X0,'const.ringNorm.polynom_CASE_6'(s('type.ringNorm.polynom'(sK0),'const.ringNorm.Pconst_1'(s(sK0,sK1))),s(fun('type.quote.index',X0),X2),s(fun(sK0,X0),X1),s(fun('type.ringNorm.polynom'(sK0),fun('type.ringNorm.polynom'(sK0),X0)),X3),s(fun('type.ringNorm.polynom'(sK0),fun('type.ringNorm.polynom'(sK0),X0)),X4),s(fun('type.ringNorm.polynom'(sK0),X0),X5)))) ) | $spl0),
+  inference(superposition,[],[f189,f207])).
+% SZS output end Proof for thm.ringNorm
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 85
+% Passive clauses: 1572
+% Generated clauses: 6233
+% Final active clauses: 76
+% Final passive clauses: 1369
+% Input formulas: 37
+% Initial clauses: 72
+% 
+% Duplicate literals: 251
+% Trivial inequalities: 103
+% Fw subsumption resolutions: 675
+% Fw demodulations: 296
+% Bw demodulations: 5
+% 
+% Simple tautologies: 159
+% Equational tautologies: 42
+% Forward subsumptions: 2921
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 255
+% Factoring: 2
+% Forward superposition: 2193
+% Backward superposition: 2060
+% Self superposition: 143
+% Equality factoring: 94
+% Equality resolution: 15
+% 
+% Split clauses: 175
+% Split components: 356
+% SAT solver clauses: 320
+% SAT solver unit clauses: 28
+% SAT solver binary clauses: 121
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 175
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 316
+% TWLsolver calls for satisfiability: 113
+% 
+% Memory used [KB]: 7547
+% Time elapsed: 0.259 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.257 s

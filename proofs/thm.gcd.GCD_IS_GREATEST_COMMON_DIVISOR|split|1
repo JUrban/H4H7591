@@ -1,0 +1,111 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.gcd
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.gcd
+% SZS output start Proof for thm.gcd
+fof(f254,plain,(
+  $false),
+  inference(resolution,[],[f245,f25])).
+fof(f25,plain,(
+  ~p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK0),s('type.num.num',sK1))),s('type.num.num',sK1))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ~p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK0),s('type.num.num',sK1))),s('type.num.num',sK1))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f15])).
+fof(f15,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))),s('type.num.num',X1))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))),s('type.num.num',X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))),s('type.num.num',X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))),s('type.num.num',X7))))),
+  file('thm.gcd.GCD_IS_GREATEST_COMMON_DIVISOR|split|1','thm.gcd.GCD_IS_GREATEST_COMMON_DIVISOR|split|1')).
+fof(f245,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.divides.divides_2'(s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))),s('type.num.num',X1))))) )),
+  inference(resolution,[],[f32,f29])).
+fof(f29,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))) )),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ! [X0,X1] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))))))),
+  file('thm.gcd.GCD_IS_GREATEST_COMMON_DIVISOR|split|1','thm.gcd.GCD_IS_GCD')).
+fof(f32,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X4] : (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X1)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X2))))))) & (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) | (p(s(bool,'const.divides.divides_2'(s('type.num.num',sK3(X2,X1,X0)),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',sK3(X2,X1,X0)),s('type.num.num',X1)))) & ~p(s(bool,'const.divides.divides_2'(s('type.num.num',sK3(X2,X1,X0)),s('type.num.num',X2))))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3])],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X4] : (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X1)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X4),s('type.num.num',X2))))))) & (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) | ? [X3] : (p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) & ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2))))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))))))),
+  inference(rectify,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X3] : (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2))))))) & (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) | ? [X3] : (p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) & ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2))))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))))))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X3] : (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2))))))) & ((~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) | ? [X3] : (p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) & ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2)))))) | p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))))))),
+  inference(nnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) <=> (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X3] : (~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1)))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2)))))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) <=> (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X3] : ((~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) | ~p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1))))) | p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2)))))))),
+  inference(ennf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) <=> (p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X2),s('type.num.num',X1)))) & ! [X3] : ((p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X0)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X1))))) => p(s(bool,'const.divides.divides_2'(s('type.num.num',X3),s('type.num.num',X2)))))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7,X8] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num',X8)))) <=> (p(s(bool,'const.divides.divides_2'(s('type.num.num',X8),s('type.num.num',X6)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X8),s('type.num.num',X7)))) & ! [X9] : ((p(s(bool,'const.divides.divides_2'(s('type.num.num',X9),s('type.num.num',X6)))) & p(s(bool,'const.divides.divides_2'(s('type.num.num',X9),s('type.num.num',X7))))) => p(s(bool,'const.divides.divides_2'(s('type.num.num',X9),s('type.num.num',X8)))))))),
+  file('thm.gcd.GCD_IS_GREATEST_COMMON_DIVISOR|split|1','thm.gcd.is_gcd_def')).
+% SZS output end Proof for thm.gcd
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 16
+% Passive clauses: 42
+% Generated clauses: 223
+% Final active clauses: 13
+% Final passive clauses: 20
+% Input formulas: 7
+% Initial clauses: 12
+% 
+% Duplicate literals: 41
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 10
+% Bw demodulations: 1
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 88
+% 
+% Binary resolution: 13
+% Forward superposition: 45
+% Backward superposition: 46
+% Self superposition: 24
+% Equality factoring: 26
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 5
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 3
+% 
+% Sat splits: 3
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 5
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.018 s

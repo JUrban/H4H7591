@@ -1,0 +1,164 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.intExtension
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.intExtension
+% SZS output start Proof for thm.intExtension
+fof(f309,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f308,f69])).
+fof(f69,plain,(
+  s('type.integer.int',sK0) != s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',sK0)))),
+  inference(cnf_transformation,[],[f58])).
+fof(f58,plain,(
+  p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',sK0)))) & s('type.integer.int',sK0) != s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f48])).
+fof(f48,plain,(
+  ? [X0] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X0)))) & s('type.integer.int',X0) != s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X0))))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X0)))) => s('type.integer.int',X0) = s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X6)))) => s('type.integer.int',X6) = s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',X6)))) => s('type.integer.int',X6) = s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X6))))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.intExtension.INT_ABS_CALCULATE_POS')).
+fof(f308,plain,(
+  s('type.integer.int',sK0) = s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',sK0)))),
+  inference(forward_demodulation,[],[f297,f86])).
+fof(f86,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X10] : ! [X7,X8] : s(X10,X8) = s(X10,'const.bool.COND_3'(s(bool,'F_0'),s(X10,X7),s(X10,X8)))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.bool.COND_CLAUSES|split|1')).
+fof(f297,plain,(
+  s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',sK0))) = s('type.integer.int','const.bool.COND_3'(s(bool,'F_0'),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',sK0))),s('type.integer.int',sK0)))),
+  inference(superposition,[],[f73,f255])).
+fof(f255,plain,(
+  s(bool,'F_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(resolution,[],[f252,f81])).
+fof(f81,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.bool.EQ_CLAUSES|split|3')).
+fof(f252,plain,(
+  ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))))),
+  inference(subsumption_resolution,[],[f246,f70])).
+fof(f70,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS',aHL_TRUTH)).
+fof(f246,plain,(
+  ~p(s(bool,'T_0')) | ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',sK0),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))))),
+  inference(superposition,[],[f94,f116])).
+fof(f116,plain,(
+  s(bool,'T_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',sK0)))),
+  inference(resolution,[],[f68,f77])).
+fof(f77,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.bool.EQ_CLAUSES|split|1')).
+fof(f68,plain,(
+  p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int',sK0))))),
+  inference(cnf_transformation,[],[f58])).
+fof(f94,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X1),s('type.integer.int',X0))))) )),
+  inference(cnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X1),s('type.integer.int',X0)))))),
+  inference(ennf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X1),s('type.integer.int',X0)))))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) => ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X1),s('type.integer.int',X0)))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X11,X12] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X11),s('type.integer.int',X12)))) => ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X12),s('type.integer.int',X11)))))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.integer.INT_LT_GT')).
+fof(f73,plain,(
+  ( ! [X0] : (s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X0))) = s('type.integer.int','const.bool.COND_3'(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))),s('type.integer.int',X0)))) )),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X0))) = s('type.integer.int','const.bool.COND_3'(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X0))),s('type.integer.int',X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X18] : s('type.integer.int','const.integer.ABS_1'(s('type.integer.int',X18))) = s('type.integer.int','const.bool.COND_3'(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X18),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))))),s('type.integer.int','const.integer.int_neg_1'(s('type.integer.int',X18))),s('type.integer.int',X18)))),
+  file('thm.intExtension.INT_ABS_CALCULATE_POS','thm.integer.INT_ABS')).
+% SZS output end Proof for thm.intExtension
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 22
+% Passive clauses: 69
+% Generated clauses: 239
+% Final active clauses: 20
+% Final passive clauses: 35
+% Input formulas: 20
+% Initial clauses: 38
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 13
+% Fw demodulations: 27
+% Bw demodulations: 2
+% 
+% Simple tautologies: 16
+% Equational tautologies: 5
+% Forward subsumptions: 103
+% 
+% Binary resolution: 34
+% Factoring: 1
+% Forward superposition: 45
+% Backward superposition: 63
+% Self superposition: 7
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.021 s

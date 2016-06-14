@@ -1,0 +1,240 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.measure
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.measure
+% SZS output start Proof for thm.measure
+fof(f4072,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4071,f113,f176,f116,f179,f651,f177,f652,f184])).
+fof(f184,plain,(
+  $false | ($spl4 | $spl7)),
+  inference(subsumption_resolution,[],[f179,f177])).
+fof(f652,plain,(
+  ( ! [X6,X7] : (s(bool,'T_0') = s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),'const.pred_set.UNIV_0'),s(fun(fun(X6,bool),bool),X7)))) ) | $spl24),
+  inference(cnf_transformation,[],[f652_D])).
+fof(f652_D,plain,(
+  ( ! [X6,X7] : (s(bool,'T_0') = s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),'const.pred_set.UNIV_0'),s(fun(fun(X6,bool),bool),X7)))) ) <=> ~$spl24),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl24])])).
+fof(f177,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl4),
+  inference(cnf_transformation,[],[f177_D])).
+fof(f177_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f651,plain,(
+  ( ! [X6,X8,X7] : (p(s(bool,X8)) | s(bool,'T_0') = s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),'const.pred_set.UNIV_0'),s(fun(fun(X6,bool),bool),X7)))) ) | $spl2),
+  inference(subsumption_resolution,[],[f648,f118])).
+fof(f118,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f87])).
+fof(f87,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X7] : (s(bool,'T_0') = s(bool,X7) <=> p(s(bool,X7)))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.bool.EQ_CLAUSES|split|1')).
+fof(f648,plain,(
+  ( ! [X6,X8,X7] : (p(s(bool,X8)) | s(bool,'T_0') = s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),'const.pred_set.UNIV_0'),s(fun(fun(X6,bool),bool),X7))) | s(bool,'T_0') = s(bool,X8)) ) | $spl2),
+  inference(superposition,[],[f639,f193])).
+fof(f193,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f117,f117])).
+fof(f117,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL',aHL_BOOL_CASES)).
+fof(f639,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),'const.pred_set.UNIV_0'),s(fun(fun(X0,bool),bool),X1))))) ) | $spl2),
+  inference(subsumption_resolution,[],[f632,f176])).
+fof(f632,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),'const.pred_set.UNIV_0'),s(fun(fun(X0,bool),bool),X1))))) )),
+  inference(superposition,[],[f150,f214])).
+fof(f214,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) )),
+  inference(resolution,[],[f141,f119])).
+fof(f119,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f87])).
+fof(f141,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))) )),
+  inference(cnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : ! [X1] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0'))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : ! [X17] : p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X17),s(fun(X6,bool),'const.pred_set.UNIV_0'))))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.pred_set.SUBSET_UNIV')).
+fof(f150,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),sK0(X2,X1,X0)),s(fun(X0,bool),X1)))) | p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2))))) )),
+  inference(cnf_transformation,[],[f106])).
+fof(f106,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) | ! [X4] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X4),s(fun(fun(X0,bool),bool),X2)))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X4),s(fun(X0,bool),X1)))))) & ((p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),sK0(X2,X1,X0)),s(fun(fun(X0,bool),bool),X2)))) & ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),sK0(X2,X1,X0)),s(fun(X0,bool),X1))))) | p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f105])).
+fof(f105,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) | ! [X4] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X4),s(fun(fun(X0,bool),bool),X2)))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X4),s(fun(X0,bool),X1)))))) & (? [X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) & ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1))))) | p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2))))))),
+  inference(rectify,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) | ! [X3] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1)))))) & (? [X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) & ~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1))))) | p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2))))))),
+  inference(nnf_transformation,[],[f81])).
+fof(f81,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) <=> ! [X3] : (~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) | p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1))))))),
+  inference(ennf_transformation,[],[f57])).
+fof(f57,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) <=> ! [X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) => p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1))))))),
+  inference(flattening,[],[f56])).
+fof(f56,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) <=> ! [X3] : (p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X3),s(fun(fun(X0,bool),bool),X2)))) => p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X1))))))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6] : ! [X15,X16] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),X15),s(fun(fun(X6,bool),bool),X16)))) <=> ! [X8] : (p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),X16)))) => p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X8),s(fun(X6,bool),X15))))))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.measure.subset_class_def')).
+fof(f179,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f179_D])).
+fof(f179_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f116,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL',aHL_FALSITY)).
+fof(f176,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f176_D])).
+fof(f176_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f113,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL',aHL_TRUTH)).
+fof(f4071,plain,(
+  $false | ($spl2 | $spl7 | $spl24)),
+  inference(subsumption_resolution,[],[f4070,f176])).
+fof(f4070,plain,(
+  ~p(s(bool,'T_0')) | ($spl7 | $spl24)),
+  inference(forward_demodulation,[],[f4069,f652])).
+fof(f4069,plain,(
+  ~p(s(bool,'const.measure.subset_class_2'(s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'),s(fun(fun('type.extreal.extreal',bool),bool),'const.pred_set.IMAGE_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x0x1_2'(s(fun(fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool)),fun('type.extreal.extreal',bool)),'const.pred_set.GSPEC_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool))),'_dst_x01x11_2'(s(fun('type.extreal.extreal',fun(bool,'type.pair.prod'('type.extreal.extreal',bool))),'const.pair.,_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x01x10_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'const.extreal.extreal_lt_0'),s(fun('type.extreal.extreal','type.extreal.extreal'),'_i_0_0'))))))),s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0')))))) | $spl7),
+  inference(subsumption_resolution,[],[f4068,f179])).
+fof(f4068,plain,(
+  p(s(bool,'F_0')) | ~p(s(bool,'const.measure.subset_class_2'(s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'),s(fun(fun('type.extreal.extreal',bool),bool),'const.pred_set.IMAGE_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x0x1_2'(s(fun(fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool)),fun('type.extreal.extreal',bool)),'const.pred_set.GSPEC_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool))),'_dst_x01x11_2'(s(fun('type.extreal.extreal',fun(bool,'type.pair.prod'('type.extreal.extreal',bool))),'const.pair.,_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x01x10_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'const.extreal.extreal_lt_0'),s(fun('type.extreal.extreal','type.extreal.extreal'),'_i_0_0'))))))),s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'))))))),
+  inference(forward_demodulation,[],[f4060,f217])).
+fof(f217,plain,(
+  s(bool,'F_0') = s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0')))),
+  inference(resolution,[],[f112,f123])).
+fof(f123,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f89])).
+fof(f89,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X7] : (s(bool,'F_0') = s(bool,X7) <=> ~p(s(bool,X7)))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.bool.EQ_CLAUSES|split|3')).
+fof(f112,plain,(
+  ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0'))))),
+  inference(cnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0'))))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0'))))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.measure.SIGMA_ALGEBRA_BOREL')).
+fof(f4060,plain,(
+  p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0')))) | ~p(s(bool,'const.measure.subset_class_2'(s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'),s(fun(fun('type.extreal.extreal',bool),bool),'const.pred_set.IMAGE_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x0x1_2'(s(fun(fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool)),fun('type.extreal.extreal',bool)),'const.pred_set.GSPEC_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool))),'_dst_x01x11_2'(s(fun('type.extreal.extreal',fun(bool,'type.pair.prod'('type.extreal.extreal',bool))),'const.pair.,_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x01x10_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'const.extreal.extreal_lt_0'),s(fun('type.extreal.extreal','type.extreal.extreal'),'_i_0_0'))))))),s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'))))))),
+  inference(superposition,[],[f145,f115])).
+fof(f115,plain,(
+  s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0') = s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.sigma_2'(s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'),s(fun(fun('type.extreal.extreal',bool),bool),'const.pred_set.IMAGE_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x0x1_2'(s(fun(fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool)),fun('type.extreal.extreal',bool)),'const.pred_set.GSPEC_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool))),'_dst_x01x11_2'(s(fun('type.extreal.extreal',fun(bool,'type.pair.prod'('type.extreal.extreal',bool))),'const.pair.,_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x01x10_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'const.extreal.extreal_lt_0'),s(fun('type.extreal.extreal','type.extreal.extreal'),'_i_0_0'))))))),s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0')))))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,axiom,(
+  s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.Borel_0') = s('type.pair.prod'(fun('type.extreal.extreal',bool),fun(fun('type.extreal.extreal',bool),bool)),'const.measure.sigma_2'(s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0'),s(fun(fun('type.extreal.extreal',bool),bool),'const.pred_set.IMAGE_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x0x1_2'(s(fun(fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool)),fun('type.extreal.extreal',bool)),'const.pred_set.GSPEC_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal','type.pair.prod'('type.extreal.extreal',bool))),'_dst_x01x11_2'(s(fun('type.extreal.extreal',fun(bool,'type.pair.prod'('type.extreal.extreal',bool))),'const.pair.,_0'),s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'_dst_x01x10_2'(s(fun('type.extreal.extreal',fun('type.extreal.extreal',bool)),'const.extreal.extreal_lt_0'),s(fun('type.extreal.extreal','type.extreal.extreal'),'_i_0_0'))))))),s(fun('type.extreal.extreal',bool),'const.pred_set.UNIV_0')))))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.measure.Borel_def')).
+fof(f145,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.measure.sigma_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))) | ~p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2))))) )),
+  inference(cnf_transformation,[],[f80])).
+fof(f80,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) | p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.measure.sigma_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))))),
+  inference(ennf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.measure.sigma_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))))),
+  inference(flattening,[],[f52])).
+fof(f52,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X0,bool),fun(fun(X0,bool),bool)),'const.measure.sigma_2'(s(fun(X0,bool),X1),s(fun(fun(X0,bool),bool),X2)))))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X6] : ! [X15,X16] : (p(s(bool,'const.measure.subset_class_2'(s(fun(X6,bool),X15),s(fun(fun(X6,bool),bool),X16)))) => p(s(bool,'const.measure.sigma_algebra_1'(s('type.pair.prod'(fun(X6,bool),fun(fun(X6,bool),bool)),'const.measure.sigma_2'(s(fun(X6,bool),X15),s(fun(fun(X6,bool),bool),X16)))))))),
+  file('thm.measure.SIGMA_ALGEBRA_BOREL','thm.measure.SIGMA_ALGEBRA_SIGMA')).
+% SZS output end Proof for thm.measure
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 70
+% Passive clauses: 779
+% Generated clauses: 3875
+% Final active clauses: 63
+% Final passive clauses: 648
+% Input formulas: 31
+% Initial clauses: 61
+% 
+% Duplicate literals: 243
+% Trivial inequalities: 101
+% Fw subsumption resolutions: 372
+% Fw demodulations: 301
+% Bw demodulations: 3
+% 
+% Simple tautologies: 178
+% Equational tautologies: 20
+% Forward subsumptions: 1692
+% 
+% Binary resolution: 65
+% Forward superposition: 1251
+% Backward superposition: 1266
+% Self superposition: 93
+% Equality factoring: 46
+% Equality resolution: 21
+% 
+% Split clauses: 131
+% Split components: 268
+% SAT solver clauses: 254
+% SAT solver unit clauses: 19
+% SAT solver binary clauses: 82
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 131
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 249
+% TWLsolver calls for satisfiability: 67
+% 
+% Memory used [KB]: 4093
+% Time elapsed: 0.150 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.153 s

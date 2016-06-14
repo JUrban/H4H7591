@@ -1,0 +1,110 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f713,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f24,f640])).
+fof(f640,plain,(
+  ( ! [X0,X1] : (s(bool,'const.pred_set.count_2'(s('type.num.num',X1),s('type.num.num',X0))) = s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) )),
+  inference(backward_demodulation,[],[f585,f30])).
+fof(f30,plain,(
+  ( ! [X0,X1] : (s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.bool.IN_2'(s('type.num.num',X0),s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.bool.IN_2'(s('type.num.num',X0),s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7))) = s(bool,'const.bool.IN_2'(s('type.num.num',X6),s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X7)))))),
+  file('thm.pred_set.COUNT_applied','thm.pred_set.IN_COUNT')).
+fof(f585,plain,(
+  ( ! [X2,X3] : (s(bool,'const.pred_set.count_2'(s('type.num.num',X2),s('type.num.num',X3))) = s(bool,'const.bool.IN_2'(s('type.num.num',X3),s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X2)))))) )),
+  inference(superposition,[],[f31,f29])).
+fof(f29,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8] : ! [X5,X9] : s(bool,'const.bool.IN_2'(s(X8,X5),s(fun(X8,bool),X9))) = s(bool,happ(s(fun(X8,bool),X9),s(X8,X5)))),
+  file('thm.pred_set.COUNT_applied','thm.bool.IN_DEF')).
+fof(f31,plain,(
+  ( ! [X0,X1] : (s(bool,'const.pred_set.count_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,happ(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))),s('type.num.num',X1)))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : s(bool,'const.pred_set.count_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,happ(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))),s('type.num.num',X1)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X11,X12] : s(bool,'const.pred_set.count_2'(s('type.num.num',X11),s('type.num.num',X12))) = s(bool,happ(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X11))),s('type.num.num',X12)))),
+  file('thm.pred_set.COUNT_applied','ARITY_1_2_const.pred_set.count')).
+fof(f24,plain,(
+  s(bool,'const.pred_set.count_2'(s('type.num.num',sK1),s('type.num.num',sK0))) != s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  s(bool,'const.pred_set.count_2'(s('type.num.num',sK1),s('type.num.num',sK0))) != s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f20])).
+fof(f20,plain,(
+  ? [X0,X1] : s(bool,'const.pred_set.count_2'(s('type.num.num',X1),s('type.num.num',X0))) != s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1] : s(bool,'const.pred_set.count_2'(s('type.num.num',X1),s('type.num.num',X0))) = s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,'const.pred_set.count_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,'const.pred_set.count_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))),
+  file('thm.pred_set.COUNT_applied','thm.pred_set.COUNT_applied')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 138
+% Generated clauses: 673
+% Final active clauses: 13
+% Final passive clauses: 74
+% Input formulas: 9
+% Initial clauses: 9
+% 
+% Duplicate literals: 64
+% Trivial inequalities: 11
+% Fw subsumption resolutions: 23
+% Fw demodulations: 80
+% Bw demodulations: 4
+% 
+% Simple tautologies: 24
+% Equational tautologies: 15
+% Forward subsumptions: 309
+% 
+% Binary resolution: 6
+% Forward superposition: 190
+% Backward superposition: 210
+% Self superposition: 35
+% Equality factoring: 28
+% Equality resolution: 1
+% 
+% Split clauses: 6
+% Split components: 12
+% SAT solver clauses: 9
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 2
+% 
+% Sat splits: 6
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 9
+% TWLsolver calls for satisfiability: 5
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.023 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.025 s

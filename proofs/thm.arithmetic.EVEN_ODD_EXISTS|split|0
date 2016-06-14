@@ -1,0 +1,438 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% (102550)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 421
+% Passive clauses: 3626
+% Generated clauses: 31410
+% Final active clauses: 272
+% Final passive clauses: 2592
+% Input formulas: 69
+% Initial clauses: 117
+% 
+% Duplicate literals: 468
+% Trivial inequalities: 718
+% Fw subsumption resolutions: 2433
+% Fw demodulations: 6131
+% Bw demodulations: 146
+% 
+% Simple tautologies: 385
+% Equational tautologies: 47
+% Forward subsumptions: 16919
+% Fw demodulations to eq. taut.: 28
+% 
+% Binary resolution: 1225
+% Factoring: 1
+% Forward superposition: 11073
+% Backward superposition: 8732
+% Self superposition: 115
+% Equality factoring: 76
+% Equality resolution: 24
+% 
+% Split clauses: 89
+% Split components: 178
+% SAT solver clauses: 310
+% SAT solver unit clauses: 17
+% SAT solver binary clauses: 93
+% 
+% Sat splits: 89
+% Sat splitting refutations: 18
+% 
+% TWLsolver clauses: 309
+% TWLsolver calls for satisfiability: 75
+% 
+% Memory used [KB]: 13688
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 144 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.arithmetic
+% (102565)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 344
+% Passive clauses: 2511
+% Generated clauses: 23763
+% Final active clauses: 166
+% Final passive clauses: 763
+% Input formulas: 69
+% Initial clauses: 117
+% 
+% Duplicate literals: 74
+% Trivial inequalities: 280
+% Fw subsumption resolutions: 1423
+% Fw demodulations: 5281
+% Bw demodulations: 1494
+% Condensations: 146
+% Global subsumptions: 10
+% 
+% Simple tautologies: 243
+% Equational tautologies: 14
+% Forward subsumptions: 10963
+% Fw demodulations to eq. taut.: 13
+% Bw demodulations to eq. taut.: 26
+% 
+% Binary resolution: 513
+% Factoring: 1
+% Forward superposition: 5965
+% Backward superposition: 4688
+% Self superposition: 61
+% Equality factoring: 8
+% Equality resolution: 59
+% 
+% Split clauses: 63
+% Split components: 126
+% SAT solver clauses: 2303
+% SAT solver unit clauses: 147
+% SAT solver binary clauses: 77
+% SAT solver learnt clauses: 20
+% 
+% Sat splits: 63
+% Sat splitting refutations: 83
+% 
+% TWLsolver clauses: 2263
+% TWLsolver calls for satisfiability: 583
+% 
+% Memory used [KB]: 16119
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f5624,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f5623,f1910])).
+fof(f1910,plain,(
+  ( ! [X4] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X4),s('type.num.num','const.num.SUC_1'(s('type.num.num',X4))))))))) )),
+  inference(subsumption_resolution,[],[f1909,f209])).
+fof(f209,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f8])).
+fof(f8,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.bool.TRUTH')).
+fof(f1909,plain,(
+  ( ! [X4] : (~p(s(bool,'T_0')) | ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X4),s('type.num.num','const.num.SUC_1'(s('type.num.num',X4))))))))) )),
+  inference(forward_demodulation,[],[f1908,f647])).
+fof(f647,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X0)))))) )),
+  inference(unit_resulting_resolution,[],[f342,f242])).
+fof(f242,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f165])).
+fof(f165,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f93])).
+fof(f93,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X12] : (s(bool,'T_0') = s(bool,X12) <=> p(s(bool,X12)))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.bool.EQ_CLAUSES|split|1')).
+fof(f342,plain,(
+  ( ! [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X0))))))) )),
+  inference(forward_demodulation,[],[f230,f221])).
+fof(f221,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X13] : s('type.num.num',X13) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X13)))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.NUMERAL_DEF')).
+fof(f230,plain,(
+  ( ! [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0))))))) )),
+  inference(cnf_transformation,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0))))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6] : p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X6))))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.EVEN_DOUBLE')).
+fof(f1908,plain,(
+  ( ! [X4] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X4),s('type.num.num','const.num.SUC_1'(s('type.num.num',X4)))))))) | ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X4))))))) )),
+  inference(forward_demodulation,[],[f1871,f290])).
+fof(f290,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num',X0)))))),
+  inference(rectify,[],[f37])).
+fof(f37,axiom,(
+  ! [X6,X7] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num',X6)))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.ADD_CLAUSES|split|3')).
+fof(f1871,plain,(
+  ( ! [X4] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X4),s('type.num.num',X4)))))))) | ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X4))))))) )),
+  inference(superposition,[],[f253,f344])).
+fof(f344,plain,(
+  ( ! [X0] : (s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X0))) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X0)))) )),
+  inference(forward_demodulation,[],[f232,f221])).
+fof(f232,plain,(
+  ( ! [X0] : (s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X0))) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f86])).
+fof(f86,plain,(
+  ! [X0] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num',X0))) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X6),s('type.num.num',X6))) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X6)))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.TIMES2')).
+fof(f253,plain,(
+  ( ! [X0] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))) | ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0))))) )),
+  inference(cnf_transformation,[],[f171])).
+fof(f171,plain,(
+  ! [X0] : ((~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))) | ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0))))) & (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))))),
+  inference(nnf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))) <=> ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))))),
+  inference(flattening,[],[f103])).
+fof(f103,plain,(
+  ! [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))) <=> ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X6)))))) <=> ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6)))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.EVEN|split|1')).
+fof(f5623,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num','const.num.SUC_1'(s('type.num.num',sK4(sK0)))))))))),
+  inference(forward_demodulation,[],[f5622,f290])).
+fof(f5622,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))))))))),
+  inference(forward_demodulation,[],[f5621,f1989])).
+fof(f1989,plain,(
+  ( ! [X1] : (s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X1),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))) )),
+  inference(superposition,[],[f290,f339])).
+fof(f339,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.ZERO_0')))) )),
+  inference(forward_demodulation,[],[f227,f211])).
+fof(f211,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,axiom,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.ALT_ZERO')).
+fof(f227,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f81])).
+fof(f81,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f36])).
+fof(f36,axiom,(
+  ! [X7] : s('type.num.num',X7) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num',X7),s('type.num.num','const.num.|48|_0')))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.ADD_|48|')).
+fof(f5621,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))))),
+  inference(subsumption_resolution,[],[f5620,f209])).
+fof(f5620,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))))) | ~p(s(bool,'T_0'))),
+  inference(condensation,[],[f5619])).
+fof(f5619,plain,(
+  ( ! [X17] : (~p(s(bool,'T_0')) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X17))))) )),
+  inference(forward_demodulation,[],[f5532,f1475])).
+fof(f1475,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',sK0),s('type.num.num',X0)))))) )),
+  inference(unit_resulting_resolution,[],[f1303,f242])).
+fof(f1303,plain,(
+  ( ! [X17] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',sK0),s('type.num.num',X17))))))) )),
+  inference(forward_demodulation,[],[f1302,f891])).
+fof(f891,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(sK0))))),
+  inference(unit_resulting_resolution,[],[f429,f347])).
+fof(f347,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(X0)))) | s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num',X0)) )),
+  inference(forward_demodulation,[],[f236,f211])).
+fof(f236,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(X0)))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(cnf_transformation,[],[f162])).
+fof(f162,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1])],[f89])).
+fof(f89,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | ? [X1] : s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))))),
+  inference(rectify,[],[f68])).
+fof(f68,axiom,(
+  ! [X7] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X7) | ? [X6] : s('type.num.num',X7) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.num_CASES')).
+fof(f429,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') != s('type.num.num',sK0)),
+  inference(superposition,[],[f333,f336])).
+fof(f336,plain,(
+  ( ! [X0] : (s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.ZERO_0')))) )),
+  inference(forward_demodulation,[],[f224,f211])).
+fof(f224,plain,(
+  ( ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f78])).
+fof(f78,plain,(
+  ! [X0] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f44])).
+fof(f44,axiom,(
+  ! [X7] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X7),s('type.num.num','const.num.|48|_0')))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.MULT_|48|')).
+fof(f333,plain,(
+  ( ! [X1] : (s('type.num.num',sK0) != s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',X1)))) )),
+  inference(backward_demodulation,[],[f221,f208])).
+fof(f208,plain,(
+  ( ! [X1] : (s('type.num.num',sK0) != s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X1)))) )),
+  inference(cnf_transformation,[],[f159])).
+fof(f159,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK0)))) & ! [X1] : s('type.num.num',sK0) != s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f148])).
+fof(f148,plain,(
+  ? [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) & ! [X1] : s('type.num.num',X0) != s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X1))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) => ? [X1] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6)))) => ? [X7] : s('type.num.num',X6) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6)))) => ? [X7] : s('type.num.num',X6) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X7))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.EVEN_ODD_EXISTS|split|0')).
+fof(f1302,plain,(
+  ( ! [X17] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(sK0)))),s('type.num.num',X17))))))) )),
+  inference(subsumption_resolution,[],[f1301,f209])).
+fof(f1301,plain,(
+  ( ! [X17] : (~p(s(bool,'T_0')) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(sK0)))),s('type.num.num',X17))))))) )),
+  inference(forward_demodulation,[],[f1273,f391])).
+fof(f391,plain,(
+  s(bool,'T_0') = s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK0)))),
+  inference(unit_resulting_resolution,[],[f207,f242])).
+fof(f207,plain,(
+  p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK0))))),
+  inference(cnf_transformation,[],[f159])).
+fof(f1273,plain,(
+  ( ! [X17] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',sK0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(sK0)))),s('type.num.num',X17))))))) )),
+  inference(superposition,[],[f309,f891])).
+fof(f309,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1))))))) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1)))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1))))) & ((~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) & ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1))))))))),
+  inference(flattening,[],[f198])).
+fof(f198,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1)))))) | (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1)))))) & ((~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) & ~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1))))))))),
+  inference(nnf_transformation,[],[f138])).
+fof(f138,plain,(
+  ! [X0,X1] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1)))))) <=> (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1))))))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X7,X6] : (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X7),s('type.num.num',X6)))))) <=> (p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X7)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X6))))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.EVEN_MULT')).
+fof(f5532,plain,(
+  ( ! [X17] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',sK0),s('type.num.num',X17)))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X17))))) )),
+  inference(superposition,[],[f308,f4917])).
+fof(f4917,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num',sK4(sK0)),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(forward_demodulation,[],[f4843,f344])).
+fof(f4843,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',sK4(sK0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(unit_resulting_resolution,[],[f333,f355])).
+fof(f355,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',sK4(X0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',sK4(X0))))) )),
+  inference(forward_demodulation,[],[f354,f332])).
+fof(f332,plain,(
+  s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(backward_demodulation,[],[f221,f330])).
+fof(f330,plain,(
+  s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(forward_demodulation,[],[f215,f329])).
+fof(f329,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(forward_demodulation,[],[f214,f211])).
+fof(f214,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,axiom,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.ONE')).
+fof(f215,plain,(
+  s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,axiom,(
+  s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.TWO')).
+fof(f354,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',sK4(X0)))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',sK4(X0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0')))))) )),
+  inference(forward_demodulation,[],[f353,f211])).
+fof(f353,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num','const.arithmetic.ZERO_0'))),s('type.num.num',sK4(X0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0))))) )),
+  inference(forward_demodulation,[],[f352,f332])).
+fof(f352,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',sK4(X0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0))))) )),
+  inference(forward_demodulation,[],[f351,f211])).
+fof(f351,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0)))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0))))) )),
+  inference(forward_demodulation,[],[f288,f329])).
+fof(f288,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0)))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0))))) )),
+  inference(cnf_transformation,[],[f191])).
+fof(f191,plain,(
+  ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0)))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',sK4(X0)))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK4])],[f127])).
+fof(f127,plain,(
+  ! [X0] : ? [X1] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',X1))) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',X1))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))))),
+  inference(rectify,[],[f51])).
+fof(f51,axiom,(
+  ! [X6] : ? [X7] : (s('type.num.num',X6) = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',X7))) | s('type.num.num',X6) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))),s('type.num.num',X7))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))))),
+  file('thm.arithmetic.EVEN_ODD_EXISTS|split|0','thm.arithmetic.ODD_OR_EVEN')).
+fof(f308,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',X1)))))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X0)))) | p(s(bool,'const.arithmetic.EVEN_1'(s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f199])).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 140
+% Passive clauses: 847
+% Generated clauses: 5409
+% Final active clauses: 115
+% Final passive clauses: 700
+% Input formulas: 69
+% Initial clauses: 117
+% 
+% Duplicate literals: 2
+% Trivial inequalities: 14
+% Fw subsumption resolutions: 120
+% Fw demodulations: 1492
+% Bw demodulations: 29
+% Condensations: 18
+% 
+% Simple tautologies: 53
+% Equational tautologies: 83
+% Forward subsumptions: 2692
+% Fw demodulations to eq. taut.: 34
+% 
+% Unit resulting resolution: 1338
+% Factoring: 1
+% Forward superposition: 1437
+% Backward superposition: 807
+% Self superposition: 22
+% Equality factoring: 2
+% Equality resolution: 6
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 857
+% SAT solver unit clauses: 593
+% SAT solver binary clauses: 187
+% 
+% Sat splits: 2
+% Sat splitting refutations: 4
+% 
+% Memory used [KB]: 4605
+% Time elapsed: 0.126 s
+% ------------------------------
+% ------------------------------
+% Success in time 1.442 s

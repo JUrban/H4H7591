@@ -1,0 +1,91 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.quotient_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quotient_list
+% SZS output start Proof for thm.quotient_list
+fof(f5276,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f5272])).
+fof(f5272,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK13),sK17))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK13),sK17)))),
+  inference(superposition,[],[f330,f436])).
+fof(f436,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X3),s('type.list.list'(X1),X2)))))) )),
+  inference(cnf_transformation,[],[f138])).
+fof(f138,plain,(
+  ! [X0,X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X3),s('type.list.list'(X1),X2)))))),
+  inference(flattening,[],[f137])).
+fof(f137,plain,(
+  ! [X0,X1] : ! [X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X3),s('type.list.list'(X1),X2)))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7,X6] : ! [X11,X12] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X11))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X7),'const.list.MAP_2'(s(fun(X6,X7),X12),s('type.list.list'(X6),X11)))))),
+  file('thm.quotient_list.LENGTH_PRS','thm.list.LENGTH_MAP')).
+fof(f330,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK13),sK17))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK12),'const.list.MAP_2'(s(fun(sK13,sK12),sK16),s('type.list.list'(sK13),sK17)))))),
+  inference(cnf_transformation,[],[f241])).
+fof(f241,plain,(
+  p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(sK12,fun(sK12,bool)),sK14),s(fun(sK12,sK13),sK15),s(fun(sK13,sK12),sK16)))) & s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK13),sK17))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK12),'const.list.MAP_2'(s(fun(sK13,sK12),sK16),s('type.list.list'(sK13),sK17)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15,sK16,sK17])],[f185])).
+fof(f185,plain,(
+  ? [X0,X1,X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) & ? [X5] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X5))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X4),s('type.list.list'(X1),X5))))))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) => ! [X5] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X5))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X4),s('type.list.list'(X1),X5))))))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X0,fun(X0,bool)),X2),s(fun(X0,X1),X3),s(fun(X1,X0),X4)))) => ! [X5] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X1),X5))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.MAP_2'(s(fun(X1,X0),X4),s('type.list.list'(X1),X5))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X6,fun(X6,bool)),X8),s(fun(X6,X7),X9),s(fun(X7,X6),X10)))) => ! [X11] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X7),X11))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.list.MAP_2'(s(fun(X7,X6),X10),s('type.list.list'(X7),X11))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : (p(s(bool,'const.quotient.QUOTIENT_3'(s(fun(X6,fun(X6,bool)),X8),s(fun(X6,X7),X9),s(fun(X7,X6),X10)))) => ! [X11] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X7),X11))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.list.MAP_2'(s(fun(X7,X6),X10),s('type.list.list'(X7),X11))))))),
+  file('thm.quotient_list.LENGTH_PRS','thm.quotient_list.LENGTH_PRS')).
+% SZS output end Proof for thm.quotient_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 374
+% Passive clauses: 1560
+% Generated clauses: 4932
+% Final active clauses: 374
+% Final passive clauses: 1078
+% Input formulas: 69
+% Initial clauses: 209
+% 
+% Duplicate literals: 142
+% Trivial inequalities: 12
+% Fw subsumption resolutions: 371
+% Fw demodulations: 159
+% 
+% Simple tautologies: 160
+% Equational tautologies: 22
+% Forward subsumptions: 2430
+% 
+% Binary resolution: 2575
+% Factoring: 703
+% Forward superposition: 372
+% Backward superposition: 333
+% Self superposition: 4
+% Equality factoring: 2
+% Equality resolution: 6
+% 
+% Split clauses: 115
+% Split components: 231
+% SAT solver clauses: 186
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 34
+% 
+% Sat splits: 115
+% 
+% TWLsolver clauses: 186
+% TWLsolver calls for satisfiability: 161
+% 
+% Memory used [KB]: 2558
+% Time elapsed: 0.105 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.109 s

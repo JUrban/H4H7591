@@ -1,0 +1,129 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.quantHeuristics
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quantHeuristics
+% SZS output start Proof for thm.quantHeuristics
+fof(f1592,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1571,f120,f192])).
+fof(f192,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f192_D])).
+fof(f192_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f120,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.quantHeuristics.GUESS_RULES_NEG|split|4','thm.bool.TRUTH')).
+fof(f1571,plain,(
+  $false | $spl2),
+  inference(subsumption_resolution,[],[f1570,f192])).
+fof(f1570,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(forward_demodulation,[],[f1534,f209])).
+fof(f209,plain,(
+  s(bool,'T_0') = s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),sK3)))),
+  inference(resolution,[],[f118,f125])).
+fof(f125,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f87])).
+fof(f87,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.quantHeuristics.GUESS_RULES_NEG|split|4','thm.bool.EQ_CLAUSES|split|1')).
+fof(f118,plain,(
+  p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),sK3))))),
+  inference(cnf_transformation,[],[f86])).
+fof(f86,plain,(
+  p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),sK3)))) & ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(sK1,bool),sK3))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f75])).
+fof(f75,plain,(
+  ? [X0,X1,X2,X3] : (p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3)))) & ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))))),
+  inference(ennf_transformation,[],[f34])).
+fof(f34,plain,(
+  ~! [X0,X1,X2,X3] : (p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ~! [X0,X1] : ! [X2,X3] : (p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : (p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),X9)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X7,bool),X9)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : (p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),X9)))) => p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X7,bool),X9)))))))),
+  file('thm.quantHeuristics.GUESS_RULES_NEG|split|4','thm.quantHeuristics.GUESS_RULES_NEG|split|4')).
+fof(f1534,plain,(
+  ~p(s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),sK3))))),
+  inference(backward_demodulation,[],[f170,f119])).
+fof(f119,plain,(
+  ~p(s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(sK0,sK1),sK2),s(fun(sK1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(sK1,bool),sK3))))))),
+  inference(cnf_transformation,[],[f86])).
+fof(f170,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3))) = s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))) )),
+  inference(cnf_transformation,[],[f66])).
+fof(f66,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3))) = s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))),
+  inference(flattening,[],[f65])).
+fof(f65,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),X3))) = s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X0,X1),X2),s(fun(X1,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X1,bool),X3)))))),
+  inference(rectify,[],[f27])).
+fof(f27,axiom,(
+  ! [X6,X7] : ! [X8,X9] : s(bool,'const.quantHeuristics.GUESS_FORALL_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),X9))) = s(bool,'const.quantHeuristics.GUESS_EXISTS_GAP_2'(s(fun(X6,X7),X8),s(fun(X7,bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun(X7,bool),X9)))))),
+  file('thm.quantHeuristics.GUESS_RULES_NEG|split|4','thm.quantHeuristics.GUESSES_NEG_REWRITE|split|2')).
+% SZS output end Proof for thm.quantHeuristics
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 49
+% Passive clauses: 309
+% Generated clauses: 1403
+% Final active clauses: 41
+% Final passive clauses: 226
+% Input formulas: 31
+% Initial clauses: 70
+% 
+% Duplicate literals: 106
+% Trivial inequalities: 38
+% Fw subsumption resolutions: 123
+% Fw demodulations: 154
+% Bw demodulations: 4
+% 
+% Simple tautologies: 88
+% Equational tautologies: 15
+% Forward subsumptions: 552
+% 
+% Binary resolution: 71
+% Forward superposition: 251
+% Backward superposition: 514
+% Self superposition: 24
+% Equality factoring: 26
+% Equality resolution: 8
+% 
+% Split clauses: 26
+% Split components: 54
+% SAT solver clauses: 52
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 25
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 26
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 51
+% TWLsolver calls for satisfiability: 16
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.039 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.041 s

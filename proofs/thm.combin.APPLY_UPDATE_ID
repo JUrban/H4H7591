@@ -1,0 +1,92 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.combin
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.combin
+% SZS output start Proof for thm.combin
+fof(f811,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f810])).
+fof(f810,plain,(
+  s(fun(sK0,sK1),sK2) != s(fun(sK0,sK1),sK2) | s(sK1,happ(s(fun(sK0,sK1),sK2),s(sK0,sK3))) != s(sK1,happ(s(fun(sK0,sK1),sK2),s(sK0,sK3)))),
+  inference(superposition,[],[f33,f45])).
+fof(f45,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,X4),s(fun(X0,X1),X2))) | s(X1,X4) != s(X1,happ(s(fun(X0,X1),X2),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1,X2,X3,X4] : ((s(X1,X4) != s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))) | s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,X4),s(fun(X0,X1),X2)))) & (s(fun(X0,X1),X2) != s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,X4),s(fun(X0,X1),X2))) | s(X1,X4) = s(X1,happ(s(fun(X0,X1),X2),s(X0,X3)))))),
+  inference(nnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2,X3,X4] : (s(X1,X4) = s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))) <=> s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,X4),s(fun(X0,X1),X2))))),
+  inference(flattening,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1] : ! [X2,X3,X4] : (s(X1,X4) = s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))) <=> s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,X4),s(fun(X0,X1),X2))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X7] : ! [X8,X9,X13] : (s(X7,X13) = s(X7,happ(s(fun(X6,X7),X8),s(X6,X9))) <=> s(fun(X6,X7),X8) = s(fun(X6,X7),'const.combin.UPDATE_3'(s(X6,X9),s(X7,X13),s(fun(X6,X7),X8))))),
+  file('thm.combin.APPLY_UPDATE_ID','thm.combin.UPDATE_APPLY_ID')).
+fof(f33,plain,(
+  s(fun(sK0,sK1),sK2) != s(fun(sK0,sK1),'const.combin.UPDATE_3'(s(sK0,sK3),s(sK1,happ(s(fun(sK0,sK1),sK2),s(sK0,sK3))),s(fun(sK0,sK1),sK2)))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  s(fun(sK0,sK1),sK2) != s(fun(sK0,sK1),'const.combin.UPDATE_3'(s(sK0,sK3),s(sK1,happ(s(fun(sK0,sK1),sK2),s(sK0,sK3))),s(fun(sK0,sK1),sK2)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f24])).
+fof(f24,plain,(
+  ? [X0,X1,X2,X3] : s(fun(X0,X1),X2) != s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))),s(fun(X0,X1),X2)))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1,X2,X3] : s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))),s(fun(X0,X1),X2)))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : ! [X2,X3] : s(fun(X0,X1),X2) = s(fun(X0,X1),'const.combin.UPDATE_3'(s(X0,X3),s(X1,happ(s(fun(X0,X1),X2),s(X0,X3))),s(fun(X0,X1),X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : s(fun(X6,X7),X8) = s(fun(X6,X7),'const.combin.UPDATE_3'(s(X6,X9),s(X7,happ(s(fun(X6,X7),X8),s(X6,X9))),s(fun(X6,X7),X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : s(fun(X6,X7),X8) = s(fun(X6,X7),'const.combin.UPDATE_3'(s(X6,X9),s(X7,happ(s(fun(X6,X7),X8),s(X6,X9))),s(fun(X6,X7),X8)))),
+  file('thm.combin.APPLY_UPDATE_ID','thm.combin.APPLY_UPDATE_ID')).
+% SZS output end Proof for thm.combin
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 15
+% Passive clauses: 83
+% Generated clauses: 696
+% Final active clauses: 13
+% Final passive clauses: 62
+% Input formulas: 10
+% Initial clauses: 14
+% 
+% Duplicate literals: 136
+% Trivial inequalities: 17
+% Fw subsumption resolutions: 17
+% 
+% Simple tautologies: 42
+% Equational tautologies: 35
+% Forward subsumptions: 309
+% 
+% Binary resolution: 6
+% Forward superposition: 162
+% Backward superposition: 161
+% Self superposition: 111
+% Equality factoring: 106
+% 
+% Split clauses: 39
+% Split components: 78
+% SAT solver clauses: 60
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 46
+% 
+% Sat splits: 39
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 60
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.030 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.032 s

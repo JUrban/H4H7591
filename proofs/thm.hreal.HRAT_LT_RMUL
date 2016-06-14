@@ -1,0 +1,100 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hreal
+% SZS output start Proof for thm.hreal
+fof(f590,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f19,f302])).
+fof(f302,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X0))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X0)))))) )),
+  inference(superposition,[],[f260,f23])).
+fof(f23,plain,(
+  ( ! [X0,X1] : (s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) = s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X0)))) )),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ! [X0,X1] : s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) = s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X9,X10] : s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X9),s('type.hrat.hrat',X10))) = s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X10),s('type.hrat.hrat',X9)))),
+  file('thm.hreal.HRAT_LT_RMUL','thm.hrat.HRAT_MUL_SYM')).
+fof(f260,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X0))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2)))))) )),
+  inference(superposition,[],[f25,f23])).
+fof(f25,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X0))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1)))))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1,X2] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X0))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1)))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7,X8] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X8),s('type.hrat.hrat',X6))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X8),s('type.hrat.hrat',X7)))))),
+  file('thm.hreal.HRAT_LT_RMUL','thm.hreal.HRAT_LT_LMUL')).
+fof(f19,plain,(
+  s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1))) != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2)))))),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1))) != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f15])).
+fof(f15,plain,(
+  ? [X0,X1,X2] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2)))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1,X2] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X8))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7))) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X8))),s('type.hrat.hrat','const.hrat.hrat_mul_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8)))))),
+  file('thm.hreal.HRAT_LT_RMUL','thm.hreal.HRAT_LT_RMUL')).
+% SZS output end Proof for thm.hreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 25
+% Passive clauses: 109
+% Generated clauses: 572
+% Final active clauses: 17
+% Final passive clauses: 72
+% Input formulas: 7
+% Initial clauses: 7
+% 
+% Duplicate literals: 57
+% Trivial inequalities: 8
+% Fw subsumption resolutions: 18
+% Fw demodulations: 35
+% Bw demodulations: 4
+% 
+% Simple tautologies: 24
+% Equational tautologies: 15
+% Forward subsumptions: 246
+% 
+% Binary resolution: 5
+% Forward superposition: 206
+% Backward superposition: 137
+% Self superposition: 36
+% Equality factoring: 28
+% Equality resolution: 1
+% 
+% Split clauses: 40
+% Split components: 82
+% SAT solver clauses: 63
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 42
+% SAT solver learnt clauses: 1
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 40
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 60
+% TWLsolver calls for satisfiability: 11
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.024 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.026 s

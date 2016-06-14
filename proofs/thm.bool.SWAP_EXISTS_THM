@@ -1,0 +1,111 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f599,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f598,f23,f32,f22,f36,f34,f597])).
+fof(f597,plain,(
+  $false | ($spl0 | $spl2)),
+  inference(subsumption_resolution,[],[f34,f32])).
+fof(f34,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK3))),s(sK1,sK4)))) | $spl2),
+  inference(cnf_transformation,[],[f34_D])).
+fof(f34_D,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK3))),s(sK1,sK4)))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f36,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK6))),s(sK1,sK5)))) | $spl4),
+  inference(cnf_transformation,[],[f36_D])).
+fof(f36_D,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK6))),s(sK1,sK5)))) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f22,plain,(
+  p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK6))),s(sK1,sK5)))) | p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK3))),s(sK1,sK4))))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  (p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK3))),s(sK1,sK4)))) | p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,sK6))),s(sK1,sK5))))) & (! [X5,X6] : ~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X5))),s(sK1,X6)))) | ! [X3,X4] : ~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X4))),s(sK1,X3)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4,sK5,sK6])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1,X2] : ((? [X9,X10] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X9))),s(X1,X10)))) | ? [X7,X8] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X8))),s(X1,X7))))) & (! [X5,X6] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X5))),s(X1,X6)))) | ! [X3,X4] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X4))),s(X1,X3))))))),
+  inference(rectify,[],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2] : ((? [X3,X4] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X3))),s(X1,X4)))) | ? [X5,X6] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X6))),s(X1,X5))))) & (! [X3,X4] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X3))),s(X1,X4)))) | ! [X5,X6] : ~p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X6))),s(X1,X5))))))),
+  inference(nnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ? [X0,X1,X2] : (? [X3,X4] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X3))),s(X1,X4)))) <~> ? [X5,X6] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X6))),s(X1,X5)))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1,X2] : (? [X3,X4] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X3))),s(X1,X4)))) <=> ? [X5,X6] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X6))),s(X1,X5)))))),
+  inference(flattening,[],[f8])).
+fof(f8,plain,(
+  ~! [X0,X1] : ! [X2] : (? [X3,X4] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X3))),s(X1,X4)))) <=> ? [X5,X6] : p(s(bool,happ(s(fun(X1,bool),happ(s(fun(X0,fun(X1,bool)),X2),s(X0,X6))),s(X1,X5)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8] : (? [X9,X10] : p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X6,fun(X7,bool)),X8),s(X6,X9))),s(X7,X10)))) <=> ? [X10,X9] : p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X6,fun(X7,bool)),X8),s(X6,X9))),s(X7,X10)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8] : (? [X9,X10] : p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X6,fun(X7,bool)),X8),s(X6,X9))),s(X7,X10)))) <=> ? [X10,X9] : p(s(bool,happ(s(fun(X7,bool),happ(s(fun(X6,fun(X7,bool)),X8),s(X6,X9))),s(X7,X10)))))),
+  file('thm.bool.SWAP_EXISTS_THM','thm.bool.SWAP_EXISTS_THM')).
+fof(f32,plain,(
+  ( ! [X6,X5] : (~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X5))),s(sK1,X6))))) ) | $spl0),
+  inference(cnf_transformation,[],[f32_D])).
+fof(f32_D,plain,(
+  ( ! [X6,X5] : (~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X5))),s(sK1,X6))))) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f23,plain,(
+  ( ! [X6,X4,X5,X3] : (~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X4))),s(sK1,X3)))) | ~p(s(bool,happ(s(fun(sK1,bool),happ(s(fun(sK0,fun(sK1,bool)),sK2),s(sK0,X5))),s(sK1,X6))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f598,plain,(
+  $false | ($spl0 | $spl4)),
+  inference(subsumption_resolution,[],[f36,f32])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 18
+% Passive clauses: 98
+% Generated clauses: 542
+% Final active clauses: 14
+% Final passive clauses: 67
+% Input formulas: 6
+% Initial clauses: 10
+% 
+% Duplicate literals: 81
+% Trivial inequalities: 7
+% Fw subsumption resolutions: 53
+% Bw demodulations: 1
+% 
+% Simple tautologies: 33
+% Equational tautologies: 28
+% Forward subsumptions: 234
+% 
+% Binary resolution: 26
+% Factoring: 1
+% Forward superposition: 88
+% Backward superposition: 168
+% Self superposition: 46
+% Equality factoring: 50
+% Equality resolution: 1
+% 
+% Split clauses: 7
+% Split components: 14
+% SAT solver clauses: 18
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 8
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 7
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 16
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.019 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.021 s

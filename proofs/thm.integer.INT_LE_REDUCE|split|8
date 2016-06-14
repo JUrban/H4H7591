@@ -1,0 +1,99 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f8440,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f8439,f344])).
+fof(f344,plain,(
+  ( ! [X0,X1] : (s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f123])).
+fof(f123,plain,(
+  ! [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X0))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7,X6] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X7))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',X6)))))),
+  file('thm.integer.INT_LE_REDUCE|split|8','thm.integer.INT_LE')).
+fof(f8439,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK10),s('type.num.num',sK11))) != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK10))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK11)))))),
+  inference(forward_demodulation,[],[f8438,f273])).
+fof(f273,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f57])).
+fof(f57,axiom,(
+  ! [X10] : s('type.num.num',X10) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X10)))),
+  file('thm.integer.INT_LE_REDUCE|split|8','thm.arithmetic.NUMERAL_DEF')).
+fof(f8438,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK10),s('type.num.num',sK11))) != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK10))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num',sK11)))))),
+  inference(forward_demodulation,[],[f260,f273])).
+fof(f260,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK10),s('type.num.num',sK11))) != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK10))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK11)))))))),
+  inference(cnf_transformation,[],[f186])).
+fof(f186,plain,(
+  s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK10),s('type.num.num',sK11))) != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK10))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK11)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11])],[f152])).
+fof(f152,plain,(
+  ? [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X6),s('type.num.num',X7))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X6),s('type.num.num',X7))) = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))))))),
+  file('thm.integer.INT_LE_REDUCE|split|8','thm.integer.INT_LE_REDUCE|split|8')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 458
+% Passive clauses: 2093
+% Generated clauses: 8172
+% Final active clauses: 450
+% Final passive clauses: 1459
+% Input formulas: 69
+% Initial clauses: 185
+% 
+% Duplicate literals: 144
+% Trivial inequalities: 9
+% Fw subsumption resolutions: 558
+% Fw demodulations: 294
+% Bw demodulations: 7
+% 
+% Simple tautologies: 122
+% Equational tautologies: 22
+% Forward subsumptions: 4874
+% Fw demodulations to eq. taut.: 6
+% 
+% Binary resolution: 3055
+% Factoring: 797
+% Forward superposition: 1491
+% Backward superposition: 1550
+% Self superposition: 19
+% Equality factoring: 2
+% Equality resolution: 3
+% 
+% Split clauses: 130
+% Split components: 261
+% SAT solver clauses: 229
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 38
+% 
+% Sat splits: 130
+% 
+% TWLsolver clauses: 229
+% TWLsolver calls for satisfiability: 204
+% 
+% Memory used [KB]: 4989
+% Time elapsed: 0.168 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.171 s

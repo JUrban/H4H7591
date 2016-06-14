@@ -1,0 +1,122 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f49,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f42,f46,f39,f45,f43,f47,f41,f44,f40,f48])).
+fof(f48,plain,(
+  ~p(s(bool,sK0)) | $spl5),
+  inference(cnf_transformation,[],[f48_D])).
+fof(f48_D,plain,(
+  ~p(s(bool,sK0)) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f40,plain,(
+  ~p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f22])).
+fof(f22,plain,(
+  ~p(s(bool,sK0)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  (p(s(bool,sK0)) | p(s(bool,sK1)) | p(s(bool,sK2)) | p(s(bool,sK0)) | p(s(bool,sK1)) | p(s(bool,sK2))) & ((~p(s(bool,sK0)) & ~p(s(bool,sK1)) & ~p(s(bool,sK2))) | (~p(s(bool,sK0)) & ~p(s(bool,sK1)) & ~p(s(bool,sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2)) | p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))) & ((~p(s(bool,X0)) & ~p(s(bool,X1)) & ~p(s(bool,X2))) | (~p(s(bool,X0)) & ~p(s(bool,X1)) & ~p(s(bool,X2)))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ? [X0,X1,X2] : (((p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))) | (p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2)))) & ((~p(s(bool,X0)) & ~p(s(bool,X1)) & ~p(s(bool,X2))) | (~p(s(bool,X0)) & ~p(s(bool,X1)) & ~p(s(bool,X2)))))),
+  inference(nnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))) <~> (p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))))),
+  inference(ennf_transformation,[],[f8])).
+fof(f8,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))) <=> (p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : ((p(s(bool,X6)) | p(s(bool,X7)) | p(s(bool,X8))) <=> (p(s(bool,X6)) | p(s(bool,X7)) | p(s(bool,X8))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : ((p(s(bool,X6)) | p(s(bool,X7)) | p(s(bool,X8))) <=> (p(s(bool,X6)) | p(s(bool,X7)) | p(s(bool,X8))))),
+  file('thm.bool.DISJ_ASSOC','thm.bool.DISJ_ASSOC')).
+fof(f44,plain,(
+  ~p(s(bool,sK1)) | $spl1),
+  inference(cnf_transformation,[],[f44_D])).
+fof(f44_D,plain,(
+  ~p(s(bool,sK1)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f41,plain,(
+  ~p(s(bool,sK1))),
+  inference(duplicate_literal_removal,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,sK1)) | ~p(s(bool,sK1))),
+  inference(cnf_transformation,[],[f19])).
+fof(f47,plain,(
+  p(s(bool,sK0)) | $spl4),
+  inference(cnf_transformation,[],[f47_D])).
+fof(f47_D,plain,(
+  p(s(bool,sK0)) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f43,plain,(
+  p(s(bool,sK1)) | $spl0),
+  inference(cnf_transformation,[],[f43_D])).
+fof(f43_D,plain,(
+  p(s(bool,sK1)) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f45,plain,(
+  p(s(bool,sK2)) | $spl2),
+  inference(cnf_transformation,[],[f45_D])).
+fof(f45_D,plain,(
+  p(s(bool,sK2)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f39,plain,(
+  p(s(bool,sK2)) | p(s(bool,sK1)) | p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f21])).
+fof(f21,plain,(
+  p(s(bool,sK2)) | p(s(bool,sK1)) | p(s(bool,sK0)) | p(s(bool,sK2)) | p(s(bool,sK1)) | p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f19])).
+fof(f46,plain,(
+  ~p(s(bool,sK2)) | $spl3),
+  inference(cnf_transformation,[],[f46_D])).
+fof(f46_D,plain,(
+  ~p(s(bool,sK2)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f42,plain,(
+  ~p(s(bool,sK2))),
+  inference(duplicate_literal_removal,[],[f30])).
+fof(f30,plain,(
+  ~p(s(bool,sK2)) | ~p(s(bool,sK2))),
+  inference(cnf_transformation,[],[f19])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Passive clauses: 10
+% Generated clauses: 25
+% Final passive clauses: 9
+% Input formulas: 6
+% Initial clauses: 18
+% 
+% Duplicate literals: 6
+% 
+% Simple tautologies: 2
+% 
+% Split clauses: 7
+% Split components: 15
+% SAT solver clauses: 11
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 6
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 7
+% 
+% TWLsolver clauses: 10
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

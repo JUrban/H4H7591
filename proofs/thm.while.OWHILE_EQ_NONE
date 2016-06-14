@@ -1,0 +1,353 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.while
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.while
+% SZS output start Proof for thm.while
+fof(f20701,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f20630,f78,f118,f114,f79,f117,f115,f20062,f675,f676,f20133,f204,f128,f131,f129,f140,f86,f122,f1403,f1404,f113,f119,f1252,f1279,f20476,f182,f20478])).
+fof(f20478,plain,(
+  s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0)) | $spl286),
+  inference(cnf_transformation,[],[f20478_D])).
+fof(f20478_D,plain,(
+  s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0)) <=> ~$spl286),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl286])])).
+fof(f182,plain,(
+  ( ! [X1] : (s(bool,'T_0') = s(bool,X1)) ) | $spl18),
+  inference(cnf_transformation,[],[f182_D])).
+fof(f182_D,plain,(
+  ( ! [X1] : (s(bool,'T_0') = s(bool,X1)) ) <=> ~$spl18),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl18])])).
+fof(f20476,plain,(
+  ( ! [X1] : (s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0))) ) | ($spl3 | $spl9)),
+  inference(subsumption_resolution,[],[f20469,f125])).
+fof(f125,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl9),
+  inference(superposition,[],[f122,f87])).
+fof(f87,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.while.OWHILE_EQ_NONE',aHL_BOOL_CASES)).
+fof(f20469,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0))) ) | $spl3),
+  inference(superposition,[],[f20428,f123])).
+fof(f123,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f87,f87])).
+fof(f20428,plain,(
+  p(s(bool,sK7(sK1,sK2,sK3,sK0))) | $spl3),
+  inference(resolution,[],[f117,f7351])).
+fof(f7351,plain,(
+  ( ! [X2,X0,X5,X3,X1] : (p(s(bool,happ(s(fun(X0,bool),X1),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X5),s(X0,X3)))))) | p(s(bool,sK7(X3,X2,X1,X0)))) )),
+  inference(forward_demodulation,[],[f108,f100])).
+fof(f100,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X1),s('type.num.num',X2),s(X0,X3))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X1))),s('type.num.num',X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1,X2,X3] : s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X1),s('type.num.num',X2),s(X0,X3))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X1))),s('type.num.num',X2))),s(X0,X3)))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X1),s('type.num.num',X2),s(X0,X3))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X1))),s('type.num.num',X2))),s(X0,X3)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X6] : ! [X16,X17,X18] : s(X6,'const.arithmetic.FUNPOW_3'(s(fun(X6,X6),X16),s('type.num.num',X17),s(X6,X18))) = s(X6,happ(s(fun(X6,X6),happ(s(fun('type.num.num',fun(X6,X6)),'const.arithmetic.FUNPOW_1'(s(fun(X6,X6),X16))),s('type.num.num',X17))),s(X6,X18)))),
+  file('thm.while.OWHILE_EQ_NONE','ARITY_1_3_const.arithmetic.FUNPOW')).
+fof(f108,plain,(
+  ( ! [X2,X0,X5,X3,X1] : (p(s(bool,sK7(X3,X2,X1,X0))) | p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3))))))) )),
+  inference(cnf_transformation,[],[f76])).
+fof(f76,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,sK7(X3,X2,X1,X0))) | ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',sK8(X3,X2,X1,X0)))),s(X0,X3))))))) & (! [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3)))))) | p(s(bool,sK7(X3,X2,X1,X0)))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,sK7(X3,X2,X1,X0)),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK7,sK8])],[f75])).
+fof(f75,plain,(
+  ! [X0,X1,X2,X3] : ? [X4] : ((~p(s(bool,X4)) | ? [X6] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X6))),s(X0,X3))))))) & (! [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3)))))) | p(s(bool,X4))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X4),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(rectify,[],[f74])).
+fof(f74,plain,(
+  ! [X0,X1,X2,X3] : ? [X4] : ((~p(s(bool,X4)) | ? [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3))))))) & (! [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3)))))) | p(s(bool,X4))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X4),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(flattening,[],[f73])).
+fof(f73,plain,(
+  ! [X0,X1,X2,X3] : ? [X4] : (((~p(s(bool,X4)) | ? [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3))))))) & (! [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3)))))) | p(s(bool,X4)))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X4),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1,X2,X3] : ? [X4] : ((p(s(bool,X4)) <=> ? [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3))))))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X4),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(flattening,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : ! [X1,X2,X3] : ? [X4] : ((p(s(bool,X4)) <=> ? [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',X5))),s(X0,X3))))))) & s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X4),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0'))))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X6] : ! [X9,X8,X7] : ? [X15] : ((p(s(bool,X15)) <=> ? [X10] : ~p(s(bool,happ(s(fun(X6,bool),X9),s(X6,happ(s(fun(X6,X6),happ(s(fun('type.num.num',fun(X6,X6)),'const.arithmetic.FUNPOW_1'(s(fun(X6,X6),X8))),s('type.num.num',X10))),s(X6,X7))))))) & s('type.option.option'(X6),'const.while.OWHILE_3'(s(fun(X6,bool),X9),s(fun(X6,X6),X8),s(X6,X7))) = s('type.option.option'(X6),'const.bool.COND_3'(s(bool,X15),s('type.option.option'(X6),'const.option.SOME_1'(s(X6,happ(s(fun(X6,X6),happ(s(fun('type.num.num',fun(X6,X6)),'const.arithmetic.FUNPOW_1'(s(fun(X6,X6),X8))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X6,bool),X9),s(fun('type.num.num',X6),'_dst_x1x0_2'(s(fun('type.num.num',fun(X6,X6)),'const.arithmetic.FUNPOW_1'(s(fun(X6,X6),X8))),s(X6,X7))))))))))),s(X6,X7))))),s('type.option.option'(X6),'const.option.NONE_0'))))),
+  file('thm.while.OWHILE_EQ_NONE','thm.while.OWHILE_def')).
+fof(f1279,plain,(
+  ( ! [X24,X23] : (s('type.option.option'(X23),'const.option.NONE_0') != s('type.option.option'(X23),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'(X23),'const.option.SOME_1'(s(X23,X24))),s('type.option.option'(X23),'const.option.NONE_0')))) ) | $spl46),
+  inference(cnf_transformation,[],[f1279_D])).
+fof(f1279_D,plain,(
+  ( ! [X24,X23] : (s('type.option.option'(X23),'const.option.NONE_0') != s('type.option.option'(X23),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'(X23),'const.option.SOME_1'(s(X23,X24))),s('type.option.option'(X23),'const.option.NONE_0')))) ) <=> ~$spl46),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl46])])).
+fof(f1252,plain,(
+  ( ! [X0,X1] : (s('type.option.option'(X0),'const.option.NONE_0') != s('type.option.option'(X0),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0')))) ) | $spl6),
+  inference(resolution,[],[f98,f119])).
+fof(f98,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,X2)) | s('type.option.option'(X0),'const.option.NONE_0') != s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0,X1,X2] : ((s('type.option.option'(X0),'const.option.NONE_0') != s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0'))) | ~p(s(bool,X2))) & (p(s(bool,X2)) | s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0')))))),
+  inference(nnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0,X1,X2] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0'))) <=> ~p(s(bool,X2)))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : ! [X1,X2] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0'))) <=> ~p(s(bool,X2)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X12,X13] : (s('type.option.option'(X6),'const.option.NONE_0') = s('type.option.option'(X6),'const.bool.COND_3'(s(bool,X13),s('type.option.option'(X6),'const.option.SOME_1'(s(X6,X12))),s('type.option.option'(X6),'const.option.NONE_0'))) <=> ~p(s(bool,X13)))),
+  file('thm.while.OWHILE_EQ_NONE','thm.option.IF_EQUALS_OPTION|split|0')).
+fof(f119,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f119_D])).
+fof(f119_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f113,plain,(
+  p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f92])).
+fof(f92,plain,(
+  ( ! [X0,X1] : (p(s(bool,'T_0')) | s(X0,X1) != s(X0,X1)) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1] : ((s(X0,X1) != s(X0,X1) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | s(X0,X1) = s(X0,X1)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ! [X12] : (s(X6,X12) = s(X6,X12) <=> p(s(bool,'T_0')))),
+  file('thm.while.OWHILE_EQ_NONE','thm.bool.REFL_CLAUSE')).
+fof(f1404,plain,(
+  ( ! [X31,X32] : (s('type.option.option'(X31),'const.option.NONE_0') = s('type.option.option'(X31),'const.bool.COND_3'(s(bool,'F_0'),s('type.option.option'(X31),'const.option.SOME_1'(s(X31,X32))),s('type.option.option'(X31),'const.option.NONE_0')))) ) | $spl50),
+  inference(cnf_transformation,[],[f1404_D])).
+fof(f1404_D,plain,(
+  ( ! [X31,X32] : (s('type.option.option'(X31),'const.option.NONE_0') = s('type.option.option'(X31),'const.bool.COND_3'(s(bool,'F_0'),s('type.option.option'(X31),'const.option.SOME_1'(s(X31,X32))),s('type.option.option'(X31),'const.option.NONE_0')))) ) <=> ~$spl50),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl50])])).
+fof(f1403,plain,(
+  ( ! [X30,X31,X32] : (s('type.option.option'(X31),'const.option.NONE_0') = s('type.option.option'(X31),'const.bool.COND_3'(s(bool,'F_0'),s('type.option.option'(X31),'const.option.SOME_1'(s(X31,X32))),s('type.option.option'(X31),'const.option.NONE_0'))) | s(bool,'T_0') = s(bool,X30)) ) | $spl9),
+  inference(subsumption_resolution,[],[f1388,f125])).
+fof(f1388,plain,(
+  ( ! [X30,X31,X32] : (p(s(bool,X30)) | s('type.option.option'(X31),'const.option.NONE_0') = s('type.option.option'(X31),'const.bool.COND_3'(s(bool,'F_0'),s('type.option.option'(X31),'const.option.SOME_1'(s(X31,X32))),s('type.option.option'(X31),'const.option.NONE_0'))) | s(bool,'T_0') = s(bool,X30)) )),
+  inference(superposition,[],[f99,f87])).
+fof(f99,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,X2)) | s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,X2),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,X1))),s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f122,plain,(
+  ~p(s(bool,'F_0')) | $spl9),
+  inference(cnf_transformation,[],[f122_D])).
+fof(f122_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl9),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl9])])).
+fof(f86,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.while.OWHILE_EQ_NONE',aHL_FALSITY)).
+fof(f140,plain,(
+  $false | ($spl6 | $spl9 | $spl10)),
+  inference(resolution,[],[f137,f119])).
+fof(f137,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | ($spl9 | $spl10)),
+  inference(superposition,[],[f122,f129])).
+fof(f129,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl10),
+  inference(cnf_transformation,[],[f129_D])).
+fof(f129_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f131,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl13),
+  inference(cnf_transformation,[],[f131_D])).
+fof(f131_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl13),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl13])])).
+fof(f128,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f87])).
+fof(f204,plain,(
+  $false | ($spl13 | $spl18)),
+  inference(trivial_inequality_removal,[],[f201])).
+fof(f201,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl13 | $spl18)),
+  inference(superposition,[],[f131,f182])).
+fof(f20133,plain,(
+  $false | ($spl3 | $spl6 | $spl24)),
+  inference(subsumption_resolution,[],[f20132,f119])).
+fof(f20132,plain,(
+  ~p(s(bool,'T_0')) | ($spl3 | $spl24)),
+  inference(forward_demodulation,[],[f117,f676])).
+fof(f676,plain,(
+  ( ! [X48] : (s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X48),s(sK0,sK1)))))) ) | $spl24),
+  inference(cnf_transformation,[],[f676_D])).
+fof(f676_D,plain,(
+  ( ! [X48] : (s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X48),s(sK0,sK1)))))) ) <=> ~$spl24),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl24])])).
+fof(f675,plain,(
+  ( ! [X48,X49] : (s(bool,'T_0') = s(bool,X49) | s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X48),s(sK0,sK1)))))) ) | ($spl4 | $spl9)),
+  inference(subsumption_resolution,[],[f443,f125])).
+fof(f443,plain,(
+  ( ! [X48,X49] : (p(s(bool,X49)) | s(bool,'T_0') = s(bool,X49) | s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X48),s(sK0,sK1)))))) ) | $spl4),
+  inference(superposition,[],[f118,f123])).
+fof(f20062,plain,(
+  $false | ($spl1 | $spl6 | $spl24 | $spl50)),
+  inference(subsumption_resolution,[],[f20061,f119])).
+fof(f20061,plain,(
+  ~p(s(bool,'T_0')) | ($spl1 | $spl6 | $spl24 | $spl50)),
+  inference(forward_demodulation,[],[f20060,f676])).
+fof(f20060,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK8(sK1,sK2,sK3,sK0)),s(sK0,sK1)))))) | ($spl1 | $spl6 | $spl50)),
+  inference(subsumption_resolution,[],[f19922,f119])).
+fof(f19922,plain,(
+  ~p(s(bool,'T_0')) | ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK8(sK1,sK2,sK3,sK0)),s(sK0,sK1)))))) | ($spl1 | $spl50)),
+  inference(superposition,[],[f8384,f19904])).
+fof(f19904,plain,(
+  s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0)) | ($spl1 | $spl50)),
+  inference(trivial_inequality_removal,[],[f19883])).
+fof(f19883,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') != s('type.option.option'(sK0),'const.option.NONE_0') | s(bool,'T_0') = s(bool,sK7(sK1,sK2,sK3,sK0)) | ($spl1 | $spl50)),
+  inference(superposition,[],[f115,f9746])).
+fof(f9746,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.option.option'(X3),'const.option.NONE_0') = s('type.option.option'(X3),'const.while.OWHILE_3'(s(fun(X3,bool),X2),s(fun(X3,X3),X1),s(X3,X0))) | s(bool,'T_0') = s(bool,sK7(X0,X1,X2,X3))) ) | $spl50),
+  inference(forward_demodulation,[],[f9651,f1404])).
+fof(f9651,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.option.option'(X3),'const.while.OWHILE_3'(s(fun(X3,bool),X2),s(fun(X3,X3),X1),s(X3,X0))) = s('type.option.option'(X3),'const.bool.COND_3'(s(bool,'F_0'),s('type.option.option'(X3),'const.option.SOME_1'(s(X3,'const.arithmetic.FUNPOW_3'(s(fun(X3,X3),X1),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X3,bool),X2),s(fun('type.num.num',X3),'_dst_x1x0_2'(s(fun('type.num.num',fun(X3,X3)),'const.arithmetic.FUNPOW_1'(s(fun(X3,X3),X1))),s(X3,X0))))))))),s(X3,X0))))),s('type.option.option'(X3),'const.option.NONE_0'))) | s(bool,'T_0') = s(bool,sK7(X0,X1,X2,X3))) )),
+  inference(superposition,[],[f8973,f87])).
+fof(f8973,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,sK7(X3,X2,X1,X0)),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(forward_demodulation,[],[f109,f100])).
+fof(f109,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X1),s(fun(X0,X0),X2),s(X0,X3))) = s('type.option.option'(X0),'const.bool.COND_3'(s(bool,sK7(X3,X2,X1,X0)),s('type.option.option'(X0),'const.option.SOME_1'(s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(X0,bool),X1),s(fun('type.num.num',X0),'_dst_x1x0_2'(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s(X0,X3))))))))))),s(X0,X3))))),s('type.option.option'(X0),'const.option.NONE_0')))) )),
+  inference(cnf_transformation,[],[f76])).
+fof(f8384,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,sK7(X3,X2,X1,X0))) | ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',sK8(X3,X2,X1,X0)),s(X0,X3))))))) )),
+  inference(forward_demodulation,[],[f107,f100])).
+fof(f107,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),'const.arithmetic.FUNPOW_1'(s(fun(X0,X0),X2))),s('type.num.num',sK8(X3,X2,X1,X0)))),s(X0,X3)))))) | ~p(s(bool,sK7(X3,X2,X1,X0)))) )),
+  inference(cnf_transformation,[],[f76])).
+fof(f115,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') != s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) | $spl1),
+  inference(cnf_transformation,[],[f115_D])).
+fof(f115_D,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') != s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f117,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK4),s(sK0,sK1)))))) | $spl3),
+  inference(cnf_transformation,[],[f117_D])).
+fof(f117_D,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK4),s(sK0,sK1)))))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f79,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK4),s(sK0,sK1)))))) | s('type.option.option'(sK0),'const.option.NONE_0') != s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1)))),
+  inference(cnf_transformation,[],[f58])).
+fof(f58,plain,(
+  (s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) | ! [X5] : p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X5),s(sK0,sK1))))))) & (s('type.option.option'(sK0),'const.option.NONE_0') != s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) | ~p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',sK4),s(sK0,sK1)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f57])).
+fof(f57,plain,(
+  ? [X0,X1,X2,X3] : ((s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) | ! [X5] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X5),s(X0,X1))))))) & (s('type.option.option'(X0),'const.option.NONE_0') != s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) | ? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1))))))))),
+  inference(rectify,[],[f56])).
+fof(f56,plain,(
+  ? [X0,X1,X2,X3] : ((s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) | ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1))))))) & (s('type.option.option'(X0),'const.option.NONE_0') != s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) | ? [X4] : ~p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1))))))))),
+  inference(nnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ? [X0,X1,X2,X3] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) <~> ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1)))))))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~! [X0,X1,X2,X3] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) <=> ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1)))))))),
+  inference(flattening,[],[f22])).
+fof(f22,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (s('type.option.option'(X0),'const.option.NONE_0') = s('type.option.option'(X0),'const.while.OWHILE_3'(s(fun(X0,bool),X3),s(fun(X0,X0),X2),s(X0,X1))) <=> ! [X4] : p(s(bool,happ(s(fun(X0,bool),X3),s(X0,'const.arithmetic.FUNPOW_3'(s(fun(X0,X0),X2),s('type.num.num',X4),s(X0,X1)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (s('type.option.option'(X6),'const.option.NONE_0') = s('type.option.option'(X6),'const.while.OWHILE_3'(s(fun(X6,bool),X9),s(fun(X6,X6),X8),s(X6,X7))) <=> ! [X10] : p(s(bool,happ(s(fun(X6,bool),X9),s(X6,'const.arithmetic.FUNPOW_3'(s(fun(X6,X6),X8),s('type.num.num',X10),s(X6,X7)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (s('type.option.option'(X6),'const.option.NONE_0') = s('type.option.option'(X6),'const.while.OWHILE_3'(s(fun(X6,bool),X9),s(fun(X6,X6),X8),s(X6,X7))) <=> ! [X10] : p(s(bool,happ(s(fun(X6,bool),X9),s(X6,'const.arithmetic.FUNPOW_3'(s(fun(X6,X6),X8),s('type.num.num',X10),s(X6,X7)))))))),
+  file('thm.while.OWHILE_EQ_NONE','thm.while.OWHILE_EQ_NONE')).
+fof(f114,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) | $spl0),
+  inference(cnf_transformation,[],[f114_D])).
+fof(f114_D,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f118,plain,(
+  ( ! [X5] : (p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X5),s(sK0,sK1))))))) ) | $spl4),
+  inference(cnf_transformation,[],[f118_D])).
+fof(f118_D,plain,(
+  ( ! [X5] : (p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X5),s(sK0,sK1))))))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f78,plain,(
+  ( ! [X5] : (p(s(bool,happ(s(fun(sK0,bool),sK3),s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num',X5),s(sK0,sK1)))))) | s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1)))) )),
+  inference(cnf_transformation,[],[f58])).
+fof(f20630,plain,(
+  $false | ($spl0 | $spl46 | $spl286)),
+  inference(subsumption_resolution,[],[f20629,f1279])).
+fof(f20629,plain,(
+  s('type.option.option'(sK0),'const.option.NONE_0') = s('type.option.option'(sK0),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK3),s(fun('type.num.num',sK0),'_dst_x1x0_2'(s(fun('type.num.num',fun(sK0,sK0)),'const.arithmetic.FUNPOW_1'(s(fun(sK0,sK0),sK2))),s(sK0,sK1))))))))),s(sK0,sK1))))),s('type.option.option'(sK0),'const.option.NONE_0'))) | ($spl0 | $spl286)),
+  inference(forward_demodulation,[],[f20490,f114])).
+fof(f20490,plain,(
+  s('type.option.option'(sK0),'const.while.OWHILE_3'(s(fun(sK0,bool),sK3),s(fun(sK0,sK0),sK2),s(sK0,sK1))) = s('type.option.option'(sK0),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'(sK0),'const.option.SOME_1'(s(sK0,'const.arithmetic.FUNPOW_3'(s(fun(sK0,sK0),sK2),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(bool,bool),'~_0'),s(fun('type.num.num',bool),'_dst_x0x1_2'(s(fun(sK0,bool),sK3),s(fun('type.num.num',sK0),'_dst_x1x0_2'(s(fun('type.num.num',fun(sK0,sK0)),'const.arithmetic.FUNPOW_1'(s(fun(sK0,sK0),sK2))),s(sK0,sK1))))))))),s(sK0,sK1))))),s('type.option.option'(sK0),'const.option.NONE_0'))) | $spl286),
+  inference(superposition,[],[f8973,f20478])).
+% SZS output end Proof for thm.while
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 147
+% Passive clauses: 3144
+% Generated clauses: 20000
+% Final active clauses: 119
+% Final passive clauses: 2818
+% Input formulas: 20
+% Initial clauses: 35
+% 
+% Duplicate literals: 770
+% Trivial inequalities: 117
+% Fw subsumption resolutions: 1940
+% Fw demodulations: 3369
+% Bw demodulations: 20
+% 
+% Simple tautologies: 108
+% Equational tautologies: 36
+% Forward subsumptions: 10049
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 756
+% Forward superposition: 7212
+% Backward superposition: 5432
+% Self superposition: 170
+% Equality factoring: 51
+% Equality resolution: 5
+% 
+% Split clauses: 295
+% Split components: 590
+% SAT solver clauses: 624
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 35
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 295
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 621
+% TWLsolver calls for satisfiability: 133
+% 
+% Memory used [KB]: 12025
+% Time elapsed: 0.474 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.48 s

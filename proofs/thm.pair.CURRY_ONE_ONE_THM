@@ -1,0 +1,138 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.pair
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pair
+% SZS output start Proof for thm.pair
+fof(f5941,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f5940,f254,f374,f372,f5746,f253,f373,f371])).
+fof(f371,plain,(
+  s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) = s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) | $spl0),
+  inference(cnf_transformation,[],[f371_D])).
+fof(f371_D,plain,(
+  s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) = s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f373,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) = s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) | $spl2),
+  inference(cnf_transformation,[],[f373_D])).
+fof(f373_D,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) = s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f253,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) = s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) | s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) = s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4)))),
+  inference(cnf_transformation,[],[f196])).
+fof(f196,plain,(
+  (s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) = s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) | s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) = s(fun('type.pair.prod'(sK0,sK1),sK2),sK4)) & (s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) != s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) | s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) != s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f195])).
+fof(f195,plain,(
+  ? [X0,X1,X2,X3,X4] : ((s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3))) = s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X4))) | s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),X4)) & (s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3))) != s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X4))) | s(fun('type.pair.prod'(X0,X1),X2),X3) != s(fun('type.pair.prod'(X0,X1),X2),X4)))),
+  inference(nnf_transformation,[],[f185])).
+fof(f185,plain,(
+  ? [X0,X1,X2,X3,X4] : (s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3))) = s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X4))) <~> s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),X4))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2,X3,X4] : (s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3))) = s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X4))) <=> s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),X4))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1,X2] : ! [X3,X4] : (s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3))) = s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X4))) <=> s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),X4))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : ! [X9,X10] : (s(fun(X6,fun(X7,X8)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X6,X7),X8),X9))) = s(fun(X6,fun(X7,X8)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X6,X7),X8),X10))) <=> s(fun('type.pair.prod'(X6,X7),X8),X9) = s(fun('type.pair.prod'(X6,X7),X8),X10))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : ! [X9,X10] : (s(fun(X6,fun(X7,X8)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X6,X7),X8),X9))) = s(fun(X6,fun(X7,X8)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X6,X7),X8),X10))) <=> s(fun('type.pair.prod'(X6,X7),X8),X9) = s(fun('type.pair.prod'(X6,X7),X8),X10))),
+  file('thm.pair.CURRY_ONE_ONE_THM','thm.pair.CURRY_ONE_ONE_THM')).
+fof(f5746,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f5745,f374])).
+fof(f5745,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) = s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) | $spl0),
+  inference(forward_demodulation,[],[f5713,f345])).
+fof(f345,plain,(
+  ( ! [X2,X0,X3,X1] : (s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),'const.pair.UNCURRY_1'(s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3)))))) )),
+  inference(cnf_transformation,[],[f138])).
+fof(f138,plain,(
+  ! [X0,X1,X2,X3] : s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),'const.pair.UNCURRY_1'(s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3)))))),
+  inference(flattening,[],[f137])).
+fof(f137,plain,(
+  ! [X0,X1,X2] : ! [X3] : s(fun('type.pair.prod'(X0,X1),X2),X3) = s(fun('type.pair.prod'(X0,X1),X2),'const.pair.UNCURRY_1'(s(fun(X0,fun(X1,X2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X0,X1),X2),X3)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6,X7,X8] : ! [X10] : s(fun('type.pair.prod'(X6,X7),X8),X10) = s(fun('type.pair.prod'(X6,X7),X8),'const.pair.UNCURRY_1'(s(fun(X6,fun(X7,X8)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(X6,X7),X8),X10)))))),
+  file('thm.pair.CURRY_ONE_ONE_THM','thm.pair.UNCURRY_CURRY_THM')).
+fof(f5713,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) = s(fun('type.pair.prod'(sK0,sK1),sK2),'const.pair.UNCURRY_1'(s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))))) | $spl0),
+  inference(superposition,[],[f345,f371])).
+fof(f372,plain,(
+  s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) != s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) | $spl1),
+  inference(cnf_transformation,[],[f372_D])).
+fof(f372_D,plain,(
+  s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) != s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f374,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) != s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) | $spl3),
+  inference(cnf_transformation,[],[f374_D])).
+fof(f374_D,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) != s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f254,plain,(
+  s(fun('type.pair.prod'(sK0,sK1),sK2),sK3) != s(fun('type.pair.prod'(sK0,sK1),sK2),sK4) | s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) != s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK4)))),
+  inference(cnf_transformation,[],[f196])).
+fof(f5940,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f5939])).
+fof(f5939,plain,(
+  s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) != s(fun(sK0,fun(sK1,sK2)),'const.pair.CURRY_1'(s(fun('type.pair.prod'(sK0,sK1),sK2),sK3))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f372,f373])).
+% SZS output end Proof for thm.pair
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 76
+% Passive clauses: 1063
+% Generated clauses: 5575
+% Final active clauses: 72
+% Final passive clauses: 941
+% Input formulas: 69
+% Initial clauses: 116
+% 
+% Duplicate literals: 229
+% Trivial inequalities: 103
+% Fw subsumption resolutions: 463
+% Fw demodulations: 530
+% Bw demodulations: 2
+% 
+% Simple tautologies: 148
+% Equational tautologies: 32
+% Forward subsumptions: 2925
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 143
+% Factoring: 1
+% Forward superposition: 2191
+% Backward superposition: 1620
+% Self superposition: 81
+% Equality factoring: 54
+% Equality resolution: 9
+% 
+% Split clauses: 78
+% Split components: 161
+% SAT solver clauses: 129
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 68
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 78
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 127
+% TWLsolver calls for satisfiability: 43
+% 
+% Memory used [KB]: 3709
+% Time elapsed: 0.143 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.166 s

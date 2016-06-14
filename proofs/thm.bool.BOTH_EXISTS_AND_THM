@@ -1,0 +1,107 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f42,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f37,f41,f39,f35,f38,f36,f40])).
+fof(f40,plain,(
+  p(s(bool,sK1)) | $spl2),
+  inference(cnf_transformation,[],[f40_D])).
+fof(f40_D,plain,(
+  p(s(bool,sK1)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f36,plain,(
+  p(s(bool,sK1))),
+  inference(duplicate_literal_removal,[],[f25])).
+fof(f25,plain,(
+  p(s(bool,sK1)) | p(s(bool,sK1))),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ((p(s(bool,sK0)) & p(s(bool,sK1))) | (p(s(bool,sK0)) & p(s(bool,sK1)))) & (~p(s(bool,sK0)) | ~p(s(bool,sK1)) | ~p(s(bool,sK0)) | ~p(s(bool,sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1] : (((p(s(bool,X0)) & p(s(bool,X1))) | (p(s(bool,X0)) & p(s(bool,X1)))) & (~p(s(bool,X0)) | ~p(s(bool,X1)) | ~p(s(bool,X0)) | ~p(s(bool,X1))))),
+  inference(rectify,[],[f18])).
+fof(f18,plain,(
+  ? [X1,X2] : (((p(s(bool,X1)) & p(s(bool,X2))) | (p(s(bool,X1)) & p(s(bool,X2)))) & (~p(s(bool,X1)) | ~p(s(bool,X2)) | ~p(s(bool,X1)) | ~p(s(bool,X2))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ? [X1,X2] : (((p(s(bool,X1)) & p(s(bool,X2))) | (p(s(bool,X1)) & p(s(bool,X2)))) & ((~p(s(bool,X1)) | ~p(s(bool,X2))) | (~p(s(bool,X1)) | ~p(s(bool,X2)))))),
+  inference(nnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ? [X1,X2] : ((p(s(bool,X1)) & p(s(bool,X2))) <~> (p(s(bool,X1)) & p(s(bool,X2))))),
+  inference(ennf_transformation,[],[f8])).
+fof(f8,plain,(
+  ~! [X1,X2] : ((p(s(bool,X1)) & p(s(bool,X2))) <=> (p(s(bool,X1)) & p(s(bool,X2))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (? [X9] : (p(s(bool,X7)) & p(s(bool,X8))) <=> (? [X9] : p(s(bool,X7)) & ? [X9] : p(s(bool,X8))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (? [X9] : (p(s(bool,X7)) & p(s(bool,X8))) <=> (? [X9] : p(s(bool,X7)) & ? [X9] : p(s(bool,X8))))),
+  file('thm.bool.BOTH_EXISTS_AND_THM','thm.bool.BOTH_EXISTS_AND_THM')).
+fof(f38,plain,(
+  p(s(bool,sK0)) | $spl0),
+  inference(cnf_transformation,[],[f38_D])).
+fof(f38_D,plain,(
+  p(s(bool,sK0)) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f35,plain,(
+  p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f22])).
+fof(f22,plain,(
+  p(s(bool,sK0)) | p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f20])).
+fof(f39,plain,(
+  ~p(s(bool,sK0)) | $spl1),
+  inference(cnf_transformation,[],[f39_D])).
+fof(f39_D,plain,(
+  ~p(s(bool,sK0)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f41,plain,(
+  ~p(s(bool,sK1)) | $spl3),
+  inference(cnf_transformation,[],[f41_D])).
+fof(f41_D,plain,(
+  ~p(s(bool,sK1)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f37,plain,(
+  ~p(s(bool,sK1)) | ~p(s(bool,sK0))),
+  inference(duplicate_literal_removal,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,sK1)) | ~p(s(bool,sK0)) | ~p(s(bool,sK1)) | ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f20])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Passive clauses: 6
+% Generated clauses: 16
+% Final passive clauses: 6
+% Input formulas: 6
+% Initial clauses: 13
+% 
+% Duplicate literals: 4
+% 
+% Simple tautologies: 2
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 6
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 3
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 3
+% 
+% TWLsolver clauses: 5
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

@@ -1,0 +1,318 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.prim_rec
+% (6780)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 713
+% Passive clauses: 9022
+% Generated clauses: 23204
+% Final active clauses: 661
+% Final passive clauses: 7914
+% Input formulas: 133
+% Initial clauses: 279
+% 
+% Duplicate literals: 226
+% Trivial inequalities: 35
+% Fw subsumption resolutions: 1628
+% Fw demodulations: 2417
+% Bw demodulations: 46
+% 
+% Simple tautologies: 207
+% Equational tautologies: 43
+% Forward subsumptions: 9827
+% Fw demodulations to eq. taut.: 5
+% 
+% Binary resolution: 8622
+% Factoring: 1027
+% Forward superposition: 4793
+% Backward superposition: 4019
+% Self superposition: 32
+% Equality factoring: 2
+% Equality resolution: 14
+% 
+% Split clauses: 95
+% Split components: 193
+% SAT solver clauses: 118
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 59
+% 
+% Sat splits: 95
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 115
+% TWLsolver calls for satisfiability: 39
+% 
+% Memory used [KB]: 15479
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 144 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.prim_rec
+% (6794)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 347
+% Passive clauses: 2961
+% Generated clauses: 13847
+% Final active clauses: 321
+% Final passive clauses: 2491
+% Input formulas: 133
+% Initial clauses: 279
+% 
+% Duplicate literals: 79
+% Trivial inequalities: 28
+% Fw subsumption resolutions: 510
+% Fw demodulations: 1939
+% Bw demodulations: 140
+% Condensations: 114
+% Global subsumptions: 19
+% 
+% Simple tautologies: 158
+% Equational tautologies: 14
+% Forward subsumptions: 4540
+% Fw demodulations to eq. taut.: 2
+% Bw demodulations to eq. taut.: 7
+% 
+% Binary resolution: 2265
+% Factoring: 188
+% Forward superposition: 2593
+% Backward superposition: 2664
+% Self superposition: 45
+% Equality factoring: 2
+% Equality resolution: 9
+% 
+% Split clauses: 20
+% Split components: 42
+% SAT solver clauses: 3616
+% SAT solver unit clauses: 330
+% SAT solver binary clauses: 106
+% SAT solver learnt clauses: 38
+% SAT solver learnt literals: 2
+% 
+% Sat splits: 20
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 3540
+% TWLsolver calls for satisfiability: 1610
+% 
+% Memory used [KB]: 21108
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.prim_rec
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prim_rec
+% SZS output start Proof for thm.prim_rec
+fof(f15179,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f839,f15099,f535])).
+fof(f535,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f375])).
+fof(f375,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f155])).
+fof(f155,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.bool.EQ_CLAUSES|split|0')).
+fof(f15099,plain,(
+  ( ! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))) )),
+  inference(unit_resulting_resolution,[],[f10165,f3416,f804])).
+fof(f804,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X0)) | s(bool,X0) != s(bool,X1) | p(s(bool,X1))) )),
+  inference(condensation,[],[f803])).
+fof(f803,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,X0)) | p(s(bool,X1)) | s(bool,X0) != s(bool,X1) | s(bool,X0) != s(bool,X2)) )),
+  inference(condensation,[],[f762])).
+fof(f762,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,X2)) | ~p(s(bool,X3)) | ~p(s(bool,X1)) | s(bool,X2) != s(bool,X3) | s(bool,X0) != s(bool,X1)) )),
+  inference(cnf_transformation,[],[f498])).
+fof(f498,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | ((~p(s(bool,X0)) | ~p(s(bool,X2)) | (p(s(bool,X1)) & p(s(bool,X3)))) & (~p(s(bool,X1)) | ~p(s(bool,X3)) | (p(s(bool,X0)) & p(s(bool,X2))))))),
+  inference(flattening,[],[f497])).
+fof(f497,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | (((~p(s(bool,X0)) | ~p(s(bool,X2))) | (p(s(bool,X1)) & p(s(bool,X3)))) & ((~p(s(bool,X1)) | ~p(s(bool,X3))) | (p(s(bool,X0)) & p(s(bool,X2))))))),
+  inference(nnf_transformation,[],[f365])).
+fof(f365,plain,(
+  ! [X0,X1,X2,X3] : (s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3)) | ((p(s(bool,X0)) & p(s(bool,X2))) <=> (p(s(bool,X1)) & p(s(bool,X3)))))),
+  inference(flattening,[],[f364])).
+fof(f364,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) != s(bool,X1) | (p(s(bool,X1)) & s(bool,X2) != s(bool,X3))) | ((p(s(bool,X0)) & p(s(bool,X2))) <=> (p(s(bool,X1)) & p(s(bool,X3)))))),
+  inference(ennf_transformation,[],[f307])).
+fof(f307,plain,(
+  ! [X0,X1,X2,X3] : ((s(bool,X0) = s(bool,X1) & (p(s(bool,X1)) => s(bool,X2) = s(bool,X3))) => ((p(s(bool,X0)) & p(s(bool,X2))) <=> (p(s(bool,X1)) & p(s(bool,X3)))))),
+  inference(rectify,[],[f122])).
+fof(f122,axiom,(
+  ! [X11,X53,X52,X54] : ((s(bool,X11) = s(bool,X53) & (p(s(bool,X53)) => s(bool,X52) = s(bool,X54))) => ((p(s(bool,X11)) & p(s(bool,X52))) <=> (p(s(bool,X53)) & p(s(bool,X54)))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.bool.LEFT_AND_CONG')).
+fof(f3416,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),X0),s('type.num.num',X1),s('type.num.num',X1))))) )),
+  inference(forward_demodulation,[],[f3355,f517])).
+fof(f517,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.prim_rec.PRE_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f141])).
+fof(f141,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.prim_rec.PRE_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))))),
+  inference(rectify,[],[f40])).
+fof(f40,axiom,(
+  ! [X9] : s('type.num.num',X9) = s('type.num.num','const.prim_rec.PRE_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X9)))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.prim_rec.PRE|split|1')).
+fof(f3355,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),X0),s('type.num.num','const.prim_rec.PRE_1'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))))),s('type.num.num',X1))))) )),
+  inference(unit_resulting_resolution,[],[f517,f654])).
+fof(f654,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) | s(X0,X2) != s(X0,X3)) )),
+  inference(cnf_transformation,[],[f446])).
+fof(f446,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) | s(X0,X2) = s(X0,X3) | p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))) & ((s(X0,X2) != s(X0,X3) & ~p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(flattening,[],[f445])).
+fof(f445,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) | (s(X0,X2) = s(X0,X3) | p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))) & ((s(X0,X2) != s(X0,X3) & ~p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(nnf_transformation,[],[f243])).
+fof(f243,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) <=> (s(X0,X2) = s(X0,X3) | p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(flattening,[],[f242])).
+fof(f242,plain,(
+  ! [X0] : ! [X1,X2,X3] : (p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))) <=> (s(X0,X2) = s(X0,X3) | p(s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))))),
+  inference(rectify,[],[f87])).
+fof(f87,axiom,(
+  ! [X13] : ! [X39,X14,X31] : (p(s(bool,'const.relation.RTC_3'(s(fun(X13,fun(X13,bool)),X39),s(X13,X14),s(X13,X31)))) <=> (s(X13,X14) = s(X13,X31) | p(s(bool,'const.relation.TC_3'(s(fun(X13,fun(X13,bool)),X39),s(X13,X14),s(X13,X31))))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.relation.RTC_CASES_TC')).
+fof(f10165,plain,(
+  ( ! [X0,X1] : (s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))))) = s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1)))) )),
+  inference(backward_demodulation,[],[f10164,f821])).
+fof(f821,plain,(
+  ( ! [X0,X1] : (s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X1)))))) )),
+  inference(forward_demodulation,[],[f668,f519])).
+fof(f519,plain,(
+  ( ! [X0] : (s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))) = s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f143])).
+fof(f143,plain,(
+  ! [X0] : s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))) = s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X0)))),
+  inference(rectify,[],[f42])).
+fof(f42,axiom,(
+  ! [X15] : s('type.num.num','const.num.SUC_1'(s('type.num.num',X15))) = s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X15)))),
+  file('thm.prim_rec.LESS_SUC_REFL','ARITY_0_1_const.num.SUC')).
+fof(f668,plain,(
+  ( ! [X0,X1] : (s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f252])).
+fof(f252,plain,(
+  ! [X0,X1] : s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X1)))))),
+  inference(rectify,[],[f64])).
+fof(f64,axiom,(
+  ! [X9,X6] : s(bool,'const.relation.RTC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X9),s('type.num.num',X6))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X9),s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.num.SUC_0'),s('type.num.num',X6)))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.prim_rec.TC_IM_RTC_SUC')).
+fof(f10164,plain,(
+  ( ! [X0,X1] : (s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1)))) )),
+  inference(forward_demodulation,[],[f9977,f667])).
+fof(f667,plain,(
+  ( ! [X0,X1] : (s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,happ(s(fun('type.num.num',bool),happ(s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0'),s('type.num.num',X0))),s('type.num.num',X1)))) )),
+  inference(cnf_transformation,[],[f251])).
+fof(f251,plain,(
+  ! [X0,X1] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,happ(s(fun('type.num.num',bool),happ(s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0'),s('type.num.num',X0))),s('type.num.num',X1)))),
+  inference(rectify,[],[f41])).
+fof(f41,axiom,(
+  ! [X15,X16] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X15),s('type.num.num',X16))) = s(bool,happ(s(fun('type.num.num',bool),happ(s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0'),s('type.num.num',X15))),s('type.num.num',X16)))),
+  file('thm.prim_rec.LESS_SUC_REFL','ARITY_0_2_const.prim_rec.<')).
+fof(f9977,plain,(
+  ( ! [X0,X1] : (s(bool,happ(s(fun('type.num.num',bool),happ(s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0'),s('type.num.num',X0))),s('type.num.num',X1))) = s(bool,'const.relation.TC_3'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0'))),s('type.num.num',X0),s('type.num.num',X1)))) )),
+  inference(superposition,[],[f650,f509])).
+fof(f509,plain,(
+  s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0') = s(fun('type.num.num',fun('type.num.num',bool)),'const.relation.TC_1'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0')))))),
+  inference(cnf_transformation,[],[f86])).
+fof(f86,axiom,(
+  s(fun('type.num.num',fun('type.num.num',bool)),'const.prim_rec.<_0') = s(fun('type.num.num',fun('type.num.num',bool)),'const.relation.TC_1'(s(fun('type.num.num',fun('type.num.num',bool)),'_dst_x01x10_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s(fun('type.num.num','type.num.num'),'const.num.SUC_0')))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.prim_rec.LESS_ALT')).
+fof(f650,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.TC_1'(s(fun(X0,fun(X0,bool)),X1))),s(X0,X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f237])).
+fof(f237,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.TC_1'(s(fun(X0,fun(X0,bool)),X1))),s(X0,X2))),s(X0,X3)))),
+  inference(flattening,[],[f236])).
+fof(f236,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(bool,'const.relation.TC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'const.relation.TC_1'(s(fun(X0,fun(X0,bool)),X1))),s(X0,X2))),s(X0,X3)))),
+  inference(rectify,[],[f89])).
+fof(f89,axiom,(
+  ! [X13] : ! [X15,X16,X41] : s(bool,'const.relation.TC_3'(s(fun(X13,fun(X13,bool)),X15),s(X13,X16),s(X13,X41))) = s(bool,happ(s(fun(X13,bool),happ(s(fun(X13,fun(X13,bool)),'const.relation.TC_1'(s(fun(X13,fun(X13,bool)),X15))),s(X13,X16))),s(X13,X41)))),
+  file('thm.prim_rec.LESS_SUC_REFL','ARITY_1_3_const.relation.TC')).
+fof(f839,plain,(
+  s(bool,'T_0') != s(bool,'const.prim_rec.<_2'(s('type.num.num',sK1),s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1)))))),
+  inference(unit_resulting_resolution,[],[f502,f534])).
+fof(f534,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f375])).
+fof(f502,plain,(
+  ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK1),s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))))))),
+  inference(cnf_transformation,[],[f370])).
+fof(f370,plain,(
+  ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK1),s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1])],[f328])).
+fof(f328,plain,(
+  ? [X0] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))),
+  inference(ennf_transformation,[],[f135])).
+fof(f135,plain,(
+  ~! [X0] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))))))),
+  file('thm.prim_rec.LESS_SUC_REFL','thm.prim_rec.LESS_SUC_REFL')).
+% SZS output end Proof for thm.prim_rec
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 394
+% Passive clauses: 2813
+% Generated clauses: 14681
+% Final active clauses: 361
+% Final passive clauses: 2236
+% Input formulas: 133
+% Initial clauses: 279
+% 
+% Duplicate literals: 6
+% Trivial inequalities: 19
+% Fw subsumption resolutions: 222
+% Fw demodulations: 3919
+% Bw demodulations: 216
+% Condensations: 55
+% 
+% Simple tautologies: 96
+% Equational tautologies: 38
+% Forward subsumptions: 7441
+% Fw demodulations to eq. taut.: 38
+% 
+% Unit resulting resolution: 1601
+% Factoring: 1
+% Forward superposition: 4291
+% Backward superposition: 4034
+% Self superposition: 75
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 6
+% Split components: 13
+% SAT solver clauses: 2827
+% SAT solver unit clauses: 627
+% SAT solver binary clauses: 1397
+% 
+% Sat splits: 6
+% 
+% Memory used [KB]: 27632
+% Time elapsed: 1.006 s
+% ------------------------------
+% ------------------------------
+% Success in time 2.308 s

@@ -1,0 +1,183 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f19079,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f18938,f147,f150])).
+fof(f150,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f150_D])).
+fof(f150_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f147,plain,(
+  p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f124])).
+fof(f124,plain,(
+  ( ! [X0,X1] : (p(s(bool,'T_0')) | s(X0,X1) != s(X0,X1)) )),
+  inference(cnf_transformation,[],[f83])).
+fof(f83,plain,(
+  ! [X0,X1] : ((s(X0,X1) != s(X0,X1) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | s(X0,X1) = s(X0,X1)))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X8] : ! [X10] : (s(X8,X10) = s(X8,X10) <=> p(s(bool,'T_0')))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.bool.REFL_CLAUSE')).
+fof(f18938,plain,(
+  $false | $spl2),
+  inference(subsumption_resolution,[],[f18937,f93])).
+fof(f93,plain,(
+  s('type.num.num',sK0) != s('type.num.num','const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',sK1)))))),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))) & s('type.num.num',sK0) != s('type.num.num','const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f56])).
+fof(f56,plain,(
+  ? [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) & s('type.num.num',X0) != s('type.num.num','const.list.EL_2'(s('type.num.num',X0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X1))))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) => s('type.num.num',X0) = s('type.num.num','const.list.EL_2'(s('type.num.num',X0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X1))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => s('type.num.num',X6) = s('type.num.num','const.list.EL_2'(s('type.num.num',X6),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X7))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => s('type.num.num',X6) = s('type.num.num','const.list.EL_2'(s('type.num.num',X6),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X7))))))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.rich_list.EL_COUNT_LIST')).
+fof(f18937,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',sK1))))) | $spl2),
+  inference(forward_demodulation,[],[f18766,f234])).
+fof(f234,plain,(
+  ( ! [X0,X1] : (s(X0,X1) = s(X0,happ(s(fun(X0,X0),'const.combin.I_0'),s(X0,X1)))) )),
+  inference(forward_demodulation,[],[f123,f122])).
+fof(f122,plain,(
+  ( ! [X0,X1] : (s(X0,X1) = s(X0,'const.combin.I_1'(s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : s(X0,X1) = s(X0,'const.combin.I_1'(s(X0,X1)))),
+  inference(flattening,[],[f41])).
+fof(f41,plain,(
+  ! [X0] : ! [X1] : s(X0,X1) = s(X0,'const.combin.I_1'(s(X0,X1)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X8] : ! [X10] : s(X8,X10) = s(X8,'const.combin.I_1'(s(X8,X10)))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.combin.I_THM')).
+fof(f123,plain,(
+  ( ! [X0,X1] : (s(X0,'const.combin.I_1'(s(X0,X1))) = s(X0,happ(s(fun(X0,X0),'const.combin.I_0'),s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1] : s(X0,'const.combin.I_1'(s(X0,X1))) = s(X0,happ(s(fun(X0,X0),'const.combin.I_0'),s(X0,X1)))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ! [X1] : s(X0,'const.combin.I_1'(s(X0,X1))) = s(X0,happ(s(fun(X0,X0),'const.combin.I_0'),s(X0,X1)))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X8] : ! [X18] : s(X8,'const.combin.I_1'(s(X8,X18))) = s(X8,happ(s(fun(X8,X8),'const.combin.I_0'),s(X8,X18)))),
+  file('thm.rich_list.EL_COUNT_LIST','ARITY_0_1_const.combin.I')).
+fof(f18766,plain,(
+  s('type.num.num',happ(s(fun('type.num.num','type.num.num'),'const.combin.I_0'),s('type.num.num',sK0))) = s('type.num.num','const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',sK1))))) | $spl2),
+  inference(superposition,[],[f732,f97])).
+fof(f97,plain,(
+  ( ! [X0] : (s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X0))) = s('type.list.list'('type.num.num'),'const.list.GENLIST_2'(s(fun('type.num.num','type.num.num'),'const.combin.I_0'),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X0))) = s('type.list.list'('type.num.num'),'const.list.GENLIST_2'(s(fun('type.num.num','type.num.num'),'const.combin.I_0'),s('type.num.num',X0)))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X7] : s('type.list.list'('type.num.num'),'const.rich_list.COUNT_LIST_1'(s('type.num.num',X7))) = s('type.list.list'('type.num.num'),'const.list.GENLIST_2'(s(fun('type.num.num','type.num.num'),'const.combin.I_0'),s('type.num.num',X7)))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.rich_list.COUNT_LIST_GENLIST')).
+fof(f732,plain,(
+  ( ! [X0,X1] : (s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',sK0))) = s(X0,'const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',sK1)))))) ) | $spl2),
+  inference(subsumption_resolution,[],[f722,f150])).
+fof(f722,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',sK0))) = s(X0,'const.list.EL_2'(s('type.num.num',sK0),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',sK1)))))) )),
+  inference(superposition,[],[f130,f162])).
+fof(f162,plain,(
+  s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(resolution,[],[f100,f92])).
+fof(f92,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1))))),
+  inference(cnf_transformation,[],[f68])).
+fof(f100,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f69])).
+fof(f69,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.bool.EQ_CLAUSES|split|0')).
+fof(f130,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num',X2)))) | s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',X3))) = s(X0,'const.list.EL_2'(s('type.num.num',X3),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',X2)))))) )),
+  inference(cnf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0,X1,X2,X3] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num',X2)))) | s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',X3))) = s(X0,'const.list.EL_2'(s('type.num.num',X3),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',X2))))))),
+  inference(ennf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num',X2)))) => s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',X3))) = s(X0,'const.list.EL_2'(s('type.num.num',X3),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',X2))))))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : ! [X1,X2,X3] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num',X2)))) => s(X0,happ(s(fun('type.num.num',X0),X1),s('type.num.num',X3))) = s(X0,'const.list.EL_2'(s('type.num.num',X3),s('type.list.list'(X0),'const.list.GENLIST_2'(s(fun('type.num.num',X0),X1),s('type.num.num',X2))))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X8] : ! [X17,X7,X10] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X10),s('type.num.num',X7)))) => s(X8,happ(s(fun('type.num.num',X8),X17),s('type.num.num',X10))) = s(X8,'const.list.EL_2'(s('type.num.num',X10),s('type.list.list'(X8),'const.list.GENLIST_2'(s(fun('type.num.num',X8),X17),s('type.num.num',X7))))))),
+  file('thm.rich_list.EL_COUNT_LIST','thm.list.EL_GENLIST')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 159
+% Passive clauses: 1694
+% Generated clauses: 18708
+% Final active clauses: 155
+% Final passive clauses: 1337
+% Input formulas: 24
+% Initial clauses: 54
+% 
+% Duplicate literals: 887
+% Trivial inequalities: 472
+% Fw subsumption resolutions: 2796
+% Fw demodulations: 3363
+% Bw demodulations: 3
+% 
+% Simple tautologies: 396
+% Equational tautologies: 23
+% Forward subsumptions: 8406
+% 
+% Binary resolution: 201
+% Forward superposition: 6310
+% Backward superposition: 4312
+% Self superposition: 100
+% Equality factoring: 51
+% Equality resolution: 43
+% 
+% Split clauses: 478
+% Split components: 966
+% SAT solver clauses: 868
+% SAT solver unit clauses: 21
+% SAT solver binary clauses: 87
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 478
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 866
+% TWLsolver calls for satisfiability: 171
+% 
+% Memory used [KB]: 8443
+% Time elapsed: 0.389 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.391 s

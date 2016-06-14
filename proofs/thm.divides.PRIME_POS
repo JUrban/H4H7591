@@ -1,0 +1,271 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.divides
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.divides
+% SZS output start Proof for thm.divides
+fof(f1353,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1351,f393,f420,f418,f93,f146,f464,f147,f154,f1334,f1332,f91,f149])).
+fof(f149,plain,(
+  p(s(bool,'T_0')) | $spl4),
+  inference(cnf_transformation,[],[f149_D])).
+fof(f149_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f91,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f8])).
+fof(f8,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.divides.PRIME_POS','thm.bool.TRUTH')).
+fof(f1332,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK0) | $spl28),
+  inference(cnf_transformation,[],[f1332_D])).
+fof(f1332_D,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK0) <=> ~$spl28),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl28])])).
+fof(f1334,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK0) | $spl4),
+  inference(subsumption_resolution,[],[f1288,f164])).
+fof(f164,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl4),
+  inference(resolution,[],[f103,f149])).
+fof(f103,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'F_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X11] : (s(bool,'F_0') = s(bool,X11) <=> ~p(s(bool,X11)))),
+  file('thm.divides.PRIME_POS','thm.bool.EQ_CLAUSES|split|3')).
+fof(f1288,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | s('type.num.num','const.num.|48|_0') = s('type.num.num',sK0)),
+  inference(superposition,[],[f317,f172])).
+fof(f172,plain,(
+  s(bool,'F_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',sK0)))),
+  inference(resolution,[],[f104,f90])).
+fof(f90,plain,(
+  ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',sK0))))),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  p(s(bool,'const.divides.prime_1'(s('type.num.num',sK0)))) & ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',sK0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f53])).
+fof(f53,plain,(
+  ? [X0] : (p(s(bool,'const.divides.prime_1'(s('type.num.num',X0)))) & ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~! [X0] : (p(s(bool,'const.divides.prime_1'(s('type.num.num',X0)))) => p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.divides.prime_1'(s('type.num.num',X6)))) => p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.divides.prime_1'(s('type.num.num',X6)))) => p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X6)))))),
+  file('thm.divides.PRIME_POS','thm.divides.PRIME_POS')).
+fof(f104,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f317,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(superposition,[],[f202,f97])).
+fof(f97,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(X0)))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1(X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1])],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | ? [X1] : s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X7) | ? [X8] : s('type.num.num',X7) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X8))))),
+  file('thm.divides.PRIME_POS','thm.arithmetic.num_CASES')).
+fof(f202,plain,(
+  ( ! [X1] : (s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num',X1)))))) )),
+  inference(resolution,[],[f95,f100])).
+fof(f100,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f69])).
+fof(f69,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.divides.PRIME_POS','thm.bool.EQ_CLAUSES|split|1')).
+fof(f95,plain,(
+  ( ! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X8] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num',X8))))))),
+  file('thm.divides.PRIME_POS','thm.prim_rec.LESS_|48|')).
+fof(f154,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(resolution,[],[f147,f146])).
+fof(f147,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl2),
+  inference(cnf_transformation,[],[f147_D])).
+fof(f147_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f464,plain,(
+  ( ! [X1] : (p(s(bool,X1))) ) | $spl14),
+  inference(subsumption_resolution,[],[f433,f418])).
+fof(f433,plain,(
+  ( ! [X1] : (s(bool,'T_0') != s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | p(s(bool,X1))) ) | $spl14),
+  inference(superposition,[],[f99,f418])).
+fof(f99,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f69])).
+fof(f146,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f146_D])).
+fof(f146_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f93,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.divides.PRIME_POS',aHL_FALSITY)).
+fof(f418,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0')))) ) | $spl14),
+  inference(cnf_transformation,[],[f418_D])).
+fof(f418_D,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0')))) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f420,plain,(
+  s(bool,'T_0') != s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | $spl17),
+  inference(cnf_transformation,[],[f420_D])).
+fof(f420_D,plain,(
+  s(bool,'T_0') != s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) <=> ~$spl17),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl17])])).
+fof(f393,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | s(bool,X0) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0')))) ) | $spl1),
+  inference(equality_factoring,[],[f351])).
+fof(f351,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | s(bool,'T_0') = s(bool,X0)) ) | $spl1),
+  inference(trivial_inequality_removal,[],[f340])).
+fof(f340,plain,(
+  ( ! [X0] : (s(bool,'F_0') != s(bool,'F_0') | s(bool,X0) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | s(bool,'T_0') = s(bool,X0)) ) | $spl1),
+  inference(superposition,[],[f333,f96])).
+fof(f96,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.divides.PRIME_POS',aHL_BOOL_CASES)).
+fof(f333,plain,(
+  ( ! [X5] : (s(bool,'F_0') != s(bool,X5) | s(bool,X5) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0')))) ) | $spl1),
+  inference(subsumption_resolution,[],[f328,f146])).
+fof(f328,plain,(
+  ( ! [X5] : (p(s(bool,'F_0')) | s(bool,X5) = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | s(bool,'F_0') != s(bool,X5)) )),
+  inference(superposition,[],[f235,f171])).
+fof(f171,plain,(
+  s(bool,'F_0') = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0')))),
+  inference(resolution,[],[f104,f94])).
+fof(f94,plain,(
+  ~p(s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ~p(s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(flattening,[],[f23])).
+fof(f23,axiom,(
+  ~p(s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))))),
+  file('thm.divides.PRIME_POS','thm.divides.NOT_PRIME_|48|')).
+fof(f235,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | s(bool,X0) = s(bool,X1) | s(bool,'F_0') != s(bool,X1)) )),
+  inference(resolution,[],[f125,f103])).
+fof(f125,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f60])).
+fof(f60,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X9,X10] : ((p(s(bool,X9)) => p(s(bool,X10))) => ((p(s(bool,X10)) => p(s(bool,X9))) => s(bool,X9) = s(bool,X10)))),
+  file('thm.divides.PRIME_POS','thm.bool.IMP_ANTISYM_AX')).
+fof(f1351,plain,(
+  $false | ($spl17 | $spl28)),
+  inference(subsumption_resolution,[],[f1341,f420])).
+fof(f1341,plain,(
+  s(bool,'T_0') = s(bool,'const.divides.prime_1'(s('type.num.num','const.num.|48|_0'))) | $spl28),
+  inference(backward_demodulation,[],[f1332,f158])).
+fof(f158,plain,(
+  s(bool,'T_0') = s(bool,'const.divides.prime_1'(s('type.num.num',sK0)))),
+  inference(resolution,[],[f100,f89])).
+fof(f89,plain,(
+  p(s(bool,'const.divides.prime_1'(s('type.num.num',sK0))))),
+  inference(cnf_transformation,[],[f67])).
+% SZS output end Proof for thm.divides
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 48
+% Passive clauses: 195
+% Generated clauses: 1235
+% Final active clauses: 27
+% Final passive clauses: 92
+% Input formulas: 24
+% Initial clauses: 55
+% 
+% Duplicate literals: 84
+% Trivial inequalities: 32
+% Fw subsumption resolutions: 146
+% Fw demodulations: 97
+% Bw demodulations: 13
+% 
+% Simple tautologies: 62
+% Equational tautologies: 19
+% Forward subsumptions: 568
+% 
+% Binary resolution: 58
+% Factoring: 1
+% Forward superposition: 234
+% Backward superposition: 429
+% Self superposition: 32
+% Equality factoring: 32
+% Equality resolution: 7
+% 
+% Split clauses: 27
+% Split components: 56
+% SAT solver clauses: 53
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 31
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 27
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 51
+% TWLsolver calls for satisfiability: 14
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.032 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.034 s

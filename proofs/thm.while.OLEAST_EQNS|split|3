@@ -1,0 +1,202 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.while
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.while
+% SZS output start Proof for thm.while
+fof(f8699,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f8682,f379,f586,f584,f342,f585])).
+fof(f585,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f585_D])).
+fof(f585_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f342,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.while.OLEAST_EQNS|split|3',aHL_FALSITY)).
+fof(f584,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(cnf_transformation,[],[f584_D])).
+fof(f584_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f586,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f586_D])).
+fof(f586_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f379,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f241])).
+fof(f241,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f240])).
+fof(f240,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f173])).
+fof(f173,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f96])).
+fof(f96,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f35])).
+fof(f35,axiom,(
+  ! [X16] : ((p(s(bool,'F_0')) => p(s(bool,X16))) <=> p(s(bool,'T_0')))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.bool.IMP_CLAUSES|split|2')).
+fof(f8682,plain,(
+  $false | $spl2),
+  inference(subsumption_resolution,[],[f8681,f333])).
+fof(f333,plain,(
+  s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))) != s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))) != s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))) = s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))) = s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.while.OLEAST_EQNS|split|3')).
+fof(f8681,plain,(
+  s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))) = s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0'))))) | $spl2),
+  inference(forward_demodulation,[],[f8680,f408])).
+fof(f408,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f117])).
+fof(f117,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f116])).
+fof(f116,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f66])).
+fof(f66,axiom,(
+  ! [X17] : ! [X19,X20] : s(X17,X19) = s(X17,'const.bool.COND_3'(s(bool,'T_0'),s(X17,X19),s(X17,X20)))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.bool.COND_CLAUSES|split|0')).
+fof(f8680,plain,(
+  s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0'))))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.num.|48|_0'))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))) | $spl2),
+  inference(forward_demodulation,[],[f8650,f336])).
+fof(f336,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  inference(cnf_transformation,[],[f9])).
+fof(f9,axiom,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0')))))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.while.LEAST_T')).
+fof(f8650,plain,(
+  s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0'))))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,'T_0'),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x0_1'(s(bool,'T_0'))))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))) | $spl2),
+  inference(superposition,[],[f422,f5152])).
+fof(f5152,plain,(
+  s(bool,'T_0') = s(bool,sK17('_dst_x0_1'(s(bool,'T_0')))) | $spl2),
+  inference(resolution,[],[f5134,f354])).
+fof(f354,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f224])).
+fof(f224,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X16] : (s(bool,'T_0') = s(bool,X16) <=> p(s(bool,X16)))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.bool.EQ_CLAUSES|split|1')).
+fof(f5134,plain,(
+  p(s(bool,sK17('_dst_x0_1'(s(bool,'T_0'))))) | $spl2),
+  inference(resolution,[],[f4946,f586])).
+fof(f4946,plain,(
+  ( ! [X24] : (~p(s(bool,X24)) | p(s(bool,sK17('_dst_x0_1'(s(bool,X24)))))) )),
+  inference(superposition,[],[f421,f471])).
+fof(f471,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f149])).
+fof(f149,plain,(
+  ! [X0,X1,X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(flattening,[],[f148])).
+fof(f148,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X12,X13] : ! [X14,X15] : s(X13,X14) = s(X13,happ(s(fun(X12,X13),'_dst_x0_1'(s(X13,X14))),s(X12,X15)))),
+  file('thm.while.OLEAST_EQNS|split|3','_dst_x0_ax')).
+fof(f421,plain,(
+  ( ! [X2,X0] : (~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2)))) | p(s(bool,sK17(X0)))) )),
+  inference(cnf_transformation,[],[f269])).
+fof(f269,plain,(
+  ! [X0] : ((~p(s(bool,sK17(X0))) | p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',sK18(X0)))))) & (! [X2] : ~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2)))) | p(s(bool,sK17(X0)))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,sK17(X0)),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK17,sK18])],[f268])).
+fof(f268,plain,(
+  ! [X0] : ? [X1] : ((~p(s(bool,X1)) | ? [X3] : p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X3))))) & (! [X2] : ~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2)))) | p(s(bool,X1))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,X1),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  inference(rectify,[],[f267])).
+fof(f267,plain,(
+  ! [X0] : ? [X1] : ((~p(s(bool,X1)) | ? [X2] : p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2))))) & (! [X2] : ~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2)))) | p(s(bool,X1))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,X1),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  inference(flattening,[],[f266])).
+fof(f266,plain,(
+  ! [X0] : ? [X1] : (((~p(s(bool,X1)) | ? [X2] : p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2))))) & (! [X2] : ~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2)))) | p(s(bool,X1)))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,X1),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  inference(nnf_transformation,[],[f130])).
+fof(f130,plain,(
+  ! [X0] : ? [X1] : ((p(s(bool,X1)) <=> ? [X2] : p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X2))))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,X1),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X7] : ? [X10] : ((p(s(bool,X10)) <=> ? [X8] : p(s(bool,happ(s(fun('type.num.num',bool),X7),s('type.num.num',X8))))) & s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X7))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,X10),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X7))))),s('type.option.option'('type.num.num'),'const.option.NONE_0'))))),
+  file('thm.while.OLEAST_EQNS|split|3','thm.while.OLEAST_def')).
+fof(f422,plain,(
+  ( ! [X0] : (s('type.option.option'('type.num.num'),'const.while.OLEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.option.option'('type.num.num'),'const.bool.COND_3'(s(bool,sK17(X0)),s('type.option.option'('type.num.num'),'const.option.SOME_1'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))),s('type.option.option'('type.num.num'),'const.option.NONE_0')))) )),
+  inference(cnf_transformation,[],[f269])).
+% SZS output end Proof for thm.while
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 507
+% Passive clauses: 3644
+% Generated clauses: 8343
+% Final active clauses: 503
+% Final passive clauses: 2978
+% Input formulas: 69
+% Initial clauses: 243
+% 
+% Duplicate literals: 111
+% Trivial inequalities: 31
+% Fw subsumption resolutions: 499
+% Fw demodulations: 620
+% Bw demodulations: 3
+% 
+% Simple tautologies: 177
+% Equational tautologies: 24
+% Forward subsumptions: 3192
+% 
+% Binary resolution: 3974
+% Factoring: 314
+% Forward superposition: 1581
+% Backward superposition: 888
+% Self superposition: 8
+% Equality factoring: 2
+% Equality resolution: 13
+% 
+% Split clauses: 122
+% Split components: 246
+% SAT solver clauses: 211
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 52
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 122
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 209
+% TWLsolver calls for satisfiability: 162
+% 
+% Memory used [KB]: 4477
+% Time elapsed: 0.208 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.23 s

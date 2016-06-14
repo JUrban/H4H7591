@@ -1,0 +1,137 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f1006,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f975])).
+fof(f975,plain,(
+  s(bool,'T_0') != s(bool,'T_0')),
+  inference(superposition,[],[f118,f949])).
+fof(f949,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))))) )),
+  inference(forward_demodulation,[],[f906,f62])).
+fof(f62,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : ! [X1] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X10] : s(bool,'T_0') = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.NIL_0'),s('type.list.list'(X6),X10)))),
+  file('thm.rich_list.IS_PREFIX_APPEND3','thm.list.isPREFIX|split|0')).
+fof(f906,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X2))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2)))))) )),
+  inference(superposition,[],[f66,f63])).
+fof(f63,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.NIL_0')))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ! [X10] : s('type.list.list'(X6),X10) = s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X10),s('type.list.list'(X6),'const.list.NIL_0')))),
+  file('thm.rich_list.IS_PREFIX_APPEND3','thm.list.APPEND_NIL')).
+fof(f66,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X3))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X3)))))) )),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X3))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X3))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : ! [X7,X17,X8] : s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),X17),s('type.list.list'(X6),X8))) = s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X17))),s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8)))))),
+  file('thm.rich_list.IS_PREFIX_APPEND3','thm.rich_list.IS_PREFIX_APPENDS')).
+fof(f118,plain,(
+  s(bool,'T_0') != s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2)))))),
+  inference(resolution,[],[f50,f54])).
+fof(f54,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.rich_list.IS_PREFIX_APPEND3','thm.bool.EQ_CLAUSES|split|1')).
+fof(f50,plain,(
+  ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))))))),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),'const.list.APPEND_2'(s('type.list.list'(sK0),sK1),s('type.list.list'(sK0),sK2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f40])).
+fof(f40,plain,(
+  ? [X0,X1,X2] : ~p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~! [X0,X1,X2] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ~! [X0] : ! [X1,X2] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X1),s('type.list.list'(X0),X2))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : p(s(bool,'const.list.isPREFIX_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X7),s('type.list.list'(X6),X8))))))),
+  file('thm.rich_list.IS_PREFIX_APPEND3','thm.rich_list.IS_PREFIX_APPEND3')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 150
+% Generated clauses: 922
+% Final active clauses: 30
+% Final passive clauses: 91
+% Input formulas: 15
+% Initial clauses: 21
+% 
+% Duplicate literals: 79
+% Trivial inequalities: 21
+% Fw subsumption resolutions: 70
+% Fw demodulations: 52
+% Bw demodulations: 2
+% 
+% Simple tautologies: 54
+% Equational tautologies: 16
+% Forward subsumptions: 461
+% Fw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 20
+% Forward superposition: 348
+% Backward superposition: 249
+% Self superposition: 32
+% Equality factoring: 28
+% Equality resolution: 7
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 18
+% SAT solver unit clauses: 11
+% SAT solver binary clauses: 5
+% 
+% Sat splits: 5
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 12
+% 
+% Memory used [KB]: 1407
+% Time elapsed: 0.033 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.035 s

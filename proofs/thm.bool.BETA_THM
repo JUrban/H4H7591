@@ -1,0 +1,50 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f291,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f193])).
+fof(f193,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK3))) != s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK3)))),
+  inference(cnf_transformation,[],[f141])).
+fof(f141,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK3))) != s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK3)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f123])).
+fof(f123,plain,(
+  ? [X0,X1,X2,X3] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(ennf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~! [X0,X1,X2,X3] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ~! [X0,X1] : ! [X2,X3] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X3))) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X3)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : s(X6,happ(s(fun(X7,X6),X8),s(X7,X9))) = s(X6,happ(s(fun(X7,X6),X8),s(X7,X9)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : s(X6,happ(s(fun(X7,X6),X8),s(X7,X9))) = s(X6,happ(s(fun(X7,X6),X8),s(X7,X9)))),
+  file('thm.bool.BETA_THM','thm.bool.BETA_THM')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Generated clauses: 99
+% Input formulas: 47
+% Initial clauses: 96
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 2
+% 
+% Simple tautologies: 7
+% Equational tautologies: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

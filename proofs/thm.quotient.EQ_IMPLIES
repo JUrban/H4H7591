@@ -1,0 +1,76 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.quotient
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quotient
+% SZS output start Proof for thm.quotient
+fof(f76,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f75,f44])).
+fof(f44,plain,(
+  p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  s(bool,sK0) = s(bool,sK1) & p(s(bool,sK0)) & ~p(s(bool,sK1))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f24])).
+fof(f24,plain,(
+  ? [X0,X1] : (s(bool,X0) = s(bool,X1) & p(s(bool,X0)) & ~p(s(bool,X1)))),
+  inference(flattening,[],[f23])).
+fof(f23,plain,(
+  ? [X0,X1] : (s(bool,X0) = s(bool,X1) & (p(s(bool,X0)) & ~p(s(bool,X1))))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1] : (s(bool,X0) = s(bool,X1) => (p(s(bool,X0)) => p(s(bool,X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s(bool,X6) = s(bool,X7) => (p(s(bool,X6)) => p(s(bool,X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s(bool,X6) = s(bool,X7) => (p(s(bool,X6)) => p(s(bool,X7))))),
+  file('thm.quotient.EQ_IMPLIES','thm.quotient.EQ_IMPLIES')).
+fof(f75,plain,(
+  ~p(s(bool,sK0))),
+  inference(backward_demodulation,[],[f43,f45])).
+fof(f45,plain,(
+  ~p(s(bool,sK1))),
+  inference(cnf_transformation,[],[f31])).
+fof(f43,plain,(
+  s(bool,sK0) = s(bool,sK1)),
+  inference(cnf_transformation,[],[f31])).
+% SZS output end Proof for thm.quotient
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 7
+% Passive clauses: 13
+% Generated clauses: 33
+% Final active clauses: 4
+% Final passive clauses: 2
+% Input formulas: 11
+% Initial clauses: 23
+% 
+% Fw subsumption resolutions: 1
+% Bw demodulations: 1
+% 
+% Simple tautologies: 7
+% 
+% Binary resolution: 3
+% 
+% Split clauses: 8
+% Split components: 17
+% SAT solver clauses: 14
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 8
+% 
+% Sat splits: 8
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 14
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

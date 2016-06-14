@@ -1,0 +1,157 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.combin
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.combin
+% SZS output start Proof for thm.combin
+fof(f1867,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1858,f70,f106])).
+fof(f106,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f106_D])).
+fof(f106_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f70,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.combin.UPDATE_APPLY|split|0',aHL_FALSITY)).
+fof(f1858,plain,(
+  $false | $spl1),
+  inference(trivial_inequality_removal,[],[f1857])).
+fof(f1857,plain,(
+  s(sK1,sK3) != s(sK1,sK3) | $spl1),
+  inference(superposition,[],[f67,f1728])).
+fof(f1728,plain,(
+  ( ! [X6,X10,X8,X7,X9] : (s(X10,X8) = s(X10,'const.combin.UPDATE_4'(s(X9,X6),s(X10,X8),s(fun(X9,X10),X7),s(X9,X6)))) ) | $spl1),
+  inference(forward_demodulation,[],[f1602,f93])).
+fof(f93,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.bool.COND_3'(s(bool,'T_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X6] : ! [X11,X12] : s(X6,X11) = s(X6,'const.bool.COND_3'(s(bool,'T_0'),s(X6,X11),s(X6,X12)))),
+  file('thm.combin.UPDATE_APPLY|split|0','thm.bool.COND_CLAUSES|split|0')).
+fof(f1602,plain,(
+  ( ! [X6,X10,X8,X7,X9] : (s(X10,'const.combin.UPDATE_4'(s(X9,X6),s(X10,X8),s(fun(X9,X10),X7),s(X9,X6))) = s(X10,'const.bool.COND_3'(s(bool,'T_0'),s(X10,X8),s(X10,happ(s(fun(X9,X10),X7),s(X9,X6)))))) ) | $spl1),
+  inference(superposition,[],[f102,f267])).
+fof(f267,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(bool,'T_0') = s(bool,sK6(X0,X1,X2,X0,X3,X4))) ) | $spl1),
+  inference(equality_resolution,[],[f234])).
+fof(f234,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X4,X0) != s(X4,X3) | s(bool,'T_0') = s(bool,sK6(X0,X1,X2,X3,X4,X5))) ) | $spl1),
+  inference(subsumption_resolution,[],[f233,f106])).
+fof(f233,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (p(s(bool,'F_0')) | s(X4,X0) != s(X4,X3) | s(bool,'T_0') = s(bool,sK6(X0,X1,X2,X3,X4,X5))) )),
+  inference(superposition,[],[f101,f71])).
+fof(f71,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.combin.UPDATE_APPLY|split|0',aHL_BOOL_CASES)).
+fof(f101,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (p(s(bool,sK6(X5,X4,X3,X2,X1,X0))) | s(X1,X2) != s(X1,X5)) )),
+  inference(cnf_transformation,[],[f66])).
+fof(f66,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : ((~p(s(bool,sK6(X5,X4,X3,X2,X1,X0))) | s(X1,X2) = s(X1,X5)) & (s(X1,X2) != s(X1,X5) | p(s(bool,sK6(X5,X4,X3,X2,X1,X0)))) & s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,sK6(X5,X4,X3,X2,X1,X0)),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK6])],[f65])).
+fof(f65,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : ? [X6] : ((~p(s(bool,X6)) | s(X1,X2) = s(X1,X5)) & (s(X1,X2) != s(X1,X5) | p(s(bool,X6))) & s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,X6),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(flattening,[],[f64])).
+fof(f64,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : ? [X6] : (((~p(s(bool,X6)) | s(X1,X2) = s(X1,X5)) & (s(X1,X2) != s(X1,X5) | p(s(bool,X6)))) & s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,X6),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(nnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : ? [X6] : ((p(s(bool,X6)) <=> s(X1,X2) = s(X1,X5)) & s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,X6),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(flattening,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : ! [X2,X3,X4,X5] : ? [X6] : ((p(s(bool,X6)) <=> s(X1,X2) = s(X1,X5)) & s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,X6),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X7,X6] : ! [X8,X14,X5,X15] : ? [X16] : ((p(s(bool,X16)) <=> s(X6,X8) = s(X6,X15)) & s(X7,'const.combin.UPDATE_4'(s(X6,X8),s(X7,X14),s(fun(X6,X7),X5),s(X6,X15))) = s(X7,'const.bool.COND_3'(s(bool,X16),s(X7,X14),s(X7,happ(s(fun(X6,X7),X5),s(X6,X15))))))),
+  file('thm.combin.UPDATE_APPLY|split|0','thm.combin.UPDATE_def')).
+fof(f102,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X0,'const.combin.UPDATE_4'(s(X1,X2),s(X0,X3),s(fun(X1,X0),X4),s(X1,X5))) = s(X0,'const.bool.COND_3'(s(bool,sK6(X5,X4,X3,X2,X1,X0)),s(X0,X3),s(X0,happ(s(fun(X1,X0),X4),s(X1,X5)))))) )),
+  inference(cnf_transformation,[],[f66])).
+fof(f67,plain,(
+  s(sK1,sK3) != s(sK1,'const.combin.UPDATE_4'(s(sK0,sK2),s(sK1,sK3),s(fun(sK0,sK1),sK4),s(sK0,sK2)))),
+  inference(cnf_transformation,[],[f49])).
+fof(f49,plain,(
+  s(sK1,sK3) != s(sK1,'const.combin.UPDATE_4'(s(sK0,sK2),s(sK1,sK3),s(fun(sK0,sK1),sK4),s(sK0,sK2)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f44])).
+fof(f44,plain,(
+  ? [X0,X1,X2,X3,X4] : s(X1,X3) != s(X1,'const.combin.UPDATE_4'(s(X0,X2),s(X1,X3),s(fun(X0,X1),X4),s(X0,X2)))),
+  inference(ennf_transformation,[],[f22])).
+fof(f22,plain,(
+  ~! [X0,X1,X2,X3,X4] : s(X1,X3) = s(X1,'const.combin.UPDATE_4'(s(X0,X2),s(X1,X3),s(fun(X0,X1),X4),s(X0,X2)))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : s(X1,X3) = s(X1,'const.combin.UPDATE_4'(s(X0,X2),s(X1,X3),s(fun(X0,X1),X4),s(X0,X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : s(X7,X9) = s(X7,'const.combin.UPDATE_4'(s(X6,X8),s(X7,X9),s(fun(X6,X7),X10),s(X6,X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : s(X7,X9) = s(X7,'const.combin.UPDATE_4'(s(X6,X8),s(X7,X9),s(fun(X6,X7),X10),s(X6,X8)))),
+  file('thm.combin.UPDATE_APPLY|split|0','thm.combin.UPDATE_APPLY|split|0')).
+% SZS output end Proof for thm.combin
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 33
+% Passive clauses: 487
+% Generated clauses: 1736
+% Final active clauses: 30
+% Final passive clauses: 432
+% Input formulas: 19
+% Initial clauses: 36
+% 
+% Duplicate literals: 128
+% Trivial inequalities: 14
+% Fw subsumption resolutions: 108
+% Fw demodulations: 77
+% Bw demodulations: 1
+% 
+% Simple tautologies: 48
+% Equational tautologies: 30
+% Forward subsumptions: 836
+% 
+% Binary resolution: 35
+% Factoring: 1
+% Forward superposition: 615
+% Backward superposition: 588
+% Self superposition: 71
+% Equality factoring: 52
+% Equality resolution: 2
+% 
+% Split clauses: 10
+% Split components: 20
+% SAT solver clauses: 27
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 13
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 10
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 26
+% TWLsolver calls for satisfiability: 14
+% 
+% Memory used [KB]: 2174
+% Time elapsed: 0.057 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.059 s

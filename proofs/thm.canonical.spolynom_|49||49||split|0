@@ -1,0 +1,173 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.canonical
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.canonical
+% SZS output start Proof for thm.canonical
+fof(f6765,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f6764,f135,f208,f206,f6739,f134,f207,f205])).
+fof(f205,plain,(
+  s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) = s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) | $spl0),
+  inference(cnf_transformation,[],[f205_D])).
+fof(f205_D,plain,(
+  s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) = s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f207,plain,(
+  s('type.quote.index',sK1) = s('type.quote.index',sK2) | $spl2),
+  inference(cnf_transformation,[],[f207_D])).
+fof(f207_D,plain,(
+  s('type.quote.index',sK1) = s('type.quote.index',sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f134,plain,(
+  s('type.quote.index',sK1) = s('type.quote.index',sK2) | s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) = s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2)))),
+  inference(cnf_transformation,[],[f114])).
+fof(f114,plain,(
+  (s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) = s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) | s('type.quote.index',sK1) = s('type.quote.index',sK2)) & (s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) != s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) | s('type.quote.index',sK1) != s('type.quote.index',sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f113])).
+fof(f113,plain,(
+  ? [X0,X1,X2] : ((s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X1))) = s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))) | s('type.quote.index',X1) = s('type.quote.index',X2)) & (s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X1))) != s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))) | s('type.quote.index',X1) != s('type.quote.index',X2)))),
+  inference(nnf_transformation,[],[f97])).
+fof(f97,plain,(
+  ? [X0,X1,X2] : (s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X1))) = s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))) <~> s('type.quote.index',X1) = s('type.quote.index',X2))),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1,X2] : (s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X1))) = s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))) <=> s('type.quote.index',X1) = s('type.quote.index',X2))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X1))) = s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))) <=> s('type.quote.index',X1) = s('type.quote.index',X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.canonical.spolynom'(X6),'const.canonical.SPvar_1'(s('type.quote.index',X7))) = s('type.canonical.spolynom'(X6),'const.canonical.SPvar_1'(s('type.quote.index',X8))) <=> s('type.quote.index',X7) = s('type.quote.index',X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.canonical.spolynom'(X6),'const.canonical.SPvar_1'(s('type.quote.index',X7))) = s('type.canonical.spolynom'(X6),'const.canonical.SPvar_1'(s('type.quote.index',X8))) <=> s('type.quote.index',X7) = s('type.quote.index',X8))),
+  file('thm.canonical.spolynom_|49||49||split|0','thm.canonical.spolynom_|49||49||split|0')).
+fof(f6739,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f6738,f208])).
+fof(f6738,plain,(
+  s('type.quote.index',sK1) = s('type.quote.index',sK2) | $spl0),
+  inference(forward_demodulation,[],[f6713,f165])).
+fof(f165,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ! [X0,X1,X2] : s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))),
+  inference(flattening,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X1) = s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num','const.num.|48|_0')))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X7,X11] : s(X6,X7) = s(X6,'const.ind_type.FCONS_3'(s(X6,X7),s(fun('type.num.num',X6),X11),s('type.num.num','const.num.|48|_0')))),
+  file('thm.canonical.spolynom_|49||49||split|0','thm.ind_type.FCONS|split|0')).
+fof(f6713,plain,(
+  ( ! [X2] : (s('type.quote.index',sK2) = s('type.quote.index','const.ind_type.FCONS_3'(s('type.quote.index',sK1),s(fun('type.num.num','type.quote.index'),X2),s('type.num.num','const.num.|48|_0')))) ) | $spl0),
+  inference(superposition,[],[f3900,f165])).
+fof(f3900,plain,(
+  ( ! [X4,X5] : (s('type.quote.index','const.ind_type.FCONS_3'(s('type.quote.index',sK1),s(fun('type.num.num','type.quote.index'),X4),s('type.num.num',X5))) = s('type.quote.index','const.ind_type.FCONS_3'(s('type.quote.index',sK2),s(fun('type.num.num','type.quote.index'),X4),s('type.num.num',X5)))) ) | $spl0),
+  inference(forward_demodulation,[],[f3777,f175])).
+fof(f175,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1,X2,X3] : s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))),
+  inference(flattening,[],[f74])).
+fof(f74,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,'const.ind_type.FCONS_3'(s(X0,X1),s(fun('type.num.num',X0),X2),s('type.num.num',X3))) = s(X0,happ(s(fun('type.num.num',X0),happ(s(fun(fun('type.num.num',X0),fun('type.num.num',X0)),happ(s(fun(X0,fun(fun('type.num.num',X0),fun('type.num.num',X0))),'const.ind_type.FCONS_0'),s(X0,X1))),s(fun('type.num.num',X0),X2))),s('type.num.num',X3)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6] : ! [X9,X15,X17] : s(X6,'const.ind_type.FCONS_3'(s(X6,X9),s(fun('type.num.num',X6),X15),s('type.num.num',X17))) = s(X6,happ(s(fun('type.num.num',X6),happ(s(fun(fun('type.num.num',X6),fun('type.num.num',X6)),happ(s(fun(X6,fun(fun('type.num.num',X6),fun('type.num.num',X6))),'const.ind_type.FCONS_0'),s(X6,X9))),s(fun('type.num.num',X6),X15))),s('type.num.num',X17)))),
+  file('thm.canonical.spolynom_|49||49||split|0','ARITY_0_3_const.ind_type.FCONS')).
+fof(f3777,plain,(
+  ( ! [X4,X5] : (s('type.quote.index','const.ind_type.FCONS_3'(s('type.quote.index',sK2),s(fun('type.num.num','type.quote.index'),X4),s('type.num.num',X5))) = s('type.quote.index',happ(s(fun('type.num.num','type.quote.index'),happ(s(fun(fun('type.num.num','type.quote.index'),fun('type.num.num','type.quote.index')),happ(s(fun('type.quote.index',fun(fun('type.num.num','type.quote.index'),fun('type.num.num','type.quote.index'))),'const.ind_type.FCONS_0'),s('type.quote.index',sK1))),s(fun('type.num.num','type.quote.index'),X4))),s('type.num.num',X5)))) ) | $spl0),
+  inference(superposition,[],[f175,f3452])).
+fof(f3452,plain,(
+  ( ! [X0,X1] : (s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK1))) = s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK2)))) ) | $spl0),
+  inference(forward_demodulation,[],[f3336,f186])).
+fof(f186,plain,(
+  ( ! [X6,X4,X2,X0,X5,X3,X1] : (s(X1,happ(s(fun('type.quote.index',X1),X3),s('type.quote.index',X2))) = s(X1,'const.canonical.spolynom_CASE_5'(s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))),s(fun('type.quote.index',X1),X3),s(fun(X0,X1),X4),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X5),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X6)))) )),
+  inference(cnf_transformation,[],[f90])).
+fof(f90,plain,(
+  ! [X0,X1,X2,X3,X4,X5,X6] : s(X1,happ(s(fun('type.quote.index',X1),X3),s('type.quote.index',X2))) = s(X1,'const.canonical.spolynom_CASE_5'(s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))),s(fun('type.quote.index',X1),X3),s(fun(X0,X1),X4),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X5),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X6)))),
+  inference(flattening,[],[f89])).
+fof(f89,plain,(
+  ! [X0,X1] : ! [X2,X3,X4,X5,X6] : s(X1,happ(s(fun('type.quote.index',X1),X3),s('type.quote.index',X2))) = s(X1,'const.canonical.spolynom_CASE_5'(s('type.canonical.spolynom'(X0),'const.canonical.SPvar_1'(s('type.quote.index',X2))),s(fun('type.quote.index',X1),X3),s(fun(X0,X1),X4),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X5),s(fun('type.canonical.spolynom'(X0),fun('type.canonical.spolynom'(X0),X1)),X6)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X10] : ! [X7,X11,X12,X13,X14] : s(X10,happ(s(fun('type.quote.index',X10),X11),s('type.quote.index',X7))) = s(X10,'const.canonical.spolynom_CASE_5'(s('type.canonical.spolynom'(X6),'const.canonical.SPvar_1'(s('type.quote.index',X7))),s(fun('type.quote.index',X10),X11),s(fun(X6,X10),X12),s(fun('type.canonical.spolynom'(X6),fun('type.canonical.spolynom'(X6),X10)),X13),s(fun('type.canonical.spolynom'(X6),fun('type.canonical.spolynom'(X6),X10)),X14)))),
+  file('thm.canonical.spolynom_|49||49||split|0','thm.canonical.spolynom_case_def|split|0')).
+fof(f3336,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK2))) = s(X0,'const.canonical.spolynom_CASE_5'(s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))),s(fun('type.quote.index',X0),X1),s(fun(sK0,X0),X2),s(fun('type.canonical.spolynom'(sK0),fun('type.canonical.spolynom'(sK0),X0)),X3),s(fun('type.canonical.spolynom'(sK0),fun('type.canonical.spolynom'(sK0),X0)),X4)))) ) | $spl0),
+  inference(superposition,[],[f186,f205])).
+fof(f206,plain,(
+  s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) != s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) | $spl1),
+  inference(cnf_transformation,[],[f206_D])).
+fof(f206_D,plain,(
+  s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) != s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f208,plain,(
+  s('type.quote.index',sK1) != s('type.quote.index',sK2) | $spl3),
+  inference(cnf_transformation,[],[f208_D])).
+fof(f208_D,plain,(
+  s('type.quote.index',sK1) != s('type.quote.index',sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f135,plain,(
+  s('type.quote.index',sK1) != s('type.quote.index',sK2) | s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) != s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK2)))),
+  inference(cnf_transformation,[],[f114])).
+fof(f6764,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f6763])).
+fof(f6763,plain,(
+  s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) != s('type.canonical.spolynom'(sK0),'const.canonical.SPvar_1'(s('type.quote.index',sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f206,f207])).
+% SZS output end Proof for thm.canonical
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 87
+% Passive clauses: 1607
+% Generated clauses: 6503
+% Final active clauses: 73
+% Final passive clauses: 1341
+% Input formulas: 37
+% Initial clauses: 71
+% 
+% Duplicate literals: 251
+% Trivial inequalities: 103
+% Fw subsumption resolutions: 671
+% Fw demodulations: 314
+% Bw demodulations: 5
+% 
+% Simple tautologies: 159
+% Equational tautologies: 40
+% Forward subsumptions: 3144
+% 
+% Binary resolution: 256
+% Factoring: 2
+% Forward superposition: 2298
+% Backward superposition: 2205
+% Self superposition: 152
+% Equality factoring: 94
+% Equality resolution: 13
+% 
+% Split clauses: 175
+% Split components: 356
+% SAT solver clauses: 320
+% SAT solver unit clauses: 28
+% SAT solver binary clauses: 121
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 175
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 317
+% TWLsolver calls for satisfiability: 113
+% 
+% Memory used [KB]: 7931
+% Time elapsed: 0.283 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.283 s

@@ -1,0 +1,84 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f62,plain,(
+  $false),
+  inference(resolution,[],[f50,f61])).
+fof(f61,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK0))))),
+  inference(forward_demodulation,[],[f37,f38])).
+fof(f38,plain,(
+  s('type.realax.real',sK0) = s('type.realax.real',sK1)),
+  inference(cnf_transformation,[],[f32])).
+fof(f32,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1)))) & s('type.realax.real',sK0) = s('type.realax.real',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f27])).
+fof(f27,plain,(
+  ? [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & s('type.realax.real',X0) = s('type.realax.real',X1))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) => s('type.realax.real',X0) != s('type.realax.real',X1))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) => ~s('type.realax.real',X0) = s('type.realax.real',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) => ~s('type.realax.real',X6) = s('type.realax.real',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) => ~s('type.realax.real',X6) = s('type.realax.real',X7))),
+  file('thm.real.REAL_LT_IMP_NE','thm.real.REAL_LT_IMP_NE')).
+fof(f37,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))))),
+  inference(cnf_transformation,[],[f32])).
+fof(f50,plain,(
+  ( ! [X0] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))) )),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))),
+  inference(flattening,[],[f22])).
+fof(f22,plain,(
+  ! [X0] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X0))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X6))))),
+  file('thm.real.REAL_LT_IMP_NE','thm.realax.REAL_LT_REFL')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 5
+% Passive clauses: 12
+% Generated clauses: 24
+% Final active clauses: 5
+% Final passive clauses: 4
+% Input formulas: 12
+% Initial clauses: 19
+% 
+% Fw demodulations: 1
+% 
+% Simple tautologies: 4
+% 
+% Binary resolution: 1
+% Forward superposition: 1
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 8
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 5
+% 
+% Sat splits: 5
+% 
+% TWLsolver clauses: 8
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

@@ -1,0 +1,168 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.quote
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.quote
+% SZS output start Proof for thm.quote
+fof(f2800,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2799,f131,f207,f205,f2776,f130,f206,f204])).
+fof(f204,plain,(
+  s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) | $spl0),
+  inference(cnf_transformation,[],[f204_D])).
+fof(f204_D,plain,(
+  s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f206,plain,(
+  s('type.quote.index',sK0) = s('type.quote.index',sK1) | $spl2),
+  inference(cnf_transformation,[],[f206_D])).
+fof(f206_D,plain,(
+  s('type.quote.index',sK0) = s('type.quote.index',sK1) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f130,plain,(
+  s('type.quote.index',sK0) = s('type.quote.index',sK1) | s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1)))),
+  inference(cnf_transformation,[],[f108])).
+fof(f108,plain,(
+  (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) | s('type.quote.index',sK0) = s('type.quote.index',sK1)) & (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) | s('type.quote.index',sK0) != s('type.quote.index',sK1))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f107])).
+fof(f107,plain,(
+  ? [X0,X1] : ((s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))) | s('type.quote.index',X0) = s('type.quote.index',X1)) & (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))) | s('type.quote.index',X0) != s('type.quote.index',X1)))),
+  inference(nnf_transformation,[],[f91])).
+fof(f91,plain,(
+  ? [X0,X1] : (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))) <~> s('type.quote.index',X0) = s('type.quote.index',X1))),
+  inference(ennf_transformation,[],[f39])).
+fof(f39,plain,(
+  ~! [X0,X1] : (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X0))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))) <=> s('type.quote.index',X0) = s('type.quote.index',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X6))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X7))) <=> s('type.quote.index',X6) = s('type.quote.index',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X6))) = s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X7))) <=> s('type.quote.index',X6) = s('type.quote.index',X7))),
+  file('thm.quote.index_|49||49||split|1','thm.quote.index_|49||49||split|1')).
+fof(f2776,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f2772,f207])).
+fof(f2772,plain,(
+  s('type.quote.index',sK0) = s('type.quote.index',sK1) | $spl0),
+  inference(equality_resolution,[],[f2734])).
+fof(f2734,plain,(
+  ( ! [X4] : (s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X4))) | s('type.quote.index',sK1) = s('type.quote.index',X4)) ) | $spl0),
+  inference(superposition,[],[f180,f2700])).
+fof(f2700,plain,(
+  s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',sK0))) = s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',sK1))) | $spl0),
+  inference(forward_demodulation,[],[f2628,f135])).
+fof(f135,plain,(
+  ( ! [X0] : (s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) = s('type.quote.index',happ(s(fun('type.quote.index','type.quote.index'),'const.quote.Left_idx_0'),s('type.quote.index',X0)))) )),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0] : s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) = s('type.quote.index',happ(s(fun('type.quote.index','type.quote.index'),'const.quote.Left_idx_0'),s('type.quote.index',X0)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X8] : s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X8))) = s('type.quote.index',happ(s(fun('type.quote.index','type.quote.index'),'const.quote.Left_idx_0'),s('type.quote.index',X8)))),
+  file('thm.quote.index_|49||49||split|1','ARITY_0_1_const.quote.Left_idx')).
+fof(f2628,plain,(
+  s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',sK1))) = s('type.quote.index',happ(s(fun('type.quote.index','type.quote.index'),'const.quote.Left_idx_0'),s('type.quote.index',sK0))) | $spl0),
+  inference(superposition,[],[f2587,f135])).
+fof(f2587,plain,(
+  ( ! [X0,X1] : (s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK0))) = s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK1)))) ) | $spl0),
+  inference(forward_demodulation,[],[f2474,f175])).
+fof(f175,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X0,happ(s(fun('type.quote.index',X0),X3),s('type.quote.index',X1))) = s(X0,'const.quote.index_CASE_4'(s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))),s(fun('type.quote.index',X0),X2),s(fun('type.quote.index',X0),X3),s(X0,X4)))) )),
+  inference(cnf_transformation,[],[f76])).
+fof(f76,plain,(
+  ! [X0,X1,X2,X3,X4] : s(X0,happ(s(fun('type.quote.index',X0),X3),s('type.quote.index',X1))) = s(X0,'const.quote.index_CASE_4'(s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))),s(fun('type.quote.index',X0),X2),s(fun('type.quote.index',X0),X3),s(X0,X4)))),
+  inference(flattening,[],[f75])).
+fof(f75,plain,(
+  ! [X0] : ! [X1,X2,X3,X4] : s(X0,happ(s(fun('type.quote.index',X0),X3),s('type.quote.index',X1))) = s(X0,'const.quote.index_CASE_4'(s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X1))),s(fun('type.quote.index',X0),X2),s(fun('type.quote.index',X0),X3),s(X0,X4)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X9] : ! [X6,X10,X11,X12] : s(X9,happ(s(fun('type.quote.index',X9),X11),s('type.quote.index',X6))) = s(X9,'const.quote.index_CASE_4'(s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',X6))),s(fun('type.quote.index',X9),X10),s(fun('type.quote.index',X9),X11),s(X9,X12)))),
+  file('thm.quote.index_|49||49||split|1','thm.quote.index_case_def|split|1')).
+fof(f2474,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,happ(s(fun('type.quote.index',X0),X1),s('type.quote.index',sK1))) = s(X0,'const.quote.index_CASE_4'(s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))),s(fun('type.quote.index',X0),X2),s(fun('type.quote.index',X0),X1),s(X0,X3)))) ) | $spl0),
+  inference(superposition,[],[f175,f204])).
+fof(f180,plain,(
+  ( ! [X0,X1] : (s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) != s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X1))) | s('type.quote.index',X0) = s('type.quote.index',X1)) )),
+  inference(cnf_transformation,[],[f127])).
+fof(f127,plain,(
+  ! [X0,X1] : ((s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) != s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X1))) | s('type.quote.index',X0) = s('type.quote.index',X1)) & (s('type.quote.index',X0) != s('type.quote.index',X1) | s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) = s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X1)))))),
+  inference(nnf_transformation,[],[f78])).
+fof(f78,plain,(
+  ! [X0,X1] : (s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X0))) = s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X1))) <=> s('type.quote.index',X0) = s('type.quote.index',X1))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X7] : (s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X6))) = s('type.quote.index','const.quote.Left_idx_1'(s('type.quote.index',X7))) <=> s('type.quote.index',X6) = s('type.quote.index',X7))),
+  file('thm.quote.index_|49||49||split|1','thm.quote.index_|49||49||split|0')).
+fof(f205,plain,(
+  s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) | $spl1),
+  inference(cnf_transformation,[],[f205_D])).
+fof(f205_D,plain,(
+  s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f207,plain,(
+  s('type.quote.index',sK0) != s('type.quote.index',sK1) | $spl3),
+  inference(cnf_transformation,[],[f207_D])).
+fof(f207_D,plain,(
+  s('type.quote.index',sK0) != s('type.quote.index',sK1) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f131,plain,(
+  s('type.quote.index',sK0) != s('type.quote.index',sK1) | s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK1)))),
+  inference(cnf_transformation,[],[f108])).
+fof(f2799,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f2798])).
+fof(f2798,plain,(
+  s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) != s('type.quote.index','const.quote.Right_idx_1'(s('type.quote.index',sK0))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f205,f206])).
+% SZS output end Proof for thm.quote
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 63
+% Passive clauses: 695
+% Generated clauses: 2614
+% Final active clauses: 51
+% Final passive clauses: 541
+% Input formulas: 37
+% Initial clauses: 73
+% 
+% Duplicate literals: 111
+% Trivial inequalities: 34
+% Fw subsumption resolutions: 245
+% Fw demodulations: 189
+% Bw demodulations: 6
+% 
+% Simple tautologies: 86
+% Equational tautologies: 33
+% Forward subsumptions: 1168
+% Fw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 190
+% Factoring: 1
+% Forward superposition: 839
+% Backward superposition: 776
+% Self superposition: 65
+% Equality factoring: 50
+% Equality resolution: 8
+% 
+% Split clauses: 57
+% Split components: 115
+% SAT solver clauses: 95
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 55
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 57
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 92
+% TWLsolver calls for satisfiability: 42
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.079 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.082 s

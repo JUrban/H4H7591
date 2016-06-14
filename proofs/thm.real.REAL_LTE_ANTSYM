@@ -1,0 +1,88 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f66,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f64,f22])).
+fof(f22,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))))),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real',sK0),s('type.realax.real',sK1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f15])).
+fof(f15,plain,(
+  ? [X0,X1] : (p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ~(p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ~(p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X7),s('type.realax.real',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ~(p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X7),s('type.realax.real',X6)))))),
+  file('thm.real.REAL_LTE_ANTSYM','thm.real.REAL_LTE_ANTSYM')).
+fof(f64,plain,(
+  ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real',sK0),s('type.realax.real',sK1))))),
+  inference(resolution,[],[f31,f23])).
+fof(f23,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK1),s('type.realax.real',sK0))))),
+  inference(cnf_transformation,[],[f18])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X1),s('type.realax.real',X0))))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : ~(p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) & p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X1),s('type.realax.real',X0)))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7] : ~(p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X7)))) & p(s(bool,'const.real.real_lte_2'(s('type.realax.real',X7),s('type.realax.real',X6)))))),
+  file('thm.real.REAL_LTE_ANTSYM','thm.real.REAL_LET_ANTISYM')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 10
+% Passive clauses: 21
+% Generated clauses: 46
+% Final active clauses: 7
+% Final passive clauses: 7
+% Input formulas: 7
+% Initial clauses: 11
+% 
+% Fw subsumption resolutions: 7
+% Bw demodulations: 2
+% 
+% Simple tautologies: 6
+% Equational tautologies: 1
+% Forward subsumptions: 6
+% 
+% Binary resolution: 1
+% Forward superposition: 7
+% Backward superposition: 8
+% Self superposition: 4
+% Equality factoring: 2
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 3
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 3
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

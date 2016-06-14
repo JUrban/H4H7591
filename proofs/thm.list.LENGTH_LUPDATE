@@ -1,0 +1,88 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f225,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f224])).
+fof(f224,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK3))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK3)))),
+  inference(superposition,[],[f35,f44])).
+fof(f44,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))) )),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0,X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ! [X0] : ! [X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : ! [X11,X8,X12] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X12))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.list.LUPDATE_3'(s(X6,X11),s('type.num.num',X8),s('type.list.list'(X6),X12)))))),
+  file('thm.list.LENGTH_LUPDATE','thm.list.LUPDATE_SEM|split|0')).
+fof(f35,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK3))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),'const.list.LUPDATE_3'(s(sK0,sK1),s('type.num.num',sK2),s('type.list.list'(sK0),sK3)))))),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK3))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),'const.list.LUPDATE_3'(s(sK0,sK1),s('type.num.num',sK2),s('type.list.list'(sK0),sK3)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f24])).
+fof(f24,plain,(
+  ? [X0,X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~! [X0] : ! [X1,X2,X3] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X3))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.list.LUPDATE_3'(s(X0,X1),s('type.num.num',X2),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X9))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.list.LUPDATE_3'(s(X6,X7),s('type.num.num',X8),s('type.list.list'(X6),X9)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X9))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.list.LUPDATE_3'(s(X6,X7),s('type.num.num',X8),s('type.list.list'(X6),X9)))))),
+  file('thm.list.LENGTH_LUPDATE','thm.list.LENGTH_LUPDATE')).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 11
+% Passive clauses: 25
+% Generated clauses: 168
+% Final active clauses: 9
+% Final passive clauses: 8
+% Input formulas: 10
+% Initial clauses: 14
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 4
+% 
+% Simple tautologies: 18
+% Equational tautologies: 15
+% Forward subsumptions: 69
+% 
+% Binary resolution: 4
+% Forward superposition: 34
+% Backward superposition: 31
+% Self superposition: 26
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

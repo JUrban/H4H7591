@@ -1,0 +1,76 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f33,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f20,f31,f25,f30])).
+fof(f30,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f30_D])).
+fof(f30_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f25,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.FALSITY',aHL_FALSITY)).
+fof(f31,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f31_D])).
+fof(f31_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f20,plain,(
+  p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  p(s(bool,'F_0')) & ~p(s(bool,sK0))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f13])).
+fof(f13,plain,(
+  ? [X0] : (p(s(bool,'F_0')) & ~p(s(bool,X0)))),
+  inference(ennf_transformation,[],[f8])).
+fof(f8,plain,(
+  ~! [X0] : (p(s(bool,'F_0')) => p(s(bool,X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'F_0')) => p(s(bool,X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'F_0')) => p(s(bool,X6)))),
+  file('thm.bool.FALSITY','thm.bool.FALSITY')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Passive clauses: 7
+% Generated clauses: 10
+% Final passive clauses: 6
+% Input formulas: 6
+% Initial clauses: 8
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 5
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 2
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 2
+% 
+% TWLsolver clauses: 4
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

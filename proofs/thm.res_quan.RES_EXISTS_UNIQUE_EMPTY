@@ -1,0 +1,238 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.res_quan
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.res_quan
+% SZS output start Proof for thm.res_quan
+fof(f1201,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1195,f104,f155,f157,f108,f158,f212,f214,f213,f238,f170,f174,f172,f185])).
+fof(f185,plain,(
+  $false | ($spl3 | $spl8)),
+  inference(subsumption_resolution,[],[f175,f158])).
+fof(f175,plain,(
+  p(s(bool,'F_0')) | $spl8),
+  inference(backward_demodulation,[],[f172,f101])).
+fof(f101,plain,(
+  p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1))))),
+  inference(cnf_transformation,[],[f78])).
+fof(f78,plain,(
+  p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f70])).
+fof(f70,plain,(
+  ? [X0,X1] : p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))),
+  inference(ennf_transformation,[],[f32])).
+fof(f32,plain,(
+  ~! [X0,X1] : ~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f31])).
+fof(f31,plain,(
+  ~! [X0] : ! [X1] : ~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : ~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X6,bool),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : ~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X6,bool),X7))))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY','thm.res_quan.RES_EXISTS_UNIQUE_EMPTY')).
+fof(f172,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl8),
+  inference(cnf_transformation,[],[f172_D])).
+fof(f172_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f174,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl11),
+  inference(cnf_transformation,[],[f174_D])).
+fof(f174_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f170,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f109])).
+fof(f109,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY',aHL_BOOL_CASES)).
+fof(f238,plain,(
+  $false | ($spl11 | $spl12)),
+  inference(trivial_inequality_removal,[],[f235])).
+fof(f235,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl11 | $spl12)),
+  inference(superposition,[],[f174,f213])).
+fof(f213,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | $spl12),
+  inference(cnf_transformation,[],[f213_D])).
+fof(f213_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f214,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) | $spl14),
+  inference(cnf_transformation,[],[f214_D])).
+fof(f214_D,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f212,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) ) | $spl3),
+  inference(subsumption_resolution,[],[f208,f163])).
+fof(f163,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl3),
+  inference(superposition,[],[f158,f109])).
+fof(f208,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f136,f109])).
+fof(f136,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f74])).
+fof(f74,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f54])).
+fof(f54,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY','thm.bool.IMP_ANTISYM_AX')).
+fof(f158,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f158_D])).
+fof(f158_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f108,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY',aHL_FALSITY)).
+fof(f157,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f157_D])).
+fof(f157_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f155,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f155_D])).
+fof(f155_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f104,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f79])).
+fof(f79,plain,(
+  (p(s(bool,'F_0')) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')))),
+  inference(nnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ~p(s(bool,'F_0')) <=> p(s(bool,'T_0'))),
+  inference(flattening,[],[f17])).
+fof(f17,axiom,(
+  ~p(s(bool,'F_0')) <=> p(s(bool,'T_0'))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY','thm.bool.NOT_CLAUSES|split|2')).
+fof(f1195,plain,(
+  $false | ($spl0 | $spl3 | $spl14)),
+  inference(subsumption_resolution,[],[f1194,f158])).
+fof(f1194,plain,(
+  p(s(bool,'F_0')) | ($spl0 | $spl3 | $spl14)),
+  inference(forward_demodulation,[],[f1193,f260])).
+fof(f260,plain,(
+  ( ! [X0,X1] : (s(bool,'F_0') = s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1)))) ) | $spl14),
+  inference(resolution,[],[f129,f214])).
+fof(f129,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1] : ~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f46])).
+fof(f46,plain,(
+  ! [X0] : ! [X1] : ~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6] : ! [X7] : ~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X6,bool),X7))))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY','thm.res_quan.RES_EXISTS_EMPTY')).
+fof(f1193,plain,(
+  p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1)))) | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f1183,f155])).
+fof(f1183,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1)))) | $spl3),
+  inference(superposition,[],[f131,f171])).
+fof(f171,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1))) | $spl3),
+  inference(subsumption_resolution,[],[f166,f158])).
+fof(f166,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(fun(sK0,bool),sK1)))),
+  inference(superposition,[],[f101,f109])).
+fof(f131,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f93])).
+fof(f93,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0')))))))))) & (~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0')))))))) | p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(flattening,[],[f92])).
+fof(f92,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0')))))))))) & ((~p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0'))))))))) | p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(nnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0'))))))))))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x0x1_2'(s(fun(fun(X0,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X0,bool),X1))),s(fun(X0,fun(X0,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X0,fun(X0,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X0,bool),X2),s(fun(X0,bool),X2))),s(fun(X0,fun(X0,bool)),'=_0'))))))))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X14,X12] : (p(s(bool,'const.bool.RES_EXISTS_UNIQUE_2'(s(fun(X6,bool),X14),s(fun(X6,bool),X12)))) <=> (p(s(bool,'const.bool.RES_EXISTS_2'(s(fun(X6,bool),X14),s(fun(X6,bool),X12)))) & p(s(bool,happ(s(fun(fun(X6,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X6,bool),X14))),s(fun(X6,bool),'_dst_x0x1_2'(s(fun(fun(X6,bool),bool),'const.bool.RES_FORALL_1'(s(fun(X6,bool),X14))),s(fun(X6,fun(X6,bool)),'_dst_x00x11x11_3'(s(fun(bool,fun(bool,bool)),'==>_0'),s(fun(X6,fun(X6,bool)),'_dst_x00x10x01_3'(s(fun(bool,fun(bool,bool)),'|slash||bslash|_0'),s(fun(X6,bool),X12),s(fun(X6,bool),X12))),s(fun(X6,fun(X6,bool)),'=_0'))))))))))),
+  file('thm.res_quan.RES_EXISTS_UNIQUE_EMPTY','thm.bool.RES_EXISTS_UNIQUE_THM')).
+% SZS output end Proof for thm.res_quan
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 34
+% Passive clauses: 223
+% Generated clauses: 1062
+% Final active clauses: 23
+% Final passive clauses: 161
+% Input formulas: 29
+% Initial clauses: 53
+% 
+% Duplicate literals: 96
+% Trivial inequalities: 8
+% Fw subsumption resolutions: 137
+% Fw demodulations: 26
+% Bw demodulations: 9
+% 
+% Simple tautologies: 46
+% Equational tautologies: 28
+% Forward subsumptions: 460
+% 
+% Binary resolution: 65
+% Factoring: 1
+% Forward superposition: 228
+% Backward superposition: 316
+% Self superposition: 47
+% Equality factoring: 50
+% Equality resolution: 1
+% 
+% Split clauses: 43
+% Split components: 86
+% SAT solver clauses: 63
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 19
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 43
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 60
+% TWLsolver calls for satisfiability: 18
+% 
+% Memory used [KB]: 1151
+% Time elapsed: 0.030 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.033 s

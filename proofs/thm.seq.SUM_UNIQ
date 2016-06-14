@@ -1,0 +1,192 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.seq
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.seq
+% SZS output start Proof for thm.seq
+fof(f1135,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1125,f75,f115])).
+fof(f115,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f115_D])).
+fof(f115_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f75,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.seq.SUM_UNIQ',aHL_TRUTH)).
+fof(f1125,plain,(
+  $false | $spl2),
+  inference(subsumption_resolution,[],[f1124,f115])).
+fof(f1124,plain,(
+  ~p(s(bool,'T_0')) | $spl2),
+  inference(forward_demodulation,[],[f1123,f170])).
+fof(f170,plain,(
+  s(bool,'T_0') = s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),sK0))) | $spl2),
+  inference(resolution,[],[f168,f81])).
+fof(f81,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f54])).
+fof(f54,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X8] : (s(bool,'T_0') = s(bool,X8) <=> p(s(bool,X8)))),
+  file('thm.seq.SUM_UNIQ','thm.bool.EQ_CLAUSES|split|0')).
+fof(f168,plain,(
+  p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),sK0)))) | $spl2),
+  inference(subsumption_resolution,[],[f166,f115])).
+fof(f166,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),sK0))))),
+  inference(superposition,[],[f89,f126])).
+fof(f126,plain,(
+  s(bool,'T_0') = s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),sK0),s('type.realax.real',sK1)))),
+  inference(resolution,[],[f73,f81])).
+fof(f73,plain,(
+  p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),sK0),s('type.realax.real',sK1))))),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),sK0),s('type.realax.real',sK1)))) & s('type.realax.real',sK1) != s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f48])).
+fof(f48,plain,(
+  ? [X0,X1] : (p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) & s('type.realax.real',X1) != s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X0))))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) => s('type.realax.real',X1) = s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X6),s('type.realax.real',X7)))) => s('type.realax.real',X7) = s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X6),s('type.realax.real',X7)))) => s('type.realax.real',X7) = s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X6))))),
+  file('thm.seq.SUM_UNIQ','thm.seq.SUM_UNIQ')).
+fof(f89,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0))))) )),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  ! [X0] : ((~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) | p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',sK2(X0)))))) & (! [X1] : ~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2])],[f59])).
+fof(f59,plain,(
+  ! [X0] : ((~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) | ? [X2] : p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2))))) & (! [X1] : ~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0))))))),
+  inference(rectify,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : ((~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) | ? [X1] : p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1))))) & (! [X1] : ~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0))))))),
+  inference(nnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) <=> ? [X1] : p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : (p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X6)))) <=> ? [X13] : p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X6),s('type.realax.real',X13)))))),
+  file('thm.seq.SUM_UNIQ','thm.seq.summable')).
+fof(f1123,plain,(
+  ~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),sK0)))) | $spl2),
+  inference(subsumption_resolution,[],[f1104,f74])).
+fof(f74,plain,(
+  s('type.realax.real',sK1) != s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),sK0)))),
+  inference(cnf_transformation,[],[f53])).
+fof(f1104,plain,(
+  s('type.realax.real',sK1) = s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),sK0))) | ~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),sK0)))) | $spl2),
+  inference(resolution,[],[f1097,f79])).
+fof(f79,plain,(
+  ( ! [X0] : (p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X0)))))) | ~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0))))) )),
+  inference(cnf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : (~p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) | p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X0)))))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : (p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X0)))) => p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X0)))))))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X6] : (p(s(bool,'const.seq.summable_1'(s(fun('type.num.num','type.realax.real'),X6)))) => p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X6),s('type.realax.real','const.seq.suminf_1'(s(fun('type.num.num','type.realax.real'),X6)))))))),
+  file('thm.seq.SUM_UNIQ','thm.seq.SUMMABLE_SUM')).
+fof(f1097,plain,(
+  ( ! [X0] : (~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),sK0),s('type.realax.real',X0)))) | s('type.realax.real',sK1) = s('type.realax.real',X0)) ) | $spl2),
+  inference(subsumption_resolution,[],[f1084,f115])).
+fof(f1084,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | ~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),sK0),s('type.realax.real',X0)))) | s('type.realax.real',sK1) = s('type.realax.real',X0)) )),
+  inference(superposition,[],[f781,f126])).
+fof(f781,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2)))) | s('type.realax.real',X1) = s('type.realax.real',X2)) )),
+  inference(forward_demodulation,[],[f760,f108])).
+fof(f108,plain,(
+  ( ! [X0,X1] : (s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1))) = s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),'_dst_x0x1x0_3'(s(fun('type.pair.prod'('type.num.num','type.num.num'),fun(fun('type.num.num','type.realax.real'),'type.realax.real')),'const.real.sum_0'),s(fun('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_1'(s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.realax.real'),X0))),s('type.realax.real',X1)))) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1))) = s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),'_dst_x0x1x0_3'(s(fun('type.pair.prod'('type.num.num','type.num.num'),fun(fun('type.num.num','type.realax.real'),'type.realax.real')),'const.real.sum_0'),s(fun('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_1'(s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.realax.real'),X0))),s('type.realax.real',X1)))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6,X13] : s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X6),s('type.realax.real',X13))) = s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),'_dst_x0x1x0_3'(s(fun('type.pair.prod'('type.num.num','type.num.num'),fun(fun('type.num.num','type.realax.real'),'type.realax.real')),'const.real.sum_0'),s(fun('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_1'(s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.realax.real'),X6))),s('type.realax.real',X13)))),
+  file('thm.seq.SUM_UNIQ','thm.seq.sums')).
+fof(f760,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.seq.sums_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),'_dst_x0x1x0_3'(s(fun('type.pair.prod'('type.num.num','type.num.num'),fun(fun('type.num.num','type.realax.real'),'type.realax.real')),'const.real.sum_0'),s(fun('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_1'(s('type.num.num','const.num.|48|_0'))),s(fun('type.num.num','type.realax.real'),X0))),s('type.realax.real',X2)))) | s('type.realax.real',X1) = s('type.realax.real',X2)) )),
+  inference(superposition,[],[f110,f108])).
+fof(f110,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2)))) | s('type.realax.real',X1) = s('type.realax.real',X2)) )),
+  inference(cnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2)))) | s('type.realax.real',X1) = s('type.realax.real',X2))),
+  inference(flattening,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) | ~p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2))))) | s('type.realax.real',X1) = s('type.realax.real',X2))),
+  inference(ennf_transformation,[],[f45])).
+fof(f45,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X1)))) & p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X0),s('type.realax.real',X2))))) => s('type.realax.real',X1) = s('type.realax.real',X2))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X7,X11,X12] : ((p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X7),s('type.realax.real',X11)))) & p(s(bool,'const.seq.-->_2'(s(fun('type.num.num','type.realax.real'),X7),s('type.realax.real',X12))))) => s('type.realax.real',X11) = s('type.realax.real',X12))),
+  file('thm.seq.SUM_UNIQ','thm.seq.SEQ_UNIQ')).
+% SZS output end Proof for thm.seq
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 46
+% Passive clauses: 268
+% Generated clauses: 1037
+% Final active clauses: 43
+% Final passive clauses: 191
+% Input formulas: 22
+% Initial clauses: 39
+% 
+% Duplicate literals: 82
+% Trivial inequalities: 30
+% Fw subsumption resolutions: 111
+% Fw demodulations: 35
+% Bw demodulations: 2
+% 
+% Simple tautologies: 77
+% Equational tautologies: 15
+% Forward subsumptions: 418
+% 
+% Binary resolution: 55
+% Forward superposition: 310
+% Backward superposition: 294
+% Self superposition: 34
+% Equality factoring: 26
+% Equality resolution: 9
+% 
+% Split clauses: 15
+% Split components: 30
+% SAT solver clauses: 33
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 19
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 15
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 31
+% TWLsolver calls for satisfiability: 18
+% 
+% Memory used [KB]: 1791
+% Time elapsed: 0.042 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.044 s

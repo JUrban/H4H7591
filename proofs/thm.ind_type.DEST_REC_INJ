@@ -1,0 +1,136 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ind_type
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ind_type
+% SZS output start Proof for thm.ind_type
+fof(f646,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f645,f59,f93,f91,f581,f60,f94,f92])).
+fof(f92,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) | $spl1),
+  inference(cnf_transformation,[],[f92_D])).
+fof(f92_D,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f94,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) != s('type.ind_type.recspace'(sK0),sK2) | $spl3),
+  inference(cnf_transformation,[],[f94_D])).
+fof(f94_D,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) != s('type.ind_type.recspace'(sK0),sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f60,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) != s('type.ind_type.recspace'(sK0),sK2) | s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2)))),
+  inference(cnf_transformation,[],[f45])).
+fof(f45,plain,(
+  (s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) | s('type.ind_type.recspace'(sK0),sK1) = s('type.ind_type.recspace'(sK0),sK2)) & (s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) | s('type.ind_type.recspace'(sK0),sK1) != s('type.ind_type.recspace'(sK0),sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f44])).
+fof(f44,plain,(
+  ? [X0,X1,X2] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X2))) | s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),X2)) & (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1))) != s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X2))) | s('type.ind_type.recspace'(X0),X1) != s('type.ind_type.recspace'(X0),X2)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ? [X0,X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X2))) <~> s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),X2))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~! [X0,X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X2))) <=> s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),X2))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ~! [X0] : ! [X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X2))) <=> s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s(fun('type.num.num',fun(X6,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X6),X7))) = s(fun('type.num.num',fun(X6,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X6),X8))) <=> s('type.ind_type.recspace'(X6),X7) = s('type.ind_type.recspace'(X6),X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s(fun('type.num.num',fun(X6,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X6),X7))) = s(fun('type.num.num',fun(X6,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X6),X8))) <=> s('type.ind_type.recspace'(X6),X7) = s('type.ind_type.recspace'(X6),X8))),
+  file('thm.ind_type.DEST_REC_INJ','thm.ind_type.DEST_REC_INJ')).
+fof(f581,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f580])).
+fof(f580,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f92,f93])).
+fof(f91,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) | $spl0),
+  inference(cnf_transformation,[],[f91_D])).
+fof(f91_D,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f93,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) = s('type.ind_type.recspace'(sK0),sK2) | $spl2),
+  inference(cnf_transformation,[],[f93_D])).
+fof(f93_D,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) = s('type.ind_type.recspace'(sK0),sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f59,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) = s('type.ind_type.recspace'(sK0),sK2) | s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK2)))),
+  inference(cnf_transformation,[],[f45])).
+fof(f645,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f644,f94])).
+fof(f644,plain,(
+  s('type.ind_type.recspace'(sK0),sK1) = s('type.ind_type.recspace'(sK0),sK2) | $spl0),
+  inference(forward_demodulation,[],[f643,f80])).
+fof(f80,plain,(
+  ( ! [X0,X1] : (s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),'const.ind_type.mk_rec_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),'const.ind_type.mk_rec_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1)))))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : ! [X1] : s('type.ind_type.recspace'(X0),X1) = s('type.ind_type.recspace'(X0),'const.ind_type.mk_rec_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X0),X1)))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : ! [X12] : s('type.ind_type.recspace'(X6),X12) = s('type.ind_type.recspace'(X6),'const.ind_type.mk_rec_1'(s(fun('type.num.num',fun(X6,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(X6),X12)))))),
+  file('thm.ind_type.DEST_REC_INJ','thm.ind_type.recspace_repfns|split|0')).
+fof(f643,plain,(
+  s('type.ind_type.recspace'(sK0),sK2) = s('type.ind_type.recspace'(sK0),'const.ind_type.mk_rec_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.dest_rec_1'(s('type.ind_type.recspace'(sK0),sK1))))) | $spl0),
+  inference(superposition,[],[f80,f91])).
+% SZS output end Proof for thm.ind_type
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 19
+% Passive clauses: 101
+% Generated clauses: 548
+% Final active clauses: 17
+% Final passive clauses: 66
+% Input formulas: 15
+% Initial clauses: 31
+% 
+% Duplicate literals: 79
+% Trivial inequalities: 8
+% Fw subsumption resolutions: 52
+% Fw demodulations: 2
+% 
+% Simple tautologies: 40
+% Equational tautologies: 29
+% Forward subsumptions: 226
+% 
+% Binary resolution: 24
+% Factoring: 1
+% Forward superposition: 94
+% Backward superposition: 151
+% Self superposition: 45
+% Equality factoring: 50
+% Equality resolution: 1
+% 
+% Split clauses: 15
+% Split components: 31
+% SAT solver clauses: 26
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 16
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 15
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 24
+% TWLsolver calls for satisfiability: 11
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.020 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.022 s

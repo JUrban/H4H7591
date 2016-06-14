@@ -1,0 +1,92 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.one
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.one
+% SZS output start Proof for thm.one
+fof(f3617,plain,(
+  $false),
+  inference(equality_resolution,[],[f3598])).
+fof(f3598,plain,(
+  ( ! [X345] : (s(sK7,sK8) != s(sK7,X345)) )),
+  inference(superposition,[],[f323,f417])).
+fof(f417,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f140])).
+fof(f140,plain,(
+  ! [X0,X1,X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(flattening,[],[f139])).
+fof(f139,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X1,X2) = s(X1,happ(s(fun(X0,X1),'_dst_x0_1'(s(X1,X2))),s(X0,X3)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X9,X10] : ! [X11,X12] : s(X10,X11) = s(X10,happ(s(fun(X9,X10),'_dst_x0_1'(s(X10,X11))),s(X9,X12)))),
+  file('thm.one.one_prim_rec','_dst_x0_ax')).
+fof(f323,plain,(
+  ( ! [X2] : (s(sK7,sK8) != s(sK7,happ(s(fun('type.one.one',sK7),X2),s('type.one.one','const.one.one_0')))) )),
+  inference(cnf_transformation,[],[f231])).
+fof(f231,plain,(
+  ! [X2] : s(sK7,sK8) != s(sK7,happ(s(fun('type.one.one',sK7),X2),s('type.one.one','const.one.one_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK7,sK8])],[f181])).
+fof(f181,plain,(
+  ? [X0,X1] : ! [X2] : s(X0,X1) != s(X0,happ(s(fun('type.one.one',X0),X2),s('type.one.one','const.one.one_0')))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1] : ? [X2] : s(X0,X1) = s(X0,happ(s(fun('type.one.one',X0),X2),s('type.one.one','const.one.one_0')))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : ! [X1] : ? [X2] : s(X0,X1) = s(X0,happ(s(fun('type.one.one',X0),X2),s('type.one.one','const.one.one_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : ? [X8] : s(X6,X7) = s(X6,happ(s(fun('type.one.one',X6),X8),s('type.one.one','const.one.one_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : ? [X8] : s(X6,X7) = s(X6,happ(s(fun('type.one.one',X6),X8),s('type.one.one','const.one.one_0')))),
+  file('thm.one.one_prim_rec','thm.one.one_prim_rec')).
+% SZS output end Proof for thm.one
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 222
+% Passive clauses: 1377
+% Generated clauses: 3286
+% Final active clauses: 221
+% Final passive clauses: 1030
+% Input formulas: 69
+% Initial clauses: 201
+% 
+% Duplicate literals: 94
+% Trivial inequalities: 9
+% Fw subsumption resolutions: 236
+% Fw demodulations: 139
+% Bw demodulations: 1
+% 
+% Simple tautologies: 135
+% Equational tautologies: 24
+% Forward subsumptions: 1384
+% 
+% Binary resolution: 1838
+% Factoring: 296
+% Forward superposition: 277
+% Backward superposition: 174
+% Self superposition: 15
+% Equality factoring: 2
+% Equality resolution: 9
+% 
+% Split clauses: 14
+% Split components: 30
+% SAT solver clauses: 18
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 12
+% 
+% Sat splits: 14
+% 
+% TWLsolver clauses: 18
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 2046
+% Time elapsed: 0.046 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.05 s

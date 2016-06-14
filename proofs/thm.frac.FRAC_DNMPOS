@@ -1,0 +1,211 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.frac
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.frac
+% SZS output start Proof for thm.frac
+fof(f663,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f657,f574,f572,f552,f554,f433,f506])).
+fof(f506,plain,(
+  $false | $spl0),
+  inference(trivial_inequality_removal,[],[f503])).
+fof(f503,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | $spl0),
+  inference(superposition,[],[f97,f433])).
+fof(f97,plain,(
+  s(bool,'T_0') != s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))),
+  inference(resolution,[],[f45,f52])).
+fof(f52,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.frac.FRAC_DNMPOS','thm.bool.EQ_CLAUSES|split|0')).
+fof(f45,plain,(
+  ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))))),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f34])).
+fof(f34,plain,(
+  ? [X0] : ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~! [X0] : p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))))))),
+  file('thm.frac.FRAC_DNMPOS','thm.frac.FRAC_DNMPOS')).
+fof(f433,plain,(
+  ( ! [X15] : (s(bool,'T_0') = s(bool,X15)) ) | $spl0),
+  inference(cnf_transformation,[],[f433_D])).
+fof(f433_D,plain,(
+  ( ! [X15] : (s(bool,'T_0') = s(bool,X15)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f554,plain,(
+  ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))) | $spl5),
+  inference(cnf_transformation,[],[f554_D])).
+fof(f554_D,plain,(
+  ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f552,plain,(
+  ( ! [X13] : (~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))) | s(bool,'T_0') = s(bool,X13)) )),
+  inference(subsumption_resolution,[],[f546,f51])).
+fof(f51,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.frac.FRAC_DNMPOS',aHL_BOOL_CASES)).
+fof(f546,plain,(
+  ( ! [X13] : (s(bool,'F_0') != s(bool,X13) | ~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))) | s(bool,'T_0') = s(bool,X13)) )),
+  inference(superposition,[],[f56,f248])).
+fof(f248,plain,(
+  ( ! [X20] : (s(bool,X20) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | s(bool,'T_0') = s(bool,X20)) )),
+  inference(trivial_inequality_removal,[],[f216])).
+fof(f216,plain,(
+  ( ! [X20] : (s(bool,'T_0') != s(bool,'T_0') | s(bool,X20) = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | s(bool,'T_0') = s(bool,X20)) )),
+  inference(superposition,[],[f97,f74])).
+fof(f74,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f51,f51])).
+fof(f56,plain,(
+  ( ! [X0] : (s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f23])).
+fof(f23,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.frac.FRAC_DNMPOS','thm.bool.EQ_CLAUSES|split|2')).
+fof(f572,plain,(
+  s(bool,'F_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | $spl6),
+  inference(cnf_transformation,[],[f572_D])).
+fof(f572_D,plain,(
+  s(bool,'F_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f574,plain,(
+  s(bool,'F_0') = s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | $spl5),
+  inference(resolution,[],[f554,f57])).
+fof(f57,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f39])).
+fof(f657,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f649,f48])).
+fof(f48,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.frac.FRAC_DNMPOS',aHL_FALSITY)).
+fof(f649,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(superposition,[],[f645,f572])).
+fof(f645,plain,(
+  ( ! [X0] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))) )),
+  inference(forward_demodulation,[],[f644,f50])).
+fof(f50,plain,(
+  ( ! [X0] : (s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))) = s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0)))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0] : s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))) = s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))) = s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X6)))))),
+  file('thm.frac.FRAC_DNMPOS','thm.frac.frac_dnm_def')).
+fof(f644,plain,(
+  ( ! [X0] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0))))))))) )),
+  inference(trivial_inequality_removal,[],[f643])).
+fof(f643,plain,(
+  ( ! [X0] : (s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0))) != s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0))) | p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0))))))))) )),
+  inference(superposition,[],[f61,f49])).
+fof(f49,plain,(
+  ( ! [X0] : (s('type.frac.frac',X0) = s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0)))))) )),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : s('type.frac.frac',X0) = s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X0)))))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X11] : s('type.frac.frac',X11) = s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac',X11)))))),
+  file('thm.frac.FRAC_DNMPOS','thm.frac.frac_tybij|split|0')).
+fof(f61,plain,(
+  ( ! [X0] : (s('type.pair.prod'('type.integer.int','type.integer.int'),X0) != s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0))))) | p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0))))))) )),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0] : ((~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0)))))) | s('type.pair.prod'('type.integer.int','type.integer.int'),X0) = s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0)))))) & (s('type.pair.prod'('type.integer.int','type.integer.int'),X0) != s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0))))) | p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0))))))))),
+  inference(nnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0)))))) <=> s('type.pair.prod'('type.integer.int','type.integer.int'),X0) = s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X0))))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X12] : (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.pair.SND_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X12)))))) <=> s('type.pair.prod'('type.integer.int','type.integer.int'),X12) = s('type.pair.prod'('type.integer.int','type.integer.int'),'const.frac.rep_frac_1'(s('type.frac.frac','const.frac.abs_frac_1'(s('type.pair.prod'('type.integer.int','type.integer.int'),X12))))))),
+  file('thm.frac.FRAC_DNMPOS','thm.frac.frac_tybij|split|1')).
+% SZS output end Proof for thm.frac
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 31
+% Passive clauses: 96
+% Generated clauses: 594
+% Final active clauses: 23
+% Final passive clauses: 38
+% Input formulas: 15
+% Initial clauses: 22
+% 
+% Duplicate literals: 65
+% Trivial inequalities: 23
+% Fw subsumption resolutions: 46
+% Fw demodulations: 10
+% Bw demodulations: 7
+% 
+% Simple tautologies: 47
+% Equational tautologies: 18
+% Forward subsumptions: 295
+% Fw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 29
+% Forward superposition: 168
+% Backward superposition: 155
+% Self superposition: 27
+% Equality factoring: 28
+% Equality resolution: 5
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 13
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 6
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 5
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 9
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.022 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

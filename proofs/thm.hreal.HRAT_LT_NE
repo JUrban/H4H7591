@@ -1,0 +1,84 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hreal
+% SZS output start Proof for thm.hreal
+fof(f55,plain,(
+  $false),
+  inference(resolution,[],[f44,f54])).
+fof(f54,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK0))))),
+  inference(forward_demodulation,[],[f33,f34])).
+fof(f34,plain,(
+  s('type.hrat.hrat',sK0) = s('type.hrat.hrat',sK1)),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1)))) & s('type.hrat.hrat',sK0) = s('type.hrat.hrat',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f24])).
+fof(f24,plain,(
+  ? [X0,X1] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) & s('type.hrat.hrat',X0) = s('type.hrat.hrat',X1))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) => s('type.hrat.hrat',X0) != s('type.hrat.hrat',X1))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) => ~s('type.hrat.hrat',X0) = s('type.hrat.hrat',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7)))) => ~s('type.hrat.hrat',X6) = s('type.hrat.hrat',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7)))) => ~s('type.hrat.hrat',X6) = s('type.hrat.hrat',X7))),
+  file('thm.hreal.HRAT_LT_NE','thm.hreal.HRAT_LT_NE')).
+fof(f33,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1))))),
+  inference(cnf_transformation,[],[f28])).
+fof(f44,plain,(
+  ( ! [X0] : (~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X0))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0] : ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X0))))),
+  inference(flattening,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X0))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X6))))),
+  file('thm.hreal.HRAT_LT_NE','thm.hreal.HRAT_LT_REFL')).
+% SZS output end Proof for thm.hreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 5
+% Passive clauses: 11
+% Generated clauses: 22
+% Final active clauses: 5
+% Final passive clauses: 4
+% Input formulas: 10
+% Initial clauses: 17
+% 
+% Fw demodulations: 1
+% 
+% Simple tautologies: 4
+% 
+% Binary resolution: 1
+% Forward superposition: 1
+% 
+% Split clauses: 4
+% Split components: 8
+% SAT solver clauses: 6
+% SAT solver unit clauses: 2
+% SAT solver binary clauses: 4
+% 
+% Sat splits: 4
+% 
+% TWLsolver clauses: 6
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

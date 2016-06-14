@@ -1,0 +1,94 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f67,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f65,f29])).
+fof(f29,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0)))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : ~s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X7] : ~s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6)))),
+  file('thm.arithmetic.ZERO_LESS_EXP','thm.arithmetic.NOT_EXP_|48|')).
+fof(f65,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0)))),
+  inference(resolution,[],[f23,f27])).
+fof(f27,plain,(
+  ( ! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X6) | p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X6)))))),
+  file('thm.arithmetic.ZERO_LESS_EXP','thm.arithmetic.LESS_|48|_CASES')).
+fof(f23,plain,(
+  ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0))))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.num.num',sK0))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.num.num',X0))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.num.num',X6))))))),
+  file('thm.arithmetic.ZERO_LESS_EXP','thm.arithmetic.ZERO_LESS_EXP')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 10
+% Passive clauses: 18
+% Generated clauses: 42
+% Final active clauses: 8
+% Final passive clauses: 4
+% Input formulas: 8
+% Initial clauses: 8
+% 
+% Duplicate literals: 1
+% Fw subsumption resolutions: 2
+% 
+% Simple tautologies: 2
+% Equational tautologies: 2
+% Forward subsumptions: 12
+% 
+% Binary resolution: 4
+% Forward superposition: 12
+% Backward superposition: 6
+% Self superposition: 4
+% Equality factoring: 2
+% 
+% Split clauses: 2
+% Split components: 4
+% SAT solver clauses: 4
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 3
+% 
+% Sat splits: 2
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 4
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

@@ -1,0 +1,220 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.num
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.num
+% SZS output start Proof for thm.num
+fof(f198,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f197,f95,f97,f96,f119,f52,f56,f54,f67])).
+fof(f67,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f58,f34])).
+fof(f34,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.num.num_|49|_prove_ltb',aHL_FALSITY)).
+fof(f58,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(backward_demodulation,[],[f54,f33])).
+fof(f33,plain,(
+  p(s(bool,'const.bool.ONE_ONE_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))))),
+  inference(cnf_transformation,[],[f9])).
+fof(f9,axiom,(
+  p(s(bool,'const.bool.ONE_ONE_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))))),
+  file('thm.num.num_|49|_prove_ltb','thm.num.SUC_REP_DEF|split|0')).
+fof(f54,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f54_D])).
+fof(f54_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f56,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f56_D])).
+fof(f56_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f52,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f37])).
+fof(f37,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.num.num_|49|_prove_ltb',aHL_BOOL_CASES)).
+fof(f119,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f116])).
+fof(f116,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f56,f96])).
+fof(f96,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | $spl4),
+  inference(cnf_transformation,[],[f96_D])).
+fof(f96_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f97,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) | $spl6),
+  inference(cnf_transformation,[],[f97_D])).
+fof(f97_D,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f95,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(subsumption_resolution,[],[f89,f47])).
+fof(f47,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f34,f37])).
+fof(f89,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f38,f37])).
+fof(f38,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.num.num_|49|_prove_ltb','thm.bool.IMP_ANTISYM_AX')).
+fof(f197,plain,(
+  $false | $spl6),
+  inference(equality_resolution,[],[f194])).
+fof(f194,plain,(
+  ( ! [X0] : (s('type.min.ind',X0) != s('type.min.ind',sK2('const.num.SUC_REP_0','type.min.ind','type.min.ind'))) ) | $spl6),
+  inference(superposition,[],[f191,f31])).
+fof(f31,plain,(
+  ( ! [X0] : (s('type.min.ind',X0) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',sK0(X0))))) )),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0] : s('type.min.ind',X0) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',sK0(X0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f22])).
+fof(f22,plain,(
+  ! [X0] : ? [X1] : s('type.min.ind',X0) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X1)))),
+  inference(ennf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~? [X0] : ! [X1] : s('type.min.ind',X0) != s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X1)))),
+  inference(flattening,[],[f12])).
+fof(f12,plain,(
+  ~? [X0] : ! [X1] : ~s('type.min.ind',X0) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~? [X6] : ! [X7] : ~s('type.min.ind',X6) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ? [X6] : ! [X7] : ~s('type.min.ind',X6) = s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X7)))),
+  file('thm.num.num_|49|_prove_ltb','thm.num.num_|49|_prove_ltb')).
+fof(f191,plain,(
+  ( ! [X0] : (s('type.min.ind',sK2('const.num.SUC_REP_0','type.min.ind','type.min.ind')) != s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X0)))) ) | $spl6),
+  inference(superposition,[],[f187,f36])).
+fof(f36,plain,(
+  ( ! [X0] : (s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X0))) = s('type.min.ind',happ(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'),s('type.min.ind',X0)))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0] : s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X0))) = s('type.min.ind',happ(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'),s('type.min.ind',X0)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X14] : s('type.min.ind','const.num.SUC_REP_1'(s('type.min.ind',X14))) = s('type.min.ind',happ(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'),s('type.min.ind',X14)))),
+  file('thm.num.num_|49|_prove_ltb','ARITY_0_1_const.num.SUC_REP')).
+fof(f187,plain,(
+  ( ! [X0] : (s('type.min.ind',sK2('const.num.SUC_REP_0','type.min.ind','type.min.ind')) != s('type.min.ind',happ(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'),s('type.min.ind',X0)))) ) | $spl6),
+  inference(subsumption_resolution,[],[f185,f34])).
+fof(f185,plain,(
+  ( ! [X0] : (p(s(bool,'F_0')) | s('type.min.ind',sK2('const.num.SUC_REP_0','type.min.ind','type.min.ind')) != s('type.min.ind',happ(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'),s('type.min.ind',X0)))) ) | $spl6),
+  inference(superposition,[],[f43,f132])).
+fof(f132,plain,(
+  s(bool,'F_0') = s(bool,'const.bool.ONTO_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))) | $spl6),
+  inference(resolution,[],[f97,f35])).
+fof(f35,plain,(
+  ~p(s(bool,'const.bool.ONTO_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))))),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~p(s(bool,'const.bool.ONTO_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))))),
+  inference(flattening,[],[f10])).
+fof(f10,axiom,(
+  ~p(s(bool,'const.bool.ONTO_1'(s(fun('type.min.ind','type.min.ind'),'const.num.SUC_REP_0'))))),
+  file('thm.num.num_|49|_prove_ltb','thm.num.SUC_REP_DEF|split|1')).
+fof(f43,plain,(
+  ( ! [X4,X2,X0,X1] : (p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) | s(X0,sK2(X2,X1,X0)) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) | ! [X5] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,sK1(X5,X2,X1,X0))))) & (! [X4] : s(X0,sK2(X2,X1,X0)) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) | p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2])],[f28])).
+fof(f28,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) | ! [X5] : ? [X6] : s(X0,X5) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X6)))) & (? [X3] : ! [X4] : s(X0,X3) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) | p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2))))))),
+  inference(rectify,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) | ! [X3] : ? [X4] : s(X0,X3) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X4)))) & (? [X3] : ! [X4] : s(X0,X3) != s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) | p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2))))))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) <=> ! [X3] : ? [X4] : s(X0,X3) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : ! [X2] : (p(s(bool,'const.bool.ONTO_1'(s(fun(X1,X0),X2)))) <=> ! [X3] : ? [X4] : s(X0,X3) = s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X10,X11] : ! [X12] : (p(s(bool,'const.bool.ONTO_1'(s(fun(X11,X10),X12)))) <=> ! [X7] : ? [X13] : s(X10,X7) = s(X10,happ(s(fun(X11,X10),X12),s(X11,X13))))),
+  file('thm.num.num_|49|_prove_ltb','thm.bool.ONTO_THM')).
+% SZS output end Proof for thm.num
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 26
+% Passive clauses: 61
+% Generated clauses: 168
+% Final active clauses: 18
+% Final passive clauses: 18
+% Input formulas: 10
+% Initial clauses: 14
+% 
+% Duplicate literals: 4
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 18
+% Fw demodulations: 7
+% Bw demodulations: 6
+% 
+% Simple tautologies: 4
+% Equational tautologies: 4
+% Forward subsumptions: 68
+% 
+% Binary resolution: 30
+% Factoring: 1
+% Forward superposition: 45
+% Backward superposition: 24
+% Self superposition: 7
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 13
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 4
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 3
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 12
+% TWLsolver calls for satisfiability: 7
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

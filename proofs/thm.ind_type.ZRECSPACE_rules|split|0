@@ -1,0 +1,235 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ind_type
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ind_type
+% SZS output start Proof for thm.ind_type
+fof(f3128,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f3114,f81,f135,f199,f144,f147,f145,f154,f130,f136,f79,f132,f175,f177,f176])).
+fof(f176,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) | $spl12),
+  inference(cnf_transformation,[],[f176_D])).
+fof(f176_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f177,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) | $spl14),
+  inference(cnf_transformation,[],[f177_D])).
+fof(f177_D,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f175,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) ) | $spl7),
+  inference(subsumption_resolution,[],[f171,f140])).
+fof(f140,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl7),
+  inference(superposition,[],[f135,f82])).
+fof(f82,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0',aHL_BOOL_CASES)).
+fof(f171,plain,(
+  ( ! [X0,X1] : (p(s(bool,X0)) | p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f108,f82])).
+fof(f108,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f52])).
+fof(f52,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X9,X10] : ((p(s(bool,X9)) => p(s(bool,X10))) => ((p(s(bool,X10)) => p(s(bool,X9))) => s(bool,X9) = s(bool,X10)))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0','thm.bool.IMP_ANTISYM_AX')).
+fof(f132,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f132_D])).
+fof(f132_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f79,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0',aHL_TRUTH)).
+fof(f136,plain,(
+  $false | ($spl0 | $spl2)),
+  inference(subsumption_resolution,[],[f132,f130])).
+fof(f130,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) | $spl0),
+  inference(cnf_transformation,[],[f130_D])).
+fof(f130_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f154,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | ($spl7 | $spl8)),
+  inference(superposition,[],[f135,f145])).
+fof(f145,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl8),
+  inference(cnf_transformation,[],[f145_D])).
+fof(f145_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f147,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl11),
+  inference(cnf_transformation,[],[f147_D])).
+fof(f147_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f144,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f82])).
+fof(f199,plain,(
+  $false | ($spl11 | $spl12)),
+  inference(trivial_inequality_removal,[],[f196])).
+fof(f196,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl11 | $spl12)),
+  inference(superposition,[],[f147,f176])).
+fof(f135,plain,(
+  ~p(s(bool,'F_0')) | $spl7),
+  inference(cnf_transformation,[],[f135_D])).
+fof(f135_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f81,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0',aHL_FALSITY)).
+fof(f3114,plain,(
+  ( ! [X2] : (s(bool,'T_0') = s(bool,X2)) ) | ($spl7 | $spl14)),
+  inference(subsumption_resolution,[],[f3091,f140])).
+fof(f3091,plain,(
+  ( ! [X2] : (p(s(bool,X2)) | s(bool,'T_0') = s(bool,X2)) ) | ($spl7 | $spl14)),
+  inference(superposition,[],[f3066,f245])).
+fof(f245,plain,(
+  ( ! [X4] : (s(bool,X4) = s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.ZBOT_0'))) | s(bool,'T_0') = s(bool,X4)) ) | ($spl7 | $spl14)),
+  inference(subsumption_resolution,[],[f243,f135])).
+fof(f243,plain,(
+  ( ! [X4] : (p(s(bool,'F_0')) | s(bool,X4) = s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.ZBOT_0'))) | s(bool,'T_0') = s(bool,X4)) ) | ($spl7 | $spl14)),
+  inference(superposition,[],[f178,f212])).
+fof(f212,plain,(
+  s(bool,'F_0') = s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.ZBOT_0'))) | $spl14),
+  inference(resolution,[],[f177,f78])).
+fof(f78,plain,(
+  ~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.ZBOT_0'))))),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.ZBOT_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f41])).
+fof(f41,plain,(
+  ? [X0] : ~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0'))))),
+  inference(ennf_transformation,[],[f20])).
+fof(f20,plain,(
+  ~! [X0] : p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X6,bool)),'const.ind_type.ZBOT_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X6,bool)),'const.ind_type.ZBOT_0'))))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0','thm.ind_type.ZRECSPACE_rules|split|0')).
+fof(f178,plain,(
+  ( ! [X2,X3] : (p(s(bool,X3)) | s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X2)) ) | $spl7),
+  inference(subsumption_resolution,[],[f172,f135])).
+fof(f172,plain,(
+  ( ! [X2,X3] : (p(s(bool,'F_0')) | p(s(bool,X3)) | s(bool,X2) = s(bool,X3) | s(bool,'T_0') = s(bool,X2)) )),
+  inference(superposition,[],[f108,f82])).
+fof(f3066,plain,(
+  ( ! [X0] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0'))))) )),
+  inference(duplicate_literal_removal,[],[f3039])).
+fof(f3039,plain,(
+  ( ! [X0] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0')))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0'))))) )),
+  inference(resolution,[],[f1165,f103])).
+fof(f103,plain,(
+  ( ! [X0,X1] : (~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),X1)))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) | ! [X8] : (((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),sK1(X8,X1,X0)) | (s(fun('type.num.num',fun(X0,bool)),sK1(X8,X1,X0)) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',sK2(X8,X1,X0)),s(X0,sK3(X8,X1,X0)),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),sK4(X8,X1,X0)))) & ! [X13] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),sK4(X8,X1,X0)),s('type.num.num',X13)))))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),sK1(X8,X1,X0)))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),X1)))))) & ((! [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') != s(fun('type.num.num',fun(X0,bool)),X3) & ! [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) != s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) | ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',sK6(X6,X5,X4,X3,X1,X0))))))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),X3))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),X1))))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2,sK3,sK4,sK5,sK6])],[f71])).
+fof(f71,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) | ! [X8] : (? [X9] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),X9) | ? [X10,X11,X12] : (s(fun('type.num.num',fun(X0,bool)),X9) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X10),s(X0,X11),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X12))) & ! [X13] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X12),s('type.num.num',X13)))))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),X9))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X8),s(fun('type.num.num',fun(X0,bool)),X1)))))) & (? [X2] : (! [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') != s(fun('type.num.num',fun(X0,bool)),X3) & ! [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) != s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) | ? [X7] : ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1))))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f70])).
+fof(f70,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) | ! [X2] : (? [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),X3) | ? [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) & ! [X7] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1)))))) & (? [X2] : (! [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') != s(fun('type.num.num',fun(X0,bool)),X3) & ! [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) != s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) | ? [X7] : ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1))))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(nnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) <=> ! [X2] : (? [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),X3) | ? [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) & ! [X7] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) & ~p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(ennf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) <=> ! [X2] : (! [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),X3) | ? [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) & ! [X7] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(flattening,[],[f28])).
+fof(f28,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1)))) <=> ! [X2] : (! [X3] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X0,bool)),X3) | ? [X4,X5,X6] : (s(fun('type.num.num',fun(X0,bool)),X3) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X4),s(X0,X5),s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6))) & ! [X7] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X0,bool))),X6),s('type.num.num',X7)))))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X3))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),X2),s(fun('type.num.num',fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X6] : ! [X5] : (p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X6,bool)),X5)))) <=> ! [X17] : (! [X18] : ((s(fun('type.num.num',fun(X6,bool)),'const.ind_type.ZBOT_0') = s(fun('type.num.num',fun(X6,bool)),X18) | ? [X19,X20,X21] : (s(fun('type.num.num',fun(X6,bool)),X18) = s(fun('type.num.num',fun(X6,bool)),'const.ind_type.ZCONSTR_3'(s('type.num.num',X19),s(X6,X20),s(fun('type.num.num',fun('type.num.num',fun(X6,bool))),X21))) & ! [X22] : p(s(bool,happ(s(fun(fun('type.num.num',fun(X6,bool)),bool),X17),s(fun('type.num.num',fun(X6,bool)),happ(s(fun('type.num.num',fun('type.num.num',fun(X6,bool))),X21),s('type.num.num',X22)))))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X6,bool)),bool),X17),s(fun('type.num.num',fun(X6,bool)),X18))))) => p(s(bool,happ(s(fun(fun('type.num.num',fun(X6,bool)),bool),X17),s(fun('type.num.num',fun(X6,bool)),X5))))))),
+  file('thm.ind_type.ZRECSPACE_rules|split|0','thm.ind_type.ZRECSPACE_def')).
+fof(f1165,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0')))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))) )),
+  inference(equality_resolution,[],[f101])).
+fof(f101,plain,(
+  ( ! [X0,X3,X1] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.ZBOT_0') != s(fun('type.num.num',fun(X0,bool)),X3) | p(s(bool,happ(s(fun(fun('type.num.num',fun(X0,bool)),bool),sK5(X1,X0)),s(fun('type.num.num',fun(X0,bool)),X3)))) | p(s(bool,'const.ind_type.ZRECSPACE_1'(s(fun('type.num.num',fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f72])).
+% SZS output end Proof for thm.ind_type
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 49
+% Passive clauses: 465
+% Generated clauses: 2938
+% Final active clauses: 39
+% Final passive clauses: 329
+% Input formulas: 18
+% Initial clauses: 52
+% 
+% Duplicate literals: 237
+% Trivial inequalities: 55
+% Fw subsumption resolutions: 438
+% Fw demodulations: 110
+% Bw demodulations: 5
+% 
+% Simple tautologies: 107
+% Equational tautologies: 45
+% Forward subsumptions: 1285
+% 
+% Binary resolution: 106
+% Factoring: 1
+% Forward superposition: 796
+% Backward superposition: 834
+% Self superposition: 126
+% Equality factoring: 116
+% Equality resolution: 7
+% 
+% Split clauses: 126
+% Split components: 253
+% SAT solver clauses: 271
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 33
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 126
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 265
+% TWLsolver calls for satisfiability: 79
+% 
+% Memory used [KB]: 2174
+% Time elapsed: 0.090 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.097 s

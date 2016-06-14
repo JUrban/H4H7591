@@ -1,0 +1,171 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f2559,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2541,f246,f251,f249,f292,f40,f43,f41,f53])).
+fof(f53,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f50,f24])).
+fof(f24,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rat.RAT_EQUIV_REF','thm.bool.TRUTH')).
+fof(f50,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f26,f41])).
+fof(f26,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rat.RAT_EQUIV_REF',aHL_FALSITY)).
+fof(f41,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f41_D])).
+fof(f41_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f43,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f43_D])).
+fof(f43_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f40,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f27])).
+fof(f27,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.rat.RAT_EQUIV_REF',aHL_BOOL_CASES)).
+fof(f292,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f287])).
+fof(f287,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f43,f249])).
+fof(f249,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl4),
+  inference(cnf_transformation,[],[f249_D])).
+fof(f249_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f251,plain,(
+  s(bool,'F_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) | $spl6),
+  inference(cnf_transformation,[],[f251_D])).
+fof(f251_D,plain,(
+  s(bool,'F_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f246,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(duplicate_literal_removal,[],[f212])).
+fof(f212,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f193,f27])).
+fof(f193,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(subsumption_resolution,[],[f123,f24])).
+fof(f123,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f23,f34])).
+fof(f34,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f27,f27])).
+fof(f23,plain,(
+  ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f17])).
+fof(f17,plain,(
+  ? [X0] : ~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0] : p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X6))))),
+  file('thm.rat.RAT_EQUIV_REF','thm.rat.RAT_EQUIV_REF')).
+fof(f2541,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f2514,f26])).
+fof(f2514,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(superposition,[],[f2509,f251])).
+fof(f2509,plain,(
+  ( ! [X0] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X0))))) )),
+  inference(equality_resolution,[],[f31])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))) )),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0)))))) & (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))))),
+  inference(nnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X9,X10] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X9),s('type.frac.frac',X10)))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X9))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X10))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X10))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X9))))))),
+  file('thm.rat.RAT_EQUIV_REF','thm.rat.rat_equiv_def')).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 29
+% Passive clauses: 281
+% Generated clauses: 2406
+% Final active clauses: 21
+% Final passive clauses: 231
+% Input formulas: 8
+% Initial clauses: 10
+% 
+% Duplicate literals: 361
+% Trivial inequalities: 30
+% Fw subsumption resolutions: 152
+% Fw demodulations: 5
+% Bw demodulations: 4
+% 
+% Simple tautologies: 84
+% Equational tautologies: 72
+% Forward subsumptions: 1159
+% 
+% Binary resolution: 21
+% Forward superposition: 670
+% Backward superposition: 738
+% Self superposition: 202
+% Equality factoring: 188
+% Equality resolution: 1
+% 
+% Split clauses: 151
+% Split components: 302
+% SAT solver clauses: 269
+% SAT solver unit clauses: 65
+% SAT solver binary clauses: 103
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 151
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 259
+% TWLsolver calls for satisfiability: 13
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.069 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.075 s

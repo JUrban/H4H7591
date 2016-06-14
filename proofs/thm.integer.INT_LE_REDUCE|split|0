@@ -1,0 +1,102 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.integer
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.integer
+% SZS output start Proof for thm.integer
+fof(f9318,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f447,f8839])).
+fof(f8839,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X0)))) )),
+  inference(resolution,[],[f8838,f513])).
+fof(f513,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f342])).
+fof(f342,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f202])).
+fof(f202,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f55])).
+fof(f55,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.integer.INT_LE_REDUCE|split|0','thm.bool.EQ_CLAUSES|split|0')).
+fof(f8838,plain,(
+  ( ! [X0] : (p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X0))))) )),
+  inference(equality_resolution,[],[f612])).
+fof(f612,plain,(
+  ( ! [X0,X1] : (s('type.integer.int',X0) != s('type.integer.int',X1) | p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1))))) )),
+  inference(cnf_transformation,[],[f382])).
+fof(f382,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s('type.integer.int',X0) = s('type.integer.int',X1)) & ((~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) & s('type.integer.int',X0) != s('type.integer.int',X1)) | p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1))))))),
+  inference(flattening,[],[f381])).
+fof(f381,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s('type.integer.int',X0) = s('type.integer.int',X1))) & ((~p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) & s('type.integer.int',X0) != s('type.integer.int',X1)) | p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1))))))),
+  inference(nnf_transformation,[],[f266])).
+fof(f266,plain,(
+  ! [X0,X1] : (p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) <=> (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X0),s('type.integer.int',X1)))) | s('type.integer.int',X0) = s('type.integer.int',X1)))),
+  inference(rectify,[],[f74])).
+fof(f74,axiom,(
+  ! [X6,X15] : (p(s(bool,'const.integer.int_le_2'(s('type.integer.int',X6),s('type.integer.int',X15)))) <=> (p(s(bool,'const.integer.int_lt_2'(s('type.integer.int',X6),s('type.integer.int',X15)))) | s('type.integer.int',X6) = s('type.integer.int',X15)))),
+  file('thm.integer.INT_LE_REDUCE|split|0','thm.integer.INT_LE_LT')).
+fof(f447,plain,(
+  s(bool,'T_0') != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(cnf_transformation,[],[f148])).
+fof(f148,plain,(
+  s(bool,'T_0') != s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~s(bool,'T_0') = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  s(bool,'T_0') = s(bool,'const.integer.int_le_2'(s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.integer.int','const.integer.int_of_num_1'(s('type.num.num','const.num.|48|_0')))))),
+  file('thm.integer.INT_LE_REDUCE|split|0','thm.integer.INT_LE_REDUCE|split|0')).
+% SZS output end Proof for thm.integer
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 501
+% Passive clauses: 2091
+% Generated clauses: 8859
+% Final active clauses: 456
+% Final passive clauses: 1441
+% Input formulas: 146
+% Initial clauses: 308
+% 
+% Duplicate literals: 144
+% Trivial inequalities: 30
+% Fw subsumption resolutions: 834
+% Fw demodulations: 362
+% Bw demodulations: 44
+% 
+% Simple tautologies: 167
+% Equational tautologies: 21
+% Forward subsumptions: 5152
+% Fw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 3072
+% Factoring: 642
+% Forward superposition: 2062
+% Backward superposition: 1279
+% Self superposition: 13
+% Equality factoring: 2
+% Equality resolution: 9
+% 
+% Split clauses: 119
+% Split components: 238
+% SAT solver clauses: 208
+% SAT solver unit clauses: 15
+% SAT solver binary clauses: 42
+% 
+% Sat splits: 119
+% 
+% TWLsolver clauses: 208
+% TWLsolver calls for satisfiability: 184
+% 
+% Memory used [KB]: 4093
+% Time elapsed: 0.156 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.162 s

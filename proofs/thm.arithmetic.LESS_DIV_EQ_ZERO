@@ -1,0 +1,145 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f422,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f421,f27])).
+fof(f27,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))) & s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) & s('type.num.num','const.num.|48|_0') != s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',X0),s('type.num.num',X1))))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',X0),s('type.num.num',X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',X6),s('type.num.num',X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',X6),s('type.num.num',X7))))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO','thm.arithmetic.LESS_DIV_EQ_ZERO')).
+fof(f421,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(forward_demodulation,[],[f405,f30])).
+fof(f30,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0] : s('type.num.num',X0) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7] : s('type.num.num',X7) = s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X7)))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO','thm.arithmetic.ADD|split|0')).
+fof(f405,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',sK0))),s('type.num.num',sK1)))),
+  inference(superposition,[],[f390,f31])).
+fof(f31,plain,(
+  ( ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X0)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X7] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.arithmetic.*_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X7)))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO','thm.arithmetic.MULT|split|0')).
+fof(f390,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',sK1))),s('type.num.num',sK0))),s('type.num.num',sK1)))) )),
+  inference(subsumption_resolution,[],[f374,f28])).
+fof(f28,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO',aHL_TRUTH)).
+fof(f374,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | s('type.num.num',X0) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X0),s('type.num.num',sK1))),s('type.num.num',sK0))),s('type.num.num',sK1)))) )),
+  inference(superposition,[],[f35,f48])).
+fof(f48,plain,(
+  s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(subsumption_resolution,[],[f45,f29])).
+fof(f29,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f13])).
+fof(f13,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO',aHL_FALSITY)).
+fof(f45,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1)))),
+  inference(superposition,[],[f26,f32])).
+fof(f32,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO',aHL_BOOL_CASES)).
+fof(f26,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK1))))),
+  inference(cnf_transformation,[],[f24])).
+fof(f35,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0)))) | s('type.num.num',X2) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X2),s('type.num.num',X0))),s('type.num.num',X1))),s('type.num.num',X0)))) )),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0)))) | ! [X2] : s('type.num.num',X2) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X2),s('type.num.num',X0))),s('type.num.num',X1))),s('type.num.num',X0))))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0)))) => ! [X2] : s('type.num.num',X2) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X2),s('type.num.num',X0))),s('type.num.num',X1))),s('type.num.num',X0))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X7,X6] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num',X7)))) => ! [X9] : s('type.num.num',X9) = s('type.num.num','const.arithmetic.DIV_2'(s('type.num.num','const.arithmetic.+_2'(s('type.num.num','const.arithmetic.*_2'(s('type.num.num',X9),s('type.num.num',X7))),s('type.num.num',X6))),s('type.num.num',X7))))),
+  file('thm.arithmetic.LESS_DIV_EQ_ZERO','thm.arithmetic.DIV_MULT')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 23
+% Passive clauses: 66
+% Generated clauses: 385
+% Final active clauses: 20
+% Final passive clauses: 35
+% Input formulas: 10
+% Initial clauses: 11
+% 
+% Duplicate literals: 41
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 7
+% Fw demodulations: 12
+% Bw demodulations: 2
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 213
+% 
+% Binary resolution: 5
+% Forward superposition: 122
+% Backward superposition: 115
+% Self superposition: 39
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 1279
+% Time elapsed: 0.019 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.021 s

@@ -1,0 +1,138 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f7044,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f7022,f222])).
+fof(f222,plain,(
+  s(bool,'T_0') != s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))),
+  inference(resolution,[],[f125,f132])).
+fof(f132,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f92])).
+fof(f92,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X12] : (s(bool,'T_0') = s(bool,X12) <=> p(s(bool,X12)))),
+  file('thm.list.FILTER_COND_REWRITE|split|2','thm.bool.EQ_CLAUSES|split|0')).
+fof(f125,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3))))),
+  inference(cnf_transformation,[],[f91])).
+fof(f91,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))) & s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK3),s('type.list.list'(sK0),sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f75])).
+fof(f75,plain,(
+  ? [X0,X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) & s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))) != s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X1))))))),
+  inference(ennf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~! [X0,X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X1))))))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X2),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X1))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (~p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X7))) = s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X7))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (~p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X7))) = s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X7))))))),
+  file('thm.list.FILTER_COND_REWRITE|split|2','thm.list.FILTER_COND_REWRITE|split|2')).
+fof(f7022,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))),
+  inference(trivial_inequality_removal,[],[f7010])).
+fof(f7010,plain,(
+  s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK1))) | s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))),
+  inference(superposition,[],[f126,f1921])).
+fof(f1921,plain,(
+  ( ! [X6,X4,X5,X3] : (s('type.list.list'(X3),'const.list.FILTER_2'(s(fun(X3,bool),X4),s('type.list.list'(X3),X6))) = s('type.list.list'(X3),'const.list.FILTER_2'(s(fun(X3,bool),X4),s('type.list.list'(X3),'const.list.CONS_2'(s(X3,X5),s('type.list.list'(X3),X6))))) | s(bool,'T_0') = s(bool,happ(s(fun(X3,bool),X4),s(X3,X5)))) )),
+  inference(forward_demodulation,[],[f1878,f175])).
+fof(f175,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f61])).
+fof(f61,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f60])).
+fof(f60,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f28])).
+fof(f28,axiom,(
+  ! [X6] : ! [X10,X11] : s(X6,X11) = s(X6,'const.bool.COND_3'(s(bool,'F_0'),s(X6,X10),s(X6,X11)))),
+  file('thm.list.FILTER_COND_REWRITE|split|2','thm.bool.COND_CLAUSES|split|1')).
+fof(f1878,plain,(
+  ( ! [X6,X4,X5,X3] : (s('type.list.list'(X3),'const.list.FILTER_2'(s(fun(X3,bool),X4),s('type.list.list'(X3),'const.list.CONS_2'(s(X3,X5),s('type.list.list'(X3),X6))))) = s('type.list.list'(X3),'const.bool.COND_3'(s(bool,'F_0'),s('type.list.list'(X3),'const.list.CONS_2'(s(X3,X5),s('type.list.list'(X3),'const.list.FILTER_2'(s(fun(X3,bool),X4),s('type.list.list'(X3),X6))))),s('type.list.list'(X3),'const.list.FILTER_2'(s(fun(X3,bool),X4),s('type.list.list'(X3),X6))))) | s(bool,'T_0') = s(bool,happ(s(fun(X3,bool),X4),s(X3,X5)))) )),
+  inference(superposition,[],[f179,f130])).
+fof(f130,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.list.FILTER_COND_REWRITE|split|2',aHL_BOOL_CASES)).
+fof(f179,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))) = s('type.list.list'(X0),'const.bool.COND_3'(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3))))),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3)))))) )),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1,X2,X3] : s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))) = s('type.list.list'(X0),'const.bool.COND_3'(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3))))),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f66])).
+fof(f66,plain,(
+  ! [X0] : ! [X1,X2,X3] : s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))) = s('type.list.list'(X0),'const.bool.COND_3'(s(bool,happ(s(fun(X0,bool),X1),s(X0,X2))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3))))),s('type.list.list'(X0),'const.list.FILTER_2'(s(fun(X0,bool),X1),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f33])).
+fof(f33,axiom,(
+  ! [X6] : ! [X8,X9,X12] : s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X12))))) = s('type.list.list'(X6),'const.bool.COND_3'(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9))),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X12))))),s('type.list.list'(X6),'const.list.FILTER_2'(s(fun(X6,bool),X8),s('type.list.list'(X6),X12)))))),
+  file('thm.list.FILTER_COND_REWRITE|split|2','thm.list.FILTER|split|1')).
+fof(f126,plain,(
+  s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.FILTER_2'(s(fun(sK0,bool),sK2),s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK3),s('type.list.list'(sK0),sK1)))))),
+  inference(cnf_transformation,[],[f91])).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 87
+% Passive clauses: 1259
+% Generated clauses: 6718
+% Final active clauses: 83
+% Final passive clauses: 1050
+% Input formulas: 32
+% Initial clauses: 78
+% 
+% Duplicate literals: 364
+% Trivial inequalities: 148
+% Fw subsumption resolutions: 866
+% Fw demodulations: 714
+% Bw demodulations: 2
+% 
+% Simple tautologies: 233
+% Equational tautologies: 34
+% Forward subsumptions: 2891
+% 
+% Binary resolution: 222
+% Factoring: 2
+% Forward superposition: 2320
+% Backward superposition: 1804
+% Self superposition: 75
+% Equality factoring: 60
+% Equality resolution: 20
+% 
+% Split clauses: 139
+% Split components: 296
+% SAT solver clauses: 276
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 69
+% 
+% Sat splits: 139
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 272
+% TWLsolver calls for satisfiability: 70
+% 
+% Memory used [KB]: 3709
+% Time elapsed: 0.157 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.159 s

@@ -1,0 +1,167 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f3483,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f3455,f290,f420])).
+fof(f420,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f420_D])).
+fof(f420_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f290,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.pred_set_|49|9|48|_prove_ltb',aHL_FALSITY)).
+fof(f3455,plain,(
+  $false | $spl5),
+  inference(subsumption_resolution,[],[f3454,f422])).
+fof(f422,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl5),
+  inference(resolution,[],[f293,f420])).
+fof(f293,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f208])).
+fof(f208,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f57])).
+fof(f57,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.pred_set.pred_set_|49|9|48|_prove_ltb','thm.bool.EQ_CLAUSES|split|0')).
+fof(f3454,plain,(
+  s(bool,'T_0') = s(bool,'F_0')),
+  inference(forward_demodulation,[],[f3453,f424])).
+fof(f424,plain,(
+  s(bool,'T_0') = s(bool,'|dollar|exists_1'(s(fun(sK0,bool),sK2)))),
+  inference(resolution,[],[f294,f285])).
+fof(f285,plain,(
+  p(s(bool,'|dollar|exists_1'(s(fun(sK0,bool),sK2))))),
+  inference(cnf_transformation,[],[f207])).
+fof(f207,plain,(
+  s(sK0,sK1) = s(sK0,'const.min.@_1'(s(fun(sK0,bool),sK2))) & p(s(bool,'|dollar|exists_1'(s(fun(sK0,bool),sK2)))) & ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f183])).
+fof(f183,plain,(
+  ? [X0,X1,X2] : (s(X0,X1) = s(X0,'const.min.@_1'(s(fun(X0,bool),X2))) & p(s(bool,'|dollar|exists_1'(s(fun(X0,bool),X2)))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1)))))),
+  inference(flattening,[],[f182])).
+fof(f182,plain,(
+  ? [X0,X1,X2] : (s(X0,X1) = s(X0,'const.min.@_1'(s(fun(X0,bool),X2))) & (p(s(bool,'|dollar|exists_1'(s(fun(X0,bool),X2)))) & ~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1,X2] : (s(X0,X1) = s(X0,'const.min.@_1'(s(fun(X0,bool),X2))) => (p(s(bool,'|dollar|exists_1'(s(fun(X0,bool),X2)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))))),
+  inference(flattening,[],[f70])).
+fof(f70,plain,(
+  ~! [X0] : ! [X1,X2] : (s(X0,X1) = s(X0,'const.min.@_1'(s(fun(X0,bool),X2))) => (p(s(bool,'|dollar|exists_1'(s(fun(X0,bool),X2)))) => p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s(X6,X7) = s(X6,'const.min.@_1'(s(fun(X6,bool),X8))) => (p(s(bool,'|dollar|exists_1'(s(fun(X6,bool),X8)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s(X6,X7) = s(X6,'const.min.@_1'(s(fun(X6,bool),X8))) => (p(s(bool,'|dollar|exists_1'(s(fun(X6,bool),X8)))) => p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X7))))))),
+  file('thm.pred_set.pred_set_|49|9|48|_prove_ltb','thm.pred_set.pred_set_|49|9|48|_prove_ltb')).
+fof(f294,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f208])).
+fof(f3453,plain,(
+  s(bool,'F_0') = s(bool,'|dollar|exists_1'(s(fun(sK0,bool),sK2)))),
+  inference(forward_demodulation,[],[f3401,f429])).
+fof(f429,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(resolution,[],[f286,f298])).
+fof(f298,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f210])).
+fof(f210,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f77])).
+fof(f77,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f76])).
+fof(f76,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f58])).
+fof(f58,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.pred_set.pred_set_|49|9|48|_prove_ltb','thm.bool.EQ_CLAUSES|split|2')).
+fof(f286,plain,(
+  ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1))))),
+  inference(cnf_transformation,[],[f207])).
+fof(f3401,plain,(
+  s(bool,'|dollar|exists_1'(s(fun(sK0,bool),sK2))) = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK1)))),
+  inference(superposition,[],[f321,f284])).
+fof(f284,plain,(
+  s(sK0,sK1) = s(sK0,'const.min.@_1'(s(fun(sK0,bool),sK2)))),
+  inference(cnf_transformation,[],[f207])).
+fof(f321,plain,(
+  ( ! [X0,X1] : (s(bool,'|dollar|exists_1'(s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,'const.min.@_1'(s(fun(X0,bool),X1)))))) )),
+  inference(cnf_transformation,[],[f94])).
+fof(f94,plain,(
+  ! [X0,X1] : s(bool,'|dollar|exists_1'(s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,'const.min.@_1'(s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f93])).
+fof(f93,plain,(
+  ! [X0] : ! [X1] : s(bool,'|dollar|exists_1'(s(fun(X0,bool),X1))) = s(bool,happ(s(fun(X0,bool),X1),s(X0,'const.min.@_1'(s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : ! [X5] : s(bool,'|dollar|exists_1'(s(fun(X6,bool),X5))) = s(bool,happ(s(fun(X6,bool),X5),s(X6,'const.min.@_1'(s(fun(X6,bool),X5)))))),
+  file('thm.pred_set.pred_set_|49|9|48|_prove_ltb','thm.bool.EXISTS_DEF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 103
+% Passive clauses: 596
+% Generated clauses: 3168
+% Final active clauses: 81
+% Final passive clauses: 428
+% Input formulas: 68
+% Initial clauses: 130
+% 
+% Duplicate literals: 13
+% Trivial inequalities: 60
+% Fw subsumption resolutions: 221
+% Fw demodulations: 517
+% Bw demodulations: 16
+% 
+% Simple tautologies: 55
+% Equational tautologies: 8
+% Forward subsumptions: 1702
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 257
+% Factoring: 1
+% Forward superposition: 879
+% Backward superposition: 1030
+% Self superposition: 16
+% Equality factoring: 2
+% Equality resolution: 10
+% 
+% Split clauses: 28
+% Split components: 56
+% SAT solver clauses: 48
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 29
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 28
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 47
+% TWLsolver calls for satisfiability: 14
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.068 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.08 s

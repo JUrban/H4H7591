@@ -1,0 +1,296 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.while
+% (104511)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 333
+% Passive clauses: 3725
+% Generated clauses: 16870
+% Final active clauses: 301
+% Final passive clauses: 3101
+% Input formulas: 68
+% Initial clauses: 106
+% 
+% Duplicate literals: 318
+% Trivial inequalities: 6
+% Fw subsumption resolutions: 576
+% Fw demodulations: 1754
+% Bw demodulations: 15
+% 
+% Simple tautologies: 141
+% Equational tautologies: 18
+% Forward subsumptions: 10206
+% 
+% Binary resolution: 1447
+% Forward superposition: 6629
+% Backward superposition: 5854
+% Self superposition: 199
+% Equality factoring: 34
+% Equality resolution: 1
+% 
+% Split clauses: 151
+% Split components: 302
+% SAT solver clauses: 233
+% SAT solver unit clauses: 19
+% SAT solver binary clauses: 86
+% 
+% Sat splits: 151
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 231
+% TWLsolver calls for satisfiability: 79
+% 
+% Memory used [KB]: 31086
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 143 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.while
+% (104534)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 164
+% Passive clauses: 1538
+% Generated clauses: 8986
+% Final active clauses: 164
+% Final passive clauses: 1288
+% Input formulas: 68
+% Initial clauses: 106
+% 
+% Duplicate literals: 132
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 165
+% Fw demodulations: 773
+% Bw demodulations: 85
+% Condensations: 345
+% 
+% Simple tautologies: 93
+% Equational tautologies: 14
+% Forward subsumptions: 3851
+% 
+% Binary resolution: 454
+% Forward superposition: 2556
+% Backward superposition: 2575
+% Self superposition: 132
+% Equality factoring: 26
+% 
+% Split clauses: 78
+% Split components: 156
+% SAT solver clauses: 2086
+% SAT solver unit clauses: 166
+% SAT solver binary clauses: 44
+% 
+% Sat splits: 78
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2086
+% TWLsolver calls for satisfiability: 719
+% 
+% Memory used [KB]: 24562
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.while
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.while
+% SZS output start Proof for thm.while
+fof(f27695,plain,(
+  $false),
+  inference(unit_resulting_resolution,[],[f218,f2316,f1816,f249])).
+fof(f249,plain,(
+  ( ! [X2,X0,X1] : (~sP1(X0,X1,X2) | p(s(bool,X0)) | ~p(s(bool,X2))) )),
+  inference(cnf_transformation,[],[f199])).
+fof(f199,plain,(
+  ! [X0,X1,X2] : ((~sP1(X0,X1,X2) | ((p(s(bool,X0)) | ~p(s(bool,X2))) & (p(s(bool,X0)) | ~p(s(bool,X1))) & sP0(X0,X1,X2))) & ((~p(s(bool,X0)) & p(s(bool,X2))) | (~p(s(bool,X0)) & p(s(bool,X1))) | ~sP0(X0,X1,X2) | sP1(X0,X1,X2)))),
+  inference(rectify,[],[f198])).
+fof(f198,plain,(
+  ! [X2,X0,X1] : ((~sP1(X2,X0,X1) | ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1))) & ((~p(s(bool,X2)) & p(s(bool,X1))) | (~p(s(bool,X2)) & p(s(bool,X0))) | ~sP0(X2,X0,X1) | sP1(X2,X0,X1)))),
+  inference(flattening,[],[f197])).
+fof(f197,plain,(
+  ! [X2,X0,X1] : ((~sP1(X2,X0,X1) | ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1))) & (((~p(s(bool,X2)) & p(s(bool,X1))) | (~p(s(bool,X2)) & p(s(bool,X0))) | ~sP0(X2,X0,X1)) | sP1(X2,X0,X1)))),
+  inference(nnf_transformation,[],[f186])).
+fof(f186,plain,(
+  ! [X2,X0,X1] : (sP1(X2,X0,X1) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1)))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP1])])).
+fof(f1816,plain,(
+  ( ! [X0,X3] : (p(s(bool,happ(s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X3))),s(X0,X3))))) )),
+  inference(forward_demodulation,[],[f1815,f230])).
+fof(f230,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X1) = s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num','const.arithmetic.ZERO_0')))) )),
+  inference(cnf_transformation,[],[f193])).
+fof(f193,plain,(
+  ! [X0,X1,X2,X3] : (s(X0,X1) = s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num','const.arithmetic.ZERO_0'))) & ! [X6] : s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X6))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X2),s('type.num.num',X6))),s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num',X6))))) & ! [X5] : s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X5))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X3),s('type.num.num',X5))),s(X0,happ(s(fun('type.num.num',X0),sK5(X3,X2,X1,X0)),s('type.num.num',X5))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK5])],[f85])).
+fof(f85,plain,(
+  ! [X0,X1,X2,X3] : ? [X4] : (s(X0,X1) = s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.ZERO_0'))) & ! [X6] : s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X6))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X2),s('type.num.num',X6))),s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num',X6))))) & ! [X5] : s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X5))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X3),s('type.num.num',X5))),s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num',X5))))))),
+  inference(flattening,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : ! [X1,X2,X3] : ? [X4] : (s(X0,X1) = s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.ZERO_0'))) & ! [X6] : s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X6))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X2),s('type.num.num',X6))),s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num',X6))))) & ! [X5] : s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X5))))) = s(X0,happ(s(fun(X0,X0),happ(s(fun('type.num.num',fun(X0,X0)),X3),s('type.num.num',X5))),s(X0,happ(s(fun('type.num.num',X0),X4),s('type.num.num',X5))))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X22] : ! [X25,X26,X27] : ? [X28] : (s(X22,X25) = s(X22,happ(s(fun('type.num.num',X22),X28),s('type.num.num','const.arithmetic.ZERO_0'))) & ! [X8] : s(X22,happ(s(fun('type.num.num',X22),X28),s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',X8))))) = s(X22,happ(s(fun(X22,X22),happ(s(fun('type.num.num',fun(X22,X22)),X26),s('type.num.num',X8))),s(X22,happ(s(fun('type.num.num',X22),X28),s('type.num.num',X8))))) & ! [X8] : s(X22,happ(s(fun('type.num.num',X22),X28),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X8))))) = s(X22,happ(s(fun(X22,X22),happ(s(fun('type.num.num',fun(X22,X22)),X27),s('type.num.num',X8))),s(X22,happ(s(fun('type.num.num',X22),X28),s('type.num.num',X8))))))),
+  file('thm.while.LEAST_EQ|split|0','thm.numeral.bit_initiality')).
+fof(f1815,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,happ(s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X3))),s(X0,happ(s(fun('type.num.num',X0),sK5(X1,X2,X3,X0)),s('type.num.num','const.arithmetic.ZERO_0'))))))) )),
+  inference(forward_demodulation,[],[f1766,f285])).
+fof(f285,plain,(
+  ( ! [X4,X2,X0,X5,X3,X1] : (s(X0,happ(s(fun(X1,X0),'_dst_x1x0_2'(s(fun(X1,fun(X2,X0)),X3),s(X2,X4))),s(X1,X5))) = s(X0,happ(s(fun(X2,X0),happ(s(fun(X1,fun(X2,X0)),X3),s(X1,X5))),s(X2,X4)))) )),
+  inference(cnf_transformation,[],[f114])).
+fof(f114,plain,(
+  ! [X0,X1,X2,X3,X4,X5] : s(X0,happ(s(fun(X1,X0),'_dst_x1x0_2'(s(fun(X1,fun(X2,X0)),X3),s(X2,X4))),s(X1,X5))) = s(X0,happ(s(fun(X2,X0),happ(s(fun(X1,fun(X2,X0)),X3),s(X1,X5))),s(X2,X4)))),
+  inference(flattening,[],[f113])).
+fof(f113,plain,(
+  ! [X0,X1,X2] : ! [X3,X4,X5] : s(X0,happ(s(fun(X1,X0),'_dst_x1x0_2'(s(fun(X1,fun(X2,X0)),X3),s(X2,X4))),s(X1,X5))) = s(X0,happ(s(fun(X2,X0),happ(s(fun(X1,fun(X2,X0)),X3),s(X1,X5))),s(X2,X4)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X9,X10,X11] : ! [X12,X13,X14] : s(X9,happ(s(fun(X10,X9),'_dst_x1x0_2'(s(fun(X10,fun(X11,X9)),X12),s(X11,X13))),s(X10,X14))) = s(X9,happ(s(fun(X11,X9),happ(s(fun(X10,fun(X11,X9)),X12),s(X10,X14))),s(X11,X13)))),
+  file('thm.while.LEAST_EQ|split|0','_dst_x1x0_ax')).
+fof(f1766,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,happ(s(fun('type.num.num',X0),sK5(X1,X2,X3,X0)),s('type.num.num','const.arithmetic.ZERO_0'))))),s(X0,X3))))) )),
+  inference(unit_resulting_resolution,[],[f230,f248])).
+fof(f248,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X1) != s(X0,X2) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X1))),s(X0,X2))))) )),
+  inference(cnf_transformation,[],[f196])).
+fof(f196,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) & (s(X0,X1) != s(X0,X2) | p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X1))),s(X0,X2))))))),
+  inference(nnf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X1))),s(X0,X2)))) <=> s(X0,X1) = s(X0,X2))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X19,X20,X21] : (p(s(bool,happ(s(fun(X19,bool),happ(s(fun(X19,fun(X19,bool)),'=_0'),s(X19,X20))),s(X19,X21)))) <=> s(X19,X20) = s(X19,X21))),
+  file('thm.while.LEAST_EQ|split|0',arity_0_HL_EQ)).
+fof(f2316,plain,(
+  ( ! [X0] : (sP1('F_0','F_0',happ(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4))),s('type.num.num',X0)))) )),
+  inference(unit_resulting_resolution,[],[f218,f218,f2122,f260])).
+fof(f260,plain,(
+  ( ! [X2,X0,X1] : (sP1(X2,X0,X1) | p(s(bool,X0)) | p(s(bool,X1)) | p(s(bool,X2))) )),
+  inference(cnf_transformation,[],[f204])).
+fof(f204,plain,(
+  ! [X0,X1,X2] : ((((p(s(bool,X2)) | p(s(bool,X1)) | p(s(bool,X0))) & (~p(s(bool,X2)) | (~p(s(bool,X1)) & ~p(s(bool,X0))))) | sP1(X2,X0,X1)) & (~sP1(X2,X0,X1) | ((~p(s(bool,X2)) | p(s(bool,X1)) | p(s(bool,X0))) & ((~p(s(bool,X1)) & ~p(s(bool,X0))) | p(s(bool,X2))))))),
+  inference(flattening,[],[f203])).
+fof(f203,plain,(
+  ! [X0,X1,X2] : ((((p(s(bool,X2)) | (p(s(bool,X1)) | p(s(bool,X0)))) & (~p(s(bool,X2)) | (~p(s(bool,X1)) & ~p(s(bool,X0))))) | sP1(X2,X0,X1)) & (~sP1(X2,X0,X1) | ((~p(s(bool,X2)) | (p(s(bool,X1)) | p(s(bool,X0)))) & ((~p(s(bool,X1)) & ~p(s(bool,X0))) | p(s(bool,X2))))))),
+  inference(nnf_transformation,[],[f187])).
+fof(f187,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <=> sP1(X2,X0,X1))),
+  inference(definition_folding,[],[f106,f186,f185])).
+fof(f185,plain,(
+  ! [X2,X0,X1] : (sP0(X2,X0,X1) <=> (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2))))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP0])])).
+fof(f106,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))))),
+  inference(flattening,[],[f105])).
+fof(f105,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))))),
+  inference(rectify,[],[f68])).
+fof(f68,axiom,(
+  ! [X37,X38,X39] : ((p(s(bool,X39)) <=> (p(s(bool,X38)) | p(s(bool,X37)))) <=> ((p(s(bool,X39)) | ~p(s(bool,X38))) & (p(s(bool,X39)) | ~p(s(bool,X37))) & (p(s(bool,X38)) | p(s(bool,X37)) | ~p(s(bool,X39)))))),
+  file('thm.while.LEAST_EQ|split|0','thm.sat.sat_25_prove_ltb')).
+fof(f2122,plain,(
+  ( ! [X0] : (~p(s(bool,happ(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4))),s('type.num.num',X0))))) )),
+  inference(unit_resulting_resolution,[],[f1712,f238])).
+fof(f238,plain,(
+  ( ! [X0,X1] : (~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) | p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))))))) )),
+  inference(cnf_transformation,[],[f182])).
+fof(f182,plain,(
+  ! [X0,X1] : (~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) | (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1))))))),
+  inference(ennf_transformation,[],[f91])).
+fof(f91,plain,(
+  ! [X0,X1] : (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) => (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1))))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X29,X6] : (p(s(bool,happ(s(fun('type.num.num',bool),X29),s('type.num.num',X6)))) => (p(s(bool,happ(s(fun('type.num.num',bool),X29),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X29)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X29))),s('type.num.num',X6))))))),
+  file('thm.while.LEAST_EQ|split|0','thm.while.FULL_LEAST_INTRO')).
+fof(f1712,plain,(
+  ~p(s(bool,happ(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4))),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4))))))))),
+  inference(forward_demodulation,[],[f1672,f285])).
+fof(f1672,plain,(
+  ~p(s(bool,happ(s(fun('type.num.num',bool),happ(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4))))))),s('type.num.num',sK4))))),
+  inference(unit_resulting_resolution,[],[f213,f247])).
+fof(f247,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),'=_0'),s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) )),
+  inference(cnf_transformation,[],[f196])).
+fof(f213,plain,(
+  s('type.num.num',sK4) != s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4)))))),
+  inference(cnf_transformation,[],[f191])).
+fof(f191,plain,(
+  s('type.num.num',sK4) != s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',sK4)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK4])],[f181])).
+fof(f181,plain,(
+  ? [X0] : s('type.num.num',X0) != s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',X0)))))),
+  inference(ennf_transformation,[],[f70])).
+fof(f70,plain,(
+  ~! [X0] : s('type.num.num',X0) = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',X0)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.num.num',X6) = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',X6)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.num.num',X6) = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),'_dst_x1x0_2'(s(fun('type.num.num',fun('type.num.num',bool)),'=_0'),s('type.num.num',X6)))))),
+  file('thm.while.LEAST_EQ|split|0','thm.while.LEAST_EQ|split|0')).
+fof(f218,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.while.LEAST_EQ|split|0',aHL_FALSITY)).
+% SZS output end Proof for thm.while
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 287
+% Passive clauses: 5767
+% Generated clauses: 29314
+% Final active clauses: 256
+% Final passive clauses: 2049
+% Input formulas: 68
+% Initial clauses: 106
+% Discarded non-redundant clauses: 5772
+% 
+% Duplicate literals: 265
+% Trivial inequalities: 10
+% Fw subsumption resolutions: 596
+% Fw demodulations: 2439
+% Bw demodulations: 1917
+% Condensations: 542
+% Global subsumptions: 3
+% 
+% Simple tautologies: 25
+% Equational tautologies: 29
+% Forward subsumptions: 18645
+% Bw demodulations to eq. taut.: 50
+% 
+% Unit resulting resolution: 1823
+% Forward superposition: 11295
+% Backward superposition: 8339
+% Self superposition: 363
+% Equality factoring: 48
+% Equality resolution: 2
+% 
+% Split clauses: 56
+% Split components: 112
+% SAT solver clauses: 6002
+% SAT solver unit clauses: 2504
+% SAT solver binary clauses: 1280
+% 
+% Sat splits: 56
+% Sat splitting refutations: 118
+% 
+% Memory used [KB]: 78420
+% Time elapsed: 3.943 s
+% ------------------------------
+% ------------------------------
+% Success in time 5.28 s

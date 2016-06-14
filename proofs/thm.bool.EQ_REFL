@@ -1,0 +1,50 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f213,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f143])).
+fof(f143,plain,(
+  s(sK0,sK1) != s(sK0,sK1)),
+  inference(cnf_transformation,[],[f112])).
+fof(f112,plain,(
+  s(sK0,sK1) != s(sK0,sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f97])).
+fof(f97,plain,(
+  ? [X0,X1] : s(X0,X1) != s(X0,X1)),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1] : s(X0,X1) = s(X0,X1)),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0] : ! [X1] : s(X0,X1) = s(X0,X1)),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s(X6,X7) = s(X6,X7)),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s(X6,X7) = s(X6,X7)),
+  file('thm.bool.EQ_REFL','thm.bool.EQ_REFL')).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Generated clauses: 71
+% Input formulas: 37
+% Initial clauses: 69
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 1
+% 
+% Simple tautologies: 6
+% Equational tautologies: 4
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.02 s

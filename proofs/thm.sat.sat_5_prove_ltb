@@ -1,0 +1,69 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sat
+% SZS output start Proof for thm.sat
+fof(f92,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f57,f56])).
+fof(f56,plain,(
+  p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  p(s(bool,sK0)) & ~p(s(bool,sK0)) & ~p(s(bool,'F_0'))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f34])).
+fof(f34,plain,(
+  ? [X0] : (p(s(bool,X0)) & ~p(s(bool,X0)) & ~p(s(bool,'F_0')))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ? [X0] : (p(s(bool,X0)) & (~p(s(bool,X0)) & ~p(s(bool,'F_0'))))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~! [X0] : (p(s(bool,X0)) => (~p(s(bool,X0)) => p(s(bool,'F_0'))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ~! [X0] : (p(s(bool,X0)) => (~p(s(bool,X0)) => p(s(bool,'F_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,X6)) => (~p(s(bool,X6)) => p(s(bool,'F_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,X6)) => (~p(s(bool,X6)) => p(s(bool,'F_0'))))),
+  file('thm.sat.sat_5_prove_ltb','thm.sat.sat_5_prove_ltb')).
+fof(f57,plain,(
+  ~p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f41])).
+% SZS output end Proof for thm.sat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 1
+% Passive clauses: 10
+% Generated clauses: 33
+% Final active clauses: 1
+% Final passive clauses: 8
+% Input formulas: 15
+% Initial clauses: 30
+% 
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 9
+% 
+% Split clauses: 12
+% Split components: 25
+% SAT solver clauses: 13
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 11
+% 
+% Sat splits: 12
+% 
+% TWLsolver clauses: 13
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.010 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.012 s

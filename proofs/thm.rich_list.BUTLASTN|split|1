@@ -1,0 +1,252 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% (109597)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 97
+% Passive clauses: 2852
+% Generated clauses: 20934
+% Final active clauses: 88
+% Final passive clauses: 2624
+% Input formulas: 18
+% Initial clauses: 30
+% 
+% Duplicate literals: 1192
+% Trivial inequalities: 297
+% Fw subsumption resolutions: 2580
+% Fw demodulations: 1842
+% Bw demodulations: 5
+% 
+% Simple tautologies: 380
+% Equational tautologies: 91
+% Forward subsumptions: 9167
+% Fw demodulations to eq. taut.: 4
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 24
+% Forward superposition: 8950
+% Backward superposition: 5249
+% Self superposition: 355
+% Equality factoring: 246
+% Equality resolution: 17
+% 
+% Split clauses: 923
+% Split components: 1861
+% SAT solver clauses: 2310
+% SAT solver unit clauses: 252
+% SAT solver binary clauses: 552
+% 
+% Sat splits: 923
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2306
+% TWLsolver calls for satisfiability: 109
+% 
+% Memory used [KB]: 9210
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 293 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.rich_list
+% (109612)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 65
+% Passive clauses: 161
+% Generated clauses: 7918
+% Final active clauses: 58
+% Final passive clauses: 94
+% Input formulas: 18
+% Initial clauses: 30
+% 
+% Duplicate literals: 1153
+% Trivial inequalities: 87
+% Fw subsumption resolutions: 397
+% Fw demodulations: 179
+% Bw demodulations: 4
+% Condensations: 1896
+% Global subsumptions: 4
+% 
+% Simple tautologies: 148
+% Equational tautologies: 53
+% Forward subsumptions: 3359
+% Fw demodulations to eq. taut.: 8
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 12
+% Forward superposition: 1979
+% Backward superposition: 1663
+% Self superposition: 243
+% Equality factoring: 175
+% Equality resolution: 5
+% 
+% Split clauses: 108
+% Split components: 218
+% SAT solver clauses: 592
+% SAT solver unit clauses: 38
+% SAT solver binary clauses: 74
+% SAT solver learnt clauses: 8
+% 
+% Sat splits: 108
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 576
+% TWLsolver calls for satisfiability: 88
+% 
+% Memory used [KB]: 6140
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 286 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f3248,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f3242])).
+fof(f3242,plain,(
+  s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num',sK1),s('type.list.list'(sK0),sK3))) != s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num',sK1),s('type.list.list'(sK0),sK3)))),
+  inference(superposition,[],[f60,f2144])).
+fof(f2144,plain,(
+  ( ! [X6,X4,X7,X5] : (s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num',X5),s('type.list.list'(X4),X7))) = s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X5))),s('type.list.list'(X4),'const.list.SNOC_2'(s(X4,X6),s('type.list.list'(X4),X7)))))) )),
+  inference(forward_demodulation,[],[f2143,f81])).
+fof(f81,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X10] : ! [X9] : s('type.list.list'(X10),X9) = s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),X9)))))),
+  file('thm.rich_list.BUTLASTN|split|1','thm.list.REVERSE_REVERSE')).
+fof(f2143,plain,(
+  ( ! [X6,X4,X7,X5] : (s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num',X5),s('type.list.list'(X4),X7))))))) = s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X5))),s('type.list.list'(X4),'const.list.SNOC_2'(s(X4,X6),s('type.list.list'(X4),X7)))))) )),
+  inference(forward_demodulation,[],[f2105,f81])).
+fof(f2105,plain,(
+  ( ! [X6,X4,X7,X5] : (s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num',X5),s('type.list.list'(X4),X7))))))) = s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X5))),s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.list.SNOC_2'(s(X4,X6),s('type.list.list'(X4),X7)))))))))) )),
+  inference(superposition,[],[f313,f428])).
+fof(f428,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X3),s('type.list.list'(X0),X2))))) = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X3))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2)))))))) )),
+  inference(forward_demodulation,[],[f414,f317])).
+fof(f317,plain,(
+  ( ! [X6,X4,X5] : (s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),'const.rich_list.BUTLASTN_2'(s('type.num.num',X5),s('type.list.list'(X4),X6))))) = s('type.list.list'(X4),'const.list.DROP_2'(s('type.num.num',X5),s('type.list.list'(X4),'const.list.REVERSE_1'(s('type.list.list'(X4),X6)))))) )),
+  inference(superposition,[],[f81,f87])).
+fof(f87,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X2))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))))) )),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X2))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ! [X0] : ! [X1,X2] : s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X2))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))))),
+  inference(rectify,[],[f19])).
+fof(f19,axiom,(
+  ! [X10] : ! [X7,X12] : s('type.list.list'(X10),'const.rich_list.BUTLASTN_2'(s('type.num.num',X7),s('type.list.list'(X10),X12))) = s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),'const.list.DROP_2'(s('type.num.num',X7),s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),X12)))))))),
+  file('thm.rich_list.BUTLASTN|split|1','thm.rich_list.BUTLASTN_def')).
+fof(f414,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X3),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))))) = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X3))),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2)))))))) )),
+  inference(superposition,[],[f88,f86])).
+fof(f86,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2))))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))) )),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2))))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))),
+  inference(flattening,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : ! [X1,X2] : s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X1),s('type.list.list'(X0),X2))))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X1),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X10] : ! [X8,X9] : s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),'const.list.SNOC_2'(s(X10,X8),s('type.list.list'(X10),X9))))) = s('type.list.list'(X10),'const.list.CONS_2'(s(X10,X8),s('type.list.list'(X10),'const.list.REVERSE_1'(s('type.list.list'(X10),X9)))))),
+  file('thm.rich_list.BUTLASTN|split|1','thm.list.REVERSE_SNOC')).
+fof(f88,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3)))))) )),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1,X2,X3] : s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ! [X0] : ! [X1,X2,X3] : s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) = s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X10] : ! [X7,X8,X9] : s('type.list.list'(X10),'const.list.DROP_2'(s('type.num.num',X7),s('type.list.list'(X10),X9))) = s('type.list.list'(X10),'const.list.DROP_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.list.list'(X10),'const.list.CONS_2'(s(X10,X8),s('type.list.list'(X10),X9)))))),
+  file('thm.rich_list.BUTLASTN|split|1','thm.rich_list.DROP|split|1')).
+fof(f313,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X2),s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.DROP_2'(s('type.num.num',X2),s('type.list.list'(X0),X1)))))) )),
+  inference(superposition,[],[f87,f81])).
+fof(f60,plain,(
+  s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num',sK1),s('type.list.list'(sK0),sK3))) != s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.list.list'(sK0),'const.list.SNOC_2'(s(sK0,sK2),s('type.list.list'(sK0),sK3)))))),
+  inference(cnf_transformation,[],[f45])).
+fof(f45,plain,(
+  s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num',sK1),s('type.list.list'(sK0),sK3))) != s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',sK1))),s('type.list.list'(sK0),'const.list.SNOC_2'(s(sK0,sK2),s('type.list.list'(sK0),sK3)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f43])).
+fof(f43,plain,(
+  ? [X0,X1,X2,X3] : s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) != s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X3)))))),
+  inference(ennf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~! [X0,X1,X2,X3] : s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X3)))))),
+  inference(flattening,[],[f20])).
+fof(f20,plain,(
+  ~! [X0] : ! [X1,X2,X3] : s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num',X1),s('type.list.list'(X0),X3))) = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s('type.list.list'(X0),'const.list.SNOC_2'(s(X0,X2),s('type.list.list'(X0),X3)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num',X7),s('type.list.list'(X6),X9))) = s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.list.list'(X6),'const.list.SNOC_2'(s(X6,X8),s('type.list.list'(X6),X9)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num',X7),s('type.list.list'(X6),X9))) = s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X7))),s('type.list.list'(X6),'const.list.SNOC_2'(s(X6,X8),s('type.list.list'(X6),X9)))))),
+  file('thm.rich_list.BUTLASTN|split|1','thm.rich_list.BUTLASTN|split|1')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 111
+% Generated clauses: 3037
+% Final active clauses: 29
+% Final passive clauses: 52
+% Input formulas: 18
+% Initial clauses: 30
+% 
+% Duplicate literals: 564
+% Trivial inequalities: 29
+% Fw subsumption resolutions: 17
+% Fw demodulations: 42
+% Bw demodulations: 2
+% Condensations: 842
+% 
+% Simple tautologies: 62
+% Equational tautologies: 162
+% Forward subsumptions: 1217
+% Fw demodulations to eq. taut.: 4
+% Bw demodulations to eq. taut.: 2
+% 
+% Unit resulting resolution: 213
+% Forward superposition: 576
+% Backward superposition: 544
+% Self superposition: 152
+% Equality factoring: 120
+% 
+% Split clauses: 27
+% Split components: 55
+% SAT solver clauses: 167
+% SAT solver unit clauses: 28
+% SAT solver binary clauses: 21
+% 
+% Sat splits: 27
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.240 s
+% ------------------------------
+% ------------------------------
+% Success in time 1.557 s

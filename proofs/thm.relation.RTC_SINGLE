@@ -1,0 +1,157 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f18816,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f18779,f251,f434])).
+fof(f434,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f434_D])).
+fof(f434_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f251,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.relation.RTC_SINGLE',aHL_FALSITY)).
+fof(f18779,plain,(
+  $false | $spl3),
+  inference(subsumption_resolution,[],[f18778,f434])).
+fof(f18778,plain,(
+  p(s(bool,'F_0'))),
+  inference(forward_demodulation,[],[f18680,f3472])).
+fof(f3472,plain,(
+  s(bool,'F_0') = s(bool,'const.relation.RTC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15)))),
+  inference(resolution,[],[f244,f266])).
+fof(f266,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f164])).
+fof(f164,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f61])).
+fof(f61,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X12] : (s(bool,'F_0') = s(bool,X12) <=> ~p(s(bool,X12)))),
+  file('thm.relation.RTC_SINGLE','thm.bool.EQ_CLAUSES|split|3')).
+fof(f244,plain,(
+  ~p(s(bool,'const.relation.RTC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(cnf_transformation,[],[f159])).
+fof(f159,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),happ(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14))),s(sK12,sK15)))) & ~p(s(bool,'const.relation.RTC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14,sK15])],[f115])).
+fof(f115,plain,(
+  ? [X0,X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & ~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(ennf_transformation,[],[f47])).
+fof(f47,plain,(
+  ~! [X0,X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) => p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(flattening,[],[f46])).
+fof(f46,plain,(
+  ~! [X0] : ! [X1,X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) => p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8,X9] : (p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9)))) => p(s(bool,'const.relation.RTC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X9)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8,X9] : (p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9)))) => p(s(bool,'const.relation.RTC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X9)))))),
+  file('thm.relation.RTC_SINGLE','thm.relation.RTC_SINGLE')).
+fof(f18680,plain,(
+  p(s(bool,'const.relation.RTC_3'(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14),s(sK12,sK15))))),
+  inference(resolution,[],[f5570,f243])).
+fof(f243,plain,(
+  p(s(bool,happ(s(fun(sK12,bool),happ(s(fun(sK12,fun(sK12,bool)),sK13),s(sK12,sK14))),s(sK12,sK15))))),
+  inference(cnf_transformation,[],[f159])).
+fof(f5570,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X3))))) )),
+  inference(resolution,[],[f303,f296])).
+fof(f296,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X2))))) )),
+  inference(cnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ! [X0,X1,X2] : p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X2))))),
+  inference(flattening,[],[f84])).
+fof(f84,plain,(
+  ! [X0] : ! [X1,X2] : p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X2))))),
+  inference(rectify,[],[f33])).
+fof(f33,axiom,(
+  ! [X6] : ! [X7,X8] : p(s(bool,'const.relation.RTC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X8))))),
+  file('thm.relation.RTC_SINGLE','thm.relation.RTC_RULES|split|0')).
+fof(f303,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X3),s(X0,X4)))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X4)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3))))) )),
+  inference(cnf_transformation,[],[f130])).
+fof(f130,plain,(
+  ! [X0,X1,X2,X3,X4] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | ~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X3),s(X0,X4)))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X4)))))),
+  inference(flattening,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1,X2,X3,X4] : ((~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | ~p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X3),s(X0,X4))))) | p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X4)))))),
+  inference(ennf_transformation,[],[f91])).
+fof(f91,plain,(
+  ! [X0,X1,X2,X3,X4] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X3),s(X0,X4))))) => p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X4)))))),
+  inference(flattening,[],[f90])).
+fof(f90,plain,(
+  ! [X0] : ! [X1,X2,X3,X4] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X3),s(X0,X4))))) => p(s(bool,'const.relation.RTC_3'(s(fun(X0,fun(X0,bool)),X1),s(X0,X2),s(X0,X4)))))),
+  inference(rectify,[],[f34])).
+fof(f34,axiom,(
+  ! [X6] : ! [X7,X8,X9,X17] : ((p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X7),s(X6,X8))),s(X6,X9)))) & p(s(bool,'const.relation.RTC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X9),s(X6,X17))))) => p(s(bool,'const.relation.RTC_3'(s(fun(X6,fun(X6,bool)),X7),s(X6,X8),s(X6,X17)))))),
+  file('thm.relation.RTC_SINGLE','thm.relation.RTC_RULES|split|1')).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 720
+% Passive clauses: 5658
+% Generated clauses: 18389
+% Final active clauses: 711
+% Final passive clauses: 4645
+% Input formulas: 44
+% Initial clauses: 183
+% 
+% Duplicate literals: 440
+% Trivial inequalities: 72
+% Fw subsumption resolutions: 1890
+% Fw demodulations: 1308
+% Bw demodulations: 7
+% 
+% Simple tautologies: 256
+% Equational tautologies: 43
+% Forward subsumptions: 8301
+% 
+% Binary resolution: 6721
+% Factoring: 1130
+% Forward superposition: 2407
+% Backward superposition: 3970
+% Self superposition: 31
+% Equality factoring: 30
+% Equality resolution: 9
+% 
+% Split clauses: 433
+% Split components: 878
+% SAT solver clauses: 721
+% SAT solver unit clauses: 10
+% SAT solver binary clauses: 129
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 433
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 720
+% TWLsolver calls for satisfiability: 295
+% 
+% Memory used [KB]: 8571
+% Time elapsed: 0.454 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.553 s

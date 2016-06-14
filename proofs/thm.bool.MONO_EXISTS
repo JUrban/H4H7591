@@ -1,0 +1,120 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f276,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f269,f24])).
+fof(f24,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.MONO_EXISTS',aHL_TRUTH)).
+fof(f269,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(superposition,[],[f267,f37])).
+fof(f37,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))),
+  inference(subsumption_resolution,[],[f33,f25])).
+fof(f25,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.bool.MONO_EXISTS',aHL_FALSITY)).
+fof(f33,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))),
+  inference(superposition,[],[f22,f26])).
+fof(f26,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.bool.MONO_EXISTS',aHL_BOOL_CASES)).
+fof(f22,plain,(
+  p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3))))),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X5] : (~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,X5)))) | p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X5))))) & p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,sK3)))) & ! [X3] : ~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X3))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2] : (! [X5] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X5)))) | p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5))))) & ? [X4] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X3] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3)))))),
+  inference(rectify,[],[f16])).
+fof(f16,plain,(
+  ? [X0,X1,X2] : (! [X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) | p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3))))) & ? [X4] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5)))))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ? [X0,X1,X2] : (! [X3] : (~p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) | p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3))))) & (? [X4] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) & ! [X5] : ~p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5))))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1,X2] : (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3))))) => (? [X4] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) => ? [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5))))))),
+  inference(flattening,[],[f8])).
+fof(f8,plain,(
+  ~! [X0] : ! [X1,X2] : (! [X3] : (p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X3)))) => p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X3))))) => (? [X4] : p(s(bool,happ(s(fun(X0,bool),X2),s(X0,X4)))) => ? [X5] : p(s(bool,happ(s(fun(X0,bool),X1),s(X0,X5))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (! [X9] : (p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9))))) => (? [X9] : p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => ? [X9] : p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (! [X9] : (p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9))))) => (? [X9] : p(s(bool,happ(s(fun(X6,bool),X8),s(X6,X9)))) => ? [X9] : p(s(bool,happ(s(fun(X6,bool),X7),s(X6,X9))))))),
+  file('thm.bool.MONO_EXISTS','thm.bool.MONO_EXISTS')).
+fof(f267,plain,(
+  ( ! [X5] : (~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,X5))))) )),
+  inference(subsumption_resolution,[],[f21,f23])).
+fof(f23,plain,(
+  ( ! [X3] : (~p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X3))))) )),
+  inference(cnf_transformation,[],[f19])).
+fof(f21,plain,(
+  ( ! [X5] : (p(s(bool,happ(s(fun(sK0,bool),sK1),s(sK0,X5)))) | ~p(s(bool,happ(s(fun(sK0,bool),sK2),s(sK0,X5))))) )),
+  inference(cnf_transformation,[],[f19])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 15
+% Passive clauses: 35
+% Generated clauses: 244
+% Final active clauses: 11
+% Final passive clauses: 12
+% Input formulas: 6
+% Initial clauses: 8
+% 
+% Duplicate literals: 53
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 7
+% Bw demodulations: 3
+% 
+% Simple tautologies: 16
+% Equational tautologies: 15
+% Forward subsumptions: 108
+% 
+% Binary resolution: 6
+% Forward superposition: 46
+% Backward superposition: 57
+% Self superposition: 28
+% Equality factoring: 28
+% 
+% Split clauses: 4
+% Split components: 8
+% SAT solver clauses: 5
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 4
+% 
+% Sat splits: 4
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 5
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

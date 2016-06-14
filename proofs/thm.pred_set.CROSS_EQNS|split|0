@@ -1,0 +1,91 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f5886,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f5880])).
+fof(f5880,plain,(
+  s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.EMPTY_0') != s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.EMPTY_0')),
+  inference(superposition,[],[f288,f379])).
+fof(f379,plain,(
+  ( ! [X2,X0,X1] : (s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))) )),
+  inference(cnf_transformation,[],[f124])).
+fof(f124,plain,(
+  ! [X0,X1,X2] : s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))),
+  inference(flattening,[],[f123])).
+fof(f123,plain,(
+  ! [X0,X1] : ! [X2] : s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))),
+  inference(rectify,[],[f36])).
+fof(f36,axiom,(
+  ! [X23,X6] : ! [X9] : s(fun('type.pair.prod'(X23,X6),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X23,X6),bool),'const.pred_set.CROSS_2'(s(fun(X23,bool),'const.pred_set.EMPTY_0'),s(fun(X6,bool),X9)))),
+  file('thm.pred_set.CROSS_EQNS|split|0','thm.pred_set.CROSS_EMPTY|split|1')).
+fof(f288,plain,(
+  s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.EMPTY_0') != s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.CROSS_2'(s(fun(sK12,bool),'const.pred_set.EMPTY_0'),s(fun(sK13,bool),sK14)))),
+  inference(cnf_transformation,[],[f210])).
+fof(f210,plain,(
+  s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.EMPTY_0') != s(fun('type.pair.prod'(sK12,sK13),bool),'const.pred_set.CROSS_2'(s(fun(sK12,bool),'const.pred_set.EMPTY_0'),s(fun(sK13,bool),sK14)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f163])).
+fof(f163,plain,(
+  ? [X0,X1,X2] : s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') != s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))),
+  inference(ennf_transformation,[],[f63])).
+fof(f63,plain,(
+  ~! [X0,X1,X2] : s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))),
+  inference(flattening,[],[f62])).
+fof(f62,plain,(
+  ~! [X0,X1] : ! [X2] : s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X0,X1),bool),'const.pred_set.CROSS_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(fun(X1,bool),X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8] : s(fun('type.pair.prod'(X6,X7),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X6,X7),bool),'const.pred_set.CROSS_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X7,bool),X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8] : s(fun('type.pair.prod'(X6,X7),bool),'const.pred_set.EMPTY_0') = s(fun('type.pair.prod'(X6,X7),bool),'const.pred_set.CROSS_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(fun(X7,bool),X8)))),
+  file('thm.pred_set.CROSS_EQNS|split|0','thm.pred_set.CROSS_EQNS|split|0')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 358
+% Passive clauses: 1942
+% Generated clauses: 5586
+% Final active clauses: 358
+% Final passive clauses: 1436
+% Input formulas: 60
+% Initial clauses: 184
+% 
+% Duplicate literals: 147
+% Trivial inequalities: 16
+% Fw subsumption resolutions: 339
+% Fw demodulations: 191
+% 
+% Simple tautologies: 140
+% Equational tautologies: 22
+% Forward subsumptions: 2771
+% 
+% Binary resolution: 2575
+% Factoring: 738
+% Forward superposition: 384
+% Backward superposition: 965
+% Self superposition: 12
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 84
+% Split components: 169
+% SAT solver clauses: 166
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 28
+% 
+% Sat splits: 84
+% 
+% TWLsolver clauses: 166
+% TWLsolver calls for satisfiability: 148
+% 
+% Memory used [KB]: 3326
+% Time elapsed: 0.131 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.138 s

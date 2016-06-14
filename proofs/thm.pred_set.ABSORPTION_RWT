@@ -1,0 +1,166 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f3339,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f3338,f194,f300,f302,f176,f303])).
+fof(f303,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f303_D])).
+fof(f303_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f176,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.ABSORPTION_RWT',aHL_FALSITY)).
+fof(f302,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f302_D])).
+fof(f302_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f300,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f300_D])).
+fof(f300_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f194,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f120])).
+fof(f120,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f119])).
+fof(f119,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f82])).
+fof(f82,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X9] : ((p(s(bool,'F_0')) => p(s(bool,X9))) <=> p(s(bool,'T_0')))),
+  file('thm.pred_set.ABSORPTION_RWT','thm.bool.IMP_CLAUSES|split|2')).
+fof(f3338,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f3337,f169])).
+fof(f169,plain,(
+  s(fun(sK10,bool),sK12) != s(fun(sK10,bool),'const.pred_set.INSERT_2'(s(sK10,sK11),s(fun(sK10,bool),sK12)))),
+  inference(cnf_transformation,[],[f110])).
+fof(f110,plain,(
+  p(s(bool,'const.bool.IN_2'(s(sK10,sK11),s(fun(sK10,bool),sK12)))) & s(fun(sK10,bool),sK12) != s(fun(sK10,bool),'const.pred_set.INSERT_2'(s(sK10,sK11),s(fun(sK10,bool),sK12)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11,sK12])],[f76])).
+fof(f76,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) & s(fun(X0,bool),X2) != s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))))),
+  inference(ennf_transformation,[],[f33])).
+fof(f33,plain,(
+  ~! [X0,X1,X2] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) => s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))))),
+  inference(flattening,[],[f32])).
+fof(f32,plain,(
+  ~! [X0] : ! [X1,X2] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) => s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X8)))) => s(fun(X6,bool),X8) = s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),X8))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X8)))) => s(fun(X6,bool),X8) = s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),X8))))),
+  file('thm.pred_set.ABSORPTION_RWT','thm.pred_set.ABSORPTION_RWT')).
+fof(f3337,plain,(
+  s(fun(sK10,bool),sK12) = s(fun(sK10,bool),'const.pred_set.INSERT_2'(s(sK10,sK11),s(fun(sK10,bool),sK12))) | $spl0),
+  inference(subsumption_resolution,[],[f3334,f300])).
+fof(f3334,plain,(
+  ~p(s(bool,'T_0')) | s(fun(sK10,bool),sK12) = s(fun(sK10,bool),'const.pred_set.INSERT_2'(s(sK10,sK11),s(fun(sK10,bool),sK12)))),
+  inference(superposition,[],[f210,f613])).
+fof(f613,plain,(
+  s(bool,'T_0') = s(bool,'const.bool.IN_2'(s(sK10,sK11),s(fun(sK10,bool),sK12)))),
+  inference(resolution,[],[f168,f184])).
+fof(f184,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f113])).
+fof(f113,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.pred_set.ABSORPTION_RWT','thm.bool.EQ_CLAUSES|split|1')).
+fof(f168,plain,(
+  p(s(bool,'const.bool.IN_2'(s(sK10,sK11),s(fun(sK10,bool),sK12))))),
+  inference(cnf_transformation,[],[f110])).
+fof(f210,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2)))) )),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2)))) & (s(fun(X0,bool),X2) != s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))) | p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))))))),
+  inference(nnf_transformation,[],[f58])).
+fof(f58,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) <=> s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))))),
+  inference(flattening,[],[f57])).
+fof(f57,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) <=> s(fun(X0,bool),X2) = s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),X2))))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X8)))) <=> s(fun(X6,bool),X8) = s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),X8))))),
+  file('thm.pred_set.ABSORPTION_RWT','thm.pred_set.ABSORPTION')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 269
+% Passive clauses: 1181
+% Generated clauses: 3165
+% Final active clauses: 268
+% Final passive clauses: 827
+% Input formulas: 30
+% Initial clauses: 129
+% 
+% Duplicate literals: 99
+% Trivial inequalities: 14
+% Fw subsumption resolutions: 221
+% Fw demodulations: 10
+% Bw demodulations: 1
+% 
+% Simple tautologies: 101
+% Equational tautologies: 20
+% Forward subsumptions: 1483
+% 
+% Binary resolution: 1982
+% Factoring: 426
+% Forward superposition: 119
+% Backward superposition: 123
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 8
+% 
+% Split clauses: 67
+% Split components: 135
+% SAT solver clauses: 126
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 30
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 67
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 125
+% TWLsolver calls for satisfiability: 106
+% 
+% Memory used [KB]: 1791
+% Time elapsed: 0.078 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.076 s

@@ -1,0 +1,95 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f162,plain,(
+  $false),
+  inference(resolution,[],[f161,f77])).
+fof(f77,plain,(
+  p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK1))))),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK1))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f51])).
+fof(f51,plain,(
+  ? [X0,X1] : p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X1))))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0,X1] : ~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X1))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ~! [X0] : ! [X1] : ~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X1))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : ~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X7))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : ~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X7))))),
+  file('thm.pred_set.PSUBSET_IRREFL','thm.pred_set.PSUBSET_IRREFL')).
+fof(f161,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X1))))) )),
+  inference(equality_resolution,[],[f117])).
+fof(f117,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),X1) != s(fun(X0,bool),X2) | ~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & s(fun(X0,bool),X1) != s(fun(X0,bool),X2))) & (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2) | p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(flattening,[],[f74])).
+fof(f74,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & s(fun(X0,bool),X1) != s(fun(X0,bool),X2))) & ((~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2)) | p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & s(fun(X0,bool),X1) != s(fun(X0,bool),X2)))),
+  inference(flattening,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) <=> (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2)))) & ~s(fun(X0,bool),X1) = s(fun(X0,bool),X2)))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X7,X8] : (p(s(bool,'const.pred_set.PSUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))) <=> (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(X6,bool),X7),s(fun(X6,bool),X8)))) & ~s(fun(X6,bool),X7) = s(fun(X6,bool),X8)))),
+  file('thm.pred_set.PSUBSET_IRREFL','thm.pred_set.PSUBSET_DEF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 12
+% Passive clauses: 28
+% Generated clauses: 84
+% Final active clauses: 12
+% Final passive clauses: 9
+% Input formulas: 22
+% Initial clauses: 43
+% 
+% Duplicate literals: 2
+% Trivial inequalities: 3
+% Fw subsumption resolutions: 2
+% 
+% Simple tautologies: 19
+% Equational tautologies: 4
+% Forward subsumptions: 17
+% 
+% Binary resolution: 10
+% Forward superposition: 2
+% Backward superposition: 14
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 2
+% 
+% Split clauses: 8
+% Split components: 16
+% SAT solver clauses: 12
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 8
+% 
+% Sat splits: 8
+% 
+% TWLsolver clauses: 12
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

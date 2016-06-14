@@ -1,0 +1,170 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.prim_rec
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prim_rec
+% SZS output start Proof for thm.prim_rec
+fof(f7099,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f7080,f358,f365])).
+fof(f365,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f365_D])).
+fof(f365_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f358,plain,(
+  p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f304])).
+fof(f304,plain,(
+  ( ! [X0,X1] : (p(s(bool,'T_0')) | s(X0,X1) != s(X0,X1)) )),
+  inference(cnf_transformation,[],[f216])).
+fof(f216,plain,(
+  ! [X0,X1] : ((s(X0,X1) != s(X0,X1) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | s(X0,X1) = s(X0,X1)))),
+  inference(nnf_transformation,[],[f111])).
+fof(f111,plain,(
+  ! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f110])).
+fof(f110,plain,(
+  ! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f36])).
+fof(f36,axiom,(
+  ! [X16] : ! [X17] : (s(X16,X17) = s(X16,X17) <=> p(s(bool,'T_0')))),
+  file('thm.prim_rec.SUC_ID','thm.bool.REFL_CLAUSE')).
+fof(f7080,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f7061,f365])).
+fof(f7061,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(superposition,[],[f7009,f416])).
+fof(f416,plain,(
+  s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK0)))),
+  inference(resolution,[],[f415,f257])).
+fof(f257,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f188])).
+fof(f188,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.prim_rec.SUC_ID','thm.bool.EQ_CLAUSES|split|0')).
+fof(f415,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK0),s('type.num.num',sK0))))),
+  inference(superposition,[],[f247,f237])).
+fof(f237,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK0)))),
+  inference(cnf_transformation,[],[f185])).
+fof(f185,plain,(
+  s('type.num.num',sK0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f156])).
+fof(f156,plain,(
+  ? [X0] : s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0] : s('type.num.num',X0) != s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : ~s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ~s('type.num.num',X6) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ~s('type.num.num',X6) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X6)))),
+  file('thm.prim_rec.SUC_ID','thm.prim_rec.SUC_ID')).
+fof(f247,plain,(
+  ( ! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))) )),
+  inference(cnf_transformation,[],[f77])).
+fof(f77,plain,(
+  ! [X0] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num','const.num.SUC_1'(s('type.num.num',X0))))))),
+  inference(rectify,[],[f37])).
+fof(f37,axiom,(
+  ! [X6] : p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X6),s('type.num.num','const.num.SUC_1'(s('type.num.num',X6))))))),
+  file('thm.prim_rec.SUC_ID','thm.prim_rec.LESS_SUC_REFL')).
+fof(f7009,plain,(
+  ( ! [X0] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0))))) )),
+  inference(duplicate_literal_removal,[],[f6974])).
+fof(f6974,plain,(
+  ( ! [X0] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0)))) | ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X0))))) )),
+  inference(resolution,[],[f338,f337])).
+fof(f337,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num',X0)))) | ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f227])).
+fof(f227,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) | (! [X5] : (~p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num','const.num.SUC_1'(s('type.num.num',X5)))))) | p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num',X5))))) & p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num',X1)))))) & (! [X2] : ((p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',sK6(X2,X1,X0))))))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',sK6(X2,X1,X0)))))) | ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) | p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))) | p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK5,sK6])],[f226])).
+fof(f226,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) | ? [X4] : (! [X5] : (~p(s(bool,happ(s(fun('type.num.num',bool),X4),s('type.num.num','const.num.SUC_1'(s('type.num.num',X5)))))) | p(s(bool,happ(s(fun('type.num.num',bool),X4),s('type.num.num',X5))))) & p(s(bool,happ(s(fun('type.num.num',bool),X4),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X4),s('type.num.num',X1)))))) & (! [X2] : (? [X3] : (p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) | ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) | p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))) | p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(rectify,[],[f225])).
+fof(f225,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) | ? [X2] : (! [X3] : (~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) | p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) & p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1)))))) & (! [X2] : (? [X3] : (p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) | ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) | p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))) | p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(nnf_transformation,[],[f182])).
+fof(f182,plain,(
+  ! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) <=> ? [X2] : (! [X3] : (~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) | p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) & p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))))),
+  inference(ennf_transformation,[],[f139])).
+fof(f139,plain,(
+  ! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) <=> ? [X2] : (! [X3] : (p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) => p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) & p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))))),
+  inference(flattening,[],[f138])).
+fof(f138,plain,(
+  ! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1)))) <=> ? [X2] : (! [X3] : (p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num','const.num.SUC_1'(s('type.num.num',X3)))))) => p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X3))))) & p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X0)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X2),s('type.num.num',X1))))))),
+  inference(rectify,[],[f30])).
+fof(f30,axiom,(
+  ! [X9,X6] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X9),s('type.num.num',X6)))) <=> ? [X12] : (! [X13] : (p(s(bool,happ(s(fun('type.num.num',bool),X12),s('type.num.num','const.num.SUC_1'(s('type.num.num',X13)))))) => p(s(bool,happ(s(fun('type.num.num',bool),X12),s('type.num.num',X13))))) & p(s(bool,happ(s(fun('type.num.num',bool),X12),s('type.num.num',X9)))) & ~p(s(bool,happ(s(fun('type.num.num',bool),X12),s('type.num.num',X6))))))),
+  file('thm.prim_rec.SUC_ID','thm.prim_rec.LESS_DEF')).
+fof(f338,plain,(
+  ( ! [X0,X1] : (~p(s(bool,happ(s(fun('type.num.num',bool),sK5(X1,X0)),s('type.num.num',X1)))) | ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X0),s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f227])).
+% SZS output end Proof for thm.prim_rec
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 130
+% Passive clauses: 1077
+% Generated clauses: 6802
+% Final active clauses: 97
+% Final passive clauses: 822
+% Input formulas: 69
+% Initial clauses: 121
+% 
+% Duplicate literals: 347
+% Trivial inequalities: 96
+% Fw subsumption resolutions: 555
+% Fw demodulations: 1092
+% Bw demodulations: 29
+% 
+% Simple tautologies: 149
+% Equational tautologies: 44
+% Forward subsumptions: 3419
+% Fw demodulations to eq. taut.: 9
+% 
+% Binary resolution: 188
+% Factoring: 1
+% Forward superposition: 2080
+% Backward superposition: 2066
+% Self superposition: 82
+% Equality factoring: 72
+% Equality resolution: 23
+% 
+% Split clauses: 56
+% Split components: 113
+% SAT solver clauses: 114
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 69
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 56
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 103
+% TWLsolver calls for satisfiability: 30
+% 
+% Memory used [KB]: 3326
+% Time elapsed: 0.112 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.108 s

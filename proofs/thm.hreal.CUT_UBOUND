@@ -1,0 +1,178 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hreal
+% SZS output start Proof for thm.hreal
+fof(f8051,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f8047,f136,f244])).
+fof(f244,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f244_D])).
+fof(f244_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f136,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.hreal.CUT_UBOUND',aHL_FALSITY)).
+fof(f8047,plain,(
+  $false | $spl1),
+  inference(subsumption_resolution,[],[f8046,f244])).
+fof(f8046,plain,(
+  p(s(bool,'F_0'))),
+  inference(forward_demodulation,[],[f8045,f263])).
+fof(f263,plain,(
+  s(bool,'F_0') = s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK11)))),
+  inference(resolution,[],[f148,f131])).
+fof(f131,plain,(
+  ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK11))))),
+  inference(cnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK11)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK11),s('type.hrat.hrat',sK12)))) & p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK12))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10,sK11,sK12])],[f57])).
+fof(f57,plain,(
+  ? [X0,X1,X2] : (~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2)))) & p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(flattening,[],[f56])).
+fof(f56,plain,(
+  ? [X0,X1,X2] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) & p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0,X1,X2] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) => ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ~! [X0,X1,X2] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) => ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X7)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8))))) => ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X7)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8))))) => ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X8)))))),
+  file('thm.hreal.CUT_UBOUND','thm.hreal.CUT_UBOUND')).
+fof(f148,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f88])).
+fof(f88,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.hreal.CUT_UBOUND','thm.bool.EQ_CLAUSES|split|2')).
+fof(f8045,plain,(
+  p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK11))))),
+  inference(subsumption_resolution,[],[f8038,f134])).
+fof(f134,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.hreal.CUT_UBOUND',aHL_TRUTH)).
+fof(f8038,plain,(
+  ~p(s(bool,'T_0')) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK11))))),
+  inference(superposition,[],[f3175,f257])).
+fof(f257,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK12)))),
+  inference(resolution,[],[f144,f133])).
+fof(f133,plain,(
+  p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',sK10),s('type.hrat.hrat',sK12))))),
+  inference(cnf_transformation,[],[f85])).
+fof(f144,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f86])).
+fof(f86,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.hreal.CUT_UBOUND','thm.bool.EQ_CLAUSES|split|0')).
+fof(f3175,plain,(
+  ( ! [X0] : (~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',sK12)))) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',sK11))))) )),
+  inference(subsumption_resolution,[],[f3173,f134])).
+fof(f3173,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',sK11)))) | ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',sK12))))) )),
+  inference(superposition,[],[f182,f256])).
+fof(f256,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK11),s('type.hrat.hrat',sK12)))),
+  inference(resolution,[],[f144,f132])).
+fof(f132,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK11),s('type.hrat.hrat',sK12))))),
+  inference(cnf_transformation,[],[f85])).
+fof(f182,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1)))) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))) | ~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1))))) )),
+  inference(cnf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) | ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1)))) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(flattening,[],[f67])).
+fof(f67,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) | ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1))))) | p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(ennf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X2),s('type.hrat.hrat',X1))))) => p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X0),s('type.hrat.hrat',X2)))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6,X7,X8] : ((p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X7)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X8),s('type.hrat.hrat',X7))))) => p(s(bool,'const.hreal.cut_2'(s('type.hreal.hreal',X6),s('type.hrat.hrat',X8)))))),
+  file('thm.hreal.CUT_UBOUND','thm.hreal.CUT_DOWN')).
+% SZS output end Proof for thm.hreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 485
+% Passive clauses: 1911
+% Generated clauses: 7751
+% Final active clauses: 476
+% Final passive clauses: 1276
+% Input formulas: 22
+% Initial clauses: 109
+% 
+% Duplicate literals: 334
+% Trivial inequalities: 22
+% Fw subsumption resolutions: 958
+% Fw demodulations: 213
+% Bw demodulations: 6
+% 
+% Simple tautologies: 162
+% Equational tautologies: 33
+% Forward subsumptions: 3770
+% 
+% Binary resolution: 3034
+% Factoring: 858
+% Forward superposition: 939
+% Backward superposition: 1110
+% Self superposition: 24
+% Equality factoring: 28
+% Equality resolution: 5
+% 
+% Split clauses: 311
+% Split components: 629
+% SAT solver clauses: 490
+% SAT solver unit clauses: 32
+% SAT solver binary clauses: 91
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 311
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 488
+% TWLsolver calls for satisfiability: 245
+% 
+% Memory used [KB]: 3198
+% Time elapsed: 0.236 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.251 s

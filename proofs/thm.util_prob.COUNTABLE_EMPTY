@@ -1,0 +1,190 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.util_prob
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.util_prob
+% SZS output start Proof for thm.util_prob
+fof(f2882,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2880,f186,f320,f208,f321,f319])).
+fof(f319,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(cnf_transformation,[],[f319_D])).
+fof(f319_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f321,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f321_D])).
+fof(f321_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f208,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f128])).
+fof(f128,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f91])).
+fof(f91,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X9] : ((p(s(bool,'F_0')) => p(s(bool,X9))) <=> p(s(bool,'T_0')))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.bool.IMP_CLAUSES|split|2')).
+fof(f320,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f320_D])).
+fof(f320_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f186,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f38])).
+fof(f38,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.util_prob.COUNTABLE_EMPTY',aHL_FALSITY)).
+fof(f2880,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f2878,f320])).
+fof(f2878,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(superposition,[],[f2839,f340])).
+fof(f340,plain,(
+  s(bool,'F_0') = s(bool,'const.util_prob.countable_1'(s(fun(sK10,bool),'const.pred_set.EMPTY_0')))),
+  inference(resolution,[],[f202,f179])).
+fof(f179,plain,(
+  ~p(s(bool,'const.util_prob.countable_1'(s(fun(sK10,bool),'const.pred_set.EMPTY_0'))))),
+  inference(cnf_transformation,[],[f119])).
+fof(f119,plain,(
+  ~p(s(bool,'const.util_prob.countable_1'(s(fun(sK10,bool),'const.pred_set.EMPTY_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10])],[f82])).
+fof(f82,plain,(
+  ? [X0] : ~p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(ennf_transformation,[],[f35])).
+fof(f35,plain,(
+  ~! [X0] : p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.util_prob.countable_1'(s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.util_prob.countable_1'(s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.util_prob.COUNTABLE_EMPTY')).
+fof(f202,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f124])).
+fof(f124,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.bool.EQ_CLAUSES|split|3')).
+fof(f2839,plain,(
+  ( ! [X0] : (p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) ) | $spl2),
+  inference(subsumption_resolution,[],[f2837,f321])).
+fof(f2837,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(superposition,[],[f224,f334])).
+fof(f334,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))) )),
+  inference(resolution,[],[f198,f187])).
+fof(f187,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.pred_set.FINITE_EMPTY')).
+fof(f198,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.bool.EQ_CLAUSES|split|1')).
+fof(f224,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f95])).
+fof(f95,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(ennf_transformation,[],[f65])).
+fof(f65,plain,(
+  ! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f64])).
+fof(f64,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f34])).
+fof(f34,axiom,(
+  ! [X6] : ! [X14] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X14)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X6,bool),X14)))))),
+  file('thm.util_prob.COUNTABLE_EMPTY','thm.util_prob.FINITE_COUNTABLE')).
+% SZS output end Proof for thm.util_prob
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 249
+% Passive clauses: 1101
+% Generated clauses: 2695
+% Final active clauses: 246
+% Final passive clauses: 778
+% Input formulas: 33
+% Initial clauses: 137
+% 
+% Duplicate literals: 69
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 210
+% Fw demodulations: 25
+% Bw demodulations: 2
+% 
+% Simple tautologies: 104
+% Equational tautologies: 20
+% Forward subsumptions: 1138
+% 
+% Binary resolution: 1723
+% Factoring: 232
+% Forward superposition: 163
+% Backward superposition: 102
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 2
+% 
+% Split clauses: 55
+% Split components: 111
+% SAT solver clauses: 103
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 34
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 55
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 102
+% TWLsolver calls for satisfiability: 81
+% 
+% Memory used [KB]: 1535
+% Time elapsed: 0.057 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.059 s

@@ -1,0 +1,92 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f524,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f523])).
+fof(f523,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK1)),
+  inference(superposition,[],[f359,f271])).
+fof(f271,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK2),s('type.list.list'(sK0),sK1)))),
+  inference(cnf_transformation,[],[f204])).
+fof(f204,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),'const.list.CONS_2'(s(sK0,sK2),s('type.list.list'(sK0),sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f181])).
+fof(f181,plain,(
+  ? [X0,X1,X2] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0] : ! [X1,X2] : ~s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : ~s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X8),s('type.list.list'(X6),X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : ~s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X8),s('type.list.list'(X6),X7)))),
+  file('thm.list.CONS_ACYCLIC|split|1','thm.list.CONS_ACYCLIC|split|1')).
+fof(f359,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f140])).
+fof(f140,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),X1) != s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f139])).
+fof(f139,plain,(
+  ! [X0] : ! [X1,X2] : ~s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X6] : ! [X7,X8] : ~s('type.list.list'(X6),X7) = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X8),s('type.list.list'(X6),X7)))),
+  file('thm.list.CONS_ACYCLIC|split|1','thm.list.CONS_ACYCLIC|split|0')).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 19
+% Passive clauses: 98
+% Generated clauses: 242
+% Final active clauses: 17
+% Final passive clauses: 72
+% Input formulas: 69
+% Initial clauses: 143
+% 
+% Duplicate literals: 2
+% Trivial inequalities: 5
+% Fw subsumption resolutions: 6
+% Fw demodulations: 4
+% Bw demodulations: 2
+% 
+% Simple tautologies: 52
+% Equational tautologies: 7
+% Forward subsumptions: 53
+% 
+% Binary resolution: 23
+% Factoring: 1
+% Forward superposition: 26
+% Backward superposition: 29
+% Self superposition: 3
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 17
+% Split components: 35
+% SAT solver clauses: 21
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 16
+% 
+% Sat splits: 17
+% 
+% TWLsolver clauses: 21
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.016 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.019 s

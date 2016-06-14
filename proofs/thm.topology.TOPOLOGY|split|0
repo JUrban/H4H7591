@@ -1,0 +1,255 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.topology
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.topology
+% SZS output start Proof for thm.topology
+fof(f2790,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2773,f313,f318,f316,f364,f80,f83,f81,f93])).
+fof(f93,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f90,f48])).
+fof(f48,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.topology.TOPOLOGY|split|0',aHL_TRUTH)).
+fof(f90,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f50,f81])).
+fof(f50,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.topology.TOPOLOGY|split|0',aHL_FALSITY)).
+fof(f81,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f81_D])).
+fof(f81_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f83,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f83_D])).
+fof(f83_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f80,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f51])).
+fof(f51,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.topology.TOPOLOGY|split|0',aHL_BOOL_CASES)).
+fof(f364,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f359])).
+fof(f359,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f83,f316])).
+fof(f316,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl4),
+  inference(cnf_transformation,[],[f316_D])).
+fof(f316_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f318,plain,(
+  s(bool,'F_0') = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) | $spl6),
+  inference(cnf_transformation,[],[f318_D])).
+fof(f318_D,plain,(
+  s(bool,'F_0') = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f313,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(duplicate_literal_removal,[],[f276])).
+fof(f276,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f239,f51])).
+fof(f239,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(subsumption_resolution,[],[f167,f48])).
+fof(f167,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f47,f74])).
+fof(f74,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f51,f51])).
+fof(f47,plain,(
+  ~p(s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))))),
+  inference(cnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ~p(s(bool,'const.topology.open_2'(s('type.topology.topology'(sK1),sK2),s(fun(sK1,bool),'const.pred_set.EMPTY_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2])],[f31])).
+fof(f31,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1] : p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ~! [X0] : ! [X1] : p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X6),X7),s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X6),X7),s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.topology.TOPOLOGY|split|0','thm.topology.TOPOLOGY|split|0')).
+fof(f2773,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f2746,f50])).
+fof(f2746,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(superposition,[],[f2697,f318])).
+fof(f2697,plain,(
+  ( ! [X2,X3] : (p(s(bool,'const.topology.open_2'(s('type.topology.topology'(X2),X3),s(fun(X2,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(forward_demodulation,[],[f2693,f69])).
+fof(f69,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))),s(fun(X0,bool),X2)))) )),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1,X2] : s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))),s(fun(X0,bool),X2)))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,'const.topology.open_2'(s('type.topology.topology'(X0),X1),s(fun(X0,bool),X2))) = s(bool,happ(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))),s(fun(X0,bool),X2)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X14,X15] : s(bool,'const.topology.open_2'(s('type.topology.topology'(X6),X14),s(fun(X6,bool),X15))) = s(bool,happ(s(fun(fun(X6,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X6),X14))),s(fun(X6,bool),X15)))),
+  file('thm.topology.TOPOLOGY|split|0','ARITY_1_2_const.topology.open')).
+fof(f2693,plain,(
+  ( ! [X2,X3] : (p(s(bool,happ(s(fun(fun(X2,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X2),X3))),s(fun(X2,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(resolution,[],[f2645,f57])).
+fof(f57,plain,(
+  ( ! [X0,X1] : (~sP0(X0,X1) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1] : ((~sP0(X0,X1) | (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X6,X7] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X6)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X7)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X6),s(fun(X0,bool),X7))))))) & ! [X5] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X5),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X5))))))))) & (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) | (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),sK3(X1,X0))))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),sK4(X1,X0))))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),sK3(X1,X0)),s(fun(X0,bool),sK4(X1,X0)))))))) | (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),sK5(X1,X0)),s(fun(fun(X0,bool),bool),X1)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),sK5(X1,X0)))))))) | sP0(X0,X1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3,sK4,sK5])],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : ((~sP0(X0,X1) | (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X6,X7] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X6)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X7)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X6),s(fun(X0,bool),X7))))))) & ! [X5] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X5),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X5))))))))) & (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) | ? [X3,X4] : (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) | ? [X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2))))))) | sP0(X0,X1)))),
+  inference(rectify,[],[f41])).
+fof(f41,plain,(
+  ! [X0,X1] : ((~sP0(X0,X1) | (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2))))))))) & (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) | ? [X3,X4] : (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) | ? [X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2))))))) | sP0(X0,X1)))),
+  inference(flattening,[],[f40])).
+fof(f40,plain,(
+  ! [X0,X1] : ((~sP0(X0,X1) | (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2))))))))) & ((~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) | ? [X3,X4] : (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) | ? [X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) & ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))) | sP0(X0,X1)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1] : (sP0(X0,X1) <=> (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP0])])).
+fof(f2645,plain,(
+  ( ! [X2,X3] : (sP0(X2,'const.topology.open_1'(s('type.topology.topology'(X2),X3)))) )),
+  inference(resolution,[],[f2643,f67])).
+fof(f67,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) | sP0(X0,X1)) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) | sP0(X0,X1)) & (~sP0(X0,X1) | p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1))))))),
+  inference(nnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> sP0(X0,X1))),
+  inference(definition_folding,[],[f33,f35])).
+fof(f33,plain,(
+  ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : (~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))))),
+  inference(flattening,[],[f32])).
+fof(f32,plain,(
+  ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : ((~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) | ~p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4))))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (~p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) | p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : ((p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4))))) => p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) => p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))))),
+  inference(flattening,[],[f23])).
+fof(f23,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> (p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.UNIV_0')))) & ! [X3,X4] : ((p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X3)))) & p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),X4))))) => p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.topology.re_intersect_2'(s(fun(X0,bool),X3),s(fun(X0,bool),X4))))))) & ! [X2] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X0,bool),bool),X2),s(fun(fun(X0,bool),bool),X1)))) => p(s(bool,happ(s(fun(fun(X0,bool),bool),X1),s(fun(X0,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X0,bool),bool),X2)))))))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X6,bool),bool),X7)))) <=> (p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),'const.pred_set.EMPTY_0')))) & p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),'const.pred_set.UNIV_0')))) & ! [X10,X11] : ((p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),X10)))) & p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),X11))))) => p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),'const.topology.re_intersect_2'(s(fun(X6,bool),X10),s(fun(X6,bool),X11))))))) & ! [X12] : (p(s(bool,'const.pred_set.SUBSET_2'(s(fun(fun(X6,bool),bool),X12),s(fun(fun(X6,bool),bool),X7)))) => p(s(bool,happ(s(fun(fun(X6,bool),bool),X7),s(fun(X6,bool),'const.pred_set.BIGUNION_1'(s(fun(fun(X6,bool),bool),X12)))))))))),
+  file('thm.topology.TOPOLOGY|split|0','thm.topology.istopology')).
+fof(f2643,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))))))) )),
+  inference(trivial_inequality_removal,[],[f2642])).
+fof(f2642,plain,(
+  ( ! [X0,X1] : (s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))) != s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))) | p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1))))))) )),
+  inference(superposition,[],[f56,f52])).
+fof(f52,plain,(
+  ( ! [X0,X1] : (s('type.topology.topology'(X0),X1) = s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ! [X0,X1] : s('type.topology.topology'(X0),X1) = s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1)))))),
+  inference(flattening,[],[f17])).
+fof(f17,plain,(
+  ! [X0] : ! [X1] : s('type.topology.topology'(X0),X1) = s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),X1)))))),
+  inference(rectify,[],[f11])).
+fof(f11,axiom,(
+  ! [X6] : ! [X10] : s('type.topology.topology'(X6),X10) = s('type.topology.topology'(X6),'const.topology.topology_1'(s(fun(fun(X6,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X6),X10)))))),
+  file('thm.topology.TOPOLOGY|split|0','thm.topology.topology_tybij|split|0')).
+fof(f56,plain,(
+  ( ! [X0,X1] : (s(fun(fun(X0,bool),bool),X1) != s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),X1))))) | p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1))))) )),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) | s(fun(fun(X0,bool),bool),X1) = s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),X1)))))) & (s(fun(fun(X0,bool),bool),X1) != s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),X1))))) | p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1))))))),
+  inference(nnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> s(fun(fun(X0,bool),bool),X1) = s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),X1))))))),
+  inference(flattening,[],[f21])).
+fof(f21,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X0,bool),bool),X1)))) <=> s(fun(fun(X0,bool),bool),X1) = s(fun(fun(X0,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X0),'const.topology.topology_1'(s(fun(fun(X0,bool),bool),X1))))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6] : ! [X13] : (p(s(bool,'const.topology.istopology_1'(s(fun(fun(X6,bool),bool),X13)))) <=> s(fun(fun(X6,bool),bool),X13) = s(fun(fun(X6,bool),bool),'const.topology.open_1'(s('type.topology.topology'(X6),'const.topology.topology_1'(s(fun(fun(X6,bool),bool),X13))))))),
+  file('thm.topology.TOPOLOGY|split|0','thm.topology.topology_tybij|split|1')).
+% SZS output end Proof for thm.topology
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 44
+% Passive clauses: 396
+% Generated clauses: 2619
+% Final active clauses: 31
+% Final passive clauses: 321
+% Input formulas: 12
+% Initial clauses: 26
+% 
+% Duplicate literals: 358
+% Trivial inequalities: 31
+% Fw subsumption resolutions: 183
+% Fw demodulations: 16
+% Bw demodulations: 9
+% 
+% Simple tautologies: 86
+% Equational tautologies: 71
+% Forward subsumptions: 1201
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 34
+% Forward superposition: 727
+% Backward superposition: 810
+% Self superposition: 203
+% Equality factoring: 188
+% 
+% Split clauses: 166
+% Split components: 332
+% SAT solver clauses: 287
+% SAT solver unit clauses: 69
+% SAT solver binary clauses: 112
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 166
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 277
+% TWLsolver calls for satisfiability: 12
+% 
+% Memory used [KB]: 1663
+% Time elapsed: 0.082 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.084 s

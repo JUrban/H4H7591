@@ -1,0 +1,162 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f15597,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f15595])).
+fof(f15595,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK5))) != s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK5)))),
+  inference(superposition,[],[f38,f1055])).
+fof(f1055,plain,(
+  ( ! [X0] : (s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,X0))) = s(sK0,happ(s(fun(sK1,sK0),happ(s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2),s(fun(sK1,sK0),'const.relation.RESTRICT_3'(s(fun(sK1,sK0),sK4),s(fun(sK1,fun(sK1,bool)),sK3),s(sK1,X0))))),s(sK1,X0)))) )),
+  inference(subsumption_resolution,[],[f1054,f53])).
+fof(f53,plain,(
+  s(bool,'T_0') != s(bool,'F_0')),
+  inference(resolution,[],[f43,f41])).
+fof(f41,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.relation.WFREC_COROLLARY',aHL_FALSITY)).
+fof(f43,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X12] : (s(bool,'T_0') = s(bool,X12) <=> p(s(bool,X12)))),
+  file('thm.relation.WFREC_COROLLARY','thm.bool.EQ_CLAUSES|split|0')).
+fof(f1054,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'F_0') | s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,X0))) = s(sK0,happ(s(fun(sK1,sK0),happ(s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2),s(fun(sK1,sK0),'const.relation.RESTRICT_3'(s(fun(sK1,sK0),sK4),s(fun(sK1,fun(sK1,bool)),sK3),s(sK1,X0))))),s(sK1,X0)))) )),
+  inference(forward_demodulation,[],[f1006,f55])).
+fof(f55,plain,(
+  s(bool,'T_0') = s(bool,'const.relation.WF_1'(s(fun(sK1,fun(sK1,bool)),sK3)))),
+  inference(resolution,[],[f44,f37])).
+fof(f37,plain,(
+  p(s(bool,'const.relation.WF_1'(s(fun(sK1,fun(sK1,bool)),sK3))))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  s(fun(sK1,sK0),sK4) = s(fun(sK1,sK0),'const.relation.WFREC_2'(s(fun(sK1,fun(sK1,bool)),sK3),s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2))) & p(s(bool,'const.relation.WF_1'(s(fun(sK1,fun(sK1,bool)),sK3)))) & s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK5))) != s(sK0,happ(s(fun(sK1,sK0),happ(s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2),s(fun(sK1,sK0),'const.relation.RESTRICT_3'(s(fun(sK1,sK0),sK4),s(fun(sK1,fun(sK1,bool)),sK3),s(sK1,sK5))))),s(sK1,sK5)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4,sK5])],[f27])).
+fof(f27,plain,(
+  ? [X0,X1,X2,X3,X4] : (s(fun(X1,X0),X4) = s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X3),s(fun(fun(X1,X0),fun(X1,X0)),X2))) & p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X3)))) & ? [X5] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X2),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),X4),s(fun(X1,fun(X1,bool)),X3),s(X1,X5))))),s(X1,X5))))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ? [X0,X1,X2,X3,X4] : (s(fun(X1,X0),X4) = s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X3),s(fun(fun(X1,X0),fun(X1,X0)),X2))) & (p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X3)))) & ? [X5] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))) != s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X2),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),X4),s(fun(X1,fun(X1,bool)),X3),s(X1,X5))))),s(X1,X5)))))),
+  inference(ennf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~! [X0,X1,X2,X3,X4] : (s(fun(X1,X0),X4) = s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X3),s(fun(fun(X1,X0),fun(X1,X0)),X2))) => (p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X3)))) => ! [X5] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X2),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),X4),s(fun(X1,fun(X1,bool)),X3),s(X1,X5))))),s(X1,X5)))))),
+  inference(flattening,[],[f13])).
+fof(f13,plain,(
+  ~! [X0,X1] : ! [X2,X3,X4] : (s(fun(X1,X0),X4) = s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X3),s(fun(fun(X1,X0),fun(X1,X0)),X2))) => (p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X3)))) => ! [X5] : s(X0,happ(s(fun(X1,X0),X4),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X2),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),X4),s(fun(X1,fun(X1,bool)),X3),s(X1,X5))))),s(X1,X5)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9,X10] : (s(fun(X7,X6),X10) = s(fun(X7,X6),'const.relation.WFREC_2'(s(fun(X7,fun(X7,bool)),X9),s(fun(fun(X7,X6),fun(X7,X6)),X8))) => (p(s(bool,'const.relation.WF_1'(s(fun(X7,fun(X7,bool)),X9)))) => ! [X11] : s(X6,happ(s(fun(X7,X6),X10),s(X7,X11))) = s(X6,happ(s(fun(X7,X6),happ(s(fun(fun(X7,X6),fun(X7,X6)),X8),s(fun(X7,X6),'const.relation.RESTRICT_3'(s(fun(X7,X6),X10),s(fun(X7,fun(X7,bool)),X9),s(X7,X11))))),s(X7,X11)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9,X10] : (s(fun(X7,X6),X10) = s(fun(X7,X6),'const.relation.WFREC_2'(s(fun(X7,fun(X7,bool)),X9),s(fun(fun(X7,X6),fun(X7,X6)),X8))) => (p(s(bool,'const.relation.WF_1'(s(fun(X7,fun(X7,bool)),X9)))) => ! [X11] : s(X6,happ(s(fun(X7,X6),X10),s(X7,X11))) = s(X6,happ(s(fun(X7,X6),happ(s(fun(fun(X7,X6),fun(X7,X6)),X8),s(fun(X7,X6),'const.relation.RESTRICT_3'(s(fun(X7,X6),X10),s(fun(X7,fun(X7,bool)),X9),s(X7,X11))))),s(X7,X11)))))),
+  file('thm.relation.WFREC_COROLLARY','thm.relation.WFREC_COROLLARY')).
+fof(f44,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f31])).
+fof(f1006,plain,(
+  ( ! [X0] : (s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,X0))) = s(sK0,happ(s(fun(sK1,sK0),happ(s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2),s(fun(sK1,sK0),'const.relation.RESTRICT_3'(s(fun(sK1,sK0),sK4),s(fun(sK1,fun(sK1,bool)),sK3),s(sK1,X0))))),s(sK1,X0))) | s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(sK1,fun(sK1,bool)),sK3)))) )),
+  inference(superposition,[],[f729,f36])).
+fof(f36,plain,(
+  s(fun(sK1,sK0),sK4) = s(fun(sK1,sK0),'const.relation.WFREC_2'(s(fun(sK1,fun(sK1,bool)),sK3),s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2)))),
+  inference(cnf_transformation,[],[f30])).
+fof(f729,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (s(X0,happ(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X3),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(fun(X1,fun(X1,bool)),X2),s(X1,X4))))),s(X1,X4))) | s(bool,'F_0') = s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X2)))) )),
+  inference(resolution,[],[f51,f48])).
+fof(f48,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X12] : (s(bool,'F_0') = s(bool,X12) <=> ~p(s(bool,X12)))),
+  file('thm.relation.WFREC_COROLLARY','thm.bool.EQ_CLAUSES|split|2')).
+fof(f51,plain,(
+  ( ! [X4,X2,X0,X3,X1] : (~p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X2)))) | s(X0,happ(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X3),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(fun(X1,fun(X1,bool)),X2),s(X1,X4))))),s(X1,X4)))) )),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0,X1,X2,X3] : (~p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X2)))) | ! [X4] : s(X0,happ(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X3),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(fun(X1,fun(X1,bool)),X2),s(X1,X4))))),s(X1,X4))))),
+  inference(ennf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X2)))) => ! [X4] : s(X0,happ(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X3),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(fun(X1,fun(X1,bool)),X2),s(X1,X4))))),s(X1,X4))))),
+  inference(flattening,[],[f22])).
+fof(f22,plain,(
+  ! [X0,X1] : ! [X2,X3] : (p(s(bool,'const.relation.WF_1'(s(fun(X1,fun(X1,bool)),X2)))) => ! [X4] : s(X0,happ(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),happ(s(fun(fun(X1,X0),fun(X1,X0)),X3),s(fun(X1,X0),'const.relation.RESTRICT_3'(s(fun(X1,X0),'const.relation.WFREC_2'(s(fun(X1,fun(X1,bool)),X2),s(fun(fun(X1,X0),fun(X1,X0)),X3))),s(fun(X1,fun(X1,bool)),X2),s(X1,X4))))),s(X1,X4))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6,X7] : ! [X9,X8] : (p(s(bool,'const.relation.WF_1'(s(fun(X7,fun(X7,bool)),X9)))) => ! [X11] : s(X6,happ(s(fun(X7,X6),'const.relation.WFREC_2'(s(fun(X7,fun(X7,bool)),X9),s(fun(fun(X7,X6),fun(X7,X6)),X8))),s(X7,X11))) = s(X6,happ(s(fun(X7,X6),happ(s(fun(fun(X7,X6),fun(X7,X6)),X8),s(fun(X7,X6),'const.relation.RESTRICT_3'(s(fun(X7,X6),'const.relation.WFREC_2'(s(fun(X7,fun(X7,bool)),X9),s(fun(fun(X7,X6),fun(X7,X6)),X8))),s(fun(X7,fun(X7,bool)),X9),s(X7,X11))))),s(X7,X11))))),
+  file('thm.relation.WFREC_COROLLARY','thm.relation.WFREC_THM')).
+fof(f38,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK4),s(sK1,sK5))) != s(sK0,happ(s(fun(sK1,sK0),happ(s(fun(fun(sK1,sK0),fun(sK1,sK0)),sK2),s(fun(sK1,sK0),'const.relation.RESTRICT_3'(s(fun(sK1,sK0),sK4),s(fun(sK1,fun(sK1,bool)),sK3),s(sK1,sK5))))),s(sK1,sK5)))),
+  inference(cnf_transformation,[],[f30])).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 106
+% Passive clauses: 1267
+% Generated clauses: 15075
+% Final active clauses: 88
+% Final passive clauses: 1051
+% Input formulas: 11
+% Initial clauses: 17
+% 
+% Duplicate literals: 933
+% Trivial inequalities: 200
+% Fw subsumption resolutions: 2449
+% Fw demodulations: 1537
+% Bw demodulations: 14
+% 
+% Simple tautologies: 359
+% Equational tautologies: 58
+% Forward subsumptions: 6984
+% Bw demodulations to eq. taut.: 3
+% 
+% Binary resolution: 142
+% Forward superposition: 4568
+% Backward superposition: 4690
+% Self superposition: 198
+% Equality factoring: 161
+% Equality resolution: 17
+% 
+% Split clauses: 829
+% Split components: 1721
+% SAT solver clauses: 1393
+% SAT solver unit clauses: 38
+% SAT solver binary clauses: 232
+% 
+% Sat splits: 829
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 1390
+% TWLsolver calls for satisfiability: 131
+% 
+% Memory used [KB]: 6908
+% Time elapsed: 0.401 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.41 s

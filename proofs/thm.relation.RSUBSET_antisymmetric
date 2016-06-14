@@ -1,0 +1,181 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.relation
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.relation
+% SZS output start Proof for thm.relation
+fof(f2683,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f2672,f53])).
+fof(f53,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.relation.RSUBSET_antisymmetric',aHL_FALSITY)).
+fof(f2672,plain,(
+  p(s(bool,'F_0'))),
+  inference(superposition,[],[f2659,f104])).
+fof(f104,plain,(
+  s(bool,'F_0') = s(bool,'const.relation.antisymmetric_1'(s(fun(fun(sK0,fun(sK1,bool)),fun(fun(sK0,fun(sK1,bool)),bool)),'const.relation.RSUBSET_0')))),
+  inference(resolution,[],[f50,f60])).
+fof(f60,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f20])).
+fof(f20,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X8] : (s(bool,'F_0') = s(bool,X8) <=> ~p(s(bool,X8)))),
+  file('thm.relation.RSUBSET_antisymmetric','thm.bool.EQ_CLAUSES|split|3')).
+fof(f50,plain,(
+  ~p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(sK0,fun(sK1,bool)),fun(fun(sK0,fun(sK1,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ~p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(sK0,fun(sK1,bool)),fun(fun(sK0,fun(sK1,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f33])).
+fof(f33,plain,(
+  ? [X0,X1] : ~p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  inference(ennf_transformation,[],[f16])).
+fof(f16,plain,(
+  ~! [X0,X1] : p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X6,fun(X7,bool)),fun(fun(X6,fun(X7,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X6,fun(X7,bool)),fun(fun(X6,fun(X7,bool)),bool)),'const.relation.RSUBSET_0'))))),
+  file('thm.relation.RSUBSET_antisymmetric','thm.relation.RSUBSET_antisymmetric')).
+fof(f2659,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'))))) )),
+  inference(subsumption_resolution,[],[f2658,f630])).
+fof(f630,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),sK2('const.relation.RSUBSET_0',fun(X0,fun(X1,bool)))),s(fun(X0,fun(X1,bool)),sK3('const.relation.RSUBSET_0',fun(X0,fun(X1,bool))))))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'))))) )),
+  inference(superposition,[],[f64,f69])).
+fof(f69,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3))) = s(bool,happ(s(fun(fun(X0,fun(X1,bool)),bool),happ(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'),s(fun(X0,fun(X1,bool)),X2))),s(fun(X0,fun(X1,bool)),X3)))) )),
+  inference(cnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3))) = s(bool,happ(s(fun(fun(X0,fun(X1,bool)),bool),happ(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'),s(fun(X0,fun(X1,bool)),X2))),s(fun(X0,fun(X1,bool)),X3)))),
+  inference(flattening,[],[f27])).
+fof(f27,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3))) = s(bool,happ(s(fun(fun(X0,fun(X1,bool)),bool),happ(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0'),s(fun(X0,fun(X1,bool)),X2))),s(fun(X0,fun(X1,bool)),X3)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6,X7] : ! [X14,X15] : s(bool,'const.relation.RSUBSET_2'(s(fun(X6,fun(X7,bool)),X14),s(fun(X6,fun(X7,bool)),X15))) = s(bool,happ(s(fun(fun(X6,fun(X7,bool)),bool),happ(s(fun(fun(X6,fun(X7,bool)),fun(fun(X6,fun(X7,bool)),bool)),'const.relation.RSUBSET_0'),s(fun(X6,fun(X7,bool)),X14))),s(fun(X6,fun(X7,bool)),X15)))),
+  file('thm.relation.RSUBSET_antisymmetric','ARITY_0_2_const.relation.RSUBSET')).
+fof(f64,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK2(X1,X0)))),s(X0,sK3(X1,X0))))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X4,X5] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X4))),s(X0,X5)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) | s(X0,X4) = s(X0,X5))) & ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK2(X1,X0)))),s(X0,sK3(X1,X0))))) & p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK3(X1,X0)))),s(X0,sK2(X1,X0))))) & s(X0,sK2(X1,X0)) != s(X0,sK3(X1,X0))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2,sK3])],[f45])).
+fof(f45,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X4,X5] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X4))),s(X0,X5)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X5))),s(X0,X4)))) | s(X0,X4) = s(X0,X5))) & (? [X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2)))) & s(X0,X2) != s(X0,X3)) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(rectify,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | ! [X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2)))) | s(X0,X2) = s(X0,X3))) & (? [X2,X3] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2)))) & s(X0,X2) != s(X0,X3)) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2,X3] : (~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2)))) | s(X0,X2) = s(X0,X3)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2,X3] : ((~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) | ~p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2))))) | s(X0,X2) = s(X0,X3)))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2,X3] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2))))) => s(X0,X2) = s(X0,X3)))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) <=> ! [X2,X3] : ((p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X2))),s(X0,X3)))) & p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,X3))),s(X0,X2))))) => s(X0,X2) = s(X0,X3)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X10] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X6,fun(X6,bool)),X10)))) <=> ! [X9,X11] : ((p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X10),s(X6,X9))),s(X6,X11)))) & p(s(bool,happ(s(fun(X6,bool),happ(s(fun(X6,fun(X6,bool)),X10),s(X6,X11))),s(X6,X9))))) => s(X6,X9) = s(X6,X11)))),
+  file('thm.relation.RSUBSET_antisymmetric','thm.relation.antisymmetric_def')).
+fof(f2658,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0')))) | ~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),sK2('const.relation.RSUBSET_0',fun(X0,fun(X1,bool)))),s(fun(X0,fun(X1,bool)),sK3('const.relation.RSUBSET_0',fun(X0,fun(X1,bool)))))))) )),
+  inference(subsumption_resolution,[],[f2648,f66])).
+fof(f66,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1)))) | s(X0,sK2(X1,X0)) != s(X0,sK3(X1,X0))) )),
+  inference(cnf_transformation,[],[f46])).
+fof(f2648,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X0,fun(X1,bool)),fun(fun(X0,fun(X1,bool)),bool)),'const.relation.RSUBSET_0')))) | ~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),sK2('const.relation.RSUBSET_0',fun(X0,fun(X1,bool)))),s(fun(X0,fun(X1,bool)),sK3('const.relation.RSUBSET_0',fun(X0,fun(X1,bool))))))) | s(fun(X0,fun(X1,bool)),sK2('const.relation.RSUBSET_0',fun(X0,fun(X1,bool)))) = s(fun(X0,fun(X1,bool)),sK3('const.relation.RSUBSET_0',fun(X0,fun(X1,bool))))) )),
+  inference(resolution,[],[f631,f70])).
+fof(f70,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3)))) | ~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X3),s(fun(X0,fun(X1,bool)),X2)))) | s(fun(X0,fun(X1,bool)),X2) = s(fun(X0,fun(X1,bool)),X3)) )),
+  inference(cnf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0,X1,X2,X3] : (~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3)))) | ~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X3),s(fun(X0,fun(X1,bool)),X2)))) | s(fun(X0,fun(X1,bool)),X2) = s(fun(X0,fun(X1,bool)),X3))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3)))) | ~p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X3),s(fun(X0,fun(X1,bool)),X2))))) | s(fun(X0,fun(X1,bool)),X2) = s(fun(X0,fun(X1,bool)),X3))),
+  inference(ennf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1,X2,X3] : ((p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3)))) & p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X3),s(fun(X0,fun(X1,bool)),X2))))) => s(fun(X0,fun(X1,bool)),X2) = s(fun(X0,fun(X1,bool)),X3))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1] : ! [X2,X3] : ((p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X2),s(fun(X0,fun(X1,bool)),X3)))) & p(s(bool,'const.relation.RSUBSET_2'(s(fun(X0,fun(X1,bool)),X3),s(fun(X0,fun(X1,bool)),X2))))) => s(fun(X0,fun(X1,bool)),X2) = s(fun(X0,fun(X1,bool)),X3))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6,X7] : ! [X12,X13] : ((p(s(bool,'const.relation.RSUBSET_2'(s(fun(X6,fun(X7,bool)),X12),s(fun(X6,fun(X7,bool)),X13)))) & p(s(bool,'const.relation.RSUBSET_2'(s(fun(X6,fun(X7,bool)),X13),s(fun(X6,fun(X7,bool)),X12))))) => s(fun(X6,fun(X7,bool)),X12) = s(fun(X6,fun(X7,bool)),X13))),
+  file('thm.relation.RSUBSET_antisymmetric','thm.relation.RSUBSET_ANTISYM')).
+fof(f631,plain,(
+  ( ! [X2,X3] : (p(s(bool,'const.relation.RSUBSET_2'(s(fun(X2,fun(X3,bool)),sK3('const.relation.RSUBSET_0',fun(X2,fun(X3,bool)))),s(fun(X2,fun(X3,bool)),sK2('const.relation.RSUBSET_0',fun(X2,fun(X3,bool))))))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(fun(X2,fun(X3,bool)),fun(fun(X2,fun(X3,bool)),bool)),'const.relation.RSUBSET_0'))))) )),
+  inference(superposition,[],[f65,f69])).
+fof(f65,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(X0,bool),happ(s(fun(X0,fun(X0,bool)),X1),s(X0,sK3(X1,X0)))),s(X0,sK2(X1,X0))))) | p(s(bool,'const.relation.antisymmetric_1'(s(fun(X0,fun(X0,bool)),X1))))) )),
+  inference(cnf_transformation,[],[f46])).
+% SZS output end Proof for thm.relation
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 69
+% Passive clauses: 424
+% Generated clauses: 2566
+% Final active clauses: 66
+% Final passive clauses: 285
+% Input formulas: 14
+% Initial clauses: 22
+% 
+% Duplicate literals: 186
+% Trivial inequalities: 42
+% Fw subsumption resolutions: 362
+% Fw demodulations: 292
+% Bw demodulations: 3
+% 
+% Simple tautologies: 96
+% Equational tautologies: 17
+% Forward subsumptions: 1010
+% 
+% Binary resolution: 110
+% Forward superposition: 997
+% Backward superposition: 446
+% Self superposition: 32
+% Equality factoring: 30
+% Equality resolution: 8
+% 
+% Split clauses: 85
+% Split components: 176
+% SAT solver clauses: 200
+% SAT solver unit clauses: 17
+% SAT solver binary clauses: 75
+% 
+% Sat splits: 85
+% 
+% TWLsolver clauses: 199
+% TWLsolver calls for satisfiability: 77
+% 
+% Memory used [KB]: 1918
+% Time elapsed: 0.066 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.07 s

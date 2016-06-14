@@ -1,0 +1,253 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hreal
+% SZS output start Proof for thm.hreal
+fof(f698,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f657,f64,f363,f368,f366,f413,f47,f52,f50,f353,f371,f369,f645])).
+fof(f645,plain,(
+  $false | $spl11),
+  inference(subsumption_resolution,[],[f628,f371])).
+fof(f628,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2)))),
+  inference(superposition,[],[f595,f275])).
+fof(f275,plain,(
+  s('type.hrat.hrat',sK2) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK3(sK2,sK1))))),
+  inference(subsumption_resolution,[],[f267,f30])).
+fof(f30,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.hreal.HRAT_LT_TRANS',aHL_TRUTH)).
+fof(f267,plain,(
+  ~p(s(bool,'T_0')) | s('type.hrat.hrat',sK2) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK3(sK2,sK1))))),
+  inference(superposition,[],[f35,f49])).
+fof(f49,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2)))),
+  inference(subsumption_resolution,[],[f45,f31])).
+fof(f31,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.hreal.HRAT_LT_TRANS',aHL_FALSITY)).
+fof(f45,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2)))),
+  inference(superposition,[],[f28,f32])).
+fof(f32,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.hreal.HRAT_LT_TRANS',aHL_BOOL_CASES)).
+fof(f28,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',sK2)))) & ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f19])).
+fof(f19,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2)))) & ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2)))))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) & ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2)))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) => p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : ((p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8))))) => p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : ((p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7)))) & p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X7),s('type.hrat.hrat',X8))))) => p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X8)))))),
+  file('thm.hreal.HRAT_LT_TRANS','thm.hreal.HRAT_LT_TRANS')).
+fof(f35,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) | s('type.hrat.hrat',X1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',sK3(X1,X0))))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) | s('type.hrat.hrat',X1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',sK3(X1,X0))))) & (! [X2] : s('type.hrat.hrat',X1) != s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))) | p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3])],[f24])).
+fof(f24,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) | ? [X3] : s('type.hrat.hrat',X1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X3)))) & (! [X2] : s('type.hrat.hrat',X1) != s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))) | p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))))))),
+  inference(rectify,[],[f23])).
+fof(f23,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) | ? [X2] : s('type.hrat.hrat',X1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2)))) & (! [X2] : s('type.hrat.hrat',X1) != s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))) | p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))))))),
+  inference(nnf_transformation,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))) <=> ? [X2] : s('type.hrat.hrat',X1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X7)))) <=> ? [X13] : s('type.hrat.hrat',X7) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X6),s('type.hrat.hrat',X13))))),
+  file('thm.hreal.HRAT_LT_TRANS','thm.hreal.hrat_lt')).
+fof(f595,plain,(
+  ( ! [X4] : (s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',X4)))))) )),
+  inference(superposition,[],[f88,f548])).
+fof(f548,plain,(
+  ( ! [X0] : (s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK1),s('type.hrat.hrat',X0))) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK3(sK1,sK0)),s('type.hrat.hrat',X0)))))) )),
+  inference(superposition,[],[f38,f274])).
+fof(f274,plain,(
+  s('type.hrat.hrat',sK1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK3(sK1,sK0))))),
+  inference(subsumption_resolution,[],[f266,f30])).
+fof(f266,plain,(
+  ~p(s(bool,'T_0')) | s('type.hrat.hrat',sK1) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK3(sK1,sK0))))),
+  inference(superposition,[],[f35,f48])).
+fof(f48,plain,(
+  s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1)))),
+  inference(subsumption_resolution,[],[f43,f31])).
+fof(f43,plain,(
+  p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1)))),
+  inference(superposition,[],[f27,f32])).
+fof(f27,plain,(
+  p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK1))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f38,plain,(
+  ( ! [X2,X0,X1] : (s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))),s('type.hrat.hrat',X2)))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1,X2] : s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X1),s('type.hrat.hrat',X2))))) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))),s('type.hrat.hrat',X2)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X10,X11,X12] : s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X10),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X11),s('type.hrat.hrat',X12))))) = s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X10),s('type.hrat.hrat',X11))),s('type.hrat.hrat',X12)))),
+  file('thm.hreal.HRAT_LT_TRANS','thm.hrat.HRAT_ADD_ASSOC')).
+fof(f88,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1)))))) )),
+  inference(resolution,[],[f87,f41])).
+fof(f41,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f31,f32])).
+fof(f87,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))))))) )),
+  inference(equality_resolution,[],[f36])).
+fof(f36,plain,(
+  ( ! [X2,X0,X1] : (s('type.hrat.hrat',X1) != s('type.hrat.hrat','const.hrat.hrat_add_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X2))) | p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',X0),s('type.hrat.hrat',X1))))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f369,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2)))) ) | $spl8),
+  inference(cnf_transformation,[],[f369_D])).
+fof(f369_D,plain,(
+  ( ! [X0] : (s(bool,X0) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2)))) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f371,plain,(
+  s(bool,'T_0') != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | $spl11),
+  inference(cnf_transformation,[],[f371_D])).
+fof(f371_D,plain,(
+  s(bool,'T_0') != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f353,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | s(bool,X0) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2)))) )),
+  inference(equality_factoring,[],[f247])).
+fof(f247,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(subsumption_resolution,[],[f165,f30])).
+fof(f165,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f29,f39])).
+fof(f39,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f32,f32])).
+fof(f29,plain,(
+  ~p(s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f50,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f50_D])).
+fof(f50_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f52,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f52_D])).
+fof(f52_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f47,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f32])).
+fof(f413,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f408])).
+fof(f408,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f52,f366])).
+fof(f366,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl4),
+  inference(cnf_transformation,[],[f366_D])).
+fof(f366_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f368,plain,(
+  s(bool,'F_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | $spl6),
+  inference(cnf_transformation,[],[f368_D])).
+fof(f368_D,plain,(
+  s(bool,'F_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f363,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(duplicate_literal_removal,[],[f323])).
+fof(f323,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.hreal.hrat_lt_2'(s('type.hrat.hrat',sK0),s('type.hrat.hrat',sK2))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f247,f32])).
+fof(f64,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f53,f31])).
+fof(f53,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(backward_demodulation,[],[f50,f27])).
+fof(f657,plain,(
+  ( ! [X2] : (s(bool,'F_0') = s(bool,X2)) ) | ($spl6 | $spl8)),
+  inference(superposition,[],[f369,f368])).
+% SZS output end Proof for thm.hreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 39
+% Passive clauses: 102
+% Generated clauses: 659
+% Final active clauses: 22
+% Final passive clauses: 47
+% Input formulas: 8
+% Initial clauses: 12
+% 
+% Duplicate literals: 75
+% Trivial inequalities: 9
+% Fw subsumption resolutions: 24
+% Fw demodulations: 69
+% Bw demodulations: 14
+% 
+% Simple tautologies: 22
+% Equational tautologies: 15
+% Forward subsumptions: 337
+% Fw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 11
+% Forward superposition: 175
+% Backward superposition: 182
+% Self superposition: 37
+% Equality factoring: 28
+% Equality resolution: 6
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 15
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 5
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 5
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 12
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.023 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

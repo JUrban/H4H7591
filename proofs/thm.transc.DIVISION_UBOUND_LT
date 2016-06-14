@@ -1,0 +1,189 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.transc
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.transc
+% SZS output start Proof for thm.transc
+fof(f709,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f706,f95,f300])).
+fof(f300,plain,(
+  s(bool,'T_0') = s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',sK1),s('type.realax.real',sK2))),s(fun('type.num.num','type.realax.real'),sK0))) | $spl0),
+  inference(cnf_transformation,[],[f300_D])).
+fof(f300_D,plain,(
+  s(bool,'T_0') = s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',sK1),s('type.realax.real',sK2))),s(fun('type.num.num','type.realax.real'),sK0))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f95,plain,(
+  s(bool,'T_0') = s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',sK1),s('type.realax.real',sK2))),s(fun('type.num.num','type.realax.real'),sK0)))),
+  inference(resolution,[],[f37,f45])).
+fof(f45,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.transc.DIVISION_UBOUND_LT','thm.bool.EQ_CLAUSES|split|0')).
+fof(f37,plain,(
+  p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',sK1),s('type.realax.real',sK2))),s(fun('type.num.num','type.realax.real'),sK0))))),
+  inference(cnf_transformation,[],[f31])).
+fof(f31,plain,(
+  p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',sK1),s('type.realax.real',sK2))),s(fun('type.num.num','type.realax.real'),sK0)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0)))))) & ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',sK2))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3])],[f27])).
+fof(f27,plain,(
+  ? [X0,X1,X2,X3] : (p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))) & ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',X2)))))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ? [X0,X1,X2,X3] : ((p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))) & ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',X2)))))),
+  inference(ennf_transformation,[],[f14])).
+fof(f14,plain,(
+  ~! [X0,X1,X2,X3] : ((p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8,X9] : ((p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X7),s('type.realax.real',X8))),s(fun('type.num.num','type.realax.real'),X6)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X9),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X6))))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X6),s('type.num.num',X9))),s('type.realax.real',X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8,X9] : ((p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X7),s('type.realax.real',X8))),s(fun('type.num.num','type.realax.real'),X6)))) & p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X9),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X6))))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X6),s('type.num.num',X9))),s('type.realax.real',X8)))))),
+  file('thm.transc.DIVISION_UBOUND_LT','thm.transc.DIVISION_UBOUND_LT')).
+fof(f706,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f699,f40])).
+fof(f40,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.transc.DIVISION_UBOUND_LT',aHL_TRUTH)).
+fof(f699,plain,(
+  ~p(s(bool,'T_0')) | $spl0),
+  inference(superposition,[],[f549,f300])).
+fof(f549,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s(fun('type.num.num','type.realax.real'),sK0))))) )),
+  inference(subsumption_resolution,[],[f548,f42])).
+fof(f42,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.transc.DIVISION_UBOUND_LT',aHL_FALSITY)).
+fof(f548,plain,(
+  ( ! [X0,X1] : (p(s(bool,'F_0')) | ~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s(fun('type.num.num','type.realax.real'),sK0))))) )),
+  inference(forward_demodulation,[],[f547,f85])).
+fof(f85,plain,(
+  s(bool,'F_0') = s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',sK2)))),
+  inference(resolution,[],[f39,f49])).
+fof(f49,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f18])).
+fof(f18,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.transc.DIVISION_UBOUND_LT','thm.bool.EQ_CLAUSES|split|2')).
+fof(f39,plain,(
+  ~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',sK2))))),
+  inference(cnf_transformation,[],[f31])).
+fof(f547,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',sK2)))) | ~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s(fun('type.num.num','type.realax.real'),sK0))))) )),
+  inference(forward_demodulation,[],[f546,f393])).
+fof(f393,plain,(
+  s('type.realax.real',sK2) = s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0)))))),
+  inference(resolution,[],[f53,f37])).
+fof(f53,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) | s('type.realax.real',X2) = s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))) )),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) | s('type.realax.real',X2) = s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))),
+  inference(ennf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) => s('type.realax.real',X2) = s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6,X7,X8] : (p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X7),s('type.realax.real',X8))),s(fun('type.num.num','type.realax.real'),X6)))) => s('type.realax.real',X8) = s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X6),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X6))))))),
+  file('thm.transc.DIVISION_UBOUND_LT','thm.transc.DIVISION_RHS')).
+fof(f546,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0)))))))) | ~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s(fun('type.num.num','type.realax.real'),sK0))))) )),
+  inference(subsumption_resolution,[],[f539,f40])).
+fof(f539,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'T_0')) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num',sK3))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),sK0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0)))))))) | ~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X0),s('type.realax.real',X1))),s(fun('type.num.num','type.realax.real'),sK0))))) )),
+  inference(superposition,[],[f54,f82])).
+fof(f82,plain,(
+  s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num',sK3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0)))))),
+  inference(resolution,[],[f38,f45])).
+fof(f38,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num',sK3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),sK0))))))),
+  inference(cnf_transformation,[],[f31])).
+fof(f54,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))))) | ~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) | ! [X3] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))) | p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))))))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X1),s('type.realax.real',X2))),s(fun('type.num.num','type.realax.real'),X0)))) => ! [X3] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X3),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0)))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num',X3))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X0),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X0))))))))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6,X7,X8] : (p(s(bool,'const.transc.division_2'(s('type.pair.prod'('type.realax.real','type.realax.real'),'const.pair.,_2'(s('type.realax.real',X7),s('type.realax.real',X8))),s(fun('type.num.num','type.realax.real'),X6)))) => ! [X9] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num',X9),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X6)))))) => p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X6),s('type.num.num',X9))),s('type.realax.real',happ(s(fun('type.num.num','type.realax.real'),X6),s('type.num.num','const.transc.dsize_1'(s(fun('type.num.num','type.realax.real'),X6))))))))))),
+  file('thm.transc.DIVISION_UBOUND_LT','thm.transc.DIVISION_GT')).
+% SZS output end Proof for thm.transc
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 107
+% Generated clauses: 649
+% Final active clauses: 22
+% Final passive clauses: 54
+% Input formulas: 12
+% Initial clauses: 18
+% 
+% Duplicate literals: 77
+% Trivial inequalities: 20
+% Fw subsumption resolutions: 58
+% Fw demodulations: 17
+% Bw demodulations: 9
+% 
+% Simple tautologies: 48
+% Equational tautologies: 17
+% Forward subsumptions: 307
+% 
+% Binary resolution: 34
+% Forward superposition: 174
+% Backward superposition: 172
+% Self superposition: 26
+% Equality factoring: 28
+% Equality resolution: 5
+% 
+% Split clauses: 5
+% Split components: 10
+% SAT solver clauses: 15
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 8
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 5
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 14
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 895
+% Time elapsed: 0.022 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.024 s

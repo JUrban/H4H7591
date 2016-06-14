@@ -1,0 +1,146 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f1234,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1233,f967,f27,f42,f38,f28,f41,f39])).
+fof(f39,plain,(
+  s(fun(sK1,sK0),sK2) != s(fun(sK1,sK0),sK3) | $spl1),
+  inference(cnf_transformation,[],[f39_D])).
+fof(f39_D,plain,(
+  s(fun(sK1,sK0),sK2) != s(fun(sK1,sK0),sK3) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f41,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4))) | $spl3),
+  inference(cnf_transformation,[],[f41_D])).
+fof(f41_D,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f28,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4))) | s(fun(sK1,sK0),sK2) != s(fun(sK1,sK0),sK3)),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  (s(fun(sK1,sK0),sK2) = s(fun(sK1,sK0),sK3) | ! [X5] : s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X5)))) & (s(fun(sK1,sK0),sK2) != s(fun(sK1,sK0),sK3) | s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,sK4))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2,sK3,sK4])],[f23])).
+fof(f23,plain,(
+  ? [X0,X1,X2,X3] : ((s(fun(X1,X0),X2) = s(fun(X1,X0),X3) | ! [X5] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X5))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X5)))) & (s(fun(X1,X0),X2) != s(fun(X1,X0),X3) | ? [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X4)))))),
+  inference(rectify,[],[f22])).
+fof(f22,plain,(
+  ? [X0,X1,X2,X3] : ((s(fun(X1,X0),X2) = s(fun(X1,X0),X3) | ! [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X4)))) & (s(fun(X1,X0),X2) != s(fun(X1,X0),X3) | ? [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) != s(X0,happ(s(fun(X1,X0),X3),s(X1,X4)))))),
+  inference(nnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ? [X0,X1,X2,X3] : (s(fun(X1,X0),X2) = s(fun(X1,X0),X3) <~> ! [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0,X1,X2,X3] : (s(fun(X1,X0),X2) = s(fun(X1,X0),X3) <=> ! [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : ! [X2,X3] : (s(fun(X1,X0),X2) = s(fun(X1,X0),X3) <=> ! [X4] : s(X0,happ(s(fun(X1,X0),X2),s(X1,X4))) = s(X0,happ(s(fun(X1,X0),X3),s(X1,X4))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : (s(fun(X7,X6),X8) = s(fun(X7,X6),X9) <=> ! [X10] : s(X6,happ(s(fun(X7,X6),X8),s(X7,X10))) = s(X6,happ(s(fun(X7,X6),X9),s(X7,X10))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : (s(fun(X7,X6),X8) = s(fun(X7,X6),X9) <=> ! [X10] : s(X6,happ(s(fun(X7,X6),X8),s(X7,X10))) = s(X6,happ(s(fun(X7,X6),X9),s(X7,X10))))),
+  file('thm.bool.FUN_EQ_THM','thm.bool.FUN_EQ_THM')).
+fof(f38,plain,(
+  s(fun(sK1,sK0),sK2) = s(fun(sK1,sK0),sK3) | $spl0),
+  inference(cnf_transformation,[],[f38_D])).
+fof(f38_D,plain,(
+  s(fun(sK1,sK0),sK2) = s(fun(sK1,sK0),sK3) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f42,plain,(
+  ( ! [X5] : (s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X5)))) ) | $spl4),
+  inference(cnf_transformation,[],[f42_D])).
+fof(f42_D,plain,(
+  ( ! [X5] : (s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X5)))) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f27,plain,(
+  ( ! [X5] : (s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,X5))) = s(sK0,happ(s(fun(sK1,sK0),sK3),s(sK1,X5))) | s(fun(sK1,sK0),sK2) = s(fun(sK1,sK0),sK3)) )),
+  inference(cnf_transformation,[],[f24])).
+fof(f967,plain,(
+  $false | ($spl1 | $spl4)),
+  inference(subsumption_resolution,[],[f966,f39])).
+fof(f966,plain,(
+  s(fun(sK1,sK0),sK2) = s(fun(sK1,sK0),sK3) | $spl4),
+  inference(equality_resolution,[],[f663])).
+fof(f663,plain,(
+  ( ! [X35] : (s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK6(X35,sK3,sK0,sK1)))) != s(sK0,happ(s(fun(sK1,sK0),X35),s(sK1,sK6(X35,sK3,sK0,sK1)))) | s(fun(sK1,sK0),sK3) = s(fun(sK1,sK0),X35)) ) | $spl4),
+  inference(superposition,[],[f37,f42])).
+fof(f37,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,happ(s(fun(X0,X1),X2),s(X0,sK6(X3,X2,X1,X0)))) != s(X1,happ(s(fun(X0,X1),X3),s(X0,sK6(X3,X2,X1,X0)))) | s(fun(X0,X1),X2) = s(fun(X0,X1),X3)) )),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1,X2,X3] : (s(X1,happ(s(fun(X0,X1),X2),s(X0,sK6(X3,X2,X1,X0)))) != s(X1,happ(s(fun(X0,X1),X3),s(X0,sK6(X3,X2,X1,X0)))) | s(fun(X0,X1),X2) = s(fun(X0,X1),X3))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK6])],[f21])).
+fof(f21,plain,(
+  ! [X0,X1,X2,X3] : (? [X4] : s(X1,happ(s(fun(X0,X1),X2),s(X0,X4))) != s(X1,happ(s(fun(X0,X1),X3),s(X0,X4))) | s(fun(X0,X1),X2) = s(fun(X0,X1),X3))),
+  inference(ennf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1,X2,X3] : (! [X4] : s(X1,happ(s(fun(X0,X1),X2),s(X0,X4))) = s(X1,happ(s(fun(X0,X1),X3),s(X0,X4))) => s(fun(X0,X1),X2) = s(fun(X0,X1),X3))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : ! [X2,X3] : (! [X4] : s(X1,happ(s(fun(X0,X1),X2),s(X0,X4))) = s(X1,happ(s(fun(X0,X1),X3),s(X0,X4))) => s(fun(X0,X1),X2) = s(fun(X0,X1),X3))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X7,X6] : ! [X8,X9] : (! [X10] : s(X6,happ(s(fun(X7,X6),X8),s(X7,X10))) = s(X6,happ(s(fun(X7,X6),X9),s(X7,X10))) => s(fun(X7,X6),X8) = s(fun(X7,X6),X9))),
+  file('thm.bool.FUN_EQ_THM','thm.bool.EQ_EXT')).
+fof(f1233,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(trivial_inequality_removal,[],[f1232])).
+fof(f1232,plain,(
+  s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) != s(sK0,happ(s(fun(sK1,sK0),sK2),s(sK1,sK4))) | ($spl0 | $spl3)),
+  inference(forward_demodulation,[],[f41,f38])).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 35
+% Passive clauses: 246
+% Generated clauses: 1143
+% Final active clauses: 26
+% Final passive clauses: 168
+% Input formulas: 7
+% Initial clauses: 11
+% 
+% Duplicate literals: 125
+% Trivial inequalities: 23
+% Fw subsumption resolutions: 138
+% Fw demodulations: 29
+% Bw demodulations: 2
+% 
+% Simple tautologies: 48
+% Equational tautologies: 30
+% Forward subsumptions: 468
+% 
+% Binary resolution: 38
+% Factoring: 1
+% Forward superposition: 364
+% Backward superposition: 285
+% Self superposition: 49
+% Equality factoring: 52
+% Equality resolution: 3
+% 
+% Split clauses: 37
+% Split components: 75
+% SAT solver clauses: 69
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 35
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 37
+% Sat splitting refutations: 6
+% 
+% TWLsolver clauses: 67
+% TWLsolver calls for satisfiability: 34
+% 
+% Memory used [KB]: 1151
+% Time elapsed: 0.034 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.036 s

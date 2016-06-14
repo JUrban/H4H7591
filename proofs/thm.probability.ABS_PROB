@@ -1,0 +1,210 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.probability
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.probability
+% SZS output start Proof for thm.probability
+fof(f4922,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4912,f107,f173,f424,f174,f426,f179])).
+fof(f179,plain,(
+  $false | ($spl5 | $spl6)),
+  inference(resolution,[],[f174,f173])).
+fof(f426,plain,(
+  s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) | $spl16),
+  inference(cnf_transformation,[],[f426_D])).
+fof(f426_D,plain,(
+  s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))) <=> ~$spl16),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl16])])).
+fof(f174,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl6),
+  inference(cnf_transformation,[],[f174_D])).
+fof(f174_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f424,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(subsumption_resolution,[],[f286,f109])).
+fof(f109,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f71])).
+fof(f71,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.probability.ABS_PROB','thm.bool.EQ_CLAUSES|split|1')).
+fof(f286,plain,(
+  ( ! [X33] : (p(s(bool,X33)) | s(bool,'T_0') = s(bool,X33) | s(bool,'T_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) )),
+  inference(superposition,[],[f102,f188])).
+fof(f188,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f108,f108])).
+fof(f108,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.probability.ABS_PROB',aHL_BOOL_CASES)).
+fof(f102,plain,(
+  p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))),
+  inference(cnf_transformation,[],[f70])).
+fof(f70,plain,(
+  p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))) & p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))))) & s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))) != s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f57])).
+fof(f57,plain,(
+  ? [X0,X1,X2] : (p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) & s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))) != s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))))))),
+  inference(flattening,[],[f56])).
+fof(f56,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) & s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))) != s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))))))),
+  inference(ennf_transformation,[],[f28])).
+fof(f28,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))) = s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))))))),
+  inference(flattening,[],[f27])).
+fof(f27,plain,(
+  ~! [X0] : ! [X1,X2] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))) = s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))))))) => s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))) = s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))))))) => s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))) = s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8))))))),
+  file('thm.probability.ABS_PROB','thm.probability.ABS_PROB')).
+fof(f173,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f173_D])).
+fof(f173_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f107,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f29])).
+fof(f29,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.probability.ABS_PROB',aHL_FALSITY)).
+fof(f4912,plain,(
+  $false | ($spl5 | $spl16)),
+  inference(subsumption_resolution,[],[f4901,f104])).
+fof(f104,plain,(
+  s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))) != s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2)))))),
+  inference(cnf_transformation,[],[f70])).
+fof(f4901,plain,(
+  s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))) = s('type.realax.real','const.real.abs_1'(s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2))))) | ($spl5 | $spl16)),
+  inference(resolution,[],[f1565,f118])).
+fof(f118,plain,(
+  ( ! [X0] : (~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) | s('type.realax.real',X0) = s('type.realax.real','const.real.abs_1'(s('type.realax.real',X0)))) )),
+  inference(cnf_transformation,[],[f75])).
+fof(f75,plain,(
+  ! [X0] : ((s('type.realax.real',X0) != s('type.realax.real','const.real.abs_1'(s('type.realax.real',X0))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0))))) & (~p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) | s('type.realax.real',X0) = s('type.realax.real','const.real.abs_1'(s('type.realax.real',X0)))))),
+  inference(nnf_transformation,[],[f36])).
+fof(f36,plain,(
+  ! [X0] : (s('type.realax.real',X0) = s('type.realax.real','const.real.abs_1'(s('type.realax.real',X0))) <=> p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X10] : (s('type.realax.real',X10) = s('type.realax.real','const.real.abs_1'(s('type.realax.real',X10))) <=> p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X10)))))),
+  file('thm.probability.ABS_PROB','thm.real.ABS_REFL')).
+fof(f1565,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2)))))) | ($spl5 | $spl16)),
+  inference(subsumption_resolution,[],[f1564,f180])).
+fof(f180,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl5),
+  inference(resolution,[],[f109,f173])).
+fof(f1564,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2)))))) | $spl16),
+  inference(forward_demodulation,[],[f1548,f426])).
+fof(f1548,plain,(
+  p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1),s(fun(sK0,bool),sK2)))))) | s(bool,'F_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1)))),
+  inference(resolution,[],[f701,f103])).
+fof(f103,plain,(
+  p(s(bool,'const.bool.IN_2'(s(fun(sK0,bool),sK2),s(fun(fun(sK0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(sK0,bool),'type.pair.prod'(fun(fun(sK0,bool),bool),fun(fun(sK0,bool),'type.realax.real'))),sK1))))))),
+  inference(cnf_transformation,[],[f70])).
+fof(f701,plain,(
+  ( ! [X19,X20,X18] : (~p(s(bool,'const.bool.IN_2'(s(fun(X18,bool),X19),s(fun(fun(X18,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X18,bool),'type.pair.prod'(fun(fun(X18,bool),bool),fun(fun(X18,bool),'type.realax.real'))),X20)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X18,bool),'type.pair.prod'(fun(fun(X18,bool),bool),fun(fun(X18,bool),'type.realax.real'))),X20),s(fun(X18,bool),X19)))))) | s(bool,'F_0') = s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X18,bool),'type.pair.prod'(fun(fun(X18,bool),bool),fun(fun(X18,bool),'type.realax.real'))),X20)))) )),
+  inference(resolution,[],[f149,f114])).
+fof(f114,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f73])).
+fof(f73,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.probability.ABS_PROB','thm.bool.EQ_CLAUSES|split|2')).
+fof(f149,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2))))))) )),
+  inference(cnf_transformation,[],[f64])).
+fof(f64,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2)))))))),
+  inference(flattening,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) | ~p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) | p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2)))))))),
+  inference(ennf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1,X2] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2)))))))),
+  inference(flattening,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : ! [X1,X2] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1)))) & p(s(bool,'const.bool.IN_2'(s(fun(X0,bool),X2),s(fun(fun(X0,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X0,bool),'type.pair.prod'(fun(fun(X0,bool),bool),fun(fun(X0,bool),'type.realax.real'))),X1),s(fun(X0,bool),X2)))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X6] : ! [X7,X8] : ((p(s(bool,'const.probability.prob_space_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7)))) & p(s(bool,'const.bool.IN_2'(s(fun(X6,bool),X8),s(fun(fun(X6,bool),bool),'const.probability.events_1'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7))))))) => p(s(bool,'const.real.real_lte_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real','const.probability.prob_2'(s('type.pair.prod'(fun(X6,bool),'type.pair.prod'(fun(fun(X6,bool),bool),fun(fun(X6,bool),'type.realax.real'))),X7),s(fun(X6,bool),X8)))))))),
+  file('thm.probability.ABS_PROB','thm.probability.PROB_POSITIVE')).
+% SZS output end Proof for thm.probability
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 96
+% Passive clauses: 644
+% Generated clauses: 4708
+% Final active clauses: 89
+% Final passive clauses: 425
+% Input formulas: 25
+% Initial clauses: 65
+% 
+% Duplicate literals: 301
+% Trivial inequalities: 87
+% Fw subsumption resolutions: 765
+% Fw demodulations: 506
+% Bw demodulations: 3
+% 
+% Simple tautologies: 172
+% Equational tautologies: 16
+% Forward subsumptions: 1928
+% 
+% Binary resolution: 253
+% Forward superposition: 1751
+% Backward superposition: 835
+% Self superposition: 38
+% Equality factoring: 28
+% Equality resolution: 18
+% 
+% Split clauses: 164
+% Split components: 336
+% SAT solver clauses: 413
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 67
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 164
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 407
+% TWLsolver calls for satisfiability: 151
+% 
+% Memory used [KB]: 2942
+% Time elapsed: 0.160 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.153 s

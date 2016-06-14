@@ -1,0 +1,97 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f226,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f221])).
+fof(f221,plain,(
+  s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1)))),
+  inference(superposition,[],[f19,f204])).
+fof(f204,plain,(
+  ( ! [X2,X3] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X2),s('type.rat.rat',X3))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X3),s('type.rat.rat',X2)))) )),
+  inference(superposition,[],[f60,f24])).
+fof(f24,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X0))),s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X1)))))))) )),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X0))),s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X1)))))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8,X9] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X8),s('type.rat.rat',X9))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X8))),s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X9)))))))),
+  file('thm.rat.RAT_ADD_COMM','thm.rat.rat_add_def')).
+fof(f60,plain,(
+  ( ! [X0,X1] : (s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X1))),s('type.frac.frac','const.rat.rep_rat_1'(s('type.rat.rat',X0)))))))) )),
+  inference(superposition,[],[f24,f23])).
+fof(f23,plain,(
+  ( ! [X0,X1] : (s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))) = s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X1),s('type.frac.frac',X0)))) )),
+  inference(cnf_transformation,[],[f11])).
+fof(f11,plain,(
+  ! [X0,X1] : s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))) = s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X1),s('type.frac.frac',X0)))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7] : s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X6),s('type.frac.frac',X7))) = s('type.frac.frac','const.frac.frac_add_2'(s('type.frac.frac',X7),s('type.frac.frac',X6)))),
+  file('thm.rat.RAT_ADD_COMM','thm.frac.FRAC_ADD_COMM')).
+fof(f19,plain,(
+  s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK1),s('type.rat.rat',sK0)))),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK0),s('type.rat.rat',sK1))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',sK1),s('type.rat.rat',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f15])).
+fof(f15,plain,(
+  ? [X0,X1] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) != s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X1),s('type.rat.rat',X0)))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0,X1] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X0),s('type.rat.rat',X1))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X1),s('type.rat.rat',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X7),s('type.rat.rat',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X6),s('type.rat.rat',X7))) = s('type.rat.rat','const.rat.rat_add_2'(s('type.rat.rat',X7),s('type.rat.rat',X6)))),
+  file('thm.rat.RAT_ADD_COMM','thm.rat.RAT_ADD_COMM')).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 14
+% Passive clauses: 25
+% Generated clauses: 182
+% Final active clauses: 12
+% Final passive clauses: 7
+% Input formulas: 7
+% Initial clauses: 7
+% 
+% Duplicate literals: 37
+% Trivial inequalities: 3
+% 
+% Simple tautologies: 16
+% Equational tautologies: 14
+% Forward subsumptions: 81
+% 
+% Binary resolution: 4
+% Forward superposition: 37
+% Backward superposition: 43
+% Self superposition: 36
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.026 s

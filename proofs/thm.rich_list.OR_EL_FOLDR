@@ -1,0 +1,299 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% (13090)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 190
+% Passive clauses: 4013
+% Generated clauses: 27554
+% Final active clauses: 183
+% Final passive clauses: 3664
+% Input formulas: 133
+% Initial clauses: 219
+% 
+% Duplicate literals: 519
+% Trivial inequalities: 486
+% Fw subsumption resolutions: 2622
+% Fw demodulations: 6571
+% Bw demodulations: 6
+% 
+% Simple tautologies: 403
+% Equational tautologies: 37
+% Forward subsumptions: 12213
+% 
+% Binary resolution: 393
+% Factoring: 1
+% Forward superposition: 8761
+% Backward superposition: 7656
+% Self superposition: 126
+% Equality factoring: 63
+% Equality resolution: 32
+% 
+% Split clauses: 279
+% Split components: 570
+% SAT solver clauses: 640
+% SAT solver unit clauses: 8
+% SAT solver binary clauses: 231
+% 
+% Sat splits: 279
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 640
+% TWLsolver calls for satisfiability: 98
+% 
+% Memory used [KB]: 15607
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 143 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.rich_list
+% (13101)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 134
+% Passive clauses: 1208
+% Generated clauses: 21550
+% Final active clauses: 127
+% Final passive clauses: 991
+% Input formulas: 133
+% Initial clauses: 219
+% 
+% Duplicate literals: 761
+% Trivial inequalities: 252
+% Fw subsumption resolutions: 1765
+% Fw demodulations: 3759
+% Bw demodulations: 88
+% Condensations: 1479
+% Global subsumptions: 17
+% 
+% Simple tautologies: 326
+% Equational tautologies: 32
+% Forward subsumptions: 9796
+% 
+% Binary resolution: 123
+% Factoring: 1
+% Forward superposition: 6924
+% Backward superposition: 4693
+% Self superposition: 138
+% Equality factoring: 73
+% Equality resolution: 35
+% 
+% Split clauses: 176
+% Split components: 352
+% SAT solver clauses: 2415
+% SAT solver unit clauses: 290
+% SAT solver binary clauses: 75
+% SAT solver learnt clauses: 34
+% 
+% Sat splits: 176
+% 
+% TWLsolver clauses: 2347
+% TWLsolver calls for satisfiability: 879
+% 
+% Memory used [KB]: 15735
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 136 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f150793,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f150792,f482])).
+fof(f482,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rich_list.OR_EL_FOLDR',aHL_TRUTH)).
+fof(f150792,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(forward_demodulation,[],[f150790,f45615])).
+fof(f45615,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X1)))) )),
+  inference(unit_resulting_resolution,[],[f482,f6255,f637])).
+fof(f637,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f377])).
+fof(f377,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f376])).
+fof(f376,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f286])).
+fof(f286,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f89])).
+fof(f89,axiom,(
+  ! [X42,X43] : ((p(s(bool,X42)) => p(s(bool,X43))) => ((p(s(bool,X43)) => p(s(bool,X42))) => s(bool,X42) = s(bool,X43)))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.bool.IMP_ANTISYM_AX')).
+fof(f6255,plain,(
+  ( ! [X2,X0] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X2))),s(X0,X2))))) )),
+  inference(forward_demodulation,[],[f6125,f648])).
+fof(f648,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X1,X2) = s(X1,'const.pair.FST_1'(s('type.pair.prod'(X1,X0),'const.pair.,_2'(s(X1,X2),s(X0,X3)))))) )),
+  inference(cnf_transformation,[],[f296])).
+fof(f296,plain,(
+  ! [X0,X1,X2,X3] : s(X1,X2) = s(X1,'const.pair.FST_1'(s('type.pair.prod'(X1,X0),'const.pair.,_2'(s(X1,X2),s(X0,X3)))))),
+  inference(flattening,[],[f295])).
+fof(f295,plain,(
+  ! [X0,X1] : ! [X2,X3] : s(X1,X2) = s(X1,'const.pair.FST_1'(s('type.pair.prod'(X1,X0),'const.pair.,_2'(s(X1,X2),s(X0,X3)))))),
+  inference(rectify,[],[f126])).
+fof(f126,axiom,(
+  ! [X20,X10] : ! [X11,X30] : s(X10,X11) = s(X10,'const.pair.FST_1'(s('type.pair.prod'(X10,X20),'const.pair.,_2'(s(X10,X11),s(X20,X30)))))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.pair.FST')).
+fof(f6125,plain,(
+  ( ! [X2,X0,X3,X1] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,'const.pair.FST_1'(s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,X2),s(X1,X3))))))),s(X0,X2))))) )),
+  inference(unit_resulting_resolution,[],[f648,f666])).
+fof(f666,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) != s(X0,X2)) )),
+  inference(cnf_transformation,[],[f471])).
+fof(f471,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) & (s(X0,X1) != s(X0,X2) | p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2))))))),
+  inference(nnf_transformation,[],[f323])).
+fof(f323,plain,(
+  ! [X0,X1,X2] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) <=> s(X0,X1) = s(X0,X2))),
+  inference(rectify,[],[f27])).
+fof(f27,axiom,(
+  ! [X29,X8,X9] : (p(s(bool,happ(s(fun(X29,bool),'=_1'(s(X29,X8))),s(X29,X9)))) <=> s(X29,X8) = s(X29,X9))),
+  file('thm.rich_list.OR_EL_FOLDR',arity_1_HL_EQ)).
+fof(f150790,plain,(
+  ~p(s(bool,happ(s(fun(bool,bool),'=_1'(s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),sK0))))),s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),sK0))))))),
+  inference(backward_demodulation,[],[f89748,f26886])).
+fof(f26886,plain,(
+  ~p(s(bool,happ(s(fun(bool,bool),'=_1'(s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),sK0))))),s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),sK0))))))),
+  inference(unit_resulting_resolution,[],[f481,f665])).
+fof(f665,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) )),
+  inference(cnf_transformation,[],[f471])).
+fof(f481,plain,(
+  s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),sK0))) != s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),sK0)))),
+  inference(cnf_transformation,[],[f386])).
+fof(f386,plain,(
+  s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),sK0))) != s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f351])).
+fof(f351,plain,(
+  ? [X0] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X0))) != s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))),
+  inference(ennf_transformation,[],[f135])).
+fof(f135,plain,(
+  ~! [X0] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X6))) = s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X6))) = s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X6)))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.rich_list.OR_EL_FOLDR')).
+fof(f89748,plain,(
+  ( ! [X0] : (s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))) )),
+  inference(forward_demodulation,[],[f89747,f498])).
+fof(f498,plain,(
+  ( ! [X0] : (s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDL_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))) )),
+  inference(cnf_transformation,[],[f144])).
+fof(f144,plain,(
+  ! [X0] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDL_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : s(bool,'const.rich_list.OR_EL_1'(s('type.list.list'(bool),X6))) = s(bool,'const.list.FOLDL_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X6)))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.rich_list.OR_EL_FOLDL')).
+fof(f89747,plain,(
+  ( ! [X0] : (s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDL_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))) )),
+  inference(subsumption_resolution,[],[f89594,f482])).
+fof(f89594,plain,(
+  ( ! [X0] : (~p(s(bool,'T_0')) | s(bool,'const.list.FOLDR_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0))) = s(bool,'const.list.FOLDL_3'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'),s('type.list.list'(bool),X0)))) )),
+  inference(superposition,[],[f607,f789])).
+fof(f789,plain,(
+  s(bool,'T_0') = s(bool,'const.operator.MONOID_2'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0')))),
+  inference(unit_resulting_resolution,[],[f485,f504])).
+fof(f504,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f389])).
+fof(f389,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f149])).
+fof(f149,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f56])).
+fof(f56,axiom,(
+  ! [X12] : (s(bool,'T_0') = s(bool,X12) <=> p(s(bool,X12)))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.bool.EQ_CLAUSES|split|0')).
+fof(f485,plain,(
+  p(s(bool,'const.operator.MONOID_2'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'))))),
+  inference(cnf_transformation,[],[f33])).
+fof(f33,axiom,(
+  p(s(bool,'const.operator.MONOID_2'(s(fun(bool,fun(bool,bool)),'|dollar|or_0'),s(bool,'F_0'))))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.operator.MONOID_DISJ_F')).
+fof(f607,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.operator.MONOID_2'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2)))) | s(X0,'const.list.FOLDR_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3)))) )),
+  inference(cnf_transformation,[],[f371])).
+fof(f371,plain,(
+  ! [X0,X1,X2] : (~p(s(bool,'const.operator.MONOID_2'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2)))) | ! [X3] : s(X0,'const.list.FOLDR_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))))),
+  inference(ennf_transformation,[],[f259])).
+fof(f259,plain,(
+  ! [X0,X1,X2] : (p(s(bool,'const.operator.MONOID_2'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2)))) => ! [X3] : s(X0,'const.list.FOLDR_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))))),
+  inference(flattening,[],[f258])).
+fof(f258,plain,(
+  ! [X0] : ! [X1,X2] : (p(s(bool,'const.operator.MONOID_2'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2)))) => ! [X3] : s(X0,'const.list.FOLDR_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))) = s(X0,'const.list.FOLDL_3'(s(fun(X0,fun(X0,X0)),X1),s(X0,X2),s('type.list.list'(X0),X3))))),
+  inference(rectify,[],[f66])).
+fof(f66,axiom,(
+  ! [X10] : ! [X22,X23] : (p(s(bool,'const.operator.MONOID_2'(s(fun(X10,fun(X10,X10)),X22),s(X10,X23)))) => ! [X6] : s(X10,'const.list.FOLDR_3'(s(fun(X10,fun(X10,X10)),X22),s(X10,X23),s('type.list.list'(X10),X6))) = s(X10,'const.list.FOLDL_3'(s(fun(X10,fun(X10,X10)),X22),s(X10,X23),s('type.list.list'(X10),X6))))),
+  file('thm.rich_list.OR_EL_FOLDR','thm.rich_list.FOLDR_FOLDL')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 730
+% Passive clauses: 10658
+% Generated clauses: 157869
+% Final active clauses: 68
+% Final passive clauses: 207
+% Input formulas: 133
+% Initial clauses: 219
+% Discarded non-redundant clauses: 1155
+% 
+% Duplicate literals: 945
+% Trivial inequalities: 1173
+% Fw subsumption resolutions: 6722
+% Fw demodulations: 50862
+% Bw demodulations: 6638
+% Condensations: 1770
+% Global subsumptions: 839
+% 
+% Simple tautologies: 657
+% Equational tautologies: 253
+% Forward subsumptions: 80810
+% Fw demodulations to eq. taut.: 48
+% Bw demodulations to eq. taut.: 175
+% 
+% Unit resulting resolution: 14724
+% Factoring: 1
+% Forward superposition: 36042
+% Backward superposition: 29570
+% Self superposition: 352
+% Equality factoring: 59
+% Equality resolution: 65
+% 
+% Split clauses: 63
+% Split components: 126
+% SAT solver clauses: 12932
+% SAT solver unit clauses: 1704
+% SAT solver binary clauses: 4189
+% 
+% Sat splits: 63
+% Sat splitting refutations: 1307
+% 
+% Memory used [KB]: 156841
+% Time elapsed: 9.829 s
+% ------------------------------
+% ------------------------------
+% Success in time 11.17 s

@@ -1,0 +1,159 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.prelim
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prelim
+% SZS output start Proof for thm.prelim
+fof(f2291,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2244,f148,f233,f231,f157,f234])).
+fof(f234,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f234_D])).
+fof(f234_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f157,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f64])).
+fof(f64,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.prelim.ordering_eq_dec|split|12',aHL_FALSITY)).
+fof(f231,plain,(
+  s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') | $spl0),
+  inference(cnf_transformation,[],[f231_D])).
+fof(f231_D,plain,(
+  s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f233,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f233_D])).
+fof(f233_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f148,plain,(
+  p(s(bool,'F_0')) | s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0')),
+  inference(cnf_transformation,[],[f127])).
+fof(f127,plain,(
+  (s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') | p(s(bool,'F_0'))) & (s('type.prelim.ordering','const.prelim.GREATER_0') != s('type.prelim.ordering','const.prelim.EQUAL_0') | ~p(s(bool,'F_0')))),
+  inference(nnf_transformation,[],[f125])).
+fof(f125,plain,(
+  s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') <~> p(s(bool,'F_0'))),
+  inference(ennf_transformation,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~(s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') <=> p(s(bool,'F_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  s('type.prelim.ordering','const.prelim.GREATER_0') = s('type.prelim.ordering','const.prelim.EQUAL_0') <=> p(s(bool,'F_0'))),
+  file('thm.prelim.ordering_eq_dec|split|12','thm.prelim.ordering_eq_dec|split|12')).
+fof(f2244,plain,(
+  $false | $spl0),
+  inference(subsumption_resolution,[],[f1929,f1759])).
+fof(f1759,plain,(
+  ( ! [X6,X4,X7] : (s(X4,X6) = s(X4,X7)) ) | $spl0),
+  inference(superposition,[],[f1626,f206])).
+fof(f206,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X3) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.GREATER_0'),s(X0,X1),s(X0,X2),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f104])).
+fof(f104,plain,(
+  ! [X0,X1,X2,X3] : s(X0,X3) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.GREATER_0'),s(X0,X1),s(X0,X2),s(X0,X3)))),
+  inference(flattening,[],[f103])).
+fof(f103,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,X3) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.GREATER_0'),s(X0,X1),s(X0,X2),s(X0,X3)))),
+  inference(rectify,[],[f63])).
+fof(f63,axiom,(
+  ! [X6] : ! [X14,X15,X16] : s(X6,X16) = s(X6,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.GREATER_0'),s(X6,X14),s(X6,X15),s(X6,X16)))),
+  file('thm.prelim.ordering_eq_dec|split|12','thm.prelim.ordering_case_def|split|2')).
+fof(f1626,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X2) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.GREATER_0'),s(X0,X1),s(X0,X2),s(X0,X3)))) ) | $spl0),
+  inference(forward_demodulation,[],[f208,f231])).
+fof(f208,plain,(
+  ( ! [X2,X0,X3,X1] : (s(X0,X2) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.EQUAL_0'),s(X0,X1),s(X0,X2),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f108])).
+fof(f108,plain,(
+  ! [X0,X1,X2,X3] : s(X0,X2) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.EQUAL_0'),s(X0,X1),s(X0,X2),s(X0,X3)))),
+  inference(flattening,[],[f107])).
+fof(f107,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(X0,X2) = s(X0,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.EQUAL_0'),s(X0,X1),s(X0,X2),s(X0,X3)))),
+  inference(rectify,[],[f62])).
+fof(f62,axiom,(
+  ! [X6] : ! [X14,X15,X16] : s(X6,X15) = s(X6,'const.prelim.ordering_CASE_4'(s('type.prelim.ordering','const.prelim.EQUAL_0'),s(X6,X14),s(X6,X15),s(X6,X16)))),
+  file('thm.prelim.ordering_eq_dec|split|12','thm.prelim.ordering_case_def|split|1')).
+fof(f1929,plain,(
+  ( ! [X76] : (s(bool,'T_0') != s(bool,X76)) ) | $spl0),
+  inference(superposition,[],[f253,f1759])).
+fof(f253,plain,(
+  s(bool,'T_0') != s(bool,'F_0')),
+  inference(resolution,[],[f184,f150])).
+fof(f150,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.prelim.ordering_eq_dec|split|12',aHL_TRUTH)).
+fof(f184,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'F_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f130])).
+fof(f130,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f89])).
+fof(f89,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f88])).
+fof(f88,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.prelim.ordering_eq_dec|split|12','thm.bool.EQ_CLAUSES|split|3')).
+% SZS output end Proof for thm.prelim
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 75
+% Passive clauses: 155
+% Generated clauses: 2128
+% Final active clauses: 64
+% Final passive clauses: 61
+% Input formulas: 62
+% Initial clauses: 82
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 18
+% Fw subsumption resolutions: 76
+% Fw demodulations: 143
+% Bw demodulations: 11
+% 
+% Simple tautologies: 7
+% Equational tautologies: 4
+% Forward subsumptions: 1668
+% 
+% Binary resolution: 13
+% Forward superposition: 725
+% Backward superposition: 1015
+% Self superposition: 27
+% Equality factoring: 2
+% Equality resolution: 2
+% 
+% Split clauses: 22
+% Split components: 44
+% SAT solver clauses: 76
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 39
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 22
+% Sat splitting refutations: 38
+% 
+% TWLsolver clauses: 28
+% TWLsolver calls for satisfiability: 3
+% 
+% Memory used [KB]: 1663
+% Time elapsed: 0.040 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.042 s

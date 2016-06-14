@@ -1,0 +1,98 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.extreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.extreal
+% SZS output start Proof for thm.extreal
+fof(f297,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f293])).
+fof(f293,plain,(
+  s('type.extreal.extreal',sK0) != s('type.extreal.extreal',sK0)),
+  inference(superposition,[],[f25,f277])).
+fof(f277,plain,(
+  ( ! [X2] : (s('type.extreal.extreal',X2) = s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X2),s('type.extreal.extreal',X2)))) )),
+  inference(superposition,[],[f33,f32])).
+fof(f32,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,X1),s(X0,X2),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,X1),s(X0,X2),s(X0,X2)))),
+  inference(flattening,[],[f15])).
+fof(f15,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,X1),s(X0,X2),s(X0,X2)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X7] : ! [X8,X9] : s(X7,X9) = s(X7,'const.bool.COND_3'(s(bool,X8),s(X7,X9),s(X7,X9)))),
+  file('thm.extreal.min_refl','thm.bool.COND_ID')).
+fof(f33,plain,(
+  ( ! [X0,X1] : (s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X1))) = s('type.extreal.extreal','const.bool.COND_3'(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X1))),s('type.extreal.extreal',X0),s('type.extreal.extreal',X1)))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0,X1] : s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X1))) = s('type.extreal.extreal','const.bool.COND_3'(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X1))),s('type.extreal.extreal',X0),s('type.extreal.extreal',X1)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X10] : s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X6),s('type.extreal.extreal',X10))) = s('type.extreal.extreal','const.bool.COND_3'(s(bool,'const.extreal.extreal_le_2'(s('type.extreal.extreal',X6),s('type.extreal.extreal',X10))),s('type.extreal.extreal',X6),s('type.extreal.extreal',X10)))),
+  file('thm.extreal.min_refl','thm.extreal.extreal_min_def')).
+fof(f25,plain,(
+  s('type.extreal.extreal',sK0) != s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',sK0),s('type.extreal.extreal',sK0)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  s('type.extreal.extreal',sK0) != s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',sK0),s('type.extreal.extreal',sK0)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f20])).
+fof(f20,plain,(
+  ? [X0] : s('type.extreal.extreal',X0) != s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X0)))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : s('type.extreal.extreal',X0) = s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X0),s('type.extreal.extreal',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : s('type.extreal.extreal',X6) = s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X6),s('type.extreal.extreal',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : s('type.extreal.extreal',X6) = s('type.extreal.extreal','const.extreal.extreal_min_2'(s('type.extreal.extreal',X6),s('type.extreal.extreal',X6)))),
+  file('thm.extreal.min_refl','thm.extreal.min_refl')).
+% SZS output end Proof for thm.extreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 15
+% Passive clauses: 53
+% Generated clauses: 256
+% Final active clauses: 13
+% Final passive clauses: 31
+% Input formulas: 9
+% Initial clauses: 10
+% 
+% Duplicate literals: 41
+% Trivial inequalities: 4
+% Fw demodulations: 2
+% 
+% Simple tautologies: 16
+% Equational tautologies: 15
+% Forward subsumptions: 123
+% 
+% Binary resolution: 4
+% Forward superposition: 78
+% Backward superposition: 61
+% Self superposition: 31
+% Equality factoring: 26
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.017 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.019 s

@@ -1,0 +1,256 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f2340,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2339,f2129,f2130,f86,f53,f72,f116,f89,f98])).
+fof(f98,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) | $spl8),
+  inference(cnf_transformation,[],[f98_D])).
+fof(f98_D,plain,(
+  ( ! [X1] : (p(s(bool,X1)) | s(bool,'F_0') = s(bool,X1)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f89,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) ) | $spl1),
+  inference(resolution,[],[f65,f72])).
+fof(f65,plain,(
+  ( ! [X0,X1] : (p(s(bool,X1)) | p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f37])).
+fof(f37,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.pred_set.CARD_SING','thm.bool.IMP_ANTISYM_AX')).
+fof(f116,plain,(
+  $false | ($spl1 | $spl4)),
+  inference(subsumption_resolution,[],[f103,f72])).
+fof(f103,plain,(
+  p(s(bool,'F_0')) | $spl4),
+  inference(backward_demodulation,[],[f86,f54])).
+fof(f54,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  ! [X0] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.pred_set.CARD_SING','thm.pred_set.FINITE_EMPTY')).
+fof(f72,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f72_D])).
+fof(f72_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f53,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.CARD_SING',aHL_FALSITY)).
+fof(f86,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl4),
+  inference(cnf_transformation,[],[f86_D])).
+fof(f86_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f2130,plain,(
+  ( ! [X2,X0] : (s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0')))))) ) | $spl32),
+  inference(cnf_transformation,[],[f2130_D])).
+fof(f2130_D,plain,(
+  ( ! [X2,X0] : (s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0')))))) ) <=> ~$spl32),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl32])])).
+fof(f2129,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) | s(bool,'F_0') = s(bool,X1)) ) | ($spl1 | $spl8)),
+  inference(forward_demodulation,[],[f2128,f63])).
+fof(f63,plain,(
+  ( ! [X2,X0,X1] : (s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))) )),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  ! [X0,X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(flattening,[],[f33])).
+fof(f33,plain,(
+  ! [X0] : ! [X1,X2] : s(X0,X2) = s(X0,'const.bool.COND_3'(s(bool,'F_0'),s(X0,X1),s(X0,X2)))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X6] : ! [X8,X9] : s(X6,X9) = s(X6,'const.bool.COND_3'(s(bool,'F_0'),s(X6,X8),s(X6,X9)))),
+  file('thm.pred_set.CARD_SING','thm.bool.COND_CLAUSES|split|1')).
+fof(f2128,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.bool.COND_3'(s(bool,'F_0'),s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) | s(bool,'F_0') = s(bool,X1)) ) | ($spl1 | $spl8)),
+  inference(forward_demodulation,[],[f2127,f134])).
+fof(f134,plain,(
+  ( ! [X0,X1] : (s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) ) | $spl8),
+  inference(resolution,[],[f61,f98])).
+fof(f61,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ! [X0,X1] : ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(flattening,[],[f29])).
+fof(f29,plain,(
+  ! [X0] : ! [X1] : ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X6] : ! [X7] : ~p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.pred_set.CARD_SING','thm.pred_set.NOT_IN_EMPTY')).
+fof(f2127,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s('type.num.num','const.num.|48|_0'),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))))) | s(bool,'F_0') = s(bool,X1)) ) | ($spl1 | $spl8)),
+  inference(forward_demodulation,[],[f2126,f55])).
+fof(f55,plain,(
+  ( ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))) )),
+  inference(cnf_transformation,[],[f23])).
+fof(f23,plain,(
+  ! [X0] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))),
+  inference(rectify,[],[f17])).
+fof(f17,axiom,(
+  ! [X6] : s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),'const.pred_set.EMPTY_0')))),
+  file('thm.pred_set.CARD_SING','thm.pred_set.CARD_DEF|split|0')).
+fof(f2126,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))))) | s(bool,'F_0') = s(bool,X1)) ) | ($spl1 | $spl8)),
+  inference(subsumption_resolution,[],[f2110,f98])).
+fof(f2110,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,X1)) | s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))))) | s(bool,'F_0') = s(bool,X1)) ) | ($spl1 | $spl8)),
+  inference(superposition,[],[f58,f260])).
+fof(f260,plain,(
+  ( ! [X8,X7] : (s(bool,X8) = s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),'const.pred_set.EMPTY_0'))) | s(bool,'F_0') = s(bool,X8)) ) | ($spl1 | $spl8)),
+  inference(subsumption_resolution,[],[f256,f50])).
+fof(f50,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f8])).
+fof(f8,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.pred_set.CARD_SING','thm.bool.TRUTH')).
+fof(f256,plain,(
+  ( ! [X8,X7] : (~p(s(bool,'T_0')) | s(bool,X8) = s(bool,'const.pred_set.FINITE_1'(s(fun(X7,bool),'const.pred_set.EMPTY_0'))) | s(bool,'F_0') = s(bool,X8)) ) | ($spl1 | $spl8)),
+  inference(superposition,[],[f150,f85])).
+fof(f85,plain,(
+  ( ! [X2] : (s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X2,bool),'const.pred_set.EMPTY_0')))) ) | $spl1),
+  inference(subsumption_resolution,[],[f81,f72])).
+fof(f81,plain,(
+  ( ! [X2] : (p(s(bool,'F_0')) | s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X2,bool),'const.pred_set.EMPTY_0')))) )),
+  inference(superposition,[],[f54,f56])).
+fof(f56,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.pred_set.CARD_SING',aHL_BOOL_CASES)).
+fof(f150,plain,(
+  ( ! [X2,X1] : (~p(s(bool,X1)) | s(bool,X1) = s(bool,X2) | s(bool,'F_0') = s(bool,X2)) ) | $spl8),
+  inference(resolution,[],[f68,f98])).
+fof(f68,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f58,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1)))))))) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | ! [X2] : s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))))))),
+  inference(ennf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X2),s(fun(X0,bool),X1))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),X1))))))))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X6] : ! [X11] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X11)))) => ! [X7] : s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),X11))))) = s('type.num.num','const.bool.COND_3'(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X11))),s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X11))),s('type.num.num','const.num.SUC_1'(s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),X11))))))))),
+  file('thm.pred_set.CARD_SING','thm.pred_set.CARD_DEF|split|1')).
+fof(f2339,plain,(
+  $false | $spl32),
+  inference(trivial_inequality_removal,[],[f2326])).
+fof(f2326,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) != s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) | $spl32),
+  inference(superposition,[],[f1003,f2130])).
+fof(f1003,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) != s('type.num.num','const.pred_set.CARD_1'(s(fun(sK0,bool),'const.pred_set.INSERT_2'(s(sK0,sK1),s(fun(sK0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(forward_demodulation,[],[f49,f52])).
+fof(f52,plain,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  s('type.num.num','const.num.SUC_1'(s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0')))))),
+  file('thm.pred_set.CARD_SING','thm.arithmetic.ONE')).
+fof(f49,plain,(
+  s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) != s('type.num.num','const.pred_set.CARD_1'(s(fun(sK0,bool),'const.pred_set.INSERT_2'(s(sK0,sK1),s(fun(sK0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) != s('type.num.num','const.pred_set.CARD_1'(s(fun(sK0,bool),'const.pred_set.INSERT_2'(s(sK0,sK1),s(fun(sK0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f40])).
+fof(f40,plain,(
+  ? [X0,X1] : s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) != s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(ennf_transformation,[],[f20])).
+fof(f20,plain,(
+  ~! [X0,X1] : s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(flattening,[],[f19])).
+fof(f19,plain,(
+  ~! [X0] : ! [X1] : s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X0,bool),'const.pred_set.INSERT_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.EMPTY_0')))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))) = s('type.num.num','const.pred_set.CARD_1'(s(fun(X6,bool),'const.pred_set.INSERT_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.EMPTY_0')))))),
+  file('thm.pred_set.CARD_SING','thm.pred_set.CARD_SING')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 39
+% Passive clauses: 407
+% Generated clauses: 2204
+% Final active clauses: 33
+% Final passive clauses: 303
+% Input formulas: 17
+% Initial clauses: 21
+% 
+% Duplicate literals: 176
+% Trivial inequalities: 15
+% Fw subsumption resolutions: 148
+% Fw demodulations: 86
+% Bw demodulations: 4
+% 
+% Simple tautologies: 41
+% Equational tautologies: 33
+% Forward subsumptions: 1281
+% 
+% Binary resolution: 34
+% Factoring: 1
+% Forward superposition: 804
+% Backward superposition: 757
+% Self superposition: 84
+% Equality factoring: 62
+% Equality resolution: 1
+% 
+% Split clauses: 27
+% Split components: 54
+% SAT solver clauses: 52
+% SAT solver unit clauses: 4
+% SAT solver binary clauses: 10
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 27
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 51
+% TWLsolver calls for satisfiability: 13
+% 
+% Memory used [KB]: 1918
+% Time elapsed: 0.054 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.056 s

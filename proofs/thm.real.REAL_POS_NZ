@@ -1,0 +1,99 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.real
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.real
+% SZS output start Proof for thm.real
+fof(f63,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f59])).
+fof(f59,plain,(
+  s('type.realax.real',sK0) != s('type.realax.real',sK0)),
+  inference(resolution,[],[f31,f33])).
+fof(f33,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',sK0),s('type.realax.real',sK0))))),
+  inference(forward_demodulation,[],[f24,f25])).
+fof(f25,plain,(
+  s('type.realax.real',sK0) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))),
+  inference(cnf_transformation,[],[f21])).
+fof(f21,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',sK0)))) & s('type.realax.real',sK0) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f18])).
+fof(f18,plain,(
+  ? [X0] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) & s('type.realax.real',X0) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(ennf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~! [X0] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) => s('type.realax.real',X0) != s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(flattening,[],[f9])).
+fof(f9,plain,(
+  ~! [X0] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X0)))) => ~s('type.realax.real',X0) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X6)))) => ~s('type.realax.real',X6) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',X6)))) => ~s('type.realax.real',X6) = s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))))),
+  file('thm.real.REAL_POS_NZ','thm.real.REAL_POS_NZ')).
+fof(f24,plain,(
+  p(s(bool,'const.realax.real_lt_2'(s('type.realax.real','const.real.real_of_num_1'(s('type.num.num','const.num.|48|_0'))),s('type.realax.real',sK0))))),
+  inference(cnf_transformation,[],[f21])).
+fof(f31,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | s('type.realax.real',X0) != s('type.realax.real',X1)) )),
+  inference(cnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) | s('type.realax.real',X0) != s('type.realax.real',X1))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) => s('type.realax.real',X0) != s('type.realax.real',X1))),
+  inference(flattening,[],[f14])).
+fof(f14,plain,(
+  ! [X0,X1] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X0),s('type.realax.real',X1)))) => ~s('type.realax.real',X0) = s('type.realax.real',X1))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6,X8] : (p(s(bool,'const.realax.real_lt_2'(s('type.realax.real',X6),s('type.realax.real',X8)))) => ~s('type.realax.real',X6) = s('type.realax.real',X8))),
+  file('thm.real.REAL_POS_NZ','thm.real.REAL_LT_IMP_NE')).
+% SZS output end Proof for thm.real
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 9
+% Passive clauses: 19
+% Generated clauses: 40
+% Final active clauses: 7
+% Final passive clauses: 5
+% Input formulas: 7
+% Initial clauses: 9
+% 
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 3
+% Fw demodulations: 1
+% Bw demodulations: 1
+% 
+% Simple tautologies: 4
+% Equational tautologies: 1
+% Forward subsumptions: 6
+% 
+% Binary resolution: 1
+% Forward superposition: 8
+% Backward superposition: 7
+% Self superposition: 4
+% Equality factoring: 2
+% 
+% Split clauses: 1
+% Split components: 2
+% SAT solver clauses: 2
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 1
+% 
+% Sat splits: 1
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 2
+% TWLsolver calls for satisfiability: 2
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

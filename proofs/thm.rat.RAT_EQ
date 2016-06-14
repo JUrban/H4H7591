@@ -1,0 +1,235 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rat
+% SZS output start Proof for thm.rat
+fof(f1692,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1669,f28,f44,f42,f479,f27,f43,f41,f204,f206,f205,f238,f50,f53,f51,f62])).
+fof(f62,plain,(
+  $false | $spl4),
+  inference(resolution,[],[f59,f29])).
+fof(f29,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.rat.RAT_EQ',aHL_TRUTH)).
+fof(f59,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl4),
+  inference(superposition,[],[f31,f51])).
+fof(f31,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.rat.RAT_EQ',aHL_FALSITY)).
+fof(f51,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl4),
+  inference(cnf_transformation,[],[f51_D])).
+fof(f51_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f53,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl7),
+  inference(cnf_transformation,[],[f53_D])).
+fof(f53_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f50,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f32])).
+fof(f32,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.rat.RAT_EQ',aHL_BOOL_CASES)).
+fof(f238,plain,(
+  $false | ($spl7 | $spl8)),
+  inference(trivial_inequality_removal,[],[f235])).
+fof(f235,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl7 | $spl8)),
+  inference(superposition,[],[f53,f205])).
+fof(f205,plain,(
+  ( ! [X12] : (s(bool,'T_0') = s(bool,X12)) ) | $spl8),
+  inference(cnf_transformation,[],[f205_D])).
+fof(f205_D,plain,(
+  ( ! [X12] : (s(bool,'T_0') = s(bool,X12)) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f206,plain,(
+  ( ! [X10,X11] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X10))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X11))) | s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X10),s('type.frac.frac',X11)))) ) | $spl10),
+  inference(cnf_transformation,[],[f206_D])).
+fof(f206_D,plain,(
+  ( ! [X10,X11] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X10))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X11))) | s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X10),s('type.frac.frac',X11)))) ) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f204,plain,(
+  ( ! [X12,X10,X11] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X10))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X11))) | s(bool,'T_0') = s(bool,X12) | s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X10),s('type.frac.frac',X11)))) )),
+  inference(subsumption_resolution,[],[f118,f47])).
+fof(f47,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f31,f32])).
+fof(f118,plain,(
+  ( ! [X12,X10,X11] : (p(s(bool,X12)) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X10))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X11))) | s(bool,'T_0') = s(bool,X12) | s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X10),s('type.frac.frac',X11)))) )),
+  inference(superposition,[],[f37,f45])).
+fof(f45,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f32,f32])).
+fof(f37,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f25,plain,(
+  ! [X0,X1] : ((s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))) & (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))))),
+  inference(nnf_transformation,[],[f16])).
+fof(f16,plain,(
+  ! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) <=> p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X7] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X6))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X7))) <=> p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X7)))))),
+  file('thm.rat.RAT_EQ','thm.rat.RAT_ABS_EQUIV')).
+fof(f41,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) | $spl0),
+  inference(cnf_transformation,[],[f41_D])).
+fof(f41_D,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f43,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | $spl2),
+  inference(cnf_transformation,[],[f43_D])).
+fof(f43_D,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f27,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f22,plain,(
+  (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0)))))) & (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : ((s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0)))))) & (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0)))))))),
+  inference(nnf_transformation,[],[f19])).
+fof(f19,plain,(
+  ? [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) <~> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(ennf_transformation,[],[f11])).
+fof(f11,plain,(
+  ~! [X0,X1] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X6))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X7))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X6))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X7))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X7))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X6))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X7))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X6))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X7))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X7))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))))))),
+  file('thm.rat.RAT_EQ','thm.rat.RAT_EQ')).
+fof(f479,plain,(
+  $false | ($spl0 | $spl3 | $spl10)),
+  inference(subsumption_resolution,[],[f478,f44])).
+fof(f478,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | ($spl0 | $spl10)),
+  inference(subsumption_resolution,[],[f470,f29])).
+fof(f470,plain,(
+  ~p(s(bool,'T_0')) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | ($spl0 | $spl10)),
+  inference(superposition,[],[f35,f302])).
+fof(f302,plain,(
+  s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',sK0))) | ($spl0 | $spl10)),
+  inference(equality_resolution,[],[f283])).
+fof(f283,plain,(
+  ( ! [X0] : (s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) | s(bool,'T_0') = s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK1),s('type.frac.frac',X0)))) ) | ($spl0 | $spl10)),
+  inference(superposition,[],[f206,f41])).
+fof(f35,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0)))))) )),
+  inference(cnf_transformation,[],[f24])).
+fof(f24,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0)))))) & (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))))),
+  inference(nnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7] : (p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X6),s('type.frac.frac',X7)))) <=> s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X6))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X7))))) = s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X7))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X6))))))),
+  file('thm.rat.RAT_EQ','thm.rat.rat_equiv_def')).
+fof(f42,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) | $spl1),
+  inference(cnf_transformation,[],[f42_D])).
+fof(f42_D,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f44,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | $spl3),
+  inference(cnf_transformation,[],[f44_D])).
+fof(f44_D,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f28,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK0))))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) != s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1)))),
+  inference(cnf_transformation,[],[f22])).
+fof(f1669,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(subsumption_resolution,[],[f1646,f42])).
+fof(f1646,plain,(
+  s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',sK1))) | $spl2),
+  inference(resolution,[],[f1642,f38])).
+fof(f38,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1)))) | s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X0))) = s('type.rat.rat','const.rat.abs_rat_1'(s('type.frac.frac',X1)))) )),
+  inference(cnf_transformation,[],[f25])).
+fof(f1642,plain,(
+  p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK1)))) | $spl2),
+  inference(trivial_inequality_removal,[],[f1640])).
+fof(f1640,plain,(
+  s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',sK0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',sK1))))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',sK0),s('type.frac.frac',sK1)))) | $spl2),
+  inference(superposition,[],[f36,f43])).
+fof(f36,plain,(
+  ( ! [X0,X1] : (s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X0))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X1))))) != s('type.integer.int','const.integer.int_mul_2'(s('type.integer.int','const.frac.frac_nmr_1'(s('type.frac.frac',X1))),s('type.integer.int','const.frac.frac_dnm_1'(s('type.frac.frac',X0))))) | p(s(bool,'const.rat.rat_equiv_2'(s('type.frac.frac',X0),s('type.frac.frac',X1))))) )),
+  inference(cnf_transformation,[],[f24])).
+% SZS output end Proof for thm.rat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 35
+% Passive clauses: 157
+% Generated clauses: 1579
+% Final active clauses: 24
+% Final passive clauses: 109
+% Input formulas: 9
+% Initial clauses: 13
+% 
+% Duplicate literals: 245
+% Trivial inequalities: 27
+% Fw subsumption resolutions: 109
+% Fw demodulations: 30
+% Bw demodulations: 2
+% 
+% Simple tautologies: 52
+% Equational tautologies: 41
+% Forward subsumptions: 760
+% 
+% Binary resolution: 17
+% Forward superposition: 395
+% Backward superposition: 435
+% Self superposition: 142
+% Equality factoring: 128
+% Equality resolution: 5
+% 
+% Split clauses: 117
+% Split components: 234
+% SAT solver clauses: 168
+% SAT solver unit clauses: 22
+% SAT solver binary clauses: 77
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 117
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 155
+% TWLsolver calls for satisfiability: 15
+% 
+% Memory used [KB]: 1407
+% Time elapsed: 0.052 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.058 s

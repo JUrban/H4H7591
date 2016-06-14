@@ -1,0 +1,219 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% (74199)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 901
+% Passive clauses: 6672
+% Generated clauses: 31211
+% Final active clauses: 707
+% Final passive clauses: 5444
+% Input formulas: 131
+% Initial clauses: 318
+% 
+% Duplicate literals: 185
+% Trivial inequalities: 61
+% Fw subsumption resolutions: 1667
+% Fw demodulations: 3406
+% Bw demodulations: 176
+% 
+% Simple tautologies: 229
+% Equational tautologies: 23
+% Forward subsumptions: 18568
+% Fw demodulations to eq. taut.: 13
+% 
+% Binary resolution: 5466
+% Factoring: 860
+% Forward superposition: 8623
+% Backward superposition: 10442
+% Self superposition: 52
+% Equality factoring: 2
+% Equality resolution: 11
+% 
+% Split clauses: 462
+% Split components: 926
+% SAT solver clauses: 652
+% SAT solver unit clauses: 15
+% SAT solver binary clauses: 75
+% 
+% Sat splits: 462
+% Sat splitting refutations: 11
+% 
+% TWLsolver clauses: 652
+% TWLsolver calls for satisfiability: 372
+% 
+% Memory used [KB]: 17142
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 293 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f18450,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f18449,f461,f803,f462,f805,f515,f854,f1030,f1034,f473,f820,f521,f857])).
+fof(f857,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) | $spl86),
+  inference(cnf_transformation,[],[f857_D])).
+fof(f857_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) ) <=> ~$spl86),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl86])])).
+fof(f521,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,X0) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f343])).
+fof(f343,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f183])).
+fof(f183,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f55])).
+fof(f55,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.pred_set.MAX_SET_THM|split|0','thm.bool.EQ_CLAUSES|split|0')).
+fof(f820,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) ) | $spl14),
+  inference(cnf_transformation,[],[f820_D])).
+fof(f820_D,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) ) <=> ~$spl14),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl14])])).
+fof(f473,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f138])).
+fof(f138,plain,(
+  ! [X0] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f120])).
+fof(f120,axiom,(
+  ! [X12] : p(s(bool,'const.pred_set.FINITE_1'(s(fun(X12,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.pred_set.MAX_SET_THM|split|0','thm.pred_set.FINITE_EMPTY')).
+fof(f1034,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))) ) | $spl360),
+  inference(cnf_transformation,[],[f1034_D])).
+fof(f1034_D,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))) ) <=> ~$spl360),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl360])])).
+fof(f1030,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),'const.pred_set.EMPTY_0')))) ) | ($spl14 | $spl86)),
+  inference(resolution,[],[f857,f820])).
+fof(f854,plain,(
+  ( ! [X0] : (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) | s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) ) | $spl80),
+  inference(cnf_transformation,[],[f854_D])).
+fof(f854_D,plain,(
+  ( ! [X0] : (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) | s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) ) <=> ~$spl80),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl80])])).
+fof(f515,plain,(
+  ( ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))) | s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) )),
+  inference(cnf_transformation,[],[f295])).
+fof(f295,plain,(
+  ! [X0] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) | ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) | (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (~p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) | s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(ennf_transformation,[],[f180])).
+fof(f180,plain,(
+  ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) => ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(flattening,[],[f179])).
+fof(f179,plain,(
+  ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) => ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(rectify,[],[f122])).
+fof(f122,axiom,(
+  ! [X26] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X26)))) => ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X26) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X26))),s(fun('type.num.num',bool),X26)))) & ! [X15] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X15),s(fun('type.num.num',bool),X26)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X15),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X26))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X26) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X26))))))),
+  file('thm.pred_set.MAX_SET_THM|split|0','thm.pred_set.MAX_SET_DEF')).
+fof(f805,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f805_D])).
+fof(f805_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f462,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.pred_set.MAX_SET_THM|split|0',aHL_TRUTH)).
+fof(f803,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0'))) | $spl1),
+  inference(cnf_transformation,[],[f803_D])).
+fof(f803_D,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0'))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f461,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))),
+  inference(cnf_transformation,[],[f133])).
+fof(f133,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))),
+  inference(flattening,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))),
+  file('thm.pred_set.MAX_SET_THM|split|0','thm.pred_set.MAX_SET_THM|split|0')).
+fof(f18449,plain,(
+  $false | ($spl1 | $spl2 | $spl80 | $spl360)),
+  inference(subsumption_resolution,[],[f18448,f805])).
+fof(f18448,plain,(
+  ~p(s(bool,'T_0')) | ($spl1 | $spl80 | $spl360)),
+  inference(forward_demodulation,[],[f18447,f1034])).
+fof(f18447,plain,(
+  ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))) | ($spl1 | $spl80)),
+  inference(subsumption_resolution,[],[f18442,f803])).
+fof(f18442,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0'))) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),'const.pred_set.EMPTY_0')))) | $spl80),
+  inference(equality_resolution,[],[f854])).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 458
+% Passive clauses: 2251
+% Generated clauses: 18178
+% Final active clauses: 421
+% Final passive clauses: 1450
+% Input formulas: 131
+% Initial clauses: 318
+% 
+% Duplicate literals: 82
+% Trivial inequalities: 39
+% Fw subsumption resolutions: 714
+% Fw demodulations: 2569
+% Bw demodulations: 354
+% Condensations: 80
+% Global subsumptions: 25
+% 
+% Simple tautologies: 223
+% Equational tautologies: 9
+% Forward subsumptions: 9597
+% Fw demodulations to eq. taut.: 15
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 1909
+% Factoring: 192
+% Forward superposition: 5323
+% Backward superposition: 4210
+% Self superposition: 58
+% Equality factoring: 2
+% Equality resolution: 9
+% 
+% Split clauses: 9
+% Split components: 18
+% SAT solver clauses: 2827
+% SAT solver unit clauses: 381
+% SAT solver binary clauses: 89
+% SAT solver learnt clauses: 51
+% SAT solver learnt literals: 14
+% 
+% Sat splits: 9
+% Sat splitting refutations: 13
+% 
+% TWLsolver clauses: 2726
+% TWLsolver calls for satisfiability: 2045
+% 
+% Memory used [KB]: 17654
+% Time elapsed: 0.410 s
+% ------------------------------
+% ------------------------------
+% Success in time 1.042 s

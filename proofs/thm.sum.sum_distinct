@@ -1,0 +1,92 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.sum
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sum
+% SZS output start Proof for thm.sum
+fof(f434,plain,(
+  $false),
+  inference(equality_resolution,[],[f432])).
+fof(f432,plain,(
+  ( ! [X0] : (s('type.sum.sum'(sK1,sK2),'const.sum.INL_1'(s(sK1,sK3))) != s('type.sum.sum'(sK1,sK2),'const.sum.INL_1'(s(sK1,X0)))) )),
+  inference(superposition,[],[f225,f146])).
+fof(f146,plain,(
+  s('type.sum.sum'(sK1,sK2),'const.sum.INL_1'(s(sK1,sK3))) = s('type.sum.sum'(sK1,sK2),'const.sum.INR_1'(s(sK2,sK4)))),
+  inference(cnf_transformation,[],[f100])).
+fof(f100,plain,(
+  s('type.sum.sum'(sK1,sK2),'const.sum.INL_1'(s(sK1,sK3))) = s('type.sum.sum'(sK1,sK2),'const.sum.INR_1'(s(sK2,sK4)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK1,sK2,sK3,sK4])],[f91])).
+fof(f91,plain,(
+  ? [X0,X1,X2,X3] : s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,X2))) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X3)))),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1,X2,X3] : s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,X2))) != s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X3)))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0,X1] : ! [X2,X3] : ~s('type.sum.sum'(X0,X1),'const.sum.INL_1'(s(X0,X2))) = s('type.sum.sum'(X0,X1),'const.sum.INR_1'(s(X1,X3)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8,X9] : ~s('type.sum.sum'(X6,X7),'const.sum.INL_1'(s(X6,X8))) = s('type.sum.sum'(X6,X7),'const.sum.INR_1'(s(X7,X9)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8,X9] : ~s('type.sum.sum'(X6,X7),'const.sum.INL_1'(s(X6,X8))) = s('type.sum.sum'(X6,X7),'const.sum.INR_1'(s(X7,X9)))),
+  file('thm.sum.sum_distinct','thm.sum.sum_distinct')).
+fof(f225,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) != s('type.sum.sum'(X1,X0),'const.sum.INR_1'(s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f85])).
+fof(f85,plain,(
+  ! [X0,X1,X2,X3] : s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) != s('type.sum.sum'(X1,X0),'const.sum.INR_1'(s(X0,X3)))),
+  inference(flattening,[],[f84])).
+fof(f84,plain,(
+  ! [X0,X1] : ! [X2,X3] : ~s('type.sum.sum'(X1,X0),'const.sum.INL_1'(s(X1,X2))) = s('type.sum.sum'(X1,X0),'const.sum.INR_1'(s(X0,X3)))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X7,X6] : ! [X14,X15] : ~s('type.sum.sum'(X6,X7),'const.sum.INL_1'(s(X6,X14))) = s('type.sum.sum'(X6,X7),'const.sum.INR_1'(s(X7,X15)))),
+  file('thm.sum.sum_distinct','thm.sum.INR_neq_INL')).
+% SZS output end Proof for thm.sum
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 24
+% Passive clauses: 89
+% Generated clauses: 279
+% Final active clauses: 20
+% Final passive clauses: 51
+% Input formulas: 37
+% Initial clauses: 84
+% 
+% Duplicate literals: 3
+% Trivial inequalities: 4
+% Fw subsumption resolutions: 14
+% Fw demodulations: 28
+% Bw demodulations: 4
+% 
+% Simple tautologies: 30
+% Equational tautologies: 6
+% Forward subsumptions: 102
+% 
+% Binary resolution: 31
+% Factoring: 1
+% Forward superposition: 62
+% Backward superposition: 38
+% Self superposition: 3
+% Equality factoring: 2
+% Equality resolution: 2
+% 
+% Split clauses: 13
+% Split components: 26
+% SAT solver clauses: 16
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 11
+% 
+% Sat splits: 13
+% 
+% TWLsolver clauses: 16
+% TWLsolver calls for satisfiability: 4
+% 
+% Memory used [KB]: 767
+% Time elapsed: 0.019 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.015 s

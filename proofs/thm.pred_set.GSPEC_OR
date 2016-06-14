@@ -1,0 +1,294 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% (106622)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 210
+% Passive clauses: 4549
+% Generated clauses: 24037
+% Final active clauses: 145
+% Final passive clauses: 4029
+% Input formulas: 68
+% Initial clauses: 143
+% 
+% Duplicate literals: 736
+% Trivial inequalities: 219
+% Fw subsumption resolutions: 3052
+% Fw demodulations: 4979
+% Bw demodulations: 62
+% 
+% Simple tautologies: 383
+% Equational tautologies: 66
+% Forward subsumptions: 9443
+% Bw demodulations to eq. taut.: 1
+% 
+% Binary resolution: 1386
+% Factoring: 2
+% Forward superposition: 6290
+% Backward superposition: 6731
+% Self superposition: 134
+% Equality factoring: 108
+% Equality resolution: 31
+% 
+% Split clauses: 542
+% Split components: 1101
+% SAT solver clauses: 875
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 181
+% 
+% Sat splits: 542
+% Sat splitting refutations: 7
+% 
+% TWLsolver clauses: 873
+% TWLsolver calls for satisfiability: 193
+% 
+% Memory used [KB]: 11129
+% Time elapsed: 0.600 s
+% ------------------------------
+% ------------------------------
+% remaining time: 144 next slice time: 6
+lrs-11_2_cond=on:fde=unused:gs=on:nwc=3:stl=30:sdd=off:sfr=on:ssfp=100000:ssfq=1.4:smm=sco:ssnc=all_4 on thm.pred_set
+% (106639)Time limit reached!
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Time limit
+% Termination phase: Saturation
+
+% Active clauses: 155
+% Passive clauses: 1543
+% Generated clauses: 17435
+% Final active clauses: 140
+% Final passive clauses: 1239
+% Input formulas: 68
+% Initial clauses: 143
+% 
+% Duplicate literals: 486
+% Trivial inequalities: 63
+% Fw subsumption resolutions: 1323
+% Fw demodulations: 3451
+% Bw demodulations: 162
+% Condensations: 587
+% Global subsumptions: 6
+% 
+% Simple tautologies: 180
+% Equational tautologies: 44
+% Forward subsumptions: 7310
+% 
+% Binary resolution: 845
+% Factoring: 2
+% Forward superposition: 4672
+% Backward superposition: 4199
+% Self superposition: 72
+% Equality factoring: 42
+% Equality resolution: 11
+% 
+% Split clauses: 119
+% Split components: 238
+% SAT solver clauses: 2569
+% SAT solver unit clauses: 152
+% SAT solver binary clauses: 54
+% SAT solver learnt clauses: 12
+% 
+% Sat splits: 119
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 2545
+% TWLsolver calls for satisfiability: 822
+% 
+% Memory used [KB]: 13816
+% Time elapsed: 0.700 s
+% ------------------------------
+% ------------------------------
+% remaining time: 137 next slice time: 103
+lrs+11_2_br=off:cond=on:fde=none:gs=on:gsaa=full_model:lwlo=on:nwc=2:sas=minisat:stl=30:ssfp=100000:ssfq=1.4:smm=sco:ssnc=none:sp=occurrence:urr=on_98 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f57012,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f57011,f270])).
+fof(f270,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.pred_set.GSPEC_OR',aHL_TRUTH)).
+fof(f57011,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(forward_demodulation,[],[f57002,f15706])).
+fof(f15706,plain,(
+  ( ! [X0,X1] : (s(bool,'T_0') = s(bool,happ(s(fun(fun(X0,bool),bool),'=_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),X1)))) )),
+  inference(unit_resulting_resolution,[],[f270,f15053,f350])).
+fof(f350,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f186])).
+fof(f186,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f185])).
+fof(f185,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f137])).
+fof(f137,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f31])).
+fof(f31,axiom,(
+  ! [X27,X28] : ((p(s(bool,X27)) => p(s(bool,X28))) => ((p(s(bool,X28)) => p(s(bool,X27))) => s(bool,X27) = s(bool,X28)))),
+  file('thm.pred_set.GSPEC_OR','thm.bool.IMP_ANTISYM_AX')).
+fof(f15053,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(fun(X0,bool),bool),'=_1'(s(fun(X0,bool),X1))),s(fun(X0,bool),X1))))) )),
+  inference(forward_demodulation,[],[f15015,f305])).
+fof(f305,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))) )),
+  inference(cnf_transformation,[],[f91])).
+fof(f91,plain,(
+  ! [X0,X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f90])).
+fof(f90,plain,(
+  ! [X0] : ! [X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X6] : ! [X7] : s(fun(X6,bool),X7) = s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X7)))))),
+  file('thm.pred_set.GSPEC_OR','thm.pred_set.GSPEC_ETA')).
+fof(f15015,plain,(
+  ( ! [X0,X1] : (p(s(bool,happ(s(fun(fun(X0,bool),bool),'=_1'(s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1))))))),s(fun(X0,bool),X1))))) )),
+  inference(unit_resulting_resolution,[],[f305,f389])).
+fof(f389,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) != s(X0,X2)) )),
+  inference(cnf_transformation,[],[f263])).
+fof(f263,plain,(
+  ! [X0,X1,X2] : ((~p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) & (s(X0,X1) != s(X0,X2) | p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2))))))),
+  inference(nnf_transformation,[],[f161])).
+fof(f161,plain,(
+  ! [X0,X1,X2] : (p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) <=> s(X0,X1) = s(X0,X2))),
+  inference(rectify,[],[f62])).
+fof(f62,axiom,(
+  ! [X24,X19,X20] : (p(s(bool,happ(s(fun(X24,bool),'=_1'(s(X24,X19))),s(X24,X20)))) <=> s(X24,X19) = s(X24,X20))),
+  file('thm.pred_set.GSPEC_OR',arity_1_HL_EQ)).
+fof(f57002,plain,(
+  ~p(s(bool,happ(s(fun(fun(sK0,bool),bool),'=_1'(s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))),s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))))),
+  inference(backward_demodulation,[],[f56307,f747])).
+fof(f747,plain,(
+  ~p(s(bool,happ(s(fun(fun(sK0,bool),bool),'=_1'(s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))),s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))))),
+  inference(unit_resulting_resolution,[],[f428,f388])).
+fof(f388,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,happ(s(fun(X0,bool),'=_1'(s(X0,X1))),s(X0,X2)))) | s(X0,X1) = s(X0,X2)) )),
+  inference(cnf_transformation,[],[f263])).
+fof(f428,plain,(
+  s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))) != s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2)))),
+  inference(forward_demodulation,[],[f427,f305])).
+fof(f427,plain,(
+  s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))) != s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK1))))),s(fun(sK0,bool),sK2)))),
+  inference(forward_demodulation,[],[f426,f305])).
+fof(f426,plain,(
+  s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK1))))),s(fun(sK0,bool),sK2))) != s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2)))))))),
+  inference(backward_demodulation,[],[f305,f269])).
+fof(f269,plain,(
+  s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))))) != s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK1))))),s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK2)))))))),
+  inference(cnf_transformation,[],[f196])).
+fof(f196,plain,(
+  s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(sK0,bool),sK1),s(fun(sK0,bool),sK2))))))) != s(fun(sK0,bool),'const.pred_set.UNION_2'(s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK1))))),s(fun(sK0,bool),'const.pred_set.GSPEC_1'(s(fun(sK0,'type.pair.prod'(sK0,bool)),'_dst_x1x1_2'(s(fun(sK0,fun(bool,'type.pair.prod'(sK0,bool))),'const.pair.,_0'),s(fun(sK0,bool),sK2)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f177])).
+fof(f177,plain,(
+  ? [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))) != s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1))))),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(ennf_transformation,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1))))),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(flattening,[],[f70])).
+fof(f70,plain,(
+  ~! [X0] : ! [X1,X2] : s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),X1),s(fun(X0,bool),X2))))))) = s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X1))))),s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),X2)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X6,bool),X7),s(fun(X6,bool),X8))))))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X7))))),s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X8)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X6,bool),X7),s(fun(X6,bool),X8))))))) = s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X7))))),s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),X8)))))))),
+  file('thm.pred_set.GSPEC_OR','thm.pred_set.GSPEC_OR')).
+fof(f56307,plain,(
+  ( ! [X4,X5,X3] : (s(fun(X3,bool),'const.pred_set.UNION_2'(s(fun(X3,bool),X4),s(fun(X3,bool),X5))) = s(fun(X3,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X3,bool),X4),s(fun(X3,bool),X5)))) )),
+  inference(superposition,[],[f49535,f305])).
+fof(f49535,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),X1),s(fun(X0,bool),X2)))))))) )),
+  inference(forward_demodulation,[],[f49514,f48906])).
+fof(f48906,plain,(
+  ( ! [X2,X3] : (s(fun(X2,bool),X3) = s(fun(X2,bool),'_dst_x1x0_2'(s(fun(X2,fun(fun(X2,bool),bool)),'const.bool.IN_0'),s(fun(X2,bool),X3)))) )),
+  inference(superposition,[],[f307,f305])).
+fof(f307,plain,(
+  ( ! [X0,X1] : (s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1)))))))) )),
+  inference(cnf_transformation,[],[f95])).
+fof(f95,plain,(
+  ! [X0,X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1)))))))),
+  inference(flattening,[],[f94])).
+fof(f94,plain,(
+  ! [X0] : ! [X1] : s(fun(X0,bool),X1) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1)))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X6] : ! [X26] : s(fun(X6,bool),X26) = s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X26)))))))),
+  file('thm.pred_set.GSPEC_OR','thm.pred_set.GSPEC_ID')).
+fof(f49514,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),X1),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X2)))))))))) )),
+  inference(backward_demodulation,[],[f48906,f331])).
+fof(f331,plain,(
+  ( ! [X2,X0,X1] : (s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X2)))))))))) )),
+  inference(cnf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0,X1,X2] : s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X2)))))))))),
+  inference(flattening,[],[f121])).
+fof(f121,plain,(
+  ! [X0] : ! [X1,X2] : s(fun(X0,bool),'const.pred_set.UNION_2'(s(fun(X0,bool),X1),s(fun(X0,bool),X2))) = s(fun(X0,bool),'const.pred_set.GSPEC_1'(s(fun(X0,'type.pair.prod'(X0,bool)),'_dst_x1x1_2'(s(fun(X0,fun(bool,'type.pair.prod'(X0,bool))),'const.pair.,_0'),s(fun(X0,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X1))),s(fun(X0,bool),'_dst_x1x0_2'(s(fun(X0,fun(fun(X0,bool),bool)),'const.bool.IN_0'),s(fun(X0,bool),X2)))))))))),
+  inference(rectify,[],[f12])).
+fof(f12,axiom,(
+  ! [X6] : ! [X21,X22] : s(fun(X6,bool),'const.pred_set.UNION_2'(s(fun(X6,bool),X21),s(fun(X6,bool),X22))) = s(fun(X6,bool),'const.pred_set.GSPEC_1'(s(fun(X6,'type.pair.prod'(X6,bool)),'_dst_x1x1_2'(s(fun(X6,fun(bool,'type.pair.prod'(X6,bool))),'const.pair.,_0'),s(fun(X6,bool),'_dst_x0x1x1_3'(s(fun(bool,fun(bool,bool)),'|bslash||slash|_0'),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X21))),s(fun(X6,bool),'_dst_x1x0_2'(s(fun(X6,fun(fun(X6,bool),bool)),'const.bool.IN_0'),s(fun(X6,bool),X22)))))))))),
+  file('thm.pred_set.GSPEC_OR','thm.pred_set.UNION_DEF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 377
+% Passive clauses: 3855
+% Generated clauses: 57650
+% Final active clauses: 161
+% Final passive clauses: 2004
+% Input formulas: 68
+% Initial clauses: 143
+% 
+% Duplicate literals: 1157
+% Trivial inequalities: 124
+% Fw subsumption resolutions: 2928
+% Fw demodulations: 17628
+% Bw demodulations: 1266
+% Condensations: 1389
+% Global subsumptions: 13
+% 
+% Simple tautologies: 249
+% Equational tautologies: 251
+% Forward subsumptions: 24721
+% Fw demodulations to eq. taut.: 5037
+% Bw demodulations to eq. taut.: 61
+% 
+% Unit resulting resolution: 9835
+% Factoring: 8
+% Forward superposition: 12137
+% Backward superposition: 9430
+% Self superposition: 119
+% Equality factoring: 46
+% Equality resolution: 19
+% 
+% Split clauses: 18
+% Split components: 36
+% SAT solver clauses: 4088
+% SAT solver unit clauses: 654
+% SAT solver binary clauses: 1176
+% 
+% Sat splits: 18
+% Sat splitting refutations: 182
+% 
+% Memory used [KB]: 32366
+% Time elapsed: 1.519 s
+% ------------------------------
+% ------------------------------
+% Success in time 2.81 s

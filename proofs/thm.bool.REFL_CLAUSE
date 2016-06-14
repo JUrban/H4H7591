@@ -1,0 +1,78 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.bool
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.bool
+% SZS output start Proof for thm.bool
+fof(f59,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f36,f52])).
+fof(f52,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f35])).
+fof(f35,plain,(
+  ~p(s(bool,'T_0')) | s(sK0,sK1) != s(sK0,sK1)),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  (s(sK0,sK1) = s(sK0,sK1) | p(s(bool,'T_0'))) & (s(sK0,sK1) != s(sK0,sK1) | ~p(s(bool,'T_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f25])).
+fof(f25,plain,(
+  ? [X0,X1] : ((s(X0,X1) = s(X0,X1) | p(s(bool,'T_0'))) & (s(X0,X1) != s(X0,X1) | ~p(s(bool,'T_0'))))),
+  inference(nnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ? [X0,X1] : (s(X0,X1) = s(X0,X1) <~> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f12])).
+fof(f12,plain,(
+  ~! [X0,X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ~! [X0] : ! [X1] : (s(X0,X1) = s(X0,X1) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (s(X6,X7) = s(X6,X7) <=> p(s(bool,'T_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (s(X6,X7) = s(X6,X7) <=> p(s(bool,'T_0')))),
+  file('thm.bool.REFL_CLAUSE','thm.bool.REFL_CLAUSE')).
+fof(f36,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.bool.REFL_CLAUSE',aHL_TRUTH)).
+% SZS output end Proof for thm.bool
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 1
+% Passive clauses: 11
+% Generated clauses: 23
+% Final active clauses: 1
+% Final passive clauses: 9
+% Input formulas: 9
+% Initial clauses: 17
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 3
+% Equational tautologies: 2
+% 
+% Split clauses: 3
+% Split components: 6
+% SAT solver clauses: 4
+% SAT solver unit clauses: 1
+% SAT solver binary clauses: 3
+% 
+% Sat splits: 3
+% 
+% TWLsolver clauses: 4
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 511
+% Time elapsed: 0.007 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.007 s

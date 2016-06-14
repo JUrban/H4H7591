@@ -1,0 +1,89 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.hreal
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.hreal
+% SZS output start Proof for thm.hreal
+fof(f106,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f105,f48])).
+fof(f48,plain,(
+  s('type.hreal.hreal',sK0) != s('type.hreal.hreal',sK1)),
+  inference(cnf_transformation,[],[f34])).
+fof(f34,plain,(
+  s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',sK0))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',sK1))) & s('type.hreal.hreal',sK0) != s('type.hreal.hreal',sK1)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f27])).
+fof(f27,plain,(
+  ? [X0,X1] : (s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X0))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X1))) & s('type.hreal.hreal',X0) != s('type.hreal.hreal',X1))),
+  inference(ennf_transformation,[],[f15])).
+fof(f15,plain,(
+  ~! [X0,X1] : (s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X0))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X1))) => s('type.hreal.hreal',X0) = s('type.hreal.hreal',X1))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : (s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X6))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X7))) => s('type.hreal.hreal',X6) = s('type.hreal.hreal',X7))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : (s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X6))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X7))) => s('type.hreal.hreal',X6) = s('type.hreal.hreal',X7))),
+  file('thm.hreal.EQUAL_CUTS','thm.hreal.EQUAL_CUTS')).
+fof(f105,plain,(
+  s('type.hreal.hreal',sK0) = s('type.hreal.hreal',sK1)),
+  inference(forward_demodulation,[],[f104,f52])).
+fof(f52,plain,(
+  ( ! [X0] : (s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_1'(s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X0)))))) )),
+  inference(cnf_transformation,[],[f17])).
+fof(f17,plain,(
+  ! [X0] : s('type.hreal.hreal',X0) = s('type.hreal.hreal','const.hreal.hreal_1'(s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X0)))))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X9] : s('type.hreal.hreal',X9) = s('type.hreal.hreal','const.hreal.hreal_1'(s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',X9)))))),
+  file('thm.hreal.EQUAL_CUTS','thm.hreal.hreal_tybij|split|0')).
+fof(f104,plain,(
+  s('type.hreal.hreal',sK1) = s('type.hreal.hreal','const.hreal.hreal_1'(s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',sK0)))))),
+  inference(superposition,[],[f52,f47])).
+fof(f47,plain,(
+  s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',sK0))) = s(fun('type.hrat.hrat',bool),'const.hreal.cut_1'(s('type.hreal.hreal',sK1)))),
+  inference(cnf_transformation,[],[f34])).
+% SZS output end Proof for thm.hreal
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 11
+% Passive clauses: 23
+% Generated clauses: 59
+% Final active clauses: 8
+% Final passive clauses: 4
+% Input formulas: 13
+% Initial clauses: 25
+% 
+% Duplicate literals: 1
+% Fw subsumption resolutions: 2
+% Fw demodulations: 1
+% 
+% Simple tautologies: 9
+% Equational tautologies: 2
+% Forward subsumptions: 9
+% 
+% Binary resolution: 2
+% Forward superposition: 6
+% Backward superposition: 7
+% Self superposition: 5
+% Equality factoring: 2
+% 
+% Split clauses: 9
+% Split components: 19
+% SAT solver clauses: 15
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 10
+% 
+% Sat splits: 9
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 15
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.012 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

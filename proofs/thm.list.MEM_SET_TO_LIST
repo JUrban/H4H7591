@@ -1,0 +1,188 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f8706,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f8687,f215,f380,f894,f896,f382,f8523])).
+fof(f8523,plain,(
+  $false | $spl19),
+  inference(subsumption_resolution,[],[f8522,f896])).
+fof(f8522,plain,(
+  s(bool,'T_0') = s(bool,'F_0')),
+  inference(forward_demodulation,[],[f8521,f392])).
+fof(f392,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK14)))),
+  inference(resolution,[],[f223,f207])).
+fof(f207,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK14))))),
+  inference(cnf_transformation,[],[f132])).
+fof(f132,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK14)))) & s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),sK14))) != s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(sK13),'const.list.SET_TO_LIST_1'(s(fun(sK13,bool),sK14)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13,sK14,sK15])],[f89])).
+fof(f89,plain,(
+  ? [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) & ? [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) != s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(ennf_transformation,[],[f38])).
+fof(f38,plain,(
+  ~! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(flattening,[],[f37])).
+fof(f37,plain,(
+  ~! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => ! [X8] : s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),X7))) = s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X6),'const.list.SET_TO_LIST_1'(s(fun(X6,bool),X7))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => ! [X8] : s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),X7))) = s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X6),'const.list.SET_TO_LIST_1'(s(fun(X6,bool),X7))))))))),
+  file('thm.list.MEM_SET_TO_LIST','thm.list.MEM_SET_TO_LIST')).
+fof(f223,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f135])).
+fof(f135,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f18])).
+fof(f18,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.list.MEM_SET_TO_LIST','thm.bool.EQ_CLAUSES|split|0')).
+fof(f8521,plain,(
+  s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK14)))),
+  inference(trivial_inequality_removal,[],[f8515])).
+fof(f8515,plain,(
+  s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),sK14))) != s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),sK14))) | s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(sK13,bool),sK14)))),
+  inference(superposition,[],[f208,f4490])).
+fof(f4490,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X2))))))) | s(bool,'F_0') = s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X2)))) )),
+  inference(resolution,[],[f249,f227])).
+fof(f227,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f137])).
+fof(f137,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X11] : (s(bool,'F_0') = s(bool,X11) <=> ~p(s(bool,X11)))),
+  file('thm.list.MEM_SET_TO_LIST','thm.bool.EQ_CLAUSES|split|3')).
+fof(f249,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1)))))))) )),
+  inference(cnf_transformation,[],[f99])).
+fof(f99,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | ! [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(ennf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(flattening,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => ! [X2] : s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X0),'const.list.SET_TO_LIST_1'(s(fun(X0,bool),X1))))))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : ! [X7] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X6,bool),X7)))) => ! [X8] : s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),X7))) = s(bool,'const.bool.IN_2'(s(X6,X8),s(fun(X6,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(X6),'const.list.SET_TO_LIST_1'(s(fun(X6,bool),X7))))))))),
+  file('thm.list.MEM_SET_TO_LIST','thm.list.SET_TO_LIST_IN_MEM')).
+fof(f208,plain,(
+  s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),sK14))) != s(bool,'const.bool.IN_2'(s(sK13,sK15),s(fun(sK13,bool),'const.list.LIST_TO_SET_1'(s('type.list.list'(sK13),'const.list.SET_TO_LIST_1'(s(fun(sK13,bool),sK14)))))))),
+  inference(cnf_transformation,[],[f132])).
+fof(f382,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) | $spl6),
+  inference(cnf_transformation,[],[f382_D])).
+fof(f382_D,plain,(
+  ( ! [X0] : (p(s(bool,X0))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f896,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl19),
+  inference(cnf_transformation,[],[f896_D])).
+fof(f896_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl19),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl19])])).
+fof(f894,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0))) )),
+  inference(subsumption_resolution,[],[f854,f222])).
+fof(f222,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f135])).
+fof(f854,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f222,f216])).
+fof(f216,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.list.MEM_SET_TO_LIST',aHL_BOOL_CASES)).
+fof(f380,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f380_D])).
+fof(f380_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f215,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f41])).
+fof(f41,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.list.MEM_SET_TO_LIST',aHL_FALSITY)).
+fof(f8687,plain,(
+  $false | ($spl3 | $spl6)),
+  inference(resolution,[],[f382,f380])).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 487
+% Passive clauses: 2921
+% Generated clauses: 8494
+% Final active clauses: 479
+% Final passive clauses: 2064
+% Input formulas: 35
+% Initial clauses: 165
+% 
+% Duplicate literals: 275
+% Trivial inequalities: 18
+% Fw subsumption resolutions: 902
+% Fw demodulations: 107
+% Bw demodulations: 4
+% 
+% Simple tautologies: 178
+% Equational tautologies: 49
+% Forward subsumptions: 3789
+% 
+% Binary resolution: 4148
+% Factoring: 886
+% Forward superposition: 739
+% Backward superposition: 993
+% Self superposition: 23
+% Equality factoring: 26
+% Equality resolution: 4
+% 
+% Split clauses: 296
+% Split components: 600
+% SAT solver clauses: 487
+% SAT solver unit clauses: 14
+% SAT solver binary clauses: 133
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 2
+% 
+% Sat splits: 296
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 482
+% TWLsolver calls for satisfiability: 263
+% 
+% Memory used [KB]: 4093
+% Time elapsed: 0.150 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.152 s

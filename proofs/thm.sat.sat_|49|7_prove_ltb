@@ -1,0 +1,82 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sat
+% SZS output start Proof for thm.sat
+fof(f101,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f98,f59])).
+fof(f59,plain,(
+  s(bool,'T_0') != s(bool,sK0)),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  p(s(bool,sK0)) & s(bool,'T_0') != s(bool,sK0)),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f35])).
+fof(f35,plain,(
+  ? [X0] : (p(s(bool,X0)) & s(bool,'T_0') != s(bool,X0))),
+  inference(ennf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~! [X0] : (p(s(bool,X0)) => s(bool,'T_0') = s(bool,X0))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,X6)) => s(bool,'T_0') = s(bool,X6))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,X6)) => s(bool,'T_0') = s(bool,X6))),
+  file('thm.sat.sat_|49|7_prove_ltb','thm.sat.sat_|49|7_prove_ltb')).
+fof(f98,plain,(
+  s(bool,'T_0') = s(bool,sK0)),
+  inference(resolution,[],[f66,f58])).
+fof(f58,plain,(
+  p(s(bool,sK0))),
+  inference(cnf_transformation,[],[f42])).
+fof(f66,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f21])).
+fof(f21,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X7] : (s(bool,'T_0') = s(bool,X7) <=> p(s(bool,X7)))),
+  file('thm.sat.sat_|49|7_prove_ltb','thm.bool.EQ_CLAUSES|split|1')).
+% SZS output end Proof for thm.sat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 8
+% Passive clauses: 23
+% Generated clauses: 44
+% Final active clauses: 7
+% Final passive clauses: 9
+% Input formulas: 16
+% Initial clauses: 31
+% 
+% Fw subsumption resolutions: 3
+% 
+% Simple tautologies: 8
+% Equational tautologies: 1
+% 
+% Binary resolution: 4
+% 
+% Split clauses: 8
+% Split components: 17
+% SAT solver clauses: 13
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 9
+% 
+% Sat splits: 8
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 13
+% TWLsolver calls for satisfiability: 6
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.014 s

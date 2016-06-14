@@ -1,0 +1,242 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.arithmetic
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.arithmetic
+% SZS output start Proof for thm.arithmetic
+fof(f14759,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f14465,f259,f412,f410,f238,f411,f230,f408,f406,f14758,f231,f409,f407])).
+fof(f407,plain,(
+  s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) | $spl1),
+  inference(cnf_transformation,[],[f407_D])).
+fof(f407_D,plain,(
+  s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f409,plain,(
+  s('type.num.num',sK14) != s('type.num.num',sK15) | $spl3),
+  inference(cnf_transformation,[],[f409_D])).
+fof(f409_D,plain,(
+  s('type.num.num',sK14) != s('type.num.num',sK15) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f231,plain,(
+  s('type.num.num',sK14) != s('type.num.num',sK15) | s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15)))),
+  inference(cnf_transformation,[],[f154])).
+fof(f154,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',sK13)))) & ((s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) | s('type.num.num',sK14) = s('type.num.num',sK15)) & (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) | s('type.num.num',sK14) != s('type.num.num',sK15)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13,sK14,sK15])],[f153])).
+fof(f153,plain,(
+  ? [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) & ? [X1,X2] : ((s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))) | s('type.num.num',X1) = s('type.num.num',X2)) & (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))) | s('type.num.num',X1) != s('type.num.num',X2))))),
+  inference(nnf_transformation,[],[f103])).
+fof(f103,plain,(
+  ? [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) & ? [X1,X2] : (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))) <~> s('type.num.num',X1) = s('type.num.num',X2)))),
+  inference(ennf_transformation,[],[f43])).
+fof(f43,plain,(
+  ~! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) => ! [X1,X2] : (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))) <=> s('type.num.num',X1) = s('type.num.num',X2)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X6)))) => ! [X7,X8] : (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X8))) <=> s('type.num.num',X7) = s('type.num.num',X8)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X6)))) => ! [X7,X8] : (s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X8))) <=> s('type.num.num',X7) = s('type.num.num',X8)))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.arithmetic.EXP_BASE_INJECTIVE')).
+fof(f14758,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f14757])).
+fof(f14757,plain,(
+  s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) != s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f407,f408])).
+fof(f406,plain,(
+  s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) | $spl0),
+  inference(cnf_transformation,[],[f406_D])).
+fof(f406_D,plain,(
+  s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f408,plain,(
+  s('type.num.num',sK14) = s('type.num.num',sK15) | $spl2),
+  inference(cnf_transformation,[],[f408_D])).
+fof(f408_D,plain,(
+  s('type.num.num',sK14) = s('type.num.num',sK15) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f230,plain,(
+  s('type.num.num',sK14) = s('type.num.num',sK15) | s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))) = s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK15)))),
+  inference(cnf_transformation,[],[f154])).
+fof(f411,plain,(
+  ~p(s(bool,'F_0')) | $spl5),
+  inference(cnf_transformation,[],[f411_D])).
+fof(f411_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f238,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE',aHL_FALSITY)).
+fof(f410,plain,(
+  p(s(bool,'F_0')) | $spl4),
+  inference(cnf_transformation,[],[f410_D])).
+fof(f410_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f412,plain,(
+  p(s(bool,'T_0')) | $spl6),
+  inference(cnf_transformation,[],[f412_D])).
+fof(f412_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f259,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f164])).
+fof(f164,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f163])).
+fof(f163,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f111])).
+fof(f111,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X11] : ((p(s(bool,'F_0')) => p(s(bool,X11))) <=> p(s(bool,'T_0')))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.bool.IMP_CLAUSES|split|2')).
+fof(f14465,plain,(
+  $false | ($spl0 | $spl3 | $spl6)),
+  inference(subsumption_resolution,[],[f14464,f412])).
+fof(f14464,plain,(
+  ~p(s(bool,'T_0')) | ($spl0 | $spl3 | $spl6)),
+  inference(forward_demodulation,[],[f14463,f425])).
+fof(f425,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X0)))) )),
+  inference(resolution,[],[f249,f239])).
+fof(f239,plain,(
+  ( ! [X0] : (p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X0))))) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X0))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X8] : p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X8),s('type.num.num',X8))))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.arithmetic.LESS_EQ_REFL')).
+fof(f249,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f157])).
+fof(f157,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.bool.EQ_CLAUSES|split|1')).
+fof(f14463,plain,(
+  ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK14),s('type.num.num',sK14)))) | ($spl0 | $spl3 | $spl6)),
+  inference(forward_demodulation,[],[f14462,f6628])).
+fof(f6628,plain,(
+  ( ! [X0] : (s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK14),s('type.num.num',X0))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK15),s('type.num.num',X0)))) ) | $spl0),
+  inference(forward_demodulation,[],[f6533,f4343])).
+fof(f4343,plain,(
+  ( ! [X0,X1] : (s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',X0))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',X1)))))) )),
+  inference(resolution,[],[f242,f229])).
+fof(f229,plain,(
+  p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',sK13))))),
+  inference(cnf_transformation,[],[f154])).
+fof(f242,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) | s(bool,'const.arithmetic.<=_2'(s('type.num.num',X2),s('type.num.num',X1))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f106])).
+fof(f106,plain,(
+  ! [X0] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) | ! [X1,X2] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X2),s('type.num.num',X1))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(ennf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X0)))) => ! [X1,X2] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X2),s('type.num.num',X1))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X2))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))),s('type.num.num',X6)))) => ! [X7,X8] : s(bool,'const.arithmetic.<=_2'(s('type.num.num',X8),s('type.num.num',X7))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X8))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',X6),s('type.num.num',X7))))))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.arithmetic.EXP_BASE_LE_MONO')).
+fof(f6533,plain,(
+  ( ! [X0] : (s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK15),s('type.num.num',X0))) = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',sK14))),s('type.num.num','const.arithmetic.EXP_2'(s('type.num.num',sK13),s('type.num.num',X0)))))) ) | $spl0),
+  inference(superposition,[],[f4343,f406])).
+fof(f14462,plain,(
+  ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK15),s('type.num.num',sK14)))) | ($spl0 | $spl3 | $spl6)),
+  inference(subsumption_resolution,[],[f14461,f409])).
+fof(f14461,plain,(
+  ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK15),s('type.num.num',sK14)))) | s('type.num.num',sK14) = s('type.num.num',sK15) | ($spl0 | $spl6)),
+  inference(subsumption_resolution,[],[f14314,f412])).
+fof(f14314,plain,(
+  ~p(s(bool,'T_0')) | ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK15),s('type.num.num',sK14)))) | s('type.num.num',sK14) = s('type.num.num',sK15) | $spl0),
+  inference(superposition,[],[f282,f14126])).
+fof(f14126,plain,(
+  s(bool,'T_0') = s(bool,'const.arithmetic.<=_2'(s('type.num.num',sK14),s('type.num.num',sK15))) | $spl0),
+  inference(superposition,[],[f6628,f425])).
+fof(f282,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1)))) | ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num',X0)))) | s('type.num.num',X0) = s('type.num.num',X1)) )),
+  inference(cnf_transformation,[],[f116])).
+fof(f116,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1)))) | ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num',X0)))) | s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(flattening,[],[f115])).
+fof(f115,plain,(
+  ! [X0,X1] : ((~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1)))) | ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num',X0))))) | s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(ennf_transformation,[],[f77])).
+fof(f77,plain,(
+  ! [X0,X1] : ((p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X0),s('type.num.num',X1)))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num',X0))))) => s('type.num.num',X0) = s('type.num.num',X1))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X7,X8] : ((p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X7),s('type.num.num',X8)))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X8),s('type.num.num',X7))))) => s('type.num.num',X7) = s('type.num.num',X8))),
+  file('thm.arithmetic.EXP_BASE_INJECTIVE','thm.arithmetic.LESS_EQUAL_ANTISYM')).
+% SZS output end Proof for thm.arithmetic
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 637
+% Passive clauses: 5448
+% Generated clauses: 14289
+% Final active clauses: 623
+% Final passive clauses: 4352
+% Input formulas: 41
+% Initial clauses: 172
+% 
+% Duplicate literals: 444
+% Trivial inequalities: 21
+% Fw subsumption resolutions: 1498
+% Fw demodulations: 336
+% Bw demodulations: 9
+% 
+% Simple tautologies: 207
+% Equational tautologies: 56
+% Forward subsumptions: 5777
+% 
+% Binary resolution: 6685
+% Factoring: 1145
+% Forward superposition: 1843
+% Backward superposition: 1889
+% Self superposition: 24
+% Equality factoring: 28
+% Equality resolution: 5
+% 
+% Split clauses: 446
+% Split components: 899
+% SAT solver clauses: 809
+% SAT solver unit clauses: 19
+% SAT solver binary clauses: 134
+% SAT solver learnt clauses: 4
+% SAT solver learnt literals: 4
+% 
+% Sat splits: 446
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 804
+% TWLsolver calls for satisfiability: 383
+% 
+% Memory used [KB]: 6524
+% Time elapsed: 0.382 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.372 s

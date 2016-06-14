@@ -1,0 +1,259 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f12389,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f12383,f286,f464,f466,f266,f467])).
+fof(f467,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f467_D])).
+fof(f467_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f266,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET',aHL_FALSITY)).
+fof(f466,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f466_D])).
+fof(f466_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f464,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f464_D])).
+fof(f464_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f286,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f174])).
+fof(f174,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f173])).
+fof(f173,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f124])).
+fof(f124,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f14])).
+fof(f14,axiom,(
+  ! [X9] : ((p(s(bool,'F_0')) => p(s(bool,X9))) <=> p(s(bool,'T_0')))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.bool.IMP_CLAUSES|split|2')).
+fof(f12383,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f12382,f467])).
+fof(f12382,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(forward_demodulation,[],[f12292,f3886])).
+fof(f3886,plain,(
+  s(bool,'F_0') = s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),sK13))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13)))))),
+  inference(resolution,[],[f258,f283])).
+fof(f283,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f171])).
+fof(f171,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f65])).
+fof(f65,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f64])).
+fof(f64,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.bool.EQ_CLAUSES|split|2')).
+fof(f258,plain,(
+  ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),sK13))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13))))))),
+  inference(cnf_transformation,[],[f166])).
+fof(f166,plain,(
+  s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),sK13) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),sK13)))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),sK13))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK13])],[f118])).
+fof(f118,plain,(
+  ? [X0] : (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0)))))))),
+  inference(flattening,[],[f117])).
+fof(f117,plain,(
+  ? [X0] : ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) & ~p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0)))))))),
+  inference(ennf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~! [X0] : ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0)))))))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ~! [X0] : ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0)))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X6) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X6))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X6))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X6)))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X6) & p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X6))))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X6))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X6)))))))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.pred_set.MIN_SET_LEQ_MAX_SET')).
+fof(f12292,plain,(
+  p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),sK13))),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13)))))) | $spl0),
+  inference(resolution,[],[f5588,f4643])).
+fof(f4643,plain,(
+  ( ! [X0,X1] : (~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1))))) )),
+  inference(forward_demodulation,[],[f325,f4641])).
+fof(f4641,plain,(
+  ( ! [X0] : (s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0)))) )),
+  inference(forward_demodulation,[],[f4640,f267])).
+fof(f267,plain,(
+  ( ! [X0] : (s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0'),s(fun('type.num.num',bool),X0)))) )),
+  inference(cnf_transformation,[],[f54])).
+fof(f54,plain,(
+  ! [X0] : s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0'),s(fun('type.num.num',bool),X0)))),
+  inference(rectify,[],[f48])).
+fof(f48,axiom,(
+  ! [X24] : s('type.num.num','const.pred_set.MIN_SET_1'(s(fun('type.num.num',bool),X24))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0'),s(fun('type.num.num',bool),X24)))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','ARITY_0_1_const.pred_set.MIN_SET')).
+fof(f4640,plain,(
+  ( ! [X0] : (s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0'),s(fun('type.num.num',bool),X0)))) )),
+  inference(forward_demodulation,[],[f268,f261])).
+fof(f261,plain,(
+  s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0') = s(fun(fun('type.num.num',bool),'type.num.num'),'const.while.LEAST_0')),
+  inference(cnf_transformation,[],[f33])).
+fof(f33,axiom,(
+  s(fun(fun('type.num.num',bool),'type.num.num'),'const.pred_set.MIN_SET_0') = s(fun(fun('type.num.num',bool),'type.num.num'),'const.while.LEAST_0')),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.pred_set.MIN_SET_DEF')).
+fof(f268,plain,(
+  ( ! [X0] : (s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.while.LEAST_0'),s(fun('type.num.num',bool),X0)))) )),
+  inference(cnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X0] : s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.while.LEAST_0'),s(fun('type.num.num',bool),X0)))),
+  inference(rectify,[],[f47])).
+fof(f47,axiom,(
+  ! [X24] : s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X24))) = s('type.num.num',happ(s(fun(fun('type.num.num',bool),'type.num.num'),'const.while.LEAST_0'),s(fun('type.num.num',bool),X24)))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','ARITY_0_1_const.while.LEAST')).
+fof(f325,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1)))) | ~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  ! [X0,X1] : (~p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) | (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1))))))),
+  inference(ennf_transformation,[],[f91])).
+fof(f91,plain,(
+  ! [X0,X1] : (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num',X1)))) => (p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X0))),s('type.num.num',X1))))))),
+  inference(rectify,[],[f46])).
+fof(f46,axiom,(
+  ! [X15,X13] : (p(s(bool,happ(s(fun('type.num.num',bool),X15),s('type.num.num',X13)))) => (p(s(bool,happ(s(fun('type.num.num',bool),X15),s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X15)))))) & p(s(bool,'const.arithmetic.<=_2'(s('type.num.num','const.while.LEAST_1'(s(fun('type.num.num',bool),X15))),s('type.num.num',X13))))))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.while.FULL_LEAST_INTRO')).
+fof(f5588,plain,(
+  p(s(bool,happ(s(fun('type.num.num',bool),sK13),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13)))))) | $spl0),
+  inference(subsumption_resolution,[],[f5587,f256])).
+fof(f256,plain,(
+  s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),sK13)),
+  inference(cnf_transformation,[],[f166])).
+fof(f5587,plain,(
+  s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),sK13) | p(s(bool,happ(s(fun('type.num.num',bool),sK13),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13)))))) | $spl0),
+  inference(subsumption_resolution,[],[f5584,f464])).
+fof(f5584,plain,(
+  ~p(s(bool,'T_0')) | s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),sK13) | p(s(bool,happ(s(fun('type.num.num',bool),sK13),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),sK13))))))),
+  inference(superposition,[],[f5503,f483])).
+fof(f483,plain,(
+  s(bool,'T_0') = s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),sK13)))),
+  inference(resolution,[],[f279,f257])).
+fof(f257,plain,(
+  p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),sK13))))),
+  inference(cnf_transformation,[],[f166])).
+fof(f279,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f169])).
+fof(f169,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X9] : (s(bool,'T_0') = s(bool,X9) <=> p(s(bool,X9)))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.bool.EQ_CLAUSES|split|0')).
+fof(f5503,plain,(
+  ( ! [X0] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) | s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) | p(s(bool,happ(s(fun('type.num.num',bool),X0),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))) )),
+  inference(forward_demodulation,[],[f271,f309])).
+fof(f309,plain,(
+  ( ! [X2,X0,X1] : (s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))) )),
+  inference(cnf_transformation,[],[f82])).
+fof(f82,plain,(
+  ! [X0,X1,X2] : s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))),
+  inference(flattening,[],[f81])).
+fof(f81,plain,(
+  ! [X0] : ! [X1,X2] : s(bool,happ(s(fun(X0,bool),X2),s(X0,X1))) = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),X2)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8] : ! [X5,X10] : s(bool,happ(s(fun(X8,bool),X10),s(X8,X5))) = s(bool,'const.bool.IN_2'(s(X8,X5),s(fun(X8,bool),X10)))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.bool.IN_DEF')).
+fof(f271,plain,(
+  ( ! [X0] : (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) | s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) | ~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0))))) )),
+  inference(cnf_transformation,[],[f121])).
+fof(f121,plain,(
+  ! [X0] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) | ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) | (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (~p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) | p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) | s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(ennf_transformation,[],[f59])).
+fof(f59,plain,(
+  ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) => ((s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') != s(fun('type.num.num',bool),X0) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(flattening,[],[f58])).
+fof(f58,plain,(
+  ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X0)))) => ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))),s(fun('type.num.num',bool),X0)))) & ! [X1] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X1),s(fun('type.num.num',bool),X0)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X1),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X0) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X0))))))),
+  inference(rectify,[],[f32])).
+fof(f32,axiom,(
+  ! [X6] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),X6)))) => ((~s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X6) => (p(s(bool,'const.bool.IN_2'(s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X6))),s(fun('type.num.num',bool),X6)))) & ! [X14] : (p(s(bool,'const.bool.IN_2'(s('type.num.num',X14),s(fun('type.num.num',bool),X6)))) => p(s(bool,'const.arithmetic.<=_2'(s('type.num.num',X14),s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X6))))))))) & (s(fun('type.num.num',bool),'const.pred_set.EMPTY_0') = s(fun('type.num.num',bool),X6) => s('type.num.num','const.num.|48|_0') = s('type.num.num','const.pred_set.MAX_SET_1'(s(fun('type.num.num',bool),X6))))))),
+  file('thm.pred_set.MIN_SET_LEQ_MAX_SET','thm.pred_set.MAX_SET_DEF')).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 535
+% Passive clauses: 5779
+% Generated clauses: 12103
+% Final active clauses: 528
+% Final passive clauses: 4942
+% Input formulas: 47
+% Initial clauses: 201
+% 
+% Duplicate literals: 259
+% Trivial inequalities: 13
+% Fw subsumption resolutions: 1076
+% Fw demodulations: 174
+% Bw demodulations: 3
+% 
+% Simple tautologies: 204
+% Equational tautologies: 56
+% Forward subsumptions: 4437
+% 
+% Binary resolution: 7165
+% Factoring: 989
+% Forward superposition: 982
+% Backward superposition: 1090
+% Self superposition: 24
+% Equality factoring: 26
+% Equality resolution: 7
+% 
+% Split clauses: 208
+% Split components: 418
+% SAT solver clauses: 417
+% SAT solver unit clauses: 13
+% SAT solver binary clauses: 88
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 208
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 413
+% TWLsolver calls for satisfiability: 268
+% 
+% Memory used [KB]: 5628
+% Time elapsed: 0.289 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.291 s

@@ -1,0 +1,186 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.realax
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.realax
+% SZS output start Proof for thm.realax
+fof(f3534,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f3517,f254,f259,f257,f302,f35,f38,f36,f48])).
+fof(f48,plain,(
+  $false | $spl0),
+  inference(resolution,[],[f45,f22])).
+fof(f22,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.realax.TREAL_EQ_REFL',aHL_TRUTH)).
+fof(f45,plain,(
+  ( ! [X2] : (~p(s(bool,X2))) ) | $spl0),
+  inference(superposition,[],[f23,f36])).
+fof(f23,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f10])).
+fof(f10,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.realax.TREAL_EQ_REFL',aHL_FALSITY)).
+fof(f36,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) | $spl0),
+  inference(cnf_transformation,[],[f36_D])).
+fof(f36_D,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0)) ) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f38,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl3),
+  inference(cnf_transformation,[],[f38_D])).
+fof(f38_D,plain,(
+  s(bool,'T_0') != s(bool,'F_0') <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f35,plain,(
+  ( ! [X0] : (s(bool,'T_0') != s(bool,'F_0') | s(bool,'F_0') = s(bool,X0)) )),
+  inference(equality_factoring,[],[f24])).
+fof(f24,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.realax.TREAL_EQ_REFL',aHL_BOOL_CASES)).
+fof(f302,plain,(
+  $false | ($spl3 | $spl4)),
+  inference(trivial_inequality_removal,[],[f295])).
+fof(f295,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | ($spl3 | $spl4)),
+  inference(superposition,[],[f38,f257])).
+fof(f257,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) | $spl4),
+  inference(cnf_transformation,[],[f257_D])).
+fof(f257_D,plain,(
+  ( ! [X9] : (s(bool,'T_0') = s(bool,X9)) ) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f259,plain,(
+  s(bool,'F_0') = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) | $spl6),
+  inference(cnf_transformation,[],[f259_D])).
+fof(f259_D,plain,(
+  s(bool,'F_0') = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f254,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(duplicate_literal_removal,[],[f218])).
+fof(f218,plain,(
+  ( ! [X9] : (s(bool,'F_0') = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) | s(bool,'T_0') = s(bool,X9) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f199,f24])).
+fof(f199,plain,(
+  ( ! [X9] : (s(bool,X9) = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(subsumption_resolution,[],[f125,f22])).
+fof(f125,plain,(
+  ( ! [X9] : (~p(s(bool,'T_0')) | s(bool,X9) = s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))) | s(bool,'T_0') = s(bool,X9)) )),
+  inference(superposition,[],[f21,f29])).
+fof(f29,plain,(
+  ( ! [X0,X1] : (s(bool,X0) = s(bool,X1) | s(bool,'T_0') = s(bool,X1) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(superposition,[],[f24,f24])).
+fof(f21,plain,(
+  ~p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))))),
+  inference(cnf_transformation,[],[f18])).
+fof(f18,plain,(
+  ~p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),sK0))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f16])).
+fof(f16,plain,(
+  ? [X0] : ~p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0))))),
+  inference(ennf_transformation,[],[f9])).
+fof(f9,plain,(
+  ~! [X0] : p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X6),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X6))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X6),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X6))))),
+  file('thm.realax.TREAL_EQ_REFL','thm.realax.TREAL_EQ_REFL')).
+fof(f3517,plain,(
+  $false | $spl6),
+  inference(subsumption_resolution,[],[f3484,f23])).
+fof(f3484,plain,(
+  p(s(bool,'F_0')) | $spl6),
+  inference(superposition,[],[f3429,f259])).
+fof(f3429,plain,(
+  ( ! [X0] : (p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),X0))))) )),
+  inference(superposition,[],[f2658,f25])).
+fof(f25,plain,(
+  ( ! [X2,X0,X1] : (s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,'const.pair.FST_1'(s('type.pair.prod'(X0,X1),X2))),s(X1,'const.pair.SND_1'(s('type.pair.prod'(X0,X1),X2)))))) )),
+  inference(cnf_transformation,[],[f12])).
+fof(f12,plain,(
+  ! [X0,X1,X2] : s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,'const.pair.FST_1'(s('type.pair.prod'(X0,X1),X2))),s(X1,'const.pair.SND_1'(s('type.pair.prod'(X0,X1),X2)))))),
+  inference(flattening,[],[f11])).
+fof(f11,plain,(
+  ! [X0,X1] : ! [X2] : s('type.pair.prod'(X0,X1),X2) = s('type.pair.prod'(X0,X1),'const.pair.,_2'(s(X0,'const.pair.FST_1'(s('type.pair.prod'(X0,X1),X2))),s(X1,'const.pair.SND_1'(s('type.pair.prod'(X0,X1),X2)))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X7,X8] : ! [X6] : s('type.pair.prod'(X7,X8),X6) = s('type.pair.prod'(X7,X8),'const.pair.,_2'(s(X7,'const.pair.FST_1'(s('type.pair.prod'(X7,X8),X6))),s(X8,'const.pair.SND_1'(s('type.pair.prod'(X7,X8),X6)))))),
+  file('thm.realax.TREAL_EQ_REFL','thm.pair.PAIR')).
+fof(f2658,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))))))) )),
+  inference(equality_resolution,[],[f28])).
+fof(f28,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X3))) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X1))) | p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X3))))))) )),
+  inference(cnf_transformation,[],[f20])).
+fof(f20,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X3)))))) | s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X3))) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X1)))) & (s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X3))) != s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X1))) | p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X3))))))))),
+  inference(nnf_transformation,[],[f15])).
+fof(f15,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X1))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X3)))))) <=> s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X0),s('type.hreal.hreal',X3))) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X2),s('type.hreal.hreal',X1))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X9,X10,X11,X12] : (p(s(bool,'const.realax.treal_eq_2'(s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X9),s('type.hreal.hreal',X10))),s('type.pair.prod'('type.hreal.hreal','type.hreal.hreal'),'const.pair.,_2'(s('type.hreal.hreal',X11),s('type.hreal.hreal',X12)))))) <=> s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X9),s('type.hreal.hreal',X12))) = s('type.hreal.hreal','const.hreal.hreal_add_2'(s('type.hreal.hreal',X11),s('type.hreal.hreal',X10))))),
+  file('thm.realax.TREAL_EQ_REFL','thm.realax.treal_eq')).
+% SZS output end Proof for thm.realax
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 35
+% Passive clauses: 739
+% Generated clauses: 3372
+% Final active clauses: 27
+% Final passive clauses: 665
+% Input formulas: 7
+% Initial clauses: 8
+% 
+% Duplicate literals: 380
+% Trivial inequalities: 40
+% Fw subsumption resolutions: 190
+% Fw demodulations: 8
+% Bw demodulations: 4
+% 
+% Simple tautologies: 104
+% Equational tautologies: 84
+% Forward subsumptions: 1342
+% 
+% Binary resolution: 25
+% Forward superposition: 1004
+% Backward superposition: 1229
+% Self superposition: 241
+% Equality factoring: 212
+% Equality resolution: 2
+% 
+% Split clauses: 175
+% Split components: 350
+% SAT solver clauses: 494
+% SAT solver unit clauses: 253
+% SAT solver binary clauses: 130
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 175
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 484
+% TWLsolver calls for satisfiability: 15
+% 
+% Memory used [KB]: 1791
+% Time elapsed: 0.092 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.093 s

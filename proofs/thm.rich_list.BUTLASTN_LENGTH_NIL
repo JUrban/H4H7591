@@ -1,0 +1,107 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f995,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f992])).
+fof(f992,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.list.NIL_0')),
+  inference(superposition,[],[f132,f931])).
+fof(f931,plain,(
+  ( ! [X2,X3] : (s('type.list.list'(X2),'const.list.NIL_0') = s('type.list.list'(X2),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X2),X3))),s('type.list.list'(X2),X3)))) )),
+  inference(superposition,[],[f171,f164])).
+fof(f164,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f62])).
+fof(f62,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),'const.list.NIL_0'),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X14] : ! [X7] : s('type.list.list'(X14),X7) = s('type.list.list'(X14),'const.list.APPEND_2'(s('type.list.list'(X14),'const.list.NIL_0'),s('type.list.list'(X14),X7)))),
+  file('thm.rich_list.BUTLASTN_LENGTH_NIL','thm.rich_list.APPEND_NIL|split|1')).
+fof(f171,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f73])).
+fof(f73,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f72])).
+fof(f72,plain,(
+  ! [X0] : ! [X1,X2] : s('type.list.list'(X0),X2) = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),'const.list.APPEND_2'(s('type.list.list'(X0),X2),s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X6] : ! [X9,X10] : s('type.list.list'(X6),X10) = s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X9))),s('type.list.list'(X6),'const.list.APPEND_2'(s('type.list.list'(X6),X10),s('type.list.list'(X6),X9)))))),
+  file('thm.rich_list.BUTLASTN_LENGTH_NIL','thm.rich_list.BUTLASTN_LENGTH_APPEND')).
+fof(f132,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))),s('type.list.list'(sK0),sK1)))),
+  inference(cnf_transformation,[],[f113])).
+fof(f113,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK0),sK1))),s('type.list.list'(sK0),sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f99])).
+fof(f99,plain,(
+  ? [X0,X1] : s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))),
+  inference(ennf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~! [X0,X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f39])).
+fof(f39,plain,(
+  ~! [X0] : ! [X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),X1))),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))),s('type.list.list'(X6),X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.rich_list.BUTLASTN_2'(s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),X7))),s('type.list.list'(X6),X7)))),
+  file('thm.rich_list.BUTLASTN_LENGTH_NIL','thm.rich_list.BUTLASTN_LENGTH_NIL')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 39
+% Passive clauses: 113
+% Generated clauses: 822
+% Final active clauses: 31
+% Final passive clauses: 53
+% Input formulas: 37
+% Initial clauses: 53
+% 
+% Duplicate literals: 74
+% Trivial inequalities: 21
+% Fw subsumption resolutions: 50
+% Fw demodulations: 33
+% Bw demodulations: 7
+% 
+% Simple tautologies: 56
+% Equational tautologies: 19
+% Forward subsumptions: 451
+% 
+% Binary resolution: 25
+% Forward superposition: 261
+% Backward superposition: 235
+% Self superposition: 36
+% Equality factoring: 28
+% Equality resolution: 6
+% 
+% Split clauses: 11
+% Split components: 23
+% SAT solver clauses: 22
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 14
+% 
+% Sat splits: 11
+% Sat splitting refutations: 3
+% 
+% TWLsolver clauses: 22
+% TWLsolver calls for satisfiability: 9
+% 
+% Memory used [KB]: 1151
+% Time elapsed: 0.026 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.028 s

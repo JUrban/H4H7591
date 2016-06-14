@@ -1,0 +1,181 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f981,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f980,f72,f110,f108,f151,f73,f111,f109])).
+fof(f109,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) | $spl1),
+  inference(cnf_transformation,[],[f109_D])).
+fof(f109_D,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f111,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num',sK2) | $spl3),
+  inference(cnf_transformation,[],[f111_D])).
+fof(f111_D,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num',sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f73,plain,(
+  s('type.num.num','const.num.|48|_0') != s('type.num.num',sK2) | s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1)))),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  (s('type.list.list'(sK0),'const.list.NIL_0') = s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2)) & (s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) | s('type.num.num','const.num.|48|_0') != s('type.num.num',sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f59])).
+fof(f59,plain,(
+  ? [X0,X1,X2] : ((s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X2),s(X0,X1))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X2)) & (s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X2),s(X0,X1))) | s('type.num.num','const.num.|48|_0') != s('type.num.num',X2)))),
+  inference(nnf_transformation,[],[f54])).
+fof(f54,plain,(
+  ? [X0,X1,X2] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X2),s(X0,X1))) <~> s('type.num.num','const.num.|48|_0') = s('type.num.num',X2))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0,X1,X2] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X2),s(X0,X1))) <=> s('type.num.num','const.num.|48|_0') = s('type.num.num',X2))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X2),s(X0,X1))) <=> s('type.num.num','const.num.|48|_0') = s('type.num.num',X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.rich_list.REPLICATE_2'(s('type.num.num',X8),s(X6,X7))) <=> s('type.num.num','const.num.|48|_0') = s('type.num.num',X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.rich_list.REPLICATE_2'(s('type.num.num',X8),s(X6,X7))) <=> s('type.num.num','const.num.|48|_0') = s('type.num.num',X8))),
+  file('thm.rich_list.REPLICATE_NIL','thm.rich_list.REPLICATE_NIL')).
+fof(f151,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f150])).
+fof(f150,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.list.NIL_0') | ($spl1 | $spl2)),
+  inference(superposition,[],[f145,f95])).
+fof(f95,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.|48|_0'),s(X0,X1)))) )),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.|48|_0'),s(X0,X1)))),
+  inference(flattening,[],[f41])).
+fof(f41,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.|48|_0'),s(X0,X1)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X6] : ! [X8] : s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.|48|_0'),s(X6,X8)))),
+  file('thm.rich_list.REPLICATE_NIL','thm.rich_list.REPLICATE|split|0')).
+fof(f145,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.|48|_0'),s(sK0,sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f109,f110])).
+fof(f108,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') = s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) | $spl0),
+  inference(cnf_transformation,[],[f108_D])).
+fof(f108_D,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') = s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f110,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2) | $spl2),
+  inference(cnf_transformation,[],[f110_D])).
+fof(f110_D,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f72,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2) | s('type.list.list'(sK0),'const.list.NIL_0') = s('type.list.list'(sK0),'const.rich_list.REPLICATE_2'(s('type.num.num',sK2),s(sK0,sK1)))),
+  inference(cnf_transformation,[],[f60])).
+fof(f980,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f979,f111])).
+fof(f979,plain,(
+  s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2) | $spl0),
+  inference(trivial_inequality_removal,[],[f978])).
+fof(f978,plain,(
+  s('type.list.list'(sK0),'const.list.NIL_0') != s('type.list.list'(sK0),'const.list.NIL_0') | s('type.num.num','const.num.|48|_0') = s('type.num.num',sK2) | $spl0),
+  inference(superposition,[],[f222,f108])).
+fof(f222,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X1),'const.list.NIL_0') != s('type.list.list'(X1),'const.rich_list.REPLICATE_2'(s('type.num.num',X0),s(X1,X2))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(superposition,[],[f217,f82])).
+fof(f82,plain,(
+  ( ! [X0] : (s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK3(X0)))) | s('type.num.num','const.num.|48|_0') = s('type.num.num',X0)) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',sK3(X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK3])],[f29])).
+fof(f29,plain,(
+  ! [X0] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X0) | ? [X1] : s('type.num.num',X0) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X9] : (s('type.num.num','const.num.|48|_0') = s('type.num.num',X9) | ? [X10] : s('type.num.num',X9) = s('type.num.num','const.num.SUC_1'(s('type.num.num',X10))))),
+  file('thm.rich_list.REPLICATE_NIL','thm.arithmetic.num_CASES')).
+fof(f217,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X2))),s(X0,X1)))) )),
+  inference(superposition,[],[f101,f98])).
+fof(f98,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s(X0,X2))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X1),s(X0,X2)))))) )),
+  inference(cnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s(X0,X2))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X1),s(X0,X2)))))),
+  inference(flattening,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : ! [X1,X2] : s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X1))),s(X0,X2))) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),'const.rich_list.REPLICATE_2'(s('type.num.num',X1),s(X0,X2)))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X10,X8] : s('type.list.list'(X6),'const.rich_list.REPLICATE_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',X10))),s(X6,X8))) = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X8),s('type.list.list'(X6),'const.rich_list.REPLICATE_2'(s('type.num.num',X10),s(X6,X8)))))),
+  file('thm.rich_list.REPLICATE_NIL','thm.rich_list.REPLICATE|split|1')).
+fof(f101,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))) )),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),'const.list.NIL_0') != s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : ! [X1,X2] : ~s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X1)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X6] : ! [X14,X15] : ~s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X15),s('type.list.list'(X6),X14)))),
+  file('thm.rich_list.REPLICATE_NIL','thm.list.list_distinct')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 32
+% Passive clauses: 155
+% Generated clauses: 859
+% Final active clauses: 30
+% Final passive clauses: 107
+% Input formulas: 22
+% Initial clauses: 35
+% 
+% Duplicate literals: 90
+% Trivial inequalities: 23
+% Fw subsumption resolutions: 95
+% Fw demodulations: 1
+% 
+% Simple tautologies: 61
+% Equational tautologies: 29
+% Forward subsumptions: 397
+% 
+% Binary resolution: 35
+% Factoring: 1
+% Forward superposition: 179
+% Backward superposition: 293
+% Self superposition: 44
+% Equality factoring: 50
+% Equality resolution: 5
+% 
+% Split clauses: 13
+% Split components: 26
+% SAT solver clauses: 26
+% SAT solver unit clauses: 6
+% SAT solver binary clauses: 19
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 13
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 24
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 1023
+% Time elapsed: 0.027 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.031 s

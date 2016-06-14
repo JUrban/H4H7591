@@ -1,0 +1,135 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f149,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f148,f55,f87,f85,f143,f56,f88,f86])).
+fof(f86,plain,(
+  s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) | $spl1),
+  inference(cnf_transformation,[],[f86_D])).
+fof(f86_D,plain,(
+  s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f88,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK2) | $spl3),
+  inference(cnf_transformation,[],[f88_D])).
+fof(f88_D,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f56,plain,(
+  s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK2) | s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2)))),
+  inference(cnf_transformation,[],[f42])).
+fof(f42,plain,(
+  (s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) = s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) | s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),sK2)) & (s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) | s('type.list.list'(sK0),sK1) != s('type.list.list'(sK0),sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f41])).
+fof(f41,plain,(
+  ? [X0,X1,X2] : ((s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))) | s('type.list.list'(X0),X1) = s('type.list.list'(X0),X2)) & (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))) != s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))) | s('type.list.list'(X0),X1) != s('type.list.list'(X0),X2)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ? [X0,X1,X2] : (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))) <~> s('type.list.list'(X0),X1) = s('type.list.list'(X0),X2))),
+  inference(ennf_transformation,[],[f17])).
+fof(f17,plain,(
+  ~! [X0,X1,X2] : (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))) <=> s('type.list.list'(X0),X1) = s('type.list.list'(X0),X2))),
+  inference(flattening,[],[f16])).
+fof(f16,plain,(
+  ~! [X0] : ! [X1,X2] : (s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1))) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X2))) <=> s('type.list.list'(X0),X1) = s('type.list.list'(X0),X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X7))) = s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X8))) <=> s('type.list.list'(X6),X7) = s('type.list.list'(X6),X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X7))) = s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X8))) <=> s('type.list.list'(X6),X7) = s('type.list.list'(X6),X8))),
+  file('thm.list.REVERSE_|49||49|','thm.list.REVERSE_|49||49|')).
+fof(f143,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f142])).
+fof(f142,plain,(
+  s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) != s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f86,f87])).
+fof(f85,plain,(
+  s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) = s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) | $spl0),
+  inference(cnf_transformation,[],[f85_D])).
+fof(f85_D,plain,(
+  s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) = s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f87,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),sK2) | $spl2),
+  inference(cnf_transformation,[],[f87_D])).
+fof(f87_D,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f55,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),sK2) | s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))) = s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK2)))),
+  inference(cnf_transformation,[],[f42])).
+fof(f148,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f147,f88])).
+fof(f147,plain,(
+  s('type.list.list'(sK0),sK1) = s('type.list.list'(sK0),sK2) | $spl0),
+  inference(forward_demodulation,[],[f146,f76])).
+fof(f76,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))) )),
+  inference(cnf_transformation,[],[f26])).
+fof(f26,plain,(
+  ! [X0,X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(flattening,[],[f25])).
+fof(f25,plain,(
+  ! [X0] : ! [X1] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),'const.list.REVERSE_1'(s('type.list.list'(X0),X1)))))),
+  inference(rectify,[],[f15])).
+fof(f15,axiom,(
+  ! [X6] : ! [X13] : s('type.list.list'(X6),X13) = s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),'const.list.REVERSE_1'(s('type.list.list'(X6),X13)))))),
+  file('thm.list.REVERSE_|49||49|','thm.list.REVERSE_REVERSE')).
+fof(f146,plain,(
+  s('type.list.list'(sK0),sK2) = s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),'const.list.REVERSE_1'(s('type.list.list'(sK0),sK1))))) | $spl0),
+  inference(superposition,[],[f76,f85])).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 13
+% Passive clauses: 31
+% Generated clauses: 87
+% Final active clauses: 11
+% Final passive clauses: 9
+% Input formulas: 14
+% Initial clauses: 29
+% 
+% Duplicate literals: 1
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 4
+% Fw demodulations: 2
+% 
+% Simple tautologies: 11
+% Equational tautologies: 5
+% Forward subsumptions: 15
+% 
+% Binary resolution: 11
+% Factoring: 1
+% Forward superposition: 15
+% Backward superposition: 6
+% Self superposition: 5
+% Equality factoring: 2
+% 
+% Split clauses: 13
+% Split components: 27
+% SAT solver clauses: 24
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 16
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 13
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 22
+% TWLsolver calls for satisfiability: 10
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.014 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.019 s

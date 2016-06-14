@@ -1,0 +1,119 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.gcd
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.gcd
+% SZS output start Proof for thm.gcd
+fof(f19562,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f19470])).
+fof(f19470,plain,(
+  s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK12),s('type.num.num',sK13))) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK12),s('type.num.num',sK13)))),
+  inference(superposition,[],[f221,f9170])).
+fof(f9170,plain,(
+  ( ! [X2,X3] : (s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X2),s('type.num.num',X3))) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X3),s('type.num.num',X2)))) )),
+  inference(resolution,[],[f4312,f3999])).
+fof(f3999,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X0),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))) )),
+  inference(superposition,[],[f269,f312])).
+fof(f312,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))) = s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X0),s('type.num.num',X2)))) )),
+  inference(cnf_transformation,[],[f89])).
+fof(f89,plain,(
+  ! [X0,X1,X2] : s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2))) = s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X1),s('type.num.num',X0),s('type.num.num',X2)))),
+  inference(rectify,[],[f30])).
+fof(f30,axiom,(
+  ! [X6,X7,X17] : s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num',X17))) = s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X7),s('type.num.num',X6),s('type.num.num',X17)))),
+  file('thm.gcd.GCD_SYM','thm.gcd.IS_GCD_SYM')).
+fof(f269,plain,(
+  ( ! [X0,X1] : (p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))) )),
+  inference(cnf_transformation,[],[f74])).
+fof(f74,plain,(
+  ! [X0,X1] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))))))),
+  inference(rectify,[],[f31])).
+fof(f31,axiom,(
+  ! [X6,X7] : p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))))))),
+  file('thm.gcd.GCD_SYM','thm.gcd.GCD_IS_GCD')).
+fof(f4312,plain,(
+  ( ! [X2,X0,X1] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | s('type.num.num',X2) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1)))) )),
+  inference(resolution,[],[f393,f269])).
+fof(f393,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3)))) | s('type.num.num',X2) = s('type.num.num',X3)) )),
+  inference(cnf_transformation,[],[f125])).
+fof(f125,plain,(
+  ! [X0,X1,X2,X3] : (~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3)))) | s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(flattening,[],[f124])).
+fof(f124,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) | ~p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3))))) | s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(ennf_transformation,[],[f99])).
+fof(f99,plain,(
+  ! [X0,X1,X2,X3] : ((p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X2)))) & p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X0),s('type.num.num',X1),s('type.num.num',X3))))) => s('type.num.num',X2) = s('type.num.num',X3))),
+  inference(rectify,[],[f29])).
+fof(f29,axiom,(
+  ! [X6,X7,X17,X18] : ((p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num',X17)))) & p(s(bool,'const.gcd.is_gcd_3'(s('type.num.num',X6),s('type.num.num',X7),s('type.num.num',X18))))) => s('type.num.num',X17) = s('type.num.num',X18))),
+  file('thm.gcd.GCD_SYM','thm.gcd.IS_GCD_UNIQUE')).
+fof(f221,plain,(
+  s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK12),s('type.num.num',sK13))) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK12)))),
+  inference(cnf_transformation,[],[f144])).
+fof(f144,plain,(
+  s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK12),s('type.num.num',sK13))) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',sK13),s('type.num.num',sK12)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f100])).
+fof(f100,plain,(
+  ? [X0,X1] : s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))) != s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X0)))),
+  inference(ennf_transformation,[],[f42])).
+fof(f42,plain,(
+  ~! [X0,X1] : s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X1),s('type.num.num',X0)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X7),s('type.num.num',X6)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.gcd.gcd_2'(s('type.num.num',X7),s('type.num.num',X6)))),
+  file('thm.gcd.GCD_SYM','thm.gcd.GCD_SYM')).
+% SZS output end Proof for thm.gcd
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 664
+% Passive clauses: 9588
+% Generated clauses: 19051
+% Final active clauses: 661
+% Final passive clauses: 8546
+% Input formulas: 40
+% Initial clauses: 173
+% 
+% Duplicate literals: 381
+% Trivial inequalities: 65
+% Fw subsumption resolutions: 1553
+% Fw demodulations: 109
+% Bw demodulations: 3
+% 
+% Simple tautologies: 230
+% Equational tautologies: 58
+% Forward subsumptions: 6362
+% 
+% Binary resolution: 11276
+% Factoring: 1447
+% Forward superposition: 1808
+% Backward superposition: 2033
+% Self superposition: 28
+% Equality factoring: 28
+% Equality resolution: 19
+% 
+% Split clauses: 580
+% Split components: 1169
+% SAT solver clauses: 1001
+% SAT solver unit clauses: 23
+% SAT solver binary clauses: 162
+% 
+% Sat splits: 580
+% 
+% TWLsolver clauses: 1000
+% TWLsolver calls for satisfiability: 419
+% 
+% Memory used [KB]: 8571
+% Time elapsed: 0.567 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.571 s

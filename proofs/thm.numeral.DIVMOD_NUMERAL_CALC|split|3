@@ -1,0 +1,166 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.numeral
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numeral
+% SZS output start Proof for thm.numeral
+fof(f12763,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f12708,f259,f393,f395,f234,f396])).
+fof(f396,plain,(
+  ~p(s(bool,'F_0')) | $spl3),
+  inference(cnf_transformation,[],[f396_D])).
+fof(f396_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f234,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3',aHL_FALSITY)).
+fof(f395,plain,(
+  p(s(bool,'F_0')) | $spl2),
+  inference(cnf_transformation,[],[f395_D])).
+fof(f395_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f393,plain,(
+  p(s(bool,'T_0')) | $spl0),
+  inference(cnf_transformation,[],[f393_D])).
+fof(f393_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f259,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f167])).
+fof(f167,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f166])).
+fof(f166,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f118])).
+fof(f118,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f68])).
+fof(f68,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X8] : ((p(s(bool,'F_0')) => p(s(bool,X8))) <=> p(s(bool,'T_0')))),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3','thm.bool.IMP_CLAUSES|split|2')).
+fof(f12708,plain,(
+  $false | $spl0),
+  inference(trivial_inequality_removal,[],[f12598])).
+fof(f12598,plain,(
+  s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13))))) != s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13))))) | $spl0),
+  inference(superposition,[],[f226,f5378])).
+fof(f5378,plain,(
+  ( ! [X2,X3] : (s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X3),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X2))))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X3),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X2)))))))))))) ) | $spl0),
+  inference(subsumption_resolution,[],[f5373,f393])).
+fof(f5373,plain,(
+  ( ! [X2,X3] : (~p(s(bool,'T_0')) | s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X3),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X2))))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X3),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X2)))))))))))) )),
+  inference(superposition,[],[f5122,f237])).
+fof(f237,plain,(
+  ( ! [X0] : (s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0)))))) )),
+  inference(cnf_transformation,[],[f53])).
+fof(f53,plain,(
+  ! [X0] : s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X0)))))),
+  inference(rectify,[],[f26])).
+fof(f26,axiom,(
+  ! [X7] : s(bool,'T_0') = s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7)))))),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3','thm.numeral.numeral_lt|split|1')).
+fof(f5122,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.num.num',X1)))) | s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num',X1)))))))))) )),
+  inference(forward_demodulation,[],[f5121,f229])).
+fof(f229,plain,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  inference(cnf_transformation,[],[f7])).
+fof(f7,axiom,(
+  s('type.num.num','const.arithmetic.ZERO_0') = s('type.num.num','const.num.|48|_0')),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3','thm.arithmetic.ALT_ZERO')).
+fof(f5121,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num',X1))))))))) | ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X1))))) )),
+  inference(forward_demodulation,[],[f282,f229])).
+fof(f282,plain,(
+  ( ! [X0,X1] : (s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num',X1))))))))) | ~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X1))))) )),
+  inference(cnf_transformation,[],[f122])).
+fof(f122,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X1)))) | s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num',X1))))))))))),
+  inference(ennf_transformation,[],[f84])).
+fof(f84,plain,(
+  ! [X0,X1] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X1)))) => s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num',X1))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num',X1))))))))))),
+  inference(rectify,[],[f9])).
+fof(f9,axiom,(
+  ! [X6,X7] : (p(s(bool,'const.prim_rec.<_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',X7)))) => s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X6),s('type.num.num',X7))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X6),s('type.num.num',X7))))))))))),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3','thm.arithmetic.DIVMOD_CALC|split|1')).
+fof(f226,plain,(
+  s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13))))) != s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13)))))))))))),
+  inference(cnf_transformation,[],[f155])).
+fof(f155,plain,(
+  s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13))))) != s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',sK12),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',sK13)))))))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f110])).
+fof(f110,plain,(
+  ? [X0,X1] : s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))))) != s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1)))))))))))),
+  inference(ennf_transformation,[],[f47])).
+fof(f47,plain,(
+  ~! [X0,X1] : s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1))))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X0),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X1)))))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X6),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7))))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X6),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7)))))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s('type.num.num','const.arithmetic.MOD_2'(s('type.num.num',X6),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7))))) = s('type.num.num','const.pair.SND_1'(s('type.pair.prod'('type.num.num','type.num.num'),'const.arithmetic.DIVMOD_1'(s('type.pair.prod'('type.num.num','type.pair.prod'('type.num.num','type.num.num')),'const.pair.,_2'(s('type.num.num','const.arithmetic.ZERO_0'),s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num',X6),s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',X7)))))))))))),
+  file('thm.numeral.DIVMOD_NUMERAL_CALC|split|3','thm.numeral.DIVMOD_NUMERAL_CALC|split|3')).
+% SZS output end Proof for thm.numeral
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 573
+% Passive clauses: 4603
+% Generated clauses: 12473
+% Final active clauses: 571
+% Final passive clauses: 3769
+% Input formulas: 45
+% Initial clauses: 163
+% 
+% Duplicate literals: 286
+% Trivial inequalities: 59
+% Fw subsumption resolutions: 1410
+% Fw demodulations: 483
+% Bw demodulations: 1
+% 
+% Simple tautologies: 202
+% Equational tautologies: 54
+% Forward subsumptions: 5141
+% 
+% Binary resolution: 5469
+% Factoring: 990
+% Forward superposition: 1633
+% Backward superposition: 1809
+% Self superposition: 30
+% Equality factoring: 26
+% Equality resolution: 16
+% 
+% Split clauses: 298
+% Split components: 602
+% SAT solver clauses: 506
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 67
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 298
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 505
+% TWLsolver calls for satisfiability: 291
+% 
+% Memory used [KB]: 6396
+% Time elapsed: 0.328 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.332 s

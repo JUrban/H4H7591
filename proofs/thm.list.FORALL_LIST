@@ -1,0 +1,260 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.list
+% SZS output start Proof for thm.list
+fof(f4716,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f4715,f177,f293,f291,f289,f925,f175,f290,f341,f350,f351,f176,f295,f294,f184,f297,f203,f298,f296])).
+fof(f296,plain,(
+  p(s(bool,'F_0')) | $spl10),
+  inference(cnf_transformation,[],[f296_D])).
+fof(f296_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl10),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl10])])).
+fof(f298,plain,(
+  p(s(bool,'T_0')) | $spl12),
+  inference(cnf_transformation,[],[f298_D])).
+fof(f298_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl12),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl12])])).
+fof(f203,plain,(
+  p(s(bool,'T_0')) | p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f138])).
+fof(f138,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | ~p(s(bool,'F_0')) | p(s(bool,X0))))),
+  inference(flattening,[],[f137])).
+fof(f137,plain,(
+  ! [X0] : (((p(s(bool,'F_0')) & ~p(s(bool,X0))) | p(s(bool,'T_0'))) & (~p(s(bool,'T_0')) | (~p(s(bool,'F_0')) | p(s(bool,X0)))))),
+  inference(nnf_transformation,[],[f94])).
+fof(f94,plain,(
+  ! [X0] : ((~p(s(bool,'F_0')) | p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f54])).
+fof(f54,plain,(
+  ! [X0] : ((p(s(bool,'F_0')) => p(s(bool,X0))) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f13])).
+fof(f13,axiom,(
+  ! [X10] : ((p(s(bool,'F_0')) => p(s(bool,X10))) <=> p(s(bool,'T_0')))),
+  file('thm.list.FORALL_LIST','thm.bool.IMP_CLAUSES|split|2')).
+fof(f297,plain,(
+  ~p(s(bool,'F_0')) | $spl11),
+  inference(cnf_transformation,[],[f297_D])).
+fof(f297_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl11),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl11])])).
+fof(f184,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.list.FORALL_LIST',aHL_FALSITY)).
+fof(f294,plain,(
+  ( ! [X7] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X7))))) ) | $spl6),
+  inference(cnf_transformation,[],[f294_D])).
+fof(f294_D,plain,(
+  ( ! [X7] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X7))))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f295,plain,(
+  ( ! [X6,X5] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,X5),s('type.list.list'(sK7),X6))))))) ) | $spl8),
+  inference(cnf_transformation,[],[f295_D])).
+fof(f295_D,plain,(
+  ( ! [X6,X5] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,X5),s('type.list.list'(sK7),X6))))))) ) <=> ~$spl8),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl8])])).
+fof(f176,plain,(
+  ( ! [X6,X7,X5] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,X5),s('type.list.list'(sK7),X6)))))) | p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X7))))) )),
+  inference(cnf_transformation,[],[f128])).
+fof(f128,plain,(
+  (! [X7] : p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X7)))) | (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) & ! [X5,X6] : p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,X5),s('type.list.list'(sK7),X6)))))))) & (~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),sK9)))) | ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) | ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,sK10),s('type.list.list'(sK7),sK11)))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK7,sK8,sK9,sK10,sK11])],[f127])).
+fof(f127,plain,(
+  ? [X0,X1] : ((! [X7] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X7)))) | (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X5,X6] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X5),s('type.list.list'(X0),X6)))))))) & (? [X4] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X4)))) | ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) | ? [X2,X3] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))))))),
+  inference(rectify,[],[f126])).
+fof(f126,plain,(
+  ? [X0,X1] : ((! [X2] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) | (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X3,X4] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4)))))))) & (? [X2] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) | ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) | ? [X3,X4] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4))))))))),
+  inference(flattening,[],[f125])).
+fof(f125,plain,(
+  ? [X0,X1] : ((! [X2] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) | (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X3,X4] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4)))))))) & (? [X2] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) | (~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) | ? [X3,X4] : ~p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4)))))))))),
+  inference(nnf_transformation,[],[f87])).
+fof(f87,plain,(
+  ? [X0,X1] : (! [X2] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) <~> (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X3,X4] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4))))))))),
+  inference(ennf_transformation,[],[f37])).
+fof(f37,plain,(
+  ~! [X0,X1] : (! [X2] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) <=> (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X3,X4] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4))))))))),
+  inference(flattening,[],[f36])).
+fof(f36,plain,(
+  ~! [X0] : ! [X1] : (! [X2] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),X2)))) <=> (p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.NIL_0')))) & ! [X3,X4] : p(s(bool,happ(s(fun('type.list.list'(X0),bool),X1),s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X3),s('type.list.list'(X0),X4))))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : (! [X8] : p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),X8)))) <=> (p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),'const.list.NIL_0')))) & ! [X9,X10] : p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X10))))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : (! [X8] : p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),X8)))) <=> (p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),'const.list.NIL_0')))) & ! [X9,X10] : p(s(bool,happ(s(fun('type.list.list'(X6),bool),X7),s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X10))))))))),
+  file('thm.list.FORALL_LIST','thm.list.FORALL_LIST')).
+fof(f351,plain,(
+  $false | ($spl5 | $spl6)),
+  inference(subsumption_resolution,[],[f293,f294])).
+fof(f350,plain,(
+  $false | ($spl3 | $spl6)),
+  inference(subsumption_resolution,[],[f291,f294])).
+fof(f341,plain,(
+  $false | ($spl1 | $spl6)),
+  inference(resolution,[],[f294,f289])).
+fof(f290,plain,(
+  p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) | $spl2),
+  inference(cnf_transformation,[],[f290_D])).
+fof(f290_D,plain,(
+  p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f175,plain,(
+  ( ! [X7] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) | p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X7))))) )),
+  inference(cnf_transformation,[],[f128])).
+fof(f925,plain,(
+  $false | ($spl5 | $spl8)),
+  inference(resolution,[],[f295,f293])).
+fof(f289,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),sK9)))) | $spl1),
+  inference(cnf_transformation,[],[f289_D])).
+fof(f289_D,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),sK9)))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f291,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) | $spl3),
+  inference(cnf_transformation,[],[f291_D])).
+fof(f291_D,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f293,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,sK10),s('type.list.list'(sK7),sK11)))))) | $spl5),
+  inference(cnf_transformation,[],[f293_D])).
+fof(f293_D,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,sK10),s('type.list.list'(sK7),sK11)))))) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f177,plain,(
+  ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.CONS_2'(s(sK7,sK10),s('type.list.list'(sK7),sK11)))))) | ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0')))) | ~p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),sK9))))),
+  inference(cnf_transformation,[],[f128])).
+fof(f4715,plain,(
+  $false | ($spl1 | $spl2 | $spl8 | $spl11 | $spl12)),
+  inference(subsumption_resolution,[],[f4714,f309])).
+fof(f309,plain,(
+  s(bool,'T_0') != s(bool,'F_0') | $spl12),
+  inference(resolution,[],[f196,f298])).
+fof(f196,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'F_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f133])).
+fof(f133,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f49])).
+fof(f49,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.list.FORALL_LIST','thm.bool.EQ_CLAUSES|split|2')).
+fof(f4714,plain,(
+  s(bool,'T_0') = s(bool,'F_0') | ($spl1 | $spl2 | $spl8 | $spl11)),
+  inference(forward_demodulation,[],[f4708,f362])).
+fof(f362,plain,(
+  s(bool,'T_0') = s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0'))) | $spl2),
+  inference(resolution,[],[f290,f193])).
+fof(f193,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f131])).
+fof(f131,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.list.FORALL_LIST','thm.bool.EQ_CLAUSES|split|1')).
+fof(f4708,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),'const.list.NIL_0'))) | ($spl1 | $spl8 | $spl11)),
+  inference(backward_demodulation,[],[f4701,f941])).
+fof(f941,plain,(
+  s(bool,'F_0') = s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),sK9))) | $spl1),
+  inference(resolution,[],[f289,f197])).
+fof(f197,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f133])).
+fof(f4701,plain,(
+  s('type.list.list'(sK7),'const.list.NIL_0') = s('type.list.list'(sK7),sK9) | ($spl1 | $spl8 | $spl11)),
+  inference(subsumption_resolution,[],[f4692,f297])).
+fof(f4692,plain,(
+  p(s(bool,'F_0')) | s('type.list.list'(sK7),'const.list.NIL_0') = s('type.list.list'(sK7),sK9) | ($spl1 | $spl8)),
+  inference(superposition,[],[f1073,f941])).
+fof(f1073,plain,(
+  ( ! [X0] : (p(s(bool,happ(s(fun('type.list.list'(sK7),bool),sK8),s('type.list.list'(sK7),X0)))) | s('type.list.list'(sK7),'const.list.NIL_0') = s('type.list.list'(sK7),X0)) ) | $spl8),
+  inference(superposition,[],[f295,f220])).
+fof(f220,plain,(
+  ( ! [X0,X1] : (s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,sK12(X1,X0)),s('type.list.list'(X0),sK13(X1,X0)))) | s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1)) )),
+  inference(cnf_transformation,[],[f147])).
+fof(f147,plain,(
+  ! [X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1) | s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,sK12(X1,X0)),s('type.list.list'(X0),sK13(X1,X0)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13])],[f66])).
+fof(f66,plain,(
+  ! [X0,X1] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1) | ? [X2,X3] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))),
+  inference(flattening,[],[f65])).
+fof(f65,plain,(
+  ! [X0] : ! [X1] : (s('type.list.list'(X0),'const.list.NIL_0') = s('type.list.list'(X0),X1) | ? [X2,X3] : s('type.list.list'(X0),X1) = s('type.list.list'(X0),'const.list.CONS_2'(s(X0,X2),s('type.list.list'(X0),X3))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X8] : (s('type.list.list'(X6),'const.list.NIL_0') = s('type.list.list'(X6),X8) | ? [X9,X10] : s('type.list.list'(X6),X8) = s('type.list.list'(X6),'const.list.CONS_2'(s(X6,X9),s('type.list.list'(X6),X10))))),
+  file('thm.list.FORALL_LIST','thm.list.list_CASES')).
+% SZS output end Proof for thm.list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 241
+% Passive clauses: 907
+% Generated clauses: 4468
+% Final active clauses: 225
+% Final passive clauses: 488
+% Input formulas: 34
+% Initial clauses: 111
+% 
+% Duplicate literals: 174
+% Trivial inequalities: 24
+% Fw subsumption resolutions: 398
+% Fw demodulations: 244
+% Bw demodulations: 5
+% 
+% Simple tautologies: 170
+% Equational tautologies: 29
+% Forward subsumptions: 2448
+% 
+% Binary resolution: 2256
+% Factoring: 13
+% Forward superposition: 306
+% Backward superposition: 820
+% Self superposition: 36
+% Equality factoring: 36
+% Equality resolution: 5
+% 
+% Split clauses: 130
+% Split components: 263
+% SAT solver clauses: 188
+% SAT solver unit clauses: 12
+% SAT solver binary clauses: 38
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 130
+% Sat splitting refutations: 5
+% 
+% TWLsolver clauses: 185
+% TWLsolver calls for satisfiability: 53
+% 
+% Memory used [KB]: 2302
+% Time elapsed: 0.111 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.113 s

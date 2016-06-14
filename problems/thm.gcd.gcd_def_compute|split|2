@@ -1,0 +1,68 @@
+include('incl/logic.ax').
+include('incl/bool.ax').
+include('incl/marker.ax').
+include('incl/num.ax').
+include('incl/combin.ax').
+include('incl/normalForms.ax').
+include('incl/sat.ax').
+include('incl/relation.ax').
+include('incl/pair.ax').
+include('incl/prim_rec.ax').
+include('incl/arithmetic.ax').
+include('incl/numeral.ax').
+include('incl/ConseqConv.ax').
+include('incl/sum.ax').
+include('incl/one.ax').
+include('incl/option.ax').
+include('incl/while.ax').
+include('incl/operator.ax').
+include('incl/basicSize.ax').
+include('incl/numpair.ax').
+include('incl/pred_set.ax').
+include('incl/ind_type.ax').
+include('incl/list.ax').
+include('incl/rich_list.ax').
+include('incl/quantHeuristics.ax').
+include('incl/prelim.ax').
+include('incl/quote.ax').
+include('incl/semi_ring.ax').
+include('incl/ring.ax').
+include('incl/canonical.ax').
+include('incl/ringNorm.ax').
+include('incl/indexedLists.ax').
+include('incl/res_quan.ax').
+include('incl/quotient.ax').
+include('incl/quotient_list.ax').
+include('incl/quotient_pair.ax').
+include('incl/quotient_sum.ax').
+include('incl/quotient_option.ax').
+include('incl/hrat.ax').
+include('incl/hreal.ax').
+include('incl/realax.ax').
+include('incl/real.ax').
+include('incl/topology.ax').
+include('incl/nets.ax').
+include('incl/seq.ax').
+include('incl/lim.ax').
+include('incl/powser.ax').
+include('incl/transc.ax').
+include('incl/integral.ax').
+include('incl/divides.ax').
+include('incl/integer.ax').
+include('incl/integerRing.ax').
+fof('thm.gcd.is_gcd_def', axiom, ![V_27a_27, V_27b_27, V_27c_27]: (p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27)))) <=> (p(s('bool','const.divides.divides_2'(s('type.num.num',V_27c_27),s('type.num.num',V_27a_27)))) & (p(s('bool','const.divides.divides_2'(s('type.num.num',V_27c_27),s('type.num.num',V_27b_27)))) & ![V_27d_27]: ((p(s('bool','const.divides.divides_2'(s('type.num.num',V_27d_27),s('type.num.num',V_27a_27)))) & p(s('bool','const.divides.divides_2'(s('type.num.num',V_27d_27),s('type.num.num',V_27b_27))))) => p(s('bool','const.divides.divides_2'(s('type.num.num',V_27d_27),s('type.num.num',V_27c_27))))))))).
+fof('thm.gcd.IS_GCD_UNIQUE', axiom, ![V_27a_27, V_27b_27, V_27c_27, V_27d_27]: ((p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27)))) & p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27d_27))))) => s('type.num.num',V_27c_27) = s('type.num.num',V_27d_27))).
+fof('thm.gcd.IS_GCD_REF', axiom, ![V_27a_27]: p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27a_27),s('type.num.num',V_27a_27))))).
+fof('thm.gcd.IS_GCD_SYM', axiom, ![V_27a_27, V_27b_27, V_27c_27]: s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27))) = s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27b_27),s('type.num.num',V_27a_27),s('type.num.num',V_27c_27)))).
+fof('thm.gcd.IS_GCD_|48|R', axiom, ![V_27a_27]: p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num','const.num.|48|_0'),s('type.num.num',V_27a_27))))).
+fof('thm.gcd.IS_GCD_|48|L', axiom, ![V_27a_27]: p(s('bool','const.gcd.is_gcd_3'(s('type.num.num','const.num.|48|_0'),s('type.num.num',V_27a_27),s('type.num.num',V_27a_27))))).
+fof('thm.gcd.PRIME_IS_GCD', axiom, ![V_27p_27, V_27b_27]: (p(s('bool','const.divides.prime_1'(s('type.num.num',V_27p_27)))) => (p(s('bool','const.divides.divides_2'(s('type.num.num',V_27p_27),s('type.num.num',V_27b_27)))) | p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27p_27),s('type.num.num',V_27b_27),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num','const.arithmetic.ZERO_0'))))))))))).
+fof('thm.gcd.IS_GCD_MINUS_L', axiom, ![V_27a_27, V_27b_27, V_27c_27]: ((p(s('bool','const.arithmetic.<=_2'(s('type.num.num',V_27b_27),s('type.num.num',V_27a_27)))) & p(s('bool','const.gcd.is_gcd_3'(s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27))),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27))))) => p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27)))))).
+fof('thm.gcd.IS_GCD_MINUS_R', axiom, ![V_27a_27, V_27b_27, V_27c_27]: ((p(s('bool','const.arithmetic.<=_2'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27)))) & p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27b_27),s('type.num.num',V_27a_27))),s('type.num.num',V_27c_27))))) => p(s('bool','const.gcd.is_gcd_3'(s('type.num.num',V_27a_27),s('type.num.num',V_27b_27),s('type.num.num',V_27c_27)))))).
+fof('thm.gcd.gcd_|49||48|_prove_ltb', axiom, ![V_27a_27]: ((?[V_27y_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',V_27y_27))) | (?[V_27x_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.|48|_0'))) | ?[V_27x_27, V_27y_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27))))))) => (?[V_27y_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',V_27y_27))) | (?[V_27x_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.|48|_0'))) | ?[V_27x_27, V_27y_27]: s('type.pair.prod'('type.num.num','type.num.num'),V_27a_27) = s('type.pair.prod'('type.num.num','type.num.num'),'const.pair.,_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27))))))))).
+fof('thm.gcd.gcd_ind', axiom, ![V_27P_27]: ((![V_27y_27]: p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num','const.num.|48|_0'))),s('type.num.num',V_27y_27)))) & (![V_27x_27]: p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))))),s('type.num.num','const.num.|48|_0')))) & ![V_27x_27, V_27y_27]: (((~ (p(s('bool','const.arithmetic.<=_2'(s('type.num.num',V_27y_27),s('type.num.num',V_27x_27))))) => p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))))),s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27y_27),s('type.num.num',V_27x_27))))))) & (p(s('bool','const.arithmetic.<=_2'(s('type.num.num',V_27y_27),s('type.num.num',V_27x_27)))) => p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27x_27),s('type.num.num',V_27y_27))))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27)))))))) => p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27))))))))) => ![V_27v_27, V_27v_7c49_7c_27]: p(s('bool','happ'(s('fun'('type.num.num','bool'),'happ'(s('fun'('type.num.num','fun'('type.num.num','bool')),V_27P_27),s('type.num.num',V_27v_27))),s('type.num.num',V_27v_7c49_7c_27)))))).
+fof('thm.gcd.gcd_def|split|0', axiom, ![V_27y_27]: s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.num.|48|_0'),s('type.num.num',V_27y_27))) = s('type.num.num',V_27y_27)).
+fof('thm.gcd.gcd_def|split|1', axiom, ![V_27x_27]: s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27)))).
+fof('thm.gcd.gcd_def|split|2', axiom, ![V_27y_27, V_27x_27]: s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27))))) = s('type.num.num','const.bool.COND_3'(s('bool','const.arithmetic.<=_2'(s('type.num.num',V_27y_27),s('type.num.num',V_27x_27))),s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27x_27),s('type.num.num',V_27y_27))),s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27y_27))))),s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.num.SUC_1'(s('type.num.num',V_27x_27))),s('type.num.num','const.arithmetic.-_2'(s('type.num.num',V_27y_27),s('type.num.num',V_27x_27)))))))).
+fof('thm.gcd.gcd_def_compute|split|1', axiom, ![V_27x_27]: s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',V_27x_27))))),s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT|49|_1'(s('type.num.num',V_27x_27)))))).
+fof('thm.gcd.gcd_def_compute|split|2', conjecture, ![V_27x_27]: s('type.num.num','const.gcd.gcd_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',V_27x_27))))),s('type.num.num','const.num.|48|_0'))) = s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num','const.arithmetic.BIT2_1'(s('type.num.num',V_27x_27)))))).

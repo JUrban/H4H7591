@@ -1,0 +1,288 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.pred_set
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.pred_set
+% SZS output start Proof for thm.pred_set
+fof(f14961,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f14718,f140,f93,f136,f14538,f89,f135,f137,f4389,f1788,f4390,f4300,f4299,f14408])).
+fof(f14408,plain,(
+  $false | $spl132),
+  inference(trivial_inequality_removal,[],[f14352])).
+fof(f14352,plain,(
+  s(fun(sK0,bool),'const.pred_set.EMPTY_0') != s(fun(sK0,bool),'const.pred_set.EMPTY_0') | $spl132),
+  inference(superposition,[],[f86,f14295])).
+fof(f14295,plain,(
+  ( ! [X4,X3] : (s(fun(X3,bool),'const.pred_set.EMPTY_0') = s(fun(X3,bool),'const.pred_set.DELETE_2'(s(fun(X3,bool),'const.pred_set.EMPTY_0'),s(X3,X4)))) ) | $spl132),
+  inference(trivial_inequality_removal,[],[f14272])).
+fof(f14272,plain,(
+  ( ! [X4,X3] : (s(bool,'F_0') != s(bool,'F_0') | s(fun(X3,bool),'const.pred_set.EMPTY_0') = s(fun(X3,bool),'const.pred_set.DELETE_2'(s(fun(X3,bool),'const.pred_set.EMPTY_0'),s(X3,X4)))) ) | $spl132),
+  inference(superposition,[],[f1629,f4390])).
+fof(f1629,plain,(
+  ( ! [X4,X3] : (s(bool,'F_0') != s(bool,'const.bool.IN_2'(s(X3,sK2(X4,'const.pred_set.EMPTY_0',X3)),s(fun(X3,bool),X4))) | s(fun(X3,bool),'const.pred_set.EMPTY_0') = s(fun(X3,bool),X4)) )),
+  inference(superposition,[],[f125,f147])).
+fof(f147,plain,(
+  ( ! [X0,X1] : (s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0')))) )),
+  inference(resolution,[],[f123,f101])).
+fof(f101,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f65])).
+fof(f65,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X10] : (s(bool,'F_0') = s(bool,X10) <=> ~p(s(bool,X10)))),
+  file('thm.pred_set.EMPTY_DELETE','thm.bool.EQ_CLAUSES|split|3')).
+fof(f123,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))) )),
+  inference(cnf_transformation,[],[f47])).
+fof(f47,plain,(
+  ! [X0,X1] : ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(flattening,[],[f46])).
+fof(f46,plain,(
+  ! [X0] : ! [X1] : ~p(s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.EMPTY_0'))))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X6] : ! [X7] : ~p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.EMPTY_0'))))),
+  file('thm.pred_set.EMPTY_DELETE','thm.pred_set.NOT_IN_EMPTY')).
+fof(f125,plain,(
+  ( ! [X2,X0,X1] : (s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X1))) != s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X2))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2)) )),
+  inference(cnf_transformation,[],[f82])).
+fof(f82,plain,(
+  ! [X0,X1,X2] : ((s(fun(X0,bool),X1) != s(fun(X0,bool),X2) | ! [X4] : s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X2)))) & (s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X1))) != s(bool,'const.bool.IN_2'(s(X0,sK2(X2,X1,X0)),s(fun(X0,bool),X2))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2])],[f81])).
+fof(f81,plain,(
+  ! [X0,X1,X2] : ((s(fun(X0,bool),X1) != s(fun(X0,bool),X2) | ! [X4] : s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X4),s(fun(X0,bool),X2)))) & (? [X3] : s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1))) != s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2)))),
+  inference(rectify,[],[f80])).
+fof(f80,plain,(
+  ! [X0,X1,X2] : ((s(fun(X0,bool),X1) != s(fun(X0,bool),X2) | ! [X3] : s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2)))) & (? [X3] : s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1))) != s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))) | s(fun(X0,bool),X1) = s(fun(X0,bool),X2)))),
+  inference(nnf_transformation,[],[f49])).
+fof(f49,plain,(
+  ! [X0,X1,X2] : (s(fun(X0,bool),X1) = s(fun(X0,bool),X2) <=> ! [X3] : s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))),
+  inference(flattening,[],[f48])).
+fof(f48,plain,(
+  ! [X0] : ! [X1,X2] : (s(fun(X0,bool),X1) = s(fun(X0,bool),X2) <=> ! [X3] : s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X1))) = s(bool,'const.bool.IN_2'(s(X0,X3),s(fun(X0,bool),X2))))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X11,X10] : (s(fun(X6,bool),X10) = s(fun(X6,bool),X11) <=> ! [X7] : s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X10))) = s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X11))))),
+  file('thm.pred_set.EMPTY_DELETE','thm.pred_set.EXTENSION')).
+fof(f86,plain,(
+  s(fun(sK0,bool),'const.pred_set.EMPTY_0') != s(fun(sK0,bool),'const.pred_set.DELETE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(sK0,sK1)))),
+  inference(cnf_transformation,[],[f60])).
+fof(f60,plain,(
+  s(fun(sK0,bool),'const.pred_set.EMPTY_0') != s(fun(sK0,bool),'const.pred_set.DELETE_2'(s(fun(sK0,bool),'const.pred_set.EMPTY_0'),s(sK0,sK1)))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f55])).
+fof(f55,plain,(
+  ? [X0,X1] : s(fun(X0,bool),'const.pred_set.EMPTY_0') != s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))),
+  inference(ennf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~! [X0,X1] : s(fun(X0,bool),'const.pred_set.EMPTY_0') = s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ~! [X0] : ! [X1] : s(fun(X0,bool),'const.pred_set.EMPTY_0') = s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X1)))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7] : s(fun(X6,bool),'const.pred_set.EMPTY_0') = s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(X6,X7)))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7] : s(fun(X6,bool),'const.pred_set.EMPTY_0') = s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),'const.pred_set.EMPTY_0'),s(X6,X7)))),
+  file('thm.pred_set.EMPTY_DELETE','thm.pred_set.EMPTY_DELETE')).
+fof(f4299,plain,(
+  ( ! [X0,X3,X1] : (s(bool,'T_0') != s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X3)))))) ) | $spl126),
+  inference(cnf_transformation,[],[f4299_D])).
+fof(f4299_D,plain,(
+  ( ! [X0,X3,X1] : (s(bool,'T_0') != s(bool,'const.bool.IN_2'(s(X0,X1),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),'const.pred_set.EMPTY_0'),s(X0,X3)))))) ) <=> ~$spl126),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl126])])).
+fof(f4300,plain,(
+  ( ! [X6,X4,X5] : (s(bool,'T_0') != s(bool,'const.bool.IN_2'(s(X4,X5),s(fun(X4,bool),'const.pred_set.DELETE_2'(s(fun(X4,bool),'const.pred_set.EMPTY_0'),s(X4,X6)))))) ) | $spl1),
+  inference(subsumption_resolution,[],[f4274,f136])).
+fof(f4274,plain,(
+  ( ! [X6,X4,X5] : (p(s(bool,'F_0')) | s(bool,'T_0') != s(bool,'const.bool.IN_2'(s(X4,X5),s(fun(X4,bool),'const.pred_set.DELETE_2'(s(fun(X4,bool),'const.pred_set.EMPTY_0'),s(X4,X6)))))) )),
+  inference(superposition,[],[f998,f147])).
+fof(f998,plain,(
+  ( ! [X21,X19,X22,X20] : (p(s(bool,'const.bool.IN_2'(s(X19,X20),s(fun(X19,bool),X21)))) | s(bool,'T_0') != s(bool,'const.bool.IN_2'(s(X19,X20),s(fun(X19,bool),'const.pred_set.DELETE_2'(s(fun(X19,bool),X21),s(X19,X22)))))) )),
+  inference(resolution,[],[f126,f96])).
+fof(f96,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f63])).
+fof(f63,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f32])).
+fof(f32,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f20])).
+fof(f20,axiom,(
+  ! [X10] : (s(bool,'T_0') = s(bool,X10) <=> p(s(bool,X10)))),
+  file('thm.pred_set.EMPTY_DELETE','thm.bool.EQ_CLAUSES|split|1')).
+fof(f126,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3)))))) | p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f84])).
+fof(f84,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3)))))) | (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) & s(X0,X2) != s(X0,X3))) & (~p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) | s(X0,X2) = s(X0,X3) | p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3))))))))),
+  inference(flattening,[],[f83])).
+fof(f83,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3)))))) | (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) & s(X0,X2) != s(X0,X3))) & ((~p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) | s(X0,X2) = s(X0,X3)) | p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3))))))))),
+  inference(nnf_transformation,[],[f51])).
+fof(f51,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3)))))) <=> (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) & s(X0,X2) != s(X0,X3)))),
+  inference(flattening,[],[f50])).
+fof(f50,plain,(
+  ! [X0] : ! [X1,X2,X3] : (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),'const.pred_set.DELETE_2'(s(fun(X0,bool),X1),s(X0,X3)))))) <=> (p(s(bool,'const.bool.IN_2'(s(X0,X2),s(fun(X0,bool),X1)))) & ~s(X0,X2) = s(X0,X3)))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X6] : ! [X11,X7,X12] : (p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),'const.pred_set.DELETE_2'(s(fun(X6,bool),X11),s(X6,X12)))))) <=> (p(s(bool,'const.bool.IN_2'(s(X6,X7),s(fun(X6,bool),X11)))) & ~s(X6,X7) = s(X6,X12)))),
+  file('thm.pred_set.EMPTY_DELETE','thm.pred_set.IN_DELETE')).
+fof(f4390,plain,(
+  ( ! [X30,X31,X32] : (s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X30,X31),s(fun(X30,bool),'const.pred_set.DELETE_2'(s(fun(X30,bool),'const.pred_set.EMPTY_0'),s(X30,X32)))))) ) | $spl132),
+  inference(cnf_transformation,[],[f4390_D])).
+fof(f4390_D,plain,(
+  ( ! [X30,X31,X32] : (s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X30,X31),s(fun(X30,bool),'const.pred_set.DELETE_2'(s(fun(X30,bool),'const.pred_set.EMPTY_0'),s(X30,X32)))))) ) <=> ~$spl132),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl132])])).
+fof(f1788,plain,(
+  ( ! [X31] : (s(bool,'F_0') = s(bool,X31)) ) | $spl32),
+  inference(cnf_transformation,[],[f1788_D])).
+fof(f1788_D,plain,(
+  ( ! [X31] : (s(bool,'F_0') = s(bool,X31)) ) <=> ~$spl32),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl32])])).
+fof(f4389,plain,(
+  ( ! [X30,X33,X31,X32] : (s(bool,'F_0') = s(bool,X33) | s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X30,X31),s(fun(X30,bool),'const.pred_set.DELETE_2'(s(fun(X30,bool),'const.pred_set.EMPTY_0'),s(X30,X32)))))) ) | $spl126),
+  inference(subsumption_resolution,[],[f4377,f94])).
+fof(f94,plain,(
+  ( ! [X0] : (s(bool,'F_0') = s(bool,X0) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f3])).
+fof(f3,axiom,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) | s(bool,'F_0') = s(bool,X0))),
+  file('thm.pred_set.EMPTY_DELETE',aHL_BOOL_CASES)).
+fof(f4377,plain,(
+  ( ! [X30,X33,X31,X32] : (s(bool,'T_0') != s(bool,X33) | s(bool,'F_0') = s(bool,X33) | s(bool,'F_0') = s(bool,'const.bool.IN_2'(s(X30,X31),s(fun(X30,bool),'const.pred_set.DELETE_2'(s(fun(X30,bool),'const.pred_set.EMPTY_0'),s(X30,X32)))))) ) | $spl126),
+  inference(superposition,[],[f4299,f238])).
+fof(f238,plain,(
+  ( ! [X10,X11] : (s(bool,X10) = s(bool,X11) | s(bool,'F_0') = s(bool,X11) | s(bool,'F_0') = s(bool,X10)) )),
+  inference(resolution,[],[f189,f101])).
+fof(f189,plain,(
+  ( ! [X8,X7] : (~p(s(bool,X7)) | s(bool,X7) = s(bool,X8) | s(bool,'F_0') = s(bool,X8)) )),
+  inference(resolution,[],[f132,f101])).
+fof(f132,plain,(
+  ( ! [X0,X1] : (~p(s(bool,X1)) | ~p(s(bool,X0)) | s(bool,X0) = s(bool,X1)) )),
+  inference(cnf_transformation,[],[f58])).
+fof(f58,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | (p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1))),
+  inference(flattening,[],[f57])).
+fof(f57,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) & ~p(s(bool,X1))) | ((p(s(bool,X1)) & ~p(s(bool,X0))) | s(bool,X0) = s(bool,X1)))),
+  inference(ennf_transformation,[],[f52])).
+fof(f52,plain,(
+  ! [X0,X1] : ((p(s(bool,X0)) => p(s(bool,X1))) => ((p(s(bool,X1)) => p(s(bool,X0))) => s(bool,X0) = s(bool,X1)))),
+  inference(rectify,[],[f8])).
+fof(f8,axiom,(
+  ! [X8,X9] : ((p(s(bool,X8)) => p(s(bool,X9))) => ((p(s(bool,X9)) => p(s(bool,X8))) => s(bool,X8) = s(bool,X9)))),
+  file('thm.pred_set.EMPTY_DELETE','thm.bool.IMP_ANTISYM_AX')).
+fof(f137,plain,(
+  p(s(bool,'T_0')) | $spl2),
+  inference(cnf_transformation,[],[f137_D])).
+fof(f137_D,plain,(
+  p(s(bool,'T_0')) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f135,plain,(
+  p(s(bool,'F_0')) | $spl0),
+  inference(cnf_transformation,[],[f135_D])).
+fof(f135_D,plain,(
+  p(s(bool,'F_0')) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f89,plain,(
+  p(s(bool,'F_0')) | p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f61])).
+fof(f61,plain,(
+  (p(s(bool,'T_0')) | p(s(bool,'F_0'))) & (~p(s(bool,'F_0')) | ~p(s(bool,'T_0')))),
+  inference(nnf_transformation,[],[f28])).
+fof(f28,plain,(
+  ~p(s(bool,'T_0')) <=> p(s(bool,'F_0'))),
+  inference(flattening,[],[f17])).
+fof(f17,axiom,(
+  ~p(s(bool,'T_0')) <=> p(s(bool,'F_0'))),
+  file('thm.pred_set.EMPTY_DELETE','thm.bool.NOT_CLAUSES|split|1')).
+fof(f14538,plain,(
+  $false | ($spl2 | $spl6)),
+  inference(resolution,[],[f140,f137])).
+fof(f136,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f136_D])).
+fof(f136_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f93,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.pred_set.EMPTY_DELETE',aHL_FALSITY)).
+fof(f140,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) | $spl6),
+  inference(cnf_transformation,[],[f140_D])).
+fof(f140_D,plain,(
+  ( ! [X0] : (~p(s(bool,X0))) ) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f14718,plain,(
+  ( ! [X4] : (~p(s(bool,X4))) ) | ($spl1 | $spl32)),
+  inference(superposition,[],[f136,f1788])).
+% SZS output end Proof for thm.pred_set
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 131
+% Passive clauses: 2802
+% Generated clauses: 14846
+% Final active clauses: 60
+% Final passive clauses: 2219
+% Input formulas: 24
+% Initial clauses: 48
+% 
+% Duplicate literals: 632
+% Trivial inequalities: 211
+% Fw subsumption resolutions: 2471
+% Fw demodulations: 1428
+% Bw demodulations: 55
+% 
+% Simple tautologies: 313
+% Equational tautologies: 45
+% Forward subsumptions: 5625
+% Bw demodulations to eq. taut.: 2
+% 
+% Binary resolution: 1087
+% Factoring: 7
+% Forward superposition: 5210
+% Backward superposition: 2914
+% Self superposition: 124
+% Equality factoring: 100
+% Equality resolution: 23
+% 
+% Split clauses: 891
+% Split components: 1834
+% SAT solver clauses: 1490
+% SAT solver unit clauses: 40
+% SAT solver binary clauses: 302
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 891
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 1465
+% TWLsolver calls for satisfiability: 221
+% 
+% Memory used [KB]: 7547
+% Time elapsed: 0.460 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.463 s

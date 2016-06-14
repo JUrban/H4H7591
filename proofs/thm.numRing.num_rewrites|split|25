@@ -1,0 +1,86 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.numRing
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.numRing
+% SZS output start Proof for thm.numRing
+fof(f5120,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f175,f237])).
+fof(f237,plain,(
+  ( ! [X0,X1] : (s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))) )),
+  inference(cnf_transformation,[],[f130])).
+fof(f130,plain,(
+  ! [X0,X1] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f36])).
+fof(f36,axiom,(
+  ! [X10,X7] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X7),s('type.num.num',X10))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X10))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))))),
+  file('thm.numRing.num_rewrites|split|25','thm.numeral.numeral_distrib|split|25')).
+fof(f175,plain,(
+  s(bool,'const.prim_rec.<_2'(s('type.num.num',sK1),s('type.num.num',sK0))) != s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1)))))),
+  inference(cnf_transformation,[],[f160])).
+fof(f160,plain,(
+  s(bool,'const.prim_rec.<_2'(s('type.num.num',sK1),s('type.num.num',sK0))) != s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',sK1)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1])],[f158])).
+fof(f158,plain,(
+  ? [X0,X1] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0))) != s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))),
+  inference(ennf_transformation,[],[f83])).
+fof(f83,plain,(
+  ~! [X0,X1] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X1),s('type.num.num',X0))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X0))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X1)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : s(bool,'const.prim_rec.<_2'(s('type.num.num',X7),s('type.num.num',X6))) = s(bool,'const.arithmetic.>_2'(s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X6))),s('type.num.num','const.arithmetic.NUMERAL_1'(s('type.num.num',X7)))))),
+  file('thm.numRing.num_rewrites|split|25','thm.numRing.num_rewrites|split|25')).
+% SZS output end Proof for thm.numRing
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 138
+% Passive clauses: 611
+% Generated clauses: 4953
+% Final active clauses: 98
+% Final passive clauses: 376
+% Input formulas: 81
+% Initial clauses: 94
+% 
+% Duplicate literals: 124
+% Trivial inequalities: 31
+% Fw subsumption resolutions: 168
+% Fw demodulations: 661
+% Bw demodulations: 30
+% 
+% Simple tautologies: 40
+% Equational tautologies: 24
+% Forward subsumptions: 3301
+% Fw demodulations to eq. taut.: 4
+% 
+% Binary resolution: 19
+% Forward superposition: 2535
+% Backward superposition: 1128
+% Self superposition: 61
+% Equality factoring: 32
+% Equality resolution: 8
+% 
+% Split clauses: 43
+% Split components: 88
+% SAT solver clauses: 68
+% SAT solver unit clauses: 3
+% SAT solver binary clauses: 41
+% SAT solver learnt clauses: 1
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 43
+% Sat splitting refutations: 11
+% 
+% TWLsolver clauses: 65
+% TWLsolver calls for satisfiability: 16
+% 
+% Memory used [KB]: 2430
+% Time elapsed: 0.088 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.09 s

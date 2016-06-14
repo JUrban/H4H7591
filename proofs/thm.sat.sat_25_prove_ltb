@@ -1,0 +1,301 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.sat
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.sat
+% SZS output start Proof for thm.sat
+fof(f278,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f265,f277,f110,f109,f105,f255,f107,f106,f168,f117,f173,f208,f167,f214,f165,f108,f169,f166,f170,f266,f164,f171])).
+fof(f171,plain,(
+  ~p(s(bool,sK3)) | $spl7),
+  inference(cnf_transformation,[],[f171_D])).
+fof(f171_D,plain,(
+  ~p(s(bool,sK3)) <=> ~$spl7),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl7])])).
+fof(f164,plain,(
+  p(s(bool,sK4)) | $spl0),
+  inference(cnf_transformation,[],[f164_D])).
+fof(f164_D,plain,(
+  p(s(bool,sK4)) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f266,plain,(
+  p(s(bool,sK4)) | ~p(s(bool,sK3)) | $spl4),
+  inference(resolution,[],[f168,f94])).
+fof(f94,plain,(
+  ( ! [X2,X0,X1] : (~sP1(X0,X1,X2) | p(s(bool,X0)) | ~p(s(bool,X2))) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f59,plain,(
+  ! [X0,X1,X2] : ((~sP1(X0,X1,X2) | ((p(s(bool,X0)) | ~p(s(bool,X2))) & (p(s(bool,X0)) | ~p(s(bool,X1))) & sP0(X0,X1,X2))) & ((~p(s(bool,X0)) & p(s(bool,X2))) | (~p(s(bool,X0)) & p(s(bool,X1))) | ~sP0(X0,X1,X2) | sP1(X0,X1,X2)))),
+  inference(rectify,[],[f58])).
+fof(f58,plain,(
+  ! [X2,X0,X1] : ((~sP1(X2,X0,X1) | ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1))) & ((~p(s(bool,X2)) & p(s(bool,X1))) | (~p(s(bool,X2)) & p(s(bool,X0))) | ~sP0(X2,X0,X1) | sP1(X2,X0,X1)))),
+  inference(flattening,[],[f57])).
+fof(f57,plain,(
+  ! [X2,X0,X1] : ((~sP1(X2,X0,X1) | ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1))) & (((~p(s(bool,X2)) & p(s(bool,X1))) | (~p(s(bool,X2)) & p(s(bool,X0))) | ~sP0(X2,X0,X1)) | sP1(X2,X0,X1)))),
+  inference(nnf_transformation,[],[f55])).
+fof(f55,plain,(
+  ! [X2,X0,X1] : (sP1(X2,X0,X1) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & sP0(X2,X0,X1)))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP1])])).
+fof(f170,plain,(
+  p(s(bool,sK3)) | $spl6),
+  inference(cnf_transformation,[],[f170_D])).
+fof(f170_D,plain,(
+  p(s(bool,sK3)) <=> ~$spl6),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl6])])).
+fof(f166,plain,(
+  p(s(bool,sK2)) | $spl2),
+  inference(cnf_transformation,[],[f166_D])).
+fof(f166_D,plain,(
+  p(s(bool,sK2)) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f169,plain,(
+  ~sP1(sK4,sK2,sK3) | $spl5),
+  inference(cnf_transformation,[],[f169_D])).
+fof(f169_D,plain,(
+  ~sP1(sK4,sK2,sK3) <=> ~$spl5),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl5])])).
+fof(f108,plain,(
+  ~sP1(sK4,sK2,sK3) | p(s(bool,sK2)) | p(s(bool,sK3)) | p(s(bool,sK4))),
+  inference(cnf_transformation,[],[f65])).
+fof(f65,plain,(
+  (((~p(s(bool,sK4)) | p(s(bool,sK3)) | p(s(bool,sK2))) & ((~p(s(bool,sK3)) & ~p(s(bool,sK2))) | p(s(bool,sK4)))) | sP1(sK4,sK2,sK3)) & (((p(s(bool,sK4)) | p(s(bool,sK3)) | p(s(bool,sK2))) & (~p(s(bool,sK4)) | (~p(s(bool,sK3)) & ~p(s(bool,sK2))))) | ~sP1(sK4,sK2,sK3))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK2,sK3,sK4])],[f64])).
+fof(f64,plain,(
+  ? [X0,X1,X2] : ((((~p(s(bool,X2)) | p(s(bool,X1)) | p(s(bool,X0))) & ((~p(s(bool,X1)) & ~p(s(bool,X0))) | p(s(bool,X2)))) | sP1(X2,X0,X1)) & (((p(s(bool,X2)) | p(s(bool,X1)) | p(s(bool,X0))) & (~p(s(bool,X2)) | (~p(s(bool,X1)) & ~p(s(bool,X0))))) | ~sP1(X2,X0,X1)))),
+  inference(flattening,[],[f63])).
+fof(f63,plain,(
+  ? [X0,X1,X2] : ((((~p(s(bool,X2)) | (p(s(bool,X1)) | p(s(bool,X0)))) & ((~p(s(bool,X1)) & ~p(s(bool,X0))) | p(s(bool,X2)))) | sP1(X2,X0,X1)) & (((p(s(bool,X2)) | (p(s(bool,X1)) | p(s(bool,X0)))) & (~p(s(bool,X2)) | (~p(s(bool,X1)) & ~p(s(bool,X0))))) | ~sP1(X2,X0,X1)))),
+  inference(nnf_transformation,[],[f56])).
+fof(f56,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <~> sP1(X2,X0,X1))),
+  inference(definition_folding,[],[f52,f55,f54])).
+fof(f54,plain,(
+  ! [X2,X0,X1] : (sP0(X2,X0,X1) <=> (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2))))),
+  introduced(predicate_definition_introduction,[new_symbols(naming,[sP0])])).
+fof(f52,plain,(
+  ? [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <~> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))))),
+  inference(ennf_transformation,[],[f27])).
+fof(f27,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))))),
+  inference(flattening,[],[f26])).
+fof(f26,plain,(
+  ~! [X0,X1,X2] : ((p(s(bool,X2)) <=> (p(s(bool,X1)) | p(s(bool,X0)))) <=> ((p(s(bool,X2)) | ~p(s(bool,X1))) & (p(s(bool,X2)) | ~p(s(bool,X0))) & (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7,X8] : ((p(s(bool,X8)) <=> (p(s(bool,X7)) | p(s(bool,X6)))) <=> ((p(s(bool,X8)) | ~p(s(bool,X7))) & (p(s(bool,X8)) | ~p(s(bool,X6))) & (p(s(bool,X7)) | p(s(bool,X6)) | ~p(s(bool,X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7,X8] : ((p(s(bool,X8)) <=> (p(s(bool,X7)) | p(s(bool,X6)))) <=> ((p(s(bool,X8)) | ~p(s(bool,X7))) & (p(s(bool,X8)) | ~p(s(bool,X6))) & (p(s(bool,X7)) | p(s(bool,X6)) | ~p(s(bool,X8)))))),
+  file('thm.sat.sat_25_prove_ltb','thm.sat.sat_25_prove_ltb')).
+fof(f165,plain,(
+  ~p(s(bool,sK4)) | $spl1),
+  inference(cnf_transformation,[],[f165_D])).
+fof(f165_D,plain,(
+  ~p(s(bool,sK4)) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f214,plain,(
+  ~p(s(bool,sK4)) | ~p(s(bool,sK3)) | $spl5),
+  inference(resolution,[],[f207,f169])).
+fof(f207,plain,(
+  ( ! [X6,X8,X7] : (sP1(X6,X7,X8) | ~p(s(bool,X6)) | ~p(s(bool,X8))) )),
+  inference(resolution,[],[f163,f102])).
+fof(f102,plain,(
+  ( ! [X2,X0,X1] : (sP0(X0,X1,X2) | ~p(s(bool,X2))) )),
+  inference(cnf_transformation,[],[f62])).
+fof(f62,plain,(
+  ! [X0,X1,X2] : ((~sP0(X0,X1,X2) | p(s(bool,X2)) | p(s(bool,X1)) | ~p(s(bool,X0))) & ((~p(s(bool,X2)) & ~p(s(bool,X1)) & p(s(bool,X0))) | sP0(X0,X1,X2)))),
+  inference(rectify,[],[f61])).
+fof(f61,plain,(
+  ! [X2,X0,X1] : ((~sP0(X2,X0,X1) | p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2))) & ((~p(s(bool,X1)) & ~p(s(bool,X0)) & p(s(bool,X2))) | sP0(X2,X0,X1)))),
+  inference(flattening,[],[f60])).
+fof(f60,plain,(
+  ! [X2,X0,X1] : ((~sP0(X2,X0,X1) | (p(s(bool,X1)) | p(s(bool,X0)) | ~p(s(bool,X2)))) & ((~p(s(bool,X1)) & ~p(s(bool,X0)) & p(s(bool,X2))) | sP0(X2,X0,X1)))),
+  inference(nnf_transformation,[],[f54])).
+fof(f163,plain,(
+  ( ! [X2,X0,X1] : (~sP0(X0,X1,X2) | sP1(X0,X1,X2) | ~p(s(bool,X0))) )),
+  inference(duplicate_literal_removal,[],[f97])).
+fof(f97,plain,(
+  ( ! [X2,X0,X1] : (sP1(X0,X1,X2) | ~sP0(X0,X1,X2) | ~p(s(bool,X0)) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f167,plain,(
+  ~p(s(bool,sK2)) | $spl3),
+  inference(cnf_transformation,[],[f167_D])).
+fof(f167_D,plain,(
+  ~p(s(bool,sK2)) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f208,plain,(
+  ~p(s(bool,sK4)) | ~p(s(bool,sK2)) | $spl5),
+  inference(resolution,[],[f206,f169])).
+fof(f206,plain,(
+  ( ! [X4,X5,X3] : (sP1(X3,X4,X5) | ~p(s(bool,X3)) | ~p(s(bool,X4))) )),
+  inference(resolution,[],[f163,f103])).
+fof(f103,plain,(
+  ( ! [X2,X0,X1] : (sP0(X0,X1,X2) | ~p(s(bool,X1))) )),
+  inference(cnf_transformation,[],[f62])).
+fof(f173,plain,(
+  ~p(s(bool,'F_0')) | $spl9),
+  inference(cnf_transformation,[],[f173_D])).
+fof(f173_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl9),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl9])])).
+fof(f117,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f30])).
+fof(f30,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.sat.sat_25_prove_ltb',aHL_FALSITY)).
+fof(f168,plain,(
+  sP1(sK4,sK2,sK3) | $spl4),
+  inference(cnf_transformation,[],[f168_D])).
+fof(f168_D,plain,(
+  sP1(sK4,sK2,sK3) <=> ~$spl4),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl4])])).
+fof(f106,plain,(
+  sP1(sK4,sK2,sK3) | p(s(bool,sK4)) | ~p(s(bool,sK3))),
+  inference(cnf_transformation,[],[f65])).
+fof(f107,plain,(
+  sP1(sK4,sK2,sK3) | p(s(bool,sK4)) | ~p(s(bool,sK2))),
+  inference(cnf_transformation,[],[f65])).
+fof(f255,plain,(
+  $false | ($spl1 | $spl3 | $spl5 | $spl7 | $spl9)),
+  inference(subsumption_resolution,[],[f254,f173])).
+fof(f254,plain,(
+  p(s(bool,'F_0')) | ($spl1 | $spl3 | $spl5 | $spl7 | $spl9)),
+  inference(forward_demodulation,[],[f253,f186])).
+fof(f186,plain,(
+  s(bool,'F_0') = s(bool,sK4) | $spl1),
+  inference(resolution,[],[f125,f165])).
+fof(f125,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f70])).
+fof(f70,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f35])).
+fof(f35,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f34])).
+fof(f34,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f24])).
+fof(f24,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.sat.sat_25_prove_ltb','thm.bool.EQ_CLAUSES|split|2')).
+fof(f253,plain,(
+  p(s(bool,sK4)) | ($spl3 | $spl5 | $spl7 | $spl9)),
+  inference(subsumption_resolution,[],[f252,f173])).
+fof(f252,plain,(
+  p(s(bool,'F_0')) | p(s(bool,sK4)) | ($spl3 | $spl5 | $spl7 | $spl9)),
+  inference(forward_demodulation,[],[f251,f185])).
+fof(f185,plain,(
+  s(bool,'F_0') = s(bool,sK3) | $spl7),
+  inference(resolution,[],[f125,f171])).
+fof(f251,plain,(
+  p(s(bool,sK3)) | p(s(bool,sK4)) | ($spl3 | $spl5 | $spl9)),
+  inference(subsumption_resolution,[],[f250,f173])).
+fof(f250,plain,(
+  p(s(bool,'F_0')) | p(s(bool,sK3)) | p(s(bool,sK4)) | ($spl3 | $spl5)),
+  inference(forward_demodulation,[],[f244,f184])).
+fof(f184,plain,(
+  s(bool,'F_0') = s(bool,sK2) | $spl3),
+  inference(resolution,[],[f125,f167])).
+fof(f244,plain,(
+  p(s(bool,sK2)) | p(s(bool,sK3)) | p(s(bool,sK4)) | $spl5),
+  inference(resolution,[],[f238,f169])).
+fof(f238,plain,(
+  ( ! [X2,X0,X1] : (sP1(X0,X1,X2) | p(s(bool,X1)) | p(s(bool,X2)) | p(s(bool,X0))) )),
+  inference(resolution,[],[f100,f104])).
+fof(f104,plain,(
+  ( ! [X2,X0,X1] : (sP0(X0,X1,X2) | p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f62])).
+fof(f100,plain,(
+  ( ! [X2,X0,X1] : (~sP0(X0,X1,X2) | sP1(X0,X1,X2) | p(s(bool,X1)) | p(s(bool,X2))) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f105,plain,(
+  sP1(sK4,sK2,sK3) | p(s(bool,sK2)) | p(s(bool,sK3)) | ~p(s(bool,sK4))),
+  inference(cnf_transformation,[],[f65])).
+fof(f109,plain,(
+  ~sP1(sK4,sK2,sK3) | ~p(s(bool,sK3)) | ~p(s(bool,sK4))),
+  inference(cnf_transformation,[],[f65])).
+fof(f110,plain,(
+  ~sP1(sK4,sK2,sK3) | ~p(s(bool,sK2)) | ~p(s(bool,sK4))),
+  inference(cnf_transformation,[],[f65])).
+fof(f277,plain,(
+  $false | ($spl0 | $spl3 | $spl4 | $spl7)),
+  inference(subsumption_resolution,[],[f276,f164])).
+fof(f276,plain,(
+  ~p(s(bool,sK4)) | ($spl3 | $spl4 | $spl7)),
+  inference(subsumption_resolution,[],[f275,f171])).
+fof(f275,plain,(
+  p(s(bool,sK3)) | ~p(s(bool,sK4)) | ($spl3 | $spl4)),
+  inference(subsumption_resolution,[],[f272,f167])).
+fof(f272,plain,(
+  p(s(bool,sK2)) | p(s(bool,sK3)) | ~p(s(bool,sK4)) | $spl4),
+  inference(resolution,[],[f267,f101])).
+fof(f101,plain,(
+  ( ! [X2,X0,X1] : (~sP0(X0,X1,X2) | p(s(bool,X1)) | p(s(bool,X2)) | ~p(s(bool,X0))) )),
+  inference(cnf_transformation,[],[f62])).
+fof(f267,plain,(
+  sP0(sK4,sK2,sK3) | $spl4),
+  inference(resolution,[],[f168,f96])).
+fof(f96,plain,(
+  ( ! [X2,X0,X1] : (~sP1(X0,X1,X2) | sP0(X0,X1,X2)) )),
+  inference(cnf_transformation,[],[f59])).
+fof(f265,plain,(
+  p(s(bool,sK4)) | ~p(s(bool,sK2)) | $spl4),
+  inference(resolution,[],[f168,f95])).
+fof(f95,plain,(
+  ( ! [X2,X0,X1] : (~sP1(X0,X1,X2) | p(s(bool,X0)) | ~p(s(bool,X1))) )),
+  inference(cnf_transformation,[],[f59])).
+% SZS output end Proof for thm.sat
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 33
+% Passive clauses: 57
+% Generated clauses: 195
+% Final active clauses: 23
+% Final passive clauses: 6
+% Input formulas: 24
+% Initial clauses: 67
+% 
+% Duplicate literals: 8
+% Trivial inequalities: 1
+% Fw subsumption resolutions: 8
+% Fw demodulations: 10
+% Bw demodulations: 3
+% 
+% Simple tautologies: 40
+% Equational tautologies: 3
+% Forward subsumptions: 47
+% 
+% Binary resolution: 39
+% Forward superposition: 5
+% Backward superposition: 23
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 1
+% 
+% Split clauses: 26
+% Split components: 62
+% SAT solver clauses: 35
+% SAT solver unit clauses: 5
+% SAT solver binary clauses: 13
+% SAT solver learnt clauses: 4
+% SAT solver learnt literals: 4
+% 
+% Sat splits: 26
+% Sat splitting refutations: 2
+% 
+% TWLsolver clauses: 30
+% TWLsolver calls for satisfiability: 8
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.015 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.017 s

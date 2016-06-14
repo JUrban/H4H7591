@@ -1,0 +1,188 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 300 next slice time: 5
+dis+11_7_3 on thm.ind_type
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.ind_type
+% SZS output start Proof for thm.ind_type
+fof(f1760,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f1759,f90,f149,f147,f1717,f89,f148,f146])).
+fof(f146,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) | $spl0),
+  inference(cnf_transformation,[],[f146_D])).
+fof(f146_D,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) <=> ~$spl0),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl0])])).
+fof(f148,plain,(
+  s('type.num.num',sK1) = s('type.num.num',sK2) | $spl2),
+  inference(cnf_transformation,[],[f148_D])).
+fof(f148_D,plain,(
+  s('type.num.num',sK1) = s('type.num.num',sK2) <=> ~$spl2),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl2])])).
+fof(f89,plain,(
+  s('type.num.num',sK1) = s('type.num.num',sK2) | s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2)))),
+  inference(cnf_transformation,[],[f66])).
+fof(f66,plain,(
+  (s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) = s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) | s('type.num.num',sK1) = s('type.num.num',sK2)) & (s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) | s('type.num.num',sK1) != s('type.num.num',sK2))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0,sK1,sK2])],[f65])).
+fof(f65,plain,(
+  ? [X0,X1,X2] : ((s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X2))) | s('type.num.num',X1) = s('type.num.num',X2)) & (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))) != s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X2))) | s('type.num.num',X1) != s('type.num.num',X2)))),
+  inference(nnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ? [X0,X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X2))) <~> s('type.num.num',X1) = s('type.num.num',X2))),
+  inference(ennf_transformation,[],[f25])).
+fof(f25,plain,(
+  ~! [X0,X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X2))) <=> s('type.num.num',X1) = s('type.num.num',X2))),
+  inference(flattening,[],[f24])).
+fof(f24,plain,(
+  ~! [X0] : ! [X1,X2] : (s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))) = s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X2))) <=> s('type.num.num',X1) = s('type.num.num',X2))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : ! [X7,X8] : (s(fun('type.num.num',fun(X6,bool)),'const.ind_type.INJN_1'(s('type.num.num',X7))) = s(fun('type.num.num',fun(X6,bool)),'const.ind_type.INJN_1'(s('type.num.num',X8))) <=> s('type.num.num',X7) = s('type.num.num',X8))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : ! [X7,X8] : (s(fun('type.num.num',fun(X6,bool)),'const.ind_type.INJN_1'(s('type.num.num',X7))) = s(fun('type.num.num',fun(X6,bool)),'const.ind_type.INJN_1'(s('type.num.num',X8))) <=> s('type.num.num',X7) = s('type.num.num',X8))),
+  file('thm.ind_type.INJN_INJ','thm.ind_type.INJN_INJ')).
+fof(f1717,plain,(
+  $false | ($spl0 | $spl3)),
+  inference(subsumption_resolution,[],[f1712,f149])).
+fof(f1712,plain,(
+  s('type.num.num',sK1) = s('type.num.num',sK2) | $spl0),
+  inference(trivial_inequality_removal,[],[f1667])).
+fof(f1667,plain,(
+  s(bool,'T_0') != s(bool,'T_0') | s('type.num.num',sK1) = s('type.num.num',sK2) | $spl0),
+  inference(superposition,[],[f225,f1584])).
+fof(f1584,plain,(
+  ( ! [X4] : (s(bool,'T_0') = s(bool,'const.ind_type.INJN_3'(s('type.num.num',sK1),s('type.num.num',sK2),s(sK0,X4)))) ) | $spl0),
+  inference(superposition,[],[f1091,f264])).
+fof(f264,plain,(
+  ( ! [X19,X17,X18] : (s(bool,'T_0') = s(bool,'const.ind_type.INJN_3'(s('type.num.num',X17),s('type.num.num',X17),s(X18,X19)))) )),
+  inference(resolution,[],[f258,f96])).
+fof(f96,plain,(
+  ( ! [X0] : (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f67])).
+fof(f67,plain,(
+  ! [X0] : ((s(bool,'T_0') != s(bool,X0) | p(s(bool,X0))) & (~p(s(bool,X0)) | s(bool,'T_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f27])).
+fof(f27,plain,(
+  ! [X0] : (s(bool,'T_0') = s(bool,X0) <=> p(s(bool,X0)))),
+  inference(rectify,[],[f16])).
+fof(f16,axiom,(
+  ! [X11] : (s(bool,'T_0') = s(bool,X11) <=> p(s(bool,X11)))),
+  file('thm.ind_type.INJN_INJ','thm.bool.EQ_CLAUSES|split|0')).
+fof(f258,plain,(
+  ( ! [X2,X0,X1] : (p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X0),s('type.num.num',X0),s(X1,X2))))) )),
+  inference(equality_resolution,[],[f124])).
+fof(f124,plain,(
+  ( ! [X2,X0,X3,X1] : (s('type.num.num',X1) != s('type.num.num',X2) | p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3))))) )),
+  inference(cnf_transformation,[],[f83])).
+fof(f83,plain,(
+  ! [X0,X1,X2,X3] : ((~p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3)))) | s('type.num.num',X1) = s('type.num.num',X2)) & (s('type.num.num',X1) != s('type.num.num',X2) | p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3))))))),
+  inference(nnf_transformation,[],[f46])).
+fof(f46,plain,(
+  ! [X0,X1,X2,X3] : (p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3)))) <=> s('type.num.num',X1) = s('type.num.num',X2))),
+  inference(flattening,[],[f45])).
+fof(f45,plain,(
+  ! [X0] : ! [X1,X2,X3] : (p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3)))) <=> s('type.num.num',X1) = s('type.num.num',X2))),
+  inference(rectify,[],[f22])).
+fof(f22,axiom,(
+  ! [X6] : ! [X17,X5,X18] : (p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X17),s('type.num.num',X5),s(X6,X18)))) <=> s('type.num.num',X5) = s('type.num.num',X17))),
+  file('thm.ind_type.INJN_INJ','thm.ind_type.INJN')).
+fof(f1091,plain,(
+  ( ! [X0,X1] : (s(bool,'const.ind_type.INJN_3'(s('type.num.num',sK1),s('type.num.num',X0),s(sK0,X1))) = s(bool,'const.ind_type.INJN_3'(s('type.num.num',sK2),s('type.num.num',X0),s(sK0,X1)))) ) | $spl0),
+  inference(forward_demodulation,[],[f1037,f122])).
+fof(f122,plain,(
+  ( ! [X2,X0,X3,X1] : (s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))),s('type.num.num',X2))),s(X0,X3)))) )),
+  inference(cnf_transformation,[],[f44])).
+fof(f44,plain,(
+  ! [X0,X1,X2,X3] : s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))),s('type.num.num',X2))),s(X0,X3)))),
+  inference(flattening,[],[f43])).
+fof(f43,plain,(
+  ! [X0] : ! [X1,X2,X3] : s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3))) = s(bool,happ(s(fun(X0,bool),happ(s(fun('type.num.num',fun(X0,bool)),'const.ind_type.INJN_1'(s('type.num.num',X1))),s('type.num.num',X2))),s(X0,X3)))),
+  inference(rectify,[],[f23])).
+fof(f23,axiom,(
+  ! [X6] : ! [X19,X20,X21] : s(bool,'const.ind_type.INJN_3'(s('type.num.num',X19),s('type.num.num',X20),s(X6,X21))) = s(bool,happ(s(fun(X6,bool),happ(s(fun('type.num.num',fun(X6,bool)),'const.ind_type.INJN_1'(s('type.num.num',X19))),s('type.num.num',X20))),s(X6,X21)))),
+  file('thm.ind_type.INJN_INJ','ARITY_1_3_const.ind_type.INJN')).
+fof(f1037,plain,(
+  ( ! [X0,X1] : (s(bool,'const.ind_type.INJN_3'(s('type.num.num',sK2),s('type.num.num',X0),s(sK0,X1))) = s(bool,happ(s(fun(sK0,bool),happ(s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))),s('type.num.num',X0))),s(sK0,X1)))) ) | $spl0),
+  inference(superposition,[],[f122,f146])).
+fof(f225,plain,(
+  ( ! [X14,X17,X15,X16] : (s(bool,'T_0') != s(bool,'const.ind_type.INJN_3'(s('type.num.num',X14),s('type.num.num',X15),s(X16,X17))) | s('type.num.num',X14) = s('type.num.num',X15)) )),
+  inference(resolution,[],[f123,f95])).
+fof(f95,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'T_0') != s(bool,X0)) )),
+  inference(cnf_transformation,[],[f67])).
+fof(f123,plain,(
+  ( ! [X2,X0,X3,X1] : (~p(s(bool,'const.ind_type.INJN_3'(s('type.num.num',X1),s('type.num.num',X2),s(X0,X3)))) | s('type.num.num',X1) = s('type.num.num',X2)) )),
+  inference(cnf_transformation,[],[f83])).
+fof(f147,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) | $spl1),
+  inference(cnf_transformation,[],[f147_D])).
+fof(f147_D,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2))) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f149,plain,(
+  s('type.num.num',sK1) != s('type.num.num',sK2) | $spl3),
+  inference(cnf_transformation,[],[f149_D])).
+fof(f149_D,plain,(
+  s('type.num.num',sK1) != s('type.num.num',sK2) <=> ~$spl3),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl3])])).
+fof(f90,plain,(
+  s('type.num.num',sK1) != s('type.num.num',sK2) | s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK2)))),
+  inference(cnf_transformation,[],[f66])).
+fof(f1759,plain,(
+  $false | ($spl1 | $spl2)),
+  inference(trivial_inequality_removal,[],[f1758])).
+fof(f1758,plain,(
+  s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) != s(fun('type.num.num',fun(sK0,bool)),'const.ind_type.INJN_1'(s('type.num.num',sK1))) | ($spl1 | $spl2)),
+  inference(forward_demodulation,[],[f147,f148])).
+% SZS output end Proof for thm.ind_type
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 42
+% Passive clauses: 293
+% Generated clauses: 1612
+% Final active clauses: 34
+% Final passive clauses: 186
+% Input formulas: 22
+% Initial clauses: 55
+% 
+% Duplicate literals: 119
+% Trivial inequalities: 43
+% Fw subsumption resolutions: 214
+% Fw demodulations: 90
+% Bw demodulations: 1
+% 
+% Simple tautologies: 92
+% Equational tautologies: 31
+% Forward subsumptions: 686
+% 
+% Binary resolution: 60
+% Factoring: 1
+% Forward superposition: 341
+% Backward superposition: 554
+% Self superposition: 50
+% Equality factoring: 52
+% Equality resolution: 12
+% 
+% Split clauses: 47
+% Split components: 98
+% SAT solver clauses: 73
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 41
+% SAT solver learnt clauses: 2
+% SAT solver learnt literals: 1
+% 
+% Sat splits: 47
+% Sat splitting refutations: 4
+% 
+% TWLsolver clauses: 71
+% TWLsolver calls for satisfiability: 22
+% 
+% Memory used [KB]: 1407
+% Time elapsed: 0.043 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.045 s

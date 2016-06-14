@@ -1,0 +1,142 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.util_prob
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.util_prob
+% SZS output start Proof for thm.util_prob
+fof(f2827,plain,(
+  $false),
+  inference(sat_splitting_refutation,[],[f2825,f193,f329])).
+fof(f329,plain,(
+  ~p(s(bool,'F_0')) | $spl1),
+  inference(cnf_transformation,[],[f329_D])).
+fof(f329_D,plain,(
+  ~p(s(bool,'F_0')) <=> ~$spl1),
+  introduced(sat_splitting_component,[new_symbols(naming,[$spl1])])).
+fof(f193,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(cnf_transformation,[],[f39])).
+fof(f39,plain,(
+  ~p(s(bool,'F_0'))),
+  inference(flattening,[],[f2])).
+fof(f2,axiom,(
+  ~p(s(bool,'F_0'))),
+  file('thm.util_prob.COUNTABLE_COUNT',aHL_FALSITY)).
+fof(f2825,plain,(
+  $false | $spl1),
+  inference(subsumption_resolution,[],[f2823,f329])).
+fof(f2823,plain,(
+  p(s(bool,'F_0'))),
+  inference(superposition,[],[f2757,f641])).
+fof(f641,plain,(
+  s(bool,'F_0') = s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',sK10)))))),
+  inference(resolution,[],[f186,f209])).
+fof(f209,plain,(
+  ( ! [X0] : (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)) )),
+  inference(cnf_transformation,[],[f128])).
+fof(f128,plain,(
+  ! [X0] : ((s(bool,'F_0') != s(bool,X0) | ~p(s(bool,X0))) & (p(s(bool,X0)) | s(bool,'F_0') = s(bool,X0)))),
+  inference(nnf_transformation,[],[f52])).
+fof(f52,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(flattening,[],[f51])).
+fof(f51,plain,(
+  ! [X0] : (s(bool,'F_0') = s(bool,X0) <=> ~p(s(bool,X0)))),
+  inference(rectify,[],[f21])).
+fof(f21,axiom,(
+  ! [X9] : (s(bool,'F_0') = s(bool,X9) <=> ~p(s(bool,X9)))),
+  file('thm.util_prob.COUNTABLE_COUNT','thm.bool.EQ_CLAUSES|split|2')).
+fof(f186,plain,(
+  ~p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',sK10))))))),
+  inference(cnf_transformation,[],[f123])).
+fof(f123,plain,(
+  ~p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',sK10))))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK10])],[f85])).
+fof(f85,plain,(
+  ? [X0] : ~p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))))))),
+  inference(ennf_transformation,[],[f36])).
+fof(f36,plain,(
+  ~! [X0] : p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X6))))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X6))))))),
+  file('thm.util_prob.COUNTABLE_COUNT','thm.util_prob.COUNTABLE_COUNT')).
+fof(f2757,plain,(
+  ( ! [X0] : (p(s(bool,'const.util_prob.countable_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))))))) )),
+  inference(resolution,[],[f231,f194])).
+fof(f194,plain,(
+  ( ! [X0] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))))))) )),
+  inference(cnf_transformation,[],[f40])).
+fof(f40,plain,(
+  ! [X0] : p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X0))))))),
+  inference(rectify,[],[f25])).
+fof(f25,axiom,(
+  ! [X6] : p(s(bool,'const.pred_set.FINITE_1'(s(fun('type.num.num',bool),'const.pred_set.count_1'(s('type.num.num',X6))))))),
+  file('thm.util_prob.COUNTABLE_COUNT','thm.pred_set.FINITE_COUNT')).
+fof(f231,plain,(
+  ( ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1))))) )),
+  inference(cnf_transformation,[],[f98])).
+fof(f98,plain,(
+  ! [X0,X1] : (~p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) | p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(ennf_transformation,[],[f66])).
+fof(f66,plain,(
+  ! [X0,X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(flattening,[],[f65])).
+fof(f65,plain,(
+  ! [X0] : ! [X1] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X0,bool),X1)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X0,bool),X1)))))),
+  inference(rectify,[],[f35])).
+fof(f35,axiom,(
+  ! [X10] : ! [X17] : (p(s(bool,'const.pred_set.FINITE_1'(s(fun(X10,bool),X17)))) => p(s(bool,'const.util_prob.countable_1'(s(fun(X10,bool),X17)))))),
+  file('thm.util_prob.COUNTABLE_COUNT','thm.util_prob.FINITE_COUNTABLE')).
+% SZS output end Proof for thm.util_prob
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 241
+% Passive clauses: 1185
+% Generated clauses: 2635
+% Final active clauses: 240
+% Final passive clauses: 870
+% Input formulas: 34
+% Initial clauses: 139
+% 
+% Duplicate literals: 63
+% Trivial inequalities: 19
+% Fw subsumption resolutions: 164
+% Fw demodulations: 6
+% Bw demodulations: 1
+% 
+% Simple tautologies: 101
+% Equational tautologies: 20
+% Forward subsumptions: 1064
+% 
+% Binary resolution: 1773
+% Factoring: 210
+% Forward superposition: 101
+% Backward superposition: 132
+% Self superposition: 2
+% Equality factoring: 2
+% Equality resolution: 7
+% 
+% Split clauses: 49
+% Split components: 99
+% SAT solver clauses: 92
+% SAT solver unit clauses: 7
+% SAT solver binary clauses: 29
+% SAT solver learnt clauses: 1
+% 
+% Sat splits: 49
+% Sat splitting refutations: 1
+% 
+% TWLsolver clauses: 91
+% TWLsolver calls for satisfiability: 72
+% 
+% Memory used [KB]: 1535
+% Time elapsed: 0.056 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.057 s

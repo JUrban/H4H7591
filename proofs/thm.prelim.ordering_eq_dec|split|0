@@ -1,0 +1,73 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 299 next slice time: 5
+dis+11_7_3 on thm.prelim
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.prelim
+% SZS output start Proof for thm.prelim
+fof(f242,plain,(
+  $false),
+  inference(subsumption_resolution,[],[f152,f233])).
+fof(f233,plain,(
+  ~p(s(bool,'T_0'))),
+  inference(trivial_inequality_removal,[],[f151])).
+fof(f151,plain,(
+  ~p(s(bool,'T_0')) | s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK0)),
+  inference(cnf_transformation,[],[f129])).
+fof(f129,plain,(
+  (s('type.prelim.ordering',sK0) = s('type.prelim.ordering',sK0) | p(s(bool,'T_0'))) & (s('type.prelim.ordering',sK0) != s('type.prelim.ordering',sK0) | ~p(s(bool,'T_0')))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f128])).
+fof(f128,plain,(
+  ? [X0] : ((s('type.prelim.ordering',X0) = s('type.prelim.ordering',X0) | p(s(bool,'T_0'))) & (s('type.prelim.ordering',X0) != s('type.prelim.ordering',X0) | ~p(s(bool,'T_0'))))),
+  inference(nnf_transformation,[],[f126])).
+fof(f126,plain,(
+  ? [X0] : (s('type.prelim.ordering',X0) = s('type.prelim.ordering',X0) <~> p(s(bool,'T_0')))),
+  inference(ennf_transformation,[],[f64])).
+fof(f64,plain,(
+  ~! [X0] : (s('type.prelim.ordering',X0) = s('type.prelim.ordering',X0) <=> p(s(bool,'T_0')))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6] : (s('type.prelim.ordering',X6) = s('type.prelim.ordering',X6) <=> p(s(bool,'T_0')))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6] : (s('type.prelim.ordering',X6) = s('type.prelim.ordering',X6) <=> p(s(bool,'T_0')))),
+  file('thm.prelim.ordering_eq_dec|split|0','thm.prelim.ordering_eq_dec|split|0')).
+fof(f152,plain,(
+  p(s(bool,'T_0'))),
+  inference(cnf_transformation,[],[f1])).
+fof(f1,axiom,(
+  p(s(bool,'T_0'))),
+  file('thm.prelim.ordering_eq_dec|split|0',aHL_TRUTH)).
+% SZS output end Proof for thm.prelim
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 1
+% Passive clauses: 70
+% Generated clauses: 89
+% Final active clauses: 1
+% Final passive clauses: 68
+% Input formulas: 62
+% Initial clauses: 82
+% 
+% Trivial inequalities: 2
+% Fw subsumption resolutions: 1
+% 
+% Simple tautologies: 2
+% Equational tautologies: 2
+% 
+% Split clauses: 12
+% Split components: 24
+% SAT solver clauses: 12
+% SAT solver binary clauses: 12
+% 
+% Sat splits: 12
+% 
+% TWLsolver clauses: 12
+% TWLsolver calls for satisfiability: 1
+% 
+% Memory used [KB]: 639
+% Time elapsed: 0.013 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.026 s

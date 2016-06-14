@@ -1,0 +1,107 @@
+Hi Geoff, go and have some cold beer while I am trying to solve this very hard problem!
+% remaining time: 149 next slice time: 5
+dis+11_7_3 on thm.rich_list
+% Refutation found. Thanks to Tanya!
+% SZS status Theorem for thm.rich_list
+% SZS output start Proof for thm.rich_list
+fof(f5178,plain,(
+  $false),
+  inference(trivial_inequality_removal,[],[f5148])).
+fof(f5148,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14)))),
+  inference(superposition,[],[f335,f5135])).
+fof(f5135,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))) )),
+  inference(forward_demodulation,[],[f465,f464])).
+fof(f464,plain,(
+  ( ! [X2,X0,X1] : (s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))) )),
+  inference(cnf_transformation,[],[f141])).
+fof(f141,plain,(
+  ! [X0,X1,X2] : s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))),
+  inference(flattening,[],[f140])).
+fof(f140,plain,(
+  ! [X0,X1] : ! [X2] : s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))),
+  inference(rectify,[],[f7])).
+fof(f7,axiom,(
+  ! [X6,X7] : ! [X8] : s('type.list.list'(X6),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8))) = s('type.list.list'(X6),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X6),'type.list.list'(X7)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8)))))),
+  file('thm.rich_list.LENGTH_UNZIP_FST','thm.rich_list.UNZIP_FST_DEF')).
+fof(f465,plain,(
+  ( ! [X2,X0,X1] : (s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))))) )),
+  inference(cnf_transformation,[],[f143])).
+fof(f143,plain,(
+  ! [X0,X1,X2] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))))),
+  inference(flattening,[],[f142])).
+fof(f142,plain,(
+  ! [X0,X1] : ! [X2] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X0),'type.list.list'(X1)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))))),
+  inference(rectify,[],[f10])).
+fof(f10,axiom,(
+  ! [X6,X7] : ! [X11] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X11))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.pair.FST_1'(s('type.pair.prod'('type.list.list'(X6),'type.list.list'(X7)),'const.list.UNZIP_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X11)))))))),
+  file('thm.rich_list.LENGTH_UNZIP_FST','thm.list.LENGTH_UNZIP|split|0')).
+fof(f335,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK12),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14)))))),
+  inference(cnf_transformation,[],[f226])).
+fof(f226,plain,(
+  s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(sK12),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(sK12,sK13)),sK14)))))),
+  inference(skolemisation,[status(esa),new_symbols(skolem,[sK12,sK13,sK14])],[f175])).
+fof(f175,plain,(
+  ? [X0,X1,X2] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) != s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))),
+  inference(ennf_transformation,[],[f72])).
+fof(f72,plain,(
+  ~! [X0,X1,X2] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))),
+  inference(flattening,[],[f71])).
+fof(f71,plain,(
+  ~! [X0,X1] : ! [X2] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X0),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X0,X1)),X2)))))),
+  inference(rectify,[],[f6])).
+fof(f6,negated_conjecture,(
+  ~! [X6,X7] : ! [X8] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8)))))),
+  inference(negated_conjecture,[],[f5])).
+fof(f5,conjecture,(
+  ! [X6,X7] : ! [X8] : s('type.num.num','const.list.LENGTH_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8))) = s('type.num.num','const.list.LENGTH_1'(s('type.list.list'(X6),'const.rich_list.UNZIP_FST_1'(s('type.list.list'('type.pair.prod'(X6,X7)),X8)))))),
+  file('thm.rich_list.LENGTH_UNZIP_FST','thm.rich_list.LENGTH_UNZIP_FST')).
+% SZS output end Proof for thm.rich_list
+% ------------------------------
+% Version: Vampire 4.0 CASC-25 Entry
+% Termination reason: Refutation
+
+% Active clauses: 374
+% Passive clauses: 1454
+% Generated clauses: 4830
+% Final active clauses: 371
+% Final passive clauses: 916
+% Input formulas: 69
+% Initial clauses: 237
+% 
+% Duplicate literals: 159
+% Trivial inequalities: 5
+% Fw subsumption resolutions: 321
+% Fw demodulations: 67
+% Bw demodulations: 2
+% 
+% Simple tautologies: 182
+% Equational tautologies: 34
+% Forward subsumptions: 2565
+% 
+% Binary resolution: 2604
+% Factoring: 787
+% Forward superposition: 258
+% Backward superposition: 339
+% Self superposition: 8
+% Equality factoring: 2
+% Equality resolution: 5
+% 
+% Split clauses: 107
+% Split components: 216
+% SAT solver clauses: 186
+% SAT solver unit clauses: 9
+% SAT solver binary clauses: 40
+% 
+% Sat splits: 107
+% 
+% TWLsolver clauses: 186
+% TWLsolver calls for satisfiability: 148
+% 
+% Memory used [KB]: 2814
+% Time elapsed: 0.110 s
+% ------------------------------
+% ------------------------------
+% Success in time 0.12 s
